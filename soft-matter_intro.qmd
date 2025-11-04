@@ -1,10 +1,5 @@
 ---
 title: "Complex Disordered Systems"
-format: 
-    revealjs:
-        incremental: false
-        pdf: true
-
 bibliography: references.bib
 mermaid-format: svg # png also works
 ---
@@ -89,7 +84,7 @@ $$
 $$
 where $k_B$ is the Boltzmann constant and $\Delta u$ indicates standard deviations from the average internal energy.
 
-## Thermal fluctuations: single particle in a doyble well
+## Thermal fluctuations: single particle in a double well
 
 ```{ojs}
 //| echo: false
