@@ -1,1 +1,1 @@
-Sitemap: /course-disordered-matter-slides/sitemap.xml
+Sitemap: https://fturci.github.io/course-disordered-matter-slides/sitemap.xml
