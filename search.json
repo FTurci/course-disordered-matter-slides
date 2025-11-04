@@ -1,0 +1,625 @@
+[
+  {
+    "objectID": "soft-matter_colloids1.html#today",
+    "href": "soft-matter_colloids1.html#today",
+    "title": "Complex Disordered Systems",
+    "section": "Today",
+    "text": "Today\n\nColloid-colloid interactions\n\nvan der Waals interactions\ndouble layer interactions\nEntropic interactions: the Asakura-Oosawa model of depletion"
+  },
+  {
+    "objectID": "soft-matter_colloids1.html#interactions-between-colloids",
+    "href": "soft-matter_colloids1.html#interactions-between-colloids",
+    "title": "Complex Disordered Systems",
+    "section": "Interactions between colloids",
+    "text": "Interactions between colloids\nWe distinguished between fundamental and effective forces between colloids\n\n\nFundamental forces:\ngravity\nelectro (magneto) static forces\n\n\n\nEffective forces\nVan der Waals forces\nelectrostatic repulsion (DLVO)\ndepletion forces\nhydrophobic/hydrophilic interactions\nsteric forces\n\n\nEffective interactions emerge from the fundamnetal ones and structure our description at the colloidal scale.\nFluctuations of fundamental forces often at the origin of the effective forces.\nWe focus on effective interactions (revise your electrostatics if needed)"
+  },
+  {
+    "objectID": "soft-matter_colloids1.html#van-der-waals-interactions",
+    "href": "soft-matter_colloids1.html#van-der-waals-interactions",
+    "title": "Complex Disordered Systems",
+    "section": "van der Waals interactions",
+    "text": "van der Waals interactions\nIUPAC definition:\n\nThe attractive or repulsive forces between molecular entities (or between groups within the same molecular entity) other than those due to bond formation or to the electrostatic interaction of ions or of ionic groups with one another or with neutral molecules. The term includes:\n\n\n\n\ndipole–dipole\ndipole-induced dipole\nLondon (instantaneous, spontaneous dipole-induced dipole) forces.\n\n\n\n\nThe term is sometimes used loosely for the totality of nonspecific attractive or repulsive intermolecular forces."
+  },
+  {
+    "objectID": "soft-matter_colloids1.html#reminder-multipole-expansion",
+    "href": "soft-matter_colloids1.html#reminder-multipole-expansion",
+    "title": "Complex Disordered Systems",
+    "section": "Reminder: Multipole expansion",
+    "text": "Reminder: Multipole expansion\nThe electrostatic potential of a charge distribution can be expanded as:\n V(\\mathbf{r})=\\frac{1}{4 \\pi \\epsilon_0} \\sum_{l=0}^{\\infty} \\sum_{m=-l}^l \\frac{4 \\pi}{2 l+1} \\frac{Q_{l m}}{r^{l+1}} Y_l^m(\\theta, \\phi)\nwhere Y_l^m(\\theta, \\phi) are spherical harmonics and Q_{l m}=\\int r^{\\prime l} Y_l^{m *}\\left(\\theta^{\\prime}, \\phi^{\\prime}\\right) \\rho\\left(\\mathbf{r}^{\\prime}\\right) d^3 r^{\\prime}:\n\nQ_{00} = Q (monopole - total charge)\nQ_{1m} terms give the dipole moment \\mathbf{p}\n=Q_{2m} terms give the quadrupole moment\nHigher terms: octupole, hexadecapole, etc.\n\nFor large distances (r \\gg molecular size), the potential is dominated by the lowest non-zero multipole moment.\n\n\n\nNo need to memorise this."
+  },
+  {
+    "objectID": "soft-matter_colloids1.html#van-der-waals-interactions-dipole-dipole",
+    "href": "soft-matter_colloids1.html#van-der-waals-interactions-dipole-dipole",
+    "title": "Complex Disordered Systems",
+    "section": "van der Waals interactions: dipole-dipole",
+    "text": "van der Waals interactions: dipole-dipole\nWe are focusing on atoms that are globally neutral. The first non-trivial term is the the dipole.\nStatic dipolew are asymmetric distribution of charge stationary in time\n\n\n\nDipole-dipole interaction\n\n\nThe interaction energy between two dipoles \\mu_1 and \\mu_2 separated by a distance r is proportional to:\nU(r) \\propto-\\frac{\\mu_1 \\mu_2}{r^3}"
+  },
+  {
+    "objectID": "soft-matter_colloids1.html#van-der-waals-interactions-dipole-induced-dipole",
+    "href": "soft-matter_colloids1.html#van-der-waals-interactions-dipole-induced-dipole",
+    "title": "Complex Disordered Systems",
+    "section": "van der Waals interactions: dipole-induced dipole",
+    "text": "van der Waals interactions: dipole-induced dipole\nA permanent dipole can induce a temporary dipole in a nearby neutral atom. The induced dipole then interacts with the permanent dipole.\n\n\n\nAtom A with permannet dipole approahces neutral atom B.\n\n\n\n\n\n\nB’s density charge changes and B takes an induced dipole\n\n\n\nThe induced dipole itself is proportional to the electric field of the incoming dipole, and it is \\mu_B \\propto \\mu_A E_A \\propto \\dfrac{\\mu}{r^3}.\nThen the interaction energy is just\nU(r) \\propto -\\frac{\\mu^2 \\alpha}{r^6}\nwhere \\alpha is the polarizability of the neutral atom."
+  },
+  {
+    "objectID": "soft-matter_colloids1.html#induce-dipole--induced-dipole-interactions",
+    "href": "soft-matter_colloids1.html#induce-dipole--induced-dipole-interactions",
+    "title": "Complex Disordered Systems",
+    "section": "Induce dipole- induced dipole interactions",
+    "text": "Induce dipole- induced dipole interactions\n\nOrbitals provide the average expected electron density at every point in space, \\langle\\rho(\\mathbf{r})\\rangle=|\\psi(\\mathbf{r})|^2\nInstantaneous fluctuations from the mean occur in time and depend on density-density correlations. The variance is non-uniform .\nThis means that even when the density is neutral, on short timescales (femtoseconds, electronic transiiton times) the desnity distributions can be thought of as asymmetric.\n\nThese quanto-mechanical fluctuations again produce interactions known as London dispersion forces\n\n\n\n\n\n\nLondon dispersion interaction\n\n\n\\Large U(r)=-\\frac{C}{r^6} \n\n\n\nThe key insight is the 1/r^{6} decay of the interactionwhich decays much mor rapidly than Coulomb’s 1/r.\nThey are short-range in 3d, since the total energy scales like \\sim \\int V(r) r^{d-1} d r and 6&gt;3"
+  },
+  {
+    "objectID": "soft-matter_colloids1.html#van-der-waals-attractive-interaction-between-spheres",
+    "href": "soft-matter_colloids1.html#van-der-waals-attractive-interaction-between-spheres",
+    "title": "Complex Disordered Systems",
+    "section": "van der Waals attractive interaction between spheres",
+    "text": "van der Waals attractive interaction between spheres\nTake now two spherical colloids of radus R at distance H.\nIntegrating the London interaction over all volume elements yield the van der Waals attracive potential\n\n\n\nColloid-colloid setup.\n\n\n\n\n\n\n\n\nColloid-colloid van der Waals attractive interaction\n\n\n\\Large W_{w d W}(h)=-\\frac{A_H}{g} f(h / R)\n\n\n\nwhera A_H is the Hamaker constant and f(h / R)=\\left[\\frac{2 R^2}{h^2-4 R^2}+\\frac{2 R^2}{h^2}+\\ln \\left(\\frac{h^2-4 R^2}{h^2}\\right)\\right]."
+  },
+  {
+    "objectID": "soft-matter_colloids1.html#van-der-waals-attractive-interaction-between-spheres-1",
+    "href": "soft-matter_colloids1.html#van-der-waals-attractive-interaction-between-spheres-1",
+    "title": "Complex Disordered Systems",
+    "section": "van der Waals attractive interaction between spheres",
+    "text": "van der Waals attractive interaction between spheres"
+  },
+  {
+    "objectID": "soft-matter_colloids1.html#double-layer-interaction-structure",
+    "href": "soft-matter_colloids1.html#double-layer-interaction-structure",
+    "title": "Complex Disordered Systems",
+    "section": "Double-layer interaction: structure",
+    "text": "Double-layer interaction: structure\nColloids are often charged. In the solution there will be\n\nco-ions (same charge as the colloid) that will be pushed away from the colloid surface, while\ncounter-ions (opposite charge) will accumulate at the surface.\n\n\n\n\nA double layer forms due to the accumulation of co-ions near the colloid surface, and repulsion of counter-ions.\nIts width depends on the ion concentration in the solvent, which can be adjusted by adding or removing salts.\n\n\n\n\n\nDouble layer close to a surface (Wikimedia)."
+  },
+  {
+    "objectID": "soft-matter_colloids1.html#double-layer-interaction-nonlinear-poisson-bolztmann-equation",
+    "href": "soft-matter_colloids1.html#double-layer-interaction-nonlinear-poisson-bolztmann-equation",
+    "title": "Complex Disordered Systems",
+    "section": "Double-layer interaction: nonlinear Poisson-Bolztmann equation",
+    "text": "Double-layer interaction: nonlinear Poisson-Bolztmann equation\nWhen two colloids come close, the charges in their double layers will interact giving rise to a repulsive interaction. Not simply Coulombic interaction, as it is mediated by the other (opposite) charges in the medium.\nThis means in practice taking Poisson’s equation\n\n\\nabla^2 \\psi(\\mathbf{r})=-\\frac{\\rho_{\\mathrm{tot}}(\\mathbf{r})}{\\varepsilon}= \\frac{\\rho_{\\mathrm{fixed}}(\\mathbf{r})+\\rho_\\mathrm{ions}(\\mathbf{r})}{\\varepsilon}\n\nand making the ion concentration depend on the electrostatic potential \\psi(\\mathbf{r}) itself via a Boltzmann weight\n\n\\rho_{\\mathrm{ions}}(\\mathbf{r})= z e n_s \\exp \\left(-\\frac{z e \\psi}{k_B T}\\right)\n\nwith n_s the far-away (bulk) concentration of ions of salt and ze the ion charge.\nThis yields the nonlinear Poisson-Bolztmann equation\n\n\\nabla^2 \\psi(\\mathbf{r})=-\\frac{1}{\\varepsilon}\\left[\\rho_{\\text {fixed }}+ ze  n_s \\exp \\left(-\\frac{z e \\psi}{k_B T}\\right)\\right] .\n\n\n\n\nNo need to memorise this."
+  },
+  {
+    "objectID": "soft-matter_colloids1.html#double-layer-interaction-screened-repulsion",
+    "href": "soft-matter_colloids1.html#double-layer-interaction-screened-repulsion",
+    "title": "Complex Disordered Systems",
+    "section": "Double-layer interaction: screened repulsion",
+    "text": "Double-layer interaction: screened repulsion\nLinearisation around room temperature (e\\psi\\ll k_BT) yields the Debye–Hückel equation\n\n\\nabla^2 \\psi= \\psi/\\lambda_D^2\n\nwhere \\lambda_D is yhe Debye length\n\n\\lambda_D=\\sqrt{\\frac{1}{8 \\pi \\lambda_B n_s}}\n itself dependent on the Bjerrumm length \\lambda_B: the scale at which two elemementary charge have energy k_B T.\nThe final form of the potential is and exponential repulsion with scale \\lambda_D\n\n\n\n\n\n\nImportant\n\n\n\n\\Large\nW_{D R}(h)=B \\frac{R}{\\lambda_B} \\exp \\left(-h / \\lambda_D\\right)"
+  },
+  {
+    "objectID": "soft-matter_colloids1.html#vdw-double-layer-dlvo-interaction",
+    "href": "soft-matter_colloids1.html#vdw-double-layer-dlvo-interaction",
+    "title": "Complex Disordered Systems",
+    "section": "vdW + double layer = DLVO interaction",
+    "text": "vdW + double layer = DLVO interaction\nto sum up hat identical colloids in solution have two interactions of opposite sign\n\na van der Waals components, typically attractive\na double layer component repulsive in nature\n\nThe sum of the two gives rise to the DLVO (Derjaguin–Landau–Verwey–Overbeek) interaction which is an elementary model for colloid stability and aggregation.\n\n\n\n\n\n\n\n\n\n🪁 Play with the potential"
+  },
+  {
+    "objectID": "soft-matter_colloids1.html#excluded-volume-and-generic-atomistic-interactions",
+    "href": "soft-matter_colloids1.html#excluded-volume-and-generic-atomistic-interactions",
+    "title": "Complex Disordered Systems",
+    "section": "Excluded volume and generic atomistic interactions",
+    "text": "Excluded volume and generic atomistic interactions\n\nAt very short distances the electonic clouds overlap.\nElectrons cannot share the same quantum state and must occupt different, higher energy states\n\n→ Large energy costs in approaching atoms: steric repulsive interactions below a van der Waals radius.\nA phenomenological model for a generic atomistic interaction potential is then\n\nV_{\\mathrm{LJ}}(r)=\\frac{A_n}{r^n}-\\frac{B_m}{r^m}\n\nwhere the first term is the short range repulsion and the second a generalised attraction.\nA convenient choice is the Lennard-Jones potential of scale \\sigma (twice the vdW radius)\n\nV_{\\mathrm{LJ}}(r)=4 \\varepsilon\\left[\\left(\\frac{\\sigma}{r}\\right)^{12}-\\left(\\frac{\\sigma}{r}\\right)^6\\right],\n\nwhere m=6 is chosen to match London’s forces and n=12 is chosen to match experiments and computational convenience.\nAtomistic, but at the heart of numerous coarse-grained models ."
+  },
+  {
+    "objectID": "soft-matter_colloids1.html#exclusion-and-entropic-forces",
+    "href": "soft-matter_colloids1.html#exclusion-and-entropic-forces",
+    "title": "Complex Disordered Systems",
+    "section": "Exclusion and entropic forces",
+    "text": "Exclusion and entropic forces\nSteric repulsion (hindrance) means exlcuded volume: at thermal energy scales, an atom cannot be placed at the position of another atom.\nGeometrical point of view:\n\nExcluded volume means that, neglecting attractions, atoms/molecules//macromolecules/colloids are spheres that cannot overlap.\nDistribute spheres in space:\n\nvolume exclusion means that some configurations are forbidden\n\n\n\n\n\n\nOverlapping particles are forbidden by volume exclusion"
+  },
+  {
+    "objectID": "soft-matter_colloids1.html#exclusion-in-one-dimension",
+    "href": "soft-matter_colloids1.html#exclusion-in-one-dimension",
+    "title": "Complex Disordered Systems",
+    "section": "Exclusion in one dimension",
+    "text": "Exclusion in one dimension\nExclusion means forbidden configurations.\nStatistical mechanics approach: simplest system with the required ingredient, studied in detail.\n\nHard identical particles on a line between two repulsive, impenetrable walls.\n\nMacroscopic analogue:\n\nClothpins on a line"
+  },
+  {
+    "objectID": "soft-matter_colloids1.html#exclusion-in-one-dimension-1",
+    "href": "soft-matter_colloids1.html#exclusion-in-one-dimension-1",
+    "title": "Complex Disordered Systems",
+    "section": "Exclusion in one dimension",
+    "text": "Exclusion in one dimension\nInvestigate the probability distribution \\rho(x) of finding the centre of a particle at position x. Parameters:\n\nclothpin horizontal size d (only size that matters)\nlength of the line L\nnumber of clothpins N\n\nWe can treat the problem algorthmically\n\n\n\n\n\n\nAlgorithm\n\n\n\nposition the particles in a valid configuration (no overlaps with other particles or the walls)\npick a particle at random\nmove it slightly along the line\ntest the if the new position is valid (no overlaps)\nif valid, accept the move otherwise, reject\ngo back to (2)"
+  },
+  {
+    "objectID": "soft-matter_colloids1.html#simulation-of-hard-clothpins-on-a-line",
+    "href": "soft-matter_colloids1.html#simulation-of-hard-clothpins-on-a-line",
+    "title": "Complex Disordered Systems",
+    "section": "Simulation of hard clothpins on a line",
+    "text": "Simulation of hard clothpins on a line\n🪁 Play with the simulation"
+  },
+  {
+    "objectID": "soft-matter_colloids1.html#simulation-of-hard-clothpins-on-a-line-1",
+    "href": "soft-matter_colloids1.html#simulation-of-hard-clothpins-on-a-line-1",
+    "title": "Complex Disordered Systems",
+    "section": "Simulation of hard clothpins on a line",
+    "text": "Simulation of hard clothpins on a line\n\nThe key parameter is the packing fraction \\phi = \\dfrac{dN}{L} (non-dimensional)1.\n\nlow \\phi: almost uniform profile\nintermediate \\phi: small peaks start to show close to the walls\nhigh \\phi: strong peaks and modulation of the density along the line\n\n\n\n\n\nDensity profile at N=18, L=24, \\phi=0.75.\n\n\nOur algorihm is direct and inefficient, see Krauth’s, Statistical Mechanics: Algorithms and Computations for better approaches."
+  },
+  {
+    "objectID": "soft-matter_colloids1.html#attraction-via-repulsion",
+    "href": "soft-matter_colloids1.html#attraction-via-repulsion",
+    "title": "Complex Disordered Systems",
+    "section": "Attraction via repulsion",
+    "text": "Attraction via repulsion\nWhat do the peaks mean? It means that it is more likely to find the particles close to the walls:\n\nthe walls seem to attract the particles\npeaks and valleys indicating layering\nthe interaction with the wall vanishes as we get away from it\n\nThe source of this effect is entropy:\n\nif the first and last particles stay close to the walls, the other particles have more available space in the middle\nthis means that there are more configurations available for the rest of the particles if the extreme particles are getting more localised\nmore configurations → larger entropy → lower free energy = depletion\n\n F=U - TS=\\cancel{U} - TS \nNo internal energy, only entropy, so temperature is only a scale parameter."
+  },
+  {
+    "objectID": "soft-matter_colloids1.html#asakura-oosawa-depletion-potential",
+    "href": "soft-matter_colloids1.html#asakura-oosawa-depletion-potential",
+    "title": "Complex Disordered Systems",
+    "section": "Asakura-Oosawa depletion potential",
+    "text": "Asakura-Oosawa depletion potential\n\nMore realism: Mixture of colloids (yellow) and polymers (squiggly lines inside red circles). The depletion layers are as thick as the polymer radius (red circles) and are indicated with the dashes around the colloids. When the two layers do not overlap, the osmotic pressure due to the polymers on the colloids is balanced. When there is overlap, there is a region inaccessible to the polymers (purple) and the pressure is unbalanced, leading to aggregation."
+  },
+  {
+    "objectID": "soft-matter_colloids1.html#asakura-oosawa-depletion-potential-1",
+    "href": "soft-matter_colloids1.html#asakura-oosawa-depletion-potential-1",
+    "title": "Complex Disordered Systems",
+    "section": "Asakura-Oosawa depletion potential",
+    "text": "Asakura-Oosawa depletion potential\n\nDepletion forces play a pivotal role in colloidal aggregation.\nThe basic mechanisms are the same as in our 1D example.\nWe are going to work thrpugh the details of a particualr model\n\nAsakura-Oosawa depletion interaction\n\n\n\n\n\nAsakura-Oosawa setting"
+  },
+  {
+    "objectID": "soft-matter_colloids1.html#asakura-oosawa-model",
+    "href": "soft-matter_colloids1.html#asakura-oosawa-model",
+    "title": "Complex Disordered Systems",
+    "section": "Asakura-Oosawa model",
+    "text": "Asakura-Oosawa model\n\n\n\nColloids: Large spheres, diameter 2R, impenetrable (hard spheres)\nPolymeric bundles: Smaller spheres, diameter \\sigma_p = 2\\delta.\n\ncannot overlap with colloids\ncan overlap with other (penetrable hard spheres)\n\nSystem is at thermodynamic equilibrium:\n\nsame pressure, temeprature and chemical potential throughout\ncan think of the system as chemostatted by a polymer reservoir at the same \\mu_{polymer}\n\n\n\n\nThe polymers (by themselves) are ideal so their chemical potental is \\mu_p = k_BT \\ln \\rho_p^r\nThe number density is linked to the packign fraction \\phi_p^r=\\rho_p v_p = \\frac{\\pi}{6} \\rho_p^r \\sigma_p^3\nwe work at constant V,T,\\mu: grand canonical ensemble\nWe ignore all internal structure of the polymers."
+  },
+  {
+    "objectID": "soft-matter_colloids1.html#sketch-of-derivation-of-ao-potential",
+    "href": "soft-matter_colloids1.html#sketch-of-derivation-of-ao-potential",
+    "title": "Complex Disordered Systems",
+    "section": "Sketch of derivation of AO potential",
+    "text": "Sketch of derivation of AO potential\n\nIn the absence of colloids, the entire volume V is accessible to the polymer V_{\\rm accessible} = V\nGrand potential of the polymers \\Omega = -k_BT e^{\\mu_p/k_B T}V_{\\rm accessible}\nIntroduce one colloid: the polymers can not get closer than the distance R+\\delta\n\n\nExcluded volume around one polymer\nExcluded volume V_{\\rm exclusion} = V_{\\rm outer}-V_{\\rm inner}= \\dfrac{4\\pi}{3}\\left((R+\\delta)^3-R^3\\right)\nThe accessible volume is now V_{\\rm accessible} = V-V_{\\rm exclusion}"
+  },
+  {
+    "objectID": "soft-matter_colloids1.html#sketch-of-derivation-of-ao-potential-1",
+    "href": "soft-matter_colloids1.html#sketch-of-derivation-of-ao-potential-1",
+    "title": "Complex Disordered Systems",
+    "section": "Sketch of derivation of AO potential",
+    "text": "Sketch of derivation of AO potential\n\nIntroduce second colloid at distance r from first colloid.\nThe accessible volume is V_{\\rm accessible}^{\\infty}=V-2V_{\\rm exclusion}\nTwo situations:\n\n\\forall r &gt;R_d = 2R+2\\delta the accessible volume remains the same, constant \\Omega(r)=\\Omega_{\\infty}\nFor 2R&lt;r&lt;R_d the accessible volume changes: overlap between exclusion volumes .\n\n\n\nA second colloid is introduced at a short distance r. The exclusion regions overlap (light blue), increasing the accesible volume."
+  },
+  {
+    "objectID": "soft-matter_colloids1.html#sketch-of-derivation-of-ao-potential-2",
+    "href": "soft-matter_colloids1.html#sketch-of-derivation-of-ao-potential-2",
+    "title": "Complex Disordered Systems",
+    "section": "Sketch of derivation of AO potential",
+    "text": "Sketch of derivation of AO potential\n\nThe overlap region can be calulated from standard geometrical properties of spherical caps\n\n\nV_{\\mathrm{overlap}}(r)=\\dfrac{4 \\pi}{3} R_d^3\\left[1-\\frac{3}{4} \\frac{r}{R_d}+\\frac{1}{16}\\left(\\frac{r}{R_d}\\right)^3\\right]\n\nThe new accessible volume is\n\nV_{\\rm accessible}^\\prime=V-(2V_{\\rm exclusion}-V_{\\mathrm{overlap}})\n\nSince \\Omega = -k_BT e^{\\mu_p/k_B T}V_{\\rm accessible} the gran potential becomes more negative when the the colloids are close."
+  },
+  {
+    "objectID": "soft-matter_colloids1.html#sketch-of-derivation-of-ao-potential-3",
+    "href": "soft-matter_colloids1.html#sketch-of-derivation-of-ao-potential-3",
+    "title": "Complex Disordered Systems",
+    "section": "Sketch of derivation of AO potential",
+    "text": "Sketch of derivation of AO potential\n\nFre energy advantage from the overlapping excluded volumes\n\n\n\\begin{aligned}\nW_{\\rm AO}(r) = \\Omega(r)-\\Omega^{\\infty} & =-k_BT e^{\\mu/k_B T}\\left(V_{\\rm accessible}(r)-V_{\\rm accessible}(\\infty)\\right)\\\\\n& = -k_BT e^{\\mu/k_B T}\\left[V-2V_{\\rm exclusion}+V_{\\mathrm{overlap}}(r)-(V-2V_{\\rm exclusion})\\right]\\\\\n& = -k_BT e^{\\mu/k_B T} V_{\\mathrm{overlap}(r)}\\\\\n& = -k_B T \\rho_p V_{\\mathrm{overlap}(r)}\n\\end{aligned}\n\nThe result is an attractive depletion potential controlled by the geometry of the overlap\n\n\n\n\n\n\nAsakura-Oosawa potential (1954)\n\n\n\n\\Large\nW_{\\rm AO} (r) = - \\dfrac{4 \\pi \\rho_p^r k_B T}{3} (R+\\delta)^3\\left[1-\\dfrac{3}{4} \\dfrac{r}{R+\\delta}+\\frac{1}{16}\\left(\\dfrac{r}{R+\\delta}\\right)^3\\right] \\quad 2R\\leq r&lt; 2R+\\delta"
+  },
+  {
+    "objectID": "soft-matter_colloids1.html#ao-potential",
+    "href": "soft-matter_colloids1.html#ao-potential",
+    "title": "Complex Disordered Systems",
+    "section": "AO potential",
+    "text": "AO potential"
+  },
+  {
+    "objectID": "soft-matter_colloids1.html#summary-of-main-colloid-colloid-interactions",
+    "href": "soft-matter_colloids1.html#summary-of-main-colloid-colloid-interactions",
+    "title": "Complex Disordered Systems",
+    "section": "Summary of main colloid-colloid interactions",
+    "text": "Summary of main colloid-colloid interactions\n\n\n\n\n\n\n\n\nInteraction Type\nDescription\nRange\n\n\n\n\nVan der Waals\nAttractive forces arising from induced dipoles between particles.\nShort-range\n\n\nDouble Layer\nElectrostatic repulsion due to overlapping electrical double layers around charged particles.\nLong-range\n\n\nDLVO\nCombination of van der Waals attraction and double layer repulsion.\nShort and long range\n\n\nDepletion\nTypically attractive interactions emerging from purely entropic interactions\nShort range"
+  },
+  {
+    "objectID": "soft-matter_colloids3.html#today",
+    "href": "soft-matter_colloids3.html#today",
+    "title": "Complex Disordered Systems",
+    "section": "Today",
+    "text": "Today\n\nCharacterisation of colloids\n\nStatic (pair) corrleations\nDiffusive dynamics"
+  },
+  {
+    "objectID": "soft-matter_colloids3.html#pairwise-interactions",
+    "href": "soft-matter_colloids3.html#pairwise-interactions",
+    "title": "Complex Disordered Systems",
+    "section": "Pairwise interactions",
+    "text": "Pairwise interactions\nTrue colloidal systems can be complex:\n\ncharges\nshape deformability/swelling\ninstabilities of the components\n\nTheir theoretical description focuses on essential ingredients.\nA simplifying assumption is that the potential energy of a collection of colloids is purely pairwise\n\nU_N\\left(\\mathbf{r}^N\\right)=\\sum_{i=1}^{N-1} \\sum_{j=i+1}^N V\\left(r_i j\\right)=\\frac{1}{2} \\sum_{i \\neq j} V\\left(r_{i j}\\right)\n\nwhere V(r_{ij}) is the pairwise, radial interaction potential that only depends on the distance between particle centres r_{ij} = \\mathbf{r}_i-\\mathbf{r}_j."
+  },
+  {
+    "objectID": "soft-matter_colloids3.html#pairwise-interactions-and-pair-correlations",
+    "href": "soft-matter_colloids3.html#pairwise-interactions-and-pair-correlations",
+    "title": "Complex Disordered Systems",
+    "section": "Pairwise interactions and pair correlations",
+    "text": "Pairwise interactions and pair correlations\n\nFor such systems, all the thermodynamic properties are solely encoded in the pairwise correllations.\n\nYou have already seeen such corrleations in other contexts (Ising model, lattice gas).\nThe key pair correlation is the real space radial distribution function:\n\ng(r)=\\frac{1}{\\rho N}\\left\\langle\\sum_{i=1}^N \\sum_{j \\neq i} \\delta\\left(\\left|\\mathbf{r}_i-\\mathbf{r}_j\\right|-r\\right)\\right\\rangle\n\nThe free energy can then be written as \n\\frac{F_{\\mathrm{ex}}}{k_B T}=2 \\pi \\rho N \\int_0^{\\infty}[g(r) \\ln g(r)-g(r)+1] r^2 d r+\\frac{\\rho N}{2 k_B T} \\int V(r) g(r) d^3 r\n\nand you should be able to read out a part very reminiscent of an (information-theoretical) entropy and one reminiscent of an internal energy."
+  },
+  {
+    "objectID": "soft-matter_colloids3.html#radial-distribution-function",
+    "href": "soft-matter_colloids3.html#radial-distribution-function",
+    "title": "Complex Disordered Systems",
+    "section": "Radial distribution function",
+    "text": "Radial distribution function\n\nThe radial distribution function, algorithmic interpretation: at a distance r, we count the number of particle centres within a slice of width dr and then normalise."
+  },
+  {
+    "objectID": "soft-matter_colloids3.html#radial-distribution-function-1",
+    "href": "soft-matter_colloids3.html#radial-distribution-function-1",
+    "title": "Complex Disordered Systems",
+    "section": "Radial distribution function",
+    "text": "Radial distribution function\n\nThe radial distribution function g(r) is related to the average local density at a distance r from a reference particle:\nTo formally derive this, consider a system of N particles in volume V with average density \\rho = N/V. The local density at a distance r from a reference particle is defined as \n\\langle \\rho(r) \\rangle = \\left\\langle \\sum_{j \\neq i} \\delta\\left(|\\mathbf{r}_i - \\mathbf{r}_j| - r\\right) \\right\\rangle\n Averaging over all particles and normalizing by the bulk density \\rho gives the radial distribution function: \ng(r) = \\frac{1}{\\rho N} \\left\\langle \\sum_{i=1}^N \\sum_{j \\neq i} \\delta\\left(|\\mathbf{r}_i - \\mathbf{r}_j| - r\\right) \\right\\rangle = \\frac{\\langle \\rho(r) \\rangle}{\\rho}\n\nwhere \\langle \\rho(r) \\rangle is the average density at distance r from a particle, and \\rho is the bulk density."
+  },
+  {
+    "objectID": "soft-matter_colloids3.html#radial-distribution-function-2",
+    "href": "soft-matter_colloids3.html#radial-distribution-function-2",
+    "title": "Complex Disordered Systems",
+    "section": "Radial distribution function",
+    "text": "Radial distribution function\n\nFor an ideal gas, g(r) = 1 everywhere (no correlations).\nFor hard spheres, g(r) = 0 for r &lt; \\sigma (no overlap), and g(r) shows oscillations at higher r due to packing effects.\n\n\n\n\n\n\n\nNote\n\n\nHard spheres in 3D are not exactly solvable! We only have perturbative solutons to hard spheres\n\n\n\n\nThe g(r) is the central object of (equilibrium) liquid state theory\nCorrelations between two particles 1 and 2 in a fluid to have two possible origins\n\na direct correlation between the two particles, mediated by direct interactions (e.g. collisions) between 1 and 2.\nan indirect correlation, mediated by other particles in the fluid"
+  },
+  {
+    "objectID": "soft-matter_colloids3.html#direct-and-indirect-correlations",
+    "href": "soft-matter_colloids3.html#direct-and-indirect-correlations",
+    "title": "Complex Disordered Systems",
+    "section": "Direct and indirect correlations",
+    "text": "Direct and indirect correlations\n\nThe g(r) contains both.\nWe can assume the existence of a correlation function that instead only incl;udes the direct part and call it c(r). Then a hierarchy exists\n\n\nh\\left(r_{12}\\right)=c\\left(r_{12}\\right)+\\rho \\int c\\left(r_{13}\\right) h\\left(r_{32}\\right) d \\mathbf{r}_3\n\nwhere h(r) = g(r)-1. This is the Ornstein-Zernicke integral equation between particles 1,2 and 3.\nBoth h(r) and c(r) are unknwon in principle. One needs an additional condition to fix box: these are physical closures leading to approximations.\n\nMeaning of teh Ornstein-Zernicke relation, adapted from Santos, Springer(2016)"
+  },
+  {
+    "objectID": "soft-matter_colloids3.html#percus-yevick-approximation",
+    "href": "soft-matter_colloids3.html#percus-yevick-approximation",
+    "title": "Complex Disordered Systems",
+    "section": "Percus-Yevick approximation",
+    "text": "Percus-Yevick approximation\nA common closure is the Percus-Yevick approximation.\n\nc(r)=[1+h(r)]\\left[1-e^{\\beta U(r)}\\right]\n\nThis closure interpolates between the hard-core exclusion (for U(r) \\to \\infty, c(r) \\to 0 inside the core) and the ideal gas limit (for U(r) = 0, c(r) = 0).\nThe result (semi) analytical. For hard spheres, it allows to calculate the g(r) accurately in a wide range of packing fractions\n\n\n\nPY approximation vs simulated data for hard spheres."
+  },
+  {
+    "objectID": "soft-matter_colloids3.html#structure-factor",
+    "href": "soft-matter_colloids3.html#structure-factor",
+    "title": "Complex Disordered Systems",
+    "section": "Structure factor",
+    "text": "Structure factor\nThe real-space correlations and relations have their reciprocal (Fourier space) counterparts.\nThe structure factor is defined as\n\nS(k)=1+\\rho \\int[g(r)-1] e^{-i \\mathbf{k} \\cdot \\mathbf{r}} d \\mathbf{r}\n\nIsotropicity in 3D simplifies the expression to\n\nS(k)=1+4 \\pi \\rho \\int_0^{\\infty} r^2[g(r)-1] \\frac{\\sin (k r)}{k r} d r\n\n\nRadial distribution functions \\to easily accessed in confocal experiments (large colloids)\nStructure factors \\to immediately accessed via scattering experiments"
+  },
+  {
+    "objectID": "soft-matter_colloids3.html#structure-factor-1",
+    "href": "soft-matter_colloids3.html#structure-factor-1",
+    "title": "Complex Disordered Systems",
+    "section": "Structure factor",
+    "text": "Structure factor\nInteestingly, reciprocal space simplifies integral equations such as Ornstein-Zernicke\n\n\\tilde{h}(k)=\\frac{\\tilde{c}(k)}{1-\\rho \\tilde{c}(k)}\n\nallowing one to read the direct correlation function directly from scattering data, as tilde{h}(k)= can be identified with the structure factor.\n[STRUCTURE FACTOR VS G(R) IMAGE]"
+  },
+  {
+    "objectID": "soft-matter_colloids3.html#dynamics-single-vs-collective-displacements",
+    "href": "soft-matter_colloids3.html#dynamics-single-vs-collective-displacements",
+    "title": "Complex Disordered Systems",
+    "section": "Dynamics: single vs collective displacements",
+    "text": "Dynamics: single vs collective displacements\nThe thermal motion of individual colloids is often well modeled via the Langevin equation\n\nm \\frac{d \\vec{v}}{d t}=-\\gamma \\vec{v}+\\vec{\\eta}(t)\n\nCoarse-graining over small volumes (and short times) gives us access to the local density \\rho(\\mathbf{r},t) which obeys a diffusion equation\n\n\\frac{\\partial \\rho(\\mathbf{r}, t)}{\\partial t}=D \\nabla^2 \\rho(\\mathbf{r}, t)\n\nThe diffusivity is linked to the microscopic Langevin paramters via fluctuation-dissipation\n\nD=\\frac{k_B T}{\\gamma}\n\n(where the friction is the dissipation and the random force is the fluctuations)."
+  },
+  {
+    "objectID": "soft-matter_colloids3.html#diffusion-equation-macroscopic-picture",
+    "href": "soft-matter_colloids3.html#diffusion-equation-macroscopic-picture",
+    "title": "Complex Disordered Systems",
+    "section": "Diffusion equation: macroscopic picture",
+    "text": "Diffusion equation: macroscopic picture\nIt is possible to (re)-derive the diffusion equation solely from macroscopic requirements. We have a macroscopic density \\rho(r,t) and a macroscpic flux \\vec{J}(r,t)\n\ncontinuity: there is no mass loss in the dynamics\n\n\n\\frac{\\partial \\rho(\\mathbf{r}, t)}{\\partial t}+\\nabla \\cdot \\mathbf{J}(\\mathbf{r}, t)=0\n where the divergence \\nabla \\cdot \\mathbf{J}(\\mathbf{r}, t) represents the net outflow of particles from a given region due to the flux \\mathbf{J}.\n\nFick’s law : we assume the flow is a gradient field of the density, flowing from high to low density\n\n\n\\mathbf{J}(\\mathbf{r}, t)=-D \\nabla \\rho(\\mathbf{r}, t)\n\nIt is immediate to combine the two to obtain the diffusion equation\n\n\\frac{\\partial \\rho(\\mathbf{r}, t)}{\\partial t}=D \\nabla^2 \\rho(\\mathbf{r}, t)"
+  },
+  {
+    "objectID": "soft-matter_colloids3.html#measuring-diffusion-coefficients",
+    "href": "soft-matter_colloids3.html#measuring-diffusion-coefficients",
+    "title": "Complex Disordered Systems",
+    "section": "Measuring diffusion coefficients",
+    "text": "Measuring diffusion coefficients\nThe distribution \\rho(\\mathbf{r},t) encodes all the information about the motion of an ensemble.\nOften, less is sufficient to characterise the diffusion. The second moment of the displacements (the mean squared displacement) provides this information. In d dimensions \n\\left\\langle \\left| \\mathbf{r}(t) - \\mathbf{r}(t_0) \\right|^2 \\right\\rangle = 2 d D t\n\nHence D can be extracted from linear fits to the MSD.\n\n\n\n\n\n\nHidden assumptions\n\n\n\nWe have been considering ensembles of particles microscopically governed by the Langevin equation\nWe did not comment on the inter-particle interactions and assumed that the properties of the thermal bath determine the diffusivity D. In reality, interactions between particles can lead to deviations from simple diffusion, especially at higher concentrations, where collective effects and hydrodynamic interactions become important."
+  },
+  {
+    "objectID": "soft-matter_intro.html#today",
+    "href": "soft-matter_intro.html#today",
+    "title": "Complex Disordered Systems",
+    "section": "Today",
+    "text": "Today\n\nEntropy matters\nIntroduction to colloids"
+  },
+  {
+    "objectID": "soft-matter_intro.html#entropy-matters-1",
+    "href": "soft-matter_intro.html#entropy-matters-1",
+    "title": "Complex Disordered Systems",
+    "section": "Entropy matters",
+    "text": "Entropy matters\n\n\n\nBlame it on entropy (New Yorker)"
+  },
+  {
+    "objectID": "soft-matter_intro.html#more-is-different",
+    "href": "soft-matter_intro.html#more-is-different",
+    "title": "Complex Disordered Systems",
+    "section": "More is different",
+    "text": "More is different\nPhilip Anderson (Science 1972)\n\nComplexity emerges when many simple units interact: studying the individual components does not explain the emergence of collective properties\n\n\n\n\nSimple examples:\n\nphases of matter\nmagnetism, superconductivity\nemergence of order from disorder\n\n\n\n\nAlso beyond physics:\n\nformation of biological molecules\necological networks\neconomic structures (markets, currencies etc.)\n\n\n\n\n\n\nComplex mixtures, spintronic magnetisation, ecological networks and Hong Kong stock market"
+  },
+  {
+    "objectID": "soft-matter_intro.html#beyond-the-usual-phases-of-matter",
+    "href": "soft-matter_intro.html#beyond-the-usual-phases-of-matter",
+    "title": "Complex Disordered Systems",
+    "section": "Beyond the usual phases of matter",
+    "text": "Beyond the usual phases of matter\nWe sometimes oversimplify…\n\nExtreme examples of phases of matter"
+  },
+  {
+    "objectID": "soft-matter_intro.html#beyond-the-usual-phases-of-matter-1",
+    "href": "soft-matter_intro.html#beyond-the-usual-phases-of-matter-1",
+    "title": "Complex Disordered Systems",
+    "section": "Beyond the usual phases of matter",
+    "text": "Beyond the usual phases of matter\nWe sometimes oversimplify…"
+  },
+  {
+    "objectID": "soft-matter_intro.html#complex-fluids-and-soft-condensed-matter",
+    "href": "soft-matter_intro.html#complex-fluids-and-soft-condensed-matter",
+    "title": "Complex Disordered Systems",
+    "section": "Complex fluids and soft condensed matter",
+    "text": "Complex fluids and soft condensed matter\n\nSoft condensed matter includes assembllies of colloids, polymers, surfactants, and biological macromolecules and much more.\n\nTerm due to Pierre-Gilles de Gennes (Nobel 1991)\n\nOften, many ofthese are also referred to as complex fluids.\nThese materials are easily deformed and show complex, disordered structures.\nTheir properties are determined by a balance between energy and entropy.\nThermal fluctuations play a major role in their behavior.\nUnderstanding them requires statistical mechanics ."
+  },
+  {
+    "objectID": "soft-matter_intro.html#thermal-fluctuations-and-entropy",
+    "href": "soft-matter_intro.html#thermal-fluctuations-and-entropy",
+    "title": "Complex Disordered Systems",
+    "section": "Thermal fluctuations and entropy",
+    "text": "Thermal fluctuations and entropy\n\nHelmholtz Free energy per particle f = u-Ts\nEntropy approximately counts the number of arrangements per particle s = \\dfrac{k_B}{N} \\ln{\\Omega}. For hundreds of arrangements per particle one has s=O(1) k_B\nFluctuations of the internal energy are on the same scale as thermal fluctuations: \n\\boxed{\\Delta u \\sim k_B T}\n where k_B is the Boltzmann constant and \\Delta u indicates standard deviations from the average internal energy."
+  },
+  {
+    "objectID": "soft-matter_intro.html#thermal-fluctuations-single-particle-in-a-double-well",
+    "href": "soft-matter_intro.html#thermal-fluctuations-single-particle-in-a-double-well",
+    "title": "Complex Disordered Systems",
+    "section": "Thermal fluctuations: single particle in a double well",
+    "text": "Thermal fluctuations: single particle in a double well\n\nviewof params = Inputs.form({\n    T: Inputs.range([0., 4], {label: \"Temp.\", value: 1.0, step: 0.1,}),\n    g: Inputs.range([-2, 2], {label: \"Tilt\", value: 0, step: 0.1}),\n    reset: Inputs.button(\"Reset simulation\")\n})\n\n// Simulation parameters\ndt = 0.005\nkB = 1\ngamma = 1\n\n// Double well potential: V(x) = x^4 - 2x^2 + g*x\nV = (x, g) =&gt; x**4 - 2*x**2 + g*x\nforce = (x, g) =&gt; -(4*x**3 - 4*x + g)\n\n// Live simulation with temperature control\nsimulationState = {\n    let x = 0\n    let positions = [0]\n    let step = 0\n    \n    while (true) {\n        if (params.reset) {\n            x = 0\n            positions = [0]\n            step = 0\n        }\n        \n        let f = force(x, params.g)\n        let noise = Math.sqrt(2 * kB * params.T * dt / gamma) * (Math.random() - 0.5) * 2\n        x += (f / gamma) * dt + noise\n        positions.push(x)\n        // Keep only last 500 points for performance\n        if (positions.length &gt; 500) {\n            positions = positions.slice(-500)\n        }\n        \n        yield {x, positions: [...positions], step: step++}\n        await new Promise(resolve =&gt; setTimeout(resolve, 10))\n    }\n}\n\n// Plot\nPlot.plot({\n    width: 700,\n    height: 400,\n    grid: true,\n    x: {domain: [-2.5, 2.5], label: \"Position\"},\n    y: {domain: [-2, 3], label: \"Potential Energy\"},\n    marks: [\n        // Potential curve\n        Plot.line(\n            Array.from({length: 200}, (_, i) =&gt; {\n                let x = -2.5 + 5 * i / 199\n                return {x, y: V(x, params.g)}\n            }),\n            {x: \"x\", y: \"y\", stroke: \"red\", strokeWidth: 2}\n        ),\n        // Particle trajectory (trail)\n        Plot.line(\n            simulationState.positions.map((x, i) =&gt; ({x, y: V(x, params.g), step: i})),\n            {x: \"x\", y: \"y\", stroke: \"blue\", strokeWidth: 1, opacity: 0.5}\n        ),\n        // Current particle position\n        Plot.dot([{\n            x: simulationState.x, \n            y: V(simulationState.x, params.g)\n        }], {x: \"x\", y: \"y\", fill: \"blue\", r: 6, stroke: \"white\", strokeWidth: 2})\n    ]\n})"
+  },
+  {
+    "objectID": "soft-matter_intro.html#elementary-constituents-and-energy-scales",
+    "href": "soft-matter_intro.html#elementary-constituents-and-energy-scales",
+    "title": "Complex Disordered Systems",
+    "section": "Elementary constituents and energy scales",
+    "text": "Elementary constituents and energy scales\n\nSoft matter systems are made of many parts\n\nThe assembly of these many parts can be easily deformed.\nInteractions between these parts are weak compared to thermal or mechanical forces.\n\n\n\n\n\nHard condensed matter:\nBasic units: atoms\nStrong interactions (0.1–10 eV)\nCovalent/ionic bonds\nFocus on low temperatures\n\n\n\nSoft matter:\nBasic units: molecular aggregates\nWeak interactions (0.001–0.2 eV)\nVan der Waals, hydrogen bonds\n1 k_B T \\approx 0.025 eV (room temperature)"
+  },
+  {
+    "objectID": "soft-matter_intro.html#coarse-graining",
+    "href": "soft-matter_intro.html#coarse-graining",
+    "title": "Complex Disordered Systems",
+    "section": "Coarse graining",
+    "text": "Coarse graining\n\n\n\nSoft matter interactions are mainly electrostatic.\nAtomistic details are often unimportant for macroscopic properties.\nCoarse-graining simplifies models by focusing on key features:\n\ndeliberate selection of what matters\nsystematic integration of a number of degrees of freedom\n\n\n\n\nExample: The oxDNA model represents DNA as a chain of coarse grained units, much larger than the atoms.\n\n\n\n\nAtomistic DNA structure"
+  },
+  {
+    "objectID": "soft-matter_intro.html#coarse-graining-1",
+    "href": "soft-matter_intro.html#coarse-graining-1",
+    "title": "Complex Disordered Systems",
+    "section": "Coarse graining",
+    "text": "Coarse graining\n\n\n\nSoft matter interactions are mainly electrostatic.\nAtomistic details are often unimportant for macroscopic properties.\nCoarse-graining simplifies models by focusing on key features:\n\ndeliberate selection of what matters\nsystematic integration of a number of degrees of freedom\n\n\n\n\nExample: The oxDNA model represents DNA as a chain of coarse grained units, much larger than the atoms.\n\n\n\n\noxDNA model: (a) Base structure on one strand; (b) planarity of the bonding; (c) an example of the resulting double strand."
+  },
+  {
+    "objectID": "soft-matter_intro.html#classes-of-systems",
+    "href": "soft-matter_intro.html#classes-of-systems",
+    "title": "Complex Disordered Systems",
+    "section": "Classes of systems",
+    "text": "Classes of systems\nIn our exploration of soft matter we will focus on six main classes of systems which display different physics:\n\ncolloidal dispersions\npolymeric systems\nliquid crystals\nsurfactant aggregates\narrested systems\nactive matter\n\n\n\n\nColloidal assemblies, polymers, surfactants, liuqid crystals, glasses and bacteria."
+  },
+  {
+    "objectID": "soft-matter_intro.html#colloidal-dispersions",
+    "href": "soft-matter_intro.html#colloidal-dispersions",
+    "title": "Complex Disordered Systems",
+    "section": "Colloidal dispersions",
+    "text": "Colloidal dispersions\n\n\n\nColloidal dispersions: small particles (nano–micrometer) suspended in a solvent.\nSpherical colloids are common, but many shapes and interactions exist.\nBehave as “big atoms”: show Brownian motion, phase transitions, and can form ordered structures.\nLarger size and slower dynamics make them ideal for direct observation of phenomena like:\n\ncrystallisation\nglass formation\ngel formation\n\n\n\n\n\n\n(A) Solvent collisions cause random forces on particles. (B) Particles execute random walks on larger timescales. (C) Hard spheres crystallize at high density (right) due to reduced available space compared to fluid phase (left). From Manohran, Science (2015)"
+  },
+  {
+    "objectID": "soft-matter_intro.html#polymeric-systems",
+    "href": "soft-matter_intro.html#polymeric-systems",
+    "title": "Complex Disordered Systems",
+    "section": "Polymeric systems",
+    "text": "Polymeric systems\n\nPolymers are long-chain macromolecules made of repeating monomers.\nTheir properties result from a balance of entropy and energy.\nTwo main types: synthetic polymers (e.g., plastics) and biopolymers (e.g., DNA, proteins).\nEntanglement: chains cannot cross, leading to unique mechanical behavior.\n\n\nPolymer entanglement, from Likhtman and Ponmurugan, Macromolecules (2014)"
+  },
+  {
+    "objectID": "soft-matter_intro.html#liquid-crystals",
+    "href": "soft-matter_intro.html#liquid-crystals",
+    "title": "Complex Disordered Systems",
+    "section": "Liquid crystals",
+    "text": "Liquid crystals\n\nLiquid crystals form when anisotropic soft matter units (e.g., rod-like or disk-shaped molecules) pack densely, leading to partial order—intermediate between liquids and crystals.\nContinuum free energy theories describe liquid crystals by considering the symmetry of their order parameters.\nLiquid crystals are crucial in technologies like liquid crystal displays (LCDs).\n\n\nTexture of nematic liquid crystals, from https://doi.org/10.3986/alternator.2020.38"
+  },
+  {
+    "objectID": "soft-matter_intro.html#surfactant-aggregates",
+    "href": "soft-matter_intro.html#surfactant-aggregates",
+    "title": "Complex Disordered Systems",
+    "section": "Surfactant aggregates",
+    "text": "Surfactant aggregates\n\nSurfactants lower surface tension between fluid phases by accumulating at interfaces.\nThey are molecules with both hydrophilic heads and hydrophobic tails.\nSurfactants self-assemble at interfaces, forming structures like bilayers and vesicles.\nThese assemblies are essential in cell biology and many soft matter systems.\n\n\nCellular membrane"
+  },
+  {
+    "objectID": "soft-matter_intro.html#arrested-systems",
+    "href": "soft-matter_intro.html#arrested-systems",
+    "title": "Complex Disordered Systems",
+    "section": "Arrested systems",
+    "text": "Arrested systems\n\nArrested systems are trapped in disordered, non-equilibrium states.\nLack of long-range order leads to slow structural relaxation and prevents reaching the global energy minimum.\nExamples: glasses and gels\nThese systems exhibit rigidity, elasticity, and plasticity: disordered (semi)-solids.\nRelaxation times are longer than observable timescales, making equilibrium statistical mechanics insufficient.\n\n\nAn gel (left) and a glass (right) from molecular dynamics with local structure highlighted un colours"
+  },
+  {
+    "objectID": "soft-matter_intro.html#active-matter",
+    "href": "soft-matter_intro.html#active-matter",
+    "title": "Complex Disordered Systems",
+    "section": "Active matter",
+    "text": "Active matter\n\nActive matter: systems of units that consume energy to move or exert forces.\nInherently out of equilibrium due to continuous energy input.\nIncludes biological systems (bacteria, cells, flocks) and synthetic systems (self-propelled colloids).\nShows emergent collective behaviors: swarming, clustering, pattern formation.\nStudied using hydrodynamic theories and agent-based models.\n\n\nExample of active systems, from Cichos et al. Nature Machine Intelligence (2020)"
+  },
+  {
+    "objectID": "soft-matter_intro.html#kinds-of-colloids",
+    "href": "soft-matter_intro.html#kinds-of-colloids",
+    "title": "Complex Disordered Systems",
+    "section": "Kinds of colloids",
+    "text": "Kinds of colloids\n\n\nColloids = dispersed phase + dispersion medium\n\n\n\n\nOpal, paint, smoke, ice-cream, milk, fog, expanded polystyrene and foam."
+  },
+  {
+    "objectID": "soft-matter_intro.html#kinds-of-colloids-1",
+    "href": "soft-matter_intro.html#kinds-of-colloids-1",
+    "title": "Complex Disordered Systems",
+    "section": "Kinds of colloids",
+    "text": "Kinds of colloids\n\n\n\n\n\n\n\n\nDispersion Phase\n\nDispersion Medium\n\n\n\n\n\nSolid\nLiquid\n\n\nSolid\nSolid suspension:\npigmented plastics,\nstained glass,\nruby glass, opal, pearl\nSol, colloidal suspension:\nmetal sol,\ntoothpaste, paint,\nink, clay slurries, mud\n\n\nLiquid\nSolid emulsion:\nbituminous road paving,\nice cream\nEmulsion:\nmilk, mayonnaise,\nbutter, pharmaceutical creams\n\n\nGas\nSolid foam:\nzeolites, expanded polystyrene,\n‘silica gel’\nFoam:\nfroths, soap foam,\nfire-extinguisher foam"
+  },
+  {
+    "objectID": "soft-matter_intro.html#iupac-definition",
+    "href": "soft-matter_intro.html#iupac-definition",
+    "title": "Complex Disordered Systems",
+    "section": "IUPAC definition",
+    "text": "IUPAC definition\nThe International Union of Pure and Applied Chemistry (IUPAC) defines\n\ncolloidal: The term refers to a state of subdivision, implying that the molecules or polymolecular particles dispersed in a medium have at least in one direction a dimension roughly between 1 nm and 1 \\mum , or that in a system discontinuities are found at distances of that order.\n\n\n\n\n\n\n\nNote\n\n\nThe definition has little to do with the chemistry of the polymolecules (i.e. aggregates), but essentially is determined by the size.\n\n\n\n\nWhy the size?"
+  },
+  {
+    "objectID": "soft-matter_intro.html#colloidal-scale",
+    "href": "soft-matter_intro.html#colloidal-scale",
+    "title": "Complex Disordered Systems",
+    "section": "Colloidal scale",
+    "text": "Colloidal scale\n\nParticle of size R (micrometric) in medium with constant collisions at thermal energy \\sim 1 k_B T\nCompare the energy with the potential energy of settling over a length R\nObtain a nondimensional number the gravitational Péclet number\n\n\\mathrm{Pe}_g=\\frac{\\Delta m g R}{k_B T}\n\n\n\n\n\n\n\nExample\n\n\nFor a milk protein particle (casein micelle) in water:\n\nR \\sim 0.5 \\, \\mum (estimate)\n\\Delta m = \\frac{4}{3}\\pi R^3 \\Delta \\rho \\sim \\frac{4}{3}\\pi (0.5 \\times 10^{-6})^3 \\times 200 \\sim 1 \\times 10^{-16} kg (assuming \\Delta \\rho \\sim 200 kg/m³)\ng = 9.8 m/s²\nk_B T \\sim 4 \\times 10^{-21} J (room temperature)\n\n\\mathrm{Pe}_g = \\frac{1 \\times 10^{-16} \\times 9.8 \\times 0.5 \\times 10^{-6}}{4 \\times 10^{-21}} \\sim 0.1\nSince \\mathrm{Pe}_g &lt; 1, thermal motion dominates gravity → particles remain suspended → stable colloid!"
+  },
+  {
+    "objectID": "soft-matter_intro.html#observation-time-and-stability",
+    "href": "soft-matter_intro.html#observation-time-and-stability",
+    "title": "Complex Disordered Systems",
+    "section": "Observation time and stability",
+    "text": "Observation time and stability\n\nAny measurement in physics has an observation time t_{\\rm obs}\nThermal systems have some degree of memory and hence an intrinsic timescale \\tau (relaxation time)\nWhen \\tau\\ll t_{\\rm obs} we can take time-averages and consider the system in a stable steady state.\nIn the absence of net currents, this is an equilibrium state\nA colloidal dispersion is stable if it is able to remain dispersed and Brownian time much longer than t_{\\rm obs}.\nInstability leads to aggregation\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nStable\n\n\n\n\n\n\n\nUnstable\n\n\n\n\n\n\n\nColloidal System\n\n\n\n\n\n\n\nStability?\n\n\n\n\n\n\n\nSingle phasefor long time\n\n\n\n\n\n\n\nAggregation andsedimentation"
+  },
+  {
+    "objectID": "soft-matter_intro.html#destabilisation",
+    "href": "soft-matter_intro.html#destabilisation",
+    "title": "Complex Disordered Systems",
+    "section": "Destabilisation",
+    "text": "Destabilisation\n\nMilk is an emulsion where droplets of fat are dispersed in water and stabilised by proteins.\nIf lemon juice is added, the dispersion medium (water) changes, the pH drops, and the emulsion is destabilised.\nThe interactions change → separation of curds (solid) and whey (liquid).\n\n\nCurds and whey resulting from the destabilisation of milk, a colloidal emulsion. (Wikimedia)"
+  },
+  {
+    "objectID": "soft-matter_intro.html#which-interactions",
+    "href": "soft-matter_intro.html#which-interactions",
+    "title": "Complex Disordered Systems",
+    "section": "Which interactions?",
+    "text": "Which interactions?\n\nAt the colloidal scale: gravity and electrostatics (eventually magnetostatics).\nElectrostatics forces are the main microscopic forces: colloids are typically charged\nSeparation of length and timescales: colloids are much larger and slower than the atomic or molecular constituents of the surrounding fluid.\nColloid–colloid interactions result from the collective effect (sum or average) of many microscopic interactions, evaluated over times much longer than microscopic relaxation times.\nWhen we focus on colloidal scales, we integrate out the microscopic degrees of freedom (coarse-graning)\nCoarse-grained interactions are then obtained and are called effective interactions.\n\n\n\n\nFundamental forces:\ngravity\nelectro (magneto) static forces\n\n\n\nEffective forces\nVan der Waals forces\nelectrostatic repulsion (DLVO)\ndepletion forces\nhydrophobic/hydrophilic interactions\nsteric forces"
+  },
+  {
+    "objectID": "soft-matter_colloids2.html#today",
+    "href": "soft-matter_colloids2.html#today",
+    "title": "Complex Disordered Systems",
+    "section": "Today",
+    "text": "Today\n\nColloids as big atoms\n\nColloidal hard spheres\nPhase diagram of hard spheres\nMetastability\nPhase diagrams of simple liquids"
+  },
+  {
+    "objectID": "soft-matter_colloids2.html#colloids-as-big-atoms",
+    "href": "soft-matter_colloids2.html#colloids-as-big-atoms",
+    "title": "Complex Disordered Systems",
+    "section": "Colloids as big atoms",
+    "text": "Colloids as big atoms\n\n\n\nColloids can mimic atomic systems\nServe as models for studying phase transitions, transformations, surface phenomena\nExamples:\n\nHard-sphere colloids\nCharged-stabilized colloids\n\n\n\n\n\nCoalescence of a colloidal liquid droplet, Aarts et al. Science (2004)\n\n\n\n\n\n\nThe self-assembly of colloids can be controlled by changing the shape, topology, or patchiness of the particles, by introducing attractions between particles, or by constraining them to a curved surface. From Manoharan Science (2015)"
+  },
+  {
+    "objectID": "soft-matter_colloids2.html#colloidal-hard-spheres",
+    "href": "soft-matter_colloids2.html#colloidal-hard-spheres",
+    "title": "Complex Disordered Systems",
+    "section": "Colloidal hard spheres",
+    "text": "Colloidal hard spheres\nTrue hard spheres do not exist. Colloidal hard spheres approximate the behaviour in many ways\n\n\n\nSchematic representation of various models for hard-sphere colloids. (a) A sterically stabilized particle has surface “hairs” (not to scale). (b) A charged colloid has an electrical double layer (shaded area) that gives rise to an effective diameter (c) A microgel particle is a heavily cross-linked polymer. From Royall et al Soft Matter (2013)"
+  },
+  {
+    "objectID": "soft-matter_colloids2.html#hard-spheres",
+    "href": "soft-matter_colloids2.html#hard-spheres",
+    "title": "Complex Disordered Systems",
+    "section": "Hard spheres",
+    "text": "Hard spheres\nIdealised hard spheres are impenetrable objects.\nThey are characterised by the simplest of the potentials.\n\n\n   r  U(r)      2R    ∞  0  forbidden  Hard Sphere Potential"
+  },
+  {
+    "objectID": "soft-matter_colloids2.html#phase-behaviour-of-hard-spheres",
+    "href": "soft-matter_colloids2.html#phase-behaviour-of-hard-spheres",
+    "title": "Complex Disordered Systems",
+    "section": "Phase behaviour of hard spheres",
+    "text": "Phase behaviour of hard spheres\nFor a sphere of diameter \\sigma, enormous simplification of the Boltzmann factor:\n\ne^{-\\beta U(r)} =\n\\begin{cases}\n0 & \\text{if } r &lt; \\sigma \\\\\n1 & \\text{if } r \\geq \\sigma\n\\end{cases}\n\nThis simplification arises because the potential ( U(r) ) is either infinite (forbidden region) or zero (allowed region).\nFor this reason, they hard spheres are entropy driven.\nConstructing partition functions is then just counting counting valid configurations, linking geometry to thermodynamics.\n\nA good example: Asakura-Oosawa depletion, that we have already seen.\n\n\nValid configurations are sphere packings:\n\nThe only relevant control parameter is the volume fraction \\phi, defined as:\n\n\n\\phi = \\frac{\\pi}{6} \\rho \\sigma^3\n\nwhere \\rho=N/V is the number density."
+  },
+  {
+    "objectID": "soft-matter_colloids2.html#phase-diagram-of-hard-spheres",
+    "href": "soft-matter_colloids2.html#phase-diagram-of-hard-spheres",
+    "title": "Complex Disordered Systems",
+    "section": "Phase diagram of hard spheres",
+    "text": "Phase diagram of hard spheres\nSince we have a single control parameter, the pahse diagram is one-dimensional.\nChanging temeprature is immaterial to the free energy: it is a simple rescaling factor.\nIt is intuitive to guess the low density limit of hard spheres:\n\nfew spheres in a box should behave similalry to an ideal gas\n\nIt is harder to guess the high density limit\nWe will gradually build our understanding from low to dense packing.\n\nHard spheres have a single control parameter, the packing fraction."
+  },
+  {
+    "objectID": "soft-matter_colloids2.html#low-packing-fractions",
+    "href": "soft-matter_colloids2.html#low-packing-fractions",
+    "title": "Complex Disordered Systems",
+    "section": "Low packing fractions",
+    "text": "Low packing fractions\nWhen treating the Asakura-Osawa depletion we introduced the excluded volume. It is also also key for hard spheres.\n\nThe distance of closest approach between two identical spheres is \\sigma, which corresponds to the diameter of the spheres. The excluded volume of one particle is v_{\\rm ex} =4\\pi\\sigma^3/3\nAt low densities, hard spheres are isolated and so no overlaps occcur and the accesible volume for N spheres is V_{\\rm accessible} = V-Nv_{\\rm ex}\nFor phase behaviour, we need the thermodyanamic potential. At constant volume and number of particles, the parition function is a measure of the accessible volume \n\\mathcal{Z} = \\frac{1}{N! \\Lambda^{3N}} \\int_{V_{\\rm accessible}} d\\mathbf{r}_1 \\ldots d\\mathbf{r}_N\nwhere \\Lambda is the thermal de Broglie wavelength \\Lambda = h/\\sqrt{2\\pi mk_B T}.\nMass and temperature are factorising out."
+  },
+  {
+    "objectID": "soft-matter_colloids2.html#low-packing-fractions-entropy",
+    "href": "soft-matter_colloids2.html#low-packing-fractions-entropy",
+    "title": "Complex Disordered Systems",
+    "section": "Low packing fractions: entropy",
+    "text": "Low packing fractions: entropy\nWe integrate over valid (non-overlapping) configurations such that |\\mathbf{r}_i - \\mathbf{r}_j| \\geq \\sigma for all i \\neq j. This yields \\mathcal{Z} = \\dfrac{(V-Nv_{\\rm ex}/2)^N}{N!\\Lambda^{3N}},\nwith the 1/2 factor coming from the fact that we avoid double counting the excluded volume of pairs.\n\nWe immediately obtain the entropy as S = k_B \\ln \\mathcal{Z} = k_B \\left[ N \\ln(V - N v_{\\rm ex}/2) - \\ln N! - 3N \\ln \\Lambda \\right]\nVia Stirling approximation \\ln N! = N\\ln N -N we get S = k_B \\left[ N \\ln(V - N v_{\\rm ex}/2) - (N \\ln N - N) - 3N \\ln \\Lambda \\right]\nThis can be rewritten as S = N k_B \\left[ \\ln\\left( \\frac{V - N v_{\\rm ex}/2}{N \\Lambda^3} \\right) + 1 \\right]"
+  },
+  {
+    "objectID": "soft-matter_colloids2.html#low-packing-fraction-equation-of-state",
+    "href": "soft-matter_colloids2.html#low-packing-fraction-equation-of-state",
+    "title": "Complex Disordered Systems",
+    "section": "Low packing fraction: equation of state",
+    "text": "Low packing fraction: equation of state\nThe equation of state links the three relevant thermodynamics variables P,T and \\phi\nP = -\\left(\\dfrac{\\partial F}{\\partial V}\\right)_{N,T} =T\\left(\\dfrac{\\partial S}{\\partial V}\\right)_{N,T}= \\dfrac{k_B T }{v-v_{\\rm ex}/2}\nThis expression can be simplified (do it as an exercise) to obtain the equation of state\nZ_{\\rm comp}= \\dfrac{PV}{Nk_BT}=\\dfrac{1}{1-4\\phi} \\quad (\\phi\\ll 1)\nwhere Z_{\\rm comp} is compressibility factor (to not be confused with the partition function).\nFor small \\phi we have\nZ_{\\rm comp} =\\dfrac{PV}{Nk_BT} =  1+4\\phi+O(\\phi^2)\n\n\n\n\n\n\nNote\n\n\nInspect this term and recognise that this illustrates that the dilute limit is an ideal gas + a correction."
+  },
+  {
+    "objectID": "soft-matter_colloids2.html#virial-expansion",
+    "href": "soft-matter_colloids2.html#virial-expansion",
+    "title": "Complex Disordered Systems",
+    "section": "Virial expansion",
+    "text": "Virial expansion\nThe expression Z_{\\rm comp} = 1+4\\phi+O(\\phi^2) is just the simplest form of the more generic virial expansion, the perturbative series\nZ_{\\rm comp}= 1 + B_2 \\rho + B_3 \\rho^2+ \\dots\nThe B_2, B_3, \\dots are known as virial coeffcients and for non-hard-sphere systems they also depend on temperature, B_2(T), B_3(T),\\dots\nThey encode correlations (pairs, triplets and so on). In a genric setting\n\nZ_N=\\frac{1}{N!\\Lambda^{3 N}} \\int \\cdots \\int \\exp \\left[-\\beta \\sum_{i&lt;j} U\\left(r_{i j}\\right)\\right] d \\mathbf{r}_1 \\ldots d \\mathbf{r}_N\n\ncan be re-written using the Mayer function f_{i j}=e^{-\\beta u\\left(r_{i j}\\right)}-1 and e^{-\\beta \\sum_{i&lt;j} U\\left(r_{i j}\\right)}=\\prod_{i&lt;j}\\left(1+f_{i j}\\right) yielding\n\nZ_N=\\frac{1}{N!\\Lambda^{3 N}} \\int \\cdots \\int \\prod_{i&lt;j}\\left(1+f_{i j}\\right) d \\mathbf{r}_1 \\ldots d \\mathbf{r}_N"
+  },
+  {
+    "objectID": "soft-matter_colloids2.html#cluster-expansion-and-second-virial",
+    "href": "soft-matter_colloids2.html#cluster-expansion-and-second-virial",
+    "title": "Complex Disordered Systems",
+    "section": "Cluster expansion and second virial",
+    "text": "Cluster expansion and second virial\nOne can expand the product\n\n\\prod_{i&lt;j}\\left(1+f_{i j}\\right)=1+\\sum_{i&lt;j} f_{i j}+\\sum_{i&lt;j, k&lt;l}^{\\text {distinct }} f_{i j} f_{k l}+\\ldots\n The first term is the ideal gas, the second is clearly pair correlations (only pairwise distances).\nThe virial expansion can also be represented diagrammatically. For the compressibility factor ( Z_{} ), we have:\nThis motivates one to define \nB_2(T)=-\\frac{1}{2} \\int f(r) d \\mathbf{r}=-2 \\pi \\int_0^{\\infty}\\left[e^{-\\beta U(r)}-1\\right] r^2 d r\n\nFor hard spheres this results in \nB_2 =  \\frac{2\\pi}{3} \\sigma^3\n\nSo Z = 1 + \\dfrac{2\\pi}{3} \\sigma^3\\rho = 1+ 4\\left( \\dfrac{\\pi}{6} \\sigma^3\\rho\\right)=1+4\\phi as we calculated earlier."
+  },
+  {
+    "objectID": "soft-matter_colloids2.html#low-density-limit-key-points",
+    "href": "soft-matter_colloids2.html#low-density-limit-key-points",
+    "title": "Complex Disordered Systems",
+    "section": "Low density limit: key points",
+    "text": "Low density limit: key points\n\n\n\n\n\n\nImportant\n\n\n\nWe can simply focus on the accessible volume and ignore overlap between exclusion volumes\nWe can focus on the configurational entropy and extract the equation of state relating P,T,\\phi\nThe compressibility factor in terms of the packing fraction \\phi is the most condensed expression and is \nZ_{\\mathrm{comp}}=\\frac{P V}{N k_B T}=1+4 \\phi+O\\left(\\phi^2\\right)\n highlighting the first non-trivial perturbation to the ideal gass\nWe can see this as an instance of the more general virial and cluster expansion formalism. which can used for any fluid. \nZ_{\\text {comp }}=1+B_2 \\rho+B_3 \\rho^2+\\ldots\n\nThe first nontrivial correction is the second virial coefficient \nB_2(T)=-2 \\pi \\int_0^{\\infty}\\left[e^{-\\beta U(r)}-1\\right] r^2 d r"
+  },
+  {
+    "objectID": "soft-matter_colloids2.html#dense-packing",
+    "href": "soft-matter_colloids2.html#dense-packing",
+    "title": "Complex Disordered Systems",
+    "section": "Dense packing",
+    "text": "Dense packing\n\nAs we increase the packing fraction, the accessible (free) volume reduces rapidly and tehrmal motion is hindered.\nTight disordered (random) packing of spheres are described as jammed: link with glasses (in future lectures).\nDensest packing reaches a maximum packing of around \\phi_{\\mathrm{rcp}} \\approx 0.64: this is not unique and depends on the protocol of preparation.\nKepler’s conjecture (1611, proved only in 2017):\nDensest packings are Face Centerd Cubic (FCC) or Hexagonally Cosed Packed (HCP) \\phi_{\\max }=\\frac{\\pi}{3 \\sqrt{2}} \\approx 0.74\n\n\n\n\nPackings"
+  },
+  {
+    "objectID": "soft-matter_colloids2.html#dense-packing-1",
+    "href": "soft-matter_colloids2.html#dense-packing-1",
+    "title": "Complex Disordered Systems",
+    "section": "Dense packing",
+    "text": "Dense packing\nQ: Can purely replusive spheres spheres assemble spontaneously into an FCC crystal?\n\n\nYES\n\nEntropy in AO interactions causes an effective interaction that has a minimum\n\nDisordered packings are less efficient than ordered ones\n\n\nNO\n\nHard sphere potential only prevents overlaps\n\nThere is no minimum in the interaction potential to favour a crystal lattice and localisation\n\nEntropy is just disorder\n\n\n\nThe matter was hotly debated in conferences in the 1950s and got to evenly split votes multiple times"
+  },
+  {
+    "objectID": "soft-matter_colloids2.html#dense-packing-and-crystallisation",
+    "href": "soft-matter_colloids2.html#dense-packing-and-crystallisation",
+    "title": "Complex Disordered Systems",
+    "section": "Dense packing and crystallisation",
+    "text": "Dense packing and crystallisation\nEarly computer simulations ( molecular dynamics, Alder and Wainwright 1957, Monte Carlo, Wood and Jacobson (1957)) proved that that crystalisation is possible.\n\n\n\n\nThe video shows a Monte-Carlo simulation at packing \\phi=0.49 for a small system of 32 particles. Small systems have enhanced fluctuations, leadint to spontaneous freezing and unfreezing."
+  },
+  {
+    "objectID": "soft-matter_colloids2.html#dense-packing-cell-model",
+    "href": "soft-matter_colloids2.html#dense-packing-cell-model",
+    "title": "Complex Disordered Systems",
+    "section": "Dense packing: cell model",
+    "text": "Dense packing: cell model\n\nIn an FCC cell, particles can move very little beyond their own diameter \\sigma.\nAssume that the volume per particle is v and the (geometrically constrained) close packed volume is v_{cp}.\nThe maximum dispalcement is \n\\delta=\\frac{\\sigma}{\\sqrt{2}}\\left(\\left(\\frac{v}{v_{c p}}\\right)^{1 / 3}-1\\right)\n\nThe corresponding free volume is then v_f=\\frac{4 \\pi}{3} \\delta^3 from which we can calculate the entropy \nS = -N k_B T \\ln \\left(v_f / \\Lambda^3\\right)\nAnd the pressure P=T\\left(\\frac{\\partial S}{\\partial V}\\right)_{N, T}=\\frac{N k_B T}{v_{c p}} \\frac{\\left(v / v_{c p}\\right)^{-2 / 3}}{\\left(v / v_{c p}\\right)^{1 / 3}-1}"
+  },
+  {
+    "objectID": "soft-matter_colloids2.html#dense-packing-cell-model-1",
+    "href": "soft-matter_colloids2.html#dense-packing-cell-model-1",
+    "title": "Complex Disordered Systems",
+    "section": "Dense packing: cell model",
+    "text": "Dense packing: cell model\nRearranging and expressing everything in terms of packing fraction \\phi = \\dfrac{\\pi\\sigma^3}{6v} yields \nZ_{\\rm comp}=\\frac{1}{1-\\left(\\phi / \\phi_{c p}\\right)^{1 / 3}}\n\n\nThis expression is completely different from the low density regime Z_{\\text {comp }}^{\\mathrm{low}}=1+B_2 \\rho+B_3 \\rho^2+\\ldots\nThe incompatibility signal non-analiticity and hence a discontinuous phase transition: first order trasnition.\nFirst order phase transition are characterised by interfaces and coexistence between phases.\nWe should therefore observe phase coexistence in simulations and experiments of hard spheres."
+  },
+  {
+    "objectID": "soft-matter_colloids2.html#colloidal-hard-spheres-phase-behaviour",
+    "href": "soft-matter_colloids2.html#colloidal-hard-spheres-phase-behaviour",
+    "title": "Complex Disordered Systems",
+    "section": "Colloidal hard spheres: phase behaviour",
+    "text": "Colloidal hard spheres: phase behaviour\n\n\n\nVials of colloidal hard spheres under the effect of sedimentation: the gravitational field imposes a density gradient. At low packing fraction this maintains the dispersed fluid, but when the packing fraction is sufficiently high, it spontaneously forms a crystalline phase (speckled areas) after some time, in coexistence with a fluid. Notice that at ver high packing the interfaces didappear and one has a disordered phase again: it is the glass, see Pusey et al, Philosophical Transactions of the Royal Society A (2009)."
+  },
+  {
+    "objectID": "soft-matter_colloids2.html#colloidal-hard-spheres-phase-behaviour-1",
+    "href": "soft-matter_colloids2.html#colloidal-hard-spheres-phase-behaviour-1",
+    "title": "Complex Disordered Systems",
+    "section": "Colloidal hard spheres: phase behaviour",
+    "text": "Colloidal hard spheres: phase behaviour\nIn conclusion, the one dimensional ohase diagram of hard spheres is the following\n\nHard spheres phase diagramNotice that the the glass phase is purely nonequilibrium: if a system has enough time to relax, it will eventually form a crystal."
+  },
+  {
+    "objectID": "soft-matter_colloids2.html#beyond-hard-spheres-simple-liquids",
+    "href": "soft-matter_colloids2.html#beyond-hard-spheres-simple-liquids",
+    "title": "Complex Disordered Systems",
+    "section": "Beyond hard spheres: simple liquids",
+    "text": "Beyond hard spheres: simple liquids\n\n\n\nA simple liquid is a system of particles interacting via short-range, spherically symmetric (isotropic) pair potentials.\nA very common model is the Lennard-Jones (LJ) potential U_{\\mathrm{LJ}}(r) = 4\\epsilon \\left[ \\left( \\frac{\\sigma}{r} \\right)^{12} - \\left( \\frac{\\sigma}{r} \\right)^6 \\right] where \\epsilon sets the depth of the potential well (interaction strength) and \\sigma is the particle diameter (distance at which U=0).\nThe r^{-12} term models steep repulsion, while r^{-6} describes the attractive tail.\nThe Lennard-Jones fluid exhibits rich phase behavior: gas, liquid, superciriticla fluid and crystalline solid\nThe LJ model is widely used to study atomic and molecular liquids, and serves as a reference for understanding real fluids and their phase transitions.\n\n\n\n\n\nPhase diagram of the Lennard-Jones Fluid, adapted from Wikimedia."
+  },
+  {
+    "objectID": "soft-matter_colloids2.html#coexistence-metastability-and-instability",
+    "href": "soft-matter_colloids2.html#coexistence-metastability-and-instability",
+    "title": "Complex Disordered Systems",
+    "section": "Coexistence: Metastability and Instability",
+    "text": "Coexistence: Metastability and Instability\n\nLennard Jones and hards sphere fluid present coexistence regions.\nThe binodal line determines phase coexistence. It is the locus where the free energy satisfies the condition of equal chemical potential and pressure between coexisting phases. When crossing the binodal, one enters a regime of metastability.\n\n\n\n\nSchematic free energy for hard spheres compressed at high pressures: the fluid branch becomes metastable and the free enrgy minimum is located in the crystal phase"
+  },
+  {
+    "objectID": "soft-matter_colloids2.html#coexistence-metastability-and-instability-1",
+    "href": "soft-matter_colloids2.html#coexistence-metastability-and-instability-1",
+    "title": "Complex Disordered Systems",
+    "section": "Coexistence: Metastability and Instability",
+    "text": "Coexistence: Metastability and Instability\n\nThe spinodal line marks the boundary of metastability. It is the limit of stability \n\\frac{\\partial^2 G}{\\partial \\phi^2}=0\n\nBetween the binodal and spinodal lines, the system is metastable, meaning it can persist in a non-equilibrium state for a finite time.\nThe nucleation time \\tau is related to the free energy barrier \\Delta G^* by an activated (also called Arrhenius) law\n  \\tau \\propto \\exp\\left(\\frac{\\Delta G^*}{k_B T}\\right)    \nInside the spinodal there is no nucleation: coarsening occurs\n\nYou have seen some of this physics when discussing the Ising model."
+  }
+]
