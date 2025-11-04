@@ -1,0 +1,47 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Open+Sans:wght@400;700&display=swap');
+
+.reveal {
+  font-family: 'Inter', 'Open Sans', Helvetica, Arial, sans-serif;
+  font-size: 1.8em;
+  color: #222222;
+  background-color: white;
+}
+
+.reveal h1, .reveal h2, .reveal h3 {
+  font-weight: 700;
+}
+
+.reveal .slides {
+  padding-top: 0 !important;
+}
+
+.reveal .slide {
+  padding-top: 0 !important;
+  margin-top: 0 !important;
+}
+
+.reveal section {
+  top: 0 !important;
+}
+
+#bigger-callout {
+  font-size: 1.15em; /* Adjust the value as needed */
+}
+
+/* Print-friendly reveal.js slides */
+@media print {
+  html, body, .reveal, .slides, .slides section {
+    width: 1600px !important;   /* match your slide width */
+    height: 900px !important;   /* match your slide height */
+    overflow: visible !important;
+    padding: 1cm !important;    /* optional margin */
+    box-sizing: border-box !important;
+    transform: scale(1) !important; /* prevent shrink/stretch */
+    transform-origin: top left !important;
+  }
+
+  /* Ensure background prints */
+  body {
+    background-color: white !important;
+  }
+}

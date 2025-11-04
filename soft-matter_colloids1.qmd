@@ -1,0 +1,682 @@
+---
+title: "Complex Disordered Systems"
+format: live-revealjs
+bibliography: references.bib
+mermaid-format: svg # png also works
+---
+
+
+## Today
+
+- **Colloid-colloid interactions**
+    - van der Waals interactions
+    - double layer interactions
+    - Entropic interactions: the Asakura-Oosawa model of depletion
+
+
+
+
+## Interactions between colloids
+:::{.nonincremental}
+We distinguished between **fundamental** and **effective** forces between colloids
+
+::: {.column  style="background-color: #f0f8ff; border-radius: 5px;"}
+- **Fundamental forces:**
+- gravity
+- electro (magneto) static forces
+:::
+
+::: {.column  style="background-color: #fff8f0; padding: 0em; border-radius: 5px;"}
+
+- **Effective forces**
+- Van der Waals forces
+- electrostatic repulsion (DLVO)
+- depletion forces
+- hydrophobic/hydrophilic interactions
+- steric forces
+:::
+
+
+- Effective interactions emerge from the fundamnetal ones and structure our description at the colloidal scale.
+- Fluctuations of fundamental forces often at the origin of the effective forces.
+- We focus on **effective interactions** (revise your electrostatics if needed)
+:::
+
+
+## van der Waals interactions
+
+:::{.nonincremental}
+
+IUPAC definition:
+
+> The **attractive** or **repulsive** forces between molecular entities (or between groups within the same molecular entity) [other than]{.mark} those due to bond formation or to the electrostatic interaction of ions or of ionic groups with one another or with neutral molecules.
+> The term includes: 
+
+> - **dipole–dipole**
+> - **dipole-induced dipole**
+> - London (instantaneous, spontaneous **dipole-induced dipole**) forces. 
+    
+>    The term is sometimes used loosely for the totality of nonspecific attractive or repulsive intermolecular forces. 
+:::
+
+## Reminder: Multipole expansion
+
+:::{.nonincremental}
+
+The electrostatic potential of a charge distribution can be expanded as:
+
+$$ V(\mathbf{r})=\frac{1}{4 \pi \epsilon_0} \sum_{l=0}^{\infty} \sum_{m=-l}^l \frac{4 \pi}{2 l+1} \frac{Q_{l m}}{r^{l+1}} Y_l^m(\theta, \phi)$$
+
+
+where $Y_l^m(\theta, \phi)$ are spherical harmonics and $Q_{l m}=\int r^{\prime l} Y_l^{m *}\left(\theta^{\prime}, \phi^{\prime}\right) \rho\left(\mathbf{r}^{\prime}\right) d^3 r^{\prime}$:
+
+- $Q_{00} = Q$ (monopole - total charge)
+- $Q_{1m}$ terms give the **dipole moment** $\mathbf{p}$
+- $=Q_{2m}$ terms give the **quadrupole moment**
+- Higher terms: octupole, hexadecapole, etc.
+
+For large distances ($r \gg$ molecular size), the potential is dominated by the lowest **non-zero multipole** moment.
+
+:::{.callout-note appearance="minimal"}
+No need to memorise this.
+
+:::
+
+:::
+
+
+## van der Waals interactions: dipole-dipole
+
+We are focusing on atoms that are globally neutral. The first non-trivial term is the the dipole.
+
+Static dipolew are asymmetric distribution of charge stationary in time
+
+![Dipole-dipole interaction](./figs/dipole-dipole.png){height=200}
+
+The interaction energy between two dipoles $\mu_1$ and $\mu_2$ separated by a distance $r$ is proportional to:
+
+$$U(r) \propto-\frac{\mu_1 \mu_2}{r^3}$$
+
+
+## van der Waals interactions: dipole-induced dipole
+
+A permanent dipole can induce a temporary dipole in a nearby neutral atom. The induced dipole then interacts with the permanent dipole.
+
+![Atom A with permannet dipole approahces neutral atom B.](./figs/dipole-induceddipole1.png){height=100}
+
+
+:::{.fragment}
+![B's density charge changes and B takes an **induced** dipole](./figs/dipole-induceddipole2.png){height=100}
+:::
+
+The induced dipole itself is proportional to the electric field of the incoming dipole, and it is $\mu_B \propto \mu_A E_A \propto \dfrac{\mu}{r^3}$. 
+
+Then the interaction energy is just
+
+$$U(r) \propto -\frac{\mu^2 \alpha}{r^6}$$
+
+where $\alpha$ is the polarizability of the neutral atom. 
+
+
+
+
+## Induce dipole- induced dipole interactions
+
+:::{.nonincremental}
+
+- Orbitals provide the **average expected electron density** at every point in space, $\langle\rho(\mathbf{r})\rangle=|\psi(\mathbf{r})|^2$
+- Instantaneous fluctuations from the mean occur in time and depend on density-density **correlations**. **The variance is non-uniform** .
+
+- This means that even when the density is neutral, on short timescales (femtoseconds, electronic transiiton times) the desnity distributions can be thought of as **asymmetric**.
+
+These quanto-mechanical fluctuations again produce interactions known as **London dispersion forces**
+
+:::{.callout-important}
+## London dispersion interaction
+
+$$\Large U(r)=-\frac{C}{r^6} $$
+:::
+
+The key insight is the $1/r^{6}$ decay of the interactionwhich decays much mor rapidly than Coulomb's $1/r$.
+
+They are **short-range** in 3d, since the total energy scales like $\sim \int V(r) r^{d-1} d r$ and $6>3$
+
+:::
+
+## van der Waals attractive interaction between spheres 
+
+Take now two spherical colloids of radus $R$ at distance $H$. 
+
+Integrating the London interaction over all volume elements yield the **van der Waals attracive potential**
+
+![Colloid-colloid setup.](./figs/hamakercolloid.png){height=150}
+
+
+:::{.callout-important}
+# Colloid-colloid van der Waals attractive interaction
+$$\Large W_{w d W}(h)=-\frac{A_H}{g} f(h / R)$$
+
+:::
+
+whera $A_H$ is the **Hamaker** constant and $f(h / R)=\left[\frac{2 R^2}{h^2-4 R^2}+\frac{2 R^2}{h^2}+\ln \left(\frac{h^2-4 R^2}{h^2}\right)\right]$.
+
+
+## van der Waals attractive interaction between spheres 
+
+
+
+```{pyodide}
+#| autorun: true
+#| echo: false
+#| runbutton: false
+import numpy as np
+import matplotlib.pyplot as plt
+R = 5.0  # Radius of the colloid
+A_H = 1e-20  # Hamaker constant (in Joules)
+
+def plot():
+
+    h = np.linspace(2.01 * R, 20, 1000)  # Separation distance (h > 2R)
+    # Van der Waals potential
+    def van_der_waals_potential(h, R, A_H):
+        f_h_R = (2 * R**2 / (h**2 - 4 * R**2)) + (2 * R**2 / h**2) + np.log((h**2 - 4 * R**2) / h**2)
+        return -A_H * f_h_R
+    W_vdW = van_der_waals_potential(h, R, A_H)
+    plt.figure(figsize=(9,3))
+    plt.plot(h, W_vdW)
+    plt.xlabel("h")
+    plt.ylabel("WvdW")
+    plt.tight_layout()
+    plt.xlim(5,20)
+    return h, W_vdW
+
+```
+
+```{pyodide}
+# parameters: change them to explore the interaction!
+R = 5.0  # Radius of the colloid
+A_H = 1e-20  # Hamaker constant (in Joules)
+h,W = plot()
+plt.show()
+```
+
+
+## Double-layer interaction: structure
+
+::: {.nonincremental}
+
+
+
+Colloids are often charged. In the solution there will be
+
+-   **co-ions** (same charge as the colloid) that will be pushed away from the colloid surface, while
+-   **counter-ions** (opposite charge) will accumulate at the surface.
+
+::: {.columns}
+::: {.column}
+- A **double layer** forms due to the accumulation of co-ions near the colloid surface, and repulsion of counter-ions.
+
+- Its width depends on the **ion concentration **in the solvent, which can be adjusted by adding or removing salts.
+:::
+
+:::{.column}
+
+![Double layer close to a surface (Wikimedia).](./figs/Double_Layer.png){height=500}
+:::
+:::
+
+:::
+
+## Double-layer interaction: nonlinear Poisson-Bolztmann equation
+
+When two colloids come close, the charges in their double layers will interact giving rise to a **repulsive interaction**.
+Not simply Coulombic interaction, as it is mediated by the other (opposite) charges in the medium. 
+
+This means in practice taking Poisson's equation 
+
+$$
+\nabla^2 \psi(\mathbf{r})=-\frac{\rho_{\mathrm{tot}}(\mathbf{r})}{\varepsilon}= \frac{\rho_{\mathrm{fixed}}(\mathbf{r})+\rho_\mathrm{ions}(\mathbf{r})}{\varepsilon}
+$$
+
+and making the ion concentration depend on the electrostatic potential $\psi(\mathbf{r})$ itself via a Boltzmann weight
+
+$$
+\rho_{\mathrm{ions}}(\mathbf{r})= z e n_s \exp \left(-\frac{z e \psi}{k_B T}\right)
+$$
+
+with $n_s$ the far-away (bulk) concentration of ions of salt and $ze$ the ion charge. 
+
+This yields the **nonlinear Poisson-Bolztmann equation**
+
+$$
+\nabla^2 \psi(\mathbf{r})=-\frac{1}{\varepsilon}\left[\rho_{\text {fixed }}+ ze  n_s \exp \left(-\frac{z e \psi}{k_B T}\right)\right] .
+$$
+
+::: {.callout-note appearance="minimal"}
+No need to memorise this.
+:::
+
+## Double-layer interaction: screened repulsion
+
+Linearisation around room temperature ($e\psi\ll k_BT$) yields the **Debye–Hückel equation**
+
+$$
+\nabla^2 \psi= \psi/\lambda_D^2
+$$
+
+where $\lambda_D$ is yhe **Debye length**
+
+
+$$
+\lambda_D=\sqrt{\frac{1}{8 \pi \lambda_B n_s}}
+$$
+itself dependent on the Bjerrumm length $\lambda_B$: the scale at which two elemementary charge have energy $k_B T$.
+
+The final form of the potential is and **exponential repulsion** with scale $\lambda_D$
+
+::: {.callout-important}
+
+$$
+\Large
+W_{D R}(h)=B \frac{R}{\lambda_B} \exp \left(-h / \lambda_D\right)
+$$
+:::
+
+
+## vdW + double layer = DLVO interaction
+
+::: {.nonincremental}
+to sum up hat identical colloids in solution have two interactions of opposite sign
+
+- a van der Waals components, typically **attractive** 
+
+- a double layer component **repulsive in nature**
+
+
+The sum of the two gives rise to the DLVO (Derjaguin–Landau–Verwey–Overbeek) interaction which is an elementary model for colloid stability and aggregation.
+
+
+
+:::
+
+
+```{python}
+
+
+import numpy as np
+import matplotlib.pyplot as plt
+
+R = 0.5  # Radius of the colloid (micron) 
+h = np.linspace(2.01 * R, 5+R*2, 1000)  # Separation distance (h > 2R)
+# Van der Waals attractive potential
+def van_der_waals_potential(h, R, A_H):
+    f_h_R = (2 * R**2 / (h**2 - 4 * R**2)) + (2 * R**2 / h**2) + np.log((h**2 - 4 * R**2) / h**2)
+    return -A_H * f_h_R
+# double layer repulsive potential
+def double_layer(h, R,B,ns ):
+    lambdaB = 0.0007 # typical Bjerrum length for water at 25 degrees (micron)
+    lambdaD = np.sqrt(1/(8*np.pi*lambdaB*ns))
+    # print("Debye length of", lambdaD)
+    return  B*R/lambdaB*np.exp(-h/lambdaD)
+
+plt.figure(figsize=(8,2.7), dpi=300)
+A_H = 1.0  # Hamaker constant (kBT)
+B = 0.8 # double layer energy scale 
+salts={"low":200, "medium":1000, "high":2200,"very high":2800 }
+for k,v in salts.items():
+    # compute potentials
+    W_vdW = van_der_waals_potential(h, R, A_H)
+    W_DR = double_layer(h, R, B,v)
+    DLVO = W_vdW+W_DR
+
+    plt.plot(h, DLVO, label=f"{k} salt")
+plt.plot(h, np.zeros_like(h), "--k")
+
+# nicer cliping
+
+ylim  = max(DLVO.max(),0.5)
+# plt.xlim(1, 5.0)
+plt.ylim(-0.1,0.1)
+plt.xlabel(r"h/2R")
+plt.ylabel("DLVO(h)")
+plt.legend(loc="lower right", frameon=False)
+plt.tight_layout()
+plt.show()  
+```  
+
+[🪁 Play with the potential](https://fturci.github.io/course-disordered-matter/soft-matter/soft-matter_colloids.html#double-layer-interaction){target="_blank"}
+
+
+## Excluded volume and generic atomistic interactions
+:::{.nonincremental}
+- At very short distances the electonic clouds overlap. 
+- Electrons cannot share the same quantum state and  must occupt different, higher energy states
+:::
+
+[**→ Large energy costs** in approaching atoms: **steric repulsive interactions** below a *van der Waals radius.*]{.mark}
+
+A phenomenological model for a generic atomistic interaction potential is then 
+
+$$
+V_{\mathrm{LJ}}(r)=\frac{A_n}{r^n}-\frac{B_m}{r^m}
+$$
+
+where the first term is the short range repulsion and the second a generalised attraction.
+
+A convenient choice is the **Lennard-Jones** potential of scale $\sigma$ (twice the vdW radius)
+
+$$
+V_{\mathrm{LJ}}(r)=4 \varepsilon\left[\left(\frac{\sigma}{r}\right)^{12}-\left(\frac{\sigma}{r}\right)^6\right],
+$$
+
+where $m=6$ is chosen to match London's forces and $n=12$ is chosen to match experiments and computational convenience.
+
+Atomistic, but at the heart of numerous **coarse-grained models** .
+
+## Exclusion and entropic forces
+
+Steric repulsion (*hindrance*) means **exlcuded volume**: at thermal energy scales, an atom cannot be placed at the position of another atom.
+
+Geometrical point of view: 
+
+- Excluded volume means that, neglecting attractions, atoms/molecules//macromolecules/colloids are *spheres that cannot overlap*.
+- Distribute spheres in space:
+
+    - volume exclusion means that some configurations are **forbidden**
+
+:::{.fragment}
+![Overlapping particles are forbidden by volume exclusion](./figs/overlap.png){height=300}
+:::
+
+## Exclusion in one dimension
+
+::: {.nonincremental}
+Exclusion means forbidden configurations.
+
+Statistical mechanics approach: simplest system with the required ingredient, studied in detail.
+
+- **Hard** identical particles on a line between two **repulsive, impenetrable walls**.
+
+Macroscopic analogue:
+
+
+
+![Clothpins on a line](./figs/clothpins.png)
+
+
+:::
+
+## Exclusion in one dimension
+
+::: {.nonincremental}
+
+
+Investigate the probability distribution $\rho(x)$ of finding the centre of a particle at position $x$. Parameters:
+
+- clothpin horizontal size $d$ (only size that matters)
+- length of the line $L$
+- number of clothpins $N$
+
+We can treat the problem **algorthmically**
+
+
+::: {.callout-note appearance="simple"}
+# Algorithm
+
+1.  position the particles in a valid configuration (no overlaps with other particles or the walls)
+2.  pick a particle at random
+3.  move it slightly along the line
+4.  test the if the new position is valid (no overlaps)
+5.  if valid, accept the move otherwise, reject
+6.  go back to (2)
+:::
+
+:::
+
+## Simulation of hard clothpins on a line
+
+[🪁 Play with the simulation](https://fturci.github.io/course-disordered-matter/soft-matter/soft-matter_colloids.html#a-simple-example-particles-in-a-one-dimensional-line-hard-rods){target="_blank"}
+
+```{pyodide}
+#| echo: false
+#| autorun: true
+import numpy as np
+import matplotlib.pyplot as plt
+def clothpins(N=18,L=24.0,d=1.0, steps = 100000, delta=0.5):
+    # initial configuration 
+    pos = np.linspace(d, L - d, N)
+
+    def valid(p):
+        "Check that consecutive (sorted) particles are non-overlapping"
+        return np.all(p >= d/2) and np.all(p <= L-d/2) and np.all(np.diff(p) >= d)
+
+    positions_samples = []
+
+    for step in range(steps):
+        i = np.random.randint(N)
+        move = np.random.uniform(-delta, delta)
+        new_pos = pos.copy()
+        new_pos[i] += move
+        # sprting allows ot only check for consecutive particles
+        new_pos.sort()
+        if valid(new_pos):
+            pos = new_pos
+        if step % 100 == 0:
+            positions_samples.extend(pos)
+    return positions_samples
+
+```
+
+```{pyodide}
+N, L = 3, 24.0
+positions_samples = clothpins(N,L,d=1.0,steps = 100_000)
+plt.figure(figsize=(8,2.5))
+plt.hist(positions_samples, bins=128, range=(0, L), density=True)
+plt.gca().set(xlabel="Position [d]", ylabel="Probability density"); plt.tight_layout(); plt.show()
+
+```
+
+
+## Simulation of hard clothpins on a line
+::: {.nonincremental}
+- The key parameter is the **packing fraction** $\phi = \dfrac{dN}{L}$ (non-dimensional)[^1].
+
+    - **low $\phi$**: almost uniform profile 
+    - **intermediate $\phi$**: small peaks start to show close to the walls
+    - **high $\phi$**: strong peaks and modulation of the density along the line
+
+![Density profile at N=18, L=24, $\phi=0.75$.](./figs/highphiclothpins.png){height=250}
+
+[^1]:Our algorihm is direct and inefficient, see Krauth's, *Statistical Mechanics: Algorithms and Computations* for better approaches. 
+:::
+
+## Attraction via repulsion
+
+::: {.nonincremental}
+What do the peaks mean? It means that it is **more likely** to find the particles close to the walls:
+
+- the walls seem to **attract** the particles
+- peaks and valleys indicating layering
+- the interaction with the wall vanishes as we get away from it
+
+The source of this effect is **entropy**:
+
+- if the first and last particles stay close to the walls, the other particles have **more available space** in the middle
+- this means that there are more **configurations available** for the rest of the particles if the extreme particles are getting more localised
+- more configurations → larger entropy → lower free energy = **depletion**
+
+$$ F=U - TS=\cancel{U} - TS $$
+
+No internal energy, only entropy, so temperature is only a **scale parameter**.
+
+:::
+
+
+## Asakura-Oosawa depletion potential
+
+![More realism: Mixture of colloids (yellow) and polymers (squiggly lines inside red circles). The depletion layers are as thick as the polymer radius (red circles) and are indicated with the dashes around the colloids. When the two layers do not overlap, the osmotic pressure due to the polymers on the colloids is balanced. When there is overlap, there is a region inaccessible to the polymers (purple) and the pressure is unbalanced, leading to aggregation.](./figs/depletion.svg)
+
+## Asakura-Oosawa depletion potential
+
+- Depletion forces play a pivotal role in colloidal **aggregation**.
+
+- The basic mechanisms are the same as in our 1D example. 
+
+- We are going to work thrpugh the details of a particualr model
+
+    - **Asakura-Oosawa** depletion interaction
+
+![Asakura-Oosawa setting](./figs/depletion.svg){height=350}
+
+
+## Asakura-Oosawa model
+
+:::{.columns}
+::: {.column style="background-color: #e0f7fa; border-radius: 5px;"}
+
+- **Colloids**: Large spheres, diameter $2R$, impenetrable (**hard spheres**)
+- **Polymeric bundles**: Smaller spheres, diameter $\sigma_p = 2\delta$. 
+    - cannot overlap with colloids
+    - can overlap with other (**penetrable hard spheres**)
+- System is at thermodynamic equilibrium:
+    - same pressure, temeprature and chemical potential throughout
+    - can think of the system as chemostatted by a **polymer reservoir** at the same $\mu_{polymer}$
+
+
+
+:::
+
+
+::: {.column style="background-color: #ffe0b2; border-radius: 5px;"}
+
+- The polymers (by themselves) are **ideal** so their chemical potental is $$\mu_p = k_BT \ln \rho_p^r$$ 
+- The number density is linked to the packign fraction $\phi_p^r=\rho_p v_p = \frac{\pi}{6} \rho_p^r \sigma_p^3$
+- we work at constant $V,T,\mu$: **grand canonical ensemble**
+- We ignore **all internal structure** of the polymers.
+:::
+
+
+:::
+
+
+
+## Sketch of derivation of AO potential
+
+:::{.nonincremental}
+
+- In the absence of colloids, the entire volume $V$ is accessible to the polymer $V_{\rm accessible} = V$ 
+
+- Grand potential of the polymers $\Omega = -k_BT e^{\mu_p/k_B T}V_{\rm accessible}$
+
+- Introduce one colloid: the polymers can not get closer than the distance $R+\delta$
+
+![Excluded volume around one polymer](./figs/ao1.png)
+
+- **Excluded volume** $V_{\rm exclusion} = V_{\rm outer}-V_{\rm inner}= \dfrac{4\pi}{3}\left((R+\delta)^3-R^3\right)$
+- The accessible volume is now $V_{\rm accessible} = V-V_{\rm exclusion}$ 
+:::
+
+## Sketch of derivation of AO potential
+
+:::{.nonincremental}
+- Introduce second colloid at distance $r$ from first colloid.
+- The accessible volume is  $V_{\rm accessible}^{\infty}=V-2V_{\rm exclusion}$
+
+
+
+
+- Two situations:
+
+    1. $\forall r >R_d = 2R+2\delta$ the accessible volume remains the same, constant $\Omega(r)=\Omega_{\infty}$
+    2. For $2R<r<R_d$ the accessible volume changes: **overlap** between exclusion volumes .
+    
+
+
+![A second colloid is introduced at a short distance $r$. The exclusion regions overlap (light blue), increasing the accesible volume.](./figs/ao2.png)
+:::
+
+
+## Sketch of derivation of AO potential
+:::{.nonincremental}
+- The overlap region can be calulated from [standard geometrical properties of spherical caps](https://mathworld.wolfram.com/Sphere-SphereIntersection.html)
+
+$$
+V_{\mathrm{overlap}}(r)=\dfrac{4 \pi}{3} R_d^3\left[1-\frac{3}{4} \frac{r}{R_d}+\frac{1}{16}\left(\frac{r}{R_d}\right)^3\right]$$
+
+- The new accessible volume is 
+
+ $$V_{\rm accessible}^\prime=V-(2V_{\rm exclusion}-V_{\mathrm{overlap}})$$
+
+- Since $\Omega = -k_BT e^{\mu_p/k_B T}V_{\rm accessible}$ the gran potential becomes **more negative** when the the colloids are close.
+:::
+
+
+
+## Sketch of derivation of AO potential
+
+:::{.nonincremental}
+
+- Fre energy advantage from the overlapping excluded volumes
+
+$$
+\begin{aligned}
+W_{\rm AO}(r) = \Omega(r)-\Omega^{\infty} & =-k_BT e^{\mu/k_B T}\left(V_{\rm accessible}(r)-V_{\rm accessible}(\infty)\right)\\
+& = -k_BT e^{\mu/k_B T}\left[V-2V_{\rm exclusion}+V_{\mathrm{overlap}}(r)-(V-2V_{\rm exclusion})\right]\\
+& = -k_BT e^{\mu/k_B T} V_{\mathrm{overlap}(r)}\\
+& = -k_B T \rho_p V_{\mathrm{overlap}(r)}
+\end{aligned}
+$$
+
+The result is an attractive depletion potential controlled by the geometry of the overlap
+
+:::{.callout-note}
+# Asakura-Oosawa potential (1954)
+$$
+\Large
+W_{\rm AO} (r) = - \dfrac{4 \pi \rho_p^r k_B T}{3} (R+\delta)^3\left[1-\dfrac{3}{4} \dfrac{r}{R+\delta}+\frac{1}{16}\left(\dfrac{r}{R+\delta}\right)^3\right] \quad 2R\leq r< 2R+\delta
+$$
+:::
+
+:::
+
+
+## AO potential
+
+```{pyodide}
+#| echo: false
+import numpy as np
+import matplotlib.pyplot as plt
+def AO_potential(r, R, delta, eta_p, kBT=1):
+    Rd = R + delta
+    # Only defined for 2R <= r < 2Rd
+    W = np.zeros_like(r)
+    mask = (r >= 2*R) & (r < 2*Rd)
+    x = r[mask] / Rd
+    W[mask] = - (4 * np.pi * eta_p * kBT / 3) * Rd**3 * (1 - 0.75 * x + 0.0625 * x**3)
+    return W
+```
+```{pyodide}
+R = 1.0           # Colloid radius
+r = np.linspace(2*R, 3*R, 500)
+W_AO = AO_potential(r, R=R, delta=0.2*R, eta_p=0.1, kBT=1)
+plt.figure(figsize=(8,3)); plt.plot(r, W_AO)
+plt.gca().set(xlabel="Separation $r/R$", ylabel="$W_{AO}(r)$"); plt.tight_layout(); plt.show()
+```
+
+
+## Summary of main colloid-colloid interactions
+
+
+
+
++------------------+-----------------------------------------------------------------------------------------------+----------------------+
+| Interaction Type | Description                                                                                   | Range                |
++==================+===============================================================================================+======================+
+| Van der Waals    | Attractive forces arising from induced dipoles between particles.                             | Short-range          |
++------------------+-----------------------------------------------------------------------------------------------+----------------------+
+| Double Layer     | Electrostatic repulsion due to overlapping electrical double layers around charged particles. | Long-range           |
++------------------+-----------------------------------------------------------------------------------------------+----------------------+
+| DLVO             | Combination of van der Waals attraction and double layer repulsion.                           | Short and long range |
++------------------+-----------------------------------------------------------------------------------------------+----------------------+
+| Depletion        | Typically attractive interactions emerging from purely entropic interactions                  | Short range          |
++------------------+-----------------------------------------------------------------------------------------------+----------------------+
