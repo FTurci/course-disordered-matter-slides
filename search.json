@@ -11,7 +11,7 @@
     "href": "soft-matter_colloids1.html#interactions-between-colloids",
     "title": "Complex Disordered Systems",
     "section": "Interactions between colloids",
-    "text": "Interactions between colloids\nWe distinguished between fundamental and effective forces between colloids\n\n\nFundamental forces:\ngravity\nelectro (magneto) static forces\n\n\n\nEffective forces\nVan der Waals forces\nelectrostatic repulsion (DLVO)\ndepletion forces\nhydrophobic/hydrophilic interactions\nsteric forces\n\n\nEffective interactions emerge from the fundamnetal ones and structure our description at the colloidal scale.\nFluctuations of fundamental forces often at the origin of the effective forces.\nWe focus on effective interactions (revise your electrostatics if needed)"
+    "text": "Interactions between colloids\nWe distinguished between fundamental and effective forces between colloids\n\n\nFundamental forces:\ngravity\nelectro (magneto) static forces\n\n\n\nEffective forces\nVan der Waals forces\nelectrostatic repulsion (DLVO)\ndepletion forces\nhydrophobic/hydrophilic interactions\nsteric forces\n\n\nEffective interactions emerge from the fundamental ones and structure our description at the colloidal scale.\nFluctuations of fundamental forces are often at the origin of the effective forces.\nWe focus on effective interactions (revise your electrostatics if needed)"
   },
   {
     "objectID": "soft-matter_colloids1.html#van-der-waals-interactions",
@@ -25,35 +25,35 @@
     "href": "soft-matter_colloids1.html#reminder-multipole-expansion",
     "title": "Complex Disordered Systems",
     "section": "Reminder: Multipole expansion",
-    "text": "Reminder: Multipole expansion\nThe electrostatic potential of a charge distribution can be expanded as:\n V(\\mathbf{r})=\\frac{1}{4 \\pi \\epsilon_0} \\sum_{l=0}^{\\infty} \\sum_{m=-l}^l \\frac{4 \\pi}{2 l+1} \\frac{Q_{l m}}{r^{l+1}} Y_l^m(\\theta, \\phi)\nwhere Y_l^m(\\theta, \\phi) are spherical harmonics and Q_{l m}=\\int r^{\\prime l} Y_l^{m *}\\left(\\theta^{\\prime}, \\phi^{\\prime}\\right) \\rho\\left(\\mathbf{r}^{\\prime}\\right) d^3 r^{\\prime}:\n\nQ_{00} = Q (monopole - total charge)\nQ_{1m} terms give the dipole moment \\mathbf{p}\n=Q_{2m} terms give the quadrupole moment\nHigher terms: octupole, hexadecapole, etc.\n\nFor large distances (r \\gg molecular size), the potential is dominated by the lowest non-zero multipole moment.\n\n\n\nNo need to memorise this."
+    "text": "Reminder: Multipole expansion\nThe electrostatic potential of a charge distribution can be expanded as:\n V(\\mathbf{r})=\\frac{1}{4 \\pi \\epsilon_0} \\sum_{l=0}^{\\infty} \\sum_{m=-l}^l \\frac{4 \\pi}{2 l+1} \\frac{Q_{l m}}{r^{l+1}} Y_l^m(\\theta, \\phi)\nwhere Y_l^m(\\theta, \\phi) are spherical harmonics and Q_{l m}=\\int r^{\\prime l} Y_l^{m *}\\left(\\theta^{\\prime}, \\phi^{\\prime}\\right) \\rho\\left(\\mathbf{r}^{\\prime}\\right) d^3 r^{\\prime}:\n\nQ_{00} = Q (monopole - total charge)\nQ_{1m} terms give the dipole moment \\mathbf{p}\nQ_{2m} terms give the quadrupole moment\nHigher terms: octupole, hexadecapole, etc.\n\nFor large distances (r \\gg molecular size), the potential is dominated by the lowest non-zero multipole moment.\n\n\n\nNo need to memorise this."
   },
   {
     "objectID": "soft-matter_colloids1.html#van-der-waals-interactions-dipole-dipole",
     "href": "soft-matter_colloids1.html#van-der-waals-interactions-dipole-dipole",
     "title": "Complex Disordered Systems",
     "section": "van der Waals interactions: dipole-dipole",
-    "text": "van der Waals interactions: dipole-dipole\nWe are focusing on atoms that are globally neutral. The first non-trivial term is the the dipole.\nStatic dipolew are asymmetric distribution of charge stationary in time\n\n\n\nDipole-dipole interaction\n\n\nThe interaction energy between two dipoles \\mu_1 and \\mu_2 separated by a distance r is proportional to:\nU(r) \\propto-\\frac{\\mu_1 \\mu_2}{r^3}"
+    "text": "van der Waals interactions: dipole-dipole\nWe are focusing on atoms that are globally neutral. The first non-trivial term is the dipole.\nStatic dipoles are asymmetric distributions of charge stationary in time\n\n\n\nDipole-dipole interaction\n\n\nThe interaction energy between two dipoles \\mu_1 and \\mu_2 separated by a distance r is proportional to:\nU(r) \\propto-\\frac{\\mu_1 \\mu_2}{r^3}"
   },
   {
     "objectID": "soft-matter_colloids1.html#van-der-waals-interactions-dipole-induced-dipole",
     "href": "soft-matter_colloids1.html#van-der-waals-interactions-dipole-induced-dipole",
     "title": "Complex Disordered Systems",
     "section": "van der Waals interactions: dipole-induced dipole",
-    "text": "van der Waals interactions: dipole-induced dipole\nA permanent dipole can induce a temporary dipole in a nearby neutral atom. The induced dipole then interacts with the permanent dipole.\n\n\n\nAtom A with permannet dipole approahces neutral atom B.\n\n\n\n\n\n\nB’s density charge changes and B takes an induced dipole\n\n\n\nThe induced dipole itself is proportional to the electric field of the incoming dipole, and it is \\mu_B \\propto \\mu_A E_A \\propto \\dfrac{\\mu}{r^3}.\nThen the interaction energy is just\nU(r) \\propto -\\frac{\\mu^2 \\alpha}{r^6}\nwhere \\alpha is the polarizability of the neutral atom."
+    "text": "van der Waals interactions: dipole-induced dipole\nA permanent dipole can induce a temporary dipole in a nearby neutral atom. The induced dipole then interacts with the permanent dipole.\n\n\n\nAtom A with permanent dipole approaches neutral atom B.\n\n\n\n\n\n\nB’s charge density changes and B takes an induced dipole\n\n\n\nThe induced dipole itself is proportional to the electric field of the incoming dipole, and it is \\mu_B \\propto \\mu_A E_A \\propto \\dfrac{\\mu}{r^3}.\nThen the interaction energy is just\nU(r) \\propto -\\frac{\\mu^2 \\alpha}{r^6}\nwhere \\alpha is the polarizability of the neutral atom."
   },
   {
-    "objectID": "soft-matter_colloids1.html#induce-dipole--induced-dipole-interactions",
-    "href": "soft-matter_colloids1.html#induce-dipole--induced-dipole-interactions",
+    "objectID": "soft-matter_colloids1.html#induced-dipole-induced-dipole-interactions",
+    "href": "soft-matter_colloids1.html#induced-dipole-induced-dipole-interactions",
     "title": "Complex Disordered Systems",
-    "section": "Induce dipole- induced dipole interactions",
-    "text": "Induce dipole- induced dipole interactions\n\nOrbitals provide the average expected electron density at every point in space, \\langle\\rho(\\mathbf{r})\\rangle=|\\psi(\\mathbf{r})|^2\nInstantaneous fluctuations from the mean occur in time and depend on density-density correlations. The variance is non-uniform .\nThis means that even when the density is neutral, on short timescales (femtoseconds, electronic transiiton times) the desnity distributions can be thought of as asymmetric.\n\nThese quanto-mechanical fluctuations again produce interactions known as London dispersion forces\n\n\n\n\n\n\nLondon dispersion interaction\n\n\n\\Large U(r)=-\\frac{C}{r^6} \n\n\n\nThe key insight is the 1/r^{6} decay of the interactionwhich decays much mor rapidly than Coulomb’s 1/r.\nThey are short-range in 3d, since the total energy scales like \\sim \\int V(r) r^{d-1} d r and 6&gt;3"
+    "section": "Induced dipole-induced dipole interactions",
+    "text": "Induced dipole-induced dipole interactions\n\nOrbitals provide the average expected electron density at every point in space, \\langle\\rho(\\mathbf{r})\\rangle=|\\psi(\\mathbf{r})|^2\nInstantaneous fluctuations from the mean occur in time and depend on density-density correlations. The variance is non-uniform .\nThis means that even when the density is neutral, on short timescales (femtoseconds, electronic transition times) the density distributions can be thought of as asymmetric.\n\nThese quantum-mechanical fluctuations again produce interactions known as London dispersion forces\n\n\n\n\n\n\nLondon dispersion interaction\n\n\n\\Large U(r)=-\\frac{C}{r^6} \n\n\n\nThe key insight is the 1/r^{6} decay of the interaction which decays much more rapidly than Coulomb’s 1/r.\nThey are short-range in 3D, since the total energy scales like \\sim \\int V(r) r^{d-1} d r and 6&gt;3"
   },
   {
     "objectID": "soft-matter_colloids1.html#van-der-waals-attractive-interaction-between-spheres",
     "href": "soft-matter_colloids1.html#van-der-waals-attractive-interaction-between-spheres",
     "title": "Complex Disordered Systems",
     "section": "van der Waals attractive interaction between spheres",
-    "text": "van der Waals attractive interaction between spheres\nTake now two spherical colloids of radus R at distance H.\nIntegrating the London interaction over all volume elements yield the van der Waals attracive potential\n\n\n\nColloid-colloid setup.\n\n\n\n\n\n\n\n\nColloid-colloid van der Waals attractive interaction\n\n\n\\Large W_{w d W}(h)=-\\frac{A_H}{g} f(h / R)\n\n\n\nwhera A_H is the Hamaker constant and f(h / R)=\\left[\\frac{2 R^2}{h^2-4 R^2}+\\frac{2 R^2}{h^2}+\\ln \\left(\\frac{h^2-4 R^2}{h^2}\\right)\\right]."
+    "text": "van der Waals attractive interaction between spheres\nTake now two spherical colloids of radius R at distance H.\nIntegrating the London interaction over all volume elements yields the van der Waals attractive potential\n\n\n\nColloid-colloid setup.\n\n\n\n\n\n\n\n\nColloid-colloid van der Waals attractive interaction\n\n\n\\Large W_{w d W}(h)=-\\frac{A_H}{g} f(h / R)\n\n\n\nwhere A_H is the Hamaker constant and f(h / R)=\\left[\\frac{2 R^2}{h^2-4 R^2}+\\frac{2 R^2}{h^2}+\\ln \\left(\\frac{h^2-4 R^2}{h^2}\\right)\\right]."
   },
   {
     "objectID": "soft-matter_colloids1.html#van-der-waals-attractive-interaction-between-spheres-1",
@@ -67,56 +67,56 @@
     "href": "soft-matter_colloids1.html#double-layer-interaction-structure",
     "title": "Complex Disordered Systems",
     "section": "Double-layer interaction: structure",
-    "text": "Double-layer interaction: structure\nColloids are often charged. In the solution there will be\n\nco-ions (same charge as the colloid) that will be pushed away from the colloid surface, while\ncounter-ions (opposite charge) will accumulate at the surface.\n\n\n\n\nA double layer forms due to the accumulation of co-ions near the colloid surface, and repulsion of counter-ions.\nIts width depends on the ion concentration in the solvent, which can be adjusted by adding or removing salts.\n\n\n\n\n\nDouble layer close to a surface (Wikimedia)."
+    "text": "Double-layer interaction: structure\nColloids are often charged. In the solution there will be\n\nco-ions (same charge as the colloid) that will be pushed away from the colloid surface, while\ncounter-ions (opposite charge) will accumulate at the surface.\n\n\n\n\nA double layer forms due to the accumulation of counter-ions near the colloid surface, and repulsion of co-ions.\nIts width depends on the ion concentration in the solvent, which can be adjusted by adding or removing salts.\n\n\n\n\n\nDouble layer close to a surface (Wikimedia)."
   },
   {
     "objectID": "soft-matter_colloids1.html#double-layer-interaction-nonlinear-poisson-bolztmann-equation",
     "href": "soft-matter_colloids1.html#double-layer-interaction-nonlinear-poisson-bolztmann-equation",
     "title": "Complex Disordered Systems",
     "section": "Double-layer interaction: nonlinear Poisson-Bolztmann equation",
-    "text": "Double-layer interaction: nonlinear Poisson-Bolztmann equation\nWhen two colloids come close, the charges in their double layers will interact giving rise to a repulsive interaction. Not simply Coulombic interaction, as it is mediated by the other (opposite) charges in the medium.\nThis means in practice taking Poisson’s equation\n\n\\nabla^2 \\psi(\\mathbf{r})=-\\frac{\\rho_{\\mathrm{tot}}(\\mathbf{r})}{\\varepsilon}= \\frac{\\rho_{\\mathrm{fixed}}(\\mathbf{r})+\\rho_\\mathrm{ions}(\\mathbf{r})}{\\varepsilon}\n\nand making the ion concentration depend on the electrostatic potential \\psi(\\mathbf{r}) itself via a Boltzmann weight\n\n\\rho_{\\mathrm{ions}}(\\mathbf{r})= z e n_s \\exp \\left(-\\frac{z e \\psi}{k_B T}\\right)\n\nwith n_s the far-away (bulk) concentration of ions of salt and ze the ion charge.\nThis yields the nonlinear Poisson-Bolztmann equation\n\n\\nabla^2 \\psi(\\mathbf{r})=-\\frac{1}{\\varepsilon}\\left[\\rho_{\\text {fixed }}+ ze  n_s \\exp \\left(-\\frac{z e \\psi}{k_B T}\\right)\\right] .\n\n\n\n\nNo need to memorise this."
+    "text": "Double-layer interaction: nonlinear Poisson-Bolztmann equation\nWhen two colloids come close, the charges in their double layers will interact, giving rise to a repulsive interaction. This is not simply a Coulombic interaction, as it is mediated by the other (opposite) charges in the medium.\nThis means in practice taking Poisson’s equation\n\n\\nabla^2 \\psi(\\mathbf{r})=-\\frac{\\rho_{\\mathrm{tot}}(\\mathbf{r})}{\\varepsilon}= -\\frac{\\rho_{\\mathrm{fixed}}(\\mathbf{r})+\\sum_i \\rho_{\\mathrm{ions},i}(\\mathbf{r})}{\\varepsilon}\n\nand making the ion concentration depend on the electrostatic potential \\psi(\\mathbf{r}) itself via a Boltzmann weight\n\n\\rho_{\\mathrm{ions},i}(\\mathbf{r})= z_i e n_{s,i} \\exp \\left(-\\frac{z_i e \\psi}{k_B T}\\right)\n\nwith n_{s,i} the far-away (bulk) concentration of ions of species i and z_i e the ion charge.\nThis yields the nonlinear Poisson-Bolztmann equation\n\n\\nabla^2 \\psi(\\mathbf{r})=-\\frac{1}{\\varepsilon}\\left[\\rho_{\\text {fixed }}+ \\sum_i z_i e  n_{s,i} \\exp \\left(-\\frac{z_i e \\psi}{k_B T}\\right)\\right] .\n\n\n\n\nNo need to memorise this."
   },
   {
     "objectID": "soft-matter_colloids1.html#double-layer-interaction-screened-repulsion",
     "href": "soft-matter_colloids1.html#double-layer-interaction-screened-repulsion",
     "title": "Complex Disordered Systems",
     "section": "Double-layer interaction: screened repulsion",
-    "text": "Double-layer interaction: screened repulsion\nLinearisation around room temperature (e\\psi\\ll k_BT) yields the Debye–Hückel equation\n\n\\nabla^2 \\psi= \\psi/\\lambda_D^2\n\nwhere \\lambda_D is yhe Debye length\n\n\\lambda_D=\\sqrt{\\frac{1}{8 \\pi \\lambda_B n_s}}\n itself dependent on the Bjerrumm length \\lambda_B: the scale at which two elemementary charge have energy k_B T.\nThe final form of the potential is and exponential repulsion with scale \\lambda_D\n\n\n\n\n\n\nImportant\n\n\n\n\\Large\nW_{D R}(h)=B \\frac{R}{\\lambda_B} \\exp \\left(-h / \\lambda_D\\right)"
+    "text": "Double-layer interaction: screened repulsion\nLinearisation around room temperature (e\\psi\\ll k_BT) yields the Debye–Hückel equation\n\n\\nabla^2 \\psi= \\psi/\\lambda_D^2\n\nwhere \\lambda_D is the Debye length\n\n\\lambda_D=\\sqrt{\\frac{1}{8 \\pi \\lambda_B n_s}}\n itself dependent on the Bjerrum length \\lambda_B: the scale at which two elementary charges have energy k_B T.\nThe final form of the potential is an exponential repulsion with scale \\lambda_D\n\n\n\n\n\n\nImportant\n\n\n\n\\Large\nW_{D R}(h)=B \\frac{R}{\\lambda_B} \\exp \\left(-h / \\lambda_D\\right)"
   },
   {
     "objectID": "soft-matter_colloids1.html#vdw-double-layer-dlvo-interaction",
     "href": "soft-matter_colloids1.html#vdw-double-layer-dlvo-interaction",
     "title": "Complex Disordered Systems",
     "section": "vdW + double layer = DLVO interaction",
-    "text": "vdW + double layer = DLVO interaction\nto sum up hat identical colloids in solution have two interactions of opposite sign\n\na van der Waals components, typically attractive\na double layer component repulsive in nature\n\nThe sum of the two gives rise to the DLVO (Derjaguin–Landau–Verwey–Overbeek) interaction which is an elementary model for colloid stability and aggregation.\n\n\n\n\n\n\n\n\n\n🪁 Play with the potential"
+    "text": "vdW + double layer = DLVO interaction\nTo sum up, identical colloids in solution have two interactions of opposite sign\n\na van der Waals component, typically attractive\na double layer component repulsive in nature\n\nThe sum of the two gives rise to the DLVO (Derjaguin–Landau–Verwey–Overbeek) interaction which is an elementary model for colloid stability and aggregation.\n\n\n\n\n\n\n\n\n\n🪁 Play with the potential"
   },
   {
     "objectID": "soft-matter_colloids1.html#excluded-volume-and-generic-atomistic-interactions",
     "href": "soft-matter_colloids1.html#excluded-volume-and-generic-atomistic-interactions",
     "title": "Complex Disordered Systems",
     "section": "Excluded volume and generic atomistic interactions",
-    "text": "Excluded volume and generic atomistic interactions\n\nAt very short distances the electonic clouds overlap.\nElectrons cannot share the same quantum state and must occupt different, higher energy states\n\n→ Large energy costs in approaching atoms: steric repulsive interactions below a van der Waals radius.\nA phenomenological model for a generic atomistic interaction potential is then\n\nV_{\\mathrm{LJ}}(r)=\\frac{A_n}{r^n}-\\frac{B_m}{r^m}\n\nwhere the first term is the short range repulsion and the second a generalised attraction.\nA convenient choice is the Lennard-Jones potential of scale \\sigma (twice the vdW radius)\n\nV_{\\mathrm{LJ}}(r)=4 \\varepsilon\\left[\\left(\\frac{\\sigma}{r}\\right)^{12}-\\left(\\frac{\\sigma}{r}\\right)^6\\right],\n\nwhere m=6 is chosen to match London’s forces and n=12 is chosen to match experiments and computational convenience.\nAtomistic, but at the heart of numerous coarse-grained models ."
+    "text": "Excluded volume and generic atomistic interactions\n\nAt very short distances the electronic clouds overlap.\nElectrons cannot share the same quantum state and must occupy different, higher energy states\n\n→ Large energy costs in approaching atoms: steric repulsive interactions below a van der Waals radius.\nA phenomenological model for a generic atomistic interaction potential is then\n\nV_{\\mathrm{LJ}}(r)=\\dfrac{A_n}{r^n} - \\dfrac{B_m}{r^m}\n\nwhere the first term is the short-range repulsion and the second a generalised attraction.\nA convenient choice is the Lennard-Jones potential of scale \\sigma (twice the van der Waals radius)\n\nV_{\\mathrm{LJ}}(r)=4 \\varepsilon\\left[\\left(\\dfrac{\\sigma}{r}\\right)^{12}-\\left(\\dfrac{\\sigma}{r}\\right)^6\\right],\n\nwhere m=6 is chosen to match London’s forces and n=12 is chosen to match experiments and computational convenience.\nAtomistic, but at the heart of numerous coarse-grained models."
   },
   {
     "objectID": "soft-matter_colloids1.html#exclusion-and-entropic-forces",
     "href": "soft-matter_colloids1.html#exclusion-and-entropic-forces",
     "title": "Complex Disordered Systems",
     "section": "Exclusion and entropic forces",
-    "text": "Exclusion and entropic forces\nSteric repulsion (hindrance) means exlcuded volume: at thermal energy scales, an atom cannot be placed at the position of another atom.\nGeometrical point of view:\n\nExcluded volume means that, neglecting attractions, atoms/molecules//macromolecules/colloids are spheres that cannot overlap.\nDistribute spheres in space:\n\nvolume exclusion means that some configurations are forbidden\n\n\n\n\n\n\nOverlapping particles are forbidden by volume exclusion"
+    "text": "Exclusion and entropic forces\nSteric repulsion (hindrance) means excluded volume: at thermal energy scales, an atom cannot be placed at the position of another atom.\nGeometrical point of view:\n\nExcluded volume means that, neglecting attractions, atoms/molecules/macromolecules/colloids are spheres that cannot overlap.\nDistribute spheres in space:\n\nvolume exclusion means that some configurations are forbidden\n\n\n\n\n\n\nOverlapping particles are forbidden by volume exclusion"
   },
   {
     "objectID": "soft-matter_colloids1.html#exclusion-in-one-dimension",
     "href": "soft-matter_colloids1.html#exclusion-in-one-dimension",
     "title": "Complex Disordered Systems",
     "section": "Exclusion in one dimension",
-    "text": "Exclusion in one dimension\nExclusion means forbidden configurations.\nStatistical mechanics approach: simplest system with the required ingredient, studied in detail.\n\nHard identical particles on a line between two repulsive, impenetrable walls.\n\nMacroscopic analogue:\n\nClothpins on a line"
+    "text": "Exclusion in one dimension\nExclusion means forbidden configurations.\nStatistical mechanics approach: simplest system with the required ingredients, studied in detail.\n\nHard identical particles on a line between two repulsive, impenetrable walls.\n\nMacroscopic analogue:\n\nClothpins on a line"
   },
   {
     "objectID": "soft-matter_colloids1.html#exclusion-in-one-dimension-1",
     "href": "soft-matter_colloids1.html#exclusion-in-one-dimension-1",
     "title": "Complex Disordered Systems",
     "section": "Exclusion in one dimension",
-    "text": "Exclusion in one dimension\nInvestigate the probability distribution \\rho(x) of finding the centre of a particle at position x. Parameters:\n\nclothpin horizontal size d (only size that matters)\nlength of the line L\nnumber of clothpins N\n\nWe can treat the problem algorthmically\n\n\n\n\n\n\nAlgorithm\n\n\n\nposition the particles in a valid configuration (no overlaps with other particles or the walls)\npick a particle at random\nmove it slightly along the line\ntest the if the new position is valid (no overlaps)\nif valid, accept the move otherwise, reject\ngo back to (2)"
+    "text": "Exclusion in one dimension\nInvestigate the probability distribution \\rho(x) of finding the centre of a particle at position x. Parameters:\n\nclothpin horizontal size d (only size that matters)\nlength of the line L\nnumber of clothpins N\n\nWe can treat the problem algorithmically\n\n\n\n\n\n\nAlgorithm\n\n\n\nposition the particles in a valid configuration (no overlaps with other particles or the walls)\npick a particle at random\nmove it slightly along the line\ntest if the new position is valid (no overlaps)\nif valid, accept the move; otherwise, reject\ngo back to (2)"
   },
   {
     "objectID": "soft-matter_colloids1.html#simulation-of-hard-clothpins-on-a-line",
@@ -130,7 +130,7 @@
     "href": "soft-matter_colloids1.html#simulation-of-hard-clothpins-on-a-line-1",
     "title": "Complex Disordered Systems",
     "section": "Simulation of hard clothpins on a line",
-    "text": "Simulation of hard clothpins on a line\n\nThe key parameter is the packing fraction \\phi = \\dfrac{dN}{L} (non-dimensional)1.\n\nlow \\phi: almost uniform profile\nintermediate \\phi: small peaks start to show close to the walls\nhigh \\phi: strong peaks and modulation of the density along the line\n\n\n\n\n\nDensity profile at N=18, L=24, \\phi=0.75.\n\n\nOur algorihm is direct and inefficient, see Krauth’s, Statistical Mechanics: Algorithms and Computations for better approaches."
+    "text": "Simulation of hard clothpins on a line\n\nThe key parameter is the packing fraction \\phi = \\dfrac{dN}{L} (non-dimensional)1.\n\nlow \\phi: almost uniform profile\nintermediate \\phi: small peaks start to show close to the walls\nhigh \\phi: strong peaks and modulation of the density along the line\n\n\n\n\n\nDensity profile at N=18, L=24, \\phi=0.75.\n\n\nOur algorithm is direct and inefficient; see Krauth’s, Statistical Mechanics: Algorithms and Computations for better approaches."
   },
   {
     "objectID": "soft-matter_colloids1.html#attraction-via-repulsion",
@@ -151,42 +151,42 @@
     "href": "soft-matter_colloids1.html#asakura-oosawa-depletion-potential-1",
     "title": "Complex Disordered Systems",
     "section": "Asakura-Oosawa depletion potential",
-    "text": "Asakura-Oosawa depletion potential\n\nDepletion forces play a pivotal role in colloidal aggregation.\nThe basic mechanisms are the same as in our 1D example.\nWe are going to work thrpugh the details of a particualr model\n\nAsakura-Oosawa depletion interaction\n\n\n\n\n\nAsakura-Oosawa setting"
+    "text": "Asakura-Oosawa depletion potential\n\nDepletion forces play a pivotal role in colloidal aggregation.\nThe basic mechanisms are the same as in our 1D example.\nWe are going to work through the details of a particular model\n\nAsakura-Oosawa depletion interaction\n\n\n\n\n\nAsakura-Oosawa setting"
   },
   {
     "objectID": "soft-matter_colloids1.html#asakura-oosawa-model",
     "href": "soft-matter_colloids1.html#asakura-oosawa-model",
     "title": "Complex Disordered Systems",
     "section": "Asakura-Oosawa model",
-    "text": "Asakura-Oosawa model\n\n\n\nColloids: Large spheres, diameter 2R, impenetrable (hard spheres)\nPolymeric bundles: Smaller spheres, diameter \\sigma_p = 2\\delta.\n\ncannot overlap with colloids\ncan overlap with other (penetrable hard spheres)\n\nSystem is at thermodynamic equilibrium:\n\nsame pressure, temeprature and chemical potential throughout\ncan think of the system as chemostatted by a polymer reservoir at the same \\mu_{polymer}\n\n\n\n\nThe polymers (by themselves) are ideal so their chemical potental is \\mu_p = k_BT \\ln \\rho_p^r\nThe number density is linked to the packign fraction \\phi_p^r=\\rho_p v_p = \\frac{\\pi}{6} \\rho_p^r \\sigma_p^3\nwe work at constant V,T,\\mu: grand canonical ensemble\nWe ignore all internal structure of the polymers."
+    "text": "Asakura-Oosawa model\n\n\n\nColloids: Large spheres, diameter 2R, impenetrable (hard spheres)\nPolymeric bundles: Smaller spheres, diameter \\sigma_p = 2\\delta.\n\ncannot overlap with colloids\ncan overlap with other (penetrable hard spheres)\n\nSystem is at thermodynamic equilibrium:\n\nsame pressure, temperature and chemical potential throughout\ncan think of the system as chemostatted by a polymer reservoir at the same \\mu_{polymer}\n\n\n\n\nThe polymers (by themselves) are ideal so their chemical potential is \\mu_p = k_BT \\ln \\rho_p^r\nThe number density is linked to the packing fraction \\phi_p^r=\\rho_p v_p = \\frac{\\pi}{6} \\rho_p^r \\sigma_p^3\nwe work at constant V,T,\\mu: grand canonical ensemble\nWe ignore all internal structure of the polymers."
   },
   {
     "objectID": "soft-matter_colloids1.html#sketch-of-derivation-of-ao-potential",
     "href": "soft-matter_colloids1.html#sketch-of-derivation-of-ao-potential",
     "title": "Complex Disordered Systems",
     "section": "Sketch of derivation of AO potential",
-    "text": "Sketch of derivation of AO potential\n\nIn the absence of colloids, the entire volume V is accessible to the polymer V_{\\rm accessible} = V\nGrand potential of the polymers \\Omega = -k_BT e^{\\mu_p/k_B T}V_{\\rm accessible}\nIntroduce one colloid: the polymers can not get closer than the distance R+\\delta\n\n\nExcluded volume around one polymer\nExcluded volume V_{\\rm exclusion} = V_{\\rm outer}-V_{\\rm inner}= \\dfrac{4\\pi}{3}\\left((R+\\delta)^3-R^3\\right)\nThe accessible volume is now V_{\\rm accessible} = V-V_{\\rm exclusion}"
+    "text": "Sketch of derivation of AO potential\n\nIn the absence of colloids, the entire volume V is accessible to the polymer V_{\\rm accessible} = V\nGrand potential of the polymers \\Omega = -k_BT e^{\\mu_p/k_B T}V_{\\rm accessible}\nIntroduce one colloid: the polymers cannot get closer than the distance R+\\delta\n\n\nExcluded volume around one polymer\nExcluded volume V_{\\rm exclusion} = V_{\\rm outer}-V_{\\rm inner}= \\dfrac{4\\pi}{3}\\left((R+\\delta)^3-R^3\\right)\nThe accessible volume is now V_{\\rm accessible} = V-V_{\\rm exclusion}"
   },
   {
     "objectID": "soft-matter_colloids1.html#sketch-of-derivation-of-ao-potential-1",
     "href": "soft-matter_colloids1.html#sketch-of-derivation-of-ao-potential-1",
     "title": "Complex Disordered Systems",
     "section": "Sketch of derivation of AO potential",
-    "text": "Sketch of derivation of AO potential\n\nIntroduce second colloid at distance r from first colloid.\nThe accessible volume is V_{\\rm accessible}^{\\infty}=V-2V_{\\rm exclusion}\nTwo situations:\n\n\\forall r &gt;R_d = 2R+2\\delta the accessible volume remains the same, constant \\Omega(r)=\\Omega_{\\infty}\nFor 2R&lt;r&lt;R_d the accessible volume changes: overlap between exclusion volumes .\n\n\n\nA second colloid is introduced at a short distance r. The exclusion regions overlap (light blue), increasing the accesible volume."
+    "text": "Sketch of derivation of AO potential\n\nIntroduce a second colloid at distance r from the first colloid.\nThe accessible volume is V_{\\rm accessible}^{\\infty}=V-2V_{\\rm exclusion}\nTwo situations:\n\n\\forall r &gt;R_d = 2R+2\\delta the accessible volume remains the same, constant \\Omega(r)=\\Omega_{\\infty}\nFor 2R&lt;r&lt;R_d the accessible volume changes: overlap between exclusion volumes.\n\n\n\nA second colloid is introduced at a short distance r. The exclusion regions overlap (light blue), increasing the accessible volume."
   },
   {
     "objectID": "soft-matter_colloids1.html#sketch-of-derivation-of-ao-potential-2",
     "href": "soft-matter_colloids1.html#sketch-of-derivation-of-ao-potential-2",
     "title": "Complex Disordered Systems",
     "section": "Sketch of derivation of AO potential",
-    "text": "Sketch of derivation of AO potential\n\nThe overlap region can be calulated from standard geometrical properties of spherical caps\n\n\nV_{\\mathrm{overlap}}(r)=\\dfrac{4 \\pi}{3} R_d^3\\left[1-\\frac{3}{4} \\frac{r}{R_d}+\\frac{1}{16}\\left(\\frac{r}{R_d}\\right)^3\\right]\n\nThe new accessible volume is\n\nV_{\\rm accessible}^\\prime=V-(2V_{\\rm exclusion}-V_{\\mathrm{overlap}})\n\nSince \\Omega = -k_BT e^{\\mu_p/k_B T}V_{\\rm accessible} the gran potential becomes more negative when the the colloids are close."
+    "text": "Sketch of derivation of AO potential\n\nThe overlap region can be calculated from standard geometrical properties of spherical caps\n\n\nV_{\\mathrm{overlap}}(r)=\\dfrac{4 \\pi}{3} R_d^3\\left[1-\\frac{3}{4} \\frac{r}{R_d}+\\frac{1}{16}\\left(\\frac{r}{R_d}\\right)^3\\right]\n\nThe new accessible volume is\n\nV_{\\rm accessible}^\\prime=V-(2V_{\\rm exclusion}-V_{\\mathrm{overlap}})\n\nSince \\Omega = -k_BT e^{\\mu_p/k_B T}V_{\\rm accessible} the grand potential becomes more negative when the colloids are close."
   },
   {
     "objectID": "soft-matter_colloids1.html#sketch-of-derivation-of-ao-potential-3",
     "href": "soft-matter_colloids1.html#sketch-of-derivation-of-ao-potential-3",
     "title": "Complex Disordered Systems",
     "section": "Sketch of derivation of AO potential",
-    "text": "Sketch of derivation of AO potential\n\nFre energy advantage from the overlapping excluded volumes\n\n\n\\begin{aligned}\nW_{\\rm AO}(r) = \\Omega(r)-\\Omega^{\\infty} & =-k_BT e^{\\mu/k_B T}\\left(V_{\\rm accessible}(r)-V_{\\rm accessible}(\\infty)\\right)\\\\\n& = -k_BT e^{\\mu/k_B T}\\left[V-2V_{\\rm exclusion}+V_{\\mathrm{overlap}}(r)-(V-2V_{\\rm exclusion})\\right]\\\\\n& = -k_BT e^{\\mu/k_B T} V_{\\mathrm{overlap}(r)}\\\\\n& = -k_B T \\rho_p V_{\\mathrm{overlap}(r)}\n\\end{aligned}\n\nThe result is an attractive depletion potential controlled by the geometry of the overlap\n\n\n\n\n\n\nAsakura-Oosawa potential (1954)\n\n\n\n\\Large\nW_{\\rm AO} (r) = - \\dfrac{4 \\pi \\rho_p^r k_B T}{3} (R+\\delta)^3\\left[1-\\dfrac{3}{4} \\dfrac{r}{R+\\delta}+\\frac{1}{16}\\left(\\dfrac{r}{R+\\delta}\\right)^3\\right] \\quad 2R\\leq r&lt; 2R+\\delta"
+    "text": "Sketch of derivation of AO potential\n\nFree energy advantage from the overlapping excluded volumes\n\n\n\\begin{aligned}\nW_{\\rm AO}(r) = \\Omega(r)-\\Omega^{\\infty} & =-k_BT e^{\\mu/k_B T}\\left(V_{\\rm accessible}(r)-V_{\\rm accessible}(\\infty)\\right)\\\\\n& = -k_BT e^{\\mu/k_B T}\\left[V-2V_{\\rm exclusion}+V_{\\mathrm{overlap}}(r)-(V-2V_{\\rm exclusion})\\right]\\\\\n& = -k_BT e^{\\mu/k_B T} V_{\\mathrm{overlap}(r)}\\\\\n& = -k_B T \\rho_p V_{\\mathrm{overlap}(r)}\n\\end{aligned}\n\nThe result is an attractive depletion potential controlled by the geometry of the overlap\n\n\n\n\n\n\nAsakura-Oosawa potential (1954)\n\n\n\n\\Large\nW_{\\rm AO} (r) = - \\dfrac{4 \\pi \\rho_p^r k_B T}{3} (R+\\delta)^3\\left[1-\\dfrac{3}{4} \\dfrac{r}{R+\\delta}+\\frac{1}{16}\\left(\\dfrac{r}{R+\\delta}\\right)^3\\right] \\quad 2R\\leq r&lt; 2R+\\delta"
   },
   {
     "objectID": "soft-matter_colloids1.html#ao-potential",
