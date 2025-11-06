@@ -291,7 +291,42 @@
     "href": "soft-matter_colloids3.html#measuring-diffusion-coefficients",
     "title": "Complex Disordered Systems",
     "section": "Measuring diffusion coefficients",
-    "text": "Measuring diffusion coefficients\nThe distribution \\rho(\\mathbf{r},t) encodes all the information about the motion of an ensemble.\nOften, less is sufficient to characterise the diffusion. The second moment of the displacements (the mean squared displacement) provides this information. In d dimensions \n\\left\\langle \\left| \\mathbf{r}(t) - \\mathbf{r}(t_0) \\right|^2 \\right\\rangle = 2 d D t\n\nHence D can be extracted from linear fits to the MSD.\n\n\n\n\n\n\nHidden assumptions\n\n\n\nWe have been considering ensembles of particles microscopically governed by the Langevin equation\nWe did not comment on the inter-particle interactions and assumed that the properties of the thermal bath determine the diffusivity D. In reality, interactions between particles can lead to deviations from simple diffusion, especially at higher concentrations, where collective effects and hydrodynamic interactions become important."
+    "text": "Measuring diffusion coefficients\nThe distribution \\rho(\\mathbf{r},t) encodes all the information about the motion of an ensemble.\nOften, less is sufficient to characterise the diffusion. The second moment of the displacements (the mean squared displacement) provides this information. In d dimensions \n\\left\\langle \\left| \\mathbf{r}(t) - \\mathbf{r}(t_0) \\right|^2 \\right\\rangle = 2 d D t\n\nHence D can be extracted from linear fits to the MSD."
+  },
+  {
+    "objectID": "soft-matter_colloids3.html#stokes-einstein-relation-fluctuation-dissipation-for-colloids",
+    "href": "soft-matter_colloids3.html#stokes-einstein-relation-fluctuation-dissipation-for-colloids",
+    "title": "Complex Disordered Systems",
+    "section": "Stokes-Einstein relation: fluctuation dissipation for colloids",
+    "text": "Stokes-Einstein relation: fluctuation dissipation for colloids\nIn dilute conditions, we can"
+  },
+  {
+    "objectID": "soft-matter_colloids3.html#random-walkers-in-2d-example",
+    "href": "soft-matter_colloids3.html#random-walkers-in-2d-example",
+    "title": "Complex Disordered Systems",
+    "section": "Random walkers in 2d, example",
+    "text": "Random walkers in 2d, example"
+  },
+  {
+    "objectID": "soft-matter_colloids3.html#hidden-assumptions",
+    "href": "soft-matter_colloids3.html#hidden-assumptions",
+    "title": "Complex Disordered Systems",
+    "section": "Hidden assumptions",
+    "text": "Hidden assumptions\n\n\n\n\n\n\nNote\n\n\n\nWe have been considering ensembles of particles microscopically governed by the Langevin equation\nWe did not comment on the inter-particle interactions and assumed that the properties of the thermal bath determine the diffusivity D. In reality, interactions between particles can lead to deviations from simple diffusion, especially at higher concentrations, where collective effects and hydrodynamic interactions become important."
+  },
+  {
+    "objectID": "soft-matter_colloids3.html#dilute-vs-dense-diffusion",
+    "href": "soft-matter_colloids3.html#dilute-vs-dense-diffusion",
+    "title": "Complex Disordered Systems",
+    "section": "Dilute vs dense diffusion",
+    "text": "Dilute vs dense diffusion\n\nConsider hard spheres in a fluid.\nAt low volume fractions \\phi they rarely collide and they perofrm under/over-damped (Langevin) dynamics. They will therefore diffuse as \\operatorname{MSD} (t)= 6D_0 t\nThings change when we increase the packing.\n\nShort times: D_s &lt;D_0, diffusion within cages formed by the neighbours. Mostly free, but with some collisions.\nLong times: D_L\\ll D_0 cage breaking. Interactions are both hard core and hydrodynamic\n\n\n\n\n\nMSD of colloids"
+  },
+  {
+    "objectID": "soft-matter_colloids3.html#dilute-vs-dense-diffusion-1",
+    "href": "soft-matter_colloids3.html#dilute-vs-dense-diffusion-1",
+    "title": "Complex Disordered Systems",
+    "section": "Dilute vs dense diffusion",
+    "text": "Dilute vs dense diffusion\n\nAt very high volume fractions the cage mechanism becomes more complex: paricles are trapped for long times and only occasionaly break cages:\n\ncage-jump dynamics \\to glassy dynamics (see future lectures)\nrare events \\to Levy-flight statistics \\neq Gaussian/diffusive statistics\nBreaking of fluctuation-dissipation condition encoded in the Stokes-Einstein relation (see next slides)"
   },
   {
     "objectID": "soft-matter_intro.html#today",
@@ -487,56 +522,56 @@
     "href": "soft-matter_colloids2.html#colloidal-hard-spheres",
     "title": "Complex Disordered Systems",
     "section": "Colloidal hard spheres",
-    "text": "Colloidal hard spheres\nTrue hard spheres do not exist. Colloidal hard spheres approximate the behaviour in many ways\n\n\n\nSchematic representation of various models for hard-sphere colloids. (a) A sterically stabilized particle has surface “hairs” (not to scale). (b) A charged colloid has an electrical double layer (shaded area) that gives rise to an effective diameter (c) A microgel particle is a heavily cross-linked polymer. From Royall et al Soft Matter (2013)"
+    "text": "Colloidal hard spheres\nTrue hard spheres do not exist. Colloidal hard spheres approximate the behaviour in many ways.\n\n\n\nSchematic representation of various models for hard-sphere colloids. (a) A sterically stabilized particle has surface “hairs” (not to scale). (b) A charged colloid has an electrical double layer (shaded area) that gives rise to an effective diameter (c) A microgel particle is a heavily cross-linked polymer. From Royall et al Soft Matter (2013)"
   },
   {
     "objectID": "soft-matter_colloids2.html#hard-spheres",
     "href": "soft-matter_colloids2.html#hard-spheres",
     "title": "Complex Disordered Systems",
     "section": "Hard spheres",
-    "text": "Hard spheres\nIdealised hard spheres are impenetrable objects.\nThey are characterised by the simplest of the potentials.\n\n\n   r  U(r)      2R    ∞  0  forbidden  Hard Sphere Potential"
+    "text": "Hard spheres\nIdealised hard spheres are impenetrable objects.\nThey are characterised by the simplest of potentials.\n\n\n   r  U(r)      2R    ∞  0  forbidden  Hard Sphere Potential"
   },
   {
     "objectID": "soft-matter_colloids2.html#phase-behaviour-of-hard-spheres",
     "href": "soft-matter_colloids2.html#phase-behaviour-of-hard-spheres",
     "title": "Complex Disordered Systems",
     "section": "Phase behaviour of hard spheres",
-    "text": "Phase behaviour of hard spheres\nFor a sphere of diameter \\sigma, enormous simplification of the Boltzmann factor:\n\ne^{-\\beta U(r)} =\n\\begin{cases}\n0 & \\text{if } r &lt; \\sigma \\\\\n1 & \\text{if } r \\geq \\sigma\n\\end{cases}\n\nThis simplification arises because the potential ( U(r) ) is either infinite (forbidden region) or zero (allowed region).\nFor this reason, they hard spheres are entropy driven.\nConstructing partition functions is then just counting counting valid configurations, linking geometry to thermodynamics.\n\nA good example: Asakura-Oosawa depletion, that we have already seen.\n\n\nValid configurations are sphere packings:\n\nThe only relevant control parameter is the volume fraction \\phi, defined as:\n\n\n\\phi = \\frac{\\pi}{6} \\rho \\sigma^3\n\nwhere \\rho=N/V is the number density."
+    "text": "Phase behaviour of hard spheres\nFor a sphere of diameter \\sigma, enormous simplification of the Boltzmann factor:\n\ne^{-\\beta U(r)} =\n\\begin{cases}\n0 & \\text{if } r &lt; \\sigma \\\\\n1 & \\text{if } r \\geq \\sigma\n\\end{cases}\n\nThis simplification arises because the potential ( U(r) ) is either infinite (forbidden region) or zero (allowed region).\nFor this reason, hard spheres are entropy driven.\nConstructing partition functions is then just counting valid configurations, linking geometry to thermodynamics.\n\nA good example: Asakura-Oosawa depletion, that we have already seen.\n\n\nValid configurations are sphere packings:\n\nThe only relevant control parameter is the volume fraction \\phi, defined as:\n\n\n\\phi = \\frac{\\pi}{6} \\rho \\sigma^3\n\nwhere \\rho=N/V is the number density."
   },
   {
     "objectID": "soft-matter_colloids2.html#phase-diagram-of-hard-spheres",
     "href": "soft-matter_colloids2.html#phase-diagram-of-hard-spheres",
     "title": "Complex Disordered Systems",
     "section": "Phase diagram of hard spheres",
-    "text": "Phase diagram of hard spheres\nSince we have a single control parameter, the pahse diagram is one-dimensional.\nChanging temeprature is immaterial to the free energy: it is a simple rescaling factor.\nIt is intuitive to guess the low density limit of hard spheres:\n\nfew spheres in a box should behave similalry to an ideal gas\n\nIt is harder to guess the high density limit\nWe will gradually build our understanding from low to dense packing.\n\nHard spheres have a single control parameter, the packing fraction."
+    "text": "Phase diagram of hard spheres\nSince we have a single control parameter, the phase diagram is one-dimensional.\nChanging temperature is immaterial to the free energy: it is a simple rescaling factor.\nIt is intuitive to guess the low density limit of hard spheres:\n\nfew spheres in a box should behave similarly to an ideal gas\n\nIt is harder to guess the high density limit\nWe will gradually build our understanding from low to dense packing.\n\nHard spheres have a single control parameter, the packing fraction."
   },
   {
     "objectID": "soft-matter_colloids2.html#low-packing-fractions",
     "href": "soft-matter_colloids2.html#low-packing-fractions",
     "title": "Complex Disordered Systems",
     "section": "Low packing fractions",
-    "text": "Low packing fractions\nWhen treating the Asakura-Osawa depletion we introduced the excluded volume. It is also also key for hard spheres.\n\nThe distance of closest approach between two identical spheres is \\sigma, which corresponds to the diameter of the spheres. The excluded volume of one particle is v_{\\rm ex} =4\\pi\\sigma^3/3\nAt low densities, hard spheres are isolated and so no overlaps occcur and the accesible volume for N spheres is V_{\\rm accessible} = V-Nv_{\\rm ex}\nFor phase behaviour, we need the thermodyanamic potential. At constant volume and number of particles, the parition function is a measure of the accessible volume \n\\mathcal{Z} = \\frac{1}{N! \\Lambda^{3N}} \\int_{V_{\\rm accessible}} d\\mathbf{r}_1 \\ldots d\\mathbf{r}_N\nwhere \\Lambda is the thermal de Broglie wavelength \\Lambda = h/\\sqrt{2\\pi mk_B T}.\nMass and temperature are factorising out."
+    "text": "Low packing fractions\nWhen treating the Asakura-Oosawa depletion we introduced the excluded volume. It is also key for hard spheres.\n\nThe distance of closest approach between two identical spheres is \\sigma, which corresponds to the diameter of the spheres. The excluded volume of one particle is v_{\\rm ex} =4\\pi\\sigma^3/3\nAt low densities, hard spheres are isolated and so no overlaps occur and the accessible volume for N spheres is V_{\\rm accessible} = V-Nv_{\\rm ex}\nFor phase behaviour, we need the thermodynamic potential. At constant volume and number of particles, the partition function is a measure of the accessible volume \n\\mathcal{Z} = \\frac{1}{N! \\Lambda^{3N}} \\int_{V_{\\rm accessible}} d\\mathbf{r}_1 \\ldots d\\mathbf{r}_N\nwhere \\Lambda is the thermal de Broglie wavelength \\Lambda = h/\\sqrt{2\\pi mk_B T}.\nMass and temperature are factoring out."
   },
   {
     "objectID": "soft-matter_colloids2.html#low-packing-fractions-entropy",
     "href": "soft-matter_colloids2.html#low-packing-fractions-entropy",
     "title": "Complex Disordered Systems",
     "section": "Low packing fractions: entropy",
-    "text": "Low packing fractions: entropy\nWe integrate over valid (non-overlapping) configurations such that |\\mathbf{r}_i - \\mathbf{r}_j| \\geq \\sigma for all i \\neq j. This yields \\mathcal{Z} = \\dfrac{(V-Nv_{\\rm ex}/2)^N}{N!\\Lambda^{3N}},\nwith the 1/2 factor coming from the fact that we avoid double counting the excluded volume of pairs.\n\nWe immediately obtain the entropy as S = k_B \\ln \\mathcal{Z} = k_B \\left[ N \\ln(V - N v_{\\rm ex}/2) - \\ln N! - 3N \\ln \\Lambda \\right]\nVia Stirling approximation \\ln N! = N\\ln N -N we get S = k_B \\left[ N \\ln(V - N v_{\\rm ex}/2) - (N \\ln N - N) - 3N \\ln \\Lambda \\right]\nThis can be rewritten as S = N k_B \\left[ \\ln\\left( \\frac{V - N v_{\\rm ex}/2}{N \\Lambda^3} \\right) + 1 \\right]"
+    "text": "Low packing fractions: entropy\nWe integrate over valid (non-overlapping) configurations such that |\\mathbf{r}_i - \\mathbf{r}_j| \\geq \\sigma for all i \\neq j. This yields \\mathcal{Z} = \\dfrac{(V-Nv_{\\rm ex}/2)^N}{N!\\Lambda^{3N}},\nwith the 1/2 factor coming from the fact that we avoid double counting the excluded volume of pairs.\n\nWe immediately obtain the entropy as S = k_B \\ln \\mathcal{Z} = k_B \\left[ N \\ln(V - N v_{\\rm ex}/2) - \\ln N! - 3N \\ln \\Lambda \\right]\nVia Stirling’s approximation \\ln N! = N\\ln N -N we get S = k_B \\left[ N \\ln(V - N v_{\\rm ex}/2) - (N \\ln N - N) - 3N \\ln \\Lambda \\right]\nThis can be rewritten as S = N k_B \\left[ \\ln\\left( \\frac{V - N v_{\\rm ex}/2}{N \\Lambda^3} \\right) + 1 \\right]"
   },
   {
     "objectID": "soft-matter_colloids2.html#low-packing-fraction-equation-of-state",
     "href": "soft-matter_colloids2.html#low-packing-fraction-equation-of-state",
     "title": "Complex Disordered Systems",
     "section": "Low packing fraction: equation of state",
-    "text": "Low packing fraction: equation of state\nThe equation of state links the three relevant thermodynamics variables P,T and \\phi\nP = -\\left(\\dfrac{\\partial F}{\\partial V}\\right)_{N,T} =T\\left(\\dfrac{\\partial S}{\\partial V}\\right)_{N,T}= \\dfrac{k_B T }{v-v_{\\rm ex}/2}\nThis expression can be simplified (do it as an exercise) to obtain the equation of state\nZ_{\\rm comp}= \\dfrac{PV}{Nk_BT}=\\dfrac{1}{1-4\\phi} \\quad (\\phi\\ll 1)\nwhere Z_{\\rm comp} is compressibility factor (to not be confused with the partition function).\nFor small \\phi we have\nZ_{\\rm comp} =\\dfrac{PV}{Nk_BT} =  1+4\\phi+O(\\phi^2)\n\n\n\n\n\n\nNote\n\n\nInspect this term and recognise that this illustrates that the dilute limit is an ideal gas + a correction."
+    "text": "Low packing fraction: equation of state\nThe equation of state links the three relevant thermodynamic variables P,T and \\phi\nP = -\\left(\\dfrac{\\partial F}{\\partial V}\\right)_{N,T} =T\\left(\\dfrac{\\partial S}{\\partial V}\\right)_{N,T}= \\dfrac{k_B T }{v-v_{\\rm ex}/2}\nThis expression can be simplified (do it as an exercise) to obtain the equation of state\nZ_{\\rm comp}= \\dfrac{PV}{Nk_BT}=\\dfrac{1}{1-4\\phi} \\quad (\\phi\\ll 1)\nwhere Z_{\\rm comp} is compressibility factor (to not be confused with the partition function).\nFor small \\phi we have\nZ_{\\rm comp} =\\dfrac{PV}{Nk_BT} =  1+4\\phi+O(\\phi^2)\n\n\n\n\n\n\nNote\n\n\nInspect this term and recognise that this illustrates that the dilute limit is an ideal gas + a correction."
   },
   {
     "objectID": "soft-matter_colloids2.html#virial-expansion",
     "href": "soft-matter_colloids2.html#virial-expansion",
     "title": "Complex Disordered Systems",
     "section": "Virial expansion",
-    "text": "Virial expansion\nThe expression Z_{\\rm comp} = 1+4\\phi+O(\\phi^2) is just the simplest form of the more generic virial expansion, the perturbative series\nZ_{\\rm comp}= 1 + B_2 \\rho + B_3 \\rho^2+ \\dots\nThe B_2, B_3, \\dots are known as virial coeffcients and for non-hard-sphere systems they also depend on temperature, B_2(T), B_3(T),\\dots\nThey encode correlations (pairs, triplets and so on). In a genric setting\n\nZ_N=\\frac{1}{N!\\Lambda^{3 N}} \\int \\cdots \\int \\exp \\left[-\\beta \\sum_{i&lt;j} U\\left(r_{i j}\\right)\\right] d \\mathbf{r}_1 \\ldots d \\mathbf{r}_N\n\ncan be re-written using the Mayer function f_{i j}=e^{-\\beta u\\left(r_{i j}\\right)}-1 and e^{-\\beta \\sum_{i&lt;j} U\\left(r_{i j}\\right)}=\\prod_{i&lt;j}\\left(1+f_{i j}\\right) yielding\n\nZ_N=\\frac{1}{N!\\Lambda^{3 N}} \\int \\cdots \\int \\prod_{i&lt;j}\\left(1+f_{i j}\\right) d \\mathbf{r}_1 \\ldots d \\mathbf{r}_N"
+    "text": "Virial expansion\nThe expression Z_{\\rm comp} = 1+4\\phi+O(\\phi^2) is just the simplest form of the more generic virial expansion, the perturbative series\nZ_{\\rm comp}= 1 + B_2 \\rho + B_3 \\rho^2+ \\dots\nThe B_2, B_3, \\dots are known as virial coefficients and for non-hard-sphere systems they also depend on temperature, B_2(T), B_3(T),\\dots\nThey encode correlations (pairs, triplets and so on). In a generic setting\n\nZ_N=\\frac{1}{N!\\Lambda^{3 N}} \\int \\cdots \\int \\exp \\left[-\\beta \\sum_{i&lt;j} U\\left(r_{i j}\\right)\\right] d \\mathbf{r}_1 \\ldots d \\mathbf{r}_N\n\ncan be re-written using the Mayer function f_{i j}=e^{-\\beta u\\left(r_{i j}\\right)}-1 and e^{-\\beta \\sum_{i&lt;j} U\\left(r_{i j}\\right)}=\\prod_{i&lt;j}\\left(1+f_{i j}\\right) yielding\n\nZ_N=\\frac{1}{N!\\Lambda^{3 N}} \\int \\cdots \\int \\prod_{i&lt;j}\\left(1+f_{i j}\\right) d \\mathbf{r}_1 \\ldots d \\mathbf{r}_N"
   },
   {
     "objectID": "soft-matter_colloids2.html#cluster-expansion-and-second-virial",
@@ -550,76 +585,76 @@
     "href": "soft-matter_colloids2.html#low-density-limit-key-points",
     "title": "Complex Disordered Systems",
     "section": "Low density limit: key points",
-    "text": "Low density limit: key points\n\n\n\n\n\n\nImportant\n\n\n\nWe can simply focus on the accessible volume and ignore overlap between exclusion volumes\nWe can focus on the configurational entropy and extract the equation of state relating P,T,\\phi\nThe compressibility factor in terms of the packing fraction \\phi is the most condensed expression and is \nZ_{\\mathrm{comp}}=\\frac{P V}{N k_B T}=1+4 \\phi+O\\left(\\phi^2\\right)\n highlighting the first non-trivial perturbation to the ideal gass\nWe can see this as an instance of the more general virial and cluster expansion formalism. which can used for any fluid. \nZ_{\\text {comp }}=1+B_2 \\rho+B_3 \\rho^2+\\ldots\n\nThe first nontrivial correction is the second virial coefficient \nB_2(T)=-2 \\pi \\int_0^{\\infty}\\left[e^{-\\beta U(r)}-1\\right] r^2 d r"
+    "text": "Low density limit: key points\n\n\n\n\n\n\nImportant\n\n\n\nWe can simply focus on the accessible volume and ignore overlap between exclusion volumes\nWe can focus on the configurational entropy and extract the equation of state relating P,T,\\phi\nThe compressibility factor in terms of the packing fraction \\phi is the most condensed expression and is \nZ_{\\mathrm{comp}}=\\frac{P V}{N k_B T}=1+4 \\phi+O\\left(\\phi^2\\right)\n highlighting the first non-trivial perturbation to the ideal gas\nWe can see this as an instance of the more general virial and cluster expansion formalism, which can be used for any fluid. \nZ_{\\text {comp }}=1+B_2 \\rho+B_3 \\rho^2+\\ldots\n\nThe first nontrivial correction is the second virial coefficient \nB_2(T)=-2 \\pi \\int_0^{\\infty}\\left[e^{-\\beta U(r)}-1\\right] r^2 d r"
   },
   {
     "objectID": "soft-matter_colloids2.html#dense-packing",
     "href": "soft-matter_colloids2.html#dense-packing",
     "title": "Complex Disordered Systems",
     "section": "Dense packing",
-    "text": "Dense packing\n\nAs we increase the packing fraction, the accessible (free) volume reduces rapidly and tehrmal motion is hindered.\nTight disordered (random) packing of spheres are described as jammed: link with glasses (in future lectures).\nDensest packing reaches a maximum packing of around \\phi_{\\mathrm{rcp}} \\approx 0.64: this is not unique and depends on the protocol of preparation.\nKepler’s conjecture (1611, proved only in 2017):\nDensest packings are Face Centerd Cubic (FCC) or Hexagonally Cosed Packed (HCP) \\phi_{\\max }=\\frac{\\pi}{3 \\sqrt{2}} \\approx 0.74\n\n\n\n\nPackings"
+    "text": "Dense packing\n\nAs we increase the packing fraction, the accessible (free) volume reduces rapidly and thermal motion is hindered.\nTight disordered (random) packing of spheres are described as jammed: link with glasses (in future lectures).\nDensest packing reaches a maximum packing of around \\phi_{\\mathrm{rcp}} \\approx 0.64: this is not unique and depends on the protocol of preparation.\nKepler’s conjecture (1611, proved only in 2017):\nDensest packings are Face Centred Cubic (FCC) or Hexagonally Close Packed (HCP) \\phi_{\\max }=\\frac{\\pi}{3 \\sqrt{2}} \\approx 0.74\n\n\n\n\nPackings"
   },
   {
     "objectID": "soft-matter_colloids2.html#dense-packing-1",
     "href": "soft-matter_colloids2.html#dense-packing-1",
     "title": "Complex Disordered Systems",
     "section": "Dense packing",
-    "text": "Dense packing\nQ: Can purely replusive spheres spheres assemble spontaneously into an FCC crystal?\n\n\nYES\n\nEntropy in AO interactions causes an effective interaction that has a minimum\n\nDisordered packings are less efficient than ordered ones\n\n\nNO\n\nHard sphere potential only prevents overlaps\n\nThere is no minimum in the interaction potential to favour a crystal lattice and localisation\n\nEntropy is just disorder\n\n\n\nThe matter was hotly debated in conferences in the 1950s and got to evenly split votes multiple times"
+    "text": "Dense packing\nQ: Can purely repulsive spheres assemble spontaneously into an FCC crystal?\n\n\nYES\n\nEntropy in AO interactions causes an effective interaction that has a minimum\n\nDisordered packings are less efficient than ordered ones\n\n\nNO\n\nHard sphere potential only prevents overlaps\n\nThere is no minimum in the interaction potential to favour a crystal lattice and localisation\n\nEntropy is just disorder\n\n\n\nThe matter was hotly debated in conferences in the 1950s and got to evenly split votes multiple times"
   },
   {
     "objectID": "soft-matter_colloids2.html#dense-packing-and-crystallisation",
     "href": "soft-matter_colloids2.html#dense-packing-and-crystallisation",
     "title": "Complex Disordered Systems",
     "section": "Dense packing and crystallisation",
-    "text": "Dense packing and crystallisation\nEarly computer simulations ( molecular dynamics, Alder and Wainwright 1957, Monte Carlo, Wood and Jacobson (1957)) proved that that crystalisation is possible.\n\n\n\n\nThe video shows a Monte-Carlo simulation at packing \\phi=0.49 for a small system of 32 particles. Small systems have enhanced fluctuations, leadint to spontaneous freezing and unfreezing."
+    "text": "Dense packing and crystallisation\nEarly computer simulations (molecular dynamics, Alder and Wainwright 1957, Monte Carlo, Wood and Jacobson (1957)) proved that crystallisation is possible.\n\n\n\n\nThe video shows a Monte Carlo simulation at packing \\phi=0.49 for a small system of 32 particles. Small systems have enhanced fluctuations, leading to spontaneous freezing and unfreezing."
   },
   {
     "objectID": "soft-matter_colloids2.html#dense-packing-cell-model",
     "href": "soft-matter_colloids2.html#dense-packing-cell-model",
     "title": "Complex Disordered Systems",
     "section": "Dense packing: cell model",
-    "text": "Dense packing: cell model\n\nIn an FCC cell, particles can move very little beyond their own diameter \\sigma.\nAssume that the volume per particle is v and the (geometrically constrained) close packed volume is v_{cp}.\nThe maximum dispalcement is \n\\delta=\\frac{\\sigma}{\\sqrt{2}}\\left(\\left(\\frac{v}{v_{c p}}\\right)^{1 / 3}-1\\right)\n\nThe corresponding free volume is then v_f=\\frac{4 \\pi}{3} \\delta^3 from which we can calculate the entropy \nS = -N k_B T \\ln \\left(v_f / \\Lambda^3\\right)\nAnd the pressure P=T\\left(\\frac{\\partial S}{\\partial V}\\right)_{N, T}=\\frac{N k_B T}{v_{c p}} \\frac{\\left(v / v_{c p}\\right)^{-2 / 3}}{\\left(v / v_{c p}\\right)^{1 / 3}-1}"
+    "text": "Dense packing: cell model\n\nIn an FCC cell, particles can move very little beyond their own diameter \\sigma.\nAssume that the volume per particle is v and the (geometrically constrained) close packed volume is v_{cp}.\nThe maximum displacement is \n\\delta=\\frac{\\sigma}{\\sqrt{2}}\\left(\\left(\\frac{v}{v_{c p}}\\right)^{1 / 3}-1\\right)\n\nThe corresponding free volume is then v_f=\\frac{4 \\pi}{3} \\delta^3 from which we can calculate the entropy \nS = -N k_B T \\ln \\left(v_f / \\Lambda^3\\right)\nAnd the pressure P=T\\left(\\frac{\\partial S}{\\partial V}\\right)_{N, T}=\\frac{N k_B T}{v_{c p}} \\frac{\\left(v / v_{c p}\\right)^{-2 / 3}}{\\left(v / v_{c p}\\right)^{1 / 3}-1}"
   },
   {
     "objectID": "soft-matter_colloids2.html#dense-packing-cell-model-1",
     "href": "soft-matter_colloids2.html#dense-packing-cell-model-1",
     "title": "Complex Disordered Systems",
     "section": "Dense packing: cell model",
-    "text": "Dense packing: cell model\nRearranging and expressing everything in terms of packing fraction \\phi = \\dfrac{\\pi\\sigma^3}{6v} yields \nZ_{\\rm comp}=\\frac{1}{1-\\left(\\phi / \\phi_{c p}\\right)^{1 / 3}}\n\n\nThis expression is completely different from the low density regime Z_{\\text {comp }}^{\\mathrm{low}}=1+B_2 \\rho+B_3 \\rho^2+\\ldots\nThe incompatibility signal non-analiticity and hence a discontinuous phase transition: first order trasnition.\nFirst order phase transition are characterised by interfaces and coexistence between phases.\nWe should therefore observe phase coexistence in simulations and experiments of hard spheres."
+    "text": "Dense packing: cell model\nRearranging and expressing everything in terms of packing fraction \\phi = \\dfrac{\\pi\\sigma^3}{6v} yields \nZ_{\\rm comp}=\\frac{1}{1-\\left(\\phi / \\phi_{c p}\\right)^{1 / 3}}\n\n\nThis expression is completely different from the low density regime Z_{\\text {comp }}^{\\mathrm{low}}=1+B_2 \\rho+B_3 \\rho^2+\\ldots\nThe incompatibility signals non-analyticity and hence a discontinuous phase transition: first order transition.\nFirst order phase transitions are characterised by interfaces and coexistence between phases.\nWe should therefore observe phase coexistence in simulations and experiments of hard spheres."
   },
   {
     "objectID": "soft-matter_colloids2.html#colloidal-hard-spheres-phase-behaviour",
     "href": "soft-matter_colloids2.html#colloidal-hard-spheres-phase-behaviour",
     "title": "Complex Disordered Systems",
     "section": "Colloidal hard spheres: phase behaviour",
-    "text": "Colloidal hard spheres: phase behaviour\n\n\n\nVials of colloidal hard spheres under the effect of sedimentation: the gravitational field imposes a density gradient. At low packing fraction this maintains the dispersed fluid, but when the packing fraction is sufficiently high, it spontaneously forms a crystalline phase (speckled areas) after some time, in coexistence with a fluid. Notice that at ver high packing the interfaces didappear and one has a disordered phase again: it is the glass, see Pusey et al, Philosophical Transactions of the Royal Society A (2009)."
+    "text": "Colloidal hard spheres: phase behaviour\n\n\n\nVials of colloidal hard spheres under the effect of sedimentation: the gravitational field imposes a density gradient. At low packing fraction this maintains the dispersed fluid, but when the packing fraction is sufficiently high, it spontaneously forms a crystalline phase (speckled areas) after some time, in coexistence with a fluid. Notice that at very high packing the interfaces disappear and one has a disordered phase again: it is the glass, see Pusey et al, Philosophical Transactions of the Royal Society A (2009)."
   },
   {
     "objectID": "soft-matter_colloids2.html#colloidal-hard-spheres-phase-behaviour-1",
     "href": "soft-matter_colloids2.html#colloidal-hard-spheres-phase-behaviour-1",
     "title": "Complex Disordered Systems",
     "section": "Colloidal hard spheres: phase behaviour",
-    "text": "Colloidal hard spheres: phase behaviour\nIn conclusion, the one dimensional ohase diagram of hard spheres is the following\n\nHard spheres phase diagramNotice that the the glass phase is purely nonequilibrium: if a system has enough time to relax, it will eventually form a crystal."
+    "text": "Colloidal hard spheres: phase behaviour\nIn conclusion, the one-dimensional phase diagram of hard spheres is the following\n\nHard spheres phase diagramNotice that the glass phase is purely non-equilibrium: if a system has enough time to relax, it will eventually form a crystal."
   },
   {
     "objectID": "soft-matter_colloids2.html#beyond-hard-spheres-simple-liquids",
     "href": "soft-matter_colloids2.html#beyond-hard-spheres-simple-liquids",
     "title": "Complex Disordered Systems",
     "section": "Beyond hard spheres: simple liquids",
-    "text": "Beyond hard spheres: simple liquids\n\n\n\nA simple liquid is a system of particles interacting via short-range, spherically symmetric (isotropic) pair potentials.\nA very common model is the Lennard-Jones (LJ) potential U_{\\mathrm{LJ}}(r) = 4\\epsilon \\left[ \\left( \\frac{\\sigma}{r} \\right)^{12} - \\left( \\frac{\\sigma}{r} \\right)^6 \\right] where \\epsilon sets the depth of the potential well (interaction strength) and \\sigma is the particle diameter (distance at which U=0).\nThe r^{-12} term models steep repulsion, while r^{-6} describes the attractive tail.\nThe Lennard-Jones fluid exhibits rich phase behavior: gas, liquid, superciriticla fluid and crystalline solid\nThe LJ model is widely used to study atomic and molecular liquids, and serves as a reference for understanding real fluids and their phase transitions.\n\n\n\n\n\nPhase diagram of the Lennard-Jones Fluid, adapted from Wikimedia."
+    "text": "Beyond hard spheres: simple liquids\n\n\n\nA simple liquid is a system of particles interacting via short-range, spherically symmetric (isotropic) pair potentials.\nA very common model is the Lennard-Jones (LJ) potential U_{\\mathrm{LJ}}(r) = 4\\epsilon \\left[ \\left( \\frac{\\sigma}{r} \\right)^{12} - \\left( \\frac{\\sigma}{r} \\right)^6 \\right] where \\epsilon sets the depth of the potential well (interaction strength) and \\sigma is the particle diameter (distance at which U=0).\nThe r^{-12} term models steep repulsion, while r^{-6} describes the attractive tail.\nThe Lennard-Jones fluid exhibits rich phase behavior: gas, liquid, supercritical fluid and crystalline solid\nThe LJ model is widely used to study atomic and molecular liquids, and serves as a reference for understanding real fluids and their phase transitions.\n\n\n\n\n\nPhase diagram of the Lennard-Jones Fluid, adapted from Wikimedia."
   },
   {
     "objectID": "soft-matter_colloids2.html#coexistence-metastability-and-instability",
     "href": "soft-matter_colloids2.html#coexistence-metastability-and-instability",
     "title": "Complex Disordered Systems",
     "section": "Coexistence: Metastability and Instability",
-    "text": "Coexistence: Metastability and Instability\n\nLennard Jones and hards sphere fluid present coexistence regions.\nThe binodal line determines phase coexistence. It is the locus where the free energy satisfies the condition of equal chemical potential and pressure between coexisting phases. When crossing the binodal, one enters a regime of metastability.\n\n\n\n\nSchematic free energy for hard spheres compressed at high pressures: the fluid branch becomes metastable and the free enrgy minimum is located in the crystal phase"
+    "text": "Coexistence: Metastability and Instability\n\nLennard-Jones and hard sphere fluids present coexistence regions.\nThe binodal line determines phase coexistence. It is the locus where the free energy satisfies the condition of equal chemical potential and pressure between coexisting phases. When crossing the binodal, one enters a regime of metastability.\n\n\n\n\nSchematic free energy for hard spheres compressed at high pressures: the fluid branch becomes metastable and the free energy minimum is located in the crystal phase"
   },
   {
     "objectID": "soft-matter_colloids2.html#coexistence-metastability-and-instability-1",
     "href": "soft-matter_colloids2.html#coexistence-metastability-and-instability-1",
     "title": "Complex Disordered Systems",
     "section": "Coexistence: Metastability and Instability",
-    "text": "Coexistence: Metastability and Instability\n\nThe spinodal line marks the boundary of metastability. It is the limit of stability \n\\frac{\\partial^2 G}{\\partial \\phi^2}=0\n\nBetween the binodal and spinodal lines, the system is metastable, meaning it can persist in a non-equilibrium state for a finite time.\nThe nucleation time \\tau is related to the free energy barrier \\Delta G^* by an activated (also called Arrhenius) law\n  \\tau \\propto \\exp\\left(\\frac{\\Delta G^*}{k_B T}\\right)    \nInside the spinodal there is no nucleation: coarsening occurs\n\nYou have seen some of this physics when discussing the Ising model."
+    "text": "Coexistence: Metastability and Instability\n\nThe spinodal line marks the boundary of metastability. It is the limit of stability \n\\frac{\\partial^2 G}{\\partial \\phi^2}=0\n\nBetween the binodal and spinodal lines, the system is metastable, meaning it can persist in a non-equilibrium state for a finite time.\nThe nucleation time \\tau is related to the free energy barrier \\Delta G^* by an activated (also called Arrhenius) law\n  \\tau \\propto \\exp\\left(\\frac{\\Delta G^*}{k_B T}\\right)    \nInside the spinodal there is no nucleation: coarsening occurs.\n\nYou have seen some of this physics when discussing the Ising model."
   }
 ]

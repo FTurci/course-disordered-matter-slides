@@ -149,6 +149,7 @@
 
 <section id="title-slide" class="quarto-title-block center">
   <h1 class="title">Complex Disordered Systems</h1>
+  <p class="subtitle">Colloids as Big Atoms</p>
 
 <div class="quarto-title-authors">
 <div class="quarto-title-author">
@@ -201,7 +202,7 @@ Francesco Turci
 </section>
 <section id="colloidal-hard-spheres" class="slide level2">
 <h2>Colloidal hard spheres</h2>
-<p>True hard spheres do not exist. Colloidal hard spheres approximate the behaviour in many ways</p>
+<p>True hard spheres do not exist. Colloidal hard spheres approximate the behaviour in many ways.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure>
 <p><img data-src="./figs/paddyHardSpheres.png" height="400"></p>
@@ -212,7 +213,7 @@ Francesco Turci
 <section id="hard-spheres" class="slide level2">
 <h2>Hard spheres</h2>
 <p>Idealised hard spheres are impenetrable objects.</p>
-<p>They are characterised by the simplest of the potentials.</p>
+<p>They are characterised by the simplest of potentials.</p>
 <svg width="800" height="440" viewbox="0 0 400 220" xmlns="http://www.w3.org/2000/svg">
 <!-- Axes -->
 <line x1="40" y1="180" x2="370" y2="180" stroke="black" stroke-width="2"></line> <line x1="60" y1="200" x2="60" y2="30" stroke="black" stroke-width="2"></line> <!-- x axis label --> <text x="360" y="195" font-size="16" font-family="sans-serif">r</text> <!-- y axis label --> <text x="30" y="40" font-size="16" font-family="sans-serif" transform="rotate(-90 30,40)">U(r)</text> <!-- Hard sphere potential: vertical line at r=2R, infinite wall --> <line x1="120" y1="180" x2="120" y2="40" stroke="red" stroke-width="4"></line> <!-- Dashed line for r < 2R (forbidden region) --> <rect x="60" y="40" width="60" height="140" fill="#f88" fill-opacity="0.2"></rect> <!-- Label for r=2R --> <text x="115" y="195" font-size="14" font-family="sans-serif" text-anchor="middle">2R</text> <!-- Flat line for r > 2R (U=0) --> <line x1="120" y1="180" x2="360" y2="180" stroke="blue" stroke-width="3"></line> <!-- Dotted line at U=infty --> <text x="80" y="55" font-size="14" font-family="sans-serif" fill="red" text-anchor="middle">∞</text> <!-- Label for U=0 --> <text x="70" y="175" font-size="14" font-family="sans-serif" fill="blue">0</text> <!-- Bracket for forbidden region --> <text x="95" y="210" font-size="13" font-family="sans-serif" text-anchor="middle" fill="#f88">forbidden</text> <!-- Title --> <text x="200" y="25" font-size="18" font-family="sans-serif" text-anchor="middle">Hard Sphere Potential</text>
@@ -229,8 +230,8 @@ e^{-\beta U(r)} =
 \end{cases}
 </span></p>
 <p>This simplification arises because the potential ( U(r) ) is either infinite (forbidden region) or zero (allowed region).</p>
-<p>For this reason, they hard spheres are <strong>entropy driven</strong>.</p>
-<p>Constructing partition functions is then just counting <strong>counting valid configurations</strong>, linking geometry to thermodynamics.</p>
+<p>For this reason, hard spheres are <strong>entropy driven</strong>.</p>
+<p>Constructing partition functions is then just <strong>counting valid configurations</strong>, linking geometry to thermodynamics.</p>
 <ul>
 <li>A good example: <strong>Asakura-Oosawa</strong> depletion, that we have already seen.</li>
 </ul>
@@ -247,11 +248,11 @@ e^{-\beta U(r)} =
 </section>
 <section id="phase-diagram-of-hard-spheres" class="slide level2">
 <h2>Phase diagram of hard spheres</h2>
-<p>Since we have a single control parameter, the pahse diagram is one-dimensional.</p>
-<p>Changing temeprature is immaterial to the free energy: it is a simple rescaling factor.</p>
+<p>Since we have a single control parameter, the phase diagram is one-dimensional.</p>
+<p>Changing temperature is immaterial to the free energy: it is a simple rescaling factor.</p>
 <p>It is intuitive to guess the <strong>low density limit</strong> of hard spheres:</p>
 <ul>
-<li>few spheres in a box should behave similalry to an ideal gas</li>
+<li>few spheres in a box should behave similarly to an ideal gas</li>
 </ul>
 <p>It is harder to guess the <strong>high density limit</strong></p>
 <p>We will gradually build our understanding from low to dense packing.</p>
@@ -259,14 +260,14 @@ e^{-\beta U(r)} =
 <img data-src="./figs/hsQ.png" class="r-stretch quarto-figure-center"><p class="caption">Hard spheres have a single control parameter, the packing fraction.</p></section>
 <section id="low-packing-fractions" class="slide level2">
 <h2>Low packing fractions</h2>
-<p>When treating the Asakura-Osawa depletion we introduced the <strong>excluded volume</strong>. It is also also key for hard spheres.</p>
+<p>When treating the Asakura-Oosawa depletion we introduced the <strong>excluded volume</strong>. It is also key for hard spheres.</p>
 <ul>
 <li><p>The distance of closest approach between two identical spheres is <span class="math inline">\sigma</span>, which corresponds to the diameter of the spheres. The excluded volume of one particle is <span class="math display">v_{\rm ex} =4\pi\sigma^3/3</span></p></li>
-<li><p>At low densities, hard spheres are isolated and so no overlaps occcur and the accesible volume for N spheres is <span class="math display">V_{\rm accessible} = V-Nv_{\rm ex}</span></p></li>
-<li><p>For phase behaviour, we need the thermodyanamic potential. At constant volume and number of particles, the parition function is a measure of the accessible volume <span class="math display">
+<li><p>At low densities, hard spheres are isolated and so no overlaps occur and the accessible volume for N spheres is <span class="math display">V_{\rm accessible} = V-Nv_{\rm ex}</span></p></li>
+<li><p>For phase behaviour, we need the thermodynamic potential. At constant volume and number of particles, the partition function is a measure of the accessible volume <span class="math display">
 \mathcal{Z} = \frac{1}{N! \Lambda^{3N}} \int_{V_{\rm accessible}} d\mathbf{r}_1 \ldots d\mathbf{r}_N</span></p>
 <p>where <span class="math inline">\Lambda</span> is the thermal de Broglie wavelength <span class="math inline">\Lambda = h/\sqrt{2\pi mk_B T}</span>.</p>
-<p>Mass and temperature are factorising out.</p></li>
+<p>Mass and temperature are factoring out.</p></li>
 </ul>
 </section>
 <section id="low-packing-fractions-entropy" class="slide level2">
@@ -275,13 +276,13 @@ e^{-\beta U(r)} =
 <p>with the <span class="math inline">1/2</span> factor coming from the fact that we avoid double counting the excluded volume of pairs.</p>
 <ul>
 <li><p>We immediately obtain the entropy as <span class="math display">S = k_B \ln \mathcal{Z} = k_B \left[ N \ln(V - N v_{\rm ex}/2) - \ln N! - 3N \ln \Lambda \right]</span></p></li>
-<li><p>Via Stirling approximation <span class="math inline">\ln N! = N\ln N -N</span> we get <span class="math display">S = k_B \left[ N \ln(V - N v_{\rm ex}/2) - (N \ln N - N) - 3N \ln \Lambda \right]</span></p></li>
+<li><p>Via Stirling’s approximation <span class="math inline">\ln N! = N\ln N -N</span> we get <span class="math display">S = k_B \left[ N \ln(V - N v_{\rm ex}/2) - (N \ln N - N) - 3N \ln \Lambda \right]</span></p></li>
 <li><p>This can be rewritten as <span class="math display">S = N k_B \left[ \ln\left( \frac{V - N v_{\rm ex}/2}{N \Lambda^3} \right) + 1 \right]</span></p></li>
 </ul>
 </section>
 <section id="low-packing-fraction-equation-of-state" class="slide level2">
 <h2>Low packing fraction: equation of state</h2>
-<p>The <strong>equation of state</strong> links the three relevant thermodynamics variables <span class="math inline">P,T</span> and <span class="math inline">\phi</span></p>
+<p>The <strong>equation of state</strong> links the three relevant thermodynamic variables <span class="math inline">P,T</span> and <span class="math inline">\phi</span></p>
 <p><span class="math display">P = -\left(\dfrac{\partial F}{\partial V}\right)_{N,T} =T\left(\dfrac{\partial S}{\partial V}\right)_{N,T}= \dfrac{k_B T }{v-v_{\rm ex}/2}</span></p>
 <p>This expression can be simplified (do it as an exercise) to obtain the equation of state</p>
 <p><span class="math display">Z_{\rm comp}= \dfrac{PV}{Nk_BT}=\dfrac{1}{1-4\phi} \quad (\phi\ll 1)</span></p>
@@ -306,8 +307,8 @@ e^{-\beta U(r)} =
 <h2>Virial expansion</h2>
 <p>The expression <span class="math inline">Z_{\rm comp} = 1+4\phi+O(\phi^2)</span> is just the simplest form of the more generic <strong>virial expansion</strong>, the perturbative series</p>
 <p><span class="math display">Z_{\rm comp}= 1 + B_2 \rho + B_3 \rho^2+ \dots</span></p>
-<p>The <span class="math inline">B_2, B_3, \dots</span> are known as <strong>virial coeffcients</strong> and for non-hard-sphere systems they also depend on temperature, <span class="math inline">B_2(T), B_3(T),\dots</span></p>
-<p>They encode <strong>correlations</strong> (pairs, triplets and so on). In a genric setting</p>
+<p>The <span class="math inline">B_2, B_3, \dots</span> are known as <strong>virial coefficients</strong> and for non-hard-sphere systems they also depend on temperature, <span class="math inline">B_2(T), B_3(T),\dots</span></p>
+<p>They encode <strong>correlations</strong> (pairs, triplets and so on). In a generic setting</p>
 <p><span class="math display">
 Z_N=\frac{1}{N!\Lambda^{3 N}} \int \cdots \int \exp \left[-\beta \sum_{i&lt;j} U\left(r_{i j}\right)\right] d \mathbf{r}_1 \ldots d \mathbf{r}_N
 </span></p>
@@ -347,8 +348,8 @@ B_2 =  \frac{2\pi}{3} \sigma^3
 <li><p>We can focus on the <strong>configurational entropy</strong> and extract the equation of state relating <span class="math inline">P,T,\phi</span></p></li>
 <li><p>The <strong>compressibility factor</strong> in terms of the packing fraction <span class="math inline">\phi</span> is the most condensed expression and is <span class="math display">
 Z_{\mathrm{comp}}=\frac{P V}{N k_B T}=1+4 \phi+O\left(\phi^2\right)
-</span> highlighting the first non-trivial perturbation to the ideal gass</p></li>
-<li><p>We can see this as an instance of the more general <strong>virial</strong> and <strong>cluster expansion</strong> formalism. which can used for any fluid. <span class="math display">
+</span> highlighting the first non-trivial perturbation to the ideal gas</p></li>
+<li><p>We can see this as an instance of the more general <strong>virial</strong> and <strong>cluster expansion</strong> formalism, which can be used for any fluid. <span class="math display">
 Z_{\text {comp }}=1+B_2 \rho+B_3 \rho^2+\ldots
 </span></p></li>
 <li><p>The first nontrivial correction is the <strong>second virial coefficient</strong> <span class="math display">
@@ -362,11 +363,11 @@ B_2(T)=-2 \pi \int_0^{\infty}\left[e^{-\beta U(r)}-1\right] r^2 d r
 <section id="dense-packing" class="slide level2">
 <h2>Dense packing</h2>
 <ul>
-<li><p>As we increase the packing fraction, the accessible (free) volume reduces rapidly and tehrmal motion is hindered.</p></li>
+<li><p>As we increase the packing fraction, the accessible (free) volume reduces rapidly and thermal motion is hindered.</p></li>
 <li><p>Tight disordered (random) packing of spheres are described as <strong>jammed</strong>: link with glasses (in future lectures).</p></li>
 <li><p>Densest packing reaches a maximum packing of around <span class="math inline">\phi_{\mathrm{rcp}} \approx 0.64</span>: this is not unique and depends on the <strong>protocol of preparation</strong>.</p></li>
 <li><p>Kepler’s conjecture (1611, proved only in 2017):</p></li>
-<li><p>Densest packings are <strong>Face Centerd Cubic (FCC) or Hexagonally Cosed Packed (HCP)</strong> <span class="math inline">\phi_{\max }=\frac{\pi}{3 \sqrt{2}} \approx 0.74</span></p></li>
+<li><p>Densest packings are <strong>Face Centred Cubic (FCC) or Hexagonally Close Packed (HCP)</strong> <span class="math inline">\phi_{\max }=\frac{\pi}{3 \sqrt{2}} \approx 0.74</span></p></li>
 </ul>
 <div class="quarto-figure quarto-figure-center">
 <figure>
@@ -377,7 +378,7 @@ B_2(T)=-2 \pi \int_0^{\infty}\left[e^{-\beta U(r)}-1\right] r^2 d r
 </section>
 <section id="dense-packing-1" class="slide level2">
 <h2>Dense packing</h2>
-<h3 id="q-can-purely-replusive-spheres-spheres-assemble-spontaneously-into-an-fcc-crystal">Q: Can purely replusive spheres spheres assemble spontaneously into an FCC crystal?</h3>
+<h3 id="q-can-purely-repulsive-spheres-assemble-spontaneously-into-an-fcc-crystal">Q: Can purely repulsive spheres assemble spontaneously into an FCC crystal?</h3>
 <div class="columns" style="display:flex; justify-content:space-between;">
 <div class="column" style="flex:1; background-color:#d4edda; padding:10px; margin-right:5px;">
 <p><strong>YES</strong></p>
@@ -402,19 +403,19 @@ B_2(T)=-2 \pi \int_0^{\infty}\left[e^{-\beta U(r)}-1\right] r^2 d r
 </section>
 <section id="dense-packing-and-crystallisation" class="slide level2">
 <h2>Dense packing and crystallisation</h2>
-<p>Early <strong>computer simulations</strong> ( molecular dynamics, Alder and Wainwright 1957, Monte Carlo, Wood and Jacobson (1957)) proved that that crystalisation is possible.</p>
+<p>Early <strong>computer simulations</strong> (molecular dynamics, Alder and Wainwright 1957, Monte Carlo, Wood and Jacobson (1957)) proved that crystallisation is possible.</p>
 <div style="text-align:center;">
 <video src="figs/melt_freeze.mp4" height="600" controls="">
 </video>
 </div>
-<p>The video shows a Monte-Carlo simulation at packing <span class="math inline">\phi=0.49</span> for a small system of 32 particles. Small systems have enhanced fluctuations, leadint to spontaneous freezing and unfreezing.</p>
+<p>The video shows a Monte Carlo simulation at packing <span class="math inline">\phi=0.49</span> for a small system of 32 particles. Small systems have enhanced fluctuations, leading to spontaneous freezing and unfreezing.</p>
 </section>
 <section id="dense-packing-cell-model" class="slide level2">
 <h2>Dense packing: cell model</h2>
 <ul>
 <li><p>In an FCC cell, particles can move very little beyond their own diameter <span class="math inline">\sigma</span>.</p></li>
 <li><p>Assume that the volume per particle is <span class="math inline">v</span> and the (geometrically constrained) close packed volume is <span class="math inline">v_{cp}</span>.</p></li>
-<li><p>The maximum dispalcement is <span class="math display">
+<li><p>The maximum displacement is <span class="math display">
 \delta=\frac{\sigma}{\sqrt{2}}\left(\left(\frac{v}{v_{c p}}\right)^{1 / 3}-1\right)
 </span></p></li>
 <li><p>The corresponding free volume is then <span class="math inline">v_f=\frac{4 \pi}{3} \delta^3</span> from which we can calculate the entropy <span class="math display">
@@ -429,8 +430,8 @@ Z_{\rm comp}=\frac{1}{1-\left(\phi / \phi_{c p}\right)^{1 / 3}}
 </span></p>
 <ul>
 <li><p>This expression is <strong>completely different from the low density regime</strong> <span class="math display">Z_{\text {comp }}^{\mathrm{low}}=1+B_2 \rho+B_3 \rho^2+\ldots</span></p></li>
-<li><p>The incompatibility signal <strong>non-analiticity</strong> and hence a <strong>discontinuous phase transition</strong>: <strong>first order trasnition</strong>.</p></li>
-<li><p>First order phase transition are characterised by <strong>interfaces</strong> and <strong>coexistence between phases</strong>.</p></li>
+<li><p>The incompatibility signals <strong>non-analyticity</strong> and hence a <strong>discontinuous phase transition</strong>: <strong>first order transition</strong>.</p></li>
+<li><p>First order phase transitions are characterised by <strong>interfaces</strong> and <strong>coexistence between phases</strong>.</p></li>
 <li><p>We should therefore observe <strong>phase coexistence</strong> in simulations and experiments of hard spheres.</p></li>
 </ul>
 </section>
@@ -439,15 +440,15 @@ Z_{\rm comp}=\frac{1}{1-\left(\phi / \phi_{c p}\right)^{1 / 3}}
 <div class="quarto-figure quarto-figure-center">
 <figure>
 <p><img data-src="./figs/rsta20090181f01.jpg" height="450"></p>
-<figcaption>Vials of colloidal hard spheres under the effect of sedimentation: the gravitational field imposes a density gradient. At low packing fraction this maintains the dispersed fluid, but when the packing fraction is sufficiently high, it spontaneously forms a crystalline phase (speckled areas) after some time, in coexistence with a fluid. Notice that at ver high packing the interfaces didappear and one has a disordered phase again: it is the glass, see Pusey et al, <em>Philosophical Transactions of the Royal Society A</em> (2009).</figcaption>
+<figcaption>Vials of colloidal hard spheres under the effect of sedimentation: the gravitational field imposes a density gradient. At low packing fraction this maintains the dispersed fluid, but when the packing fraction is sufficiently high, it spontaneously forms a crystalline phase (speckled areas) after some time, in coexistence with a fluid. Notice that at very high packing the interfaces disappear and one has a disordered phase again: it is the glass, see Pusey et al, <em>Philosophical Transactions of the Royal Society A</em> (2009).</figcaption>
 </figure>
 </div>
 </section>
 <section id="colloidal-hard-spheres-phase-behaviour-1" class="slide level2">
 <h2>Colloidal hard spheres: phase behaviour</h2>
-<p>In conclusion, the one dimensional ohase diagram of hard spheres is the following</p>
+<p>In conclusion, the one-dimensional phase diagram of hard spheres is the following</p>
 
-<img data-src="./figs/hard-sphere-diag.svg" class="r-stretch quarto-figure-center"><p class="caption">Hard spheres phase diagram</p><p>Notice that the the <strong>glass phase</strong> is purely nonequilibrium: if a system has enough time to relax, it will eventually form a <strong>crystal</strong>.</p>
+<img data-src="./figs/hard-sphere-diag.svg" class="r-stretch quarto-figure-center"><p class="caption">Hard spheres phase diagram</p><p>Notice that the <strong>glass phase</strong> is purely non-equilibrium: if a system has enough time to relax, it will eventually form a <strong>crystal</strong>.</p>
 </section>
 <section id="beyond-hard-spheres-simple-liquids" class="slide level2">
 <h2>Beyond hard spheres: simple liquids</h2>
@@ -457,7 +458,7 @@ Z_{\rm comp}=\frac{1}{1-\left(\phi / \phi_{c p}\right)^{1 / 3}}
 <li><p>A <strong>simple liquid</strong> is a system of particles interacting via short-range, spherically symmetric (isotropic) pair potentials.</p></li>
 <li><p>A very common model is the <strong>Lennard-Jones (LJ) potential</strong> <span class="math display">U_{\mathrm{LJ}}(r) = 4\epsilon \left[ \left( \frac{\sigma}{r} \right)^{12} - \left( \frac{\sigma}{r} \right)^6 \right]</span> where <span class="math inline">\epsilon</span> sets the depth of the potential well (interaction strength) and <span class="math inline">\sigma</span> is the particle diameter (distance at which <span class="math inline">U=0</span>).</p></li>
 <li><p>The <span class="math inline">r^{-12}</span> term models steep repulsion, while <span class="math inline">r^{-6}</span> describes the attractive tail.</p></li>
-<li><p>The Lennard-Jones fluid exhibits rich phase behavior: gas, liquid, superciriticla fluid and crystalline solid</p></li>
+<li><p>The Lennard-Jones fluid exhibits rich phase behavior: gas, liquid, supercritical fluid and crystalline solid</p></li>
 <li><p>The LJ model is widely used to study atomic and molecular liquids, and serves as a reference for understanding real fluids and their phase transitions.</p></li>
 </ul>
 </div><div class="column">
@@ -472,13 +473,13 @@ Z_{\rm comp}=\frac{1}{1-\left(\phi / \phi_{c p}\right)^{1 / 3}}
 <section id="coexistence-metastability-and-instability" class="slide level2">
 <h2>Coexistence: Metastability and Instability</h2>
 <ul>
-<li><p>Lennard Jones and hards sphere fluid present <strong>coexistence regions</strong>.</p></li>
+<li><p>Lennard-Jones and hard sphere fluids present <strong>coexistence regions</strong>.</p></li>
 <li><p>The <strong>binodal</strong> line determines phase coexistence. It is the locus where the free energy satisfies the condition of equal chemical potential and pressure between coexisting phases. When crossing the binodal, one enters a regime of <strong>metastability</strong>.</p></li>
 </ul>
 <div class="quarto-figure quarto-figure-center">
 <figure>
 <p><img data-src="./figs/metastable.png" height="400"></p>
-<figcaption>Schematic free energy for hard spheres compressed at high pressures: the fluid branch becomes metastable and the free enrgy minimum is located in the crystal phase</figcaption>
+<figcaption>Schematic free energy for hard spheres compressed at high pressures: the fluid branch becomes metastable and the free energy minimum is located in the crystal phase</figcaption>
 </figure>
 </div>
 </section>
@@ -491,7 +492,7 @@ Z_{\rm comp}=\frac{1}{1-\left(\phi / \phi_{c p}\right)^{1 / 3}}
 <li><p>Between the binodal and spinodal lines, the system is metastable, meaning it can persist in a non-equilibrium state for a finite time.</p></li>
 <li><p>The nucleation time <span class="math inline">\tau</span> is related to the free energy barrier <span class="math inline">\Delta G^*</span> by an activated (also called Arrhenius) law<span class="math display">
   \tau \propto \exp\left(\frac{\Delta G^*}{k_B T}\right)    </span></p></li>
-<li><p>Inside the spinodal there is no nucleation: <strong>coarsening</strong> occurs</p></li>
+<li><p>Inside the spinodal there is no nucleation: <strong>coarsening</strong> occurs.</p></li>
 </ul>
 <p>You have seen some of this physics when discussing the <strong>Ising model</strong>.</p>
 
