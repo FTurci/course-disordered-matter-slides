@@ -217,11 +217,18 @@
     "text": "Pairwise interactions\nTrue colloidal systems can be complex:\n\ncharges\nshape deformability/swelling\ninstabilities of the components\n\nTheir theoretical description focuses on essential ingredients.\nA simplifying assumption is that the potential energy of a collection of colloids is purely pairwise\n\nU_N\\left(\\mathbf{r}^N\\right)=\\sum_{i=1}^{N-1} \\sum_{j=i+1}^N V\\left(r_i j\\right)=\\frac{1}{2} \\sum_{i \\neq j} V\\left(r_{i j}\\right)\n\nwhere V(r_{ij}) is the pairwise, radial interaction potential that only depends on the distance between particle centres r_{ij} = \\mathbf{r}_i-\\mathbf{r}_j."
   },
   {
+    "objectID": "soft-matter_colloids3.html#aside-not-pairwise",
+    "href": "soft-matter_colloids3.html#aside-not-pairwise",
+    "title": "Complex Disordered Systems",
+    "section": "Aside: Not pairwise?",
+    "text": "Aside: Not pairwise?\nSome examples of non-pariwise situations:\n\nAtomistic models: Electronic densities that fluctuate due to quantum effects are intrinsically many-body\nTrue colloid-cpolymer mixtures: if the polymers are not ideal, their spatial distribution and their forces depend on the positions of more than two colloids\n\n\nC_{60} isosurface via density functional theory (Wikipedia) and configuration of non-deal colloid-polymer mixture, Rohrbach et al JCP (2022)"
+  },
+  {
     "objectID": "soft-matter_colloids3.html#pairwise-interactions-and-pair-correlations",
     "href": "soft-matter_colloids3.html#pairwise-interactions-and-pair-correlations",
     "title": "Complex Disordered Systems",
     "section": "Pairwise interactions and pair correlations",
-    "text": "Pairwise interactions and pair correlations\n\nFor such systems, all the thermodynamic properties are solely encoded in the pairwise correllations.\n\nYou have already seeen such corrleations in other contexts (Ising model, lattice gas).\nThe key pair correlation is the real space radial distribution function:\n\ng(r)=\\frac{1}{\\rho N}\\left\\langle\\sum_{i=1}^N \\sum_{j \\neq i} \\delta\\left(\\left|\\mathbf{r}_i-\\mathbf{r}_j\\right|-r\\right)\\right\\rangle\n\nThe free energy can then be written as \n\\frac{F_{\\mathrm{ex}}}{k_B T}=2 \\pi \\rho N \\int_0^{\\infty}[g(r) \\ln g(r)-g(r)+1] r^2 d r+\\frac{\\rho N}{2 k_B T} \\int V(r) g(r) d^3 r\n\nand you should be able to read out a part very reminiscent of an (information-theoretical) entropy and one reminiscent of an internal energy."
+    "text": "Pairwise interactions and pair correlations\n\nFor pairwise systems, all the thermodynamic properties are solely encoded in the pairwise correlations.\n\nYou have already seen such correlations in other contexts (Ising model, lattice gas).\nThe key pair correlation is the real space radial distribution function:\n\ng(r)=\\frac{1}{\\rho N}\\left\\langle\\sum_{i=1}^N \\sum_{j \\neq i} \\delta\\left(\\left|\\mathbf{r}_i-\\mathbf{r}_j\\right|-r\\right)\\right\\rangle\n\nThe free energy can then be written as \n\\frac{F_{\\mathrm{ex}}}{k_B T}=2 \\pi \\rho N \\int_0^{\\infty}[g(r) \\ln g(r)-g(r)+1] r^2 d r+\\frac{\\rho N}{2 k_B T} \\int V(r) g(r) d^3 r\n\nand you should be able to read out a part very reminiscent of an (information-theoretical) entropy and one reminiscent of an internal energy."
   },
   {
     "objectID": "soft-matter_colloids3.html#radial-distribution-function",
@@ -259,6 +266,13 @@
     "text": "Percus-Yevick approximation\nA common closure is the Percus-Yevick approximation.\n\nc(r)=[1+h(r)]\\left[1-e^{\\beta U(r)}\\right]\n\nThis closure interpolates between the hard-core exclusion (for U(r) \\to \\infty, c(r) \\to 0 inside the core) and the ideal gas limit (for U(r) = 0, c(r) = 0).\nThe result (semi) analytical. For hard spheres, it allows to calculate the g(r) accurately in a wide range of packing fractions\n\n\n\nPY approximation vs simulated data for hard spheres."
   },
   {
+    "objectID": "soft-matter_colloids3.html#equation-of-states-from-gr",
+    "href": "soft-matter_colloids3.html#equation-of-states-from-gr",
+    "title": "Complex Disordered Systems",
+    "section": "Equation of states from g(r)",
+    "text": "Equation of states from g(r)\nThe knowledge of the pair correlations also allows one to extract equation of states and significantly improve on the virial expansion, as the g(r) contains packing effects!\n\nP=\\rho k_B T-\\frac{2 \\pi \\rho^2}{3} \\int_0^{\\infty} r^3 \\frac{d u(r)}{d r} g(r) d r\n\n\n\n\n\n\n\nNote\n\n\nFor hard spheres, The derivative \\frac{du(r)}{dr} is zero everywhere except at the contact point r = \\sigma, where it becomes a delta function: \n\\frac{dV(r)}{dr} = -\\infty \\delta(r - \\sigma)\n\nSubstituting into the pressure equation: \nP = \\rho k_B T + \\frac{2\\pi\\rho^2}{3} \\sigma^3 g(\\sigma)\n\nTherefore, for hard spheres, the equation of state only requires knowledge of the contact value g(\\sigma).\nWe will see this in a problem class."
+  },
+  {
     "objectID": "soft-matter_colloids3.html#structure-factor",
     "href": "soft-matter_colloids3.html#structure-factor",
     "title": "Complex Disordered Systems",
@@ -270,14 +284,21 @@
     "href": "soft-matter_colloids3.html#structure-factor-1",
     "title": "Complex Disordered Systems",
     "section": "Structure factor",
-    "text": "Structure factor\nInteestingly, reciprocal space simplifies integral equations such as Ornstein-Zernicke\n\n\\tilde{h}(k)=\\frac{\\tilde{c}(k)}{1-\\rho \\tilde{c}(k)}\n\nallowing one to read the direct correlation function directly from scattering data, as tilde{h}(k)= can be identified with the structure factor.\n[STRUCTURE FACTOR VS G(R) IMAGE]"
+    "text": "Structure factor\nInterestingly, reciprocal space simplifies integral equations such as Ornstein-Zernicke\n\n\\tilde{h}(k)=\\frac{\\tilde{c}(k)}{1-\\rho \\tilde{c}(k)}\n\nallowing one to read the direct correlation function directly from scattering data, as \\tilde{h}(k)= can be identified with the structure factor."
+  },
+  {
+    "objectID": "soft-matter_colloids3.html#aside-higher-order-correlations",
+    "href": "soft-matter_colloids3.html#aside-higher-order-correlations",
+    "title": "Complex Disordered Systems",
+    "section": "Aside: higher order correlations",
+    "text": "Aside: higher order correlations\nNothing prevents us to quantify higher order correlations. In general these are non-trivial are controlled by the indirect part of the correlations.\nStandard ways to identify n-particle* correlations is to measure structural motifs.\nThis is particularly important for dense systems (e.g. glasses, see future lecture)."
   },
   {
     "objectID": "soft-matter_colloids3.html#dynamics-single-vs-collective-displacements",
     "href": "soft-matter_colloids3.html#dynamics-single-vs-collective-displacements",
     "title": "Complex Disordered Systems",
     "section": "Dynamics: single vs collective displacements",
-    "text": "Dynamics: single vs collective displacements\nThe thermal motion of individual colloids is often well modeled via the Langevin equation\n\nm \\frac{d \\vec{v}}{d t}=-\\gamma \\vec{v}+\\vec{\\eta}(t)\n\nCoarse-graining over small volumes (and short times) gives us access to the local density \\rho(\\mathbf{r},t) which obeys a diffusion equation\n\n\\frac{\\partial \\rho(\\mathbf{r}, t)}{\\partial t}=D \\nabla^2 \\rho(\\mathbf{r}, t)\n\nThe diffusivity is linked to the microscopic Langevin paramters via fluctuation-dissipation\n\nD=\\frac{k_B T}{\\gamma}\n\n(where the friction is the dissipation and the random force is the fluctuations)."
+    "text": "Dynamics: single vs collective displacements\nThe thermal motion of individual colloids is often well modeled via the Langevin equation\n\nm \\frac{d \\vec{v}}{d t}=-\\gamma \\vec{v}+\\vec{\\eta}(t)\n\nCoarse-graining over small volumes (and short times) gives us access to the local density \\rho(\\mathbf{r},t) which obeys a diffusion equation\n\n\\frac{\\partial \\rho(\\mathbf{r}, t)}{\\partial t}=D \\nabla^2 \\rho(\\mathbf{r}, t)\n\nThe diffusivity is linked to the microscopic Langevin parameters via fluctuation-dissipation (Einstein’s relation)\n\nD=\\frac{k_B T}{\\gamma}\n\n(where the friction is the dissipation and the random force is the fluctuations)."
   },
   {
     "objectID": "soft-matter_colloids3.html#diffusion-equation-macroscopic-picture",
@@ -298,7 +319,14 @@
     "href": "soft-matter_colloids3.html#stokes-einstein-relation-fluctuation-dissipation-for-colloids",
     "title": "Complex Disordered Systems",
     "section": "Stokes-Einstein relation: fluctuation dissipation for colloids",
-    "text": "Stokes-Einstein relation: fluctuation dissipation for colloids\nIn dilute conditions, we can"
+    "text": "Stokes-Einstein relation: fluctuation dissipation for colloids\nIn dilute conditions, let’s think of a particle slowly sedimenting in a viscous fluid.\nThe density distribution is Boltzmann\n\nn(x)=n_0 \\exp \\left(-U(x) / k_B T\\right)=n_0 \\exp \\left(-F x / k_B T\\right)\n\nwhere F= m_B g is the force from the buoyant mass.\nA flux is produced J_F = n(x) v=\\frac{n(x) F}{\\xi}\nwhere we used the fact that the velocity is set by the viscosity \\eta as v=F/\\eta.\nDiffusion occurs at the same time, driven by the gradient (Fick’s law) \nJ_D(x)=-D \\frac{\\partial n(x)}{\\partial x}"
+  },
+  {
+    "objectID": "soft-matter_colloids3.html#stokes-einstein-relation-fluctuation-dissipation-for-colloids-1",
+    "href": "soft-matter_colloids3.html#stokes-einstein-relation-fluctuation-dissipation-for-colloids-1",
+    "title": "Complex Disordered Systems",
+    "section": "Stokes-Einstein relation: fluctuation dissipation for colloids",
+    "text": "Stokes-Einstein relation: fluctuation dissipation for colloids\nEquating the two we have\n\n\\frac{n(x) F}{\\xi}=-D \\frac{\\partial n(x)}{d x}=D \\frac{F}{k_B T} n(x)\n\nand differentiating the Boltzmann distribution gives \n\\frac{n(x) F}{\\xi}= D \\frac{F}{k_B T} n(x)\n\nHence a balance exists between thermal fluctuations and viscosities. For a sphere, Stoke’s law \\xi=6 \\pi \\eta R yielding simply\n\nD=\\frac{k_B T}{\\xi}=\\frac{k_B T}{6 \\pi \\eta R}\n\nThis is a re-statement of the Einstein relation, called the Stokes-Einstein relation.\n\n\\text { Fluctuations: } k_B T \\quad \\longrightarrow \\quad \\text { Observed motion: } D \\quad \\longrightarrow \\quad \\text { Dissipation: } 6 \\pi \\eta R .\n\nWhich is generic under (moderate) driving."
   },
   {
     "objectID": "soft-matter_colloids3.html#random-walkers-in-2d-example",
@@ -326,7 +354,7 @@
     "href": "soft-matter_colloids3.html#dilute-vs-dense-diffusion-1",
     "title": "Complex Disordered Systems",
     "section": "Dilute vs dense diffusion",
-    "text": "Dilute vs dense diffusion\n\nAt very high volume fractions the cage mechanism becomes more complex: paricles are trapped for long times and only occasionaly break cages:\n\ncage-jump dynamics \\to glassy dynamics (see future lectures)\nrare events \\to Levy-flight statistics \\neq Gaussian/diffusive statistics\nBreaking of fluctuation-dissipation condition encoded in the Stokes-Einstein relation (see next slides)"
+    "text": "Dilute vs dense diffusion\n\nAt very high volume fractions the cage mechanism becomes more complex: paricles are trapped for long times and only occasionaly break cages:\n\ncage-jump dynamics \\to glassy dynamics (see future lectures)\nrare events \\to Levy-flight statistics \\neq Gaussian/diffusive statistics\nBreaking of fluctuation-dissipation condition encoded in the Stokes-Einstein relation\n\nthe viscosity increases much faster than the decrease in diffusion D\\xi/T\\neq \\mathrm{constant}"
   },
   {
     "objectID": "soft-matter_intro.html#today",

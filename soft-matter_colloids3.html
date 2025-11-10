@@ -184,12 +184,21 @@ U_N\left(\mathbf{r}^N\right)=\sum_{i=1}^{N-1} \sum_{j=i+1}^N V\left(r_i j\right)
 </span></p>
 <p>where <span class="math inline">V(r_{ij})</span> is the pairwise, radial interaction potential that only depends on the distance between particle centres <span class="math inline">r_{ij} = \mathbf{r}_i-\mathbf{r}_j</span>.</p>
 </section>
+<section id="aside-not-pairwise" class="slide level2">
+<h2>Aside: Not pairwise?</h2>
+<p>Some examples of non-pariwise situations:</p>
+<ul>
+<li><strong>Atomistic models</strong>: Electronic densities that fluctuate due to quantum effects are intrinsically many-body</li>
+<li><strong>True colloid-cpolymer mixtures</strong>: if the polymers are not ideal, their spatial distribution and their forces depend on the positions of more than two colloids</li>
+</ul>
+
+<img data-src="./figs/dft-nonideal-colloid-polymer.png" class="r-stretch quarto-figure-center"><p class="caption"><span class="math inline">C_{60}</span> isosurface via density functional theory (Wikipedia) and configuration of non-deal colloid-polymer mixture, Rohrbach et al JCP (2022)</p></section>
 <section id="pairwise-interactions-and-pair-correlations" class="slide level2">
 <h2>Pairwise interactions and pair correlations</h2>
 <ul>
-<li>For such systems, all the thermodynamic properties are solely encoded in the <strong>pairwise correllations</strong>.</li>
+<li>For <strong>pairwise</strong> systems, all the thermodynamic properties are solely encoded in the <strong>pairwise correlations</strong>.</li>
 </ul>
-<p>You have already seeen such corrleations in other contexts (Ising model, lattice gas).</p>
+<p>You have already seen such correlations in other contexts (Ising model, lattice gas).</p>
 <p>The key pair correlation is the real space <strong>radial distribution function</strong>:</p>
 <p><span class="math display">
 g(r)=\frac{1}{\rho N}\left\langle\sum_{i=1}^N \sum_{j \neq i} \delta\left(\left|\mathbf{r}_i-\mathbf{r}_j\right|-r\right)\right\rangle
@@ -271,6 +280,33 @@ c(r)=[1+h(r)]\left[1-e^{\beta U(r)}\right]
 </figure>
 </div>
 </section>
+<section id="equation-of-states-from-gr" class="slide level2">
+<h2>Equation of states from <span class="math inline">g(r)</span></h2>
+<p>The knowledge of the pair correlations also allows one to extract equation of states and significantly improve on the virial expansion, as the <span class="math inline">g(r)</span> contains packing effects!</p>
+<p><span class="math display">
+P=\rho k_B T-\frac{2 \pi \rho^2}{3} \int_0^{\infty} r^3 \frac{d u(r)}{d r} g(r) d r
+</span></p>
+<div class="callout callout-note callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Note</strong></p>
+</div>
+<div class="callout-content">
+<p>For hard spheres, The derivative <span class="math inline">\frac{du(r)}{dr}</span> is zero everywhere except at the contact point <span class="math inline">r = \sigma</span>, where it becomes a delta function: <span class="math display">
+\frac{dV(r)}{dr} = -\infty \delta(r - \sigma)
+</span></p>
+<p>Substituting into the pressure equation: <span class="math display">
+P = \rho k_B T + \frac{2\pi\rho^2}{3} \sigma^3 g(\sigma)
+</span></p>
+<p>Therefore, for hard spheres, the equation of state only requires knowledge of the contact value <span class="math inline">g(\sigma)</span>.</p>
+<p>We will see this in a problem class.</p>
+</div>
+</div>
+</div>
+</section>
 <section id="structure-factor" class="slide level2">
 <h2>Structure factor</h2>
 <p>The real-space correlations and relations have their reciprocal (<em>Fourier</em> space) counterparts.</p>
@@ -289,12 +325,17 @@ S(k)=1+4 \pi \rho \int_0^{\infty} r^2[g(r)-1] \frac{\sin (k r)}{k r} d r
 </section>
 <section id="structure-factor-1" class="slide level2">
 <h2>Structure factor</h2>
-<p>Inteestingly, reciprocal space simplifies integral equations such as Ornstein-Zernicke</p>
+<p>Interestingly, reciprocal space simplifies integral equations such as Ornstein-Zernicke</p>
 <p><span class="math display">
 \tilde{h}(k)=\frac{\tilde{c}(k)}{1-\rho \tilde{c}(k)}
 </span></p>
-<p>allowing one to read the direct correlation function directly from scattering data, as <span class="math inline">tilde{h}(k)=</span> can be identified with the structure factor.</p>
-<p>[STRUCTURE FACTOR VS G(R) IMAGE]</p>
+<p>allowing one to read the direct correlation function directly from scattering data, as <span class="math inline">\tilde{h}(k)=</span> can be identified with the structure factor.</p>
+</section>
+<section id="aside-higher-order-correlations" class="slide level2">
+<h2>Aside: higher order correlations</h2>
+<p>Nothing prevents us to quantify higher order correlations. In general these are non-trivial are controlled by the indirect part of the correlations.</p>
+<p>Standard ways to identify <strong>n-particle</strong>* correlations is to measure <strong>structural motifs</strong>.</p>
+<p>This is particularly important for dense systems (e.g.&nbsp;glasses, see future lecture).</p>
 </section>
 <section id="dynamics-single-vs-collective-displacements" class="slide level2">
 <h2>Dynamics: single vs collective displacements</h2>
@@ -306,7 +347,7 @@ m \frac{d \vec{v}}{d t}=-\gamma \vec{v}+\vec{\eta}(t)
 <p><span class="math display">
 \frac{\partial \rho(\mathbf{r}, t)}{\partial t}=D \nabla^2 \rho(\mathbf{r}, t)
 </span></p>
-<p>The diffusivity is linked to the microscopic Langevin paramters via <em>fluctuation-dissipation</em></p>
+<p>The diffusivity is linked to the microscopic Langevin parameters via <strong>fluctuation-dissipation</strong> (Einstein’s relation)</p>
 <p><span class="math display">
 D=\frac{k_B T}{\gamma}
 </span></p>
@@ -342,7 +383,36 @@ D=\frac{k_B T}{\gamma}
 </section>
 <section id="stokes-einstein-relation-fluctuation-dissipation-for-colloids" class="slide level2">
 <h2>Stokes-Einstein relation: fluctuation dissipation for colloids</h2>
-<p>In dilute conditions, we can</p>
+<p>In dilute conditions, let’s think of a particle slowly sedimenting in a viscous fluid.</p>
+<p>The density distribution is Boltzmann</p>
+<p><span class="math display">
+n(x)=n_0 \exp \left(-U(x) / k_B T\right)=n_0 \exp \left(-F x / k_B T\right)
+</span></p>
+<p>where <span class="math inline">F= m_B g</span> is the force from the buoyant mass.</p>
+<p>A flux is produced <span class="math inline">J_F = n(x) v=\frac{n(x) F}{\xi}</span></p>
+<p>where we used the fact that the velocity is set by the viscosity <span class="math inline">\eta</span> as <span class="math inline">v=F/\eta</span>.</p>
+<p>Diffusion occurs at the same time, driven by the gradient (Fick’s law) <span class="math display">
+J_D(x)=-D \frac{\partial n(x)}{\partial x}
+</span></p>
+</section>
+<section id="stokes-einstein-relation-fluctuation-dissipation-for-colloids-1" class="slide level2">
+<h2>Stokes-Einstein relation: fluctuation dissipation for colloids</h2>
+<p>Equating the two we have</p>
+<p><span class="math display">
+\frac{n(x) F}{\xi}=-D \frac{\partial n(x)}{d x}=D \frac{F}{k_B T} n(x)
+</span></p>
+<p>and differentiating the Boltzmann distribution gives <span class="math display">
+\frac{n(x) F}{\xi}= D \frac{F}{k_B T} n(x)
+</span></p>
+<p>Hence a balance exists between thermal fluctuations and viscosities. For a sphere, <strong>Stoke’s law</strong> <span class="math inline">\xi=6 \pi \eta R</span> yielding simply</p>
+<p><span class="math display">
+D=\frac{k_B T}{\xi}=\frac{k_B T}{6 \pi \eta R}
+</span></p>
+<p>This is a re-statement of the Einstein relation, called the <strong>Stokes-Einstein</strong> relation.</p>
+<p><span class="math display">
+\text { Fluctuations: } k_B T \quad \longrightarrow \quad \text { Observed motion: } D \quad \longrightarrow \quad \text { Dissipation: } 6 \pi \eta R .
+</span></p>
+<p>Which is generic under (moderate) driving.</p>
 </section>
 <section id="random-walkers-in-2d-example" class="slide level2">
 <h2>Random walkers in 2d, example</h2>
@@ -407,7 +477,10 @@ eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoibl9zdGVwcywgbl93YWxrZXJz
 <ul>
 <li>cage-jump dynamics <span class="math inline">\to</span> glassy dynamics (see future lectures)</li>
 <li>rare events <span class="math inline">\to</span> Levy-flight statistics <span class="math inline">\neq</span> Gaussian/diffusive statistics</li>
-<li>Breaking of fluctuation-dissipation condition encoded in the <strong>Stokes-Einstein</strong> relation (see next slides)</li>
+<li>Breaking of fluctuation-dissipation condition encoded in the <strong>Stokes-Einstein</strong> relation
+<ul>
+<li>the viscosity increases much faster than the decrease in diffusion <span class="math inline">D\xi/T\neq \mathrm{constant}</span></li>
+</ul></li>
 </ul></li>
 </ul>
 
