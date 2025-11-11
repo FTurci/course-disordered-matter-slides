@@ -221,7 +221,7 @@
     "href": "soft-matter_colloids3.html#aside-not-pairwise",
     "title": "Complex Disordered Systems",
     "section": "Aside: Not pairwise?",
-    "text": "Aside: Not pairwise?\nSome examples of non-pariwise situations:\n\nAtomistic models: Electronic densities that fluctuate due to quantum effects are intrinsically many-body\nTrue colloid-cpolymer mixtures: if the polymers are not ideal, their spatial distribution and their forces depend on the positions of more than two colloids\n\n\nC_{60} isosurface via density functional theory (Wikipedia) and configuration of non-deal colloid-polymer mixture, Rohrbach et al JCP (2022)"
+    "text": "Aside: Not pairwise?\nSome examples of non-pariwise situations:\n\nAtomistic models: Electronic densities that fluctuate due to quantum effects are intrinsically many-body\nTrue colloid-cpolymer mixtures: if the polymers are not ideal, their spatial distribution and their forces depend on the positions of more than two colloids\n\n\n\n\nC_{60} isosurface via density functional theory (Wikipedia) and configuration of non-deal colloid-polymer mixture, Rohrbach et al JCP (2022)"
   },
   {
     "objectID": "soft-matter_colloids3.html#pairwise-interactions-and-pair-correlations",
@@ -284,7 +284,7 @@
     "href": "soft-matter_colloids3.html#structure-factor-1",
     "title": "Complex Disordered Systems",
     "section": "Structure factor",
-    "text": "Structure factor\nInterestingly, reciprocal space simplifies integral equations such as Ornstein-Zernicke\n\n\\tilde{h}(k)=\\frac{\\tilde{c}(k)}{1-\\rho \\tilde{c}(k)}\n\nallowing one to read the direct correlation function directly from scattering data, as \\tilde{h}(k)= can be identified with the structure factor."
+    "text": "Structure factor\nInterestingly, reciprocal space simplifies integral equations such as Ornstein-Zernicke\n\n\\tilde{h}(k)=\\frac{\\tilde{c}(k)}{1-\\rho \\tilde{c}(k)}\n\nallowing one to read the direct correlation function directly from scattering data, as \\tilde{h}(k)= can be identified with the structure factor.\n\n\n\nStructure factors (left) and radial distribution functions (right) for Gallium at extreme conditions"
   },
   {
     "objectID": "soft-matter_colloids3.html#aside-higher-order-correlations",
