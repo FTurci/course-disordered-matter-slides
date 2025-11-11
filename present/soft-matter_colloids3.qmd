@@ -1,5 +1,6 @@
 ---
 title: "Complex Disordered Systems"
+subtitle: "Static and dynamic correlations"
 format: 
     live-revealjs:
         incremental: false
@@ -34,11 +35,24 @@ $$
 
 where $V(r_{ij})$ is the pairwise, radial interaction potential that only depends on the distance between particle centres $r_{ij} = \mathbf{r}_i-\mathbf{r}_j$.
 
+
+## Aside: Not pairwise?
+
+Some examples of non-pariwise situations:
+
+- **Atomistic models**: Electronic densities that fluctuate due to quantum effects are intrinsically many-body
+- **True colloid-cpolymer mixtures**: if the polymers are not ideal, their spatial distribution and their forces depend on the positions of more than two colloids 
+
+![$C_{60}$ isosurface via density functional theory (Wikipedia) and configuration of non-deal colloid-polymer mixture, Rohrbach et al JCP (2022)](./figs/dft-nonideal-colloid-polymer.png){height=450}
+
+
+
+
 ## Pairwise interactions and pair correlations
 
-- For such systems, all the thermodynamic properties are solely encoded in the **pairwise correllations**.
+- For **pairwise** systems, all the thermodynamic properties are solely encoded in the **pairwise correlations**.
 
-You have already seeen such corrleations in other contexts (Ising model, lattice gas).
+You have already seen such correlations in other contexts (Ising model, lattice gas).
 
 The key pair correlation is the real space **radial distribution function**:
 
@@ -125,6 +139,32 @@ The result (semi) analytical. For hard spheres, it allows to calculate the g(r) 
 
 ![PY approximation vs simulated data for hard spheres.](./figs/hs47.png){height=350}
 
+## Equation of states from $g(r)$
+
+The knowledge of the pair correlations also  allows one to extract equation of states and significantly improve on the virial expansion, as the $g(r)$ contains packing effects!
+
+$$
+P=\rho k_B T-\frac{2 \pi \rho^2}{3} \int_0^{\infty} r^3 \frac{d u(r)}{d r} g(r) d r
+$$
+
+
+:::{.callout-note}
+For hard spheres, 
+The derivative $\frac{du(r)}{dr}$ is zero everywhere except at the contact point $r = \sigma$, where it becomes a delta function:
+$$
+\frac{dV(r)}{dr} = -\infty \delta(r - \sigma)
+$$
+
+Substituting into the pressure equation:
+$$
+P = \rho k_B T + \frac{2\pi\rho^2}{3} \sigma^3 g(\sigma)
+$$
+
+Therefore, for hard spheres, the equation of state only requires knowledge of the contact value $g(\sigma)$.
+
+We will see this in a problem class.
+:::
+
 ## Structure factor
 
 The real-space correlations and relations have their reciprocal (*Fourier* space) counterparts.
@@ -148,16 +188,26 @@ $$
 
 ## Structure factor
 
-Inteestingly, reciprocal space simplifies integral equations such as Ornstein-Zernicke
+Interestingly, reciprocal space simplifies integral equations such as Ornstein-Zernicke
 
 $$
 \tilde{h}(k)=\frac{\tilde{c}(k)}{1-\rho \tilde{c}(k)}
 $$
 
-allowing one to read the direct correlation function directly from scattering data, as $tilde{h}(k)=$ can be identified with the structure factor.
+allowing one to read the direct correlation function directly from scattering data, as $\tilde{h}(k)=$ can be identified with the structure factor.
+
+![Structure factors (left) and radial distribution functions (right) for Gallium at extreme conditions, Drewitt et al PRL (2020)](./figs/gallium.png){height=450}
+
+## Aside: higher order correlations
+
+Nothing prevents us to quantify higher order correlations. In general these are non-trivial are controlled by the indirect part of the correlations.
+
+Standard ways to identify **n-particle*** correlations is to measure **structural motifs**. 
+
+![Many body correlations in hard spheres, seminal work from Josh Robinson, PhD student in Bristol a few years ago, Robinson et al PRL (2019)](./figs/josh.png)
 
 
-[STRUCTURE FACTOR VS G(R) IMAGE]
+This is particularly important for dense systems (e.g. glasses, see future lecture).
 
 ##  Dynamics: single vs collective displacements
 
@@ -173,7 +223,7 @@ $$
 \frac{\partial \rho(\mathbf{r}, t)}{\partial t}=D \nabla^2 \rho(\mathbf{r}, t)
 $$
 
-The diffusivity is linked to the microscopic Langevin paramters via *fluctuation-dissipation*
+The diffusivity is linked to the microscopic Langevin parameters via **fluctuation-dissipation** (Einstein's relation)
 
 $$
 D=\frac{k_B T}{\gamma}
@@ -215,11 +265,135 @@ $$
 
 Hence $D$ can be extracted from linear fits to the MSD.
 
-:::{.callout-note}
+## Stokes-Einstein relation: fluctuation dissipation for colloids
+
+In dilute conditions, let's think of a particle slowly sedimenting in a viscous fluid.
+
+The density distribution is Boltzmann
+
+$$
+n(x)=n_0 \exp \left(-U(x) / k_B T\right)=n_0 \exp \left(-F x / k_B T\right)
+$$
+
+where $F= m_B g$ is the force from the buoyant mass.
+
+A flux is produced $J_F = n(x) v=\frac{n(x) F}{\xi}$
+
+where we used the fact that the velocity is set by the viscosity $\eta$ as $v=F/\eta$. 
+
+Diffusion occurs at the same time, driven by the gradient (Fick's law)
+$$
+J_D(x)=-D \frac{\partial n(x)}{\partial x}
+$$
+
+## Stokes-Einstein relation: fluctuation dissipation for colloids
+
+Equating the two we have
+
+$$
+\frac{n(x) F}{\xi}=-D \frac{\partial n(x)}{d x}=D \frac{F}{k_B T} n(x)
+$$
+
+and differentiating the Boltzmann distribution gives
+$$
+\frac{n(x) F}{\xi}= D \frac{F}{k_B T} n(x)
+$$
+
+Hence a balance exists between thermal fluctuations and viscosities. For a sphere, **Stoke's law** $\xi=6 \pi \eta R$ yielding simply
+
+$$
+D=\frac{k_B T}{\xi}=\frac{k_B T}{6 \pi \eta R}
+$$
+
+This is a re-statement of the Einstein relation, called the **Stokes-Einstein** relation.
+
+$$
+\text { Fluctuations: } k_B T \quad \longrightarrow \quad \text { Observed motion: } D \quad \longrightarrow \quad \text { Dissipation: } 6 \pi \eta R .
+$$
+
+Which is generic under (moderate) driving.
+
+
+## Random walkers in 2d, example
+
+```{pyodide}
+#| echo: false
+import matplotlib.pyplot as plt
+
+import numpy as np
+
+
+def plot_tj(positions, msd, walker=0, loglog=False):
+    # Plot
+    fig, ax = plt.subplots(1, 3, figsize=(9.5,2.8))
+    ax[0].plot(positions[0, :, 0], positions[0, :, 1], alpha=0.7, linewidth=0.8)  # example trajectory
+    time = np.arange(len(msd))
+    ax[1].plot(time, msd, 'o-', markersize=3)
+    # Fit linear line to MSD data
+    slope, intercept = np.polyfit(time, msd, 1)
+    fit_line = slope * time + intercept
+    D = slope/4
+    ax[1].plot(time, fit_line, 'r--', alpha=0.8, label=f'All data: D={D:.2f}')
+
+    # partial data
+    slope, intercept = np.polyfit(time[:len(time)//2], msd[:len(time)//2], 1)
+    fit_line = slope * time + intercept
+    D = slope/4
+    ax[1].plot(time, fit_line, 'g--', alpha=0.8, label=f'Half data: D={slope:.2f}')
+
+    ax[1].legend(fontsize=8, frameon=False)
+    ax[1].set(xlabel="time",ylabel="MSD")
+    if loglog:
+        ax[1].set_xscale('log')
+        ax[1].set_yscale('log')
+
+    bins = np.arange(-200,200,20.0)
+    H, edgesx, edgesy = np.histogram2d(positions[:,-1,0],positions[:,-1,1],bins=(bins,bins))
+
+
+    ax[2].imshow(H.T)
+    ax[0].axis("equal")
+    ax[2].axis("equal")
+    ax[2].axis("off")
+    plt.tight_layout()
+    plt.show()
+
+```
+
+```{pyodide}
+n_steps, n_walkers, dim = 10000, 500, 2
+steps = np.random.randint(-1, 2, size=(n_walkers, n_steps, dim))
+positions = np.cumsum(steps, axis=1)  # cumulative sum along steps
+msd = positions.var(axis=0).sum(axis=1)  # MSD at each timestep
+plot_tj(positions,msd,walker=0,loglog=False)
+```
+
+
 ## Hidden assumptions
 
+:::{.callout-note}
 - We have been considering ensembles of particles microscopically governed by the Langevin equation
 - We did not comment on the inter-particle interactions and assumed that the properties of the thermal bath determine the diffusivity $D$. In reality, interactions between particles can lead to deviations from simple diffusion, especially at higher concentrations, where collective effects and hydrodynamic interactions become important.
 
-
 :::
+## Dilute vs dense diffusion
+
+- Consider hard spheres in a fluid.
+
+- At low volume fractions $\phi$ they rarely collide and they perofrm under/over-damped (Langevin) dynamics. They will therefore diffuse as $\operatorname{MSD} (t)= 6D_0 t$
+
+- Things change when we increase the packing. 
+    - Short times: $D_s <D_0$, diffusion within **cages** formed by the neighbours. Mostly free, but with some collisions.
+    - Long times: $D_L\ll D_0$ cage breaking. Interactions are both hard core and hydrodynamic
+
+![MSD of colloids ](./figs/colloids-msd.png){height=430}
+
+
+## Dilute vs dense diffusion
+
+- At **very high** volume fractions the cage mechanism becomes more complex: paricles are trapped for long times and only occasionaly break cages:
+    - cage-jump dynamics $\to$ glassy dynamics (see future lectures)
+    - rare events $\to$ Levy-flight statistics $\neq$ Gaussian/diffusive statistics
+    - Breaking of fluctuation-dissipation condition encoded in the **Stokes-Einstein** relation 
+        - the viscosity increases much faster than the decrease in diffusion $D\xi/T\neq \mathrm{constant}$
+

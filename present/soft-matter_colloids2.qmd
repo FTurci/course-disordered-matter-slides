@@ -1,9 +1,12 @@
 ---
 title: "Complex Disordered Systems"
+subtitle: "Colloids as Big Atoms"
 format: 
     live-revealjs:
         incremental: false
         pdf: true
+resources:
+    - ./figs/melt_freeze.mp4
 
 bibliography: references.bib
 mermaid-format: svg # png also works
@@ -45,7 +48,7 @@ mermaid-format: svg # png also works
 
 ## Colloidal hard spheres
 
-True hard spheres do not exist. Colloidal hard spheres approximate the behaviour in many ways
+True hard spheres do not exist. Colloidal hard spheres approximate the behaviour in many ways.
 
 
 ![Schematic representation of various models for hard-sphere colloids. (a) A sterically stabilized particle has surface “hairs” (not to scale). (b) A charged colloid has an electrical double layer (shaded area) that gives rise to an effective diameter (c) A microgel particle is a heavily cross-linked polymer. From Royall et al Soft Matter (2013)](./figs/paddyHardSpheres.png){height=400}
@@ -55,7 +58,7 @@ True hard spheres do not exist. Colloidal hard spheres approximate the behaviour
 
 Idealised hard spheres are impenetrable objects. 
 
-They are characterised by the simplest of the potentials.
+They are characterised by the simplest of potentials.
 
 
 <svg width="800" height="440" viewBox="0 0 400 220" xmlns="http://www.w3.org/2000/svg">
@@ -78,9 +81,9 @@ $$
 
 This simplification arises because the potential \( U(r) \) is either infinite (forbidden region) or zero (allowed region).
 
-For this reason, they hard spheres are **entropy driven**.
+For this reason, hard spheres are **entropy driven**.
 
-Constructing partition functions is then just counting **counting valid configurations**, linking geometry to thermodynamics.
+Constructing partition functions is then just **counting valid configurations**, linking geometry to thermodynamics.
 
 
 - A good example:  **Asakura-Oosawa** depletion, that we have already seen.
@@ -99,13 +102,13 @@ where $\rho=N/V$ is the number density.
 
 ## Phase diagram of hard spheres
 :::{.nonincremental}
-Since we have a single control parameter, the pahse diagram is one-dimensional.
+Since we have a single control parameter, the phase diagram is one-dimensional.
 
-Changing temeprature is immaterial to the free energy: it is a simple rescaling factor.
+Changing temperature is immaterial to the free energy: it is a simple rescaling factor.
 
 It is intuitive to guess the **low density limit** of hard spheres:
 
-- few spheres in a box should behave similalry to an ideal gas
+- few spheres in a box should behave similarly to an ideal gas
 
 
 It is harder to guess the **high density limit**
@@ -119,19 +122,19 @@ We will gradually build our understanding from low to dense packing.
 
 ## Low packing fractions
 
-When treating the Asakura-Osawa depletion we introduced the **excluded volume**. It is also also key for hard spheres.
+When treating the Asakura-Oosawa depletion we introduced the **excluded volume**. It is also key for hard spheres.
 
 - The distance of closest approach between two identical spheres is $\sigma$, which corresponds to the diameter of the spheres. The excluded volume of one particle is $$v_{\rm ex} =4\pi\sigma^3/3$$
 
 
-- At low densities, hard spheres are isolated and so no overlaps occcur and the accesible volume for N spheres is  $$V_{\rm accessible} = V-Nv_{\rm ex}$$
+- At low densities, hard spheres are isolated and so no overlaps occur and the accessible volume for N spheres is  $$V_{\rm accessible} = V-Nv_{\rm ex}$$
 
-- For phase behaviour, we need the thermodyanamic potential.  At constant volume and number of particles, the parition function is a measure of the accessible volume $$
+- For phase behaviour, we need the thermodynamic potential.  At constant volume and number of particles, the partition function is a measure of the accessible volume $$
 \mathcal{Z} = \frac{1}{N! \Lambda^{3N}} \int_{V_{\rm accessible}} d\mathbf{r}_1 \ldots d\mathbf{r}_N$$ 
 
     where $\Lambda$ is the thermal de Broglie wavelength $\Lambda = h/\sqrt{2\pi mk_B T}$. 
 
-    Mass and temperature are factorising out.
+    Mass and temperature are factoring out.
 
 
 ## Low packing fractions: entropy
@@ -143,14 +146,14 @@ with the $1/2$ factor coming from the fact that we avoid double counting the exc
 
 - We immediately obtain the entropy as $$S = k_B \ln \mathcal{Z} = k_B \left[ N \ln(V - N v_{\rm ex}/2) - \ln N! - 3N \ln \Lambda \right]$$
 
-- Via Stirling approximation  $\ln N! = N\ln N -N$  we get $$S = k_B \left[ N \ln(V - N v_{\rm ex}/2) - (N \ln N - N) - 3N \ln \Lambda \right]$$
+- Via Stirling's approximation  $\ln N! = N\ln N -N$  we get $$S = k_B \left[ N \ln(V - N v_{\rm ex}/2) - (N \ln N - N) - 3N \ln \Lambda \right]$$
 
 - This can be rewritten as  $$S = N k_B \left[ \ln\left( \frac{V - N v_{\rm ex}/2}{N \Lambda^3} \right) + 1 \right]$$
 
 
 ## Low packing fraction: equation of state
 
-The **equation of state** links the  three relevant thermodynamics variables $P,T$ and $\phi$
+The **equation of state** links the three relevant thermodynamic variables $P,T$ and $\phi$
 
 $$P = -\left(\dfrac{\partial F}{\partial V}\right)_{N,T} =T\left(\dfrac{\partial S}{\partial V}\right)_{N,T}= \dfrac{k_B T }{v-v_{\rm ex}/2}$$
 
@@ -174,9 +177,9 @@ The expression $Z_{\rm comp} = 1+4\phi+O(\phi^2)$ is just the simplest form of t
 
 $$Z_{\rm comp}= 1 + B_2 \rho + B_3 \rho^2+ \dots$$
 
-The $B_2, B_3, \dots$ are known as **virial coeffcients** and for non-hard-sphere systems they also depend on temperature,  $B_2(T), B_3(T),\dots$
+The $B_2, B_3, \dots$ are known as **virial coefficients** and for non-hard-sphere systems they also depend on temperature,  $B_2(T), B_3(T),\dots$
 
-They encode **correlations** (pairs, triplets and so on). In a genric setting
+They encode **correlations** (pairs, triplets and so on). In a generic setting
 
 $$
 Z_N=\frac{1}{N!\Lambda^{3 N}} \int \cdots \int \exp \left[-\beta \sum_{i<j} U\left(r_{i j}\right)\right] d \mathbf{r}_1 \ldots d \mathbf{r}_N
@@ -197,7 +200,6 @@ $$
 $$
 The first term is the ideal gas, the second is clearly **pair correlations** (only pairwise distances).
 
-The virial expansion can also be represented diagrammatically. For the compressibility factor \( Z_{\rm comp} \), we have:
 
 This motivates one to define $$
 B_2(T)=-\frac{1}{2} \int f(r) d \mathbf{r}=-2 \pi \int_0^{\infty}\left[e^{-\beta U(r)}-1\right] r^2 d r
@@ -219,9 +221,9 @@ So $Z = 1 + \dfrac{2\pi}{3} \sigma^3\rho = 1+ 4\left( \dfrac{\pi}{6} \sigma^3\rh
 - The **compressibility factor** in terms of the packing fraction $\phi$ is the most condensed expression and is $$
 Z_{\mathrm{comp}}=\frac{P V}{N k_B T}=1+4 \phi+O\left(\phi^2\right)
 $$
-    highlighting the first non-trivial perturbation to the ideal gass
+    highlighting the first non-trivial perturbation to the ideal gas
 
-- We can see this as an instance of the more general **virial** and **cluster expansion** formalism. which can used for any fluid. $$
+- We can see this as an instance of the more general **virial** and **cluster expansion** formalism, which can be used for any fluid. $$
 Z_{\text {comp }}=1+B_2 \rho+B_3 \rho^2+\ldots
 $$
 
@@ -234,7 +236,7 @@ $$
 
 :::{.nonincremental}
 
-- As we increase the packing fraction, the accessible (free) volume reduces rapidly and tehrmal motion is hindered.
+- As we increase the packing fraction, the accessible (free) volume reduces rapidly and thermal motion is hindered.
 
 - Tight disordered (random) packing of spheres are described as **jammed**: link with glasses (in future lectures).
 
@@ -242,7 +244,7 @@ $$
 
 - Kepler's conjecture (1611, proved only in 2017):
 
-- Densest packings are **Face Centerd Cubic (FCC) or Hexagonally Cosed Packed (HCP)** $\phi_{\max }=\frac{\pi}{3 \sqrt{2}} \approx 0.74$
+- Densest packings are **Face Centred Cubic (FCC) or Hexagonally Close Packed (HCP)** $\phi_{\max }=\frac{\pi}{3 \sqrt{2}} \approx 0.74$
 
 ![Packings](./figs/packings.png){height=250}
 
@@ -250,7 +252,7 @@ $$
 
 ## Dense packing
 
-### Q: Can purely replusive spheres spheres assemble spontaneously into an FCC crystal?
+### Q: Can purely repulsive spheres assemble spontaneously into an FCC crystal?
 
 :::{.columns style="display:flex; justify-content:space-between;"}
 
@@ -277,19 +279,19 @@ $$
 
 ## Dense packing and crystallisation
 
-Early **computer simulations** ( molecular dynamics, Alder and Wainwright 1957, Monte Carlo, Wood and Jacobson (1957)) proved that that crystalisation is possible.
+Early **computer simulations** (molecular dynamics, Alder and Wainwright 1957, Monte Carlo, Wood and Jacobson (1957)) proved that crystallisation is possible.
 
 <div style="text-align:center;">
-<video src="figs/melt_freeze.mp4" height="600" controls></video></div>
+<video src="./figs/melt_freeze.mp4" height="600" controls></video></div>
 
-The video shows a Monte-Carlo simulation at packing $\phi=0.49$ for a small system of 32 particles. Small systems have enhanced fluctuations, leadint to spontaneous freezing and unfreezing.
+The video shows a Monte Carlo simulation at packing $\phi=0.49$ for a small system of 32 particles. Small systems have enhanced fluctuations, leading to spontaneous freezing and unfreezing.
 
 ## Dense packing: cell model
 
  - In an FCC cell, particles can move very little beyond their own diameter $\sigma$. 
  - Assume that the volume per particle is $v$ and the (geometrically constrained) close packed volume is $v_{cp}$.
 
-- The maximum dispalcement is $$
+- The maximum displacement is $$
 \delta=\frac{\sigma}{\sqrt{2}}\left(\left(\frac{v}{v_{c p}}\right)^{1 / 3}-1\right)
 $$ 
 
@@ -310,24 +312,24 @@ $$
 
 - This expression is **completely different from the low density regime**  $$Z_{\text {comp }}^{\mathrm{low}}=1+B_2 \rho+B_3 \rho^2+\ldots$$
 
-- The incompatibility signal **non-analiticity** and hence a **discontinuous phase transition**: **first order trasnition**.
+- The incompatibility signals **non-analyticity** and hence a **discontinuous phase transition**: **first order transition**.
 
-- First order phase transition are characterised by **interfaces** and **coexistence between phases**.
+- First order phase transitions are characterised by **interfaces** and **coexistence between phases**.
 
 - We should therefore observe **phase coexistence** in simulations and experiments of hard spheres.
 
 
 ## Colloidal hard spheres: phase behaviour
 
-![Vials of colloidal hard spheres under the effect of sedimentation: the gravitational field imposes a density gradient. At low packing fraction this maintains the dispersed fluid, but when the packing fraction is sufficiently high, it spontaneously forms a crystalline phase (speckled areas) after some time, in coexistence with a fluid. Notice that at ver high packing the interfaces didappear and one has a disordered phase again: it is the glass, see Pusey et al, *Philosophical Transactions of the Royal Society A* (2009). ](./figs/rsta20090181f01.jpg){height=450}
+![Vials of colloidal hard spheres under the effect of sedimentation: the gravitational field imposes a density gradient. At low packing fraction this maintains the dispersed fluid, but when the packing fraction is sufficiently high, it spontaneously forms a crystalline phase (speckled areas) after some time, in coexistence with a fluid. Notice that at very high packing the interfaces disappear and one has a disordered phase again: it is the glass, see Pusey et al, *Philosophical Transactions of the Royal Society A* (2009). ](./figs/rsta20090181f01.jpg){height=450}
 
 ## Colloidal hard spheres: phase behaviour
 
-In conclusion, the one dimensional ohase diagram of hard spheres is the following
+In conclusion, the one-dimensional phase diagram of hard spheres is the following
 
 ![Hard spheres phase diagram](./figs/hard-sphere-diag.svg)
 
-Notice that the the **glass phase** is purely nonequilibrium: if a system has enough time to relax, it will eventually form a **crystal**.
+Notice that the **glass phase** is purely non-equilibrium: if a system has enough time to relax, it will eventually form a **crystal**.
 
 ## Beyond hard spheres: simple liquids
 
@@ -339,7 +341,7 @@ Notice that the the **glass phase** is purely nonequilibrium: if a system has en
 
 - The $r^{-12}$ term models steep repulsion, while $r^{-6}$ describes the attractive tail.
 
-- The Lennard-Jones fluid exhibits rich phase behavior: gas, liquid, superciriticla fluid and crystalline solid
+- The Lennard-Jones fluid exhibits rich phase behavior: gas, liquid, supercritical fluid and crystalline solid
 
 - The LJ model is widely used to study atomic and molecular liquids, and serves as a reference for understanding real fluids and their phase transitions.
 :::
@@ -352,11 +354,11 @@ Notice that the the **glass phase** is purely nonequilibrium: if a system has en
 ## Coexistence: Metastability and Instability
 
 :::{.nonincremental}
-- Lennard Jones and hards sphere fluid present **coexistence regions**.
+- Lennard-Jones and hard sphere fluids present **coexistence regions**.
 
 - The **binodal** line determines phase coexistence. It is the locus where the free energy satisfies the condition of equal chemical potential and pressure between coexisting phases. When crossing the binodal, one enters a regime of **metastability**.
 
-![Schematic free energy for hard spheres compressed at high pressures: the fluid branch becomes metastable and the free enrgy minimum is located in the crystal phase](./figs/metastable.png){height=400}
+![Schematic free energy for hard spheres compressed at high pressures: the fluid branch becomes metastable and the free energy minimum is located in the crystal phase](./figs/metastable.png){height=400}
 
 :::
 
@@ -372,7 +374,7 @@ $$
 - The nucleation time $\tau$ is related to the free energy barrier $\Delta G^*$ by an activated (also called Arrhenius) law$$
     \tau \propto \exp\left(\frac{\Delta G^*}{k_B T}\right)    $$
 
-- Inside the spinodal there is no nucleation: **coarsening** occurs
+- Inside the spinodal there is no nucleation: **coarsening** occurs.
 
 
 You have seen some of this physics when discussing the **Ising model**.
