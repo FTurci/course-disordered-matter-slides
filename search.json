@@ -606,7 +606,7 @@
     "href": "soft-matter_colloids2.html#cluster-expansion-and-second-virial",
     "title": "Complex Disordered Systems",
     "section": "Cluster expansion and second virial",
-    "text": "Cluster expansion and second virial\nOne can expand the product\n\n\\prod_{i&lt;j}\\left(1+f_{i j}\\right)=1+\\sum_{i&lt;j} f_{i j}+\\sum_{i&lt;j, k&lt;l}^{\\text {distinct }} f_{i j} f_{k l}+\\ldots\n The first term is the ideal gas, the second is clearly pair correlations (only pairwise distances).\nThe virial expansion can also be represented diagrammatically. For the compressibility factor ( Z_{} ), we have:\nThis motivates one to define \nB_2(T)=-\\frac{1}{2} \\int f(r) d \\mathbf{r}=-2 \\pi \\int_0^{\\infty}\\left[e^{-\\beta U(r)}-1\\right] r^2 d r\n\nFor hard spheres this results in \nB_2 =  \\frac{2\\pi}{3} \\sigma^3\n\nSo Z = 1 + \\dfrac{2\\pi}{3} \\sigma^3\\rho = 1+ 4\\left( \\dfrac{\\pi}{6} \\sigma^3\\rho\\right)=1+4\\phi as we calculated earlier."
+    "text": "Cluster expansion and second virial\nOne can expand the product\n\n\\prod_{i&lt;j}\\left(1+f_{i j}\\right)=1+\\sum_{i&lt;j} f_{i j}+\\sum_{i&lt;j, k&lt;l}^{\\text {distinct }} f_{i j} f_{k l}+\\ldots\n The first term is the ideal gas, the second is clearly pair correlations (only pairwise distances).\nThis motivates one to define \nB_2(T)=-\\frac{1}{2} \\int f(r) d \\mathbf{r}=-2 \\pi \\int_0^{\\infty}\\left[e^{-\\beta U(r)}-1\\right] r^2 d r\n\nFor hard spheres this results in \nB_2 =  \\frac{2\\pi}{3} \\sigma^3\n\nSo Z = 1 + \\dfrac{2\\pi}{3} \\sigma^3\\rho = 1+ 4\\left( \\dfrac{\\pi}{6} \\sigma^3\\rho\\right)=1+4\\phi as we calculated earlier."
   },
   {
     "objectID": "soft-matter_colloids2.html#low-density-limit-key-points",
