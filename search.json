@@ -284,7 +284,7 @@
     "href": "soft-matter_colloids3.html#structure-factor-1",
     "title": "Complex Disordered Systems",
     "section": "Structure factor",
-    "text": "Structure factor\nInterestingly, reciprocal space simplifies integral equations such as Ornstein-Zernicke\n\n\\tilde{h}(k)=\\frac{\\tilde{c}(k)}{1-\\rho \\tilde{c}(k)}\n\nallowing one to read the direct correlation function directly from scattering data, as \\tilde{h}(k)= can be identified with the structure factor.\n\n\n\nStructure factors (left) and radial distribution functions (right) for Gallium at extreme conditions"
+    "text": "Structure factor\nInterestingly, reciprocal space simplifies integral equations such as Ornstein-Zernicke\n\n\\tilde{h}(k)=\\frac{\\tilde{c}(k)}{1-\\rho \\tilde{c}(k)}\n\nallowing one to read the direct correlation function directly from scattering data, as \\tilde{h}(k)= can be identified with the structure factor.\n\n\n\nStructure factors (left) and radial distribution functions (right) for Gallium at extreme conditions, Drewitt et al PRL (2020)"
   },
   {
     "objectID": "soft-matter_colloids3.html#aside-higher-order-correlations",
