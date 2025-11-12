@@ -354,7 +354,7 @@
     "href": "soft-matter_colloids3.html#dilute-vs-dense-diffusion-1",
     "title": "Complex Disordered Systems",
     "section": "Dilute vs dense diffusion",
-    "text": "Dilute vs dense diffusion\n\nAt very high volume fractions the cage mechanism becomes more complex: paricles are trapped for long times and only occasionaly break cages:\n\ncage-jump dynamics \\to glassy dynamics (see future lectures)\nrare events \\to Levy-flight statistics \\neq Gaussian/diffusive statistics\nBreaking of fluctuation-dissipation condition encoded in the Stokes-Einstein relation\n\nthe viscosity increases much faster than the decrease in diffusion D\\xi/T\\neq \\mathrm{constant}"
+    "text": "Dilute vs dense diffusion\n\nAt very high volume fractions the cage mechanism becomes more complex: paricles are trapped for long times and only occasionaly break cages:\n\ncage-jump dynamics \\to glassy dynamics (see future lectures)\nrare events \\to Levy-flight statistics \\neq Gaussian/diffusive statistics\nBreaking of fluctuation-dissipation condition encoded in the Stokes-Einstein relation\n\nthe viscosity increases much faster than the decrease in diffusion D\\xi/T\\neq \\mathrm{constant}\nThis means tha D\\eta\\neq \\text{constant} and since the viscosity \\eta\\sim \\tau (a characteristic relaxation time) D\\tau\\neq \\text{constant}\n\n\n\n\n\n\nStokes-Einstein brakdown in a theoretical model of glassy behaviour"
   },
   {
     "objectID": "soft-matter_intro.html#today",
