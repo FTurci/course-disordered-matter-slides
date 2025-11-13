@@ -532,6 +532,104 @@
     "text": "Which interactions?\n\nAt the colloidal scale: gravity and electrostatics (eventually magnetostatics).\nElectrostatics forces are the main microscopic forces: colloids are typically charged\nSeparation of length and timescales: colloids are much larger and slower than the atomic or molecular constituents of the surrounding fluid.\nColloid–colloid interactions result from the collective effect (sum or average) of many microscopic interactions, evaluated over times much longer than microscopic relaxation times.\nWhen we focus on colloidal scales, we integrate out the microscopic degrees of freedom (coarse-graning)\nCoarse-grained interactions are then obtained and are called effective interactions.\n\n\n\n\nFundamental forces:\ngravity\nelectro (magneto) static forces\n\n\n\nEffective forces\nVan der Waals forces\nelectrostatic repulsion (DLVO)\ndepletion forces\nhydrophobic/hydrophilic interactions\nsteric forces"
   },
   {
+    "objectID": "soft-matter_polymers1.html#what-are-polymers",
+    "href": "soft-matter_polymers1.html#what-are-polymers",
+    "title": "Complex Disordered Systems",
+    "section": "What are Polymers?",
+    "text": "What are Polymers?\n\n\n\n\n\n\n\nLarge molecules made of many individual units: monomers\nDegree of polymerization: N &gt; 10^5 units possible\nMacroscopic behavior dominated by large-scale properties\nStatistical mechanics needed even for single chainsnas they have many components subject to thermal fluctuations\n\nTypical modelling progressing from fine structure details → coarse-grained models\n\n🪁 Play with Polystyrene."
+  },
+  {
+    "objectID": "soft-matter_polymers1.html#polymer-architectures",
+    "href": "soft-matter_polymers1.html#polymer-architectures",
+    "title": "Complex Disordered Systems",
+    "section": "Polymer Architectures",
+    "text": "Polymer Architectures\nPolymers have many possible architectures:\n\nLinear: Straight chains (e.g., polyethylene)\nBranched: Main chain + side branches\n\nStar: Multiple arms from central core\nCross-linked: Network structures (rubbers, thermosets)\n\nFocus: We will only discuss linear homopolymers for theoretical simplicity.\n\n\n\nthe many possible polymer architectures, from Matyjaszewski and Möller, Polymer Science: A Comprehensive Reference, Elsevier (2012)"
+  },
+  {
+    "objectID": "soft-matter_polymers1.html#statistical-nature-of-polymer-conformations",
+    "href": "soft-matter_polymers1.html#statistical-nature-of-polymer-conformations",
+    "title": "Complex Disordered Systems",
+    "section": "Statistical Nature of Polymer Conformations",
+    "text": "Statistical Nature of Polymer Conformations\nWhy statistical?\n\nEnormous number of configurations\nThermal fluctuations drive conformational changes\nOnly average properties are measurable\n\nSeparate regimes - Dilute solutions: Polymer-solvent interactions dominate - Concentrated: Polymer-polymer entanglements\n\n\n\nViscosity as a function of polymer concentration"
+  },
+  {
+    "objectID": "soft-matter_polymers1.html#freely-jointed-chain-model",
+    "href": "soft-matter_polymers1.html#freely-jointed-chain-model",
+    "title": "Complex Disordered Systems",
+    "section": "Freely-Jointed Chain Model",
+    "text": "Freely-Jointed Chain Model\nAssumptions:\n\nMomomers at positions \\mathbf{R}_{\\mathrm{j}} and connected by bonds \\mathbf{r}_{j}=\\mathbf{R}_{j}-\\mathbf{R}_{j-1} of length \\left|\\mathbf{r}_{j}\\right|=b_{0}.\nN segments of fixed length b_0\nAll bond angles equally likely\neffectively, it produces a random walk in 3D\nThe key quantity is th end-to-end vector: \\mathbf{R} = \\mathbf{r}_1+\\mathbf{r}_2+\\dots+\\mathbf{r}_N = \\sum_{j=1}^N \\mathbf{r}_j."
+  },
+  {
+    "objectID": "soft-matter_polymers1.html#freely-jointed-chain-model-1",
+    "href": "soft-matter_polymers1.html#freely-jointed-chain-model-1",
+    "title": "Complex Disordered Systems",
+    "section": "Freely-Jointed Chain Model",
+    "text": "Freely-Jointed Chain Model"
+  },
+  {
+    "objectID": "soft-matter_polymers1.html#end-to-end-vector-statistics",
+    "href": "soft-matter_polymers1.html#end-to-end-vector-statistics",
+    "title": "Complex Disordered Systems",
+    "section": "End-to-end vector statistics",
+    "text": "End-to-end vector statistics\nThe polymer fluctuates between all possible random-walk-like configurations at fixed inter-monomer distance.\nThe mean squared end-to-end distance is then simply \\begin{aligned}\\langle\\mathbf{R}^2\\rangle &= \\left\\langle \\left( \\sum_{i=1}^N \\mathbf{r}_i\\right) \\cdot  \\left( \\sum_{j=1}^N \\mathbf{r}_j\\right) \\right\\rangle\\\\\n&= \\left\\langle \\sum_{i=1}^N \\sum_{j=1}^N  \\mathbf{r}_i \\mathbf{r}_j \\right\\rangle\\\\\n\\end{aligned} We can split the sum into the terms where i=j and the rest. This yields in general\n\\langle \\mathbf{R}^2\\rangle = Nb_0^2+\\langle \\mathbf{r}_i \\mathbf{r}_j  \\rangle\nWe assume that successive segments are independent, so\n\\langle \\mathbf{R}^2\\rangle = Nb_0^2\n\n\n\n\n\n\nNote\n\n\nAny similarities with previous results? Think about the MSD."
+  },
+  {
+    "objectID": "soft-matter_polymers1.html#end-to-end-vector-statistics-1",
+    "href": "soft-matter_polymers1.html#end-to-end-vector-statistics-1",
+    "title": "Complex Disordered Systems",
+    "section": "End-to-end vector statistics",
+    "text": "End-to-end vector statistics\nWe can then use the results of by identifying N (the number of moonomers) with t (the number of steps). \n\\left\\langle\\mathbf{R}^2\\right\\rangle=\\left\\langle R_x^2\\right\\rangle+\\left\\langle R_y^2\\right\\rangle+\\left\\langle R_z^2\\right\\rangle=3 \\sigma^2=N b_0^2 \\Rightarrow \\sigma^2=\\frac{N b_0^2}{3}\n where \\sigma is the variance per component.\nFor long chains the end-to-end distance is distributed as a 3D Gaussian, centered at zero, with variance proportional to N:\n\nP(\\mathbf{R}) = \\left( \\frac{3}{2\\pi N b_0^2} \\right)^{3/2} \\exp\\left( -\\frac{3 \\mathbf{R}^2}{2 N b_0^2} \\right)"
+  },
+  {
+    "objectID": "soft-matter_polymers1.html#gyration-tensor-and-radius-of-gyration",
+    "href": "soft-matter_polymers1.html#gyration-tensor-and-radius-of-gyration",
+    "title": "Complex Disordered Systems",
+    "section": "Gyration tensor and radius of gyration",
+    "text": "Gyration tensor and radius of gyration\n\nThe end-to-end vector is most meaningful for linear structures.\nOther conformation (compact, branched or star-shaped polymers) are better characterised by a measure of the (average) extent of the polymer chain: theradius of gyration,\n\nThe radius of gyration is a generic quantity that can be measured from any point cloud. It is closely linked to the (co)-variance of the set of points.\nWe start with the standard centre of mass\n\\mathbf{R}_{\\rm CM}=\\frac{1}{N} \\sum_{j=1}^{N} \\mathbf{R}_{j}\nIn general terms, we cna define a matrix called the gyration tensor (also called the configuration tensor):\n\n\\mathbf{S} = \\frac{1}{N} \\sum_{j=1}^N (\\mathbf{R}_j - \\mathbf{R}_{\\rm CM}) \\otimes (\\mathbf{R}_j - \\mathbf{R}_{\\rm CM})\n where \\otimes denotes the outer product, and \\mathbf{S} is a 3 \\times 3 symmetric matrix."
+  },
+  {
+    "objectID": "soft-matter_polymers1.html#gyration-tensor-and-radius-of-gyration-1",
+    "href": "soft-matter_polymers1.html#gyration-tensor-and-radius-of-gyration-1",
+    "title": "Complex Disordered Systems",
+    "section": "Gyration tensor and radius of gyration",
+    "text": "Gyration tensor and radius of gyration\nThe elements of \\mathbf{S} are given by\n\nS_{\\alpha\\beta} = \\frac{1}{N} \\sum_{j=1}^N (R_{j,\\alpha} - R_{{\\rm CM},\\alpha})(R_{j,\\beta} - R_{{\\rm CM},\\beta})\n\nwhere \\alpha, \\beta \\in \\{x, y, z\\}.\nThe radius of gyration squared is then simply the trace of this tensor (hence, invariant):\n\nR_g^2 = \\mathrm{Tr}(\\mathbf{S}) = S_{xx} + S_{yy} + S_{zz}\n\nThe tensor is symmetric and real \\to diagonasable.\nEigenvalues and eigenvectors of \\mathbf{S} provide information about the principal axes and shape anisotropy of the polymer coil (do you remember 3D mechanics and Euler angles?).\nThe tensor of gyration corresponds to the covariance matrix of the positions \\mathbf{R}_j.\nFor the ideal freely-jointd chain, the end-to-end vector and the radius of gyration are linked\n\n\\boxed{\n\\langle R_g^2 \\rangle = \\frac{1}{6} \\langle R^2 \\rangle}"
+  },
+  {
+    "objectID": "soft-matter_polymers1.html#freely-rotating-chain",
+    "href": "soft-matter_polymers1.html#freely-rotating-chain",
+    "title": "Complex Disordered Systems",
+    "section": "Freely-Rotating Chain",
+    "text": "Freely-Rotating Chain\nA more realistic model takes into account that bond angle are usually restricted.\nTake n-butane:\n\n\\mathrm{H}_{3} \\mathrm{C}-\\mathrm{CH}_{2}-\\mathrm{CH}_{2}-\\mathrm{CH}_{3}\n\n\n\n\nn-butane\n\n\nThe valence (or bond) angle is the angle between two adjacent chemical bonds. The C-C-C is around 112^\\circ."
+  },
+  {
+    "objectID": "soft-matter_polymers1.html#freely-rotating-chain-dihedral-angle",
+    "href": "soft-matter_polymers1.html#freely-rotating-chain-dihedral-angle",
+    "title": "Complex Disordered Systems",
+    "section": "Freely-Rotating Chain: dihedral angle",
+    "text": "Freely-Rotating Chain: dihedral angle\nRotations about the C-C bond are possible and are qualified by the dihedral (or torsional) angle\n\n\n\n\n\nFour conformers of butane, from LibreText Chemistry\n\n\n\n\n\n\nPotential energy of the conformers\n\n\n\n\nAt low temperatures ( k_{B} T &lt; {\\mathrm {\\text{configurational energy}}}) A (an anti conformation) .\nRising k_{B} T \\sim there will also be C (gauche) configurations.\nAt high temperatures ( k_{B} T \\gg config. energy), any angle will be possible."
+  },
+  {
+    "objectID": "soft-matter_polymers1.html#freely-rotating-chain-model",
+    "href": "soft-matter_polymers1.html#freely-rotating-chain-model",
+    "title": "Complex Disordered Systems",
+    "section": "Freely-Rotating Chain Model",
+    "text": "Freely-Rotating Chain Model\n\n\nSimple but richer model than the freeley jointed model:\n\nFixed bond angle \\theta\nTorsional angle \\varphi can take any value 0 \\leq \\varphi \\leq 2 \\pi.\n\nImagine we have a configuration \\{\\mathbf{r}_{l}, \\mathbf{r}_{2}, \\ldots, \\mathbf{r}_{j-1}\\} and want to add the next segment.\n\nAverage \\mathbf{r}_{j} over \\varphi, while keeping \\mathbf{r}_{1}, \\mathbf{r}_{2}, \\ldots, \\mathbf{r}_{j-1} fixed, only the component in \\mathbf{r}_{j} direction remains:\n\n\\langle \\mathbf{r}_{j} \\rangle_{\\mathbf{r}, \\mathbf{r}_{2}, \\ldots, \\mathbf{r}_{j-1}\\quad {\\rm fixed}}=\\cos \\theta \\mathbf{r}_{j-1}\nMultiplying both sides by \\mathbf{r}_k and averaging over all configurations gives\n\n\\left\\langle\\mathbf{r}_j \\cdot \\mathbf{r}_k\\right\\rangle=\\cos \\theta\\left\\langle\\mathbf{r}_{j-1} \\cdot \\mathbf{r}_k\\right\\rangle .\n\nApplying this relation recursively leads to\n\n\\left\\langle\\mathbf{r}_j \\cdot \\mathbf{r}_k\\right\\rangle=b_0^2(\\cos \\theta)^{|j-k|}\n\n\n\n\n\nFreely rotating chain model"
+  },
+  {
+    "objectID": "soft-matter_polymers1.html#freely-rotating-chain-model-1",
+    "href": "soft-matter_polymers1.html#freely-rotating-chain-model-1",
+    "title": "Complex Disordered Systems",
+    "section": "Freely-Rotating Chain Model",
+    "text": "Freely-Rotating Chain Model\nGiven \n\\left\\langle\\mathbf{r}_j \\cdot \\mathbf{r}_k\\right\\rangle=b_0^2(\\cos \\theta)^{|j-k|}\n for \\cos \\theta&lt;1, correlations between \\mathbf{r}_{j} and \\mathbf{r}_{k} decrease with increasing distance |j-k| .\nWe can link this to the end-to-end distance (proof in the lecture notes) and get the large N limit\n\n\\left\\langle R^2\\right\\rangle \\approx N b_0^2+\\frac{2 b_0^2}{1-\\cos \\theta} N \\cos \\theta=N b_0^2\\left(\\frac{1+\\cos \\theta}{1-\\cos \\theta}\\right)=C N b_0^2\n\nwith C=(1+\\cos \\theta) /(1-\\cos \\theta) ."
+  },
+  {
+    "objectID": "soft-matter_polymers1.html#freely-rotating-chain-model-effect-of-bond-angle",
+    "href": "soft-matter_polymers1.html#freely-rotating-chain-model-effect-of-bond-angle",
+    "title": "Complex Disordered Systems",
+    "section": "Freely-Rotating Chain Model: Effect of Bond Angle",
+    "text": "Freely-Rotating Chain Model: Effect of Bond Angle\n\n\n\n\\theta \\to 0: C \\gg 1 → Rigid rod \\langle R^2 \\rangle \\gg N b_0^2\nNearly straight chain. The end-to-end distance is much larger than that of a flexible chain with the same number of segments.\n\\theta \\to \\pi: C \\ll 1 → Collapsed globule\n\\langle R^2 \\rangle \\ll N b_0^2\nCompact, globular, collapsed assembly. Examples: polypeptides, polystyrene in water, chromatin\n\\theta = 90°: C = 1 → Ideal random walk \\langle R^2 \\rangle = N b_0^2\nCorresponds to our original freely jointed chain (random walk).\n🪁 Play with models\n\n\n\n\n\nKevlar fiber (top) and chromatin globle model (bottom)"
+  },
+  {
     "objectID": "soft-matter_colloids2.html#today",
     "href": "soft-matter_colloids2.html#today",
     "title": "Complex Disordered Systems",
