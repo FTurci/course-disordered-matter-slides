@@ -536,7 +536,7 @@
     "href": "soft-matter_polymers1.html#what-are-polymers",
     "title": "Complex Disordered Systems",
     "section": "What are Polymers?",
-    "text": "What are Polymers?\n\n\n\n\n\n\n\nLarge molecules made of many individual units: monomers\nDegree of polymerization: N &gt; 10^5 units possible\nMacroscopic behavior dominated by large-scale properties\nStatistical mechanics needed even for single chainsnas they have many components subject to thermal fluctuations\n\nTypical modelling progressing from fine structure details → coarse-grained models\n\n🪁 Play with Polystyrene."
+    "text": "What are Polymers?\n\n\n\n\n\n\n\nLarge molecules made of many individual units: monomers\nDegree of polymerization: N &gt; 10^5 units possible\nMacroscopic behavior dominated by large-scale properties\nStatistical mechanics needed even for single chains as they have many components subject to thermal fluctuations\n\nTypical modelling progressing from fine structure details → coarse-grained models\n\n🪁 Play with Polystyrene."
   },
   {
     "objectID": "soft-matter_polymers1.html#polymer-architectures",
@@ -557,7 +557,7 @@
     "href": "soft-matter_polymers1.html#freely-jointed-chain-model",
     "title": "Complex Disordered Systems",
     "section": "Freely-Jointed Chain Model",
-    "text": "Freely-Jointed Chain Model\nAssumptions:\n\nMomomers at positions \\mathbf{R}_{\\mathrm{j}} and connected by bonds \\mathbf{r}_{j}=\\mathbf{R}_{j}-\\mathbf{R}_{j-1} of length \\left|\\mathbf{r}_{j}\\right|=b_{0}.\nN segments of fixed length b_0\nAll bond angles equally likely\neffectively, it produces a random walk in 3D\nThe key quantity is th end-to-end vector: \\mathbf{R} = \\mathbf{r}_1+\\mathbf{r}_2+\\dots+\\mathbf{r}_N = \\sum_{j=1}^N \\mathbf{r}_j."
+    "text": "Freely-Jointed Chain Model\nAssumptions:\n\nMonomers at positions \\mathbf{R}_{\\mathrm{j}} and connected by bonds \\mathbf{r}_{j}=\\mathbf{R}_{j}-\\mathbf{R}_{j-1} of length \\left|\\mathbf{r}_{j}\\right|=b_{0}.\nN segments of fixed length b_0\nAll bond angles equally likely\neffectively, it produces a random walk in 3D\nThe key quantity is th end-to-end vector: \\mathbf{R} = \\mathbf{r}_1+\\mathbf{r}_2+\\dots+\\mathbf{r}_N = \\sum_{j=1}^N \\mathbf{r}_j."
   },
   {
     "objectID": "soft-matter_polymers1.html#freely-jointed-chain-model-1",
@@ -592,7 +592,7 @@
     "href": "soft-matter_polymers1.html#gyration-tensor-and-radius-of-gyration-1",
     "title": "Complex Disordered Systems",
     "section": "Gyration tensor and radius of gyration",
-    "text": "Gyration tensor and radius of gyration\nThe elements of \\mathbf{S} are given by\n\nS_{\\alpha\\beta} = \\frac{1}{N} \\sum_{j=1}^N (R_{j,\\alpha} - R_{{\\rm CM},\\alpha})(R_{j,\\beta} - R_{{\\rm CM},\\beta})\n\nwhere \\alpha, \\beta \\in \\{x, y, z\\}.\nThe radius of gyration squared is then simply the trace of this tensor (hence, invariant):\n\nR_g^2 = \\mathrm{Tr}(\\mathbf{S}) = S_{xx} + S_{yy} + S_{zz}\n\nThe tensor is symmetric and real \\to diagonasable.\nEigenvalues and eigenvectors of \\mathbf{S} provide information about the principal axes and shape anisotropy of the polymer coil (do you remember 3D mechanics and Euler angles?).\nThe tensor of gyration corresponds to the covariance matrix of the positions \\mathbf{R}_j.\nFor the ideal freely-jointd chain, the end-to-end vector and the radius of gyration are linked\n\n\\boxed{\n\\langle R_g^2 \\rangle = \\frac{1}{6} \\langle R^2 \\rangle}"
+    "text": "Gyration tensor and radius of gyration\nThe elements of \\mathbf{S} are given by\n\nS_{\\alpha\\beta} = \\frac{1}{N} \\sum_{j=1}^N (R_{j,\\alpha} - R_{{\\rm CM},\\alpha})(R_{j,\\beta} - R_{{\\rm CM},\\beta})\n\nwhere \\alpha, \\beta \\in \\{x, y, z\\}.\nThe radius of gyration squared is then simply the trace of this tensor (hence, invariant):\n\nR_g^2 = \\mathrm{Tr}(\\mathbf{S}) = S_{xx} + S_{yy} + S_{zz}\n\nThe tensor is symmetric and real \\to diagonasable.\nEigenvalues and eigenvectors of \\mathbf{S} provide information about the principal axes and shape anisotropy of the polymer coil (do you remember 3D mechanics and Euler angles?).\nThe tensor of gyration corresponds to the covariance matrix of the positions \\mathbf{R}_j.\nFor the ideal freely-jointed chain, the end-to-end vector and the radius of gyration are linked\n\n\\boxed{\n\\langle R_g^2 \\rangle = \\frac{1}{6} \\langle R^2 \\rangle}"
   },
   {
     "objectID": "soft-matter_polymers1.html#freely-rotating-chain",
@@ -613,7 +613,7 @@
     "href": "soft-matter_polymers1.html#freely-rotating-chain-model",
     "title": "Complex Disordered Systems",
     "section": "Freely-Rotating Chain Model",
-    "text": "Freely-Rotating Chain Model\n\n\nSimple but richer model than the freeley jointed model:\n\nFixed bond angle \\theta\nTorsional angle \\varphi can take any value 0 \\leq \\varphi \\leq 2 \\pi.\n\nImagine we have a configuration \\{\\mathbf{r}_{l}, \\mathbf{r}_{2}, \\ldots, \\mathbf{r}_{j-1}\\} and want to add the next segment.\n\nAverage \\mathbf{r}_{j} over \\varphi, while keeping \\mathbf{r}_{1}, \\mathbf{r}_{2}, \\ldots, \\mathbf{r}_{j-1} fixed, only the component in \\mathbf{r}_{j} direction remains:\n\n\\langle \\mathbf{r}_{j} \\rangle_{\\mathbf{r}, \\mathbf{r}_{2}, \\ldots, \\mathbf{r}_{j-1}\\quad {\\rm fixed}}=\\cos \\theta \\mathbf{r}_{j-1}\nMultiplying both sides by \\mathbf{r}_k and averaging over all configurations gives\n\n\\left\\langle\\mathbf{r}_j \\cdot \\mathbf{r}_k\\right\\rangle=\\cos \\theta\\left\\langle\\mathbf{r}_{j-1} \\cdot \\mathbf{r}_k\\right\\rangle .\n\nApplying this relation recursively leads to\n\n\\left\\langle\\mathbf{r}_j \\cdot \\mathbf{r}_k\\right\\rangle=b_0^2(\\cos \\theta)^{|j-k|}\n\n\n\n\n\nFreely rotating chain model"
+    "text": "Freely-Rotating Chain Model\n\n\nSimple but richer model than the freely jointed model:\n\nFixed bond angle \\theta\nTorsional angle \\varphi can take any value 0 \\leq \\varphi \\leq 2 \\pi.\n\nImagine we have a configuration \\{\\mathbf{r}_{l}, \\mathbf{r}_{2}, \\ldots, \\mathbf{r}_{j-1}\\} and want to add the next segment.\n\nAverage \\mathbf{r}_{j} over \\varphi, while keeping \\mathbf{r}_{1}, \\mathbf{r}_{2}, \\ldots, \\mathbf{r}_{j-1} fixed, only the component in \\mathbf{r}_{j} direction remains:\n\n\\langle \\mathbf{r}_{j} \\rangle_{\\mathbf{r}, \\mathbf{r}_{2}, \\ldots, \\mathbf{r}_{j-1}\\quad {\\rm fixed}}=\\cos \\theta \\mathbf{r}_{j-1}\nMultiplying both sides by \\mathbf{r}_k and averaging over all configurations gives\n\n\\left\\langle\\mathbf{r}_j \\cdot \\mathbf{r}_k\\right\\rangle=\\cos \\theta\\left\\langle\\mathbf{r}_{j-1} \\cdot \\mathbf{r}_k\\right\\rangle .\n\nApplying this relation recursively leads to\n\n\\left\\langle\\mathbf{r}_j \\cdot \\mathbf{r}_k\\right\\rangle=b_0^2(\\cos \\theta)^{|j-k|}\n\n\n\n\n\nFreely rotating chain model"
   },
   {
     "objectID": "soft-matter_polymers1.html#freely-rotating-chain-model-1",
@@ -627,7 +627,7 @@
     "href": "soft-matter_polymers1.html#freely-rotating-chain-model-effect-of-bond-angle",
     "title": "Complex Disordered Systems",
     "section": "Freely-Rotating Chain Model: Effect of Bond Angle",
-    "text": "Freely-Rotating Chain Model: Effect of Bond Angle\n\n\n\n\\theta \\to 0: C \\gg 1 → Rigid rod \\langle R^2 \\rangle \\gg N b_0^2\nNearly straight chain. The end-to-end distance is much larger than that of a flexible chain with the same number of segments.\n\\theta \\to \\pi: C \\ll 1 → Collapsed globule\n\\langle R^2 \\rangle \\ll N b_0^2\nCompact, globular, collapsed assembly. Examples: polypeptides, polystyrene in water, chromatin\n\\theta = 90°: C = 1 → Ideal random walk \\langle R^2 \\rangle = N b_0^2\nCorresponds to our original freely jointed chain (random walk).\n🪁 Play with models\n\n\n\n\n\nKevlar fiber (top) and chromatin globle model (bottom)"
+    "text": "Freely-Rotating Chain Model: Effect of Bond Angle\n\n\n\n\\theta \\to 0: C \\gg 1 → Rigid rod \\langle R^2 \\rangle \\gg N b_0^2\nNearly straight chain. The end-to-end distance is much larger than that of a flexible chain with the same number of segments.\n\\theta \\to \\pi: C \\ll 1 → Collapsed globule\n\\langle R^2 \\rangle \\ll N b_0^2\nCompact, globular, collapsed assembly. Examples: polypeptides, polystyrene in water, chromatin\n\\theta = 90°: C = 1 → Ideal random walk \\langle R^2 \\rangle = N b_0^2\nCorresponds to our original freely jointed chain (random walk).\n🪁 Play with models\n\n\n\n\n\nKevlar fiber (top) and chromatin globule model (bottom)"
   },
   {
     "objectID": "soft-matter_colloids2.html#today",
