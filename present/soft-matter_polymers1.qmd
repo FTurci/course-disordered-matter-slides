@@ -1,0 +1,621 @@
+---
+title: "Complex Disordered Systems"
+subtitle: "Polymers: definitions"
+format: 
+    live-revealjs:
+        incremental: false
+        slide-number: true
+        chalkboard: true
+        preview-links: auto
+        transition: fade
+        background-transition: fade
+        # smaller: true
+pyodide:
+    packages:
+        - numpy
+        - matplotlib
+        - plotly
+resources:
+    - src/plotting.py
+bibliography: references.bib
+mermaid-format: svg # png also works
+---
+
+
+
+## What are Polymers? 
+```{pyodide}
+#| echo: false
+#| autorun: true
+# modifying the path to add the code folder
+import sys
+from IPython.display import HTML
+def show(fig):
+    return HTML(fig.to_html(include_plotlyjs="cdn"))
+
+sys.path.insert(0, './src')
+```
+
+
+- **Large molecules** made of many individual units: **monomers**
+- Degree of polymerization: $N > 10^5$ units possible
+- **Macroscopic behavior** dominated by large-scale properties
+- **Statistical mechanics** needed even for single chains as they have many components subject to thermal fluctuations
+
+
+Typical modelling progressing from fine structure details → **coarse-grained models**
+
+
+![[🪁 Play with Polystyrene.](https://fturci.github.io/course-disordered-matter/soft-matter/soft-matter_polymers.html#polystyrene-rm-c_8h_8_n) ](./figs/FIGS_POLYSTYRENE.PDB.HR.png)
+
+
+
+---
+
+## Polymer Architectures 
+
+Polymers have many possible architectures:
+
+- **Linear**: Straight chains (e.g., polyethylene)
+- **Branched**: Main chain + side branches  
+- **Star**: Multiple arms from central core
+- **Cross-linked**: Network structures (rubbers, thermosets)
+
+**Focus**: We will only discuss linear homopolymers for theoretical simplicity.
+
+![the many possible polymer architectures, from Matyjaszewski and Möller, *Polymer Science: A Comprehensive Reference*, Elsevier (2012) ](./figs/architectures.jpg){height=450}
+
+---
+
+## Statistical Nature of Polymer Conformations 
+
+
+**Why statistical?**
+
+- Enormous number of configurations
+- Thermal fluctuations drive conformational changes
+- Only **average properties** are measurable
+
+**Separate regimes**
+
+- *Dilute solutions*: Polymer-solvent interactions dominate
+- *Concentrated*: Polymer-polymer **entanglements**
+
+![Viscosity as a function of polymer concentration](./figs/polymer-conc.jpeg){height=400}
+
+
+
+## Freely-Jointed Chain Model 
+
+**Assumptions:**
+
+
+- Monomers at positions $\mathbf{R}_{\mathrm{j}}$ and connected by bonds $\mathbf{r}_{j}=\mathbf{R}_{j}-\mathbf{R}_{j-1}$ of length $\left|\mathbf{r}_{j}\right|=b_{0}$.
+- $N$ segments of fixed length $b_0$
+- All bond angles equally likely
+- effectively, it produces a **random walk** in 3D
+
+
+- The key quantity is th **end-to-end vector:**
+$$\mathbf{R} = \mathbf{r}_1+\mathbf{r}_2+\dots+\mathbf{r}_N = \sum_{j=1}^N \mathbf{r}_j.$$
+
+
+## Freely-Jointed Chain Model 
+```{pyodide}
+#| echo: false
+#| autorun: true
+
+import numpy as np
+
+# Play with the parameters (e.g. large and small N) and explore different conformations in 3D
+# The color coding only maps the index of the monomer in the chain
+def generate_free_polymer(N=100, b=1):
+    # Generate random walk in 3D
+    theta = np.arccos(2 * np.random.rand(N) - 1)  # polar angle
+    phi = 2 * np.pi * np.random.rand(N)           # azimuthal angle
+
+    dx = b * np.sin(theta) * np.cos(phi)
+    dy = b * np.sin(theta) * np.sin(phi)
+    dz = b * np.cos(theta)
+
+    x = np.concatenate([[0], np.cumsum(dx)])
+    y = np.concatenate([[0], np.cumsum(dy)])
+    z = np.concatenate([[0], np.cumsum(dz)])
+    return x,y,z
+
+```
+```{pyodide}
+import plotting
+N, b = 100, 1
+# Plot the end-to-end vector as a red arrow
+x, y, z = generate_free_polymer(N, b)
+fig = plotting.plotly_3d(x, y, z, name=f"{N}-step polymer")
+fig = plotting.plot_vector([x[0],x[-1]],[y[0],y[-1]],[z[0],z[-1]],fig, name="end-to-end vector")
+show(fig)
+```
+## End-to-end vector statistics
+
+The polymer fluctuates between all possible random-walk-like configurations at **fixed** inter-monomer distance.
+
+The mean squared end-to-end distance is then simply 
+$$\begin{aligned}\langle\mathbf{R}^2\rangle &= \left\langle \left( \sum_{i=1}^N \mathbf{r}_i\right) \cdot  \left( \sum_{j=1}^N \mathbf{r}_j\right) \right\rangle\\
+&= \left\langle \sum_{i=1}^N \sum_{j=1}^N  \mathbf{r}_i \mathbf{r}_j \right\rangle\\
+\end{aligned}$$
+We can split the sum into the terms where $i=j$ and the rest. This yields in general
+
+
+$$\langle \mathbf{R}^2\rangle = Nb_0^2+\langle \mathbf{r}_i \mathbf{r}_j  \rangle$$
+
+We assume that successive segments are independent, so 
+
+$$\langle \mathbf{R}^2\rangle = Nb_0^2$$
+
+:::{.callout-note}
+Any similarities with previous results? Think about the MSD.
+:::
+
+
+## End-to-end vector statistics
+We can then use the results of by identifying $N$ (the number of moonomers) with $t$ (the number of steps).
+$$
+\left\langle\mathbf{R}^2\right\rangle=\left\langle R_x^2\right\rangle+\left\langle R_y^2\right\rangle+\left\langle R_z^2\right\rangle=3 \sigma^2=N b_0^2 \Rightarrow \sigma^2=\frac{N b_0^2}{3}
+$$
+where $\sigma$ is the variance per component.
+
+For long chains  the end-to-end distance is distributed as a **3D Gaussian**, centered at zero, with variance proportional to $N$:
+
+$$
+P(\mathbf{R}) = \left( \frac{3}{2\pi N b_0^2} \right)^{3/2} \exp\left( -\frac{3 \mathbf{R}^2}{2 N b_0^2} \right)
+$$
+
+## Gyration tensor and radius of gyration
+
+- The end-to-end vector is most meaningful for linear structures.
+
+- Other conformation (compact,  branched or star-shaped polymers) are better characterised by  a measure of the (average) extent of the polymer chain: the**radius of gyration**,
+
+The radius of gyration is a generic quantity that can be measured from any point cloud. It is closely linked to the (co)-variance of the set of points.
+
+We start with the standard **centre of mass**
+
+$$\mathbf{R}_{\rm CM}=\frac{1}{N} \sum_{j=1}^{N} \mathbf{R}_{j}$$
+
+
+In general terms, we cna define a matrix called the  **gyration tensor** (also called the configuration tensor):
+
+$$
+\mathbf{S} = \frac{1}{N} \sum_{j=1}^N (\mathbf{R}_j - \mathbf{R}_{\rm CM}) \otimes (\mathbf{R}_j - \mathbf{R}_{\rm CM})
+$$
+where $\otimes$ denotes the outer product, and $\mathbf{S}$ is a $3 \times 3$ symmetric matrix.
+
+
+## Gyration tensor and radius of gyration
+The elements of $\mathbf{S}$ are given by
+
+$$
+S_{\alpha\beta} = \frac{1}{N} \sum_{j=1}^N (R_{j,\alpha} - R_{{\rm CM},\alpha})(R_{j,\beta} - R_{{\rm CM},\beta})
+$$
+
+where $\alpha, \beta \in \{x, y, z\}$.
+
+The **radius of gyration squared** is then simply the trace of this tensor (hence, invariant):
+
+$$
+R_g^2 = \mathrm{Tr}(\mathbf{S}) = S_{xx} + S_{yy} + S_{zz}
+$$
+
+The tensor is symmetric and real $\to$ diagonasable.
+
+Eigenvalues and eigenvectors of $\mathbf{S}$ provide information about the principal axes and shape anisotropy of the polymer coil (do you remember 3D mechanics and Euler angles?). 
+
+The **tensor of gyration** corresponds to the **covariance matrix** of the positions $\mathbf{R}_j$.
+
+For the ideal freely-jointed chain, the end-to-end vector and the radius of gyration are linked
+
+$$
+\boxed{
+\langle R_g^2 \rangle = \frac{1}{6} \langle R^2 \rangle}
+$$
+
+
+## Freely-Rotating Chain 
+
+A more realistic model takes into account that bond angle are usually restricted.
+
+Take $n$-butane:
+
+$$
+\mathrm{H}_{3} \mathrm{C}-\mathrm{CH}_{2}-\mathrm{CH}_{2}-\mathrm{CH}_{3}
+$$
+
+![n-butane](./figs/nbutane.png){height=400}
+
+The valence (or bond) angle is the angle between two adjacent chemical bonds. The $C-C-C$  is around  $112^\circ$. 
+
+## Freely-Rotating Chain: dihedral angle
+**Rotations** about the C-C bond are possible and are qualified by the **dihedral (or torsional) angle**
+
+:::: {.columns}
+
+::: {.column width="50%"}
+![Four conformers of butane, from [LibreText Chemistry](https://chem.libretexts.org/Bookshelves/Organic_Chemistry/Supplemental_Modules_(Organic_Chemistry)/Chirality/Stereoisomers/Butane_Conformers)](figs/butconf.png)
+:::
+
+::: {.column width="50%"}
+![Potential energy of the conformers](./figs/butdihed.png)
+:::
+
+::::
+- At low temperatures ( $k_{B} T < {\mathrm {\text{configurational energy}}}$) **A** (an *anti* conformation) . 
+
+- Rising  $k_{B} T \sim$ there will also be **C** (gauche) configurations.
+- At high temperatures ( $k_{B} T \gg$ config. energy), any angle will be possible. 
+
+
+## Freely-Rotating Chain Model
+:::{.columns}
+:::{.column width="60%"}
+Simple but richer model than the  freely jointed model:
+
+- Fixed bond angle $\theta$
+- Torsional angle $\varphi$ can take any value $0 \leq \varphi \leq 2 \pi$. 
+
+Imagine we have a configuration $\{\mathbf{r}_{l}$, $\mathbf{r}_{2}, \ldots, \mathbf{r}_{j-1}\}$ and  want to add the **next segment**.
+
+
+- Average $\mathbf{r}_{j}$ over $\varphi$, while keeping $\mathbf{r}_{1}, \mathbf{r}_{2}, \ldots, \mathbf{r}_{j-1}$ fixed, only the component in $\mathbf{r}_{j}$ direction remains:
+
+$$\langle \mathbf{r}_{j} \rangle_{\mathbf{r}, \mathbf{r}_{2}, \ldots, \mathbf{r}_{j-1}\quad {\rm fixed}}=\cos \theta \mathbf{r}_{j-1}$$
+
+
+Multiplying both sides by $\mathbf{r}_k$ and averaging over all configurations gives
+
+$$
+\left\langle\mathbf{r}_j \cdot \mathbf{r}_k\right\rangle=\cos \theta\left\langle\mathbf{r}_{j-1} \cdot \mathbf{r}_k\right\rangle .
+$$
+
+Applying this relation recursively leads to
+
+$$
+\left\langle\mathbf{r}_j \cdot \mathbf{r}_k\right\rangle=b_0^2(\cos \theta)^{|j-k|}
+$$
+:::
+
+:::{.column width="40%"}
+![Freely rotating chain model](./figs/freelyrotating.svg){height=550}
+:::
+:::
+
+## Freely-Rotating Chain Model
+
+Given 
+$$
+\left\langle\mathbf{r}_j \cdot \mathbf{r}_k\right\rangle=b_0^2(\cos \theta)^{|j-k|}
+$$
+for $\cos \theta<1$, correlations between $\mathbf{r}_{j}$ and $\mathbf{r}_{k}$ decrease with increasing distance $|j-k|$
+.
+
+We can link this to the **end-to-end distance** (proof in the lecture notes) and get the large $N$ limit
+
+$$
+\left\langle R^2\right\rangle \approx N b_0^2+\frac{2 b_0^2}{1-\cos \theta} N \cos \theta=N b_0^2\left(\frac{1+\cos \theta}{1-\cos \theta}\right)=C N b_0^2
+$$
+
+with $$C=(1+\cos \theta) /(1-\cos \theta) .$$
+
+
+<!-- - Fixed **valence angles** θ
+- Free rotation about bonds
+- Introduces **persistence**
+
+![](figs/freelyrotating.svg){width="250px"}
+:::
+
+**Result:**
+$$\langle R^2 \rangle = C N b_0^2$$
+
+where $C = \frac{1 + \cos\theta}{1 - \cos\theta}$
+ -->
+
+---
+
+## Freely-Rotating Chain Model: Effect of Bond Angle 
+
+:::{.columns}
+:::{.column}
+1. **$\theta \to 0$**: $C \gg 1$ → **Rigid rod**
+   $$\langle R^2 \rangle \gg N b_0^2$$ 
+   
+   Nearly straight chain. The end-to-end distance is much larger than that of a flexible chain with the same number of segments.
+
+2. **$\theta \to \pi$**: $C \ll 1$ → **Collapsed globule**  
+   $$\langle R^2 \rangle \ll N b_0^2$$
+
+   Compact,  globular, collapsed assembly. Examples: polypeptides, polystyrene in water, chromatin 
+
+3. **$\theta = 90°$**: $C = 1$ → **Ideal random walk**
+   $$\langle R^2 \rangle = N b_0^2$$
+
+   Corresponds to our original **freely jointed chain** (random walk).
+
+
+   🪁 [Play with models](https://fturci.github.io/course-disordered-matter/soft-matter/soft-matter_polymers.html#freely-rotating-chain)
+:::
+:::{.column}
+![Kevlar fiber (top) and chromatin globule model (bottom)](./figs/kevlar-chromatin.png)
+:::
+
+<!-- 
+---
+
+## Persistence and Kuhn Length 
+
+**Coarse-graining approach:**
+- Replace real chain with equivalent **freely-jointed** chain
+- Same contour length: $N b_0 = N' b$
+- Same end-to-end distance: $C N b_0^2 = N' b^2$
+
+**Results:**
+- **Kuhn length**: $b = C b_0$  
+- **Persistence length**: $\ell_p = b/2$
+- **Kuhn segments**: $N' = N/C$
+
+---
+
+## Excluded Volume Effects 
+
+**Problem**: Monomers cannot occupy same space
+
+**Volume fraction analysis:**
+$$\frac{V_{\text{monomers}}}{V_{\text{coil}}} = \frac{N b^3}{N^{3/2} b^3} \sim N^{-1/2}$$
+
+For $N = 10^4$: only ~1% of coil volume occupied!
+
+---
+
+## Self-Avoiding Walk 
+
+**Balance of competing effects:**
+
+1. **Entropy**: Favors compact configurations
+2. **Excluded volume**: Favors chain expansion
+
+**Free energy minimization:**
+$$F = \frac{\varepsilon N^2 V_1}{R^3} + \frac{3 k_B T R^2}{2 N b^2}$$
+
+**Result:** $R \sim N^{3/5} b$ (vs. $N^{1/2}$ for ideal chain)
+
+---
+
+## Good vs. Poor Solvents 
+
+**Interaction energies**: $\varepsilon_{sp}$, $\varepsilon_{ss}$, $\varepsilon_{pp}$
+
+**Good solvent**: $\varepsilon_{sp} < \frac{1}{2}(\varepsilon_{ss} + \varepsilon_{pp})$
+- Monomers prefer solvent contact
+- Chain **swells**: $\nu = 3/5$
+
+**Poor solvent**: $\varepsilon_{sp} > \frac{1}{2}(\varepsilon_{ss} + \varepsilon_{pp})$  
+- Monomers prefer each other
+- Chain **collapses**
+
+---
+
+## Theta Conditions 
+
+**Theta temperature** $T = \theta$:
+- Excluded volume and attraction **cancel**
+- Chain has **ideal dimensions**: $R \sim N^{1/2}$
+- **Theta solvent** at this temperature
+
+**Temperature effects:**
+- High $T$: Good solvent behavior
+- Low $T$: Poor solvent, phase separation
+- $T = \theta$: Ideal chain behavior
+
+---
+
+## Scaling Exponents Summary 
+
+| **Chain type** | **Exponent $\nu$** | **Physics** |
+|---|---|---|
+| Freely-jointed | 1/2 | Random walk |
+| Freely-rotating | 1/2 | Persistent random walk |
+| Self-avoiding | 3/5 ≈ 0.6 | Excluded volume |
+| Theta conditions | 1/2 | Balanced interactions |
+| Poor solvent | < 1/2 | Collapsed |
+
+**Universal behavior**: $R \sim N^\nu$
+
+---
+
+## Concentration Regimes 
+
+**Dilute regime**: $c \ll c^*$
+- Isolated coils, no overlap
+
+**Overlap concentration**:
+$$c^* = \frac{3M}{4\pi N_A R_g^3} \propto M^{1-3\nu}$$
+
+**Semi-dilute**: $c > c^*$  
+- Interpenetrating coils, entanglements
+
+**Concentrated/Bulk**: $c \approx \rho_{\text{bulk}}$
+- Polymer-dominated properties
+
+---
+
+## Overlap Concentration Example 
+
+**Polystyrene**: $M = 10^6$ g/mol, good solvent ($\nu = 0.6$)
+
+$$c^* = 0.29 \text{ mg/ml}$$
+
+**Volume fraction**: $c^*/\rho = 0.28 \times 10^{-3}$
+
+**Key insight**: $c^*$ very small for large polymers!
+
+---
+
+## Bulk Polymer Classes 
+
+**Cross-linked polymers:**
+- **Elastomers**: Low cross-linking → flexible, elastic
+- **Thermosets**: High cross-linking → rigid, brittle
+
+**Thermoplastics**: No cross-linking
+- **Melt**: High $T$, random coils
+- **Crystal**: $T < T_m$, ordered structure  
+- **Glass**: Rapid cooling below $T_g$, amorphous
+
+---
+
+## Chain Flexibility and Persistence 
+
+**Correlation along chain:**
+$$\langle \mathbf{r}_i \cdot \mathbf{r}_{i+n} \rangle = b_0^2 e^{-n b_0/\ell_p}$$
+
+**Length scales:**
+- **Monomer scale**: Chemical structure
+- **Persistence scale**: $\ell_p$ (stiffness)
+- **Global scale**: $R_g$ (overall size)
+
+**Universal behavior** emerges at large scales!
+
+---
+
+## Gyration Tensor 
+
+**Shape characterization:**
+$$\mathbf{S} = \frac{1}{N} \sum_{j=1}^N (\mathbf{R}_j - \mathbf{R}_{\text{CM}}) \otimes (\mathbf{R}_j - \mathbf{R}_{\text{CM}})$$
+
+- **Eigenvalues**: Principal dimensions
+- **Eigenvectors**: Principal axes
+- **Trace**: $R_g^2 = \text{Tr}(\mathbf{S})$
+
+**Versatile**: Works for any architecture!
+
+---
+
+## Temperature Effects in Solutions 
+
+**High temperature**: 
+- Excluded volume dominates
+- Good solvent conditions
+- Extended conformations
+
+**Low temperature**:
+- Attractive interactions dominate  
+- Poor solvent conditions
+- Collapsed conformations
+
+**Crossover** at theta temperature
+
+---
+
+## Experimental Observables 
+
+**Light scattering**: Measures $R_g$
+**Viscosity**: Sensitive to chain extension
+**Osmotic pressure**: Concentration effects
+**Neutron scattering**: Internal structure
+
+**Scaling relations**:
+- $R_g \sim N^\nu$
+- $[\eta] \sim M^\alpha$ (intrinsic viscosity)
+- $\Pi \sim c^{9/4}$ (semi-dilute osmotic pressure)
+
+---
+
+## Biological Relevance 
+
+**DNA**: Persistence length ~50 nm
+- Semiflexible polymer
+- Supercoiling, packaging
+
+**Proteins**: Folded vs. unfolded states
+- Good/poor solvent analogy
+- Collapse transitions
+
+**Chromatin**: Hierarchical organization
+- Multiple length scales
+- Fractal-like structures
+
+---
+
+## Simulation Approaches 
+
+**Molecular dynamics**: Atomistic detail
+**Monte Carlo**: Statistical sampling
+**Coarse-grained models**: 
+- Bead-spring chains
+- Worm-like chains
+- Lattice models
+
+**Key**: Match experimental scaling laws
+
+---
+
+## Theoretical Framework 
+
+**Statistical mechanics** of **single chains**:
+1. **Microscopic model** (chemical structure)
+2. **Coarse-graining** (effective parameters)  
+3. **Universal behavior** (scaling exponents)
+4. **Environmental effects** (solvent quality)
+
+**Success**: Simple theories capture complex behavior!
+
+---
+
+## Applications and Examples 
+
+**Synthetic polymers**:
+- Polystyrene, PMMA, natural rubber
+- Industrial applications
+
+**Biological polymers**:
+- DNA, proteins, polysaccharides
+- Cellular functions
+
+**Modern materials**:
+- Smart polymers, hydrogels
+- Responsive systems
+
+---
+
+## Key Takeaways 
+
+1. **Large scale dominates**: Chemical details → Universal scaling
+2. **Entropy vs. energy**: Competition determines conformation
+3. **Solvent quality**: Critical for polymer behavior  
+4. **Concentration effects**: Dilute → semi-dilute → bulk transitions
+5. **Multiple length scales**: From monomers to global dimensions
+
+**Central concept**: **Coarse-graining** reveals universal physics
+
+---
+
+## Open Questions & Research 
+
+- **Non-equilibrium dynamics**: Active polymers
+- **Confined geometries**: Polymers in channels, pores
+- **Polyelectrolytes**: Charged polymers
+- **Entanglement dynamics**: Reptation theory
+- **Machine learning**: Predicting polymer properties
+
+**Future**: Connecting molecular design to macroscopic function
+
+---
+
+## Summary 
+
+**Polymers as statistical objects**:
+- Random walk → Self-avoiding walk
+- Universal scaling exponents
+- Solvent quality effects
+- Concentration regimes
+
+**Theoretical success**: Simple models capture complex behavior through **coarse-graining** and **universality**
+
+**Impact**: Foundation for understanding both synthetic and biological macromolecules -->

@@ -396,4 +396,7 @@ plot_tj(positions,msd,walker=0,loglog=False)
     - rare events $\to$ Levy-flight statistics $\neq$ Gaussian/diffusive statistics
     - Breaking of fluctuation-dissipation condition encoded in the **Stokes-Einstein** relation 
         - the viscosity increases much faster than the decrease in diffusion $D\xi/T\neq \mathrm{constant}$
+        - This means tha $D\eta\neq \text{constant}$ and since the viscosity $\eta\sim \tau$ (a characteristic relaxation time) $D\tau\neq \text{constant}$
 
+
+![Stokes-Einstein brakdown in a theoretical model of glassy behaviour](./figs/seModel.png)

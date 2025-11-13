@@ -1,0 +1,849 @@
+% Options for packages loaded elsewhere
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+\PassOptionsToPackage{dvipsnames,svgnames,x11names}{xcolor}
+%
+\documentclass[
+  letterpaper,
+  DIV=11,
+  numbers=noendperiod]{scrartcl}
+\usepackage{xcolor}
+\usepackage{amsmath,amssymb}
+\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math} % this also loads fontspec
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+\usepackage{lmodern}
+\ifPDFTeX\else
+  % xetex/luatex font selection
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+% Make \paragraph and \subparagraph free-standing
+\makeatletter
+\ifx\paragraph\undefined\else
+  \let\oldparagraph\paragraph
+  \renewcommand{\paragraph}{
+    \@ifstar
+      \xxxParagraphStar
+      \xxxParagraphNoStar
+  }
+  \newcommand{\xxxParagraphStar}[1]{\oldparagraph*{#1}\mbox{}}
+  \newcommand{\xxxParagraphNoStar}[1]{\oldparagraph{#1}\mbox{}}
+\fi
+\ifx\subparagraph\undefined\else
+  \let\oldsubparagraph\subparagraph
+  \renewcommand{\subparagraph}{
+    \@ifstar
+      \xxxSubParagraphStar
+      \xxxSubParagraphNoStar
+  }
+  \newcommand{\xxxSubParagraphStar}[1]{\oldsubparagraph*{#1}\mbox{}}
+  \newcommand{\xxxSubParagraphNoStar}[1]{\oldsubparagraph{#1}\mbox{}}
+\fi
+\makeatother
+
+\usepackage{color}
+\usepackage{fancyvrb}
+\newcommand{\VerbBar}{|}
+\newcommand{\VERB}{\Verb[commandchars=\\\{\}]}
+\DefineVerbatimEnvironment{Highlighting}{Verbatim}{commandchars=\\\{\}}
+% Add ',fontsize=\small' for more characters per line
+\usepackage{framed}
+\definecolor{shadecolor}{RGB}{241,243,245}
+\newenvironment{Shaded}{\begin{snugshade}}{\end{snugshade}}
+\newcommand{\AlertTok}[1]{\textcolor[rgb]{0.68,0.00,0.00}{#1}}
+\newcommand{\AnnotationTok}[1]{\textcolor[rgb]{0.37,0.37,0.37}{#1}}
+\newcommand{\AttributeTok}[1]{\textcolor[rgb]{0.40,0.45,0.13}{#1}}
+\newcommand{\BaseNTok}[1]{\textcolor[rgb]{0.68,0.00,0.00}{#1}}
+\newcommand{\BuiltInTok}[1]{\textcolor[rgb]{0.00,0.23,0.31}{#1}}
+\newcommand{\CharTok}[1]{\textcolor[rgb]{0.13,0.47,0.30}{#1}}
+\newcommand{\CommentTok}[1]{\textcolor[rgb]{0.37,0.37,0.37}{#1}}
+\newcommand{\CommentVarTok}[1]{\textcolor[rgb]{0.37,0.37,0.37}{\textit{#1}}}
+\newcommand{\ConstantTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{#1}}
+\newcommand{\ControlFlowTok}[1]{\textcolor[rgb]{0.00,0.23,0.31}{\textbf{#1}}}
+\newcommand{\DataTypeTok}[1]{\textcolor[rgb]{0.68,0.00,0.00}{#1}}
+\newcommand{\DecValTok}[1]{\textcolor[rgb]{0.68,0.00,0.00}{#1}}
+\newcommand{\DocumentationTok}[1]{\textcolor[rgb]{0.37,0.37,0.37}{\textit{#1}}}
+\newcommand{\ErrorTok}[1]{\textcolor[rgb]{0.68,0.00,0.00}{#1}}
+\newcommand{\ExtensionTok}[1]{\textcolor[rgb]{0.00,0.23,0.31}{#1}}
+\newcommand{\FloatTok}[1]{\textcolor[rgb]{0.68,0.00,0.00}{#1}}
+\newcommand{\FunctionTok}[1]{\textcolor[rgb]{0.28,0.35,0.67}{#1}}
+\newcommand{\ImportTok}[1]{\textcolor[rgb]{0.00,0.46,0.62}{#1}}
+\newcommand{\InformationTok}[1]{\textcolor[rgb]{0.37,0.37,0.37}{#1}}
+\newcommand{\KeywordTok}[1]{\textcolor[rgb]{0.00,0.23,0.31}{\textbf{#1}}}
+\newcommand{\NormalTok}[1]{\textcolor[rgb]{0.00,0.23,0.31}{#1}}
+\newcommand{\OperatorTok}[1]{\textcolor[rgb]{0.37,0.37,0.37}{#1}}
+\newcommand{\OtherTok}[1]{\textcolor[rgb]{0.00,0.23,0.31}{#1}}
+\newcommand{\PreprocessorTok}[1]{\textcolor[rgb]{0.68,0.00,0.00}{#1}}
+\newcommand{\RegionMarkerTok}[1]{\textcolor[rgb]{0.00,0.23,0.31}{#1}}
+\newcommand{\SpecialCharTok}[1]{\textcolor[rgb]{0.37,0.37,0.37}{#1}}
+\newcommand{\SpecialStringTok}[1]{\textcolor[rgb]{0.13,0.47,0.30}{#1}}
+\newcommand{\StringTok}[1]{\textcolor[rgb]{0.13,0.47,0.30}{#1}}
+\newcommand{\VariableTok}[1]{\textcolor[rgb]{0.07,0.07,0.07}{#1}}
+\newcommand{\VerbatimStringTok}[1]{\textcolor[rgb]{0.13,0.47,0.30}{#1}}
+\newcommand{\WarningTok}[1]{\textcolor[rgb]{0.37,0.37,0.37}{\textit{#1}}}
+
+\usepackage{longtable,booktabs,array}
+\usepackage{calc} % for calculating minipage widths
+% Correct order of tables after \paragraph or \subparagraph
+\usepackage{etoolbox}
+\makeatletter
+\patchcmd\longtable{\par}{\if@noskipsec\mbox{}\fi\par}{}{}
+\makeatother
+% Allow footnotes in longtable head/foot
+\IfFileExists{footnotehyper.sty}{\usepackage{footnotehyper}}{\usepackage{footnote}}
+\makesavenoteenv{longtable}
+\usepackage{graphicx}
+\makeatletter
+\newsavebox\pandoc@box
+\newcommand*\pandocbounded[1]{% scales image to fit in text height/width
+  \sbox\pandoc@box{#1}%
+  \Gscale@div\@tempa{\textheight}{\dimexpr\ht\pandoc@box+\dp\pandoc@box\relax}%
+  \Gscale@div\@tempb{\linewidth}{\wd\pandoc@box}%
+  \ifdim\@tempb\p@<\@tempa\p@\let\@tempa\@tempb\fi% select the smaller of both
+  \ifdim\@tempa\p@<\p@\scalebox{\@tempa}{\usebox\pandoc@box}%
+  \else\usebox{\pandoc@box}%
+  \fi%
+}
+% Set default figure placement to htbp
+\def\fps@figure{htbp}
+\makeatother
+
+
+
+
+
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+
+
+
+ 
+
+
+\KOMAoption{captions}{tableheading}
+\makeatletter
+\@ifpackageloaded{tcolorbox}{}{\usepackage[skins,breakable]{tcolorbox}}
+\@ifpackageloaded{fontawesome5}{}{\usepackage{fontawesome5}}
+\definecolor{quarto-callout-color}{HTML}{909090}
+\definecolor{quarto-callout-note-color}{HTML}{0758E5}
+\definecolor{quarto-callout-important-color}{HTML}{CC1914}
+\definecolor{quarto-callout-warning-color}{HTML}{EB9113}
+\definecolor{quarto-callout-tip-color}{HTML}{00A047}
+\definecolor{quarto-callout-caution-color}{HTML}{FC5300}
+\definecolor{quarto-callout-color-frame}{HTML}{acacac}
+\definecolor{quarto-callout-note-color-frame}{HTML}{4582ec}
+\definecolor{quarto-callout-important-color-frame}{HTML}{d9534f}
+\definecolor{quarto-callout-warning-color-frame}{HTML}{f0ad4e}
+\definecolor{quarto-callout-tip-color-frame}{HTML}{02b875}
+\definecolor{quarto-callout-caution-color-frame}{HTML}{fd7e14}
+\makeatother
+\makeatletter
+\@ifpackageloaded{caption}{}{\usepackage{caption}}
+\AtBeginDocument{%
+\ifdefined\contentsname
+  \renewcommand*\contentsname{Table of contents}
+\else
+  \newcommand\contentsname{Table of contents}
+\fi
+\ifdefined\listfigurename
+  \renewcommand*\listfigurename{List of Figures}
+\else
+  \newcommand\listfigurename{List of Figures}
+\fi
+\ifdefined\listtablename
+  \renewcommand*\listtablename{List of Tables}
+\else
+  \newcommand\listtablename{List of Tables}
+\fi
+\ifdefined\figurename
+  \renewcommand*\figurename{Figure}
+\else
+  \newcommand\figurename{Figure}
+\fi
+\ifdefined\tablename
+  \renewcommand*\tablename{Table}
+\else
+  \newcommand\tablename{Table}
+\fi
+}
+\@ifpackageloaded{float}{}{\usepackage{float}}
+\floatstyle{ruled}
+\@ifundefined{c@chapter}{\newfloat{codelisting}{h}{lop}}{\newfloat{codelisting}{h}{lop}[chapter]}
+\floatname{codelisting}{Listing}
+\newcommand*\listoflistings{\listof{codelisting}{List of Listings}}
+\makeatother
+\makeatletter
+\makeatother
+\makeatletter
+\@ifpackageloaded{caption}{}{\usepackage{caption}}
+\@ifpackageloaded{subcaption}{}{\usepackage{subcaption}}
+\makeatother
+\usepackage{bookmark}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\urlstyle{same}
+\hypersetup{
+  pdftitle={Complex Disordered Systems},
+  colorlinks=true,
+  linkcolor={blue},
+  filecolor={Maroon},
+  citecolor={Blue},
+  urlcolor={Blue},
+  pdfcreator={LaTeX via pandoc}}
+
+
+\title{Complex Disordered Systems}
+\usepackage{etoolbox}
+\makeatletter
+\providecommand{\subtitle}[1]{% add subtitle to \maketitle
+  \apptocmd{\@title}{\par {\large #1 \par}}{}{}
+}
+\makeatother
+\subtitle{Static and dynamic correlations}
+\author{}
+\date{}
+\begin{document}
+\maketitle
+
+
+\subsection{Today}\label{today}
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{Characterisation of colloids}
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Static (pair) corrleations
+  \item
+    Diffusive dynamics
+  \end{itemize}
+\end{itemize}
+
+\subsection{Pairwise interactions}\label{pairwise-interactions}
+
+True colloidal systems can be complex:
+
+\begin{itemize}
+\tightlist
+\item
+  charges
+\item
+  shape deformability/swelling
+\item
+  instabilities of the components
+\end{itemize}
+
+Their theoretical description focuses on \textbf{essential ingredients}.
+
+A simplifying assumption is that the potential energy of a collection of
+colloids is purely \textbf{pairwise}
+
+\[
+U_N\left(\mathbf{r}^N\right)=\sum_{i=1}^{N-1} \sum_{j=i+1}^N V\left(r_i j\right)=\frac{1}{2} \sum_{i \neq j} V\left(r_{i j}\right)
+\]
+
+where \(V(r_{ij})\) is the pairwise, radial interaction potential that
+only depends on the distance between particle centres
+\(r_{ij} = \mathbf{r}_i-\mathbf{r}_j\).
+
+\subsection{Aside: Not pairwise?}\label{aside-not-pairwise}
+
+Some examples of non-pariwise situations:
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{Atomistic models}: Electronic densities that fluctuate due to
+  quantum effects are intrinsically many-body
+\item
+  \textbf{True colloid-cpolymer mixtures}: if the polymers are not
+  ideal, their spatial distribution and their forces depend on the
+  positions of more than two colloids
+\end{itemize}
+
+\begin{figure}[H]
+
+{\centering \includegraphics[width=\linewidth,height=4.6875in,keepaspectratio]{./figs/dft-nonideal-colloid-polymer.png}
+
+}
+
+\caption{\(C_{60}\) isosurface via density functional theory (Wikipedia)
+and configuration of non-deal colloid-polymer mixture, Rohrbach et al
+JCP (2022)}
+
+\end{figure}%
+
+\subsection{Pairwise interactions and pair
+correlations}\label{pairwise-interactions-and-pair-correlations}
+
+\begin{itemize}
+\tightlist
+\item
+  For \textbf{pairwise} systems, all the thermodynamic properties are
+  solely encoded in the \textbf{pairwise correlations}.
+\end{itemize}
+
+You have already seen such correlations in other contexts (Ising model,
+lattice gas).
+
+The key pair correlation is the real space \textbf{radial distribution
+function}:
+
+\[
+g(r)=\frac{1}{\rho N}\left\langle\sum_{i=1}^N \sum_{j \neq i} \delta\left(\left|\mathbf{r}_i-\mathbf{r}_j\right|-r\right)\right\rangle
+\]
+
+The free energy can then be written as \[
+\frac{F_{\mathrm{ex}}}{k_B T}=2 \pi \rho N \int_0^{\infty}[g(r) \ln g(r)-g(r)+1] r^2 d r+\frac{\rho N}{2 k_B T} \int V(r) g(r) d^3 r
+\]
+
+and you should be able to read out a part very reminiscent of an
+(information-theoretical) entropy and one reminiscent of an internal
+energy.
+
+\subsection{Radial distribution
+function}\label{radial-distribution-function}
+
+\begin{figure}[H]
+
+{\centering \pandocbounded{\includegraphics[keepaspectratio]{./figs/gr.png}}
+
+}
+
+\caption{The radial distribution function, algorithmic interpretation:
+at a distance \(r\), we count the number of particle centres within a
+slice of width dr and then normalise.}
+
+\end{figure}%
+
+\subsection{Radial distribution
+function}\label{radial-distribution-function-1}
+
+\begin{itemize}
+\item
+  The radial distribution function \(g(r)\) is related to the average
+  local density at a distance \(r\) from a reference particle:
+\item
+  To formally derive this, consider a system of \(N\) particles in
+  volume \(V\) with average density \(\rho = N/V\). The local density at
+  a distance \(r\) from a reference particle is defined as \[
+  \langle \rho(r) \rangle = \left\langle \sum_{j \neq i} \delta\left(|\mathbf{r}_i - \mathbf{r}_j| - r\right) \right\rangle
+  \] Averaging over all particles and normalizing by the bulk density
+  \(\rho\) gives the radial distribution function: \[
+  g(r) = \frac{1}{\rho N} \left\langle \sum_{i=1}^N \sum_{j \neq i} \delta\left(|\mathbf{r}_i - \mathbf{r}_j| - r\right) \right\rangle = \frac{\langle \rho(r) \rangle}{\rho}
+  \]
+
+  where \(\langle \rho(r) \rangle\) is the average density at distance
+  \(r\) from a particle, and \(\rho\) is the bulk density.
+\end{itemize}
+
+\subsection{Radial distribution
+function}\label{radial-distribution-function-2}
+
+\begin{itemize}
+\tightlist
+\item
+  For an \textbf{ideal gas}, \(g(r) = 1\) everywhere (no correlations).
+\item
+  For \textbf{hard spheres}, \(g(r) = 0\) for \(r < \sigma\) (no
+  overlap), and \(g(r)\) shows oscillations at higher \(r\) due to
+  packing effects.
+\end{itemize}
+
+\begin{tcolorbox}[enhanced jigsaw, opacityback=0, coltitle=black, titlerule=0mm, colback=white, left=2mm, opacitybacktitle=0.6, colframe=quarto-callout-note-color-frame, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Note}, colbacktitle=quarto-callout-note-color!10!white, leftrule=.75mm, toptitle=1mm, rightrule=.15mm, toprule=.15mm, arc=.35mm, bottomrule=.15mm, bottomtitle=1mm, breakable]
+
+Hard spheres in 3D are not exactly solvable! We only have perturbative
+solutons to hard spheres
+
+\end{tcolorbox}
+
+\begin{itemize}
+\tightlist
+\item
+  The \(g(r)\) is the central object of (equilibrium) liquid state
+  theory
+\item
+  Correlations between two particles \(1\) and \(2\) in a fluid to have
+  two possible origins
+
+  \begin{itemize}
+  \tightlist
+  \item
+    a \textbf{direct} correlation between the two particles, mediated by
+    direct interactions (e.g.~collisions) between 1 and 2.
+  \item
+    an \textbf{indirect correlation}, mediated by other particles in the
+    fluid
+  \end{itemize}
+\end{itemize}
+
+\subsection{Direct and indirect
+correlations}\label{direct-and-indirect-correlations}
+
+\begin{itemize}
+\tightlist
+\item
+  The \(g(r)\) contains \textbf{both}.
+\item
+  We can assume the existence of a correlation function that instead
+  only incl;udes the \textbf{direct} part and call it \(c(r)\). Then a
+  hierarchy exists
+\end{itemize}
+
+\[
+h\left(r_{12}\right)=c\left(r_{12}\right)+\rho \int c\left(r_{13}\right) h\left(r_{32}\right) d \mathbf{r}_3
+\]
+
+where \(h(r) = g(r)-1\). This is the \textbf{Ornstein-Zernicke integral
+equation} between particles 1,2 and 3.
+
+Both \(h(r)\) and \(c(r)\) are unknwon in principle. One needs an
+additional condition to fix box: these are \textbf{physical closures}
+leading to approximations.
+
+\begin{figure}[H]
+
+{\centering \pandocbounded{\includegraphics[keepaspectratio]{./figs/ornstein-zernicke.png}}
+
+}
+
+\caption{Meaning of teh Ornstein-Zernicke relation, adapted from Santos,
+Springer(2016)}
+
+\end{figure}%
+
+\subsection{Percus-Yevick
+approximation}\label{percus-yevick-approximation}
+
+A common closure is the \textbf{Percus-Yevick approximation}.
+
+\[
+c(r)=[1+h(r)]\left[1-e^{\beta U(r)}\right]
+\]
+
+This closure interpolates between the hard-core exclusion (for
+\(U(r) \to \infty\), \(c(r) \to 0\) inside the core) and the ideal gas
+limit (for \(U(r) = 0\), \(c(r) = 0\)).
+
+The result (semi) analytical. For hard spheres, it allows to calculate
+the g(r) accurately in a wide range of packing fractions
+
+\begin{figure}[H]
+
+{\centering \includegraphics[width=\linewidth,height=3.64583in,keepaspectratio]{./figs/hs47.png}
+
+}
+
+\caption{PY approximation vs simulated data for hard spheres.}
+
+\end{figure}%
+
+\subsection{\texorpdfstring{Equation of states from
+\(g(r)\)}{Equation of states from g(r)}}\label{equation-of-states-from-gr}
+
+The knowledge of the pair correlations also allows one to extract
+equation of states and significantly improve on the virial expansion, as
+the \(g(r)\) contains packing effects!
+
+\[
+P=\rho k_B T-\frac{2 \pi \rho^2}{3} \int_0^{\infty} r^3 \frac{d u(r)}{d r} g(r) d r
+\]
+
+\begin{tcolorbox}[enhanced jigsaw, opacityback=0, coltitle=black, titlerule=0mm, colback=white, left=2mm, opacitybacktitle=0.6, colframe=quarto-callout-note-color-frame, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Note}, colbacktitle=quarto-callout-note-color!10!white, leftrule=.75mm, toptitle=1mm, rightrule=.15mm, toprule=.15mm, arc=.35mm, bottomrule=.15mm, bottomtitle=1mm, breakable]
+
+For hard spheres, The derivative \(\frac{du(r)}{dr}\) is zero everywhere
+except at the contact point \(r = \sigma\), where it becomes a delta
+function: \[
+\frac{dV(r)}{dr} = -\infty \delta(r - \sigma)
+\]
+
+Substituting into the pressure equation: \[
+P = \rho k_B T + \frac{2\pi\rho^2}{3} \sigma^3 g(\sigma)
+\]
+
+Therefore, for hard spheres, the equation of state only requires
+knowledge of the contact value \(g(\sigma)\).
+
+We will see this in a problem class.
+
+\end{tcolorbox}
+
+\subsection{Structure factor}\label{structure-factor}
+
+The real-space correlations and relations have their reciprocal
+(\emph{Fourier} space) counterparts.
+
+The structure factor is defined as
+
+\[
+S(k)=1+\rho \int[g(r)-1] e^{-i \mathbf{k} \cdot \mathbf{r}} d \mathbf{r}
+\]
+
+Isotropicity in 3D simplifies the expression to
+
+\[
+S(k)=1+4 \pi \rho \int_0^{\infty} r^2[g(r)-1] \frac{\sin (k r)}{k r} d r
+\]
+
+\begin{itemize}
+\tightlist
+\item
+  Radial distribution functions \(\to\) easily accessed in
+  \textbf{confocal experiments} (large colloids)
+\item
+  Structure factors \(\to\) immediately accessed via \textbf{scattering
+  experiments}
+\end{itemize}
+
+\subsection{Structure factor}\label{structure-factor-1}
+
+Interestingly, reciprocal space simplifies integral equations such as
+Ornstein-Zernicke
+
+\[
+\tilde{h}(k)=\frac{\tilde{c}(k)}{1-\rho \tilde{c}(k)}
+\]
+
+allowing one to read the direct correlation function directly from
+scattering data, as \(\tilde{h}(k)=\) can be identified with the
+structure factor.
+
+\begin{figure}[H]
+
+{\centering \includegraphics[width=\linewidth,height=4.6875in,keepaspectratio]{./figs/gallium.png}
+
+}
+
+\caption{Structure factors (left) and radial distribution functions
+(right) for Gallium at extreme conditions, Drewitt et al PRL (2020)}
+
+\end{figure}%
+
+\subsection{Aside: higher order
+correlations}\label{aside-higher-order-correlations}
+
+Nothing prevents us to quantify higher order correlations. In general
+these are non-trivial are controlled by the indirect part of the
+correlations.
+
+Standard ways to identify \textbf{n-particle}* correlations is to
+measure \textbf{structural motifs}.
+
+\begin{figure}[H]
+
+{\centering \pandocbounded{\includegraphics[keepaspectratio]{./figs/josh.png}}
+
+}
+
+\caption{Many body correlations in hard spheres, seminal work from Josh
+Robinson, PhD student in Bristol a few years ago, Robinson et al PRL
+(2019)}
+
+\end{figure}%
+
+This is particularly important for dense systems (e.g.~glasses, see
+future lecture).
+
+\subsection{Dynamics: single vs collective
+displacements}\label{dynamics-single-vs-collective-displacements}
+
+The thermal motion of individual colloids is often well modeled via the
+\textbf{Langevin equation}
+
+\[
+m \frac{d \vec{v}}{d t}=-\gamma \vec{v}+\vec{\eta}(t)
+\]
+
+Coarse-graining over small volumes (and short times) gives us access to
+the local density \(\rho(\mathbf{r},t)\) which obeys a \textbf{diffusion
+equation}
+
+\[
+\frac{\partial \rho(\mathbf{r}, t)}{\partial t}=D \nabla^2 \rho(\mathbf{r}, t)
+\]
+
+The diffusivity is linked to the microscopic Langevin parameters via
+\textbf{fluctuation-dissipation} (Einstein's relation)
+
+\[
+D=\frac{k_B T}{\gamma}
+\]
+
+(where the friction is the dissipation and the random force is the
+fluctuations).
+
+\subsection{Diffusion equation: macroscopic
+picture}\label{diffusion-equation-macroscopic-picture}
+
+It is possible to (re)-derive the diffusion equation solely from
+macroscopic requirements. We have a macroscopic density \(\rho(r,t)\)
+and a macroscpic flux \(\vec{J}(r,t)\)
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{continuity}: there is no mass loss in the dynamics
+\end{itemize}
+
+\[
+\frac{\partial \rho(\mathbf{r}, t)}{\partial t}+\nabla \cdot \mathbf{J}(\mathbf{r}, t)=0
+\] where the divergence \(\nabla \cdot \mathbf{J}(\mathbf{r}, t)\)
+represents the net outflow of particles from a given region due to the
+flux \(\mathbf{J}\).
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{Fick's law} : we assume the flow is a gradient field of the
+  density, flowing from high to low density
+\end{itemize}
+
+\[
+\mathbf{J}(\mathbf{r}, t)=-D \nabla \rho(\mathbf{r}, t)
+\]
+
+It is immediate to combine the two to obtain the diffusion equation
+
+\[
+\frac{\partial \rho(\mathbf{r}, t)}{\partial t}=D \nabla^2 \rho(\mathbf{r}, t)
+\]
+
+\subsection{Measuring diffusion
+coefficients}\label{measuring-diffusion-coefficients}
+
+The distribution \(\rho(\mathbf{r},t)\) encodes all the information
+about the motion of an ensemble.
+
+Often, less is sufficient to characterise the diffusion. The second
+moment of the displacements (the mean squared displacement) provides
+this information. In \(d\) dimensions \[
+\left\langle \left| \mathbf{r}(t) - \mathbf{r}(t_0) \right|^2 \right\rangle = 2 d D t
+\]
+
+Hence \(D\) can be extracted from linear fits to the MSD.
+
+\subsection{Stokes-Einstein relation: fluctuation dissipation for
+colloids}\label{stokes-einstein-relation-fluctuation-dissipation-for-colloids}
+
+In dilute conditions, let's think of a particle slowly sedimenting in a
+viscous fluid.
+
+The density distribution is Boltzmann
+
+\[
+n(x)=n_0 \exp \left(-U(x) / k_B T\right)=n_0 \exp \left(-F x / k_B T\right)
+\]
+
+where \(F= m_B g\) is the force from the buoyant mass.
+
+A flux is produced \(J_F = n(x) v=\frac{n(x) F}{\xi}\)
+
+where we used the fact that the velocity is set by the viscosity
+\(\eta\) as \(v=F/\eta\).
+
+Diffusion occurs at the same time, driven by the gradient (Fick's law)
+\[
+J_D(x)=-D \frac{\partial n(x)}{\partial x}
+\]
+
+\subsection{Stokes-Einstein relation: fluctuation dissipation for
+colloids}\label{stokes-einstein-relation-fluctuation-dissipation-for-colloids-1}
+
+Equating the two we have
+
+\[
+\frac{n(x) F}{\xi}=-D \frac{\partial n(x)}{d x}=D \frac{F}{k_B T} n(x)
+\]
+
+and differentiating the Boltzmann distribution gives \[
+\frac{n(x) F}{\xi}= D \frac{F}{k_B T} n(x)
+\]
+
+Hence a balance exists between thermal fluctuations and viscosities. For
+a sphere, \textbf{Stoke's law} \(\xi=6 \pi \eta R\) yielding simply
+
+\[
+D=\frac{k_B T}{\xi}=\frac{k_B T}{6 \pi \eta R}
+\]
+
+This is a re-statement of the Einstein relation, called the
+\textbf{Stokes-Einstein} relation.
+
+\[
+\text { Fluctuations: } k_B T \quad \longrightarrow \quad \text { Observed motion: } D \quad \longrightarrow \quad \text { Dissipation: } 6 \pi \eta R .
+\]
+
+Which is generic under (moderate) driving.
+
+\subsection{Random walkers in 2d,
+example}\label{random-walkers-in-2d-example}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{\#| echo: false}
+\NormalTok{import matplotlib.pyplot as plt}
+
+\NormalTok{import numpy as np}
+
+
+\NormalTok{def plot\_tj(positions, msd, walker=0, loglog=False):}
+\NormalTok{    \# Plot}
+\NormalTok{    fig, ax = plt.subplots(1, 3, figsize=(9.5,2.8))}
+\NormalTok{    ax[0].plot(positions[0, :, 0], positions[0, :, 1], alpha=0.7, linewidth=0.8)  \# example trajectory}
+\NormalTok{    time = np.arange(len(msd))}
+\NormalTok{    ax[1].plot(time, msd, \textquotesingle{}o{-}\textquotesingle{}, markersize=3)}
+\NormalTok{    \# Fit linear line to MSD data}
+\NormalTok{    slope, intercept = np.polyfit(time, msd, 1)}
+\NormalTok{    fit\_line = slope * time + intercept}
+\NormalTok{    D = slope/4}
+\NormalTok{    ax[1].plot(time, fit\_line, \textquotesingle{}r{-}{-}\textquotesingle{}, alpha=0.8, label=f\textquotesingle{}All data: D=\{D:.2f\}\textquotesingle{})}
+
+\NormalTok{    \# partial data}
+\NormalTok{    slope, intercept = np.polyfit(time[:len(time)//2], msd[:len(time)//2], 1)}
+\NormalTok{    fit\_line = slope * time + intercept}
+\NormalTok{    D = slope/4}
+\NormalTok{    ax[1].plot(time, fit\_line, \textquotesingle{}g{-}{-}\textquotesingle{}, alpha=0.8, label=f\textquotesingle{}Half data: D=\{slope:.2f\}\textquotesingle{})}
+
+\NormalTok{    ax[1].legend(fontsize=8, frameon=False)}
+\NormalTok{    ax[1].set(xlabel="time",ylabel="MSD")}
+\NormalTok{    if loglog:}
+\NormalTok{        ax[1].set\_xscale(\textquotesingle{}log\textquotesingle{})}
+\NormalTok{        ax[1].set\_yscale(\textquotesingle{}log\textquotesingle{})}
+
+\NormalTok{    bins = np.arange({-}200,200,20.0)}
+\NormalTok{    H, edgesx, edgesy = np.histogram2d(positions[:,{-}1,0],positions[:,{-}1,1],bins=(bins,bins))}
+
+
+\NormalTok{    ax[2].imshow(H.T)}
+\NormalTok{    ax[0].axis("equal")}
+\NormalTok{    ax[2].axis("equal")}
+\NormalTok{    ax[2].axis("off")}
+\NormalTok{    plt.tight\_layout()}
+\NormalTok{    plt.show()}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{n\_steps, n\_walkers, dim = 10000, 500, 2}
+\NormalTok{steps = np.random.randint({-}1, 2, size=(n\_walkers, n\_steps, dim))}
+\NormalTok{positions = np.cumsum(steps, axis=1)  \# cumulative sum along steps}
+\NormalTok{msd = positions.var(axis=0).sum(axis=1)  \# MSD at each timestep}
+\NormalTok{plot\_tj(positions,msd,walker=0,loglog=False)}
+\end{Highlighting}
+\end{Shaded}
+
+\subsection{Hidden assumptions}\label{hidden-assumptions}
+
+\begin{tcolorbox}[enhanced jigsaw, opacityback=0, coltitle=black, titlerule=0mm, colback=white, left=2mm, opacitybacktitle=0.6, colframe=quarto-callout-note-color-frame, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Note}, colbacktitle=quarto-callout-note-color!10!white, leftrule=.75mm, toptitle=1mm, rightrule=.15mm, toprule=.15mm, arc=.35mm, bottomrule=.15mm, bottomtitle=1mm, breakable]
+
+\begin{itemize}
+\tightlist
+\item
+  We have been considering ensembles of particles microscopically
+  governed by the Langevin equation
+\item
+  We did not comment on the inter-particle interactions and assumed that
+  the properties of the thermal bath determine the diffusivity \(D\). In
+  reality, interactions between particles can lead to deviations from
+  simple diffusion, especially at higher concentrations, where
+  collective effects and hydrodynamic interactions become important.
+\end{itemize}
+
+\end{tcolorbox}
+
+\subsection{Dilute vs dense diffusion}\label{dilute-vs-dense-diffusion}
+
+\begin{itemize}
+\item
+  Consider hard spheres in a fluid.
+\item
+  At low volume fractions \(\phi\) they rarely collide and they perofrm
+  under/over-damped (Langevin) dynamics. They will therefore diffuse as
+  \(\operatorname{MSD} (t)= 6D_0 t\)
+\item
+  Things change when we increase the packing.
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Short times: \(D_s <D_0\), diffusion within \textbf{cages} formed by
+    the neighbours. Mostly free, but with some collisions.
+  \item
+    Long times: \(D_L\ll D_0\) cage breaking. Interactions are both hard
+    core and hydrodynamic
+  \end{itemize}
+\end{itemize}
+
+\begin{figure}[H]
+
+{\centering \includegraphics[width=\linewidth,height=4.47917in,keepaspectratio]{./figs/colloids-msd.png}
+
+}
+
+\caption{MSD of colloids}
+
+\end{figure}%
+
+\subsection{Dilute vs dense
+diffusion}\label{dilute-vs-dense-diffusion-1}
+
+\begin{itemize}
+\tightlist
+\item
+  At \textbf{very high} volume fractions the cage mechanism becomes more
+  complex: paricles are trapped for long times and only occasionaly
+  break cages:
+
+  \begin{itemize}
+  \tightlist
+  \item
+    cage-jump dynamics \(\to\) glassy dynamics (see future lectures)
+  \item
+    rare events \(\to\) Levy-flight statistics \(\neq\)
+    Gaussian/diffusive statistics
+  \item
+    Breaking of fluctuation-dissipation condition encoded in the
+    \textbf{Stokes-Einstein} relation
+
+    \begin{itemize}
+    \tightlist
+    \item
+      the viscosity increases much faster than the decrease in diffusion
+      \(D\xi/T\neq \mathrm{constant}\)
+    \end{itemize}
+  \end{itemize}
+\end{itemize}
+
+
+
+
+\end{document}
