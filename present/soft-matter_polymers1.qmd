@@ -342,7 +342,7 @@ where $C = \frac{1 + \cos\theta}{1 - \cos\theta}$
    🪁 [Play with models](https://fturci.github.io/course-disordered-matter/soft-matter/soft-matter_polymers.html#freely-rotating-chain)
 :::
 :::{.column}
-![Kevlar fiber (top) and chromatin globule model (bottom)](./figs/kevlar-chromatin.png)
+![Kevlar fiber (top) and chromatin globule model (bottom)](./figs/kevlar-chromatin.png){height=500}
 :::
 
 <!-- 
