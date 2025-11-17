@@ -630,6 +630,48 @@
     "text": "Freely-Rotating Chain Model: Effect of Bond Angle\n\n\n\n\\theta \\to 0: C \\gg 1 → Rigid rod \\langle R^2 \\rangle \\gg N b_0^2\nNearly straight chain. The end-to-end distance is much larger than that of a flexible chain with the same number of segments.\n\\theta \\to \\pi: C \\ll 1 → Collapsed globule\n\\langle R^2 \\rangle \\ll N b_0^2\nCompact, globular, collapsed assembly. Examples: polypeptides, polystyrene in water, chromatin\n\\theta = 90°: C = 1 → Ideal random walk \\langle R^2 \\rangle = N b_0^2\nCorresponds to our original freely jointed chain (random walk).\n🪁 Play with models\n\n\n\n\n\nKevlar fiber (top) and chromatin globule model (bottom)"
   },
   {
+    "objectID": "soft-matter_polymers1.html#persistence-and-kuhn-length",
+    "href": "soft-matter_polymers1.html#persistence-and-kuhn-length",
+    "title": "Complex Disordered Systems",
+    "section": "Persistence and Kuhn Length",
+    "text": "Persistence and Kuhn Length\n\n\nSo in general \\langle R^2 \\rangle \\propto N\n\nReplace real chain with equivalent freely-jointed chain\nSame contour length: N b_0 = N' b\nSame end-to-end distance: C N b_0^2 = N' b^2\n\nResults:\n\nKuhn length: b = C b_0\n\nPersistence length: correlations along the chain decay like \\left\\langle\\mathbf{r}_i \\cdot \\mathbf{r}_{i+n}\\right\\rangle=b_0^2\\langle\\cos \\theta\\rangle^n=b_0^2 e^{-n b_0 / l_p}\n with \\ell_p = b/2\nKuhn segments: N' = N/C\n\n\n\n\nOriginal contour length: 200.0000\nCoarse-grained contour length: 163.8304"
+  },
+  {
+    "objectID": "soft-matter_polymers1.html#excluded-volume-effects",
+    "href": "soft-matter_polymers1.html#excluded-volume-effects",
+    "title": "Complex Disordered Systems",
+    "section": "Excluded Volume Effects",
+    "text": "Excluded Volume Effects\nTrue monomers cannot occupy same space\n\nlocal scale: restrictions on the bond angles stopping them from overlapping\nlarge distance excluded volume interactions between monomers, also deforming the chain\n\nConsider that for a coiled polymer\n\nV_{\\text {coil }}=\\frac{4 \\pi}{3}\\left(\\left\\langle R_g^2\\right\\rangle^{1/2}\\right)^3 \\sim \\frac{4 \\pi}{3} N^{3 / 2} b^3\n\nSo\n\\frac{V_{\\text{monomers}}}{V_{\\text{coil}}} = \\frac{N b^3}{N^{3/2} b^3} \\sim N^{-1/2}\nFor N = 10^4: only ~1% of coil volume occupied!\nSo excluded-volume interactions are meant to present a small contribution.\nYet they affect the scaling properties.\n="
+  },
+  {
+    "objectID": "soft-matter_polymers1.html#self-avoiding-walk",
+    "href": "soft-matter_polymers1.html#self-avoiding-walk",
+    "title": "Complex Disordered Systems",
+    "section": "Self-Avoiding Walk",
+    "text": "Self-Avoiding Walk\nBalance of competing effects:\n\nEntropy: Favors compact configurations\nExcluded volume: Favors chain expansion\n\nEntropy :\n\nS=k_B \\ln (\\text { number of configurations })\n\nFor a given end-to-end vector the number of configurations scales as\n\nP(\\mathbf{R})=\\left(\\frac{3}{2 \\pi\\langle R^{2}\\rangle}\\right)^{3 / 2} e^{-\\frac{3 R^{2}}{2\\langle R^{2}\\rangle}}\n\nand so\n\nS \\sim \\frac{-3 k_{B} R^{2}}{2 N b^{2}}+\\text { terms indep. of } \\mathrm{R}"
+  },
+  {
+    "objectID": "soft-matter_polymers1.html#self-avoiding-walk-1",
+    "href": "soft-matter_polymers1.html#self-avoiding-walk-1",
+    "title": "Complex Disordered Systems",
+    "section": "Self-Avoiding Walk",
+    "text": "Self-Avoiding Walk\nThe configurational part of the internal energy can be estimated by focusing on monomer-monomer contacts for monomers of volume V_1.\nWe approximate this with a segment gas confined in a volume R^3. The density (or probability) of contacts is\n\\rho_c = N^2 V_1 / R^3 \\sim N^{1 / 2}\n\nby using R^2\\sim N.\nWe have \\sim N^2\\rho_c pairs at some energy scale per bond \\varepsilon so \nU \\sim \\varepsilon N^2 V_1 / R^3\n and the total free energy is approximately\n\nF=\\frac{\\varepsilon N^2 V_1}{R^3}+\\frac{3 k_B T R^2}{2 N b^2}\n\n(we are interested in scaling behaviour)"
+  },
+  {
+    "objectID": "soft-matter_polymers1.html#self-avoiding-walk-2",
+    "href": "soft-matter_polymers1.html#self-avoiding-walk-2",
+    "title": "Complex Disordered Systems",
+    "section": "Self-avoiding walk",
+    "text": "Self-avoiding walk\nFrom\n\nF=\\frac{\\varepsilon N^2 V_1}{R^3}+\\frac{3 k_B T R^2}{2 N b^2}\n we can find the minimum that satisfies d F / d R=0\nand get\n\nR^5=\\frac{\\varepsilon V_1 b^2}{k_B T} N^3 \\sim \\frac{\\varepsilon}{k_B T} N^3 b^5\n\nwhich ultimately is \n\\boxed{R \\sim N^{3 / 5} b}\n\nSo ultimately we get a scaling exponent different from freely jointed chain:\n\nfreely jointed chain: R \\sim N^{1 / 2}\nself-avoidign walks: R \\sim N^{3 / 5}\n\n0.6\\neq 0.5 (if you are precise!)"
+  },
+  {
+    "objectID": "soft-matter_polymers1.html#self-avoiding-walk-3",
+    "href": "soft-matter_polymers1.html#self-avoiding-walk-3",
+    "title": "Complex Disordered Systems",
+    "section": "Self avoiding walk",
+    "text": "Self avoiding walk"
+  },
+  {
     "objectID": "soft-matter_colloids2.html#today",
     "href": "soft-matter_colloids2.html#today",
     "title": "Complex Disordered Systems",
