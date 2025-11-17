@@ -344,34 +344,154 @@ where $C = \frac{1 + \cos\theta}{1 - \cos\theta}$
 :::{.column}
 ![Kevlar fiber (top) and chromatin globule model (bottom)](./figs/kevlar-chromatin.png){height=500}
 :::
+:::
 
-<!-- 
----
+## Persistence and Kuhn Length
 
-## Persistence and Kuhn Length 
+:::{.columns}
+:::{.column}
+So in general   $\langle R^2 \rangle \propto N$
 
-**Coarse-graining approach:**
 - Replace real chain with equivalent **freely-jointed** chain
 - Same contour length: $N b_0 = N' b$
 - Same end-to-end distance: $C N b_0^2 = N' b^2$
 
 **Results:**
-- **Kuhn length**: $b = C b_0$  
-- **Persistence length**: $\ell_p = b/2$
-- **Kuhn segments**: $N' = N/C$
 
----
+- **Kuhn length**: $b = C b_0$  
+- **Persistence length**: correlations along the chain decay like $$\left\langle\mathbf{r}_i \cdot \mathbf{r}_{i+n}\right\rangle=b_0^2\langle\cos \theta\rangle^n=b_0^2 e^{-n b_0 / l_p}
+$$ with  $\ell_p = b/2$
+- **Kuhn segments**: $N' = N/C$
+:::
+
+:::{.column}
+
+```{python}
+#| echo: false
+import numpy as np
+import sys
+
+sys.path.append("./src")
+import plotting
+
+# Parameters for real chain
+N = 200
+b0 = 1.0
+theta_deg = 70 
+theta = np.deg2rad(theta_deg)
+
+# Generate a freely-rotating chain
+x = [0]
+y = [0]
+z = [0]
+direction = np.array([1, 0, 0])
+dirs = [direction.copy()]
+np.random.seed(0)
+for i in range(N):
+    # Random rotation about previous bond
+    phi = np.random.uniform(0, 2 * np.pi)
+    # Build orthonormal basis
+    if np.allclose(direction, [0, 0, 1]):
+        perp = np.array([1, 0, 0])
+    else:
+        perp = np.cross(direction, [0, 0, 1]).astype(float)
+        perp /= np.linalg.norm(perp)
+    # Rodrigues' rotation formula for theta about perp
+    dir_theta = (direction * np.cos(theta) +
+                np.cross(perp, direction) * np.sin(theta) +
+                perp * np.dot(perp, direction) * (1 - np.cos(theta)))
+    # Now rotate dir_theta by phi about direction
+    k = direction / np.linalg.norm(direction)  # rotation axis
+    v = dir_theta  # vector to rotate
+    dir_new = (v * np.cos(phi) +
+            np.cross(k, v) * np.sin(phi) +
+            k * np.dot(k, v) * (1 - np.cos(phi)))
+    dir_new /= np.linalg.norm(dir_new)
+    new_point = np.array([x[-1], y[-1], z[-1]]) + b0 * dir_new
+    x.append(new_point[0])
+    y.append(new_point[1])
+    z.append(new_point[2])
+    direction = dir_new
+    dirs.append(direction.copy())
+
+# Calculate effective Kuhn segment length and number of segments
+C = (1 + np.cos(theta)) / (1 - np.cos(theta))
+b_kuhn = C * b0
+N_kuhn = int(N / C)
+
+# Interpolate the original chain to get the effective Kuhn chain
+# Original bonds (vectors between points)
+bonds = np.diff(np.array([x, y, z]), axis=1)  # shape (3, N)
+
+chunk_size = int(np.floor(C))
+N_kuhn = N // chunk_size
+remainder = N % chunk_size
+
+xk = [0]
+yk = [0]
+zk = [0]
+
+for i in range(N_kuhn):
+    chunk_bonds = bonds[:, i*chunk_size:(i+1)*chunk_size]
+    kuhn_bond = np.sum(chunk_bonds, axis=1)
+    new_point = np.array([xk[-1], yk[-1], zk[-1]]) + kuhn_bond
+    xk.append(new_point[0])
+    yk.append(new_point[1])
+    zk.append(new_point[2])
+
+# Add leftover bonds as last segment if any
+if remainder > 0:
+    chunk_bonds = bonds[:, N_kuhn*chunk_size:]
+    kuhn_bond = np.sum(chunk_bonds, axis=1)
+    new_point = np.array([xk[-1], yk[-1], zk[-1]]) + kuhn_bond
+    xk.append(new_point[0])
+    yk.append(new_point[1])
+    zk.append(new_point[2])
+# Original contour length
+original_bonds = np.diff(np.array([x, y, z]), axis=1)  # shape (3, N)
+original_lengths = np.linalg.norm(original_bonds, axis=0)
+original_contour_length = np.sum(original_lengths)
+
+# Coarse-grained contour length
+kuhn_bonds = np.diff(np.array([xk, yk, zk]), axis=1)
+kuhn_lengths = np.linalg.norm(kuhn_bonds, axis=0)
+kuhn_contour_length = np.sum(kuhn_lengths)
+
+print(f"Original contour length: {original_contour_length:.4f}")
+print(f"Coarse-grained contour length: {kuhn_contour_length:.4f}")
+fig = plotting.plotly_3d(x, y, z, name="Freely-rotating chain", line_color='blue')
+fig = plotting.plotly_3d(xk, yk, zk, name="Effective freely-jointed chain", line_color='orange',fig=fig)
+fig.show()
+```
+:::
+:::
 
 ## Excluded Volume Effects 
 
-**Problem**: Monomers cannot occupy same space
 
-**Volume fraction analysis:**
+True monomers **cannot occupy** same space
+
+
+- local scale: restrictions on the bond angles stopping them from overlapping
+- large distance excluded volume interactions between monomers, also deforming the chain
+
+Consider that for a coiled polymer
+
+$$
+V_{\text {coil }}=\frac{4 \pi}{3}\left(\left\langle R_g^2\right\rangle^{1/2}\right)^3 \sim \frac{4 \pi}{3} N^{3 / 2} b^3
+$$
+
+So
+
 $$\frac{V_{\text{monomers}}}{V_{\text{coil}}} = \frac{N b^3}{N^{3/2} b^3} \sim N^{-1/2}$$
 
 For $N = 10^4$: only ~1% of coil volume occupied!
 
----
+So **excluded-volume** interactions are meant to present a **small contribution**.
+
+Yet they affect the **scaling properties**.
+
+=
 
 ## Self-Avoiding Walk 
 
@@ -380,13 +500,161 @@ For $N = 10^4$: only ~1% of coil volume occupied!
 1. **Entropy**: Favors compact configurations
 2. **Excluded volume**: Favors chain expansion
 
-**Free energy minimization:**
-$$F = \frac{\varepsilon N^2 V_1}{R^3} + \frac{3 k_B T R^2}{2 N b^2}$$
 
-**Result:** $R \sim N^{3/5} b$ (vs. $N^{1/2}$ for ideal chain)
+Entropy :
 
----
+$$
+S=k_B \ln (\text { number of configurations })
+$$
 
+For a given end-to-end vector the number of configurations scales as
+
+$$
+P(\mathbf{R})=\left(\frac{3}{2 \pi\langle R^{2}\rangle}\right)^{3 / 2} e^{-\frac{3 R^{2}}{2\langle R^{2}\rangle}}
+$$
+
+and so 
+
+$$
+S \sim \frac{-3 k_{B} R^{2}}{2 N b^{2}}+\text { terms indep. of } \mathrm{R}
+$$
+
+## Self-Avoiding Walk 
+
+The configurational part of the internal energy can be estimated by focusing on monomer-monomer contacts for monomers of volume $V_1$. 
+
+We approximate this with a *segment gas* confined in a volume $R^3$. The density (or probability) of contacts is 
+
+$$\rho_c = N^2 V_1 / R^3 \sim N^{1 / 2}
+$$
+
+by using $R^2\sim N$.
+
+We have $\sim N^2\rho_c$ pairs at some energy scale per bond $\varepsilon$ so  $$
+U \sim \varepsilon N^2 V_1 / R^3
+$$ and the total free energy is approximately 
+
+$$
+F=\frac{\varepsilon N^2 V_1}{R^3}+\frac{3 k_B T R^2}{2 N b^2}
+$$
+
+(we are interested in scaling behaviour)
+
+
+## Self-avoiding walk
+From
+
+$$
+F=\frac{\varepsilon N^2 V_1}{R^3}+\frac{3 k_B T R^2}{2 N b^2}
+$$
+we can find the minimum that satisfies $d F / d R=0
+$
+
+and get 
+
+$$
+R^5=\frac{\varepsilon V_1 b^2}{k_B T} N^3 \sim \frac{\varepsilon}{k_B T} N^3 b^5
+$$
+
+which ultimately is $$
+\boxed{R \sim N^{3 / 5} b}
+$$
+
+So ultimately we get a scaling exponent **different** from freely jointed chain:
+
+- **freely jointed chain**: $R \sim N^{1 / 2}$
+- **self-avoidign walks**: $R \sim N^{3 / 5}$
+
+$$0.6\neq 0.5$$
+(if you are precise!)
+
+
+## Self avoiding walk
+:::{.columns}
+:::{.column}
+```{pyodide}
+#|.echo: false
+import numpy as np
+def self_avoiding_walk_2d(N):
+    moves = np.array([[1,0], [-1,0], [0,1], [0,-1]])
+    pos = np.zeros((N+1, 2), dtype=int)
+    visited = set()
+    visited.add((0, 0))
+
+    def walk(step):
+        if step > N:
+            return True  # Successfully built the full walk
+        current_pos = pos[step-1]
+        move_order = np.random.permutation(4)
+        for move_idx in move_order:
+            next_pos = current_pos + moves[move_idx]
+            key = tuple(next_pos)
+            if key not in visited:
+                pos[step] = next_pos
+                visited.add(key)
+                if walk(step + 1):
+                    return True
+                # Backtrack
+                visited.remove(key)
+        return False
+
+    if walk(1):
+        return pos[:,0], pos[:,1]
+    
+    # Fallback path if no walk is found
+    pos = np.zeros((N+1, 2), dtype=int)
+    for i in range(1, N+1):
+        print("No path found")
+        pos[i] = pos[i-1] + (moves[0] if i % 2 == 1 else moves[2])
+    return pos[:,0], pos[:,1]
+
+
+
+import matplotlib.pyplot as plt
+
+def plot_walk_2d(x, y, title="2D Walk", color="blue", markersize=3):
+    plt.figure(figsize=(5,5))
+    plt.plot(x, y, marker='o', color=color, linewidth=1, zorder=1,markersize=markersize)
+    plt.scatter(x[0], y[0], color='green', label='Start', s=80, zorder=3, edgecolor='black')
+    plt.scatter(x[-1], y[-1], color='red', label='End', s=80, zorder=3, edgecolor='black')
+    plt.title(title)
+    plt.xlabel("x")
+    plt.ylabel("y")
+    plt.axis('equal')
+    plt.legend()
+    plt.show()
+
+def simple_random_walk_2d(N):
+    """Generate a 2D simple random walk of N steps."""
+    moves = np.array([[1,0], [-1,0], [0,1], [0,-1]])
+    pos = np.zeros((N+1, 2), dtype=int)
+    for i in range(1, N+1):
+        move = moves[np.random.randint(0, 4)]
+        pos[i] = pos[i-1] + move
+    return pos[:,0], pos[:,1]
+```
+
+
+```{pyodide}
+N = 100
+x_saw, y_saw = self_avoiding_walk_2d(N)
+plot_walk_2d(x_saw, y_saw,title="2D Self-Avoiding Walk", color="purple")
+```
+:::
+
+:::{.column}
+
+```{pyodide}
+N = 100
+x_saw, y_saw = simple_random_walk_2d(N)
+plot_walk_2d(x_saw, y_saw, title="2D Random Walk", color="forestgreen")
+```
+
+
+
+:::
+
+<!---
 ## Good vs. Poor Solvents 
 
 **Interaction energies**: $\varepsilon_{sp}$, $\varepsilon_{ss}$, $\varepsilon_{pp}$
