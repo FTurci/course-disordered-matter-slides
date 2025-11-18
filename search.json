@@ -357,6 +357,132 @@
     "text": "Dilute vs dense diffusion\n\nAt very high volume fractions the cage mechanism becomes more complex: paricles are trapped for long times and only occasionaly break cages:\n\ncage-jump dynamics \\to glassy dynamics (see future lectures)\nrare events \\to Levy-flight statistics \\neq Gaussian/diffusive statistics\nBreaking of fluctuation-dissipation condition encoded in the Stokes-Einstein relation\n\nthe viscosity increases much faster than the decrease in diffusion D\\xi/T\\neq \\mathrm{constant}\nThis means tha D\\eta\\neq \\text{constant} and since the viscosity \\eta\\sim \\tau (a characteristic relaxation time) D\\tau\\neq \\text{constant}\n\n\n\n\n\n\nStokes-Einstein brakdown in a theoretical model of glassy behaviour"
   },
   {
+    "objectID": "soft-matter_polymers2.html#today",
+    "href": "soft-matter_polymers2.html#today",
+    "title": "Complex Disordered Systems",
+    "section": "Today",
+    "text": "Today\n\nGood, poor and theta solvents\nConcentrated polymer solutions"
+  },
+  {
+    "objectID": "soft-matter_polymers2.html#polymers-in-solvents",
+    "href": "soft-matter_polymers2.html#polymers-in-solvents",
+    "title": "Complex Disordered Systems",
+    "section": "Polymers in solvents",
+    "text": "Polymers in solvents\n\nPolymers typically are dispersed in a medium (solvent).\nSolvent-polymer attractions (the affinity) influences the polymer conformations:\n\ngood solvents \\to high affinity \\to the polymer swells (expands)\npoor solvents \\to low affinity \\to the polymer shrinks\n\nThe affinity depends on the details of the molecular interactions but can be coarse-grained.\nWe can construct a simple model with effective interaction energies\n\\varepsilon_{s s} for the solvent-solvent\n\\varepsilon_{\\mathrm{pp}} for monomer-monomer\n\\varepsilon_{s p} for solvent-monomer interactions."
+  },
+  {
+    "objectID": "soft-matter_polymers2.html#energy-of-mixing",
+    "href": "soft-matter_polymers2.html#energy-of-mixing",
+    "title": "Complex Disordered Systems",
+    "section": "Energy of mixing",
+    "text": "Energy of mixing\n\n\nOn-lattice model:\n\neach site has z nearest neighbours\nN_{s} solvent molecules\nN_{p} monomers\n\\mathrm{N}_{\\mathrm{sp}} solvent-monomer contacts.\n\nEffective interactions:\n\n\\varepsilon_{s s} for the solvent-solvent\n\\varepsilon_{\\mathrm{pp}} for monomer-monomer\n\\varepsilon_{s p} for solvent-monomer interactions.\n\n\n\n\nThen the energy of mixing \\Delta U_{\\operatorname{mix}} is obtained as the difference between the total energy U of the mixed system and the sum of the energies of the pure solvent and pure polymer, U_{S}+U_{p}.\n\n\\Delta U_{\\operatorname{mix}}=U-\\left(U_{S}+U_{p}\\right)"
+  },
+  {
+    "objectID": "soft-matter_polymers2.html#energy-of-mixing-1",
+    "href": "soft-matter_polymers2.html#energy-of-mixing-1",
+    "title": "Complex Disordered Systems",
+    "section": "Energy of mixing",
+    "text": "Energy of mixing\n\n\n\nEnergy of pure solvent U_{s}=\\frac{z N_{s} \\varepsilon_{s s}}{2}\nEnergy of pure polymer U_{p}=\\frac{z N_{p} \\varepsilon_{p p}}{2}\n\n\n\n\nEnergy of solution U=N_{s p} \\varepsilon_{s p}+\\dfrac{\\left(z N_{s}-N_{s p}\\right) \\varepsilon_{s s}}{2}+\\dfrac{\\left(z N_{p}-N_{s p}\\right) \\varepsilon_{p p}}{2}\nWe obtain that the energy of mixing \\Delta U_{\\mathrm{mix}}=N_{s p}\\left[\\varepsilon_{s p}-\\dfrac{1}{2}\\left(\\varepsilon_{s s}+\\varepsilon_{p p}\\right)\\right]\nwhich can change sign depending on our choices for the effective interaction energies."
+  },
+  {
+    "objectID": "soft-matter_polymers2.html#good-solvents-poor-solvents-and-theta-solvents",
+    "href": "soft-matter_polymers2.html#good-solvents-poor-solvents-and-theta-solvents",
+    "title": "Complex Disordered Systems",
+    "section": "Good solvents, poor solvents and theta solvents",
+    "text": "Good solvents, poor solvents and theta solvents\n\nGood solvent: \\varepsilon_{s p}&lt;\\frac{1}{2}\\left(\\varepsilon_{s s}+\\varepsilon_{p p}\\right) \\quad \\therefore \\Delta \\mathrm{U}_{\\text {mix }}&lt;0\n\nThis is the case of a ‘good solvent’, because the monomers prefer to be near the solvent molecules. Excluded volume effects then expand the chain.\n\nPoor solvent: \\varepsilon_{s p}&gt;\\frac{1}{2}\\left(\\varepsilon_{s s}+\\varepsilon_{p p}\\right) \\quad \\therefore \\Delta \\mathrm{U}_{\\text {mix }}&gt;0\n\nThe attraction between the different monomers offset the excluded volume effect making the polymer collapse.\n\nTuning solvent properties (e.g. the temperature) leads to conformational changes"
+  },
+  {
+    "objectID": "soft-matter_polymers2.html#temperature-dependence-and-theta-theta-solvents",
+    "href": "soft-matter_polymers2.html#temperature-dependence-and-theta-theta-solvents",
+    "title": "Complex Disordered Systems",
+    "section": "Temperature dependence and theta (\\Theta) solvents",
+    "text": "Temperature dependence and theta (\\Theta) solvents\nThe various affinities have temperature dependencies. Typically:\n\nAt high T, the coil expand and the solvent is good\nAt low T the coil collapses and phase separation is observed (polymer-rich from polymer-poor phase)\nThere is an intermediate temperature where the excluded volume and attractive interaction compensate each other and allow for the polymer to behave like an ideal chain (freely jointed chain).\n\nThe temperature is conventionally named \\Theta temperature (or Flory temperature, after physicist Paul Flory)\nThe \\Theta temperature increases wth the solvent-polymer attractions (we need higher temperature to reach ideal behaviour)\n\n\n\nSwelling behaviour of polymers in solvent."
+  },
+  {
+    "objectID": "soft-matter_polymers2.html#examples",
+    "href": "soft-matter_polymers2.html#examples",
+    "title": "Complex Disordered Systems",
+    "section": "Examples",
+    "text": "Examples\n\n\n\nExample: Food polymer — gelatine (from collagen) in water\n\nGood solvent (hot water): gelatin chains hydrate and swell; the protein dissolves and the solution is fluid.\nΘ / marginal: intermediate temperature where hydration and chain self‑attraction roughly balance; solution is viscous but not set.\nPoor solvent (cold): effective attractions dominate; chains associate into a network, causing gelation (collapsed/aggregated network).\n\n\n\n\n\nWe will see gelation in a few sessions."
+  },
+  {
+    "objectID": "soft-matter_polymers2.html#concentrated-polymer-solutions",
+    "href": "soft-matter_polymers2.html#concentrated-polymer-solutions",
+    "title": "Complex Disordered Systems",
+    "section": "Concentrated polymer solutions",
+    "text": "Concentrated polymer solutions\n\nWe mostly dealt with single polymers and their propertie up to now.\nMany polymers together make a polymer solution\n\nAs we vary the concentration the behavior qualitatively changes.\nWe will increase the concentration in steps to reach bulk polymers"
+  },
+  {
+    "objectID": "soft-matter_polymers2.html#dilute-regime",
+    "href": "soft-matter_polymers2.html#dilute-regime",
+    "title": "Complex Disordered Systems",
+    "section": "Dilute regime",
+    "text": "Dilute regime\n\n\n\nThe polymer coils are well-separated on average.\nThe system is dilute if the polymer concentration c is such that \n\n\nwhere N_A is Avogadro’s number, M is the molar mass of a single chain and R_g is the radius of gyration of the chain.\nEssentially, the polymers do not overlap."
+  },
+  {
+    "objectID": "soft-matter_polymers2.html#overlap-concentration-c",
+    "href": "soft-matter_polymers2.html#overlap-concentration-c",
+    "title": "Complex Disordered Systems",
+    "section": "Overlap concentration c*",
+    "text": "Overlap concentration c*\n\n\nOverlap occurs when the volume fraction of coils reaches unity and thus\n\n\\frac{c^{*}}{M} N_{A} \\frac{4 \\pi}{3} R_{g}^{3} \\sim 1 \\quad \\therefore c^{*}=\\frac{3 M}{4 \\pi N_{A} R_{g}^{3}}\n\nPhenomenologically one has R g=\\langle R_g^2\\rangle^{1 / 2}=B M^{\\nu} with an empirical exponent called the Flory scaling exponent. Hence\n\nc^{*}=\\frac{3}{4 \\pi N_{A} B^{3}} M^{1-3 v}"
+  },
+  {
+    "objectID": "soft-matter_polymers2.html#overlap-concentration-c-1",
+    "href": "soft-matter_polymers2.html#overlap-concentration-c-1",
+    "title": "Complex Disordered Systems",
+    "section": "Overlap concentration c*",
+    "text": "Overlap concentration c*\n\nc^{*}=\\frac{3}{4 \\pi N_{A} B^{3}} M^{1-3 v}\n\nExample of polystyrene in a good solvent:\n\n\n\nParameter\nValue\nUnit\n\n\n\n\nMolar mass (M)\n10^{6}\ng mol^{-1}\n\n\nFlory exponent (ν)\n0.6\n\n\n\nKuhn length (B)\n0.028\nnm (g mol^{-1})^{-0.6}\n\n\nOverlap concentration (c*)\n0.29\nkg m^{-3} (or 0.29 mg/ml)\n\n\nPolystyrene density (ρ)\n1050\nkg m^{-3}\n\n\nVolume fraction of monomers\n0.28 \\times 10^{-3}\n\n\n\n\nFor large polymers, c^* can be very small."
+  },
+  {
+    "objectID": "soft-matter_polymers2.html#semi-dilute",
+    "href": "soft-matter_polymers2.html#semi-dilute",
+    "title": "Complex Disordered Systems",
+    "section": "Semi-dilute",
+    "text": "Semi-dilute\n\n\n\nThe concentration is larger than the overlap concentration \\mathrm{c}^{*}, but still much smaller than the bulk density.\nThe coils interpenetrate and entanglement begins\nChange in the dynamics (slowing down)\nYet, the solution is still mostly solvent.\n\nStart of the formation of a polymer network with transient crowded regions within the solvent."
+  },
+  {
+    "objectID": "soft-matter_polymers2.html#polymer-entanglement",
+    "href": "soft-matter_polymers2.html#polymer-entanglement",
+    "title": "Complex Disordered Systems",
+    "section": "Polymer entanglement",
+    "text": "Polymer entanglement\n\n\n\nPolymer entanglement occurs when overlapping polymer chains become topologically intertwined, creating temporary physical knots that restrict chain motion and significantly affect the material’s mechanical and rheological properties.\nIntroduces topological constraints (transient/permanent)"
+  },
+  {
+    "objectID": "soft-matter_polymers2.html#concentrated-bulk-polymers",
+    "href": "soft-matter_polymers2.html#concentrated-bulk-polymers",
+    "title": "Complex Disordered Systems",
+    "section": "Concentrated: bulk polymers",
+    "text": "Concentrated: bulk polymers\n\n\n\nPolymer concentration approaches bulk density\nMonomers occupy significant fraction of total volume\nHighly interpenetrated coils form continuous network\nPolymer-polymer interactions dominate over polymer-solvent interactions\nChain entanglements restrict segment motion\nTransition from solution-like to solid-like behavior\nIncreased mechanical strength and viscosity\nComplex dynamics due to crowding effects\n\nThese are the feature of density-driven glassy behaviour.\n\n\n\n\nPolyethylene Glycol polymer melt (from Martini project)"
+  },
+  {
+    "objectID": "soft-matter_polymers2.html#cross-linking",
+    "href": "soft-matter_polymers2.html#cross-linking",
+    "title": "Complex Disordered Systems",
+    "section": "Cross-linking",
+    "text": "Cross-linking\nCross-linking is the process of forming covalent bonds between separate polymer chains, creating a three-dimensional network structure. These bonds:\n\nConnect different chains at specific points\nRestrict chain movement and deformation\nIncrease mechanical strength and rigidity\nCan be temporary (reversible) or permanent (irreversible)\nDetermine material properties: low cross-linking allows flexibility, high cross-linking creates brittleness\n\n\n\n\nCross linking bonds (reversibly or irreversibly) different chains."
+  },
+  {
+    "objectID": "soft-matter_polymers2.html#bulk-polymer-classes",
+    "href": "soft-matter_polymers2.html#bulk-polymer-classes",
+    "title": "Complex Disordered Systems",
+    "section": "Bulk polymer classes",
+    "text": "Bulk polymer classes\nTwo main classes of bulk polymers, characterised by whether they are cross-linked or not.\n\nElastomers (rubbers): low cross-linking → flexible and elastic (stretch and return to original shape)\nThermosets: high cross-linking → rigid, hard, brittle network\nThermoplastics: no cross-linking → most everyday plastics; behavior upon cooling shows similarities to colloids\n\nPolymer bulks are often referred to as resins."
+  },
+  {
+    "objectID": "soft-matter_polymers2.html#examples-of-bulk-polymer-classes",
+    "href": "soft-matter_polymers2.html#examples-of-bulk-polymer-classes",
+    "title": "Complex Disordered Systems",
+    "section": "Examples of bulk polymer classes",
+    "text": "Examples of bulk polymer classes\n\n\n\n\n\n\n\n\n\nClass\nExamples\nProperties\nApplications\n\n\n\n\nElastomers\nNatural rubber, silicone rubber, neoprene\nFlexible, elastic, low cross-linking\nTires, seals, gaskets, flexible tubing\n\n\nThermosets\nEpoxy resins, phenolic resins, polyurethane foam\nRigid, hard, high cross-linking, irreversible\nCircuit boards, adhesives, insulation, structural composites\n\n\nThermoplastics\nPolyethylene (PE), polypropylene (PP), PET, polystyrene (PS), PVC\nRecyclable, moldable upon heating, no cross-linking\nPackaging, bottles, pipes, automotive parts, consumer products\n\n\n\n\nNatural rubber, epoxy substrate for circuits, PET used in plastic bottles"
+  },
+  {
+    "objectID": "soft-matter_polymers2.html#thermoplastics-behaviour-upon-cooling",
+    "href": "soft-matter_polymers2.html#thermoplastics-behaviour-upon-cooling",
+    "title": "Complex Disordered Systems",
+    "section": "Thermoplastics behaviour upon cooling",
+    "text": "Thermoplastics behaviour upon cooling\n\n\n\nAt high temperature the free energy is dominated by entropy.\n\nrandom assembly of intertwined flexible coils\n\nUpon cooling, potential energy dominates and chain rotation becomes restricted, favoring more extended configurations.\nBelow melting temperature T_m, crystals form (lowest free energy state), but require slow cooling and significant molecular ordering.\nRapid cooling below glass transition temperature T_g (&lt; T_m) prevents crystallization, forming an amorphous glassy state instead—a metastable, long-lived solid.\nSolid thermoplastics typically contain a mixture of crystalline and amorphous regions."
+  },
+  {
     "objectID": "soft-matter_intro.html#today",
     "href": "soft-matter_intro.html#today",
     "title": "Complex Disordered Systems",
