@@ -1,6 +1,6 @@
 ---
 title: "Complex Disordered Systems"
-subtitle: "Liquid Crystals: anisotropy and orientational order"
+subtitle: "Anisotropy and orientational order"
 format: 
     live-revealjs:
         incremental: false
