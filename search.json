@@ -1,5 +1,831 @@
 [
   {
+    "objectID": "soft-matter_liquidx.html#what-are-liquid-crystals",
+    "href": "soft-matter_liquidx.html#what-are-liquid-crystals",
+    "title": "Complex Disordered Systems",
+    "section": "What are Liquid Crystals?",
+    "text": "What are Liquid Crystals?\n\nIntermediate phases between liquids and crystals\nExhibit orientational order without full positional order\nFormed by anisotropic particles (rods, ellipsoids, plates)\nKey property: decoupling of orientational and translational degrees of freedom"
+  },
+  {
+    "objectID": "soft-matter_liquidx.html#types-of-order",
+    "href": "soft-matter_liquidx.html#types-of-order",
+    "title": "Complex Disordered Systems",
+    "section": "Types of Order",
+    "text": "Types of Order\nPositional order: Regular arrangement of particle positions (lattice)\nOrientational order: Angular alignment of particles\n\n\n\nPhase\nPositional\nOrientational\n\n\n\n\nCrystal\nYes (3D)\nYes\n\n\nLiquid\nNo\nNo\n\n\nLiquid Crystal\nPartial/No\nYes\n\n\n\nThe strength of the ordering is determined by the decay of correlation functions:\n\nin liquids we have at best short range order (expoential decay of the oscillations in the g(r))\nin crystals we have long-range order — correlations do not decay (sharp Bragg peaks in S(\\mathbf{k}) and g(r)); this order is only disrupted by defects (dislocations, grain boundaries) on macroscopic scales"
+  },
+  {
+    "objectID": "soft-matter_liquidx.html#anisotropic-particles",
+    "href": "soft-matter_liquidx.html#anisotropic-particles",
+    "title": "Complex Disordered Systems",
+    "section": "Anisotropic Particles",
+    "text": "Anisotropic Particles\nMany natural and artificial systems have anisotropy\n\nGolden nanorods, tobacco virus rods , ellipsoidal silica-coated hematite particles, hard platelets in the isotropic phase, and an arrangement of hard octahedra"
+  },
+  {
+    "objectID": "soft-matter_liquidx.html#liquid-crystal-phases",
+    "href": "soft-matter_liquidx.html#liquid-crystal-phases",
+    "title": "Complex Disordered Systems",
+    "section": "Liquid Crystal Phases",
+    "text": "Liquid Crystal Phases\n\n\n\nIsotropic fluid: No long-range order (like normal liquids)\nNematic phase: Orientational order, no positional order.\nParticles align along a common direction: the director \\mathbf{n}\nSmectic phase: Layered structure with orientational order\n\nPositional order in 1D (layers)\nLiquid-like within layers\n\n\n\n\nColumnar phase: Particles stack into columns\n\n2D positional order\n\nCrystal: Full 3D positional + orientational order\nChiral nematic (Cholesteric): Director forms a helix\n\n\n\nDifferent liquid crystalline phases, from Doostmohammadi and Ladoux, Trends in Cell Biology (2002)"
+  },
+  {
+    "objectID": "soft-matter_liquidx.html#phase-comparison",
+    "href": "soft-matter_liquidx.html#phase-comparison",
+    "title": "Complex Disordered Systems",
+    "section": "Phase Comparison",
+    "text": "Phase Comparison\n\n\n\nPhase\nPositional Order\nOrientational Order\n\n\n\n\nIsotropic\nNo\nNo\n\n\nNematic\nNo\nYes (long-range)\n\n\nSmectic\nYes (1D: layered)\nYes\n\n\nColumnar\nYes (2D: columns)\nYes\n\n\nCholesteric\nNo\nYes (helical)\n\n\nCrystal\nYes (3D: lattice)\nYes\n\n\n\n\nOrientation and order in various phases, from Andrienko, Journal of Molecular Liquids (2018)"
+  },
+  {
+    "objectID": "soft-matter_liquidx.html#phase-comparison-textures-and-defects",
+    "href": "soft-matter_liquidx.html#phase-comparison-textures-and-defects",
+    "title": "Complex Disordered Systems",
+    "section": "Phase Comparison: Textures and Defects",
+    "text": "Phase Comparison: Textures and Defects\n\nExamples of phases/textures: (a) Nematic with surface point defects. (b) Thin nematic film on isotropic substrate. (c) Thread-like nematic texture. (d) Cholesteric fingerprint (helical axis in plane). (e) Short‑pitch cholesteric (standing helix) with vivid colors. (f) Long-range cholesteric DNA alignment in a magnetic field. (g, h) Focal conic textures of chiral smectic A. (i) Focal conic texture of chiral smectic C. (j) Hexagonal columnar spherulitic texture. (k) Rectangular discotic phase. (l) Hexagonal columnar phase. From Andrienko, Journal of Molecular Liquids (2018)"
+  },
+  {
+    "objectID": "soft-matter_liquidx.html#orientation-and-director",
+    "href": "soft-matter_liquidx.html#orientation-and-director",
+    "title": "Complex Disordered Systems",
+    "section": "Orientation and director",
+    "text": "Orientation and director\n\n\n\nOrientation of a rigid rod is described by a unit vector \\mathbf{u} along its long axis\nThe particles are head-tail symmetric, so they have a centre of symmetry\nBecause \\mathbf{u} and -\\mathbf{u} are equiprobable, on average \\langle \\mathbf{u}\\rangle=0\nVectorial order parameter is zero. The next non-trivial invariant is a second rank tensor\n\n\n\n\n\n\n\n\n\n\nTensor\nRank\nExample order parameter\n\n\n\n\nScalar\n0\nScalar nematic S (degree of alignment), e.g., S = ⟨P2(cos θ)⟩\n\n\nVector\n1\nPolarization or magnetization vector P / M (polar order)\n\n\nSecond‑rank tensor\n2\nMatrices, Alignment tensor Q_{ij} (nematic order)\n\n\nThird‑rank tensor\n3\nOctupolar / tetrahedral order T_{ijk}\n\n\n\n\n\n\n\n\nThe local orientation vector of a molecule \\mathbf{u} and the director \\mathbf{n}"
+  },
+  {
+    "objectID": "soft-matter_liquidx.html#the-nematic-order-parameter",
+    "href": "soft-matter_liquidx.html#the-nematic-order-parameter",
+    "title": "Complex Disordered Systems",
+    "section": "The Nematic Order Parameter",
+    "text": "The Nematic Order Parameter\nFor head-tail symmetric rods, we cannot simply average orientations.\nInstead, construct the alignment tensor\n\n\\mathbf{Q}=\\dfrac{d}{2}\\left\\langle\\mathbf{u}_i \\otimes \\mathbf{u}_i-\\dfrac{1}{d}\\mathbf{I}\\right\\rangle\n\n\nwe make it traceless by removing the identity\nwe make it include quadratic combinations (it is as second moment, essentially the covariances)\n\\otimes is the outer product, giving a d\\times d matrix: \n\\mathbf{u} \\otimes \\mathbf{u} =\n\\begin{pmatrix}\nu_1 u_1 & u_1 u_2 & \\cdots & u_1 u_d \\\\\nu_2 u_1 & u_2 u_2 & \\cdots & u_2 u_d \\\\\n\\vdots  & \\vdots  & \\ddots & \\vdots  \\\\\nu_d u_1 & u_d u_2 & \\cdots & u_d u_d\n\\end{pmatrix}\n\n\nwhere d is dimensionality, \\mathbf{u}_i is the unit orientation vector. For us, d=2,3"
+  },
+  {
+    "objectID": "soft-matter_liquidx.html#extracting-order",
+    "href": "soft-matter_liquidx.html#extracting-order",
+    "title": "Complex Disordered Systems",
+    "section": "Extracting Order",
+    "text": "Extracting Order\n\nDiagonalisation: it extracts the invariants (the properties that do not change wrt a coordinate change or rotations)\nLargest eigenvalue \\rightarrow scalar order parameter \\mathcal{S}\nCorresponding eigenvector \\rightarrow director \\mathbf{n}\n\n\n\\mathcal{S} \\in [0, 1]\n\n\n\\mathcal{S} = 0: isotropic (random orientations)\n\\mathcal{S} = 1: perfect nematic order (all aligned)\n\n\n\n\n\n\n\nCaution\n\n\nThe nematic order parameter \\mathcal{S} should not nbe cconfused with the entropy S."
+  },
+  {
+    "objectID": "soft-matter_liquidx.html#d-nematic-order-parameter",
+    "href": "soft-matter_liquidx.html#d-nematic-order-parameter",
+    "title": "Complex Disordered Systems",
+    "section": "2D Nematic Order Parameter",
+    "text": "2D Nematic Order Parameter\nIn two dimensions, the director is simply characterised by the angle \\psi expressed as \n\\psi = \\frac{1}{2} \\operatorname{atan2}(\\sin{2\\theta_i}, \\cos{2\\theta_i}).\n and the nematic order parameter is simply\n\n\\mathcal{S}=\\sqrt{\\left\\langle\\cos 2 \\theta_i\\right\\rangle^2+\\left\\langle\\sin 2 \\theta_i\\right\\rangle^2}"
+  },
+  {
+    "objectID": "soft-matter_liquidx.html#d-nematic-order-parameter-1",
+    "href": "soft-matter_liquidx.html#d-nematic-order-parameter-1",
+    "title": "Complex Disordered Systems",
+    "section": "3D Nematic Order Parameter",
+    "text": "3D Nematic Order Parameter\nIn 3D, choosing coordinates along director \\mathbf{n}:\n\n\\mathcal{S}=\\dfrac{1}{2} \\left\\langle 3\\cos ^2 \\theta_i-1\\right\\rangle\n\nwhere \\theta_i is angle between particle i and director.\nThis uses the Legendre polynomial P_2(\\cos\\theta) to enforce head-tail symmetry.\n\nLowest nontrivial rotationally‑invariant scalar that is even under \\mathbf{n}\\to -\\mathbf{n}\n\n\n\n\n\n\n\n\n\nn\nLegendre polynomial P_n(x)\nHead-tail symmetric?\n\n\n\n\n0\nP_0(x)=1\nYes (even: P_0(-x)=P_0(x))\n\n\n1\nP_1(x)=x\nNo (odd: P_1(-x)=-P_1(x))\n\n\n2\nP_2(x)=\\dfrac{1}{2}(3x^2-1)\nYes (even: P_2(-x)=P_2(x))\n\n\n3\nP_3(x)=\\dfrac{1}{2}(5x^3-3x)\nNo (odd: P_3(-x)=-P_3(x))\n\n\n4\nP_4(x)=\\dfrac{1}{8}(35x^4-30x^2+3)\nYes (even: P_4(-x)=P_4(x))"
+  },
+  {
+    "objectID": "soft-matter_colloids2.html#today",
+    "href": "soft-matter_colloids2.html#today",
+    "title": "Complex Disordered Systems",
+    "section": "Today",
+    "text": "Today\n\nColloids as big atoms\n\nColloidal hard spheres\nPhase diagram of hard spheres\nMetastability\nPhase diagrams of simple liquids"
+  },
+  {
+    "objectID": "soft-matter_colloids2.html#colloids-as-big-atoms",
+    "href": "soft-matter_colloids2.html#colloids-as-big-atoms",
+    "title": "Complex Disordered Systems",
+    "section": "Colloids as big atoms",
+    "text": "Colloids as big atoms\n\n\n\nColloids can mimic atomic systems\nServe as models for studying phase transitions, transformations, surface phenomena\nExamples:\n\nHard-sphere colloids\nCharged-stabilized colloids\n\n\n\n\n\nCoalescence of a colloidal liquid droplet, Aarts et al. Science (2004)\n\n\n\n\n\n\nThe self-assembly of colloids can be controlled by changing the shape, topology, or patchiness of the particles, by introducing attractions between particles, or by constraining them to a curved surface. From Manoharan Science (2015)"
+  },
+  {
+    "objectID": "soft-matter_colloids2.html#colloidal-hard-spheres",
+    "href": "soft-matter_colloids2.html#colloidal-hard-spheres",
+    "title": "Complex Disordered Systems",
+    "section": "Colloidal hard spheres",
+    "text": "Colloidal hard spheres\nTrue hard spheres do not exist. Colloidal hard spheres approximate the behaviour in many ways.\n\n\n\nSchematic representation of various models for hard-sphere colloids. (a) A sterically stabilized particle has surface “hairs” (not to scale). (b) A charged colloid has an electrical double layer (shaded area) that gives rise to an effective diameter (c) A microgel particle is a heavily cross-linked polymer. From Royall et al Soft Matter (2013)"
+  },
+  {
+    "objectID": "soft-matter_colloids2.html#hard-spheres",
+    "href": "soft-matter_colloids2.html#hard-spheres",
+    "title": "Complex Disordered Systems",
+    "section": "Hard spheres",
+    "text": "Hard spheres\nIdealised hard spheres are impenetrable objects.\nThey are characterised by the simplest of potentials.\n\n\n   r  U(r)      2R    ∞  0  forbidden  Hard Sphere Potential"
+  },
+  {
+    "objectID": "soft-matter_colloids2.html#phase-behaviour-of-hard-spheres",
+    "href": "soft-matter_colloids2.html#phase-behaviour-of-hard-spheres",
+    "title": "Complex Disordered Systems",
+    "section": "Phase behaviour of hard spheres",
+    "text": "Phase behaviour of hard spheres\nFor a sphere of diameter \\sigma, enormous simplification of the Boltzmann factor:\n\ne^{-\\beta U(r)} =\n\\begin{cases}\n0 & \\text{if } r &lt; \\sigma \\\\\n1 & \\text{if } r \\geq \\sigma\n\\end{cases}\n\nThis simplification arises because the potential ( U(r) ) is either infinite (forbidden region) or zero (allowed region).\nFor this reason, hard spheres are entropy driven.\nConstructing partition functions is then just counting valid configurations, linking geometry to thermodynamics.\n\nA good example: Asakura-Oosawa depletion, that we have already seen.\n\n\nValid configurations are sphere packings:\n\nThe only relevant control parameter is the volume fraction \\phi, defined as:\n\n\n\\phi = \\frac{\\pi}{6} \\rho \\sigma^3\n\nwhere \\rho=N/V is the number density."
+  },
+  {
+    "objectID": "soft-matter_colloids2.html#phase-diagram-of-hard-spheres",
+    "href": "soft-matter_colloids2.html#phase-diagram-of-hard-spheres",
+    "title": "Complex Disordered Systems",
+    "section": "Phase diagram of hard spheres",
+    "text": "Phase diagram of hard spheres\nSince we have a single control parameter, the phase diagram is one-dimensional.\nChanging temperature is immaterial to the free energy: it is a simple rescaling factor.\nIt is intuitive to guess the low density limit of hard spheres:\n\nfew spheres in a box should behave similarly to an ideal gas\n\nIt is harder to guess the high density limit\nWe will gradually build our understanding from low to dense packing.\n\nHard spheres have a single control parameter, the packing fraction."
+  },
+  {
+    "objectID": "soft-matter_colloids2.html#low-packing-fractions",
+    "href": "soft-matter_colloids2.html#low-packing-fractions",
+    "title": "Complex Disordered Systems",
+    "section": "Low packing fractions",
+    "text": "Low packing fractions\nWhen treating the Asakura-Oosawa depletion we introduced the excluded volume. It is also key for hard spheres.\n\nThe distance of closest approach between two identical spheres is \\sigma, which corresponds to the diameter of the spheres. The excluded volume of one particle is v_{\\rm ex} =4\\pi\\sigma^3/3\nAt low densities, hard spheres are isolated and so no overlaps occur and the accessible volume for N spheres is V_{\\rm accessible} = V-Nv_{\\rm ex}\nFor phase behaviour, we need the thermodynamic potential. At constant volume and number of particles, the partition function is a measure of the accessible volume \n\\mathcal{Z} = \\frac{1}{N! \\Lambda^{3N}} \\int_{V_{\\rm accessible}} d\\mathbf{r}_1 \\ldots d\\mathbf{r}_N\nwhere \\Lambda is the thermal de Broglie wavelength \\Lambda = h/\\sqrt{2\\pi mk_B T}.\nMass and temperature are factoring out."
+  },
+  {
+    "objectID": "soft-matter_colloids2.html#low-packing-fractions-entropy",
+    "href": "soft-matter_colloids2.html#low-packing-fractions-entropy",
+    "title": "Complex Disordered Systems",
+    "section": "Low packing fractions: entropy",
+    "text": "Low packing fractions: entropy\nWe integrate over valid (non-overlapping) configurations such that |\\mathbf{r}_i - \\mathbf{r}_j| \\geq \\sigma for all i \\neq j. This yields \\mathcal{Z} = \\dfrac{(V-Nv_{\\rm ex}/2)^N}{N!\\Lambda^{3N}},\nwith the 1/2 factor coming from the fact that we avoid double counting the excluded volume of pairs.\n\nWe immediately obtain the entropy as S = k_B \\ln \\mathcal{Z} = k_B \\left[ N \\ln(V - N v_{\\rm ex}/2) - \\ln N! - 3N \\ln \\Lambda \\right]\nVia Stirling’s approximation \\ln N! = N\\ln N -N we get S = k_B \\left[ N \\ln(V - N v_{\\rm ex}/2) - (N \\ln N - N) - 3N \\ln \\Lambda \\right]\nThis can be rewritten as S = N k_B \\left[ \\ln\\left( \\frac{V - N v_{\\rm ex}/2}{N \\Lambda^3} \\right) + 1 \\right]"
+  },
+  {
+    "objectID": "soft-matter_colloids2.html#low-packing-fraction-equation-of-state",
+    "href": "soft-matter_colloids2.html#low-packing-fraction-equation-of-state",
+    "title": "Complex Disordered Systems",
+    "section": "Low packing fraction: equation of state",
+    "text": "Low packing fraction: equation of state\nThe equation of state links the three relevant thermodynamic variables P,T and \\phi\nP = -\\left(\\dfrac{\\partial F}{\\partial V}\\right)_{N,T} =T\\left(\\dfrac{\\partial S}{\\partial V}\\right)_{N,T}= \\dfrac{k_B T }{v-v_{\\rm ex}/2}\nThis expression can be simplified (do it as an exercise) to obtain the equation of state\nZ_{\\rm comp}= \\dfrac{PV}{Nk_BT}=\\dfrac{1}{1-4\\phi} \\quad (\\phi\\ll 1)\nwhere Z_{\\rm comp} is compressibility factor (to not be confused with the partition function).\nFor small \\phi we have\nZ_{\\rm comp} =\\dfrac{PV}{Nk_BT} =  1+4\\phi+O(\\phi^2)\n\n\n\n\n\n\nNote\n\n\nInspect this term and recognise that this illustrates that the dilute limit is an ideal gas + a correction."
+  },
+  {
+    "objectID": "soft-matter_colloids2.html#virial-expansion",
+    "href": "soft-matter_colloids2.html#virial-expansion",
+    "title": "Complex Disordered Systems",
+    "section": "Virial expansion",
+    "text": "Virial expansion\nThe expression Z_{\\rm comp} = 1+4\\phi+O(\\phi^2) is just the simplest form of the more generic virial expansion, the perturbative series\nZ_{\\rm comp}= 1 + B_2 \\rho + B_3 \\rho^2+ \\dots\nThe B_2, B_3, \\dots are known as virial coefficients and for non-hard-sphere systems they also depend on temperature, B_2(T), B_3(T),\\dots\nThey encode correlations (pairs, triplets and so on). In a generic setting\n\nZ_N=\\frac{1}{N!\\Lambda^{3 N}} \\int \\cdots \\int \\exp \\left[-\\beta \\sum_{i&lt;j} U\\left(r_{i j}\\right)\\right] d \\mathbf{r}_1 \\ldots d \\mathbf{r}_N\n\ncan be re-written using the Mayer function f_{i j}=e^{-\\beta u\\left(r_{i j}\\right)}-1 and e^{-\\beta \\sum_{i&lt;j} U\\left(r_{i j}\\right)}=\\prod_{i&lt;j}\\left(1+f_{i j}\\right) yielding\n\nZ_N=\\frac{1}{N!\\Lambda^{3 N}} \\int \\cdots \\int \\prod_{i&lt;j}\\left(1+f_{i j}\\right) d \\mathbf{r}_1 \\ldots d \\mathbf{r}_N"
+  },
+  {
+    "objectID": "soft-matter_colloids2.html#cluster-expansion-and-second-virial",
+    "href": "soft-matter_colloids2.html#cluster-expansion-and-second-virial",
+    "title": "Complex Disordered Systems",
+    "section": "Cluster expansion and second virial",
+    "text": "Cluster expansion and second virial\nOne can expand the product\n\n\\prod_{i&lt;j}\\left(1+f_{i j}\\right)=1+\\sum_{i&lt;j} f_{i j}+\\sum_{i&lt;j, k&lt;l}^{\\text {distinct }} f_{i j} f_{k l}+\\ldots\n The first term is the ideal gas, the second is clearly pair correlations (only pairwise distances).\nThis motivates one to define \nB_2(T)=-\\frac{1}{2} \\int f(r) d \\mathbf{r}=-2 \\pi \\int_0^{\\infty}\\left[e^{-\\beta U(r)}-1\\right] r^2 d r\n\nFor hard spheres this results in \nB_2 =  \\frac{2\\pi}{3} \\sigma^3\n\nSo Z = 1 + \\dfrac{2\\pi}{3} \\sigma^3\\rho = 1+ 4\\left( \\dfrac{\\pi}{6} \\sigma^3\\rho\\right)=1+4\\phi as we calculated earlier."
+  },
+  {
+    "objectID": "soft-matter_colloids2.html#low-density-limit-key-points",
+    "href": "soft-matter_colloids2.html#low-density-limit-key-points",
+    "title": "Complex Disordered Systems",
+    "section": "Low density limit: key points",
+    "text": "Low density limit: key points\n\n\n\n\n\n\nImportant\n\n\n\nWe can simply focus on the accessible volume and ignore overlap between exclusion volumes\nWe can focus on the configurational entropy and extract the equation of state relating P,T,\\phi\nThe compressibility factor in terms of the packing fraction \\phi is the most condensed expression and is \nZ_{\\mathrm{comp}}=\\frac{P V}{N k_B T}=1+4 \\phi+O\\left(\\phi^2\\right)\n highlighting the first non-trivial perturbation to the ideal gas\nWe can see this as an instance of the more general virial and cluster expansion formalism, which can be used for any fluid. \nZ_{\\text {comp }}=1+B_2 \\rho+B_3 \\rho^2+\\ldots\n\nThe first nontrivial correction is the second virial coefficient \nB_2(T)=-2 \\pi \\int_0^{\\infty}\\left[e^{-\\beta U(r)}-1\\right] r^2 d r"
+  },
+  {
+    "objectID": "soft-matter_colloids2.html#dense-packing",
+    "href": "soft-matter_colloids2.html#dense-packing",
+    "title": "Complex Disordered Systems",
+    "section": "Dense packing",
+    "text": "Dense packing\n\nAs we increase the packing fraction, the accessible (free) volume reduces rapidly and thermal motion is hindered.\nTight disordered (random) packing of spheres are described as jammed: link with glasses (in future lectures).\nDensest packing reaches a maximum packing of around \\phi_{\\mathrm{rcp}} \\approx 0.64: this is not unique and depends on the protocol of preparation.\nKepler’s conjecture (1611, proved only in 2017):\nDensest packings are Face Centred Cubic (FCC) or Hexagonally Close Packed (HCP) \\phi_{\\max }=\\frac{\\pi}{3 \\sqrt{2}} \\approx 0.74\n\n\n\n\nPackings"
+  },
+  {
+    "objectID": "soft-matter_colloids2.html#dense-packing-1",
+    "href": "soft-matter_colloids2.html#dense-packing-1",
+    "title": "Complex Disordered Systems",
+    "section": "Dense packing",
+    "text": "Dense packing\nQ: Can purely repulsive spheres assemble spontaneously into an FCC crystal?\n\n\nYES\n\nEntropy in AO interactions causes an effective interaction that has a minimum\n\nDisordered packings are less efficient than ordered ones\n\n\nNO\n\nHard sphere potential only prevents overlaps\n\nThere is no minimum in the interaction potential to favour a crystal lattice and localisation\n\nEntropy is just disorder\n\n\n\nThe matter was hotly debated in conferences in the 1950s and got to evenly split votes multiple times"
+  },
+  {
+    "objectID": "soft-matter_colloids2.html#dense-packing-and-crystallisation",
+    "href": "soft-matter_colloids2.html#dense-packing-and-crystallisation",
+    "title": "Complex Disordered Systems",
+    "section": "Dense packing and crystallisation",
+    "text": "Dense packing and crystallisation\nEarly computer simulations (molecular dynamics, Alder and Wainwright 1957, Monte Carlo, Wood and Jacobson (1957)) proved that crystallisation is possible.\n\n\n\n\nThe video shows a Monte Carlo simulation at packing \\phi=0.49 for a small system of 32 particles. Small systems have enhanced fluctuations, leading to spontaneous freezing and unfreezing."
+  },
+  {
+    "objectID": "soft-matter_colloids2.html#dense-packing-cell-model",
+    "href": "soft-matter_colloids2.html#dense-packing-cell-model",
+    "title": "Complex Disordered Systems",
+    "section": "Dense packing: cell model",
+    "text": "Dense packing: cell model\n\nIn an FCC cell, particles can move very little beyond their own diameter \\sigma.\nAssume that the volume per particle is v and the (geometrically constrained) close packed volume is v_{cp}.\nThe maximum displacement is \n\\delta=\\frac{\\sigma}{\\sqrt{2}}\\left(\\left(\\frac{v}{v_{c p}}\\right)^{1 / 3}-1\\right)\n\nThe corresponding free volume is then v_f=\\frac{4 \\pi}{3} \\delta^3 from which we can calculate the entropy \nS = -N k_B T \\ln \\left(v_f / \\Lambda^3\\right)\nAnd the pressure P=T\\left(\\frac{\\partial S}{\\partial V}\\right)_{N, T}=\\frac{N k_B T}{v_{c p}} \\frac{\\left(v / v_{c p}\\right)^{-2 / 3}}{\\left(v / v_{c p}\\right)^{1 / 3}-1}"
+  },
+  {
+    "objectID": "soft-matter_colloids2.html#dense-packing-cell-model-1",
+    "href": "soft-matter_colloids2.html#dense-packing-cell-model-1",
+    "title": "Complex Disordered Systems",
+    "section": "Dense packing: cell model",
+    "text": "Dense packing: cell model\nRearranging and expressing everything in terms of packing fraction \\phi = \\dfrac{\\pi\\sigma^3}{6v} yields \nZ_{\\rm comp}=\\frac{1}{1-\\left(\\phi / \\phi_{c p}\\right)^{1 / 3}}\n\n\nThis expression is completely different from the low density regime Z_{\\text {comp }}^{\\mathrm{low}}=1+B_2 \\rho+B_3 \\rho^2+\\ldots\nThe incompatibility signals non-analyticity and hence a discontinuous phase transition: first order transition.\nFirst order phase transitions are characterised by interfaces and coexistence between phases.\nWe should therefore observe phase coexistence in simulations and experiments of hard spheres."
+  },
+  {
+    "objectID": "soft-matter_colloids2.html#colloidal-hard-spheres-phase-behaviour",
+    "href": "soft-matter_colloids2.html#colloidal-hard-spheres-phase-behaviour",
+    "title": "Complex Disordered Systems",
+    "section": "Colloidal hard spheres: phase behaviour",
+    "text": "Colloidal hard spheres: phase behaviour\n\n\n\nVials of colloidal hard spheres under the effect of sedimentation: the gravitational field imposes a density gradient. At low packing fraction this maintains the dispersed fluid, but when the packing fraction is sufficiently high, it spontaneously forms a crystalline phase (speckled areas) after some time, in coexistence with a fluid. Notice that at very high packing the interfaces disappear and one has a disordered phase again: it is the glass, see Pusey et al, Philosophical Transactions of the Royal Society A (2009)."
+  },
+  {
+    "objectID": "soft-matter_colloids2.html#colloidal-hard-spheres-phase-behaviour-1",
+    "href": "soft-matter_colloids2.html#colloidal-hard-spheres-phase-behaviour-1",
+    "title": "Complex Disordered Systems",
+    "section": "Colloidal hard spheres: phase behaviour",
+    "text": "Colloidal hard spheres: phase behaviour\nIn conclusion, the one-dimensional phase diagram of hard spheres is the following\n\nHard spheres phase diagramNotice that the glass phase is purely non-equilibrium: if a system has enough time to relax, it will eventually form a crystal."
+  },
+  {
+    "objectID": "soft-matter_colloids2.html#beyond-hard-spheres-simple-liquids",
+    "href": "soft-matter_colloids2.html#beyond-hard-spheres-simple-liquids",
+    "title": "Complex Disordered Systems",
+    "section": "Beyond hard spheres: simple liquids",
+    "text": "Beyond hard spheres: simple liquids\n\n\n\nA simple liquid is a system of particles interacting via short-range, spherically symmetric (isotropic) pair potentials.\nA very common model is the Lennard-Jones (LJ) potential U_{\\mathrm{LJ}}(r) = 4\\epsilon \\left[ \\left( \\frac{\\sigma}{r} \\right)^{12} - \\left( \\frac{\\sigma}{r} \\right)^6 \\right] where \\epsilon sets the depth of the potential well (interaction strength) and \\sigma is the particle diameter (distance at which U=0).\nThe r^{-12} term models steep repulsion, while r^{-6} describes the attractive tail.\nThe Lennard-Jones fluid exhibits rich phase behavior: gas, liquid, supercritical fluid and crystalline solid\nThe LJ model is widely used to study atomic and molecular liquids, and serves as a reference for understanding real fluids and their phase transitions.\n\n\n\n\n\nPhase diagram of the Lennard-Jones Fluid, adapted from Wikimedia."
+  },
+  {
+    "objectID": "soft-matter_colloids2.html#coexistence-metastability-and-instability",
+    "href": "soft-matter_colloids2.html#coexistence-metastability-and-instability",
+    "title": "Complex Disordered Systems",
+    "section": "Coexistence: Metastability and Instability",
+    "text": "Coexistence: Metastability and Instability\n\nLennard-Jones and hard sphere fluids present coexistence regions.\nThe binodal line determines phase coexistence. It is the locus where the free energy satisfies the condition of equal chemical potential and pressure between coexisting phases. When crossing the binodal, one enters a regime of metastability.\n\n\n\n\nSchematic free energy for hard spheres compressed at high pressures: the fluid branch becomes metastable and the free energy minimum is located in the crystal phase"
+  },
+  {
+    "objectID": "soft-matter_colloids2.html#coexistence-metastability-and-instability-1",
+    "href": "soft-matter_colloids2.html#coexistence-metastability-and-instability-1",
+    "title": "Complex Disordered Systems",
+    "section": "Coexistence: Metastability and Instability",
+    "text": "Coexistence: Metastability and Instability\n\nThe spinodal line marks the boundary of metastability. It is the limit of stability \n\\frac{\\partial^2 G}{\\partial \\phi^2}=0\n\nBetween the binodal and spinodal lines, the system is metastable, meaning it can persist in a non-equilibrium state for a finite time.\nThe nucleation time \\tau is related to the free energy barrier \\Delta G^* by an activated (also called Arrhenius) law\n  \\tau \\propto \\exp\\left(\\frac{\\Delta G^*}{k_B T}\\right)    \nInside the spinodal there is no nucleation: coarsening occurs.\n\nYou have seen some of this physics when discussing the Ising model."
+  },
+  {
+    "objectID": "soft-matter_polymers1.html#what-are-polymers",
+    "href": "soft-matter_polymers1.html#what-are-polymers",
+    "title": "Complex Disordered Systems",
+    "section": "What are Polymers?",
+    "text": "What are Polymers?\n\n\n\n\n\n\n\nLarge molecules made of many individual units: monomers\nDegree of polymerization: N &gt; 10^5 units possible\nMacroscopic behavior dominated by large-scale properties\nStatistical mechanics needed even for single chains as they have many components subject to thermal fluctuations\n\nTypical modelling progressing from fine structure details → coarse-grained models\n\n🪁 Play with Polystyrene."
+  },
+  {
+    "objectID": "soft-matter_polymers1.html#polymer-architectures",
+    "href": "soft-matter_polymers1.html#polymer-architectures",
+    "title": "Complex Disordered Systems",
+    "section": "Polymer Architectures",
+    "text": "Polymer Architectures\nPolymers have many possible architectures:\n\nLinear: Straight chains (e.g., polyethylene)\nBranched: Main chain + side branches\n\nStar: Multiple arms from central core\nCross-linked: Network structures (rubbers, thermosets)\n\nFocus: We will only discuss linear homopolymers for theoretical simplicity.\n\n\n\nthe many possible polymer architectures, from Matyjaszewski and Möller, Polymer Science: A Comprehensive Reference, Elsevier (2012)"
+  },
+  {
+    "objectID": "soft-matter_polymers1.html#statistical-nature-of-polymer-conformations",
+    "href": "soft-matter_polymers1.html#statistical-nature-of-polymer-conformations",
+    "title": "Complex Disordered Systems",
+    "section": "Statistical Nature of Polymer Conformations",
+    "text": "Statistical Nature of Polymer Conformations\nWhy statistical?\n\nEnormous number of configurations\nThermal fluctuations drive conformational changes\nOnly average properties are measurable\n\nSeparate regimes\n\nDilute solutions: Polymer-solvent interactions dominate\nConcentrated: Polymer-polymer entanglements\n\n\n\n\nViscosity as a function of polymer concentration"
+  },
+  {
+    "objectID": "soft-matter_polymers1.html#freely-jointed-chain-model",
+    "href": "soft-matter_polymers1.html#freely-jointed-chain-model",
+    "title": "Complex Disordered Systems",
+    "section": "Freely-Jointed Chain Model",
+    "text": "Freely-Jointed Chain Model\nAssumptions:\n\nMonomers at positions \\mathbf{R}_{\\mathrm{j}} and connected by bonds \\mathbf{r}_{j}=\\mathbf{R}_{j}-\\mathbf{R}_{j-1} of length \\left|\\mathbf{r}_{j}\\right|=b_{0}.\nN segments of fixed length b_0\nAll bond angles equally likely\neffectively, it produces a random walk in 3D\nThe key quantity is th end-to-end vector: \\mathbf{R} = \\mathbf{r}_1+\\mathbf{r}_2+\\dots+\\mathbf{r}_N = \\sum_{j=1}^N \\mathbf{r}_j."
+  },
+  {
+    "objectID": "soft-matter_polymers1.html#freely-jointed-chain-model-1",
+    "href": "soft-matter_polymers1.html#freely-jointed-chain-model-1",
+    "title": "Complex Disordered Systems",
+    "section": "Freely-Jointed Chain Model",
+    "text": "Freely-Jointed Chain Model"
+  },
+  {
+    "objectID": "soft-matter_polymers1.html#end-to-end-vector-statistics",
+    "href": "soft-matter_polymers1.html#end-to-end-vector-statistics",
+    "title": "Complex Disordered Systems",
+    "section": "End-to-end vector statistics",
+    "text": "End-to-end vector statistics\nThe polymer fluctuates between all possible random-walk-like configurations at fixed inter-monomer distance.\nThe mean squared end-to-end distance is then simply \\begin{aligned}\\langle\\mathbf{R}^2\\rangle &= \\left\\langle \\left( \\sum_{i=1}^N \\mathbf{r}_i\\right) \\cdot  \\left( \\sum_{j=1}^N \\mathbf{r}_j\\right) \\right\\rangle\\\\\n&= \\left\\langle \\sum_{i=1}^N \\sum_{j=1}^N  \\mathbf{r}_i \\mathbf{r}_j \\right\\rangle\\\\\n\\end{aligned} We can split the sum into the terms where i=j and the rest. This yields in general\n\\langle \\mathbf{R}^2\\rangle = Nb_0^2+\\langle \\mathbf{r}_i \\mathbf{r}_j  \\rangle\nWe assume that successive segments are independent, so\n\\langle \\mathbf{R}^2\\rangle = Nb_0^2\n\n\n\n\n\n\nNote\n\n\nAny similarities with previous results? Think about the MSD."
+  },
+  {
+    "objectID": "soft-matter_polymers1.html#end-to-end-vector-statistics-1",
+    "href": "soft-matter_polymers1.html#end-to-end-vector-statistics-1",
+    "title": "Complex Disordered Systems",
+    "section": "End-to-end vector statistics",
+    "text": "End-to-end vector statistics\nWe can then use the results of by identifying N (the number of moonomers) with t (the number of steps). \n\\left\\langle\\mathbf{R}^2\\right\\rangle=\\left\\langle R_x^2\\right\\rangle+\\left\\langle R_y^2\\right\\rangle+\\left\\langle R_z^2\\right\\rangle=3 \\sigma^2=N b_0^2 \\Rightarrow \\sigma^2=\\frac{N b_0^2}{3}\n where \\sigma is the variance per component.\nFor long chains the end-to-end distance is distributed as a 3D Gaussian, centered at zero, with variance proportional to N:\n\nP(\\mathbf{R}) = \\left( \\frac{3}{2\\pi N b_0^2} \\right)^{3/2} \\exp\\left( -\\frac{3 \\mathbf{R}^2}{2 N b_0^2} \\right)"
+  },
+  {
+    "objectID": "soft-matter_polymers1.html#gyration-tensor-and-radius-of-gyration",
+    "href": "soft-matter_polymers1.html#gyration-tensor-and-radius-of-gyration",
+    "title": "Complex Disordered Systems",
+    "section": "Gyration tensor and radius of gyration",
+    "text": "Gyration tensor and radius of gyration\n\nThe end-to-end vector is most meaningful for linear structures.\nOther conformation (compact, branched or star-shaped polymers) are better characterised by a measure of the (average) extent of the polymer chain: theradius of gyration,\n\nThe radius of gyration is a generic quantity that can be measured from any point cloud. It is closely linked to the (co)-variance of the set of points.\nWe start with the standard centre of mass\n\\mathbf{R}_{\\rm CM}=\\frac{1}{N} \\sum_{j=1}^{N} \\mathbf{R}_{j}\nIn general terms, we cna define a matrix called the gyration tensor (also called the configuration tensor):\n\n\\mathbf{S} = \\frac{1}{N} \\sum_{j=1}^N (\\mathbf{R}_j - \\mathbf{R}_{\\rm CM}) \\otimes (\\mathbf{R}_j - \\mathbf{R}_{\\rm CM})\n where \\otimes denotes the outer product, and \\mathbf{S} is a 3 \\times 3 symmetric matrix."
+  },
+  {
+    "objectID": "soft-matter_polymers1.html#gyration-tensor-and-radius-of-gyration-1",
+    "href": "soft-matter_polymers1.html#gyration-tensor-and-radius-of-gyration-1",
+    "title": "Complex Disordered Systems",
+    "section": "Gyration tensor and radius of gyration",
+    "text": "Gyration tensor and radius of gyration\nThe elements of \\mathbf{S} are given by\n\nS_{\\alpha\\beta} = \\frac{1}{N} \\sum_{j=1}^N (R_{j,\\alpha} - R_{{\\rm CM},\\alpha})(R_{j,\\beta} - R_{{\\rm CM},\\beta})\n\nwhere \\alpha, \\beta \\in \\{x, y, z\\}.\nThe radius of gyration squared is then simply the trace of this tensor (hence, invariant):\n\nR_g^2 = \\mathrm{Tr}(\\mathbf{S}) = S_{xx} + S_{yy} + S_{zz}\n\nThe tensor is symmetric and real \\to diagonasable.\nEigenvalues and eigenvectors of \\mathbf{S} provide information about the principal axes and shape anisotropy of the polymer coil (do you remember 3D mechanics and Euler angles?).\nThe tensor of gyration corresponds to the covariance matrix of the positions \\mathbf{R}_j.\nFor the ideal freely-jointed chain, the end-to-end vector and the radius of gyration are linked\n\n\\boxed{\n\\langle R_g^2 \\rangle = \\frac{1}{6} \\langle R^2 \\rangle}"
+  },
+  {
+    "objectID": "soft-matter_polymers1.html#freely-rotating-chain",
+    "href": "soft-matter_polymers1.html#freely-rotating-chain",
+    "title": "Complex Disordered Systems",
+    "section": "Freely-Rotating Chain",
+    "text": "Freely-Rotating Chain\nA more realistic model takes into account that bond angle are usually restricted.\nTake n-butane:\n\n\\mathrm{H}_{3} \\mathrm{C}-\\mathrm{CH}_{2}-\\mathrm{CH}_{2}-\\mathrm{CH}_{3}\n\n\n\n\nn-butane\n\n\nThe valence (or bond) angle is the angle between two adjacent chemical bonds. The C-C-C is around 112^\\circ."
+  },
+  {
+    "objectID": "soft-matter_polymers1.html#freely-rotating-chain-dihedral-angle",
+    "href": "soft-matter_polymers1.html#freely-rotating-chain-dihedral-angle",
+    "title": "Complex Disordered Systems",
+    "section": "Freely-Rotating Chain: dihedral angle",
+    "text": "Freely-Rotating Chain: dihedral angle\nRotations about the C-C bond are possible and are qualified by the dihedral (or torsional) angle\n\n\n\n\n\nFour conformers of butane, from LibreText Chemistry\n\n\n\n\n\n\nPotential energy of the conformers\n\n\n\n\nAt low temperatures ( k_{B} T &lt; {\\mathrm {\\text{configurational energy}}}) A (an anti conformation) .\nRising k_{B} T \\sim there will also be C (gauche) configurations.\nAt high temperatures ( k_{B} T \\gg config. energy), any angle will be possible."
+  },
+  {
+    "objectID": "soft-matter_polymers1.html#freely-rotating-chain-model",
+    "href": "soft-matter_polymers1.html#freely-rotating-chain-model",
+    "title": "Complex Disordered Systems",
+    "section": "Freely-Rotating Chain Model",
+    "text": "Freely-Rotating Chain Model\n\n\nSimple but richer model than the freely jointed model:\n\nFixed bond angle \\theta\nTorsional angle \\varphi can take any value 0 \\leq \\varphi \\leq 2 \\pi.\n\nImagine we have a configuration \\{\\mathbf{r}_{l}, \\mathbf{r}_{2}, \\ldots, \\mathbf{r}_{j-1}\\} and want to add the next segment.\n\nAverage \\mathbf{r}_{j} over \\varphi, while keeping \\mathbf{r}_{1}, \\mathbf{r}_{2}, \\ldots, \\mathbf{r}_{j-1} fixed, only the component in \\mathbf{r}_{j} direction remains:\n\n\\langle \\mathbf{r}_{j} \\rangle_{\\mathbf{r}, \\mathbf{r}_{2}, \\ldots, \\mathbf{r}_{j-1}\\quad {\\rm fixed}}=\\cos \\theta \\mathbf{r}_{j-1}\nMultiplying both sides by \\mathbf{r}_k and averaging over all configurations gives\n\n\\left\\langle\\mathbf{r}_j \\cdot \\mathbf{r}_k\\right\\rangle=\\cos \\theta\\left\\langle\\mathbf{r}_{j-1} \\cdot \\mathbf{r}_k\\right\\rangle .\n\nApplying this relation recursively leads to\n\n\\left\\langle\\mathbf{r}_j \\cdot \\mathbf{r}_k\\right\\rangle=b_0^2(\\cos \\theta)^{|j-k|}\n\n\n\n\n\nFreely rotating chain model"
+  },
+  {
+    "objectID": "soft-matter_polymers1.html#freely-rotating-chain-model-1",
+    "href": "soft-matter_polymers1.html#freely-rotating-chain-model-1",
+    "title": "Complex Disordered Systems",
+    "section": "Freely-Rotating Chain Model",
+    "text": "Freely-Rotating Chain Model\nGiven \n\\left\\langle\\mathbf{r}_j \\cdot \\mathbf{r}_k\\right\\rangle=b_0^2(\\cos \\theta)^{|j-k|}\n for \\cos \\theta&lt;1, correlations between \\mathbf{r}_{j} and \\mathbf{r}_{k} decrease with increasing distance |j-k| .\nWe can link this to the end-to-end distance (proof in the lecture notes) and get the large N limit\n\n\\left\\langle R^2\\right\\rangle \\approx N b_0^2+\\frac{2 b_0^2}{1-\\cos \\theta} N \\cos \\theta=N b_0^2\\left(\\frac{1+\\cos \\theta}{1-\\cos \\theta}\\right)=C N b_0^2\n\nwith C=(1+\\cos \\theta) /(1-\\cos \\theta) ."
+  },
+  {
+    "objectID": "soft-matter_polymers1.html#freely-rotating-chain-model-effect-of-bond-angle",
+    "href": "soft-matter_polymers1.html#freely-rotating-chain-model-effect-of-bond-angle",
+    "title": "Complex Disordered Systems",
+    "section": "Freely-Rotating Chain Model: Effect of Bond Angle",
+    "text": "Freely-Rotating Chain Model: Effect of Bond Angle\n\n\n\n\\theta \\to 0: C \\gg 1 → Rigid rod \\langle R^2 \\rangle \\gg N b_0^2\nNearly straight chain. The end-to-end distance is much larger than that of a flexible chain with the same number of segments.\n\\theta \\to \\pi: C \\ll 1 → Collapsed globule\n\\langle R^2 \\rangle \\ll N b_0^2\nCompact, globular, collapsed assembly. Examples: polypeptides, polystyrene in water, chromatin\n\\theta = 90°: C = 1 → Ideal random walk \\langle R^2 \\rangle = N b_0^2\nCorresponds to our original freely jointed chain (random walk).\n🪁 Play with models\n\n\n\n\n\nKevlar fiber (top) and chromatin globule model (bottom)"
+  },
+  {
+    "objectID": "soft-matter_polymers1.html#persistence-and-kuhn-length",
+    "href": "soft-matter_polymers1.html#persistence-and-kuhn-length",
+    "title": "Complex Disordered Systems",
+    "section": "Persistence and Kuhn Length",
+    "text": "Persistence and Kuhn Length\n\n\nSo in general \\langle R^2 \\rangle \\propto N\n\nReplace real chain with equivalent freely-jointed chain\nSame contour length: N b_0 = N' b\nSame end-to-end distance: C N b_0^2 = N' b^2\n\nResults:\n\nKuhn length: b = C b_0\n\nPersistence length: correlations along the chain decay like \\left\\langle\\mathbf{r}_i \\cdot \\mathbf{r}_{i+n}\\right\\rangle=b_0^2\\langle\\cos \\theta\\rangle^n=b_0^2 e^{-n b_0 / l_p}\n with \\ell_p = b/2\nKuhn segments: N' = N/C\n\n\n\n\nOriginal contour length: 200.0000\nCoarse-grained contour length: 163.8304"
+  },
+  {
+    "objectID": "soft-matter_polymers1.html#excluded-volume-effects",
+    "href": "soft-matter_polymers1.html#excluded-volume-effects",
+    "title": "Complex Disordered Systems",
+    "section": "Excluded Volume Effects",
+    "text": "Excluded Volume Effects\nTrue monomers cannot occupy same space\n\nlocal scale: restrictions on the bond angles stopping them from overlapping\nlarge distance excluded volume interactions between monomers, also deforming the chain\n\nConsider that for a coiled polymer\n\nV_{\\text {coil }}=\\frac{4 \\pi}{3}\\left(\\left\\langle R_g^2\\right\\rangle^{1/2}\\right)^3 \\sim \\frac{4 \\pi}{3} N^{3 / 2} b^3\n\nSo\n\\frac{V_{\\text{monomers}}}{V_{\\text{coil}}} = \\frac{N b^3}{N^{3/2} b^3} \\sim N^{-1/2}\nFor N = 10^4: only ~1% of coil volume occupied!\nSo excluded-volume interactions are meant to present a small contribution.\nYet they affect the scaling properties.\n="
+  },
+  {
+    "objectID": "soft-matter_polymers1.html#self-avoiding-walk",
+    "href": "soft-matter_polymers1.html#self-avoiding-walk",
+    "title": "Complex Disordered Systems",
+    "section": "Self-Avoiding Walk",
+    "text": "Self-Avoiding Walk\nBalance of competing effects:\n\nEntropy: Favors compact configurations\nExcluded volume: Favors chain expansion\n\nEntropy :\n\nS=k_B \\ln (\\text { number of configurations })\n\nFor a given end-to-end vector the number of configurations scales as\n\nP(\\mathbf{R})=\\left(\\frac{3}{2 \\pi\\langle R^{2}\\rangle}\\right)^{3 / 2} e^{-\\frac{3 R^{2}}{2\\langle R^{2}\\rangle}}\n\nand so\n\nS \\sim \\frac{-3 k_{B} R^{2}}{2 N b^{2}}+\\text { terms indep. of } \\mathrm{R}"
+  },
+  {
+    "objectID": "soft-matter_polymers1.html#self-avoiding-walk-1",
+    "href": "soft-matter_polymers1.html#self-avoiding-walk-1",
+    "title": "Complex Disordered Systems",
+    "section": "Self-Avoiding Walk",
+    "text": "Self-Avoiding Walk\nThe configurational part of the internal energy can be estimated by focusing on monomer-monomer contacts for monomers of volume V_1.\nWe approximate this with a segment gas confined in a volume R^3. The density (or probability) of contacts is\n\\rho_c = N^2 V_1 / R^3 \\sim N^{1 / 2}\n\nby using R^2\\sim N.\nWe have \\sim N^2\\rho_c pairs at some energy scale per bond \\varepsilon so \nU \\sim \\varepsilon N^2 V_1 / R^3\n and the total free energy is approximately\n\nF=\\frac{\\varepsilon N^2 V_1}{R^3}+\\frac{3 k_B T R^2}{2 N b^2}\n\n(we are interested in scaling behaviour)"
+  },
+  {
+    "objectID": "soft-matter_polymers1.html#self-avoiding-walk-2",
+    "href": "soft-matter_polymers1.html#self-avoiding-walk-2",
+    "title": "Complex Disordered Systems",
+    "section": "Self-avoiding walk",
+    "text": "Self-avoiding walk\nFrom\n\nF=\\frac{\\varepsilon N^2 V_1}{R^3}+\\frac{3 k_B T R^2}{2 N b^2}\n we can find the minimum that satisfies d F / d R=0\nand get\n\nR^5=\\frac{\\varepsilon V_1 b^2}{k_B T} N^3 \\sim \\frac{\\varepsilon}{k_B T} N^3 b^5\n\nwhich ultimately is \n\\boxed{R \\sim N^{3 / 5} b}\n\nSo ultimately we get a scaling exponent different from freely jointed chain:\n\nfreely jointed chain: R \\sim N^{1 / 2}\nself-avoidign walks: R \\sim N^{3 / 5}\n\n0.6\\neq 0.5 (if you are precise!)"
+  },
+  {
+    "objectID": "soft-matter_polymers1.html#self-avoiding-walk-3",
+    "href": "soft-matter_polymers1.html#self-avoiding-walk-3",
+    "title": "Complex Disordered Systems",
+    "section": "Self avoiding walk",
+    "text": "Self avoiding walk"
+  },
+  {
+    "objectID": "soft-matter_intro.html#today",
+    "href": "soft-matter_intro.html#today",
+    "title": "Complex Disordered Systems",
+    "section": "Today",
+    "text": "Today\n\nEntropy matters\nIntroduction to colloids"
+  },
+  {
+    "objectID": "soft-matter_intro.html#entropy-matters-1",
+    "href": "soft-matter_intro.html#entropy-matters-1",
+    "title": "Complex Disordered Systems",
+    "section": "Entropy matters",
+    "text": "Entropy matters\n\n\n\nBlame it on entropy (New Yorker)"
+  },
+  {
+    "objectID": "soft-matter_intro.html#more-is-different",
+    "href": "soft-matter_intro.html#more-is-different",
+    "title": "Complex Disordered Systems",
+    "section": "More is different",
+    "text": "More is different\nPhilip Anderson (Science 1972)\n\nComplexity emerges when many simple units interact: studying the individual components does not explain the emergence of collective properties\n\n\n\n\nSimple examples:\n\nphases of matter\nmagnetism, superconductivity\nemergence of order from disorder\n\n\n\n\nAlso beyond physics:\n\nformation of biological molecules\necological networks\neconomic structures (markets, currencies etc.)\n\n\n\n\n\n\nComplex mixtures, spintronic magnetisation, ecological networks and Hong Kong stock market"
+  },
+  {
+    "objectID": "soft-matter_intro.html#beyond-the-usual-phases-of-matter",
+    "href": "soft-matter_intro.html#beyond-the-usual-phases-of-matter",
+    "title": "Complex Disordered Systems",
+    "section": "Beyond the usual phases of matter",
+    "text": "Beyond the usual phases of matter\nWe sometimes oversimplify…\n\nExtreme examples of phases of matter"
+  },
+  {
+    "objectID": "soft-matter_intro.html#beyond-the-usual-phases-of-matter-1",
+    "href": "soft-matter_intro.html#beyond-the-usual-phases-of-matter-1",
+    "title": "Complex Disordered Systems",
+    "section": "Beyond the usual phases of matter",
+    "text": "Beyond the usual phases of matter\nWe sometimes oversimplify…"
+  },
+  {
+    "objectID": "soft-matter_intro.html#complex-fluids-and-soft-condensed-matter",
+    "href": "soft-matter_intro.html#complex-fluids-and-soft-condensed-matter",
+    "title": "Complex Disordered Systems",
+    "section": "Complex fluids and soft condensed matter",
+    "text": "Complex fluids and soft condensed matter\n\nSoft condensed matter includes assembllies of colloids, polymers, surfactants, and biological macromolecules and much more.\n\nTerm due to Pierre-Gilles de Gennes (Nobel 1991)\n\nOften, many ofthese are also referred to as complex fluids.\nThese materials are easily deformed and show complex, disordered structures.\nTheir properties are determined by a balance between energy and entropy.\nThermal fluctuations play a major role in their behavior.\nUnderstanding them requires statistical mechanics ."
+  },
+  {
+    "objectID": "soft-matter_intro.html#thermal-fluctuations-and-entropy",
+    "href": "soft-matter_intro.html#thermal-fluctuations-and-entropy",
+    "title": "Complex Disordered Systems",
+    "section": "Thermal fluctuations and entropy",
+    "text": "Thermal fluctuations and entropy\n\nHelmholtz Free energy per particle f = u-Ts\nEntropy approximately counts the number of arrangements per particle s = \\dfrac{k_B}{N} \\ln{\\Omega}. For hundreds of arrangements per particle one has s=O(1) k_B\nFluctuations of the internal energy are on the same scale as thermal fluctuations: \n\\boxed{\\Delta u \\sim k_B T}\n where k_B is the Boltzmann constant and \\Delta u indicates standard deviations from the average internal energy."
+  },
+  {
+    "objectID": "soft-matter_intro.html#thermal-fluctuations-single-particle-in-a-double-well",
+    "href": "soft-matter_intro.html#thermal-fluctuations-single-particle-in-a-double-well",
+    "title": "Complex Disordered Systems",
+    "section": "Thermal fluctuations: single particle in a double well",
+    "text": "Thermal fluctuations: single particle in a double well\n\nviewof params = Inputs.form({\n    T: Inputs.range([0., 4], {label: \"Temp.\", value: 1.0, step: 0.1,}),\n    g: Inputs.range([-2, 2], {label: \"Tilt\", value: 0, step: 0.1}),\n    reset: Inputs.button(\"Reset simulation\")\n})\n\n// Simulation parameters\ndt = 0.005\nkB = 1\ngamma = 1\n\n// Double well potential: V(x) = x^4 - 2x^2 + g*x\nV = (x, g) =&gt; x**4 - 2*x**2 + g*x\nforce = (x, g) =&gt; -(4*x**3 - 4*x + g)\n\n// Live simulation with temperature control\nsimulationState = {\n    let x = 0\n    let positions = [0]\n    let step = 0\n    \n    while (true) {\n        if (params.reset) {\n            x = 0\n            positions = [0]\n            step = 0\n        }\n        \n        let f = force(x, params.g)\n        let noise = Math.sqrt(2 * kB * params.T * dt / gamma) * (Math.random() - 0.5) * 2\n        x += (f / gamma) * dt + noise\n        positions.push(x)\n        // Keep only last 500 points for performance\n        if (positions.length &gt; 500) {\n            positions = positions.slice(-500)\n        }\n        \n        yield {x, positions: [...positions], step: step++}\n        await new Promise(resolve =&gt; setTimeout(resolve, 10))\n    }\n}\n\n// Plot\nPlot.plot({\n    width: 700,\n    height: 400,\n    grid: true,\n    x: {domain: [-2.5, 2.5], label: \"Position\"},\n    y: {domain: [-2, 3], label: \"Potential Energy\"},\n    marks: [\n        // Potential curve\n        Plot.line(\n            Array.from({length: 200}, (_, i) =&gt; {\n                let x = -2.5 + 5 * i / 199\n                return {x, y: V(x, params.g)}\n            }),\n            {x: \"x\", y: \"y\", stroke: \"red\", strokeWidth: 2}\n        ),\n        // Particle trajectory (trail)\n        Plot.line(\n            simulationState.positions.map((x, i) =&gt; ({x, y: V(x, params.g), step: i})),\n            {x: \"x\", y: \"y\", stroke: \"blue\", strokeWidth: 1, opacity: 0.5}\n        ),\n        // Current particle position\n        Plot.dot([{\n            x: simulationState.x, \n            y: V(simulationState.x, params.g)\n        }], {x: \"x\", y: \"y\", fill: \"blue\", r: 6, stroke: \"white\", strokeWidth: 2})\n    ]\n})"
+  },
+  {
+    "objectID": "soft-matter_intro.html#elementary-constituents-and-energy-scales",
+    "href": "soft-matter_intro.html#elementary-constituents-and-energy-scales",
+    "title": "Complex Disordered Systems",
+    "section": "Elementary constituents and energy scales",
+    "text": "Elementary constituents and energy scales\n\nSoft matter systems are made of many parts\n\nThe assembly of these many parts can be easily deformed.\nInteractions between these parts are weak compared to thermal or mechanical forces.\n\n\n\n\n\nHard condensed matter:\nBasic units: atoms\nStrong interactions (0.1–10 eV)\nCovalent/ionic bonds\nFocus on low temperatures\n\n\n\nSoft matter:\nBasic units: molecular aggregates\nWeak interactions (0.001–0.2 eV)\nVan der Waals, hydrogen bonds\n1 k_B T \\approx 0.025 eV (room temperature)"
+  },
+  {
+    "objectID": "soft-matter_intro.html#coarse-graining",
+    "href": "soft-matter_intro.html#coarse-graining",
+    "title": "Complex Disordered Systems",
+    "section": "Coarse graining",
+    "text": "Coarse graining\n\n\n\nSoft matter interactions are mainly electrostatic.\nAtomistic details are often unimportant for macroscopic properties.\nCoarse-graining simplifies models by focusing on key features:\n\ndeliberate selection of what matters\nsystematic integration of a number of degrees of freedom\n\n\n\n\nExample: The oxDNA model represents DNA as a chain of coarse grained units, much larger than the atoms.\n\n\n\n\nAtomistic DNA structure"
+  },
+  {
+    "objectID": "soft-matter_intro.html#coarse-graining-1",
+    "href": "soft-matter_intro.html#coarse-graining-1",
+    "title": "Complex Disordered Systems",
+    "section": "Coarse graining",
+    "text": "Coarse graining\n\n\n\nSoft matter interactions are mainly electrostatic.\nAtomistic details are often unimportant for macroscopic properties.\nCoarse-graining simplifies models by focusing on key features:\n\ndeliberate selection of what matters\nsystematic integration of a number of degrees of freedom\n\n\n\n\nExample: The oxDNA model represents DNA as a chain of coarse grained units, much larger than the atoms.\n\n\n\n\noxDNA model: (a) Base structure on one strand; (b) planarity of the bonding; (c) an example of the resulting double strand."
+  },
+  {
+    "objectID": "soft-matter_intro.html#classes-of-systems",
+    "href": "soft-matter_intro.html#classes-of-systems",
+    "title": "Complex Disordered Systems",
+    "section": "Classes of systems",
+    "text": "Classes of systems\nIn our exploration of soft matter we will focus on six main classes of systems which display different physics:\n\ncolloidal dispersions\npolymeric systems\nliquid crystals\nsurfactant aggregates\narrested systems\nactive matter\n\n\n\n\nColloidal assemblies, polymers, surfactants, liuqid crystals, glasses and bacteria."
+  },
+  {
+    "objectID": "soft-matter_intro.html#colloidal-dispersions",
+    "href": "soft-matter_intro.html#colloidal-dispersions",
+    "title": "Complex Disordered Systems",
+    "section": "Colloidal dispersions",
+    "text": "Colloidal dispersions\n\n\n\nColloidal dispersions: small particles (nano–micrometer) suspended in a solvent.\nSpherical colloids are common, but many shapes and interactions exist.\nBehave as “big atoms”: show Brownian motion, phase transitions, and can form ordered structures.\nLarger size and slower dynamics make them ideal for direct observation of phenomena like:\n\ncrystallisation\nglass formation\ngel formation\n\n\n\n\n\n\n(A) Solvent collisions cause random forces on particles. (B) Particles execute random walks on larger timescales. (C) Hard spheres crystallize at high density (right) due to reduced available space compared to fluid phase (left). From Manohran, Science (2015)"
+  },
+  {
+    "objectID": "soft-matter_intro.html#polymeric-systems",
+    "href": "soft-matter_intro.html#polymeric-systems",
+    "title": "Complex Disordered Systems",
+    "section": "Polymeric systems",
+    "text": "Polymeric systems\n\nPolymers are long-chain macromolecules made of repeating monomers.\nTheir properties result from a balance of entropy and energy.\nTwo main types: synthetic polymers (e.g., plastics) and biopolymers (e.g., DNA, proteins).\nEntanglement: chains cannot cross, leading to unique mechanical behavior.\n\n\nPolymer entanglement, from Likhtman and Ponmurugan, Macromolecules (2014)"
+  },
+  {
+    "objectID": "soft-matter_intro.html#liquid-crystals",
+    "href": "soft-matter_intro.html#liquid-crystals",
+    "title": "Complex Disordered Systems",
+    "section": "Liquid crystals",
+    "text": "Liquid crystals\n\nLiquid crystals form when anisotropic soft matter units (e.g., rod-like or disk-shaped molecules) pack densely, leading to partial order—intermediate between liquids and crystals.\nContinuum free energy theories describe liquid crystals by considering the symmetry of their order parameters.\nLiquid crystals are crucial in technologies like liquid crystal displays (LCDs).\n\n\nTexture of nematic liquid crystals, from https://doi.org/10.3986/alternator.2020.38"
+  },
+  {
+    "objectID": "soft-matter_intro.html#surfactant-aggregates",
+    "href": "soft-matter_intro.html#surfactant-aggregates",
+    "title": "Complex Disordered Systems",
+    "section": "Surfactant aggregates",
+    "text": "Surfactant aggregates\n\nSurfactants lower surface tension between fluid phases by accumulating at interfaces.\nThey are molecules with both hydrophilic heads and hydrophobic tails.\nSurfactants self-assemble at interfaces, forming structures like bilayers and vesicles.\nThese assemblies are essential in cell biology and many soft matter systems.\n\n\nCellular membrane"
+  },
+  {
+    "objectID": "soft-matter_intro.html#arrested-systems",
+    "href": "soft-matter_intro.html#arrested-systems",
+    "title": "Complex Disordered Systems",
+    "section": "Arrested systems",
+    "text": "Arrested systems\n\nArrested systems are trapped in disordered, non-equilibrium states.\nLack of long-range order leads to slow structural relaxation and prevents reaching the global energy minimum.\nExamples: glasses and gels\nThese systems exhibit rigidity, elasticity, and plasticity: disordered (semi)-solids.\nRelaxation times are longer than observable timescales, making equilibrium statistical mechanics insufficient.\n\n\nAn gel (left) and a glass (right) from molecular dynamics with local structure highlighted un colours"
+  },
+  {
+    "objectID": "soft-matter_intro.html#active-matter",
+    "href": "soft-matter_intro.html#active-matter",
+    "title": "Complex Disordered Systems",
+    "section": "Active matter",
+    "text": "Active matter\n\nActive matter: systems of units that consume energy to move or exert forces.\nInherently out of equilibrium due to continuous energy input.\nIncludes biological systems (bacteria, cells, flocks) and synthetic systems (self-propelled colloids).\nShows emergent collective behaviors: swarming, clustering, pattern formation.\nStudied using hydrodynamic theories and agent-based models.\n\n\nExample of active systems, from Cichos et al. Nature Machine Intelligence (2020)"
+  },
+  {
+    "objectID": "soft-matter_intro.html#kinds-of-colloids",
+    "href": "soft-matter_intro.html#kinds-of-colloids",
+    "title": "Complex Disordered Systems",
+    "section": "Kinds of colloids",
+    "text": "Kinds of colloids\n\n\nColloids = dispersed phase + dispersion medium\n\n\n\n\nOpal, paint, smoke, ice-cream, milk, fog, expanded polystyrene and foam."
+  },
+  {
+    "objectID": "soft-matter_intro.html#kinds-of-colloids-1",
+    "href": "soft-matter_intro.html#kinds-of-colloids-1",
+    "title": "Complex Disordered Systems",
+    "section": "Kinds of colloids",
+    "text": "Kinds of colloids\n\n\n\n\n\n\n\n\nDispersion Phase\n\nDispersion Medium\n\n\n\n\n\nSolid\nLiquid\n\n\nSolid\nSolid suspension:\npigmented plastics,\nstained glass,\nruby glass, opal, pearl\nSol, colloidal suspension:\nmetal sol,\ntoothpaste, paint,\nink, clay slurries, mud\n\n\nLiquid\nSolid emulsion:\nbituminous road paving,\nice cream\nEmulsion:\nmilk, mayonnaise,\nbutter, pharmaceutical creams\n\n\nGas\nSolid foam:\nzeolites, expanded polystyrene,\n‘silica gel’\nFoam:\nfroths, soap foam,\nfire-extinguisher foam"
+  },
+  {
+    "objectID": "soft-matter_intro.html#iupac-definition",
+    "href": "soft-matter_intro.html#iupac-definition",
+    "title": "Complex Disordered Systems",
+    "section": "IUPAC definition",
+    "text": "IUPAC definition\nThe International Union of Pure and Applied Chemistry (IUPAC) defines\n\ncolloidal: The term refers to a state of subdivision, implying that the molecules or polymolecular particles dispersed in a medium have at least in one direction a dimension roughly between 1 nm and 1 \\mum , or that in a system discontinuities are found at distances of that order.\n\n\n\n\n\n\n\nNote\n\n\nThe definition has little to do with the chemistry of the polymolecules (i.e. aggregates), but essentially is determined by the size.\n\n\n\n\nWhy the size?"
+  },
+  {
+    "objectID": "soft-matter_intro.html#colloidal-scale",
+    "href": "soft-matter_intro.html#colloidal-scale",
+    "title": "Complex Disordered Systems",
+    "section": "Colloidal scale",
+    "text": "Colloidal scale\n\nParticle of size R (micrometric) in medium with constant collisions at thermal energy \\sim 1 k_B T\nCompare the energy with the potential energy of settling over a length R\nObtain a nondimensional number the gravitational Péclet number\n\n\\mathrm{Pe}_g=\\frac{\\Delta m g R}{k_B T}\n\n\n\n\n\n\n\nExample\n\n\nFor a milk protein particle (casein micelle) in water:\n\nR \\sim 0.5 \\, \\mum (estimate)\n\\Delta m = \\frac{4}{3}\\pi R^3 \\Delta \\rho \\sim \\frac{4}{3}\\pi (0.5 \\times 10^{-6})^3 \\times 200 \\sim 1 \\times 10^{-16} kg (assuming \\Delta \\rho \\sim 200 kg/m³)\ng = 9.8 m/s²\nk_B T \\sim 4 \\times 10^{-21} J (room temperature)\n\n\\mathrm{Pe}_g = \\frac{1 \\times 10^{-16} \\times 9.8 \\times 0.5 \\times 10^{-6}}{4 \\times 10^{-21}} \\sim 0.1\nSince \\mathrm{Pe}_g &lt; 1, thermal motion dominates gravity → particles remain suspended → stable colloid!"
+  },
+  {
+    "objectID": "soft-matter_intro.html#observation-time-and-stability",
+    "href": "soft-matter_intro.html#observation-time-and-stability",
+    "title": "Complex Disordered Systems",
+    "section": "Observation time and stability",
+    "text": "Observation time and stability\n\nAny measurement in physics has an observation time t_{\\rm obs}\nThermal systems have some degree of memory and hence an intrinsic timescale \\tau (relaxation time)\nWhen \\tau\\ll t_{\\rm obs} we can take time-averages and consider the system in a stable steady state.\nIn the absence of net currents, this is an equilibrium state\nA colloidal dispersion is stable if it is able to remain dispersed and Brownian time much longer than t_{\\rm obs}.\nInstability leads to aggregation\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nStable\n\n\n\n\n\n\n\nUnstable\n\n\n\n\n\n\n\nColloidal System\n\n\n\n\n\n\n\nStability?\n\n\n\n\n\n\n\nSingle phasefor long time\n\n\n\n\n\n\n\nAggregation andsedimentation"
+  },
+  {
+    "objectID": "soft-matter_intro.html#destabilisation",
+    "href": "soft-matter_intro.html#destabilisation",
+    "title": "Complex Disordered Systems",
+    "section": "Destabilisation",
+    "text": "Destabilisation\n\nMilk is an emulsion where droplets of fat are dispersed in water and stabilised by proteins.\nIf lemon juice is added, the dispersion medium (water) changes, the pH drops, and the emulsion is destabilised.\nThe interactions change → separation of curds (solid) and whey (liquid).\n\n\nCurds and whey resulting from the destabilisation of milk, a colloidal emulsion. (Wikimedia)"
+  },
+  {
+    "objectID": "soft-matter_intro.html#which-interactions",
+    "href": "soft-matter_intro.html#which-interactions",
+    "title": "Complex Disordered Systems",
+    "section": "Which interactions?",
+    "text": "Which interactions?\n\nAt the colloidal scale: gravity and electrostatics (eventually magnetostatics).\nElectrostatics forces are the main microscopic forces: colloids are typically charged\nSeparation of length and timescales: colloids are much larger and slower than the atomic or molecular constituents of the surrounding fluid.\nColloid–colloid interactions result from the collective effect (sum or average) of many microscopic interactions, evaluated over times much longer than microscopic relaxation times.\nWhen we focus on colloidal scales, we integrate out the microscopic degrees of freedom (coarse-graning)\nCoarse-grained interactions are then obtained and are called effective interactions.\n\n\n\n\nFundamental forces:\ngravity\nelectro (magneto) static forces\n\n\n\nEffective forces\nVan der Waals forces\nelectrostatic repulsion (DLVO)\ndepletion forces\nhydrophobic/hydrophilic interactions\nsteric forces"
+  },
+  {
+    "objectID": "soft-matter_polymers2.html#today",
+    "href": "soft-matter_polymers2.html#today",
+    "title": "Complex Disordered Systems",
+    "section": "Today",
+    "text": "Today\n\nGood, poor and theta solvents\nConcentrated polymer solutions"
+  },
+  {
+    "objectID": "soft-matter_polymers2.html#polymers-in-solvents",
+    "href": "soft-matter_polymers2.html#polymers-in-solvents",
+    "title": "Complex Disordered Systems",
+    "section": "Polymers in solvents",
+    "text": "Polymers in solvents\n\nPolymers typically are dispersed in a medium (solvent).\nSolvent-polymer attractions (the affinity) influences the polymer conformations:\n\ngood solvents \\to high affinity \\to the polymer swells (expands)\npoor solvents \\to low affinity \\to the polymer shrinks\n\nThe affinity depends on the details of the molecular interactions but can be coarse-grained.\nWe can construct a simple model with effective interaction energies\n\\varepsilon_{s s} for the solvent-solvent\n\\varepsilon_{\\mathrm{pp}} for monomer-monomer\n\\varepsilon_{s p} for solvent-monomer interactions."
+  },
+  {
+    "objectID": "soft-matter_polymers2.html#energy-of-mixing",
+    "href": "soft-matter_polymers2.html#energy-of-mixing",
+    "title": "Complex Disordered Systems",
+    "section": "Energy of mixing",
+    "text": "Energy of mixing\n\n\nOn-lattice model:\n\neach site has z nearest neighbours\nN_{s} solvent molecules\nN_{p} monomers\n\\mathrm{N}_{\\mathrm{sp}} solvent-monomer contacts.\n\nEffective interactions:\n\n\\varepsilon_{s s} for the solvent-solvent\n\\varepsilon_{\\mathrm{pp}} for monomer-monomer\n\\varepsilon_{s p} for solvent-monomer interactions.\n\n\n\n\nThen the energy of mixing \\Delta U_{\\operatorname{mix}} is obtained as the difference between the total energy U of the mixed system and the sum of the energies of the pure solvent and pure polymer, U_{S}+U_{p}.\n\n\\Delta U_{\\operatorname{mix}}=U-\\left(U_{S}+U_{p}\\right)"
+  },
+  {
+    "objectID": "soft-matter_polymers2.html#energy-of-mixing-1",
+    "href": "soft-matter_polymers2.html#energy-of-mixing-1",
+    "title": "Complex Disordered Systems",
+    "section": "Energy of mixing",
+    "text": "Energy of mixing\n\n\n\nEnergy of pure solvent U_{s}=\\frac{z N_{s} \\varepsilon_{s s}}{2}\nEnergy of pure polymer U_{p}=\\frac{z N_{p} \\varepsilon_{p p}}{2}\n\n\n\n\nEnergy of solution U=N_{s p} \\varepsilon_{s p}+\\dfrac{\\left(z N_{s}-N_{s p}\\right) \\varepsilon_{s s}}{2}+\\dfrac{\\left(z N_{p}-N_{s p}\\right) \\varepsilon_{p p}}{2}\nWe obtain that the energy of mixing \\Delta U_{\\mathrm{mix}}=N_{s p}\\left[\\varepsilon_{s p}-\\dfrac{1}{2}\\left(\\varepsilon_{s s}+\\varepsilon_{p p}\\right)\\right]\nwhich can change sign depending on our choices for the effective interaction energies."
+  },
+  {
+    "objectID": "soft-matter_polymers2.html#good-solvents-poor-solvents-and-theta-solvents",
+    "href": "soft-matter_polymers2.html#good-solvents-poor-solvents-and-theta-solvents",
+    "title": "Complex Disordered Systems",
+    "section": "Good solvents, poor solvents and theta solvents",
+    "text": "Good solvents, poor solvents and theta solvents\n\nGood solvent: \\varepsilon_{s p}&lt;\\frac{1}{2}\\left(\\varepsilon_{s s}+\\varepsilon_{p p}\\right) \\quad \\therefore \\Delta \\mathrm{U}_{\\text {mix }}&lt;0\n\nThis is the case of a ‘good solvent’, because the monomers prefer to be near the solvent molecules. Excluded volume effects then expand the chain.\n\nPoor solvent: \\varepsilon_{s p}&gt;\\frac{1}{2}\\left(\\varepsilon_{s s}+\\varepsilon_{p p}\\right) \\quad \\therefore \\Delta \\mathrm{U}_{\\text {mix }}&gt;0\n\nThe attraction between the different monomers offset the excluded volume effect making the polymer collapse.\n\nTuning solvent properties (e.g. the temperature) leads to conformational changes"
+  },
+  {
+    "objectID": "soft-matter_polymers2.html#temperature-dependence-and-theta-theta-solvents",
+    "href": "soft-matter_polymers2.html#temperature-dependence-and-theta-theta-solvents",
+    "title": "Complex Disordered Systems",
+    "section": "Temperature dependence and theta (\\Theta) solvents",
+    "text": "Temperature dependence and theta (\\Theta) solvents\nThe various affinities have temperature dependencies. Typically:\n\nAt high T, the coil expand and the solvent is good\nAt low T the coil collapses and phase separation is observed (polymer-rich from polymer-poor phase)\nThere is an intermediate temperature where the excluded volume and attractive interaction compensate each other and allow for the polymer to behave like an ideal chain (freely jointed chain).\n\nThe temperature is conventionally named \\Theta temperature (or Flory temperature, after physicist Paul Flory)\nThe \\Theta temperature increases wth the solvent-polymer attractions (we need higher temperature to reach ideal behaviour)\n\n\n\nSwelling behaviour of polymers in solvent."
+  },
+  {
+    "objectID": "soft-matter_polymers2.html#examples",
+    "href": "soft-matter_polymers2.html#examples",
+    "title": "Complex Disordered Systems",
+    "section": "Examples",
+    "text": "Examples\n\n\n\nExample: Food polymer — gelatine (from collagen) in water\n\nGood solvent (hot water): gelatin chains hydrate and swell; the protein dissolves and the solution is fluid.\nΘ / marginal: intermediate temperature where hydration and chain self‑attraction roughly balance; solution is viscous but not set.\nPoor solvent (cold): effective attractions dominate; chains associate into a network, causing gelation (collapsed/aggregated network).\n\n\n\n\n\nWe will see gelation in a few sessions."
+  },
+  {
+    "objectID": "soft-matter_polymers2.html#concentrated-polymer-solutions",
+    "href": "soft-matter_polymers2.html#concentrated-polymer-solutions",
+    "title": "Complex Disordered Systems",
+    "section": "Concentrated polymer solutions",
+    "text": "Concentrated polymer solutions\n\nWe mostly dealt with single polymers and their propertie up to now.\nMany polymers together make a polymer solution\n\nAs we vary the concentration the behavior qualitatively changes.\nWe will increase the concentration in steps to reach bulk polymers"
+  },
+  {
+    "objectID": "soft-matter_polymers2.html#dilute-regime",
+    "href": "soft-matter_polymers2.html#dilute-regime",
+    "title": "Complex Disordered Systems",
+    "section": "Dilute regime",
+    "text": "Dilute regime\n\n\n\nThe polymer coils are well-separated on average.\nThe system is dilute if the polymer concentration c is such that \n\n\nwhere N_A is Avogadro’s number, M is the molar mass of a single chain and R_g is the radius of gyration of the chain.\nEssentially, the polymers do not overlap."
+  },
+  {
+    "objectID": "soft-matter_polymers2.html#overlap-concentration-c",
+    "href": "soft-matter_polymers2.html#overlap-concentration-c",
+    "title": "Complex Disordered Systems",
+    "section": "Overlap concentration c*",
+    "text": "Overlap concentration c*\n\n\nOverlap occurs when the volume fraction of coils reaches unity and thus\n\n\\frac{c^{*}}{M} N_{A} \\frac{4 \\pi}{3} R_{g}^{3} \\sim 1 \\quad \\therefore c^{*}=\\frac{3 M}{4 \\pi N_{A} R_{g}^{3}}\n\nPhenomenologically one has R g=\\langle R_g^2\\rangle^{1 / 2}=B M^{\\nu} with an empirical exponent called the Flory scaling exponent. Hence\n\nc^{*}=\\frac{3}{4 \\pi N_{A} B^{3}} M^{1-3 v}"
+  },
+  {
+    "objectID": "soft-matter_polymers2.html#overlap-concentration-c-1",
+    "href": "soft-matter_polymers2.html#overlap-concentration-c-1",
+    "title": "Complex Disordered Systems",
+    "section": "Overlap concentration c*",
+    "text": "Overlap concentration c*\n\nc^{*}=\\frac{3}{4 \\pi N_{A} B^{3}} M^{1-3 v}\n\nExample of polystyrene in a good solvent:\n\n\n\nParameter\nValue\nUnit\n\n\n\n\nMolar mass (M)\n10^{6}\ng mol^{-1}\n\n\nFlory exponent (ν)\n0.6\n\n\n\nKuhn length (B)\n0.028\nnm (g mol^{-1})^{-0.6}\n\n\nOverlap concentration (c*)\n0.29\nkg m^{-3} (or 0.29 mg/ml)\n\n\nPolystyrene density (ρ)\n1050\nkg m^{-3}\n\n\nVolume fraction of monomers\n0.28 \\times 10^{-3}\n\n\n\n\nFor large polymers, c^* can be very small."
+  },
+  {
+    "objectID": "soft-matter_polymers2.html#semi-dilute",
+    "href": "soft-matter_polymers2.html#semi-dilute",
+    "title": "Complex Disordered Systems",
+    "section": "Semi-dilute",
+    "text": "Semi-dilute\n\n\n\nThe concentration is larger than the overlap concentration \\mathrm{c}^{*}, but still much smaller than the bulk density.\nThe coils interpenetrate and entanglement begins\nChange in the dynamics (slowing down)\nYet, the solution is still mostly solvent.\n\nStart of the formation of a polymer network with transient crowded regions within the solvent."
+  },
+  {
+    "objectID": "soft-matter_polymers2.html#polymer-entanglement",
+    "href": "soft-matter_polymers2.html#polymer-entanglement",
+    "title": "Complex Disordered Systems",
+    "section": "Polymer entanglement",
+    "text": "Polymer entanglement\n\n\n\nPolymer entanglement occurs when overlapping polymer chains become topologically intertwined, creating temporary physical knots that restrict chain motion and significantly affect the material’s mechanical and rheological properties.\nIntroduces topological constraints (transient/permanent)"
+  },
+  {
+    "objectID": "soft-matter_polymers2.html#concentrated-bulk-polymers",
+    "href": "soft-matter_polymers2.html#concentrated-bulk-polymers",
+    "title": "Complex Disordered Systems",
+    "section": "Concentrated: bulk polymers",
+    "text": "Concentrated: bulk polymers\n\n\n\nPolymer concentration approaches bulk density\nMonomers occupy significant fraction of total volume\nHighly interpenetrated coils form continuous network\nPolymer-polymer interactions dominate over polymer-solvent interactions\nChain entanglements restrict segment motion\nTransition from solution-like to solid-like behavior\nIncreased mechanical strength and viscosity\nComplex dynamics due to crowding effects\n\nThese are the feature of density-driven glassy behaviour.\n\n\n\n\nPolyethylene Glycol polymer melt (from Martini project)"
+  },
+  {
+    "objectID": "soft-matter_polymers2.html#cross-linking",
+    "href": "soft-matter_polymers2.html#cross-linking",
+    "title": "Complex Disordered Systems",
+    "section": "Cross-linking",
+    "text": "Cross-linking\nCross-linking is the process of forming covalent bonds between separate polymer chains, creating a three-dimensional network structure. These bonds:\n\nConnect different chains at specific points\nRestrict chain movement and deformation\nIncrease mechanical strength and rigidity\nCan be temporary (reversible) or permanent (irreversible)\nDetermine material properties: low cross-linking allows flexibility, high cross-linking creates brittleness\n\n\n\n\nCross linking bonds (reversibly or irreversibly) different chains."
+  },
+  {
+    "objectID": "soft-matter_polymers2.html#bulk-polymer-classes",
+    "href": "soft-matter_polymers2.html#bulk-polymer-classes",
+    "title": "Complex Disordered Systems",
+    "section": "Bulk polymer classes",
+    "text": "Bulk polymer classes\nTwo main classes of bulk polymers, characterised by whether they are cross-linked or not.\n\nElastomers (rubbers): low cross-linking → flexible and elastic (stretch and return to original shape)\nThermosets: high cross-linking → rigid, hard, brittle network\nThermoplastics: no cross-linking → most everyday plastics; behavior upon cooling shows similarities to colloids\n\nPolymer bulks are often referred to as resins."
+  },
+  {
+    "objectID": "soft-matter_polymers2.html#examples-of-bulk-polymer-classes",
+    "href": "soft-matter_polymers2.html#examples-of-bulk-polymer-classes",
+    "title": "Complex Disordered Systems",
+    "section": "Examples of bulk polymer classes",
+    "text": "Examples of bulk polymer classes\n\n\n\n\n\n\n\n\n\nClass\nExamples\nProperties\nApplications\n\n\n\n\nElastomers\nNatural rubber, silicone rubber, neoprene\nFlexible, elastic, low cross-linking\nTires, seals, gaskets, flexible tubing\n\n\nThermosets\nEpoxy resins, phenolic resins, polyurethane foam\nRigid, hard, high cross-linking, irreversible\nCircuit boards, adhesives, insulation, structural composites\n\n\nThermoplastics\nPolyethylene (PE), polypropylene (PP), PET, polystyrene (PS), PVC\nRecyclable, moldable upon heating, no cross-linking\nPackaging, bottles, pipes, automotive parts, consumer products\n\n\n\n\nNatural rubber, epoxy substrate for circuits, PET used in plastic bottles"
+  },
+  {
+    "objectID": "soft-matter_polymers2.html#thermoplastics-behaviour-upon-cooling",
+    "href": "soft-matter_polymers2.html#thermoplastics-behaviour-upon-cooling",
+    "title": "Complex Disordered Systems",
+    "section": "Thermoplastics behaviour upon cooling",
+    "text": "Thermoplastics behaviour upon cooling\n\n\n\nAt high temperature the free energy is dominated by entropy.\n\nrandom assembly of intertwined flexible coils\n\nUpon cooling, potential energy dominates and chain rotation becomes restricted, favoring more extended configurations.\nBelow melting temperature T_m, crystals form (lowest free energy state), but require slow cooling and significant molecular ordering.\nRapid cooling below glass transition temperature T_g (&lt; T_m) prevents crystallization, forming an amorphous glassy state instead—a metastable, long-lived solid.\nSolid thermoplastics typically contain a mixture of crystalline and amorphous regions."
+  },
+  {
+    "objectID": "soft-matter_colloids3.html#today",
+    "href": "soft-matter_colloids3.html#today",
+    "title": "Complex Disordered Systems",
+    "section": "Today",
+    "text": "Today\n\nCharacterisation of colloids\n\nStatic (pair) corrleations\nDiffusive dynamics"
+  },
+  {
+    "objectID": "soft-matter_colloids3.html#pairwise-interactions",
+    "href": "soft-matter_colloids3.html#pairwise-interactions",
+    "title": "Complex Disordered Systems",
+    "section": "Pairwise interactions",
+    "text": "Pairwise interactions\nTrue colloidal systems can be complex:\n\ncharges\nshape deformability/swelling\ninstabilities of the components\n\nTheir theoretical description focuses on essential ingredients.\nA simplifying assumption is that the potential energy of a collection of colloids is purely pairwise\n\nU_N\\left(\\mathbf{r}^N\\right)=\\sum_{i=1}^{N-1} \\sum_{j=i+1}^N V\\left(r_i j\\right)=\\frac{1}{2} \\sum_{i \\neq j} V\\left(r_{i j}\\right)\n\nwhere V(r_{ij}) is the pairwise, radial interaction potential that only depends on the distance between particle centres r_{ij} = \\mathbf{r}_i-\\mathbf{r}_j."
+  },
+  {
+    "objectID": "soft-matter_colloids3.html#aside-not-pairwise",
+    "href": "soft-matter_colloids3.html#aside-not-pairwise",
+    "title": "Complex Disordered Systems",
+    "section": "Aside: Not pairwise?",
+    "text": "Aside: Not pairwise?\nSome examples of non-pariwise situations:\n\nAtomistic models: Electronic densities that fluctuate due to quantum effects are intrinsically many-body\nTrue colloid-cpolymer mixtures: if the polymers are not ideal, their spatial distribution and their forces depend on the positions of more than two colloids\n\n\n\n\nC_{60} isosurface via density functional theory (Wikipedia) and configuration of non-deal colloid-polymer mixture, Rohrbach et al JCP (2022)"
+  },
+  {
+    "objectID": "soft-matter_colloids3.html#pairwise-interactions-and-pair-correlations",
+    "href": "soft-matter_colloids3.html#pairwise-interactions-and-pair-correlations",
+    "title": "Complex Disordered Systems",
+    "section": "Pairwise interactions and pair correlations",
+    "text": "Pairwise interactions and pair correlations\n\nFor pairwise systems, all the thermodynamic properties are solely encoded in the pairwise correlations.\n\nYou have already seen such correlations in other contexts (Ising model, lattice gas).\nThe key pair correlation is the real space radial distribution function:\n\ng(r)=\\frac{1}{\\rho N}\\left\\langle\\sum_{i=1}^N \\sum_{j \\neq i} \\delta\\left(\\left|\\mathbf{r}_i-\\mathbf{r}_j\\right|-r\\right)\\right\\rangle\n\nThe free energy can then be written as \n\\frac{F_{\\mathrm{ex}}}{k_B T}=2 \\pi \\rho N \\int_0^{\\infty}[g(r) \\ln g(r)-g(r)+1] r^2 d r+\\frac{\\rho N}{2 k_B T} \\int V(r) g(r) d^3 r\n\nand you should be able to read out a part very reminiscent of an (information-theoretical) entropy and one reminiscent of an internal energy."
+  },
+  {
+    "objectID": "soft-matter_colloids3.html#radial-distribution-function",
+    "href": "soft-matter_colloids3.html#radial-distribution-function",
+    "title": "Complex Disordered Systems",
+    "section": "Radial distribution function",
+    "text": "Radial distribution function\n\nThe radial distribution function, algorithmic interpretation: at a distance r, we count the number of particle centres within a slice of width dr and then normalise."
+  },
+  {
+    "objectID": "soft-matter_colloids3.html#radial-distribution-function-1",
+    "href": "soft-matter_colloids3.html#radial-distribution-function-1",
+    "title": "Complex Disordered Systems",
+    "section": "Radial distribution function",
+    "text": "Radial distribution function\n\nThe radial distribution function g(r) is related to the average local density at a distance r from a reference particle:\nTo formally derive this, consider a system of N particles in volume V with average density \\rho = N/V. The local density at a distance r from a reference particle is defined as \n\\langle \\rho(r) \\rangle = \\left\\langle \\sum_{j \\neq i} \\delta\\left(|\\mathbf{r}_i - \\mathbf{r}_j| - r\\right) \\right\\rangle\n Averaging over all particles and normalizing by the bulk density \\rho gives the radial distribution function: \ng(r) = \\frac{1}{\\rho N} \\left\\langle \\sum_{i=1}^N \\sum_{j \\neq i} \\delta\\left(|\\mathbf{r}_i - \\mathbf{r}_j| - r\\right) \\right\\rangle = \\frac{\\langle \\rho(r) \\rangle}{\\rho}\n\nwhere \\langle \\rho(r) \\rangle is the average density at distance r from a particle, and \\rho is the bulk density."
+  },
+  {
+    "objectID": "soft-matter_colloids3.html#radial-distribution-function-2",
+    "href": "soft-matter_colloids3.html#radial-distribution-function-2",
+    "title": "Complex Disordered Systems",
+    "section": "Radial distribution function",
+    "text": "Radial distribution function\n\nFor an ideal gas, g(r) = 1 everywhere (no correlations).\nFor hard spheres, g(r) = 0 for r &lt; \\sigma (no overlap), and g(r) shows oscillations at higher r due to packing effects.\n\n\n\n\n\n\n\nNote\n\n\nHard spheres in 3D are not exactly solvable! We only have perturbative solutons to hard spheres\n\n\n\n\nThe g(r) is the central object of (equilibrium) liquid state theory\nCorrelations between two particles 1 and 2 in a fluid to have two possible origins\n\na direct correlation between the two particles, mediated by direct interactions (e.g. collisions) between 1 and 2.\nan indirect correlation, mediated by other particles in the fluid"
+  },
+  {
+    "objectID": "soft-matter_colloids3.html#direct-and-indirect-correlations",
+    "href": "soft-matter_colloids3.html#direct-and-indirect-correlations",
+    "title": "Complex Disordered Systems",
+    "section": "Direct and indirect correlations",
+    "text": "Direct and indirect correlations\n\nThe g(r) contains both.\nWe can assume the existence of a correlation function that instead only incl;udes the direct part and call it c(r). Then a hierarchy exists\n\n\nh\\left(r_{12}\\right)=c\\left(r_{12}\\right)+\\rho \\int c\\left(r_{13}\\right) h\\left(r_{32}\\right) d \\mathbf{r}_3\n\nwhere h(r) = g(r)-1. This is the Ornstein-Zernicke integral equation between particles 1,2 and 3.\nBoth h(r) and c(r) are unknwon in principle. One needs an additional condition to fix box: these are physical closures leading to approximations.\n\nMeaning of teh Ornstein-Zernicke relation, adapted from Santos, Springer(2016)"
+  },
+  {
+    "objectID": "soft-matter_colloids3.html#percus-yevick-approximation",
+    "href": "soft-matter_colloids3.html#percus-yevick-approximation",
+    "title": "Complex Disordered Systems",
+    "section": "Percus-Yevick approximation",
+    "text": "Percus-Yevick approximation\nA common closure is the Percus-Yevick approximation.\n\nc(r)=[1+h(r)]\\left[1-e^{\\beta U(r)}\\right]\n\nThis closure interpolates between the hard-core exclusion (for U(r) \\to \\infty, c(r) \\to 0 inside the core) and the ideal gas limit (for U(r) = 0, c(r) = 0).\nThe result (semi) analytical. For hard spheres, it allows to calculate the g(r) accurately in a wide range of packing fractions\n\n\n\nPY approximation vs simulated data for hard spheres."
+  },
+  {
+    "objectID": "soft-matter_colloids3.html#equation-of-states-from-gr",
+    "href": "soft-matter_colloids3.html#equation-of-states-from-gr",
+    "title": "Complex Disordered Systems",
+    "section": "Equation of states from g(r)",
+    "text": "Equation of states from g(r)\nThe knowledge of the pair correlations also allows one to extract equation of states and significantly improve on the virial expansion, as the g(r) contains packing effects!\n\nP=\\rho k_B T-\\frac{2 \\pi \\rho^2}{3} \\int_0^{\\infty} r^3 \\frac{d u(r)}{d r} g(r) d r\n\n\n\n\n\n\n\nNote\n\n\nFor hard spheres, The derivative \\frac{du(r)}{dr} is zero everywhere except at the contact point r = \\sigma, where it becomes a delta function: \n\\frac{dV(r)}{dr} = -\\infty \\delta(r - \\sigma)\n\nSubstituting into the pressure equation: \nP = \\rho k_B T + \\frac{2\\pi\\rho^2}{3} \\sigma^3 g(\\sigma)\n\nTherefore, for hard spheres, the equation of state only requires knowledge of the contact value g(\\sigma).\nWe will see this in a problem class."
+  },
+  {
+    "objectID": "soft-matter_colloids3.html#structure-factor",
+    "href": "soft-matter_colloids3.html#structure-factor",
+    "title": "Complex Disordered Systems",
+    "section": "Structure factor",
+    "text": "Structure factor\nThe real-space correlations and relations have their reciprocal (Fourier space) counterparts.\nThe structure factor is defined as\n\nS(k)=1+\\rho \\int[g(r)-1] e^{-i \\mathbf{k} \\cdot \\mathbf{r}} d \\mathbf{r}\n\nIsotropicity in 3D simplifies the expression to\n\nS(k)=1+4 \\pi \\rho \\int_0^{\\infty} r^2[g(r)-1] \\frac{\\sin (k r)}{k r} d r\n\n\nRadial distribution functions \\to easily accessed in confocal experiments (large colloids)\nStructure factors \\to immediately accessed via scattering experiments"
+  },
+  {
+    "objectID": "soft-matter_colloids3.html#structure-factor-1",
+    "href": "soft-matter_colloids3.html#structure-factor-1",
+    "title": "Complex Disordered Systems",
+    "section": "Structure factor",
+    "text": "Structure factor\nInterestingly, reciprocal space simplifies integral equations such as Ornstein-Zernicke\n\n\\tilde{h}(k)=\\frac{\\tilde{c}(k)}{1-\\rho \\tilde{c}(k)}\n\nallowing one to read the direct correlation function directly from scattering data, as \\tilde{h}(k)= can be identified with the structure factor.\n\n\n\nStructure factors (left) and radial distribution functions (right) for Gallium at extreme conditions, Drewitt et al PRL (2020)"
+  },
+  {
+    "objectID": "soft-matter_colloids3.html#aside-higher-order-correlations",
+    "href": "soft-matter_colloids3.html#aside-higher-order-correlations",
+    "title": "Complex Disordered Systems",
+    "section": "Aside: higher order correlations",
+    "text": "Aside: higher order correlations\nNothing prevents us to quantify higher order correlations. In general these are non-trivial are controlled by the indirect part of the correlations.\nStandard ways to identify n-particle* correlations is to measure structural motifs.\n\nMany body correlations in hard spheres, seminal work from Josh Robinson, PhD student in Bristol a few years ago, Robinson et al PRL (2019)This is particularly important for dense systems (e.g. glasses, see future lecture)."
+  },
+  {
+    "objectID": "soft-matter_colloids3.html#dynamics-single-vs-collective-displacements",
+    "href": "soft-matter_colloids3.html#dynamics-single-vs-collective-displacements",
+    "title": "Complex Disordered Systems",
+    "section": "Dynamics: single vs collective displacements",
+    "text": "Dynamics: single vs collective displacements\nThe thermal motion of individual colloids is often well modeled via the Langevin equation\n\nm \\frac{d \\vec{v}}{d t}=-\\gamma \\vec{v}+\\vec{\\eta}(t)\n\nCoarse-graining over small volumes (and short times) gives us access to the local density \\rho(\\mathbf{r},t) which obeys a diffusion equation\n\n\\frac{\\partial \\rho(\\mathbf{r}, t)}{\\partial t}=D \\nabla^2 \\rho(\\mathbf{r}, t)\n\nThe diffusivity is linked to the microscopic Langevin parameters via fluctuation-dissipation (Einstein’s relation)\n\nD=\\frac{k_B T}{\\gamma}\n\n(where the friction is the dissipation and the random force is the fluctuations)."
+  },
+  {
+    "objectID": "soft-matter_colloids3.html#diffusion-equation-macroscopic-picture",
+    "href": "soft-matter_colloids3.html#diffusion-equation-macroscopic-picture",
+    "title": "Complex Disordered Systems",
+    "section": "Diffusion equation: macroscopic picture",
+    "text": "Diffusion equation: macroscopic picture\nIt is possible to (re)-derive the diffusion equation solely from macroscopic requirements. We have a macroscopic density \\rho(r,t) and a macroscpic flux \\vec{J}(r,t)\n\ncontinuity: there is no mass loss in the dynamics\n\n\n\\frac{\\partial \\rho(\\mathbf{r}, t)}{\\partial t}+\\nabla \\cdot \\mathbf{J}(\\mathbf{r}, t)=0\n where the divergence \\nabla \\cdot \\mathbf{J}(\\mathbf{r}, t) represents the net outflow of particles from a given region due to the flux \\mathbf{J}.\n\nFick’s law : we assume the flow is a gradient field of the density, flowing from high to low density\n\n\n\\mathbf{J}(\\mathbf{r}, t)=-D \\nabla \\rho(\\mathbf{r}, t)\n\nIt is immediate to combine the two to obtain the diffusion equation\n\n\\frac{\\partial \\rho(\\mathbf{r}, t)}{\\partial t}=D \\nabla^2 \\rho(\\mathbf{r}, t)"
+  },
+  {
+    "objectID": "soft-matter_colloids3.html#measuring-diffusion-coefficients",
+    "href": "soft-matter_colloids3.html#measuring-diffusion-coefficients",
+    "title": "Complex Disordered Systems",
+    "section": "Measuring diffusion coefficients",
+    "text": "Measuring diffusion coefficients\nThe distribution \\rho(\\mathbf{r},t) encodes all the information about the motion of an ensemble.\nOften, less is sufficient to characterise the diffusion. The second moment of the displacements (the mean squared displacement) provides this information. In d dimensions \n\\left\\langle \\left| \\mathbf{r}(t) - \\mathbf{r}(t_0) \\right|^2 \\right\\rangle = 2 d D t\n\nHence D can be extracted from linear fits to the MSD."
+  },
+  {
+    "objectID": "soft-matter_colloids3.html#stokes-einstein-relation-fluctuation-dissipation-for-colloids",
+    "href": "soft-matter_colloids3.html#stokes-einstein-relation-fluctuation-dissipation-for-colloids",
+    "title": "Complex Disordered Systems",
+    "section": "Stokes-Einstein relation: fluctuation dissipation for colloids",
+    "text": "Stokes-Einstein relation: fluctuation dissipation for colloids\nIn dilute conditions, let’s think of a particle slowly sedimenting in a viscous fluid.\nThe density distribution is Boltzmann\n\nn(x)=n_0 \\exp \\left(-U(x) / k_B T\\right)=n_0 \\exp \\left(-F x / k_B T\\right)\n\nwhere F= m_B g is the force from the buoyant mass.\nA flux is produced J_F = n(x) v=\\frac{n(x) F}{\\xi}\nwhere we used the fact that the velocity is set by the viscosity \\eta as v=F/\\eta.\nDiffusion occurs at the same time, driven by the gradient (Fick’s law) \nJ_D(x)=-D \\frac{\\partial n(x)}{\\partial x}"
+  },
+  {
+    "objectID": "soft-matter_colloids3.html#stokes-einstein-relation-fluctuation-dissipation-for-colloids-1",
+    "href": "soft-matter_colloids3.html#stokes-einstein-relation-fluctuation-dissipation-for-colloids-1",
+    "title": "Complex Disordered Systems",
+    "section": "Stokes-Einstein relation: fluctuation dissipation for colloids",
+    "text": "Stokes-Einstein relation: fluctuation dissipation for colloids\nEquating the two we have\n\n\\frac{n(x) F}{\\xi}=-D \\frac{\\partial n(x)}{d x}=D \\frac{F}{k_B T} n(x)\n\nand differentiating the Boltzmann distribution gives \n\\frac{n(x) F}{\\xi}= D \\frac{F}{k_B T} n(x)\n\nHence a balance exists between thermal fluctuations and viscosities. For a sphere, Stoke’s law \\xi=6 \\pi \\eta R yielding simply\n\nD=\\frac{k_B T}{\\xi}=\\frac{k_B T}{6 \\pi \\eta R}\n\nThis is a re-statement of the Einstein relation, called the Stokes-Einstein relation.\n\n\\text { Fluctuations: } k_B T \\quad \\longrightarrow \\quad \\text { Observed motion: } D \\quad \\longrightarrow \\quad \\text { Dissipation: } 6 \\pi \\eta R .\n\nWhich is generic under (moderate) driving."
+  },
+  {
+    "objectID": "soft-matter_colloids3.html#random-walkers-in-2d-example",
+    "href": "soft-matter_colloids3.html#random-walkers-in-2d-example",
+    "title": "Complex Disordered Systems",
+    "section": "Random walkers in 2d, example",
+    "text": "Random walkers in 2d, example"
+  },
+  {
+    "objectID": "soft-matter_colloids3.html#hidden-assumptions",
+    "href": "soft-matter_colloids3.html#hidden-assumptions",
+    "title": "Complex Disordered Systems",
+    "section": "Hidden assumptions",
+    "text": "Hidden assumptions\n\n\n\n\n\n\nNote\n\n\n\nWe have been considering ensembles of particles microscopically governed by the Langevin equation\nWe did not comment on the inter-particle interactions and assumed that the properties of the thermal bath determine the diffusivity D. In reality, interactions between particles can lead to deviations from simple diffusion, especially at higher concentrations, where collective effects and hydrodynamic interactions become important."
+  },
+  {
+    "objectID": "soft-matter_colloids3.html#dilute-vs-dense-diffusion",
+    "href": "soft-matter_colloids3.html#dilute-vs-dense-diffusion",
+    "title": "Complex Disordered Systems",
+    "section": "Dilute vs dense diffusion",
+    "text": "Dilute vs dense diffusion\n\nConsider hard spheres in a fluid.\nAt low volume fractions \\phi they rarely collide and they perofrm under/over-damped (Langevin) dynamics. They will therefore diffuse as \\operatorname{MSD} (t)= 6D_0 t\nThings change when we increase the packing.\n\nShort times: D_s &lt;D_0, diffusion within cages formed by the neighbours. Mostly free, but with some collisions.\nLong times: D_L\\ll D_0 cage breaking. Interactions are both hard core and hydrodynamic\n\n\n\n\n\nMSD of colloids"
+  },
+  {
+    "objectID": "soft-matter_colloids3.html#dilute-vs-dense-diffusion-1",
+    "href": "soft-matter_colloids3.html#dilute-vs-dense-diffusion-1",
+    "title": "Complex Disordered Systems",
+    "section": "Dilute vs dense diffusion",
+    "text": "Dilute vs dense diffusion\n\nAt very high volume fractions the cage mechanism becomes more complex: paricles are trapped for long times and only occasionaly break cages:\n\ncage-jump dynamics \\to glassy dynamics (see future lectures)\nrare events \\to Levy-flight statistics \\neq Gaussian/diffusive statistics\nBreaking of fluctuation-dissipation condition encoded in the Stokes-Einstein relation\n\nthe viscosity increases much faster than the decrease in diffusion D\\xi/T\\neq \\mathrm{constant}\nThis means tha D\\eta\\neq \\text{constant} and since the viscosity \\eta\\sim \\tau (a characteristic relaxation time) D\\tau\\neq \\text{constant}\n\n\n\n\n\n\nStokes-Einstein brakdown in a theoretical model of glassy behaviour"
+  },
+  {
     "objectID": "soft-matter_colloids1.html#today",
     "href": "soft-matter_colloids1.html#today",
     "title": "Complex Disordered Systems",
@@ -201,754 +1027,5 @@
     "title": "Complex Disordered Systems",
     "section": "Summary of main colloid-colloid interactions",
     "text": "Summary of main colloid-colloid interactions\n\n\n\n\n\n\n\n\nInteraction Type\nDescription\nRange\n\n\n\n\nVan der Waals\nAttractive forces arising from induced dipoles between particles.\nShort-range\n\n\nDouble Layer\nElectrostatic repulsion due to overlapping electrical double layers around charged particles.\nLong-range\n\n\nDLVO\nCombination of van der Waals attraction and double layer repulsion.\nShort and long range\n\n\nDepletion\nTypically attractive interactions emerging from purely entropic interactions\nShort range"
-  },
-  {
-    "objectID": "soft-matter_colloids3.html#today",
-    "href": "soft-matter_colloids3.html#today",
-    "title": "Complex Disordered Systems",
-    "section": "Today",
-    "text": "Today\n\nCharacterisation of colloids\n\nStatic (pair) corrleations\nDiffusive dynamics"
-  },
-  {
-    "objectID": "soft-matter_colloids3.html#pairwise-interactions",
-    "href": "soft-matter_colloids3.html#pairwise-interactions",
-    "title": "Complex Disordered Systems",
-    "section": "Pairwise interactions",
-    "text": "Pairwise interactions\nTrue colloidal systems can be complex:\n\ncharges\nshape deformability/swelling\ninstabilities of the components\n\nTheir theoretical description focuses on essential ingredients.\nA simplifying assumption is that the potential energy of a collection of colloids is purely pairwise\n\nU_N\\left(\\mathbf{r}^N\\right)=\\sum_{i=1}^{N-1} \\sum_{j=i+1}^N V\\left(r_i j\\right)=\\frac{1}{2} \\sum_{i \\neq j} V\\left(r_{i j}\\right)\n\nwhere V(r_{ij}) is the pairwise, radial interaction potential that only depends on the distance between particle centres r_{ij} = \\mathbf{r}_i-\\mathbf{r}_j."
-  },
-  {
-    "objectID": "soft-matter_colloids3.html#aside-not-pairwise",
-    "href": "soft-matter_colloids3.html#aside-not-pairwise",
-    "title": "Complex Disordered Systems",
-    "section": "Aside: Not pairwise?",
-    "text": "Aside: Not pairwise?\nSome examples of non-pariwise situations:\n\nAtomistic models: Electronic densities that fluctuate due to quantum effects are intrinsically many-body\nTrue colloid-cpolymer mixtures: if the polymers are not ideal, their spatial distribution and their forces depend on the positions of more than two colloids\n\n\n\n\nC_{60} isosurface via density functional theory (Wikipedia) and configuration of non-deal colloid-polymer mixture, Rohrbach et al JCP (2022)"
-  },
-  {
-    "objectID": "soft-matter_colloids3.html#pairwise-interactions-and-pair-correlations",
-    "href": "soft-matter_colloids3.html#pairwise-interactions-and-pair-correlations",
-    "title": "Complex Disordered Systems",
-    "section": "Pairwise interactions and pair correlations",
-    "text": "Pairwise interactions and pair correlations\n\nFor pairwise systems, all the thermodynamic properties are solely encoded in the pairwise correlations.\n\nYou have already seen such correlations in other contexts (Ising model, lattice gas).\nThe key pair correlation is the real space radial distribution function:\n\ng(r)=\\frac{1}{\\rho N}\\left\\langle\\sum_{i=1}^N \\sum_{j \\neq i} \\delta\\left(\\left|\\mathbf{r}_i-\\mathbf{r}_j\\right|-r\\right)\\right\\rangle\n\nThe free energy can then be written as \n\\frac{F_{\\mathrm{ex}}}{k_B T}=2 \\pi \\rho N \\int_0^{\\infty}[g(r) \\ln g(r)-g(r)+1] r^2 d r+\\frac{\\rho N}{2 k_B T} \\int V(r) g(r) d^3 r\n\nand you should be able to read out a part very reminiscent of an (information-theoretical) entropy and one reminiscent of an internal energy."
-  },
-  {
-    "objectID": "soft-matter_colloids3.html#radial-distribution-function",
-    "href": "soft-matter_colloids3.html#radial-distribution-function",
-    "title": "Complex Disordered Systems",
-    "section": "Radial distribution function",
-    "text": "Radial distribution function\n\nThe radial distribution function, algorithmic interpretation: at a distance r, we count the number of particle centres within a slice of width dr and then normalise."
-  },
-  {
-    "objectID": "soft-matter_colloids3.html#radial-distribution-function-1",
-    "href": "soft-matter_colloids3.html#radial-distribution-function-1",
-    "title": "Complex Disordered Systems",
-    "section": "Radial distribution function",
-    "text": "Radial distribution function\n\nThe radial distribution function g(r) is related to the average local density at a distance r from a reference particle:\nTo formally derive this, consider a system of N particles in volume V with average density \\rho = N/V. The local density at a distance r from a reference particle is defined as \n\\langle \\rho(r) \\rangle = \\left\\langle \\sum_{j \\neq i} \\delta\\left(|\\mathbf{r}_i - \\mathbf{r}_j| - r\\right) \\right\\rangle\n Averaging over all particles and normalizing by the bulk density \\rho gives the radial distribution function: \ng(r) = \\frac{1}{\\rho N} \\left\\langle \\sum_{i=1}^N \\sum_{j \\neq i} \\delta\\left(|\\mathbf{r}_i - \\mathbf{r}_j| - r\\right) \\right\\rangle = \\frac{\\langle \\rho(r) \\rangle}{\\rho}\n\nwhere \\langle \\rho(r) \\rangle is the average density at distance r from a particle, and \\rho is the bulk density."
-  },
-  {
-    "objectID": "soft-matter_colloids3.html#radial-distribution-function-2",
-    "href": "soft-matter_colloids3.html#radial-distribution-function-2",
-    "title": "Complex Disordered Systems",
-    "section": "Radial distribution function",
-    "text": "Radial distribution function\n\nFor an ideal gas, g(r) = 1 everywhere (no correlations).\nFor hard spheres, g(r) = 0 for r &lt; \\sigma (no overlap), and g(r) shows oscillations at higher r due to packing effects.\n\n\n\n\n\n\n\nNote\n\n\nHard spheres in 3D are not exactly solvable! We only have perturbative solutons to hard spheres\n\n\n\n\nThe g(r) is the central object of (equilibrium) liquid state theory\nCorrelations between two particles 1 and 2 in a fluid to have two possible origins\n\na direct correlation between the two particles, mediated by direct interactions (e.g. collisions) between 1 and 2.\nan indirect correlation, mediated by other particles in the fluid"
-  },
-  {
-    "objectID": "soft-matter_colloids3.html#direct-and-indirect-correlations",
-    "href": "soft-matter_colloids3.html#direct-and-indirect-correlations",
-    "title": "Complex Disordered Systems",
-    "section": "Direct and indirect correlations",
-    "text": "Direct and indirect correlations\n\nThe g(r) contains both.\nWe can assume the existence of a correlation function that instead only incl;udes the direct part and call it c(r). Then a hierarchy exists\n\n\nh\\left(r_{12}\\right)=c\\left(r_{12}\\right)+\\rho \\int c\\left(r_{13}\\right) h\\left(r_{32}\\right) d \\mathbf{r}_3\n\nwhere h(r) = g(r)-1. This is the Ornstein-Zernicke integral equation between particles 1,2 and 3.\nBoth h(r) and c(r) are unknwon in principle. One needs an additional condition to fix box: these are physical closures leading to approximations.\n\nMeaning of teh Ornstein-Zernicke relation, adapted from Santos, Springer(2016)"
-  },
-  {
-    "objectID": "soft-matter_colloids3.html#percus-yevick-approximation",
-    "href": "soft-matter_colloids3.html#percus-yevick-approximation",
-    "title": "Complex Disordered Systems",
-    "section": "Percus-Yevick approximation",
-    "text": "Percus-Yevick approximation\nA common closure is the Percus-Yevick approximation.\n\nc(r)=[1+h(r)]\\left[1-e^{\\beta U(r)}\\right]\n\nThis closure interpolates between the hard-core exclusion (for U(r) \\to \\infty, c(r) \\to 0 inside the core) and the ideal gas limit (for U(r) = 0, c(r) = 0).\nThe result (semi) analytical. For hard spheres, it allows to calculate the g(r) accurately in a wide range of packing fractions\n\n\n\nPY approximation vs simulated data for hard spheres."
-  },
-  {
-    "objectID": "soft-matter_colloids3.html#equation-of-states-from-gr",
-    "href": "soft-matter_colloids3.html#equation-of-states-from-gr",
-    "title": "Complex Disordered Systems",
-    "section": "Equation of states from g(r)",
-    "text": "Equation of states from g(r)\nThe knowledge of the pair correlations also allows one to extract equation of states and significantly improve on the virial expansion, as the g(r) contains packing effects!\n\nP=\\rho k_B T-\\frac{2 \\pi \\rho^2}{3} \\int_0^{\\infty} r^3 \\frac{d u(r)}{d r} g(r) d r\n\n\n\n\n\n\n\nNote\n\n\nFor hard spheres, The derivative \\frac{du(r)}{dr} is zero everywhere except at the contact point r = \\sigma, where it becomes a delta function: \n\\frac{dV(r)}{dr} = -\\infty \\delta(r - \\sigma)\n\nSubstituting into the pressure equation: \nP = \\rho k_B T + \\frac{2\\pi\\rho^2}{3} \\sigma^3 g(\\sigma)\n\nTherefore, for hard spheres, the equation of state only requires knowledge of the contact value g(\\sigma).\nWe will see this in a problem class."
-  },
-  {
-    "objectID": "soft-matter_colloids3.html#structure-factor",
-    "href": "soft-matter_colloids3.html#structure-factor",
-    "title": "Complex Disordered Systems",
-    "section": "Structure factor",
-    "text": "Structure factor\nThe real-space correlations and relations have their reciprocal (Fourier space) counterparts.\nThe structure factor is defined as\n\nS(k)=1+\\rho \\int[g(r)-1] e^{-i \\mathbf{k} \\cdot \\mathbf{r}} d \\mathbf{r}\n\nIsotropicity in 3D simplifies the expression to\n\nS(k)=1+4 \\pi \\rho \\int_0^{\\infty} r^2[g(r)-1] \\frac{\\sin (k r)}{k r} d r\n\n\nRadial distribution functions \\to easily accessed in confocal experiments (large colloids)\nStructure factors \\to immediately accessed via scattering experiments"
-  },
-  {
-    "objectID": "soft-matter_colloids3.html#structure-factor-1",
-    "href": "soft-matter_colloids3.html#structure-factor-1",
-    "title": "Complex Disordered Systems",
-    "section": "Structure factor",
-    "text": "Structure factor\nInterestingly, reciprocal space simplifies integral equations such as Ornstein-Zernicke\n\n\\tilde{h}(k)=\\frac{\\tilde{c}(k)}{1-\\rho \\tilde{c}(k)}\n\nallowing one to read the direct correlation function directly from scattering data, as \\tilde{h}(k)= can be identified with the structure factor.\n\n\n\nStructure factors (left) and radial distribution functions (right) for Gallium at extreme conditions, Drewitt et al PRL (2020)"
-  },
-  {
-    "objectID": "soft-matter_colloids3.html#aside-higher-order-correlations",
-    "href": "soft-matter_colloids3.html#aside-higher-order-correlations",
-    "title": "Complex Disordered Systems",
-    "section": "Aside: higher order correlations",
-    "text": "Aside: higher order correlations\nNothing prevents us to quantify higher order correlations. In general these are non-trivial are controlled by the indirect part of the correlations.\nStandard ways to identify n-particle* correlations is to measure structural motifs.\n\nMany body correlations in hard spheres, seminal work from Josh Robinson, PhD student in Bristol a few years ago, Robinson et al PRL (2019)This is particularly important for dense systems (e.g. glasses, see future lecture)."
-  },
-  {
-    "objectID": "soft-matter_colloids3.html#dynamics-single-vs-collective-displacements",
-    "href": "soft-matter_colloids3.html#dynamics-single-vs-collective-displacements",
-    "title": "Complex Disordered Systems",
-    "section": "Dynamics: single vs collective displacements",
-    "text": "Dynamics: single vs collective displacements\nThe thermal motion of individual colloids is often well modeled via the Langevin equation\n\nm \\frac{d \\vec{v}}{d t}=-\\gamma \\vec{v}+\\vec{\\eta}(t)\n\nCoarse-graining over small volumes (and short times) gives us access to the local density \\rho(\\mathbf{r},t) which obeys a diffusion equation\n\n\\frac{\\partial \\rho(\\mathbf{r}, t)}{\\partial t}=D \\nabla^2 \\rho(\\mathbf{r}, t)\n\nThe diffusivity is linked to the microscopic Langevin parameters via fluctuation-dissipation (Einstein’s relation)\n\nD=\\frac{k_B T}{\\gamma}\n\n(where the friction is the dissipation and the random force is the fluctuations)."
-  },
-  {
-    "objectID": "soft-matter_colloids3.html#diffusion-equation-macroscopic-picture",
-    "href": "soft-matter_colloids3.html#diffusion-equation-macroscopic-picture",
-    "title": "Complex Disordered Systems",
-    "section": "Diffusion equation: macroscopic picture",
-    "text": "Diffusion equation: macroscopic picture\nIt is possible to (re)-derive the diffusion equation solely from macroscopic requirements. We have a macroscopic density \\rho(r,t) and a macroscpic flux \\vec{J}(r,t)\n\ncontinuity: there is no mass loss in the dynamics\n\n\n\\frac{\\partial \\rho(\\mathbf{r}, t)}{\\partial t}+\\nabla \\cdot \\mathbf{J}(\\mathbf{r}, t)=0\n where the divergence \\nabla \\cdot \\mathbf{J}(\\mathbf{r}, t) represents the net outflow of particles from a given region due to the flux \\mathbf{J}.\n\nFick’s law : we assume the flow is a gradient field of the density, flowing from high to low density\n\n\n\\mathbf{J}(\\mathbf{r}, t)=-D \\nabla \\rho(\\mathbf{r}, t)\n\nIt is immediate to combine the two to obtain the diffusion equation\n\n\\frac{\\partial \\rho(\\mathbf{r}, t)}{\\partial t}=D \\nabla^2 \\rho(\\mathbf{r}, t)"
-  },
-  {
-    "objectID": "soft-matter_colloids3.html#measuring-diffusion-coefficients",
-    "href": "soft-matter_colloids3.html#measuring-diffusion-coefficients",
-    "title": "Complex Disordered Systems",
-    "section": "Measuring diffusion coefficients",
-    "text": "Measuring diffusion coefficients\nThe distribution \\rho(\\mathbf{r},t) encodes all the information about the motion of an ensemble.\nOften, less is sufficient to characterise the diffusion. The second moment of the displacements (the mean squared displacement) provides this information. In d dimensions \n\\left\\langle \\left| \\mathbf{r}(t) - \\mathbf{r}(t_0) \\right|^2 \\right\\rangle = 2 d D t\n\nHence D can be extracted from linear fits to the MSD."
-  },
-  {
-    "objectID": "soft-matter_colloids3.html#stokes-einstein-relation-fluctuation-dissipation-for-colloids",
-    "href": "soft-matter_colloids3.html#stokes-einstein-relation-fluctuation-dissipation-for-colloids",
-    "title": "Complex Disordered Systems",
-    "section": "Stokes-Einstein relation: fluctuation dissipation for colloids",
-    "text": "Stokes-Einstein relation: fluctuation dissipation for colloids\nIn dilute conditions, let’s think of a particle slowly sedimenting in a viscous fluid.\nThe density distribution is Boltzmann\n\nn(x)=n_0 \\exp \\left(-U(x) / k_B T\\right)=n_0 \\exp \\left(-F x / k_B T\\right)\n\nwhere F= m_B g is the force from the buoyant mass.\nA flux is produced J_F = n(x) v=\\frac{n(x) F}{\\xi}\nwhere we used the fact that the velocity is set by the viscosity \\eta as v=F/\\eta.\nDiffusion occurs at the same time, driven by the gradient (Fick’s law) \nJ_D(x)=-D \\frac{\\partial n(x)}{\\partial x}"
-  },
-  {
-    "objectID": "soft-matter_colloids3.html#stokes-einstein-relation-fluctuation-dissipation-for-colloids-1",
-    "href": "soft-matter_colloids3.html#stokes-einstein-relation-fluctuation-dissipation-for-colloids-1",
-    "title": "Complex Disordered Systems",
-    "section": "Stokes-Einstein relation: fluctuation dissipation for colloids",
-    "text": "Stokes-Einstein relation: fluctuation dissipation for colloids\nEquating the two we have\n\n\\frac{n(x) F}{\\xi}=-D \\frac{\\partial n(x)}{d x}=D \\frac{F}{k_B T} n(x)\n\nand differentiating the Boltzmann distribution gives \n\\frac{n(x) F}{\\xi}= D \\frac{F}{k_B T} n(x)\n\nHence a balance exists between thermal fluctuations and viscosities. For a sphere, Stoke’s law \\xi=6 \\pi \\eta R yielding simply\n\nD=\\frac{k_B T}{\\xi}=\\frac{k_B T}{6 \\pi \\eta R}\n\nThis is a re-statement of the Einstein relation, called the Stokes-Einstein relation.\n\n\\text { Fluctuations: } k_B T \\quad \\longrightarrow \\quad \\text { Observed motion: } D \\quad \\longrightarrow \\quad \\text { Dissipation: } 6 \\pi \\eta R .\n\nWhich is generic under (moderate) driving."
-  },
-  {
-    "objectID": "soft-matter_colloids3.html#random-walkers-in-2d-example",
-    "href": "soft-matter_colloids3.html#random-walkers-in-2d-example",
-    "title": "Complex Disordered Systems",
-    "section": "Random walkers in 2d, example",
-    "text": "Random walkers in 2d, example"
-  },
-  {
-    "objectID": "soft-matter_colloids3.html#hidden-assumptions",
-    "href": "soft-matter_colloids3.html#hidden-assumptions",
-    "title": "Complex Disordered Systems",
-    "section": "Hidden assumptions",
-    "text": "Hidden assumptions\n\n\n\n\n\n\nNote\n\n\n\nWe have been considering ensembles of particles microscopically governed by the Langevin equation\nWe did not comment on the inter-particle interactions and assumed that the properties of the thermal bath determine the diffusivity D. In reality, interactions between particles can lead to deviations from simple diffusion, especially at higher concentrations, where collective effects and hydrodynamic interactions become important."
-  },
-  {
-    "objectID": "soft-matter_colloids3.html#dilute-vs-dense-diffusion",
-    "href": "soft-matter_colloids3.html#dilute-vs-dense-diffusion",
-    "title": "Complex Disordered Systems",
-    "section": "Dilute vs dense diffusion",
-    "text": "Dilute vs dense diffusion\n\nConsider hard spheres in a fluid.\nAt low volume fractions \\phi they rarely collide and they perofrm under/over-damped (Langevin) dynamics. They will therefore diffuse as \\operatorname{MSD} (t)= 6D_0 t\nThings change when we increase the packing.\n\nShort times: D_s &lt;D_0, diffusion within cages formed by the neighbours. Mostly free, but with some collisions.\nLong times: D_L\\ll D_0 cage breaking. Interactions are both hard core and hydrodynamic\n\n\n\n\n\nMSD of colloids"
-  },
-  {
-    "objectID": "soft-matter_colloids3.html#dilute-vs-dense-diffusion-1",
-    "href": "soft-matter_colloids3.html#dilute-vs-dense-diffusion-1",
-    "title": "Complex Disordered Systems",
-    "section": "Dilute vs dense diffusion",
-    "text": "Dilute vs dense diffusion\n\nAt very high volume fractions the cage mechanism becomes more complex: paricles are trapped for long times and only occasionaly break cages:\n\ncage-jump dynamics \\to glassy dynamics (see future lectures)\nrare events \\to Levy-flight statistics \\neq Gaussian/diffusive statistics\nBreaking of fluctuation-dissipation condition encoded in the Stokes-Einstein relation\n\nthe viscosity increases much faster than the decrease in diffusion D\\xi/T\\neq \\mathrm{constant}\nThis means tha D\\eta\\neq \\text{constant} and since the viscosity \\eta\\sim \\tau (a characteristic relaxation time) D\\tau\\neq \\text{constant}\n\n\n\n\n\n\nStokes-Einstein brakdown in a theoretical model of glassy behaviour"
-  },
-  {
-    "objectID": "soft-matter_polymers2.html#today",
-    "href": "soft-matter_polymers2.html#today",
-    "title": "Complex Disordered Systems",
-    "section": "Today",
-    "text": "Today\n\nGood, poor and theta solvents\nConcentrated polymer solutions"
-  },
-  {
-    "objectID": "soft-matter_polymers2.html#polymers-in-solvents",
-    "href": "soft-matter_polymers2.html#polymers-in-solvents",
-    "title": "Complex Disordered Systems",
-    "section": "Polymers in solvents",
-    "text": "Polymers in solvents\n\nPolymers typically are dispersed in a medium (solvent).\nSolvent-polymer attractions (the affinity) influences the polymer conformations:\n\ngood solvents \\to high affinity \\to the polymer swells (expands)\npoor solvents \\to low affinity \\to the polymer shrinks\n\nThe affinity depends on the details of the molecular interactions but can be coarse-grained.\nWe can construct a simple model with effective interaction energies\n\\varepsilon_{s s} for the solvent-solvent\n\\varepsilon_{\\mathrm{pp}} for monomer-monomer\n\\varepsilon_{s p} for solvent-monomer interactions."
-  },
-  {
-    "objectID": "soft-matter_polymers2.html#energy-of-mixing",
-    "href": "soft-matter_polymers2.html#energy-of-mixing",
-    "title": "Complex Disordered Systems",
-    "section": "Energy of mixing",
-    "text": "Energy of mixing\n\n\nOn-lattice model:\n\neach site has z nearest neighbours\nN_{s} solvent molecules\nN_{p} monomers\n\\mathrm{N}_{\\mathrm{sp}} solvent-monomer contacts.\n\nEffective interactions:\n\n\\varepsilon_{s s} for the solvent-solvent\n\\varepsilon_{\\mathrm{pp}} for monomer-monomer\n\\varepsilon_{s p} for solvent-monomer interactions.\n\n\n\n\nThen the energy of mixing \\Delta U_{\\operatorname{mix}} is obtained as the difference between the total energy U of the mixed system and the sum of the energies of the pure solvent and pure polymer, U_{S}+U_{p}.\n\n\\Delta U_{\\operatorname{mix}}=U-\\left(U_{S}+U_{p}\\right)"
-  },
-  {
-    "objectID": "soft-matter_polymers2.html#energy-of-mixing-1",
-    "href": "soft-matter_polymers2.html#energy-of-mixing-1",
-    "title": "Complex Disordered Systems",
-    "section": "Energy of mixing",
-    "text": "Energy of mixing\n\n\n\nEnergy of pure solvent U_{s}=\\frac{z N_{s} \\varepsilon_{s s}}{2}\nEnergy of pure polymer U_{p}=\\frac{z N_{p} \\varepsilon_{p p}}{2}\n\n\n\n\nEnergy of solution U=N_{s p} \\varepsilon_{s p}+\\dfrac{\\left(z N_{s}-N_{s p}\\right) \\varepsilon_{s s}}{2}+\\dfrac{\\left(z N_{p}-N_{s p}\\right) \\varepsilon_{p p}}{2}\nWe obtain that the energy of mixing \\Delta U_{\\mathrm{mix}}=N_{s p}\\left[\\varepsilon_{s p}-\\dfrac{1}{2}\\left(\\varepsilon_{s s}+\\varepsilon_{p p}\\right)\\right]\nwhich can change sign depending on our choices for the effective interaction energies."
-  },
-  {
-    "objectID": "soft-matter_polymers2.html#good-solvents-poor-solvents-and-theta-solvents",
-    "href": "soft-matter_polymers2.html#good-solvents-poor-solvents-and-theta-solvents",
-    "title": "Complex Disordered Systems",
-    "section": "Good solvents, poor solvents and theta solvents",
-    "text": "Good solvents, poor solvents and theta solvents\n\nGood solvent: \\varepsilon_{s p}&lt;\\frac{1}{2}\\left(\\varepsilon_{s s}+\\varepsilon_{p p}\\right) \\quad \\therefore \\Delta \\mathrm{U}_{\\text {mix }}&lt;0\n\nThis is the case of a ‘good solvent’, because the monomers prefer to be near the solvent molecules. Excluded volume effects then expand the chain.\n\nPoor solvent: \\varepsilon_{s p}&gt;\\frac{1}{2}\\left(\\varepsilon_{s s}+\\varepsilon_{p p}\\right) \\quad \\therefore \\Delta \\mathrm{U}_{\\text {mix }}&gt;0\n\nThe attraction between the different monomers offset the excluded volume effect making the polymer collapse.\n\nTuning solvent properties (e.g. the temperature) leads to conformational changes"
-  },
-  {
-    "objectID": "soft-matter_polymers2.html#temperature-dependence-and-theta-theta-solvents",
-    "href": "soft-matter_polymers2.html#temperature-dependence-and-theta-theta-solvents",
-    "title": "Complex Disordered Systems",
-    "section": "Temperature dependence and theta (\\Theta) solvents",
-    "text": "Temperature dependence and theta (\\Theta) solvents\nThe various affinities have temperature dependencies. Typically:\n\nAt high T, the coil expand and the solvent is good\nAt low T the coil collapses and phase separation is observed (polymer-rich from polymer-poor phase)\nThere is an intermediate temperature where the excluded volume and attractive interaction compensate each other and allow for the polymer to behave like an ideal chain (freely jointed chain).\n\nThe temperature is conventionally named \\Theta temperature (or Flory temperature, after physicist Paul Flory)\nThe \\Theta temperature increases wth the solvent-polymer attractions (we need higher temperature to reach ideal behaviour)\n\n\n\nSwelling behaviour of polymers in solvent."
-  },
-  {
-    "objectID": "soft-matter_polymers2.html#examples",
-    "href": "soft-matter_polymers2.html#examples",
-    "title": "Complex Disordered Systems",
-    "section": "Examples",
-    "text": "Examples\n\n\n\nExample: Food polymer — gelatine (from collagen) in water\n\nGood solvent (hot water): gelatin chains hydrate and swell; the protein dissolves and the solution is fluid.\nΘ / marginal: intermediate temperature where hydration and chain self‑attraction roughly balance; solution is viscous but not set.\nPoor solvent (cold): effective attractions dominate; chains associate into a network, causing gelation (collapsed/aggregated network).\n\n\n\n\n\nWe will see gelation in a few sessions."
-  },
-  {
-    "objectID": "soft-matter_polymers2.html#concentrated-polymer-solutions",
-    "href": "soft-matter_polymers2.html#concentrated-polymer-solutions",
-    "title": "Complex Disordered Systems",
-    "section": "Concentrated polymer solutions",
-    "text": "Concentrated polymer solutions\n\nWe mostly dealt with single polymers and their propertie up to now.\nMany polymers together make a polymer solution\n\nAs we vary the concentration the behavior qualitatively changes.\nWe will increase the concentration in steps to reach bulk polymers"
-  },
-  {
-    "objectID": "soft-matter_polymers2.html#dilute-regime",
-    "href": "soft-matter_polymers2.html#dilute-regime",
-    "title": "Complex Disordered Systems",
-    "section": "Dilute regime",
-    "text": "Dilute regime\n\n\n\nThe polymer coils are well-separated on average.\nThe system is dilute if the polymer concentration c is such that \n\n\nwhere N_A is Avogadro’s number, M is the molar mass of a single chain and R_g is the radius of gyration of the chain.\nEssentially, the polymers do not overlap."
-  },
-  {
-    "objectID": "soft-matter_polymers2.html#overlap-concentration-c",
-    "href": "soft-matter_polymers2.html#overlap-concentration-c",
-    "title": "Complex Disordered Systems",
-    "section": "Overlap concentration c*",
-    "text": "Overlap concentration c*\n\n\nOverlap occurs when the volume fraction of coils reaches unity and thus\n\n\\frac{c^{*}}{M} N_{A} \\frac{4 \\pi}{3} R_{g}^{3} \\sim 1 \\quad \\therefore c^{*}=\\frac{3 M}{4 \\pi N_{A} R_{g}^{3}}\n\nPhenomenologically one has R g=\\langle R_g^2\\rangle^{1 / 2}=B M^{\\nu} with an empirical exponent called the Flory scaling exponent. Hence\n\nc^{*}=\\frac{3}{4 \\pi N_{A} B^{3}} M^{1-3 v}"
-  },
-  {
-    "objectID": "soft-matter_polymers2.html#overlap-concentration-c-1",
-    "href": "soft-matter_polymers2.html#overlap-concentration-c-1",
-    "title": "Complex Disordered Systems",
-    "section": "Overlap concentration c*",
-    "text": "Overlap concentration c*\n\nc^{*}=\\frac{3}{4 \\pi N_{A} B^{3}} M^{1-3 v}\n\nExample of polystyrene in a good solvent:\n\n\n\nParameter\nValue\nUnit\n\n\n\n\nMolar mass (M)\n10^{6}\ng mol^{-1}\n\n\nFlory exponent (ν)\n0.6\n\n\n\nKuhn length (B)\n0.028\nnm (g mol^{-1})^{-0.6}\n\n\nOverlap concentration (c*)\n0.29\nkg m^{-3} (or 0.29 mg/ml)\n\n\nPolystyrene density (ρ)\n1050\nkg m^{-3}\n\n\nVolume fraction of monomers\n0.28 \\times 10^{-3}\n\n\n\n\nFor large polymers, c^* can be very small."
-  },
-  {
-    "objectID": "soft-matter_polymers2.html#semi-dilute",
-    "href": "soft-matter_polymers2.html#semi-dilute",
-    "title": "Complex Disordered Systems",
-    "section": "Semi-dilute",
-    "text": "Semi-dilute\n\n\n\nThe concentration is larger than the overlap concentration \\mathrm{c}^{*}, but still much smaller than the bulk density.\nThe coils interpenetrate and entanglement begins\nChange in the dynamics (slowing down)\nYet, the solution is still mostly solvent.\n\nStart of the formation of a polymer network with transient crowded regions within the solvent."
-  },
-  {
-    "objectID": "soft-matter_polymers2.html#polymer-entanglement",
-    "href": "soft-matter_polymers2.html#polymer-entanglement",
-    "title": "Complex Disordered Systems",
-    "section": "Polymer entanglement",
-    "text": "Polymer entanglement\n\n\n\nPolymer entanglement occurs when overlapping polymer chains become topologically intertwined, creating temporary physical knots that restrict chain motion and significantly affect the material’s mechanical and rheological properties.\nIntroduces topological constraints (transient/permanent)"
-  },
-  {
-    "objectID": "soft-matter_polymers2.html#concentrated-bulk-polymers",
-    "href": "soft-matter_polymers2.html#concentrated-bulk-polymers",
-    "title": "Complex Disordered Systems",
-    "section": "Concentrated: bulk polymers",
-    "text": "Concentrated: bulk polymers\n\n\n\nPolymer concentration approaches bulk density\nMonomers occupy significant fraction of total volume\nHighly interpenetrated coils form continuous network\nPolymer-polymer interactions dominate over polymer-solvent interactions\nChain entanglements restrict segment motion\nTransition from solution-like to solid-like behavior\nIncreased mechanical strength and viscosity\nComplex dynamics due to crowding effects\n\nThese are the feature of density-driven glassy behaviour.\n\n\n\n\nPolyethylene Glycol polymer melt (from Martini project)"
-  },
-  {
-    "objectID": "soft-matter_polymers2.html#cross-linking",
-    "href": "soft-matter_polymers2.html#cross-linking",
-    "title": "Complex Disordered Systems",
-    "section": "Cross-linking",
-    "text": "Cross-linking\nCross-linking is the process of forming covalent bonds between separate polymer chains, creating a three-dimensional network structure. These bonds:\n\nConnect different chains at specific points\nRestrict chain movement and deformation\nIncrease mechanical strength and rigidity\nCan be temporary (reversible) or permanent (irreversible)\nDetermine material properties: low cross-linking allows flexibility, high cross-linking creates brittleness\n\n\n\n\nCross linking bonds (reversibly or irreversibly) different chains."
-  },
-  {
-    "objectID": "soft-matter_polymers2.html#bulk-polymer-classes",
-    "href": "soft-matter_polymers2.html#bulk-polymer-classes",
-    "title": "Complex Disordered Systems",
-    "section": "Bulk polymer classes",
-    "text": "Bulk polymer classes\nTwo main classes of bulk polymers, characterised by whether they are cross-linked or not.\n\nElastomers (rubbers): low cross-linking → flexible and elastic (stretch and return to original shape)\nThermosets: high cross-linking → rigid, hard, brittle network\nThermoplastics: no cross-linking → most everyday plastics; behavior upon cooling shows similarities to colloids\n\nPolymer bulks are often referred to as resins."
-  },
-  {
-    "objectID": "soft-matter_polymers2.html#examples-of-bulk-polymer-classes",
-    "href": "soft-matter_polymers2.html#examples-of-bulk-polymer-classes",
-    "title": "Complex Disordered Systems",
-    "section": "Examples of bulk polymer classes",
-    "text": "Examples of bulk polymer classes\n\n\n\n\n\n\n\n\n\nClass\nExamples\nProperties\nApplications\n\n\n\n\nElastomers\nNatural rubber, silicone rubber, neoprene\nFlexible, elastic, low cross-linking\nTires, seals, gaskets, flexible tubing\n\n\nThermosets\nEpoxy resins, phenolic resins, polyurethane foam\nRigid, hard, high cross-linking, irreversible\nCircuit boards, adhesives, insulation, structural composites\n\n\nThermoplastics\nPolyethylene (PE), polypropylene (PP), PET, polystyrene (PS), PVC\nRecyclable, moldable upon heating, no cross-linking\nPackaging, bottles, pipes, automotive parts, consumer products\n\n\n\n\nNatural rubber, epoxy substrate for circuits, PET used in plastic bottles"
-  },
-  {
-    "objectID": "soft-matter_polymers2.html#thermoplastics-behaviour-upon-cooling",
-    "href": "soft-matter_polymers2.html#thermoplastics-behaviour-upon-cooling",
-    "title": "Complex Disordered Systems",
-    "section": "Thermoplastics behaviour upon cooling",
-    "text": "Thermoplastics behaviour upon cooling\n\n\n\nAt high temperature the free energy is dominated by entropy.\n\nrandom assembly of intertwined flexible coils\n\nUpon cooling, potential energy dominates and chain rotation becomes restricted, favoring more extended configurations.\nBelow melting temperature T_m, crystals form (lowest free energy state), but require slow cooling and significant molecular ordering.\nRapid cooling below glass transition temperature T_g (&lt; T_m) prevents crystallization, forming an amorphous glassy state instead—a metastable, long-lived solid.\nSolid thermoplastics typically contain a mixture of crystalline and amorphous regions."
-  },
-  {
-    "objectID": "soft-matter_intro.html#today",
-    "href": "soft-matter_intro.html#today",
-    "title": "Complex Disordered Systems",
-    "section": "Today",
-    "text": "Today\n\nEntropy matters\nIntroduction to colloids"
-  },
-  {
-    "objectID": "soft-matter_intro.html#entropy-matters-1",
-    "href": "soft-matter_intro.html#entropy-matters-1",
-    "title": "Complex Disordered Systems",
-    "section": "Entropy matters",
-    "text": "Entropy matters\n\n\n\nBlame it on entropy (New Yorker)"
-  },
-  {
-    "objectID": "soft-matter_intro.html#more-is-different",
-    "href": "soft-matter_intro.html#more-is-different",
-    "title": "Complex Disordered Systems",
-    "section": "More is different",
-    "text": "More is different\nPhilip Anderson (Science 1972)\n\nComplexity emerges when many simple units interact: studying the individual components does not explain the emergence of collective properties\n\n\n\n\nSimple examples:\n\nphases of matter\nmagnetism, superconductivity\nemergence of order from disorder\n\n\n\n\nAlso beyond physics:\n\nformation of biological molecules\necological networks\neconomic structures (markets, currencies etc.)\n\n\n\n\n\n\nComplex mixtures, spintronic magnetisation, ecological networks and Hong Kong stock market"
-  },
-  {
-    "objectID": "soft-matter_intro.html#beyond-the-usual-phases-of-matter",
-    "href": "soft-matter_intro.html#beyond-the-usual-phases-of-matter",
-    "title": "Complex Disordered Systems",
-    "section": "Beyond the usual phases of matter",
-    "text": "Beyond the usual phases of matter\nWe sometimes oversimplify…\n\nExtreme examples of phases of matter"
-  },
-  {
-    "objectID": "soft-matter_intro.html#beyond-the-usual-phases-of-matter-1",
-    "href": "soft-matter_intro.html#beyond-the-usual-phases-of-matter-1",
-    "title": "Complex Disordered Systems",
-    "section": "Beyond the usual phases of matter",
-    "text": "Beyond the usual phases of matter\nWe sometimes oversimplify…"
-  },
-  {
-    "objectID": "soft-matter_intro.html#complex-fluids-and-soft-condensed-matter",
-    "href": "soft-matter_intro.html#complex-fluids-and-soft-condensed-matter",
-    "title": "Complex Disordered Systems",
-    "section": "Complex fluids and soft condensed matter",
-    "text": "Complex fluids and soft condensed matter\n\nSoft condensed matter includes assembllies of colloids, polymers, surfactants, and biological macromolecules and much more.\n\nTerm due to Pierre-Gilles de Gennes (Nobel 1991)\n\nOften, many ofthese are also referred to as complex fluids.\nThese materials are easily deformed and show complex, disordered structures.\nTheir properties are determined by a balance between energy and entropy.\nThermal fluctuations play a major role in their behavior.\nUnderstanding them requires statistical mechanics ."
-  },
-  {
-    "objectID": "soft-matter_intro.html#thermal-fluctuations-and-entropy",
-    "href": "soft-matter_intro.html#thermal-fluctuations-and-entropy",
-    "title": "Complex Disordered Systems",
-    "section": "Thermal fluctuations and entropy",
-    "text": "Thermal fluctuations and entropy\n\nHelmholtz Free energy per particle f = u-Ts\nEntropy approximately counts the number of arrangements per particle s = \\dfrac{k_B}{N} \\ln{\\Omega}. For hundreds of arrangements per particle one has s=O(1) k_B\nFluctuations of the internal energy are on the same scale as thermal fluctuations: \n\\boxed{\\Delta u \\sim k_B T}\n where k_B is the Boltzmann constant and \\Delta u indicates standard deviations from the average internal energy."
-  },
-  {
-    "objectID": "soft-matter_intro.html#thermal-fluctuations-single-particle-in-a-double-well",
-    "href": "soft-matter_intro.html#thermal-fluctuations-single-particle-in-a-double-well",
-    "title": "Complex Disordered Systems",
-    "section": "Thermal fluctuations: single particle in a double well",
-    "text": "Thermal fluctuations: single particle in a double well\n\nviewof params = Inputs.form({\n    T: Inputs.range([0., 4], {label: \"Temp.\", value: 1.0, step: 0.1,}),\n    g: Inputs.range([-2, 2], {label: \"Tilt\", value: 0, step: 0.1}),\n    reset: Inputs.button(\"Reset simulation\")\n})\n\n// Simulation parameters\ndt = 0.005\nkB = 1\ngamma = 1\n\n// Double well potential: V(x) = x^4 - 2x^2 + g*x\nV = (x, g) =&gt; x**4 - 2*x**2 + g*x\nforce = (x, g) =&gt; -(4*x**3 - 4*x + g)\n\n// Live simulation with temperature control\nsimulationState = {\n    let x = 0\n    let positions = [0]\n    let step = 0\n    \n    while (true) {\n        if (params.reset) {\n            x = 0\n            positions = [0]\n            step = 0\n        }\n        \n        let f = force(x, params.g)\n        let noise = Math.sqrt(2 * kB * params.T * dt / gamma) * (Math.random() - 0.5) * 2\n        x += (f / gamma) * dt + noise\n        positions.push(x)\n        // Keep only last 500 points for performance\n        if (positions.length &gt; 500) {\n            positions = positions.slice(-500)\n        }\n        \n        yield {x, positions: [...positions], step: step++}\n        await new Promise(resolve =&gt; setTimeout(resolve, 10))\n    }\n}\n\n// Plot\nPlot.plot({\n    width: 700,\n    height: 400,\n    grid: true,\n    x: {domain: [-2.5, 2.5], label: \"Position\"},\n    y: {domain: [-2, 3], label: \"Potential Energy\"},\n    marks: [\n        // Potential curve\n        Plot.line(\n            Array.from({length: 200}, (_, i) =&gt; {\n                let x = -2.5 + 5 * i / 199\n                return {x, y: V(x, params.g)}\n            }),\n            {x: \"x\", y: \"y\", stroke: \"red\", strokeWidth: 2}\n        ),\n        // Particle trajectory (trail)\n        Plot.line(\n            simulationState.positions.map((x, i) =&gt; ({x, y: V(x, params.g), step: i})),\n            {x: \"x\", y: \"y\", stroke: \"blue\", strokeWidth: 1, opacity: 0.5}\n        ),\n        // Current particle position\n        Plot.dot([{\n            x: simulationState.x, \n            y: V(simulationState.x, params.g)\n        }], {x: \"x\", y: \"y\", fill: \"blue\", r: 6, stroke: \"white\", strokeWidth: 2})\n    ]\n})"
-  },
-  {
-    "objectID": "soft-matter_intro.html#elementary-constituents-and-energy-scales",
-    "href": "soft-matter_intro.html#elementary-constituents-and-energy-scales",
-    "title": "Complex Disordered Systems",
-    "section": "Elementary constituents and energy scales",
-    "text": "Elementary constituents and energy scales\n\nSoft matter systems are made of many parts\n\nThe assembly of these many parts can be easily deformed.\nInteractions between these parts are weak compared to thermal or mechanical forces.\n\n\n\n\n\nHard condensed matter:\nBasic units: atoms\nStrong interactions (0.1–10 eV)\nCovalent/ionic bonds\nFocus on low temperatures\n\n\n\nSoft matter:\nBasic units: molecular aggregates\nWeak interactions (0.001–0.2 eV)\nVan der Waals, hydrogen bonds\n1 k_B T \\approx 0.025 eV (room temperature)"
-  },
-  {
-    "objectID": "soft-matter_intro.html#coarse-graining",
-    "href": "soft-matter_intro.html#coarse-graining",
-    "title": "Complex Disordered Systems",
-    "section": "Coarse graining",
-    "text": "Coarse graining\n\n\n\nSoft matter interactions are mainly electrostatic.\nAtomistic details are often unimportant for macroscopic properties.\nCoarse-graining simplifies models by focusing on key features:\n\ndeliberate selection of what matters\nsystematic integration of a number of degrees of freedom\n\n\n\n\nExample: The oxDNA model represents DNA as a chain of coarse grained units, much larger than the atoms.\n\n\n\n\nAtomistic DNA structure"
-  },
-  {
-    "objectID": "soft-matter_intro.html#coarse-graining-1",
-    "href": "soft-matter_intro.html#coarse-graining-1",
-    "title": "Complex Disordered Systems",
-    "section": "Coarse graining",
-    "text": "Coarse graining\n\n\n\nSoft matter interactions are mainly electrostatic.\nAtomistic details are often unimportant for macroscopic properties.\nCoarse-graining simplifies models by focusing on key features:\n\ndeliberate selection of what matters\nsystematic integration of a number of degrees of freedom\n\n\n\n\nExample: The oxDNA model represents DNA as a chain of coarse grained units, much larger than the atoms.\n\n\n\n\noxDNA model: (a) Base structure on one strand; (b) planarity of the bonding; (c) an example of the resulting double strand."
-  },
-  {
-    "objectID": "soft-matter_intro.html#classes-of-systems",
-    "href": "soft-matter_intro.html#classes-of-systems",
-    "title": "Complex Disordered Systems",
-    "section": "Classes of systems",
-    "text": "Classes of systems\nIn our exploration of soft matter we will focus on six main classes of systems which display different physics:\n\ncolloidal dispersions\npolymeric systems\nliquid crystals\nsurfactant aggregates\narrested systems\nactive matter\n\n\n\n\nColloidal assemblies, polymers, surfactants, liuqid crystals, glasses and bacteria."
-  },
-  {
-    "objectID": "soft-matter_intro.html#colloidal-dispersions",
-    "href": "soft-matter_intro.html#colloidal-dispersions",
-    "title": "Complex Disordered Systems",
-    "section": "Colloidal dispersions",
-    "text": "Colloidal dispersions\n\n\n\nColloidal dispersions: small particles (nano–micrometer) suspended in a solvent.\nSpherical colloids are common, but many shapes and interactions exist.\nBehave as “big atoms”: show Brownian motion, phase transitions, and can form ordered structures.\nLarger size and slower dynamics make them ideal for direct observation of phenomena like:\n\ncrystallisation\nglass formation\ngel formation\n\n\n\n\n\n\n(A) Solvent collisions cause random forces on particles. (B) Particles execute random walks on larger timescales. (C) Hard spheres crystallize at high density (right) due to reduced available space compared to fluid phase (left). From Manohran, Science (2015)"
-  },
-  {
-    "objectID": "soft-matter_intro.html#polymeric-systems",
-    "href": "soft-matter_intro.html#polymeric-systems",
-    "title": "Complex Disordered Systems",
-    "section": "Polymeric systems",
-    "text": "Polymeric systems\n\nPolymers are long-chain macromolecules made of repeating monomers.\nTheir properties result from a balance of entropy and energy.\nTwo main types: synthetic polymers (e.g., plastics) and biopolymers (e.g., DNA, proteins).\nEntanglement: chains cannot cross, leading to unique mechanical behavior.\n\n\nPolymer entanglement, from Likhtman and Ponmurugan, Macromolecules (2014)"
-  },
-  {
-    "objectID": "soft-matter_intro.html#liquid-crystals",
-    "href": "soft-matter_intro.html#liquid-crystals",
-    "title": "Complex Disordered Systems",
-    "section": "Liquid crystals",
-    "text": "Liquid crystals\n\nLiquid crystals form when anisotropic soft matter units (e.g., rod-like or disk-shaped molecules) pack densely, leading to partial order—intermediate between liquids and crystals.\nContinuum free energy theories describe liquid crystals by considering the symmetry of their order parameters.\nLiquid crystals are crucial in technologies like liquid crystal displays (LCDs).\n\n\nTexture of nematic liquid crystals, from https://doi.org/10.3986/alternator.2020.38"
-  },
-  {
-    "objectID": "soft-matter_intro.html#surfactant-aggregates",
-    "href": "soft-matter_intro.html#surfactant-aggregates",
-    "title": "Complex Disordered Systems",
-    "section": "Surfactant aggregates",
-    "text": "Surfactant aggregates\n\nSurfactants lower surface tension between fluid phases by accumulating at interfaces.\nThey are molecules with both hydrophilic heads and hydrophobic tails.\nSurfactants self-assemble at interfaces, forming structures like bilayers and vesicles.\nThese assemblies are essential in cell biology and many soft matter systems.\n\n\nCellular membrane"
-  },
-  {
-    "objectID": "soft-matter_intro.html#arrested-systems",
-    "href": "soft-matter_intro.html#arrested-systems",
-    "title": "Complex Disordered Systems",
-    "section": "Arrested systems",
-    "text": "Arrested systems\n\nArrested systems are trapped in disordered, non-equilibrium states.\nLack of long-range order leads to slow structural relaxation and prevents reaching the global energy minimum.\nExamples: glasses and gels\nThese systems exhibit rigidity, elasticity, and plasticity: disordered (semi)-solids.\nRelaxation times are longer than observable timescales, making equilibrium statistical mechanics insufficient.\n\n\nAn gel (left) and a glass (right) from molecular dynamics with local structure highlighted un colours"
-  },
-  {
-    "objectID": "soft-matter_intro.html#active-matter",
-    "href": "soft-matter_intro.html#active-matter",
-    "title": "Complex Disordered Systems",
-    "section": "Active matter",
-    "text": "Active matter\n\nActive matter: systems of units that consume energy to move or exert forces.\nInherently out of equilibrium due to continuous energy input.\nIncludes biological systems (bacteria, cells, flocks) and synthetic systems (self-propelled colloids).\nShows emergent collective behaviors: swarming, clustering, pattern formation.\nStudied using hydrodynamic theories and agent-based models.\n\n\nExample of active systems, from Cichos et al. Nature Machine Intelligence (2020)"
-  },
-  {
-    "objectID": "soft-matter_intro.html#kinds-of-colloids",
-    "href": "soft-matter_intro.html#kinds-of-colloids",
-    "title": "Complex Disordered Systems",
-    "section": "Kinds of colloids",
-    "text": "Kinds of colloids\n\n\nColloids = dispersed phase + dispersion medium\n\n\n\n\nOpal, paint, smoke, ice-cream, milk, fog, expanded polystyrene and foam."
-  },
-  {
-    "objectID": "soft-matter_intro.html#kinds-of-colloids-1",
-    "href": "soft-matter_intro.html#kinds-of-colloids-1",
-    "title": "Complex Disordered Systems",
-    "section": "Kinds of colloids",
-    "text": "Kinds of colloids\n\n\n\n\n\n\n\n\nDispersion Phase\n\nDispersion Medium\n\n\n\n\n\nSolid\nLiquid\n\n\nSolid\nSolid suspension:\npigmented plastics,\nstained glass,\nruby glass, opal, pearl\nSol, colloidal suspension:\nmetal sol,\ntoothpaste, paint,\nink, clay slurries, mud\n\n\nLiquid\nSolid emulsion:\nbituminous road paving,\nice cream\nEmulsion:\nmilk, mayonnaise,\nbutter, pharmaceutical creams\n\n\nGas\nSolid foam:\nzeolites, expanded polystyrene,\n‘silica gel’\nFoam:\nfroths, soap foam,\nfire-extinguisher foam"
-  },
-  {
-    "objectID": "soft-matter_intro.html#iupac-definition",
-    "href": "soft-matter_intro.html#iupac-definition",
-    "title": "Complex Disordered Systems",
-    "section": "IUPAC definition",
-    "text": "IUPAC definition\nThe International Union of Pure and Applied Chemistry (IUPAC) defines\n\ncolloidal: The term refers to a state of subdivision, implying that the molecules or polymolecular particles dispersed in a medium have at least in one direction a dimension roughly between 1 nm and 1 \\mum , or that in a system discontinuities are found at distances of that order.\n\n\n\n\n\n\n\nNote\n\n\nThe definition has little to do with the chemistry of the polymolecules (i.e. aggregates), but essentially is determined by the size.\n\n\n\n\nWhy the size?"
-  },
-  {
-    "objectID": "soft-matter_intro.html#colloidal-scale",
-    "href": "soft-matter_intro.html#colloidal-scale",
-    "title": "Complex Disordered Systems",
-    "section": "Colloidal scale",
-    "text": "Colloidal scale\n\nParticle of size R (micrometric) in medium with constant collisions at thermal energy \\sim 1 k_B T\nCompare the energy with the potential energy of settling over a length R\nObtain a nondimensional number the gravitational Péclet number\n\n\\mathrm{Pe}_g=\\frac{\\Delta m g R}{k_B T}\n\n\n\n\n\n\n\nExample\n\n\nFor a milk protein particle (casein micelle) in water:\n\nR \\sim 0.5 \\, \\mum (estimate)\n\\Delta m = \\frac{4}{3}\\pi R^3 \\Delta \\rho \\sim \\frac{4}{3}\\pi (0.5 \\times 10^{-6})^3 \\times 200 \\sim 1 \\times 10^{-16} kg (assuming \\Delta \\rho \\sim 200 kg/m³)\ng = 9.8 m/s²\nk_B T \\sim 4 \\times 10^{-21} J (room temperature)\n\n\\mathrm{Pe}_g = \\frac{1 \\times 10^{-16} \\times 9.8 \\times 0.5 \\times 10^{-6}}{4 \\times 10^{-21}} \\sim 0.1\nSince \\mathrm{Pe}_g &lt; 1, thermal motion dominates gravity → particles remain suspended → stable colloid!"
-  },
-  {
-    "objectID": "soft-matter_intro.html#observation-time-and-stability",
-    "href": "soft-matter_intro.html#observation-time-and-stability",
-    "title": "Complex Disordered Systems",
-    "section": "Observation time and stability",
-    "text": "Observation time and stability\n\nAny measurement in physics has an observation time t_{\\rm obs}\nThermal systems have some degree of memory and hence an intrinsic timescale \\tau (relaxation time)\nWhen \\tau\\ll t_{\\rm obs} we can take time-averages and consider the system in a stable steady state.\nIn the absence of net currents, this is an equilibrium state\nA colloidal dispersion is stable if it is able to remain dispersed and Brownian time much longer than t_{\\rm obs}.\nInstability leads to aggregation\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nStable\n\n\n\n\n\n\n\nUnstable\n\n\n\n\n\n\n\nColloidal System\n\n\n\n\n\n\n\nStability?\n\n\n\n\n\n\n\nSingle phasefor long time\n\n\n\n\n\n\n\nAggregation andsedimentation"
-  },
-  {
-    "objectID": "soft-matter_intro.html#destabilisation",
-    "href": "soft-matter_intro.html#destabilisation",
-    "title": "Complex Disordered Systems",
-    "section": "Destabilisation",
-    "text": "Destabilisation\n\nMilk is an emulsion where droplets of fat are dispersed in water and stabilised by proteins.\nIf lemon juice is added, the dispersion medium (water) changes, the pH drops, and the emulsion is destabilised.\nThe interactions change → separation of curds (solid) and whey (liquid).\n\n\nCurds and whey resulting from the destabilisation of milk, a colloidal emulsion. (Wikimedia)"
-  },
-  {
-    "objectID": "soft-matter_intro.html#which-interactions",
-    "href": "soft-matter_intro.html#which-interactions",
-    "title": "Complex Disordered Systems",
-    "section": "Which interactions?",
-    "text": "Which interactions?\n\nAt the colloidal scale: gravity and electrostatics (eventually magnetostatics).\nElectrostatics forces are the main microscopic forces: colloids are typically charged\nSeparation of length and timescales: colloids are much larger and slower than the atomic or molecular constituents of the surrounding fluid.\nColloid–colloid interactions result from the collective effect (sum or average) of many microscopic interactions, evaluated over times much longer than microscopic relaxation times.\nWhen we focus on colloidal scales, we integrate out the microscopic degrees of freedom (coarse-graning)\nCoarse-grained interactions are then obtained and are called effective interactions.\n\n\n\n\nFundamental forces:\ngravity\nelectro (magneto) static forces\n\n\n\nEffective forces\nVan der Waals forces\nelectrostatic repulsion (DLVO)\ndepletion forces\nhydrophobic/hydrophilic interactions\nsteric forces"
-  },
-  {
-    "objectID": "soft-matter_polymers1.html#what-are-polymers",
-    "href": "soft-matter_polymers1.html#what-are-polymers",
-    "title": "Complex Disordered Systems",
-    "section": "What are Polymers?",
-    "text": "What are Polymers?\n\n\n\n\n\n\n\nLarge molecules made of many individual units: monomers\nDegree of polymerization: N &gt; 10^5 units possible\nMacroscopic behavior dominated by large-scale properties\nStatistical mechanics needed even for single chains as they have many components subject to thermal fluctuations\n\nTypical modelling progressing from fine structure details → coarse-grained models\n\n🪁 Play with Polystyrene."
-  },
-  {
-    "objectID": "soft-matter_polymers1.html#polymer-architectures",
-    "href": "soft-matter_polymers1.html#polymer-architectures",
-    "title": "Complex Disordered Systems",
-    "section": "Polymer Architectures",
-    "text": "Polymer Architectures\nPolymers have many possible architectures:\n\nLinear: Straight chains (e.g., polyethylene)\nBranched: Main chain + side branches\n\nStar: Multiple arms from central core\nCross-linked: Network structures (rubbers, thermosets)\n\nFocus: We will only discuss linear homopolymers for theoretical simplicity.\n\n\n\nthe many possible polymer architectures, from Matyjaszewski and Möller, Polymer Science: A Comprehensive Reference, Elsevier (2012)"
-  },
-  {
-    "objectID": "soft-matter_polymers1.html#statistical-nature-of-polymer-conformations",
-    "href": "soft-matter_polymers1.html#statistical-nature-of-polymer-conformations",
-    "title": "Complex Disordered Systems",
-    "section": "Statistical Nature of Polymer Conformations",
-    "text": "Statistical Nature of Polymer Conformations\nWhy statistical?\n\nEnormous number of configurations\nThermal fluctuations drive conformational changes\nOnly average properties are measurable\n\nSeparate regimes\n\nDilute solutions: Polymer-solvent interactions dominate\nConcentrated: Polymer-polymer entanglements\n\n\n\n\nViscosity as a function of polymer concentration"
-  },
-  {
-    "objectID": "soft-matter_polymers1.html#freely-jointed-chain-model",
-    "href": "soft-matter_polymers1.html#freely-jointed-chain-model",
-    "title": "Complex Disordered Systems",
-    "section": "Freely-Jointed Chain Model",
-    "text": "Freely-Jointed Chain Model\nAssumptions:\n\nMonomers at positions \\mathbf{R}_{\\mathrm{j}} and connected by bonds \\mathbf{r}_{j}=\\mathbf{R}_{j}-\\mathbf{R}_{j-1} of length \\left|\\mathbf{r}_{j}\\right|=b_{0}.\nN segments of fixed length b_0\nAll bond angles equally likely\neffectively, it produces a random walk in 3D\nThe key quantity is th end-to-end vector: \\mathbf{R} = \\mathbf{r}_1+\\mathbf{r}_2+\\dots+\\mathbf{r}_N = \\sum_{j=1}^N \\mathbf{r}_j."
-  },
-  {
-    "objectID": "soft-matter_polymers1.html#freely-jointed-chain-model-1",
-    "href": "soft-matter_polymers1.html#freely-jointed-chain-model-1",
-    "title": "Complex Disordered Systems",
-    "section": "Freely-Jointed Chain Model",
-    "text": "Freely-Jointed Chain Model"
-  },
-  {
-    "objectID": "soft-matter_polymers1.html#end-to-end-vector-statistics",
-    "href": "soft-matter_polymers1.html#end-to-end-vector-statistics",
-    "title": "Complex Disordered Systems",
-    "section": "End-to-end vector statistics",
-    "text": "End-to-end vector statistics\nThe polymer fluctuates between all possible random-walk-like configurations at fixed inter-monomer distance.\nThe mean squared end-to-end distance is then simply \\begin{aligned}\\langle\\mathbf{R}^2\\rangle &= \\left\\langle \\left( \\sum_{i=1}^N \\mathbf{r}_i\\right) \\cdot  \\left( \\sum_{j=1}^N \\mathbf{r}_j\\right) \\right\\rangle\\\\\n&= \\left\\langle \\sum_{i=1}^N \\sum_{j=1}^N  \\mathbf{r}_i \\mathbf{r}_j \\right\\rangle\\\\\n\\end{aligned} We can split the sum into the terms where i=j and the rest. This yields in general\n\\langle \\mathbf{R}^2\\rangle = Nb_0^2+\\langle \\mathbf{r}_i \\mathbf{r}_j  \\rangle\nWe assume that successive segments are independent, so\n\\langle \\mathbf{R}^2\\rangle = Nb_0^2\n\n\n\n\n\n\nNote\n\n\nAny similarities with previous results? Think about the MSD."
-  },
-  {
-    "objectID": "soft-matter_polymers1.html#end-to-end-vector-statistics-1",
-    "href": "soft-matter_polymers1.html#end-to-end-vector-statistics-1",
-    "title": "Complex Disordered Systems",
-    "section": "End-to-end vector statistics",
-    "text": "End-to-end vector statistics\nWe can then use the results of by identifying N (the number of moonomers) with t (the number of steps). \n\\left\\langle\\mathbf{R}^2\\right\\rangle=\\left\\langle R_x^2\\right\\rangle+\\left\\langle R_y^2\\right\\rangle+\\left\\langle R_z^2\\right\\rangle=3 \\sigma^2=N b_0^2 \\Rightarrow \\sigma^2=\\frac{N b_0^2}{3}\n where \\sigma is the variance per component.\nFor long chains the end-to-end distance is distributed as a 3D Gaussian, centered at zero, with variance proportional to N:\n\nP(\\mathbf{R}) = \\left( \\frac{3}{2\\pi N b_0^2} \\right)^{3/2} \\exp\\left( -\\frac{3 \\mathbf{R}^2}{2 N b_0^2} \\right)"
-  },
-  {
-    "objectID": "soft-matter_polymers1.html#gyration-tensor-and-radius-of-gyration",
-    "href": "soft-matter_polymers1.html#gyration-tensor-and-radius-of-gyration",
-    "title": "Complex Disordered Systems",
-    "section": "Gyration tensor and radius of gyration",
-    "text": "Gyration tensor and radius of gyration\n\nThe end-to-end vector is most meaningful for linear structures.\nOther conformation (compact, branched or star-shaped polymers) are better characterised by a measure of the (average) extent of the polymer chain: theradius of gyration,\n\nThe radius of gyration is a generic quantity that can be measured from any point cloud. It is closely linked to the (co)-variance of the set of points.\nWe start with the standard centre of mass\n\\mathbf{R}_{\\rm CM}=\\frac{1}{N} \\sum_{j=1}^{N} \\mathbf{R}_{j}\nIn general terms, we cna define a matrix called the gyration tensor (also called the configuration tensor):\n\n\\mathbf{S} = \\frac{1}{N} \\sum_{j=1}^N (\\mathbf{R}_j - \\mathbf{R}_{\\rm CM}) \\otimes (\\mathbf{R}_j - \\mathbf{R}_{\\rm CM})\n where \\otimes denotes the outer product, and \\mathbf{S} is a 3 \\times 3 symmetric matrix."
-  },
-  {
-    "objectID": "soft-matter_polymers1.html#gyration-tensor-and-radius-of-gyration-1",
-    "href": "soft-matter_polymers1.html#gyration-tensor-and-radius-of-gyration-1",
-    "title": "Complex Disordered Systems",
-    "section": "Gyration tensor and radius of gyration",
-    "text": "Gyration tensor and radius of gyration\nThe elements of \\mathbf{S} are given by\n\nS_{\\alpha\\beta} = \\frac{1}{N} \\sum_{j=1}^N (R_{j,\\alpha} - R_{{\\rm CM},\\alpha})(R_{j,\\beta} - R_{{\\rm CM},\\beta})\n\nwhere \\alpha, \\beta \\in \\{x, y, z\\}.\nThe radius of gyration squared is then simply the trace of this tensor (hence, invariant):\n\nR_g^2 = \\mathrm{Tr}(\\mathbf{S}) = S_{xx} + S_{yy} + S_{zz}\n\nThe tensor is symmetric and real \\to diagonasable.\nEigenvalues and eigenvectors of \\mathbf{S} provide information about the principal axes and shape anisotropy of the polymer coil (do you remember 3D mechanics and Euler angles?).\nThe tensor of gyration corresponds to the covariance matrix of the positions \\mathbf{R}_j.\nFor the ideal freely-jointed chain, the end-to-end vector and the radius of gyration are linked\n\n\\boxed{\n\\langle R_g^2 \\rangle = \\frac{1}{6} \\langle R^2 \\rangle}"
-  },
-  {
-    "objectID": "soft-matter_polymers1.html#freely-rotating-chain",
-    "href": "soft-matter_polymers1.html#freely-rotating-chain",
-    "title": "Complex Disordered Systems",
-    "section": "Freely-Rotating Chain",
-    "text": "Freely-Rotating Chain\nA more realistic model takes into account that bond angle are usually restricted.\nTake n-butane:\n\n\\mathrm{H}_{3} \\mathrm{C}-\\mathrm{CH}_{2}-\\mathrm{CH}_{2}-\\mathrm{CH}_{3}\n\n\n\n\nn-butane\n\n\nThe valence (or bond) angle is the angle between two adjacent chemical bonds. The C-C-C is around 112^\\circ."
-  },
-  {
-    "objectID": "soft-matter_polymers1.html#freely-rotating-chain-dihedral-angle",
-    "href": "soft-matter_polymers1.html#freely-rotating-chain-dihedral-angle",
-    "title": "Complex Disordered Systems",
-    "section": "Freely-Rotating Chain: dihedral angle",
-    "text": "Freely-Rotating Chain: dihedral angle\nRotations about the C-C bond are possible and are qualified by the dihedral (or torsional) angle\n\n\n\n\n\nFour conformers of butane, from LibreText Chemistry\n\n\n\n\n\n\nPotential energy of the conformers\n\n\n\n\nAt low temperatures ( k_{B} T &lt; {\\mathrm {\\text{configurational energy}}}) A (an anti conformation) .\nRising k_{B} T \\sim there will also be C (gauche) configurations.\nAt high temperatures ( k_{B} T \\gg config. energy), any angle will be possible."
-  },
-  {
-    "objectID": "soft-matter_polymers1.html#freely-rotating-chain-model",
-    "href": "soft-matter_polymers1.html#freely-rotating-chain-model",
-    "title": "Complex Disordered Systems",
-    "section": "Freely-Rotating Chain Model",
-    "text": "Freely-Rotating Chain Model\n\n\nSimple but richer model than the freely jointed model:\n\nFixed bond angle \\theta\nTorsional angle \\varphi can take any value 0 \\leq \\varphi \\leq 2 \\pi.\n\nImagine we have a configuration \\{\\mathbf{r}_{l}, \\mathbf{r}_{2}, \\ldots, \\mathbf{r}_{j-1}\\} and want to add the next segment.\n\nAverage \\mathbf{r}_{j} over \\varphi, while keeping \\mathbf{r}_{1}, \\mathbf{r}_{2}, \\ldots, \\mathbf{r}_{j-1} fixed, only the component in \\mathbf{r}_{j} direction remains:\n\n\\langle \\mathbf{r}_{j} \\rangle_{\\mathbf{r}, \\mathbf{r}_{2}, \\ldots, \\mathbf{r}_{j-1}\\quad {\\rm fixed}}=\\cos \\theta \\mathbf{r}_{j-1}\nMultiplying both sides by \\mathbf{r}_k and averaging over all configurations gives\n\n\\left\\langle\\mathbf{r}_j \\cdot \\mathbf{r}_k\\right\\rangle=\\cos \\theta\\left\\langle\\mathbf{r}_{j-1} \\cdot \\mathbf{r}_k\\right\\rangle .\n\nApplying this relation recursively leads to\n\n\\left\\langle\\mathbf{r}_j \\cdot \\mathbf{r}_k\\right\\rangle=b_0^2(\\cos \\theta)^{|j-k|}\n\n\n\n\n\nFreely rotating chain model"
-  },
-  {
-    "objectID": "soft-matter_polymers1.html#freely-rotating-chain-model-1",
-    "href": "soft-matter_polymers1.html#freely-rotating-chain-model-1",
-    "title": "Complex Disordered Systems",
-    "section": "Freely-Rotating Chain Model",
-    "text": "Freely-Rotating Chain Model\nGiven \n\\left\\langle\\mathbf{r}_j \\cdot \\mathbf{r}_k\\right\\rangle=b_0^2(\\cos \\theta)^{|j-k|}\n for \\cos \\theta&lt;1, correlations between \\mathbf{r}_{j} and \\mathbf{r}_{k} decrease with increasing distance |j-k| .\nWe can link this to the end-to-end distance (proof in the lecture notes) and get the large N limit\n\n\\left\\langle R^2\\right\\rangle \\approx N b_0^2+\\frac{2 b_0^2}{1-\\cos \\theta} N \\cos \\theta=N b_0^2\\left(\\frac{1+\\cos \\theta}{1-\\cos \\theta}\\right)=C N b_0^2\n\nwith C=(1+\\cos \\theta) /(1-\\cos \\theta) ."
-  },
-  {
-    "objectID": "soft-matter_polymers1.html#freely-rotating-chain-model-effect-of-bond-angle",
-    "href": "soft-matter_polymers1.html#freely-rotating-chain-model-effect-of-bond-angle",
-    "title": "Complex Disordered Systems",
-    "section": "Freely-Rotating Chain Model: Effect of Bond Angle",
-    "text": "Freely-Rotating Chain Model: Effect of Bond Angle\n\n\n\n\\theta \\to 0: C \\gg 1 → Rigid rod \\langle R^2 \\rangle \\gg N b_0^2\nNearly straight chain. The end-to-end distance is much larger than that of a flexible chain with the same number of segments.\n\\theta \\to \\pi: C \\ll 1 → Collapsed globule\n\\langle R^2 \\rangle \\ll N b_0^2\nCompact, globular, collapsed assembly. Examples: polypeptides, polystyrene in water, chromatin\n\\theta = 90°: C = 1 → Ideal random walk \\langle R^2 \\rangle = N b_0^2\nCorresponds to our original freely jointed chain (random walk).\n🪁 Play with models\n\n\n\n\n\nKevlar fiber (top) and chromatin globule model (bottom)"
-  },
-  {
-    "objectID": "soft-matter_polymers1.html#persistence-and-kuhn-length",
-    "href": "soft-matter_polymers1.html#persistence-and-kuhn-length",
-    "title": "Complex Disordered Systems",
-    "section": "Persistence and Kuhn Length",
-    "text": "Persistence and Kuhn Length\n\n\nSo in general \\langle R^2 \\rangle \\propto N\n\nReplace real chain with equivalent freely-jointed chain\nSame contour length: N b_0 = N' b\nSame end-to-end distance: C N b_0^2 = N' b^2\n\nResults:\n\nKuhn length: b = C b_0\n\nPersistence length: correlations along the chain decay like \\left\\langle\\mathbf{r}_i \\cdot \\mathbf{r}_{i+n}\\right\\rangle=b_0^2\\langle\\cos \\theta\\rangle^n=b_0^2 e^{-n b_0 / l_p}\n with \\ell_p = b/2\nKuhn segments: N' = N/C\n\n\n\n\nOriginal contour length: 200.0000\nCoarse-grained contour length: 163.8304"
-  },
-  {
-    "objectID": "soft-matter_polymers1.html#excluded-volume-effects",
-    "href": "soft-matter_polymers1.html#excluded-volume-effects",
-    "title": "Complex Disordered Systems",
-    "section": "Excluded Volume Effects",
-    "text": "Excluded Volume Effects\nTrue monomers cannot occupy same space\n\nlocal scale: restrictions on the bond angles stopping them from overlapping\nlarge distance excluded volume interactions between monomers, also deforming the chain\n\nConsider that for a coiled polymer\n\nV_{\\text {coil }}=\\frac{4 \\pi}{3}\\left(\\left\\langle R_g^2\\right\\rangle^{1/2}\\right)^3 \\sim \\frac{4 \\pi}{3} N^{3 / 2} b^3\n\nSo\n\\frac{V_{\\text{monomers}}}{V_{\\text{coil}}} = \\frac{N b^3}{N^{3/2} b^3} \\sim N^{-1/2}\nFor N = 10^4: only ~1% of coil volume occupied!\nSo excluded-volume interactions are meant to present a small contribution.\nYet they affect the scaling properties.\n="
-  },
-  {
-    "objectID": "soft-matter_polymers1.html#self-avoiding-walk",
-    "href": "soft-matter_polymers1.html#self-avoiding-walk",
-    "title": "Complex Disordered Systems",
-    "section": "Self-Avoiding Walk",
-    "text": "Self-Avoiding Walk\nBalance of competing effects:\n\nEntropy: Favors compact configurations\nExcluded volume: Favors chain expansion\n\nEntropy :\n\nS=k_B \\ln (\\text { number of configurations })\n\nFor a given end-to-end vector the number of configurations scales as\n\nP(\\mathbf{R})=\\left(\\frac{3}{2 \\pi\\langle R^{2}\\rangle}\\right)^{3 / 2} e^{-\\frac{3 R^{2}}{2\\langle R^{2}\\rangle}}\n\nand so\n\nS \\sim \\frac{-3 k_{B} R^{2}}{2 N b^{2}}+\\text { terms indep. of } \\mathrm{R}"
-  },
-  {
-    "objectID": "soft-matter_polymers1.html#self-avoiding-walk-1",
-    "href": "soft-matter_polymers1.html#self-avoiding-walk-1",
-    "title": "Complex Disordered Systems",
-    "section": "Self-Avoiding Walk",
-    "text": "Self-Avoiding Walk\nThe configurational part of the internal energy can be estimated by focusing on monomer-monomer contacts for monomers of volume V_1.\nWe approximate this with a segment gas confined in a volume R^3. The density (or probability) of contacts is\n\\rho_c = N^2 V_1 / R^3 \\sim N^{1 / 2}\n\nby using R^2\\sim N.\nWe have \\sim N^2\\rho_c pairs at some energy scale per bond \\varepsilon so \nU \\sim \\varepsilon N^2 V_1 / R^3\n and the total free energy is approximately\n\nF=\\frac{\\varepsilon N^2 V_1}{R^3}+\\frac{3 k_B T R^2}{2 N b^2}\n\n(we are interested in scaling behaviour)"
-  },
-  {
-    "objectID": "soft-matter_polymers1.html#self-avoiding-walk-2",
-    "href": "soft-matter_polymers1.html#self-avoiding-walk-2",
-    "title": "Complex Disordered Systems",
-    "section": "Self-avoiding walk",
-    "text": "Self-avoiding walk\nFrom\n\nF=\\frac{\\varepsilon N^2 V_1}{R^3}+\\frac{3 k_B T R^2}{2 N b^2}\n we can find the minimum that satisfies d F / d R=0\nand get\n\nR^5=\\frac{\\varepsilon V_1 b^2}{k_B T} N^3 \\sim \\frac{\\varepsilon}{k_B T} N^3 b^5\n\nwhich ultimately is \n\\boxed{R \\sim N^{3 / 5} b}\n\nSo ultimately we get a scaling exponent different from freely jointed chain:\n\nfreely jointed chain: R \\sim N^{1 / 2}\nself-avoidign walks: R \\sim N^{3 / 5}\n\n0.6\\neq 0.5 (if you are precise!)"
-  },
-  {
-    "objectID": "soft-matter_polymers1.html#self-avoiding-walk-3",
-    "href": "soft-matter_polymers1.html#self-avoiding-walk-3",
-    "title": "Complex Disordered Systems",
-    "section": "Self avoiding walk",
-    "text": "Self avoiding walk"
-  },
-  {
-    "objectID": "soft-matter_colloids2.html#today",
-    "href": "soft-matter_colloids2.html#today",
-    "title": "Complex Disordered Systems",
-    "section": "Today",
-    "text": "Today\n\nColloids as big atoms\n\nColloidal hard spheres\nPhase diagram of hard spheres\nMetastability\nPhase diagrams of simple liquids"
-  },
-  {
-    "objectID": "soft-matter_colloids2.html#colloids-as-big-atoms",
-    "href": "soft-matter_colloids2.html#colloids-as-big-atoms",
-    "title": "Complex Disordered Systems",
-    "section": "Colloids as big atoms",
-    "text": "Colloids as big atoms\n\n\n\nColloids can mimic atomic systems\nServe as models for studying phase transitions, transformations, surface phenomena\nExamples:\n\nHard-sphere colloids\nCharged-stabilized colloids\n\n\n\n\n\nCoalescence of a colloidal liquid droplet, Aarts et al. Science (2004)\n\n\n\n\n\n\nThe self-assembly of colloids can be controlled by changing the shape, topology, or patchiness of the particles, by introducing attractions between particles, or by constraining them to a curved surface. From Manoharan Science (2015)"
-  },
-  {
-    "objectID": "soft-matter_colloids2.html#colloidal-hard-spheres",
-    "href": "soft-matter_colloids2.html#colloidal-hard-spheres",
-    "title": "Complex Disordered Systems",
-    "section": "Colloidal hard spheres",
-    "text": "Colloidal hard spheres\nTrue hard spheres do not exist. Colloidal hard spheres approximate the behaviour in many ways.\n\n\n\nSchematic representation of various models for hard-sphere colloids. (a) A sterically stabilized particle has surface “hairs” (not to scale). (b) A charged colloid has an electrical double layer (shaded area) that gives rise to an effective diameter (c) A microgel particle is a heavily cross-linked polymer. From Royall et al Soft Matter (2013)"
-  },
-  {
-    "objectID": "soft-matter_colloids2.html#hard-spheres",
-    "href": "soft-matter_colloids2.html#hard-spheres",
-    "title": "Complex Disordered Systems",
-    "section": "Hard spheres",
-    "text": "Hard spheres\nIdealised hard spheres are impenetrable objects.\nThey are characterised by the simplest of potentials.\n\n\n   r  U(r)      2R    ∞  0  forbidden  Hard Sphere Potential"
-  },
-  {
-    "objectID": "soft-matter_colloids2.html#phase-behaviour-of-hard-spheres",
-    "href": "soft-matter_colloids2.html#phase-behaviour-of-hard-spheres",
-    "title": "Complex Disordered Systems",
-    "section": "Phase behaviour of hard spheres",
-    "text": "Phase behaviour of hard spheres\nFor a sphere of diameter \\sigma, enormous simplification of the Boltzmann factor:\n\ne^{-\\beta U(r)} =\n\\begin{cases}\n0 & \\text{if } r &lt; \\sigma \\\\\n1 & \\text{if } r \\geq \\sigma\n\\end{cases}\n\nThis simplification arises because the potential ( U(r) ) is either infinite (forbidden region) or zero (allowed region).\nFor this reason, hard spheres are entropy driven.\nConstructing partition functions is then just counting valid configurations, linking geometry to thermodynamics.\n\nA good example: Asakura-Oosawa depletion, that we have already seen.\n\n\nValid configurations are sphere packings:\n\nThe only relevant control parameter is the volume fraction \\phi, defined as:\n\n\n\\phi = \\frac{\\pi}{6} \\rho \\sigma^3\n\nwhere \\rho=N/V is the number density."
-  },
-  {
-    "objectID": "soft-matter_colloids2.html#phase-diagram-of-hard-spheres",
-    "href": "soft-matter_colloids2.html#phase-diagram-of-hard-spheres",
-    "title": "Complex Disordered Systems",
-    "section": "Phase diagram of hard spheres",
-    "text": "Phase diagram of hard spheres\nSince we have a single control parameter, the phase diagram is one-dimensional.\nChanging temperature is immaterial to the free energy: it is a simple rescaling factor.\nIt is intuitive to guess the low density limit of hard spheres:\n\nfew spheres in a box should behave similarly to an ideal gas\n\nIt is harder to guess the high density limit\nWe will gradually build our understanding from low to dense packing.\n\nHard spheres have a single control parameter, the packing fraction."
-  },
-  {
-    "objectID": "soft-matter_colloids2.html#low-packing-fractions",
-    "href": "soft-matter_colloids2.html#low-packing-fractions",
-    "title": "Complex Disordered Systems",
-    "section": "Low packing fractions",
-    "text": "Low packing fractions\nWhen treating the Asakura-Oosawa depletion we introduced the excluded volume. It is also key for hard spheres.\n\nThe distance of closest approach between two identical spheres is \\sigma, which corresponds to the diameter of the spheres. The excluded volume of one particle is v_{\\rm ex} =4\\pi\\sigma^3/3\nAt low densities, hard spheres are isolated and so no overlaps occur and the accessible volume for N spheres is V_{\\rm accessible} = V-Nv_{\\rm ex}\nFor phase behaviour, we need the thermodynamic potential. At constant volume and number of particles, the partition function is a measure of the accessible volume \n\\mathcal{Z} = \\frac{1}{N! \\Lambda^{3N}} \\int_{V_{\\rm accessible}} d\\mathbf{r}_1 \\ldots d\\mathbf{r}_N\nwhere \\Lambda is the thermal de Broglie wavelength \\Lambda = h/\\sqrt{2\\pi mk_B T}.\nMass and temperature are factoring out."
-  },
-  {
-    "objectID": "soft-matter_colloids2.html#low-packing-fractions-entropy",
-    "href": "soft-matter_colloids2.html#low-packing-fractions-entropy",
-    "title": "Complex Disordered Systems",
-    "section": "Low packing fractions: entropy",
-    "text": "Low packing fractions: entropy\nWe integrate over valid (non-overlapping) configurations such that |\\mathbf{r}_i - \\mathbf{r}_j| \\geq \\sigma for all i \\neq j. This yields \\mathcal{Z} = \\dfrac{(V-Nv_{\\rm ex}/2)^N}{N!\\Lambda^{3N}},\nwith the 1/2 factor coming from the fact that we avoid double counting the excluded volume of pairs.\n\nWe immediately obtain the entropy as S = k_B \\ln \\mathcal{Z} = k_B \\left[ N \\ln(V - N v_{\\rm ex}/2) - \\ln N! - 3N \\ln \\Lambda \\right]\nVia Stirling’s approximation \\ln N! = N\\ln N -N we get S = k_B \\left[ N \\ln(V - N v_{\\rm ex}/2) - (N \\ln N - N) - 3N \\ln \\Lambda \\right]\nThis can be rewritten as S = N k_B \\left[ \\ln\\left( \\frac{V - N v_{\\rm ex}/2}{N \\Lambda^3} \\right) + 1 \\right]"
-  },
-  {
-    "objectID": "soft-matter_colloids2.html#low-packing-fraction-equation-of-state",
-    "href": "soft-matter_colloids2.html#low-packing-fraction-equation-of-state",
-    "title": "Complex Disordered Systems",
-    "section": "Low packing fraction: equation of state",
-    "text": "Low packing fraction: equation of state\nThe equation of state links the three relevant thermodynamic variables P,T and \\phi\nP = -\\left(\\dfrac{\\partial F}{\\partial V}\\right)_{N,T} =T\\left(\\dfrac{\\partial S}{\\partial V}\\right)_{N,T}= \\dfrac{k_B T }{v-v_{\\rm ex}/2}\nThis expression can be simplified (do it as an exercise) to obtain the equation of state\nZ_{\\rm comp}= \\dfrac{PV}{Nk_BT}=\\dfrac{1}{1-4\\phi} \\quad (\\phi\\ll 1)\nwhere Z_{\\rm comp} is compressibility factor (to not be confused with the partition function).\nFor small \\phi we have\nZ_{\\rm comp} =\\dfrac{PV}{Nk_BT} =  1+4\\phi+O(\\phi^2)\n\n\n\n\n\n\nNote\n\n\nInspect this term and recognise that this illustrates that the dilute limit is an ideal gas + a correction."
-  },
-  {
-    "objectID": "soft-matter_colloids2.html#virial-expansion",
-    "href": "soft-matter_colloids2.html#virial-expansion",
-    "title": "Complex Disordered Systems",
-    "section": "Virial expansion",
-    "text": "Virial expansion\nThe expression Z_{\\rm comp} = 1+4\\phi+O(\\phi^2) is just the simplest form of the more generic virial expansion, the perturbative series\nZ_{\\rm comp}= 1 + B_2 \\rho + B_3 \\rho^2+ \\dots\nThe B_2, B_3, \\dots are known as virial coefficients and for non-hard-sphere systems they also depend on temperature, B_2(T), B_3(T),\\dots\nThey encode correlations (pairs, triplets and so on). In a generic setting\n\nZ_N=\\frac{1}{N!\\Lambda^{3 N}} \\int \\cdots \\int \\exp \\left[-\\beta \\sum_{i&lt;j} U\\left(r_{i j}\\right)\\right] d \\mathbf{r}_1 \\ldots d \\mathbf{r}_N\n\ncan be re-written using the Mayer function f_{i j}=e^{-\\beta u\\left(r_{i j}\\right)}-1 and e^{-\\beta \\sum_{i&lt;j} U\\left(r_{i j}\\right)}=\\prod_{i&lt;j}\\left(1+f_{i j}\\right) yielding\n\nZ_N=\\frac{1}{N!\\Lambda^{3 N}} \\int \\cdots \\int \\prod_{i&lt;j}\\left(1+f_{i j}\\right) d \\mathbf{r}_1 \\ldots d \\mathbf{r}_N"
-  },
-  {
-    "objectID": "soft-matter_colloids2.html#cluster-expansion-and-second-virial",
-    "href": "soft-matter_colloids2.html#cluster-expansion-and-second-virial",
-    "title": "Complex Disordered Systems",
-    "section": "Cluster expansion and second virial",
-    "text": "Cluster expansion and second virial\nOne can expand the product\n\n\\prod_{i&lt;j}\\left(1+f_{i j}\\right)=1+\\sum_{i&lt;j} f_{i j}+\\sum_{i&lt;j, k&lt;l}^{\\text {distinct }} f_{i j} f_{k l}+\\ldots\n The first term is the ideal gas, the second is clearly pair correlations (only pairwise distances).\nThis motivates one to define \nB_2(T)=-\\frac{1}{2} \\int f(r) d \\mathbf{r}=-2 \\pi \\int_0^{\\infty}\\left[e^{-\\beta U(r)}-1\\right] r^2 d r\n\nFor hard spheres this results in \nB_2 =  \\frac{2\\pi}{3} \\sigma^3\n\nSo Z = 1 + \\dfrac{2\\pi}{3} \\sigma^3\\rho = 1+ 4\\left( \\dfrac{\\pi}{6} \\sigma^3\\rho\\right)=1+4\\phi as we calculated earlier."
-  },
-  {
-    "objectID": "soft-matter_colloids2.html#low-density-limit-key-points",
-    "href": "soft-matter_colloids2.html#low-density-limit-key-points",
-    "title": "Complex Disordered Systems",
-    "section": "Low density limit: key points",
-    "text": "Low density limit: key points\n\n\n\n\n\n\nImportant\n\n\n\nWe can simply focus on the accessible volume and ignore overlap between exclusion volumes\nWe can focus on the configurational entropy and extract the equation of state relating P,T,\\phi\nThe compressibility factor in terms of the packing fraction \\phi is the most condensed expression and is \nZ_{\\mathrm{comp}}=\\frac{P V}{N k_B T}=1+4 \\phi+O\\left(\\phi^2\\right)\n highlighting the first non-trivial perturbation to the ideal gas\nWe can see this as an instance of the more general virial and cluster expansion formalism, which can be used for any fluid. \nZ_{\\text {comp }}=1+B_2 \\rho+B_3 \\rho^2+\\ldots\n\nThe first nontrivial correction is the second virial coefficient \nB_2(T)=-2 \\pi \\int_0^{\\infty}\\left[e^{-\\beta U(r)}-1\\right] r^2 d r"
-  },
-  {
-    "objectID": "soft-matter_colloids2.html#dense-packing",
-    "href": "soft-matter_colloids2.html#dense-packing",
-    "title": "Complex Disordered Systems",
-    "section": "Dense packing",
-    "text": "Dense packing\n\nAs we increase the packing fraction, the accessible (free) volume reduces rapidly and thermal motion is hindered.\nTight disordered (random) packing of spheres are described as jammed: link with glasses (in future lectures).\nDensest packing reaches a maximum packing of around \\phi_{\\mathrm{rcp}} \\approx 0.64: this is not unique and depends on the protocol of preparation.\nKepler’s conjecture (1611, proved only in 2017):\nDensest packings are Face Centred Cubic (FCC) or Hexagonally Close Packed (HCP) \\phi_{\\max }=\\frac{\\pi}{3 \\sqrt{2}} \\approx 0.74\n\n\n\n\nPackings"
-  },
-  {
-    "objectID": "soft-matter_colloids2.html#dense-packing-1",
-    "href": "soft-matter_colloids2.html#dense-packing-1",
-    "title": "Complex Disordered Systems",
-    "section": "Dense packing",
-    "text": "Dense packing\nQ: Can purely repulsive spheres assemble spontaneously into an FCC crystal?\n\n\nYES\n\nEntropy in AO interactions causes an effective interaction that has a minimum\n\nDisordered packings are less efficient than ordered ones\n\n\nNO\n\nHard sphere potential only prevents overlaps\n\nThere is no minimum in the interaction potential to favour a crystal lattice and localisation\n\nEntropy is just disorder\n\n\n\nThe matter was hotly debated in conferences in the 1950s and got to evenly split votes multiple times"
-  },
-  {
-    "objectID": "soft-matter_colloids2.html#dense-packing-and-crystallisation",
-    "href": "soft-matter_colloids2.html#dense-packing-and-crystallisation",
-    "title": "Complex Disordered Systems",
-    "section": "Dense packing and crystallisation",
-    "text": "Dense packing and crystallisation\nEarly computer simulations (molecular dynamics, Alder and Wainwright 1957, Monte Carlo, Wood and Jacobson (1957)) proved that crystallisation is possible.\n\n\n\n\nThe video shows a Monte Carlo simulation at packing \\phi=0.49 for a small system of 32 particles. Small systems have enhanced fluctuations, leading to spontaneous freezing and unfreezing."
-  },
-  {
-    "objectID": "soft-matter_colloids2.html#dense-packing-cell-model",
-    "href": "soft-matter_colloids2.html#dense-packing-cell-model",
-    "title": "Complex Disordered Systems",
-    "section": "Dense packing: cell model",
-    "text": "Dense packing: cell model\n\nIn an FCC cell, particles can move very little beyond their own diameter \\sigma.\nAssume that the volume per particle is v and the (geometrically constrained) close packed volume is v_{cp}.\nThe maximum displacement is \n\\delta=\\frac{\\sigma}{\\sqrt{2}}\\left(\\left(\\frac{v}{v_{c p}}\\right)^{1 / 3}-1\\right)\n\nThe corresponding free volume is then v_f=\\frac{4 \\pi}{3} \\delta^3 from which we can calculate the entropy \nS = -N k_B T \\ln \\left(v_f / \\Lambda^3\\right)\nAnd the pressure P=T\\left(\\frac{\\partial S}{\\partial V}\\right)_{N, T}=\\frac{N k_B T}{v_{c p}} \\frac{\\left(v / v_{c p}\\right)^{-2 / 3}}{\\left(v / v_{c p}\\right)^{1 / 3}-1}"
-  },
-  {
-    "objectID": "soft-matter_colloids2.html#dense-packing-cell-model-1",
-    "href": "soft-matter_colloids2.html#dense-packing-cell-model-1",
-    "title": "Complex Disordered Systems",
-    "section": "Dense packing: cell model",
-    "text": "Dense packing: cell model\nRearranging and expressing everything in terms of packing fraction \\phi = \\dfrac{\\pi\\sigma^3}{6v} yields \nZ_{\\rm comp}=\\frac{1}{1-\\left(\\phi / \\phi_{c p}\\right)^{1 / 3}}\n\n\nThis expression is completely different from the low density regime Z_{\\text {comp }}^{\\mathrm{low}}=1+B_2 \\rho+B_3 \\rho^2+\\ldots\nThe incompatibility signals non-analyticity and hence a discontinuous phase transition: first order transition.\nFirst order phase transitions are characterised by interfaces and coexistence between phases.\nWe should therefore observe phase coexistence in simulations and experiments of hard spheres."
-  },
-  {
-    "objectID": "soft-matter_colloids2.html#colloidal-hard-spheres-phase-behaviour",
-    "href": "soft-matter_colloids2.html#colloidal-hard-spheres-phase-behaviour",
-    "title": "Complex Disordered Systems",
-    "section": "Colloidal hard spheres: phase behaviour",
-    "text": "Colloidal hard spheres: phase behaviour\n\n\n\nVials of colloidal hard spheres under the effect of sedimentation: the gravitational field imposes a density gradient. At low packing fraction this maintains the dispersed fluid, but when the packing fraction is sufficiently high, it spontaneously forms a crystalline phase (speckled areas) after some time, in coexistence with a fluid. Notice that at very high packing the interfaces disappear and one has a disordered phase again: it is the glass, see Pusey et al, Philosophical Transactions of the Royal Society A (2009)."
-  },
-  {
-    "objectID": "soft-matter_colloids2.html#colloidal-hard-spheres-phase-behaviour-1",
-    "href": "soft-matter_colloids2.html#colloidal-hard-spheres-phase-behaviour-1",
-    "title": "Complex Disordered Systems",
-    "section": "Colloidal hard spheres: phase behaviour",
-    "text": "Colloidal hard spheres: phase behaviour\nIn conclusion, the one-dimensional phase diagram of hard spheres is the following\n\nHard spheres phase diagramNotice that the glass phase is purely non-equilibrium: if a system has enough time to relax, it will eventually form a crystal."
-  },
-  {
-    "objectID": "soft-matter_colloids2.html#beyond-hard-spheres-simple-liquids",
-    "href": "soft-matter_colloids2.html#beyond-hard-spheres-simple-liquids",
-    "title": "Complex Disordered Systems",
-    "section": "Beyond hard spheres: simple liquids",
-    "text": "Beyond hard spheres: simple liquids\n\n\n\nA simple liquid is a system of particles interacting via short-range, spherically symmetric (isotropic) pair potentials.\nA very common model is the Lennard-Jones (LJ) potential U_{\\mathrm{LJ}}(r) = 4\\epsilon \\left[ \\left( \\frac{\\sigma}{r} \\right)^{12} - \\left( \\frac{\\sigma}{r} \\right)^6 \\right] where \\epsilon sets the depth of the potential well (interaction strength) and \\sigma is the particle diameter (distance at which U=0).\nThe r^{-12} term models steep repulsion, while r^{-6} describes the attractive tail.\nThe Lennard-Jones fluid exhibits rich phase behavior: gas, liquid, supercritical fluid and crystalline solid\nThe LJ model is widely used to study atomic and molecular liquids, and serves as a reference for understanding real fluids and their phase transitions.\n\n\n\n\n\nPhase diagram of the Lennard-Jones Fluid, adapted from Wikimedia."
-  },
-  {
-    "objectID": "soft-matter_colloids2.html#coexistence-metastability-and-instability",
-    "href": "soft-matter_colloids2.html#coexistence-metastability-and-instability",
-    "title": "Complex Disordered Systems",
-    "section": "Coexistence: Metastability and Instability",
-    "text": "Coexistence: Metastability and Instability\n\nLennard-Jones and hard sphere fluids present coexistence regions.\nThe binodal line determines phase coexistence. It is the locus where the free energy satisfies the condition of equal chemical potential and pressure between coexisting phases. When crossing the binodal, one enters a regime of metastability.\n\n\n\n\nSchematic free energy for hard spheres compressed at high pressures: the fluid branch becomes metastable and the free energy minimum is located in the crystal phase"
-  },
-  {
-    "objectID": "soft-matter_colloids2.html#coexistence-metastability-and-instability-1",
-    "href": "soft-matter_colloids2.html#coexistence-metastability-and-instability-1",
-    "title": "Complex Disordered Systems",
-    "section": "Coexistence: Metastability and Instability",
-    "text": "Coexistence: Metastability and Instability\n\nThe spinodal line marks the boundary of metastability. It is the limit of stability \n\\frac{\\partial^2 G}{\\partial \\phi^2}=0\n\nBetween the binodal and spinodal lines, the system is metastable, meaning it can persist in a non-equilibrium state for a finite time.\nThe nucleation time \\tau is related to the free energy barrier \\Delta G^* by an activated (also called Arrhenius) law\n  \\tau \\propto \\exp\\left(\\frac{\\Delta G^*}{k_B T}\\right)    \nInside the spinodal there is no nucleation: coarsening occurs.\n\nYou have seen some of this physics when discussing the Ising model."
   }
 ]

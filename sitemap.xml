@@ -1,27 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://fturci.github.io/course-disordered-matter-slides/soft-matter_colloids1.html</loc>
-    <lastmod>2025-11-05T09:16:44.818Z</lastmod>
+    <loc>https://fturci.github.io/course-disordered-matter-slides/soft-matter_liquidx.html</loc>
+    <lastmod>2025-11-19T10:12:27.812Z</lastmod>
   </url>
   <url>
-    <loc>https://fturci.github.io/course-disordered-matter-slides/soft-matter_colloids3.html</loc>
-    <lastmod>2025-11-12T09:14:11.035Z</lastmod>
-  </url>
-  <url>
-    <loc>https://fturci.github.io/course-disordered-matter-slides/soft-matter_polymers2.html</loc>
-    <lastmod>2025-11-18T19:58:51.272Z</lastmod>
-  </url>
-  <url>
-    <loc>https://fturci.github.io/course-disordered-matter-slides/soft-matter_intro.html</loc>
-    <lastmod>2025-11-04T11:42:28.601Z</lastmod>
+    <loc>https://fturci.github.io/course-disordered-matter-slides/soft-matter_colloids2.html</loc>
+    <lastmod>2025-11-11T09:53:54.905Z</lastmod>
   </url>
   <url>
     <loc>https://fturci.github.io/course-disordered-matter-slides/soft-matter_polymers1.html</loc>
     <lastmod>2025-11-17T18:02:13.141Z</lastmod>
   </url>
   <url>
-    <loc>https://fturci.github.io/course-disordered-matter-slides/soft-matter_colloids2.html</loc>
-    <lastmod>2025-11-11T09:53:54.905Z</lastmod>
+    <loc>https://fturci.github.io/course-disordered-matter-slides/soft-matter_intro.html</loc>
+    <lastmod>2025-11-04T11:42:28.601Z</lastmod>
+  </url>
+  <url>
+    <loc>https://fturci.github.io/course-disordered-matter-slides/soft-matter_polymers2.html</loc>
+    <lastmod>2025-11-18T19:58:51.272Z</lastmod>
+  </url>
+  <url>
+    <loc>https://fturci.github.io/course-disordered-matter-slides/soft-matter_colloids3.html</loc>
+    <lastmod>2025-11-12T09:14:11.035Z</lastmod>
+  </url>
+  <url>
+    <loc>https://fturci.github.io/course-disordered-matter-slides/soft-matter_colloids1.html</loc>
+    <lastmod>2025-11-05T09:16:44.818Z</lastmod>
   </url>
 </urlset>
