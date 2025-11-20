@@ -560,6 +560,83 @@
     "text": "3D Nematic Order Parameter\nIn 3D, choosing coordinates along director \\mathbf{n}:\n\n\\mathcal{S}=\\dfrac{1}{2} \\left\\langle 3\\cos ^2 \\theta_i-1\\right\\rangle\n\nwhere \\theta_i is angle between particle i and director.\nThis uses the Legendre polynomial P_2(\\cos\\theta) to enforce head-tail symmetry.\n\nLowest nontrivial rotationally‑invariant scalar that is even under \\mathbf{n}\\to -\\mathbf{n}\n\n\n\n\n\n\n\n\n\nn\nLegendre polynomial P_n(x)\nHead-tail symmetric?\n\n\n\n\n0\nP_0(x)=1\nYes (even: P_0(-x)=P_0(x))\n\n\n1\nP_1(x)=x\nNo (odd: P_1(-x)=-P_1(x))\n\n\n2\nP_2(x)=\\dfrac{1}{2}(3x^2-1)\nYes (even: P_2(-x)=P_2(x))\n\n\n3\nP_3(x)=\\dfrac{1}{2}(5x^3-3x)\nNo (odd: P_3(-x)=-P_3(x))\n\n\n4\nP_4(x)=\\dfrac{1}{8}(35x^4-30x^2+3)\nYes (even: P_4(-x)=P_4(x))"
   },
   {
+    "objectID": "soft-matter_liquidx1.html#landau-de-gennes-mean-field-theory",
+    "href": "soft-matter_liquidx1.html#landau-de-gennes-mean-field-theory",
+    "title": "Complex Disordered Systems",
+    "section": "Landau-de Gennes mean field theory",
+    "text": "Landau-de Gennes mean field theory\nUsing the tensorial order parameter one can express a Landau theory of the isotropic-to-nematic transition (the simplest form of orientational order appearing in liquid crystals).\nLeveraging that \\mathcal{S} is an eigenvalue of \\mathbf{Q}, i.e. \\mathbf{Qn} = S\\mathbf{n} we have\n\n\\mathbf{Q}=\\mathcal{S}\\left(\\mathbf{n} \\otimes \\mathbf{n}-\\frac{1}{d} \\mathbf{I}\\right)\n\nIf we choose z to be the axis along teh director \\mathbf{n} then explicitly\n\n\\mathbf{Q}=\\mathcal{S}\\left(\\begin{array}{ccc}\n-\\frac{1}{3} & 0 & 0 \\\\\n0 & -\\frac{1}{3} & 0 \\\\\n0 & 0 & \\frac{2}{3}\n\\end{array}\\right)"
+  },
+  {
+    "objectID": "soft-matter_liquidx1.html#landau-de-gennes-mean-field-theory-1",
+    "href": "soft-matter_liquidx1.html#landau-de-gennes-mean-field-theory-1",
+    "title": "Complex Disordered Systems",
+    "section": "Landau-de Gennes mean field theory",
+    "text": "Landau-de Gennes mean field theory\nWe want to characterise the deviations from the director’s orientation.\nWe can think of compiling a probability distribution p(\\Omega) of finding a rod with pair of polar angles \\Omega=(\\theta,\\phi) in a coordinates system with polar axis along \\mathbf{n}.\n\nNote: the nematic phase has cylindrical symmetry around \\mathbf{n}\nHence, we have no dependency in the azimuthal angle \\phi but only on \\theta.\n\nSo, by definition of an average, the orientational order parameter reads\n\\begin{align}\\mathcal{S}&=\\dfrac{3}{2}\\left\\langle(\\mathbf{u} \\cdot \\mathbf{n})^2-\\frac{1}{3}\\right\\rangle = \\dfrac{1}{2}\\langle 3 \\cos^2\\theta-1\\rangle=\\langle P_2(\\cos\\theta)\\rangle\\\\\n&=2\\pi \\int_0^{\\pi}P_2(\\cos\\theta)p(\\theta)\\sin\\theta d\\theta\n\\end{align} where we used the Jacobian in spherical coordinates."
+  },
+  {
+    "objectID": "soft-matter_liquidx1.html#landau-de-gennes-mean-field-theory-2",
+    "href": "soft-matter_liquidx1.html#landau-de-gennes-mean-field-theory-2",
+    "title": "Complex Disordered Systems",
+    "section": "Landau-de Gennes mean field theory",
+    "text": "Landau-de Gennes mean field theory\nThe phenomenological Landau-de Gennes approach is to construct a generic free energy density as an expansion in scalar combinations of the tensor \\mathbf{Q} (of which \\mathcal{S} is an example)\n\nf=f_0+\\frac{A}{2} Q_{i j} Q_{j i}-\\frac{B}{3} Q_{i j} Q_{j k} Q_{k i}+\\frac{C}{4}\\left(Q_{i j} Q_{i j}\\right)^2\n or in more compact form\n\nf=f_0+\\frac{A}{2} \\operatorname{tr} \\mathbf{Q}^2-\\frac{B}{3} \\operatorname{tr} \\mathbf{Q}^3+\\frac{C}{4}\\left(\\operatorname{tr} \\mathbf{Q}^2\\right)^2\n\n\nNotice that all the indices are contracted!\nA, B, C are phenomenological constants (and cannot be immediately linked to microscopic properties of the anisotropic particles)"
+  },
+  {
+    "objectID": "soft-matter_liquidx1.html#landau-de-gennes-mean-field-theory-3",
+    "href": "soft-matter_liquidx1.html#landau-de-gennes-mean-field-theory-3",
+    "title": "Complex Disordered Systems",
+    "section": "Landau-de Gennes mean field theory",
+    "text": "Landau-de Gennes mean field theory\nAccording to our earlier 3D definitions\n\n\\operatorname{Tr}\\left(\\mathbf{Q}^2\\right)=\\frac{2}{3} S^2 \\quad,\\quad\n\\operatorname{Tr}\\left(\\mathbf{Q}^3\\right)=\\frac{2}{9} S^3\n\nSo \nf=f_0+\\frac{A}{2} \\operatorname{tr} \\mathbf{Q}^2-\\frac{B}{3} \\operatorname{tr} \\mathbf{Q}^3+\\frac{C}{4}\\left(\\operatorname{tr} \\mathbf{Q}^2\\right)^2\n becomes \nf=f_0+\\frac{A}{3}S^2-\\frac{2B}{27}S^3+\\frac{C}{9}S^4"
+  },
+  {
+    "objectID": "soft-matter_liquidx1.html#landau-de-gennes-theory-result",
+    "href": "soft-matter_liquidx1.html#landau-de-gennes-theory-result",
+    "title": "Complex Disordered Systems",
+    "section": "Landau-de Gennes theory result",
+    "text": "Landau-de Gennes theory result\n\nWe can use the Landau phase transition approach.\nWe can expand A,B,C around a reference temperature T^\\ast :\n\nA(T)=a\\left(T-T_*\\right)+\\cdots\nB(T)= b+\\dots\nC(T)=c+\\dots, with a,b,c&gt;0 to preserve the most relevant terms.\n\n\nand obtain\n\nf-f_0=\\frac{a}{3}\\left(T-T^{\\ast}\\right) S^2-\\frac{2 b}{27} S^3+\\frac{c}{9} S^4 .\n\nThe cubic term implies that there is a temperature range where two minima coexist:\n\nS_1=0: isotropic\nS_2&gt;0: nematic\n\nFirst order phase transition. The cubic terms prevents the free energy from having an inflection at S=0 (the free energy nver gets truly flat)"
+  },
+  {
+    "objectID": "soft-matter_liquidx1.html#landau-de-gennes-theory-result-1",
+    "href": "soft-matter_liquidx1.html#landau-de-gennes-theory-result-1",
+    "title": "Complex Disordered Systems",
+    "section": "Landau-de Gennes theory result",
+    "text": "Landau-de Gennes theory result\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nThe transition temperature is\n\nT_{N I}=T^{\\ast}+\\frac{b^2}{27 a c}\n\nwhile T^{\\ast} is a material dependent temperature, identifying instability (spinodal)."
+  },
+  {
+    "objectID": "soft-matter_liquidx1.html#aside-constrained-optimisation-with-lagrange-multipliers",
+    "href": "soft-matter_liquidx1.html#aside-constrained-optimisation-with-lagrange-multipliers",
+    "title": "Complex Disordered Systems",
+    "section": "Aside : constrained optimisation with Lagrange multipliers",
+    "text": "Aside : constrained optimisation with Lagrange multipliers\nMany physics problems can be cast in terms of constraiend optimisation\n\n\n\n\n\n\n\n\nArea\nProblem\nConstraint\n\n\n\n\nMechanics\nMinimize action S=\\int L dt\nEnergy conservation\n\n\nThermodynamics\nMaximize entropy S\nFixed total energy E\n\n\nElectromagnetism\nMinimize energy\nGauss’s law \\nabla \\cdot \\mathbf{E} = \\rho/\\epsilon_0\n\n\nGeneral Relativity\nMinimize Einstein-Hilbert action\nMetric signature constraint\n\n\nLiquid Crystals\nMinimize Frank energy\nDirector normalization \\|\\mathbf{n}\\|=1\n\n\nStatistical Mechanics\nMaximize partition function\nMicro/Gran/canonical ensembles\n\n\nOptics\nMinimize optical path (Fermat)\nSnell’s law at interfaces\n\n\n\nMethod: Use Lagrange multipliers \\lambda to convert constrained into unconstrained problem: \\mathcal{L}=f(\\mathbf{x})-\\lambda g(\\mathbf{x}) then solve \\nabla\\mathcal{L}=0."
+  },
+  {
+    "objectID": "soft-matter_liquidx1.html#geometrical-understand-of-lagrange-multipliers",
+    "href": "soft-matter_liquidx1.html#geometrical-understand-of-lagrange-multipliers",
+    "title": "Complex Disordered Systems",
+    "section": "Geometrical understand of Lagrange multipliers",
+    "text": "Geometrical understand of Lagrange multipliers\n\nTake a function f(x,y).\nA constraint is expressed by fixing the value of a second function g(x,y)=c\nWe want to find the extrema of f(x,y) subject to the constraint g(x,y)=c: It has to be a curve\nThis means find the extremal values of f on the curve \\mathcal{C}: g(x,y)=c\nWe could parametrise \\mathcal{C} but we can also simply think in terms of its geometrical features.\n\nTake the example of a minimum: - at every point of \\mathcal{C} there is a tangent vector \\vec{t} - we want to find the points on \\mathcal{C} where f is miniimal. This means that changes of f along \\mathcal{C} are minimal. - we can calculate such changes as the projection of the local gradient with the tangent vector and state that \\vec{\\nabla}{f} \\perp \\vec{t} - Notice that, by definition, the \\vec{\\nabla}{g}\\perp \\vec{t} - So we are simply saying that\n\\vec{\\nabla}{f}\\parallel \\vec{\\nabla}{g}\\to \\vec{\\nabla}{f}=\\lambda\\vec{\\nabla}{g}\nfor some scalar \\lambda"
+  },
+  {
+    "objectID": "soft-matter_liquidx1.html#example",
+    "href": "soft-matter_liquidx1.html#example",
+    "title": "Complex Disordered Systems",
+    "section": "Example",
+    "text": "Example"
+  },
+  {
+    "objectID": "soft-matter_liquidx1.html#generalise-to-many-variables-example-of-probabilities",
+    "href": "soft-matter_liquidx1.html#generalise-to-many-variables-example-of-probabilities",
+    "title": "Complex Disordered Systems",
+    "section": "Generalise to many variables: Example of probabilities",
+    "text": "Generalise to many variables: Example of probabilities\nDiscrete case: Find extremum of entropy \nS = -\\sum_i p_i \\ln p_i\n subject to normalization constraint: \n\\sum_i p_i = 1\n and average energy constraint: \n\\sum_i p_i E_i = \\langle E \\rangle\n\nUsing Lagrange multipliers: \n\\mathcal{L} = -\\sum_i p_i \\ln p_i - \\lambda_1 \\left(\\sum_i p_i - 1\\right) - \\lambda_2 \\left(\\sum_i p_i E_i - \\langle E \\rangle\\right)\n\nSetting \\frac{\\partial \\mathcal{L}}{\\partial p_i} = 0: \n-\\ln p_i - 1 - \\lambda_1 - \\lambda_2 E_i = 0 \\quad \\Rightarrow \\quad p_i = \\exp(-\\lambda_2 E_i - \\lambda_1 - 1)\n\nThis is the Boltzmann distribution: p_i \\propto \\exp(-\\beta E_i) with \\beta = \\lambda_2."
+  },
+  {
+    "objectID": "soft-matter_liquidx1.html#continuous-limit",
+    "href": "soft-matter_liquidx1.html#continuous-limit",
+    "title": "Complex Disordered Systems",
+    "section": "Continuous Limit",
+    "text": "Continuous Limit\nReplace sums with integrals. Let p_i \\to p(x) where x is a continuous variable.\nConstraints become: \n\\int p(x) dx = 1, \\quad \\int p(x) E(x) dx = \\langle E \\rangle\n\nEntropy functional: \nS[p] = -\\int p(x) \\ln p(x) dx\n\nLagrangian: \n\\mathcal{L} = -\\int p(x) \\ln p(x) dx - \\lambda_1 \\left(\\int p(x) dx - 1\\right) - \\lambda_2 \\left(\\int p(x) E(x) dx - \\langle E \\rangle\\right)\n\nFunctional derivative \\frac{\\delta \\mathcal{L}}{\\delta p(x)} = 0: \n-\\ln p(x) - 1 - \\lambda_1 - \\lambda_2 E(x) = 0 \\quad \\Rightarrow \\quad p(x) = \\exp(-\\beta E(x) - c)"
+  },
+  {
     "objectID": "soft-matter_intro.html#today",
     "href": "soft-matter_intro.html#today",
     "title": "Complex Disordered Systems",

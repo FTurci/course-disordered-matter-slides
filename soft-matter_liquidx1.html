@@ -453,8 +453,220 @@ u_d u_1 &amp; u_d u_2 &amp; \cdots &amp; u_d u_d
 </tr>
 </tbody>
 </table>
+</section>
+<section id="landau-de-gennes-mean-field-theory" class="slide level2">
+<h2>Landau-de Gennes mean field theory</h2>
+<p>Using the tensorial order parameter one can express a Landau theory of the isotropic-to-nematic transition (the simplest form of orientational order appearing in liquid crystals).</p>
+<p>Leveraging that <span class="math inline">\mathcal{S}</span> is an eigenvalue of <span class="math inline">\mathbf{Q}</span>, i.e.&nbsp;<span class="math inline">\mathbf{Qn} = S\mathbf{n}</span> we have</p>
+<p><span class="math display">
+\mathbf{Q}=\mathcal{S}\left(\mathbf{n} \otimes \mathbf{n}-\frac{1}{d} \mathbf{I}\right)
+</span></p>
+<p>If we choose <span class="math inline">z</span> to be the axis along teh director <span class="math inline">\mathbf{n}</span> then explicitly</p>
+<p><span class="math display">
+\mathbf{Q}=\mathcal{S}\left(\begin{array}{ccc}
+-\frac{1}{3} &amp; 0 &amp; 0 \\
+0 &amp; -\frac{1}{3} &amp; 0 \\
+0 &amp; 0 &amp; \frac{2}{3}
+\end{array}\right)
+</span></p>
+</section>
+<section id="landau-de-gennes-mean-field-theory-1" class="slide level2">
+<h2>Landau-de Gennes mean field theory</h2>
+<p>We want to characterise the deviations from the director’s orientation.</p>
+<p>We can think of compiling a <strong>probability distribution</strong> <span class="math inline">p(\Omega)</span> of finding a rod with pair of polar angles <span class="math inline">\Omega=(\theta,\phi)</span> in a coordinates system with polar axis along <span class="math inline">\mathbf{n}</span>.</p>
+<ul>
+<li>Note: the nematic phase has <strong>cylindrical symmetry</strong> around <span class="math inline">\mathbf{n}</span></li>
+<li>Hence, we have no dependency in the azimuthal angle <span class="math inline">\phi</span> but only on <span class="math inline">\theta</span>.</li>
+</ul>
+<p>So, by definition of an average, the orientational order parameter reads</p>
+<p><span class="math display">\begin{align}\mathcal{S}&amp;=\dfrac{3}{2}\left\langle(\mathbf{u} \cdot \mathbf{n})^2-\frac{1}{3}\right\rangle = \dfrac{1}{2}\langle 3 \cos^2\theta-1\rangle=\langle P_2(\cos\theta)\rangle\\
+&amp;=2\pi \int_0^{\pi}P_2(\cos\theta)p(\theta)\sin\theta d\theta
+\end{align}</span> where we used the Jacobian in spherical coordinates.</p>
+</section>
+<section id="landau-de-gennes-mean-field-theory-2" class="slide level2">
+<h2>Landau-de Gennes mean field theory</h2>
+<p>The phenomenological Landau-de Gennes approach is to construct a <strong>generic free energy density</strong> as an expansion in scalar combinations of the tensor <span class="math inline">\mathbf{Q}</span> (of which <span class="math inline">\mathcal{S}</span> is an example)</p>
+<p><span class="math display">
+f=f_0+\frac{A}{2} Q_{i j} Q_{j i}-\frac{B}{3} Q_{i j} Q_{j k} Q_{k i}+\frac{C}{4}\left(Q_{i j} Q_{i j}\right)^2
+</span> or in more compact form</p>
+<p><span class="math display">
+f=f_0+\frac{A}{2} \operatorname{tr} \mathbf{Q}^2-\frac{B}{3} \operatorname{tr} \mathbf{Q}^3+\frac{C}{4}\left(\operatorname{tr} \mathbf{Q}^2\right)^2
+</span></p>
+<ul>
+<li>Notice that all the indices are contracted!</li>
+<li><span class="math inline">A, B, C</span> are phenomenological constants (and cannot be immediately linked to microscopic properties of the anisotropic particles)</li>
+</ul>
+</section>
+<section id="landau-de-gennes-mean-field-theory-3" class="slide level2">
+<h2>Landau-de Gennes mean field theory</h2>
+<p>According to our earlier 3D definitions</p>
+<p><span class="math display">
+\operatorname{Tr}\left(\mathbf{Q}^2\right)=\frac{2}{3} S^2 \quad,\quad
+\operatorname{Tr}\left(\mathbf{Q}^3\right)=\frac{2}{9} S^3
+</span></p>
+<p>So <span class="math display">
+f=f_0+\frac{A}{2} \operatorname{tr} \mathbf{Q}^2-\frac{B}{3} \operatorname{tr} \mathbf{Q}^3+\frac{C}{4}\left(\operatorname{tr} \mathbf{Q}^2\right)^2
+</span> becomes <span class="math display">
+f=f_0+\frac{A}{3}S^2-\frac{2B}{27}S^3+\frac{C}{9}S^4
+</span></p>
+</section>
+<section id="landau-de-gennes-theory-result" class="slide level2">
+<h2>Landau-de Gennes theory result</h2>
+<ul>
+<li><p>We can use the Landau phase transition approach.</p></li>
+<li><p>We can <strong>expand</strong> <span class="math inline">A,B,C</span> around a reference temperature <span class="math inline">T^\ast</span> :</p>
+<ul>
+<li><span class="math inline">A(T)=a\left(T-T_*\right)+\cdots</span></li>
+<li><span class="math inline">B(T)= b+\dots</span></li>
+<li><span class="math inline">C(T)=c+\dots</span>, with <span class="math inline">a,b,c&gt;0</span> to preserve the most relevant terms.</li>
+</ul></li>
+</ul>
+<p>and obtain</p>
+<p><span class="math display">
+f-f_0=\frac{a}{3}\left(T-T^{\ast}\right) S^2-\frac{2 b}{27} S^3+\frac{c}{9} S^4 .
+</span></p>
+<p>The cubic term implies that there is a <strong>temperature range</strong> where <strong>two minima coexist</strong>:</p>
+<ul>
+<li><span class="math inline">S_1=0</span>: isotropic</li>
+<li><span class="math inline">S_2&gt;0</span>: nematic</li>
+</ul>
+<p>First order phase transition. The cubic terms prevents the free energy from having an inflection at <span class="math inline">S=0</span> (the free energy nver gets truly flat)</p>
+</section>
+<section id="landau-de-gennes-theory-result-1" class="slide level2">
+<h2>Landau-de Gennes theory result</h2>
+<div class="columns">
+<div class="column" style="width:60%;">
+<div>
+<div id="pyodide-1" class="exercise-cell">
+
+</div>
+<script type="pyodide-1-contents">
+eyJhdHRyIjp7ImF1dG9ydW4iOnRydWUsImVjaG8iOmZhbHNlLCJlZGl0IjpmYWxzZSwiZXZhbCI6dHJ1ZX0sImNvZGUiOiJpbXBvcnQgbnVtcHkgYXMgbnBcbmltcG9ydCBtYXRwbG90bGliLnB5cGxvdCBhcyBwbHRcbmRlZiBwbG90KFMsRik6XG4gICAgIyBQbG90XG4gICAgcGx0LmZpZ3VyZShmaWdzaXplPSg2LCAzKSlcbiAgICBwbHQucGxvdChTLCBmLCAnYi0nLCBsaW5ld2lkdGg9MilcbiAgICBwbHQuYXhobGluZSh5PTAsIGNvbG9yPSdrJywgbGluZXN0eWxlPSctLScsIGFscGhhPTAuMylcbiAgICBwbHQueGxhYmVsKCdPcmRlciBwYXJhbWV0ZXIgUycsIGZvbnRzaXplPTEyKVxuICAgIHBsdC55bGFiZWwoJ0ZyZWUgZW5lcmd5IGRlbnNpdHkgJGYgLSBmXzAkJywgZm9udHNpemU9MTIpXG4gICAgcGx0LmdyaWQoVHJ1ZSwgYWxwaGE9MC4zKVxuICAgIHBsdC50aWdodF9sYXlvdXQoKVxuICAgIHBsdC5zaG93KCkifQ==
+</script>
+</div>
+<div>
+<div id="pyodide-2" class="exercise-cell">
+
+</div>
+<script type="pyodide-2-contents">
+eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoiVCA9IDEuMDEgICMgd29ya2luZyB0ZW1wZXJhdHVyZVxuVG5pID0gMS4wICN0cmFuc2l0aW9uIHRlbXBlcmF0dXJlXG5hID0gMS4wXG5iID0gNS4wXG5jID0gMy4wXG5UX3N0YXIgPSBUbmktYioqMi8oMjcqYSpjKVxuIyBPcmRlciBwYXJhbWV0ZXIgcmFuZ2VcblMgPSBucC5saW5zcGFjZSgwLCAxLCAyMDApXG4jIEZyZWUgZW5lcmd5IGRlbnNpdHkgKHNldHRpbmcgZl8wID0gMClcbmYgPSAoYS8zKSAqIChUIC0gVF9zdGFyKSAqIFMqKjIgLSAoMipiLzI3KSAqIFMqKjMgKyAoYy85KSAqIFMqKjRcbnBsb3QoUyxmKSJ9
+</script>
+</div>
+</div><div class="column" style="width:40%;">
+<p>The transition temperature is</p>
+<p><span class="math display">
+T_{N I}=T^{\ast}+\frac{b^2}{27 a c}
+</span></p>
+<p>while <span class="math inline">T^{\ast}</span> is a material dependent temperature, identifying instability (spinodal).</p>
+</div></div>
+</section>
+<section id="aside-constrained-optimisation-with-lagrange-multipliers" class="slide level2">
+<h2>Aside : constrained optimisation with Lagrange multipliers</h2>
+<p>Many physics problems can be cast in terms of constraiend optimisation</p>
+<table class="caption-top">
+<colgroup>
+<col style="width: 23%">
+<col style="width: 34%">
+<col style="width: 42%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Area</th>
+<th>Problem</th>
+<th>Constraint</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Mechanics</strong></td>
+<td>Minimize action <span class="math inline">S=\int L dt</span></td>
+<td>Energy conservation</td>
+</tr>
+<tr class="even">
+<td><strong>Thermodynamics</strong></td>
+<td>Maximize entropy <span class="math inline">S</span></td>
+<td>Fixed total energy <span class="math inline">E</span></td>
+</tr>
+<tr class="odd">
+<td><strong>Electromagnetism</strong></td>
+<td>Minimize energy</td>
+<td>Gauss’s law <span class="math inline">\nabla \cdot \mathbf{E} = \rho/\epsilon_0</span></td>
+</tr>
+<tr class="even">
+<td><strong>General Relativity</strong></td>
+<td>Minimize Einstein-Hilbert action</td>
+<td>Metric signature constraint</td>
+</tr>
+<tr class="odd">
+<td><strong>Liquid Crystals</strong></td>
+<td>Minimize Frank energy</td>
+<td>Director normalization <span class="math inline">\|\mathbf{n}\|=1</span></td>
+</tr>
+<tr class="even">
+<td><strong>Statistical Mechanics</strong></td>
+<td>Maximize partition function</td>
+<td>Micro/Gran/canonical ensembles</td>
+</tr>
+<tr class="odd">
+<td><strong>Optics</strong></td>
+<td>Minimize optical path (Fermat)</td>
+<td>Snell’s law at interfaces</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Method</strong>: Use <strong>Lagrange multipliers</strong> <span class="math inline">\lambda</span> to convert constrained into unconstrained problem: <span class="math display">\mathcal{L}=f(\mathbf{x})-\lambda g(\mathbf{x})</span> then solve <span class="math inline">\nabla\mathcal{L}=0</span>.</p>
+</section>
+<section id="geometrical-understand-of-lagrange-multipliers" class="slide level2">
+<h2>Geometrical understand of Lagrange multipliers</h2>
+<ul>
+<li><p>Take a function <span class="math inline">f(x,y)</span>.</p></li>
+<li><p>A constraint is expressed by fixing the value of a second function <span class="math inline">g(x,y)=c</span></p></li>
+<li><p>We want to find the extrema of <span class="math inline">f(x,y)</span> subject to the constraint <span class="math inline">g(x,y)=c</span>: It has to be a curve</p></li>
+<li><p>This means find the extremal values of <span class="math inline">f</span> on the curve <span class="math inline">\mathcal{C}: g(x,y)=c</span></p></li>
+<li><p>We could parametrise <span class="math inline">\mathcal{C}</span> but we can also simply think in terms of its geometrical features.</p></li>
+</ul>
+<p>Take the example of a minimum: - at every point of <span class="math inline">\mathcal{C}</span> there is a tangent vector <span class="math inline">\vec{t}</span> - we want to find the points on <span class="math inline">\mathcal{C}</span> where <span class="math inline">f</span> is miniimal. This means that <em>changes of f</em> along <span class="math inline">\mathcal{C}</span> are minimal. - we can calculate such changes as the projection of the local gradient with the tangent vector and state that <span class="math display">\vec{\nabla}{f} \perp \vec{t}</span> - Notice that, by definition, the <span class="math display">\vec{\nabla}{g}\perp \vec{t}</span> - So we are simply saying that</p>
+<p><span class="math display">\vec{\nabla}{f}\parallel \vec{\nabla}{g}\to \vec{\nabla}{f}=\lambda\vec{\nabla}{g}</span></p>
+<p>for some scalar <span class="math inline">\lambda</span></p>
+</section>
+<section id="example" class="slide level2">
+<h2>Example</h2>
+
+<img data-src="9NIoJ.png" class="r-stretch"></section>
+<section id="generalise-to-many-variables-example-of-probabilities" class="slide level2">
+<h2>Generalise to many variables: Example of probabilities</h2>
+<p><strong>Discrete case</strong>: Find extremum of entropy <span class="math display">
+S = -\sum_i p_i \ln p_i
+</span> subject to normalization constraint: <span class="math display">
+\sum_i p_i = 1
+</span> and average energy constraint: <span class="math display">
+\sum_i p_i E_i = \langle E \rangle
+</span></p>
+<p>Using Lagrange multipliers: <span class="math display">
+\mathcal{L} = -\sum_i p_i \ln p_i - \lambda_1 \left(\sum_i p_i - 1\right) - \lambda_2 \left(\sum_i p_i E_i - \langle E \rangle\right)
+</span></p>
+<p>Setting <span class="math inline">\frac{\partial \mathcal{L}}{\partial p_i} = 0</span>: <span class="math display">
+-\ln p_i - 1 - \lambda_1 - \lambda_2 E_i = 0 \quad \Rightarrow \quad p_i = \exp(-\lambda_2 E_i - \lambda_1 - 1)
+</span></p>
+<p>This is the <strong>Boltzmann distribution</strong>: <span class="math inline">p_i \propto \exp(-\beta E_i)</span> with <span class="math inline">\beta = \lambda_2</span>.</p>
+</section>
+<section id="continuous-limit" class="slide level2">
+<h2>Continuous Limit</h2>
+<p>Replace sums with integrals. Let <span class="math inline">p_i \to p(x)</span> where <span class="math inline">x</span> is a continuous variable.</p>
+<p>Constraints become: <span class="math display">
+\int p(x) dx = 1, \quad \int p(x) E(x) dx = \langle E \rangle
+</span></p>
+<p>Entropy functional: <span class="math display">
+S[p] = -\int p(x) \ln p(x) dx
+</span></p>
+<p>Lagrangian: <span class="math display">
+\mathcal{L} = -\int p(x) \ln p(x) dx - \lambda_1 \left(\int p(x) dx - 1\right) - \lambda_2 \left(\int p(x) E(x) dx - \langle E \rangle\right)
+</span></p>
+<p>Functional derivative <span class="math inline">\frac{\delta \mathcal{L}}{\delta p(x)} = 0</span>: <span class="math display">
+-\ln p(x) - 1 - \lambda_1 - \lambda_2 E(x) = 0 \quad \Rightarrow \quad p(x) = \exp(-\beta E(x) - c)
+</span></p>
 <!-- 
----
+
 
 ## Probability Distribution
 
@@ -689,8 +901,11 @@ More complex than 2D case.
  -->
 
 
+<script type="pyodide-data">
+eyJvcHRpb25zIjp7ImVudiI6eyJQTE9UTFlfUkVOREVSRVIiOiJwbG90bHlfbWltZXR5cGUifSwiaW5kZXhVUkwiOiJodHRwczovL2Nkbi5qc2RlbGl2ci5uZXQvcHlvZGlkZS92MC4yOC4xL2Z1bGwvIn0sInBhY2thZ2VzIjp7InBrZ3MiOlsicHlvZGlkZV9odHRwIiwibWljcm9waXAiLCJpcHl0aG9uIl19fQ==
+</script>
 <script type="ojs-module-contents">
-eyJjb250ZW50cyI6W119
+eyJjb250ZW50cyI6W3siY2VsbE5hbWUiOiJweW9kaWRlLTIiLCJpbmxpbmUiOmZhbHNlLCJtZXRob2ROYW1lIjoiaW50ZXJwcmV0Iiwic291cmNlIjoidmlld29mIF9weW9kaWRlX2VkaXRvcl8yID0ge1xuICBjb25zdCB7IFB5b2RpZGVFeGVyY2lzZUVkaXRvciwgYjY0RGVjb2RlIH0gPSB3aW5kb3cuX2V4ZXJjaXNlX29qc19ydW50aW1lO1xuXG4gIGNvbnN0IHNjcmlwdENvbnRlbnQgPSBkb2N1bWVudC5xdWVyeVNlbGVjdG9yKGBzY3JpcHRbdHlwZT1cXFwicHlvZGlkZS0yLWNvbnRlbnRzXFxcIl1gKS50ZXh0Q29udGVudDtcbiAgY29uc3QgYmxvY2sgPSBKU09OLnBhcnNlKGI2NERlY29kZShzY3JpcHRDb250ZW50KSk7XG5cbiAgY29uc3Qgb3B0aW9ucyA9IE9iamVjdC5hc3NpZ24oeyBpZDogYHB5b2RpZGUtMi1jb250ZW50c2AgfSwgYmxvY2suYXR0cik7XG4gIGNvbnN0IGVkaXRvciA9IG5ldyBQeW9kaWRlRXhlcmNpc2VFZGl0b3IoXG4gICAgcHlvZGlkZU9qcy5weW9kaWRlUHJvbWlzZSxcbiAgICBibG9jay5jb2RlLFxuICAgIG9wdGlvbnNcbiAgKTtcblxuICByZXR1cm4gZWRpdG9yLmNvbnRhaW5lcjtcbn1cbl9weW9kaWRlX3ZhbHVlXzIgPSBweW9kaWRlT2pzLnByb2Nlc3MoX3B5b2RpZGVfZWRpdG9yXzIsIHt9KTtcbiJ9LHsiY2VsbE5hbWUiOiJweW9kaWRlLTEiLCJpbmxpbmUiOmZhbHNlLCJtZXRob2ROYW1lIjoiaW50ZXJwcmV0Iiwic291cmNlIjoiX3B5b2RpZGVfdmFsdWVfMSA9IHtcbiAgY29uc3QgeyBoaWdobGlnaHRQeXRob24sIGI2NERlY29kZX0gPSB3aW5kb3cuX2V4ZXJjaXNlX29qc19ydW50aW1lO1xuXG4gIGNvbnN0IHNjcmlwdENvbnRlbnQgPSBkb2N1bWVudC5xdWVyeVNlbGVjdG9yKGBzY3JpcHRbdHlwZT1cXFwicHlvZGlkZS0xLWNvbnRlbnRzXFxcIl1gKS50ZXh0Q29udGVudDtcbiAgY29uc3QgYmxvY2sgPSBKU09OLnBhcnNlKGI2NERlY29kZShzY3JpcHRDb250ZW50KSk7XG5cbiAgLy8gRGVmYXVsdCBldmFsdWF0aW9uIGNvbmZpZ3VyYXRpb25cbiAgY29uc3Qgb3B0aW9ucyA9IE9iamVjdC5hc3NpZ24oe1xuICAgIGlkOiBcInB5b2RpZGUtMS1jb250ZW50c1wiLFxuICAgIGVjaG86IHRydWUsXG4gICAgb3V0cHV0OiB0cnVlXG4gIH0sIGJsb2NrLmF0dHIpO1xuXG4gIC8vIEV2YWx1YXRlIHRoZSBwcm92aWRlZCBQeXRob24gY29kZVxuICBjb25zdCByZXN1bHQgPSBweW9kaWRlT2pzLnByb2Nlc3Moe2NvZGU6IGJsb2NrLmNvZGUsIG9wdGlvbnN9LCB7fSk7XG5cbiAgLy8gRWFybHkgeWllbGQgd2hpbGUgd2Ugd2FpdCBmb3IgdGhlIGZpcnN0IGV2YWx1YXRpb24gYW5kIHJlbmRlclxuICBpZiAob3B0aW9ucy5vdXRwdXQgJiYgIShcIjFcIiBpbiBweW9kaWRlT2pzLnJlbmRlcmVkT2pzKSkge1xuICAgIGNvbnN0IGNvbnRhaW5lciA9IGRvY3VtZW50LmNyZWF0ZUVsZW1lbnQoXCJkaXZcIik7XG4gICAgY29uc3Qgc3Bpbm5lciA9IGRvY3VtZW50LmNyZWF0ZUVsZW1lbnQoXCJkaXZcIik7XG5cbiAgICBpZiAob3B0aW9ucy5lY2hvKSB7XG4gICAgICAvLyBTaG93IG91dHB1dCBhcyBoaWdobGlnaHRlZCBzb3VyY2VcbiAgICAgIGNvbnN0IHByZUVsZW0gPSBkb2N1bWVudC5jcmVhdGVFbGVtZW50KFwicHJlXCIpO1xuICAgICAgY29udGFpbmVyLmNsYXNzTmFtZSA9IFwic291cmNlQ29kZVwiO1xuICAgICAgcHJlRWxlbS5jbGFzc05hbWUgPSBcInNvdXJjZUNvZGUgcHl0aG9uXCI7XG4gICAgICBwcmVFbGVtLmFwcGVuZENoaWxkKGhpZ2hsaWdodFB5dGhvbihibG9jay5jb2RlKSk7XG4gICAgICBzcGlubmVyLmNsYXNzTmFtZSA9IFwic3Bpbm5lci1ncm93IHNwaW5uZXItZ3Jvdy1zbSBtLTIgcG9zaXRpb24tYWJzb2x1dGUgdG9wLTAgZW5kLTBcIjtcbiAgICAgIHByZUVsZW0uYXBwZW5kQ2hpbGQoc3Bpbm5lcik7XG4gICAgICBjb250YWluZXIuYXBwZW5kQ2hpbGQocHJlRWxlbSk7XG4gICAgfSBlbHNlIHtcbiAgICAgIHNwaW5uZXIuY2xhc3NOYW1lID0gXCJzcGlubmVyLWJvcmRlciBzcGlubmVyLWJvcmRlci1zbVwiO1xuICAgICAgY29udGFpbmVyLmFwcGVuZENoaWxkKHNwaW5uZXIpO1xuICAgIH1cblxuICAgIHlpZWxkIGNvbnRhaW5lcjtcbiAgfVxuXG4gIHB5b2RpZGVPanMucmVuZGVyZWRPanNbXCIxXCJdID0gdHJ1ZTtcbiAgeWllbGQgYXdhaXQgcmVzdWx0O1xufVxuIn0seyJjZWxsTmFtZSI6InB5b2RpZGUtcHJlbHVkZSIsImlubGluZSI6ZmFsc2UsIm1ldGhvZE5hbWUiOiJpbnRlcnByZXRRdWlldCIsInNvdXJjZSI6InB5b2RpZGVPanMgPSB7XG4gIGNvbnN0IHtcbiAgICBQeW9kaWRlRXZhbHVhdG9yLFxuICAgIFB5b2RpZGVFbnZpcm9ubWVudE1hbmFnZXIsXG4gICAgc2V0dXBQeXRob24sXG4gICAgc3RhcnRQeW9kaWRlV29ya2VyLFxuICAgIGI2NERlY29kZSxcbiAgICBjb2xsYXBzZVBhdGgsXG4gIH0gPSB3aW5kb3cuX2V4ZXJjaXNlX29qc19ydW50aW1lO1xuXG4gIGNvbnN0IHN0YXR1c0NvbnRhaW5lciA9IGRvY3VtZW50LmdldEVsZW1lbnRCeUlkKFwiZXhlcmNpc2UtbG9hZGluZy1zdGF0dXNcIik7XG4gIGNvbnN0IGluZGljYXRvckNvbnRhaW5lciA9IGRvY3VtZW50LmdldEVsZW1lbnRCeUlkKFwiZXhlcmNpc2UtbG9hZGluZy1pbmRpY2F0b3JcIik7XG4gIGluZGljYXRvckNvbnRhaW5lci5jbGFzc0xpc3QucmVtb3ZlKFwiZC1ub25lXCIpO1xuXG4gIGxldCBzdGF0dXNUZXh0ID0gZG9jdW1lbnQuY3JlYXRlRWxlbWVudChcImRpdlwiKVxuICBzdGF0dXNUZXh0LmNsYXNzTGlzdCA9IFwiZXhlcmNpc2UtbG9hZGluZy1kZXRhaWxzXCI7XG4gIHN0YXR1c1RleHQgPSBzdGF0dXNDb250YWluZXIuYXBwZW5kQ2hpbGQoc3RhdHVzVGV4dCk7XG4gIHN0YXR1c1RleHQudGV4dENvbnRlbnQgPSBgSW5pdGlhbGlzZWA7XG5cbiAgLy8gSG9pc3QgaW5kaWNhdG9yIG91dCBmcm9tIGZpbmFsIHNsaWRlIHdoZW4gcnVubmluZyB1bmRlciByZXZlYWxcbiAgY29uc3QgcmV2ZWFsU3RhdHVzID0gZG9jdW1lbnQucXVlcnlTZWxlY3RvcihcIi5yZXZlYWwgLmV4ZXJjaXNlLWxvYWRpbmctaW5kaWNhdG9yXCIpO1xuICBpZiAocmV2ZWFsU3RhdHVzKSB7XG4gICAgcmV2ZWFsU3RhdHVzLnJlbW92ZSgpO1xuICAgIGRvY3VtZW50LnF1ZXJ5U2VsZWN0b3IoXCIucmV2ZWFsID4gLnNsaWRlc1wiKS5hcHBlbmRDaGlsZChyZXZlYWxTdGF0dXMpO1xuICB9XG5cbiAgLy8gTWFrZSBhbnkgcmV2ZWFsIHNsaWRlcyB3aXRoIGxpdmUgY2VsbHMgc2Nyb2xsYWJsZVxuICBkb2N1bWVudC5xdWVyeVNlbGVjdG9yQWxsKFwiLnJldmVhbCAuZXhlcmNpc2UtY2VsbFwiKS5mb3JFYWNoKChlbCkgPT4ge1xuICAgIGVsLmNsb3Nlc3QoJ3NlY3Rpb24uc2xpZGUnKS5jbGFzc0xpc3QuYWRkKFwic2Nyb2xsYWJsZVwiKTtcbiAgfSlcblxuICAvLyBQeW9kaWRlIHN1cHBsZW1lbnRhbCBkYXRhIGFuZCBvcHRpb25zXG4gIGNvbnN0IGRhdGFDb250ZW50ID0gZG9jdW1lbnQucXVlcnlTZWxlY3Rvcihgc2NyaXB0W3R5cGU9XFxcInB5b2RpZGUtZGF0YVxcXCJdYCkudGV4dENvbnRlbnQ7XG4gIGNvbnN0IGRhdGEgPSBKU09OLnBhcnNlKGI2NERlY29kZShkYXRhQ29udGVudCkpO1xuXG4gIC8vIEdyYWIgbGlzdCBvZiByZXNvdXJjZXMgdG8gYmUgZG93bmxvYWRlZFxuICBjb25zdCBmaWxlc0NvbnRlbnQgPSBkb2N1bWVudC5xdWVyeVNlbGVjdG9yKGBzY3JpcHRbdHlwZT1cXFwidmZzLWZpbGVcXFwiXWApLnRleHRDb250ZW50O1xuICBjb25zdCBmaWxlcyA9IEpTT04ucGFyc2UoYjY0RGVjb2RlKGZpbGVzQ29udGVudCkpO1xuXG4gIGxldCBweW9kaWRlUHJvbWlzZSA9IChhc3luYyAoKSA9PiB7XG4gICAgc3RhdHVzVGV4dC50ZXh0Q29udGVudCA9IGBEb3dubG9hZGluZyBQeW9kaWRlYDtcbiAgICBjb25zdCBweW9kaWRlID0gYXdhaXQgc3RhcnRQeW9kaWRlV29ya2VyKGRhdGEub3B0aW9ucyk7XG5cbiAgICBzdGF0dXNUZXh0LnRleHRDb250ZW50ID0gYERvd25sb2FkaW5nIHBhY2thZ2U6IG1pY3JvcGlwYDtcbiAgICBhd2FpdCBweW9kaWRlLmxvYWRQYWNrYWdlKFwibWljcm9waXBcIik7XG4gICAgY29uc3QgbWljcm9waXAgPSBhd2FpdCBweW9kaWRlLnB5aW1wb3J0KFwibWljcm9waXBcIik7XG4gICAgYXdhaXQgZGF0YS5wYWNrYWdlcy5wa2dzLm1hcCgocGtnKSA9PiAoKSA9PiB7XG4gICAgICBzdGF0dXNUZXh0LnRleHRDb250ZW50ID0gYERvd25sb2FkaW5nIHBhY2thZ2U6ICR7cGtnfWA7XG4gICAgICByZXR1cm4gbWljcm9waXAuaW5zdGFsbChwa2cpO1xuICAgIH0pLnJlZHVjZSgoY3VyLCBuZXh0KSA9PiBjdXIudGhlbihuZXh0KSwgUHJvbWlzZS5yZXNvbHZlKCkpO1xuICAgIGF3YWl0IG1pY3JvcGlwLmRlc3Ryb3koKTtcblxuICAgIC8vIERvd25sb2FkIGFuZCBpbnN0YWxsIHJlc291cmNlc1xuICAgIGF3YWl0IGZpbGVzLm1hcCgoZmlsZSkgPT4gYXN5bmMgKCkgPT4ge1xuICAgICAgY29uc3QgbmFtZSA9IGZpbGUuc3Vic3RyaW5nKGZpbGUubGFzdEluZGV4T2YoJy8nKSArIDEpO1xuICAgICAgc3RhdHVzVGV4dC50ZXh0Q29udGVudCA9IGBEb3dubG9hZGluZyByZXNvdXJjZTogJHtuYW1lfWA7XG4gICAgICBjb25zdCByZXNwb25zZSA9IGF3YWl0IGZldGNoKGZpbGUpO1xuICAgICAgaWYgKCFyZXNwb25zZS5vaykge1xuICAgICAgICB0aHJvdyBuZXcgRXJyb3IoYENhbid0IGRvd25sb2FkIFxcYCR7ZmlsZX1cXGAuIEVycm9yICR7cmVzcG9uc2Uuc3RhdHVzfTogXCIke3Jlc3BvbnNlLnN0YXR1c1RleHR9XCIuYCk7XG4gICAgICB9XG4gICAgICBjb25zdCBkYXRhID0gYXdhaXQgcmVzcG9uc2UuYXJyYXlCdWZmZXIoKTtcblxuICAgICAgLy8gU3RvcmUgVVJMcyBpbiB0aGUgY3dkIHdpdGhvdXQgYW55IHN1YmRpcmVjdG9yeSBzdHJ1Y3R1cmVcbiAgICAgIGlmIChmaWxlLmluY2x1ZGVzKFwiOi8vXCIpKSB7XG4gICAgICAgIGZpbGUgPSBuYW1lO1xuICAgICAgfVxuXG4gICAgICAvLyBDb2xsYXBzZSBoaWdoZXIgZGlyZWN0b3J5IHN0cnVjdHVyZVxuICAgICAgZmlsZSA9IGNvbGxhcHNlUGF0aChmaWxlKTtcblxuICAgICAgLy8gQ3JlYXRlIGRpcmVjdG9yeSB0cmVlLCBpZ25vcmluZyBcImRpcmVjdG9yeSBleGlzdHNcIiBWRlMgZXJyb3JzXG4gICAgICBjb25zdCBwYXJ0cyA9IGZpbGUuc3BsaXQoJy8nKS5zbGljZSgwLCAtMSk7XG4gICAgICBsZXQgcGF0aCA9ICcnO1xuICAgICAgd2hpbGUgKHBhcnRzLmxlbmd0aCA+IDApIHtcbiAgICAgICAgcGF0aCArPSBwYXJ0cy5zaGlmdCgpICsgJy8nO1xuICAgICAgICB0cnkge1xuICAgICAgICAgIGF3YWl0IHB5b2RpZGUuRlMubWtkaXIocGF0aCk7XG4gICAgICAgIH0gY2F0Y2ggKGUpIHtcbiAgICAgICAgICBpZiAoZS5uYW1lICE9PSBcIkVycm5vRXJyb3JcIikgdGhyb3cgZTtcbiAgICAgICAgICBpZiAoZS5lcnJubyAhPT0gMjApIHtcbiAgICAgICAgICAgIGNvbnN0IGVycm9yVGV4dFB0ciA9IGF3YWl0IHB5b2RpZGUuX21vZHVsZS5fc3RyZXJyb3IoZS5lcnJubyk7XG4gICAgICAgICAgICBjb25zdCBlcnJvclRleHQgPSBhd2FpdCBweW9kaWRlLl9tb2R1bGUuVVRGOFRvU3RyaW5nKGVycm9yVGV4dFB0cik7XG4gICAgICAgICAgICB0aHJvdyBuZXcgRXJyb3IoYEZpbGVzeXN0ZW0gRXJyb3IgJHtlLmVycm5vfSBcIiR7ZXJyb3JUZXh0fVwiLmApO1xuICAgICAgICAgIH1cbiAgICAgICAgfVxuICAgICAgfVxuXG4gICAgICAvLyBXcml0ZSB0aGlzIGZpbGUgdG8gdGhlIFZGU1xuICAgICAgdHJ5IHtcbiAgICAgICAgcmV0dXJuIGF3YWl0IHB5b2RpZGUuRlMud3JpdGVGaWxlKGZpbGUsIG5ldyBVaW50OEFycmF5KGRhdGEpKTtcbiAgICAgIH0gY2F0Y2ggKGUpIHtcbiAgICAgICAgaWYgKGUubmFtZSAhPT0gXCJFcnJub0Vycm9yXCIpIHRocm93IGU7XG4gICAgICAgIGNvbnN0IGVycm9yVGV4dFB0ciA9IGF3YWl0IHB5b2RpZGUuX21vZHVsZS5fc3RyZXJyb3IoZS5lcnJubyk7XG4gICAgICAgIGNvbnN0IGVycm9yVGV4dCA9IGF3YWl0IHB5b2RpZGUuX21vZHVsZS5VVEY4VG9TdHJpbmcoZXJyb3JUZXh0UHRyKTtcbiAgICAgICAgdGhyb3cgbmV3IEVycm9yKGBGaWxlc3lzdGVtIEVycm9yICR7ZS5lcnJub30gXCIke2Vycm9yVGV4dH1cIi5gKTtcbiAgICAgIH1cbiAgICB9KS5yZWR1Y2UoKGN1ciwgbmV4dCkgPT4gY3VyLnRoZW4obmV4dCksIFByb21pc2UucmVzb2x2ZSgpKTtcblxuICAgIHN0YXR1c1RleHQudGV4dENvbnRlbnQgPSBgUHlvZGlkZSBlbnZpcm9ubWVudCBzZXR1cGA7XG4gICAgYXdhaXQgc2V0dXBQeXRob24ocHlvZGlkZSk7XG5cbiAgICBzdGF0dXNUZXh0LnJlbW92ZSgpO1xuICAgIGlmIChzdGF0dXNDb250YWluZXIuY2hpbGRyZW4ubGVuZ3RoID09IDApIHtcbiAgICAgIHN0YXR1c0NvbnRhaW5lci5wYXJlbnROb2RlLnJlbW92ZSgpO1xuICAgIH1cbiAgICByZXR1cm4gcHlvZGlkZTtcbiAgfSkoKS5jYXRjaCgoZXJyKSA9PiB7XG4gICAgc3RhdHVzVGV4dC5zdHlsZS5jb2xvciA9IFwidmFyKC0tZXhlcmNpc2UtZWRpdG9yLWhsLWVyLCAjQUQwMDAwKVwiO1xuICAgIHN0YXR1c1RleHQudGV4dENvbnRlbnQgPSBlcnIubWVzc2FnZTtcbiAgICAvL2luZGljYXRvckNvbnRhaW5lci5xdWVyeVNlbGVjdG9yKFwiLnNwaW5uZXItZ3Jvd1wiKS5jbGFzc0xpc3QuYWRkKFwiZC1ub25lXCIpO1xuICAgIHRocm93IGVycjtcbiAgfSk7XG5cbiAgLy8gS2VlcCB0cmFjayBvZiBpbml0aWFsIE9KUyBibG9jayByZW5kZXJcbiAgY29uc3QgcmVuZGVyZWRPanMgPSB7fTtcblxuICBjb25zdCBwcm9jZXNzID0gYXN5bmMgKGNvbnRleHQsIGlucHV0cykgPT4ge1xuICAgIGNvbnN0IHB5b2RpZGUgPSBhd2FpdCBweW9kaWRlUHJvbWlzZTtcbiAgICBjb25zdCBldmFsdWF0b3IgPSBuZXcgUHlvZGlkZUV2YWx1YXRvcihweW9kaWRlLCBjb250ZXh0KTtcbiAgICBhd2FpdCBldmFsdWF0b3IucHJvY2VzcyhpbnB1dHMpO1xuICAgIHJldHVybiBldmFsdWF0b3IuY29udGFpbmVyO1xuICB9XG5cbiAgcmV0dXJuIHtcbiAgICBweW9kaWRlUHJvbWlzZSxcbiAgICByZW5kZXJlZE9qcyxcbiAgICBwcm9jZXNzLFxuICB9O1xufVxuIn1dfQ==
 </script>
 <div id="exercise-loading-indicator" class="exercise-loading-indicator d-none d-flex align-items-center gap-2">
 <div id="exercise-loading-status" class="d-flex gap-2">
