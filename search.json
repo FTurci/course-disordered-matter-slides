@@ -627,7 +627,7 @@
     "href": "soft-matter_liquidx1.html#generalise-to-many-variables-example-of-probabilities",
     "title": "Complex Disordered Systems",
     "section": "Generalise to many variables: Example of probabilities",
-    "text": "Generalise to many variables: Example of probabilities\nDiscrete case: Find extremum of entropy \nS = -\\sum_i p_i \\ln p_i\n subject to normalization constraint: \n\\sum_i p_i = 1\n and average energy constraint: \n\\sum_i p_i E_i = \\langle E \\rangle\n\nUsing Lagrange multipliers: \n\\mathcal{L} = -\\sum_i p_i \\ln p_i - \\lambda_1 \\left(\\sum_i p_i - 1\\right) - \\lambda_2 \\left(\\sum_i p_i E_i - \\langle E \\rangle\\right)\n\nSetting \\frac{\\partial \\mathcal{L}}{\\partial p_i} = 0: \n-\\ln p_i - 1 - \\lambda_1 - \\lambda_2 E_i = 0 \\quad \\Rightarrow \\quad p_i = \\exp(-\\lambda_2 E_i - \\lambda_1 - 1)\n\nThis is the Boltzmann distribution: p_i \\propto \\exp(-\\beta E_i) with \\beta = \\lambda_2."
+    "text": "Generalise to many variables: Example of probabilities\nDiscrete case: Find extremum of entropy \nS = -\\sum_i p_i \\ln p_i\n with constraints \n\\sum_i p_i = 1 \\quad\n\\sum_i p_i E_i = \\langle E \\rangle\n\nUsing Lagrange multipliers: \n\\mathcal{L} = -\\sum_i p_i \\ln p_i - \\lambda_1 \\left(\\sum_i p_i - 1\\right) - \\lambda_2 \\left(\\sum_i p_i E_i - \\langle E \\rangle\\right)\n\nSetting \\frac{\\partial \\mathcal{L}}{\\partial p_i} = 0: \n-\\ln p_i - 1 - \\lambda_1 - \\lambda_2 E_i = 0 \\quad \\Rightarrow \\quad p_i = \\exp(-\\lambda_2 E_i - \\lambda_1 - 1)\n\nThis is the Boltzmann distribution: p_i \\propto \\exp(-\\beta E_i) with \\beta = \\lambda_2."
   },
   {
     "objectID": "soft-matter_liquidx1.html#continuous-limit",
