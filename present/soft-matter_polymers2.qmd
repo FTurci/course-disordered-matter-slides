@@ -241,7 +241,12 @@ Start of the formation of a **polymer network** with transient **crowded regions
 
 :::{.columns}
 :::{.column width="60%"}
-- Polymer entanglement occurs when overlapping polymer chains become topologically **intertwined**, creating temporary **physical knots** that restrict chain motion and significantly affect the material's mechanical and rheological properties.
+- Overlapping polymer chains become topologically **intertwined**
+- Creates **physical knots** that restrict chain motion 
+
+    - changes flow behaviour (*rheology*)
+    - changes material properties (e.g. elasticity, viscosity )
+
 - Introduces **topological constraints** (transient/permanent)
 :::
 :::{.column width="40%"}

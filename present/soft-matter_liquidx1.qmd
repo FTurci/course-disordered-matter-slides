@@ -196,8 +196,254 @@ This uses the **Legendre polynomial** $P_2(\cos\theta)$ to enforce head-tail sym
 | 3 | $P_3(x)=\dfrac{1}{2}(5x^3-3x)$ | No (odd: $P_3(-x)=-P_3(x)$) |
 | 4 | $P_4(x)=\dfrac{1}{8}(35x^4-30x^2+3)$ | Yes (even: $P_4(-x)=P_4(x)$) |
 
-<!-- 
+
+## Landau-de Gennes mean field theory
+
+Using the tensorial order parameter one can express a Landau theory of the isotropic-to-nematic transition (the simplest form of orientational order appearing in liquid crystals).
+
+
+Leveraging that $\mathcal{S}$ is an eigenvalue of $\mathbf{Q}$, i.e. $\mathbf{Qn} = S\mathbf{n}$ we have 
+
+$$
+\mathbf{Q}=\mathcal{S}\left(\mathbf{n} \otimes \mathbf{n}-\frac{1}{d} \mathbf{I}\right)
+$$
+
+If we choose $z$ to be the axis along teh director $\mathbf{n}$ then explicitly
+
+
+$$
+\mathbf{Q}=\mathcal{S}\left(\begin{array}{ccc}
+-\frac{1}{3} & 0 & 0 \\
+0 & -\frac{1}{3} & 0 \\
+0 & 0 & \frac{2}{3}
+\end{array}\right)
+$$
+
+
+## Landau-de Gennes mean field theory
+
+We want to characterise the deviations from the director's orientation.
+
+We can think of compiling a **probability distribution** $p(\Omega)$ of finding a rod with pair of polar angles $\Omega=(\theta,\phi)$ in a coordinates system with polar axis along $\mathbf{n}$.
+
+- Note: the nematic phase has **cylindrical symmetry** around $\mathbf{n}$
+- Hence, we have no dependency in the azimuthal angle $\phi$ but only on $\theta$.
+
+So, by definition of an average, the orientational order parameter reads
+
+$$\begin{align}\mathcal{S}&=\dfrac{3}{2}\left\langle(\mathbf{u} \cdot \mathbf{n})^2-\frac{1}{3}\right\rangle = \dfrac{1}{2}\langle 3 \cos^2\theta-1\rangle=\langle P_2(\cos\theta)\rangle\\
+&=2\pi \int_0^{\pi}P_2(\cos\theta)p(\theta)\sin\theta d\theta
+\end{align}$$
+where we used the Jacobian in spherical coordinates.
+
+
+## Landau-de Gennes mean field theory
+
+The phenomenological Landau-de Gennes approach is to construct a **generic free energy density** as an expansion in scalar combinations of the tensor $\mathbf{Q}$ (of which $\mathcal{S}$ is an example)
+
+$$
+f=f_0+\frac{A}{2} Q_{i j} Q_{j i}-\frac{B}{3} Q_{i j} Q_{j k} Q_{k i}+\frac{C}{4}\left(Q_{i j} Q_{i j}\right)^2
+$$
+or in more compact form
+
+$$
+f=f_0+\frac{A}{2} \operatorname{tr} \mathbf{Q}^2-\frac{B}{3} \operatorname{tr} \mathbf{Q}^3+\frac{C}{4}\left(\operatorname{tr} \mathbf{Q}^2\right)^2
+$$
+
+- Notice that all the indices are contracted!
+- $A, B, C$ are phenomenological constants (and cannot be immediately linked to microscopic properties of the anisotropic particles)
+
+## Landau-de Gennes mean field theory
+
+According to our earlier 3D definitions
+
+$$
+\operatorname{Tr}\left(\mathbf{Q}^2\right)=\frac{2}{3} S^2 \quad,\quad
+\operatorname{Tr}\left(\mathbf{Q}^3\right)=\frac{2}{9} S^3
+$$
+
+So 
+$$
+f=f_0+\frac{A}{2} \operatorname{tr} \mathbf{Q}^2-\frac{B}{3} \operatorname{tr} \mathbf{Q}^3+\frac{C}{4}\left(\operatorname{tr} \mathbf{Q}^2\right)^2
+$$
+becomes
+$$
+f=f_0+\frac{A}{3}S^2-\frac{2B}{27}S^3+\frac{C}{9}S^4
+$$
+
+## Landau-de Gennes theory result
+
+- We can use the Landau phase transition approach. 
+- We can **expand** $A,B,C$ around a reference temperature $T^\ast$ :
+
+    - $A(T)=a\left(T-T_*\right)+\cdots$
+    - $B(T)= b+\dots$
+    - $C(T)=c+\dots$, with $a,b,c>0$ to preserve the most relevant terms.
+
+and obtain
+
+$$
+f-f_0=\frac{a}{3}\left(T-T^{\ast}\right) S^2-\frac{2 b}{27} S^3+\frac{c}{9} S^4 .
+$$
+
+The cubic term implies that there is a **temperature range** where **two minima coexist**:
+
+- $S_1=0$: isotropic
+- $S_2>0$: nematic
+
+First order phase transition. The cubic terms prevents the free energy from having an inflection at $S=0$ (the free energy nver gets truly flat)
+
+
+
+## Landau-de Gennes theory result
+
+
+:::{.columns}
+:::{.column  width=60%}
+```{pyodide}
+#| echo: false
+#| autorun: true
+import numpy as np
+import matplotlib.pyplot as plt
+def plot(S,F):
+    # Plot
+    plt.figure(figsize=(6, 3))
+    plt.plot(S, f, 'b-', linewidth=2)
+    plt.axhline(y=0, color='k', linestyle='--', alpha=0.3)
+    plt.xlabel('Order parameter S', fontsize=12)
+    plt.ylabel('Free energy density $f - f_0$', fontsize=12)
+    plt.grid(True, alpha=0.3)
+    plt.tight_layout()
+    plt.show()
+
+```
+```{pyodide}
+T = 1.01  # working temperature
+Tni = 1.0 #transition temperature
+a = 1.0
+b = 5.0
+c = 3.0
+T_star = Tni-b**2/(27*a*c)
+# Order parameter range
+S = np.linspace(0, 1, 200)
+# Free energy density (setting f_0 = 0)
+f = (a/3) * (T - T_star) * S**2 - (2*b/27) * S**3 + (c/9) * S**4
+plot(S,f)
+```
+:::
+:::{.column width=40%}
+The transition temperature is 
+
+$$
+T_{N I}=T^{\ast}+\frac{b^2}{27 a c}
+$$
+ 
+while $T^{\ast}$ is a material dependent temperature, identifying instability (spinodal).
+
+:::
+:::
+
+
+## Aside : constrained optimisation with Lagrange multipliers
+
+Many physics problems can be cast in terms of constraiend optimisation
+
+| Area | Problem | Constraint |
+|------|---------|-----------|
+| **Mechanics** | Minimize action $S=\int L dt$ | Energy conservation |
+| **Thermodynamics** | Maximize entropy $S$ | Fixed total energy $E$ |
+| **Electromagnetism** | Minimize energy | Gauss's law $\nabla \cdot \mathbf{E} = \rho/\epsilon_0$ |
+| **General Relativity** | Minimize Einstein-Hilbert action | Metric signature constraint |
+| **Liquid Crystals** | Minimize Frank energy | Director normalization $\|\mathbf{n}\|=1$ |
+| **Statistical Mechanics** | Maximize partition function | Micro/Gran/canonical ensembles |
+| **Optics** | Minimize optical path (Fermat) | Snell's law at interfaces |
+
+**Method**: Use **Lagrange multipliers** $\lambda$ to convert constrained into unconstrained problem:
+$$\mathcal{L}=f(\mathbf{x})-\lambda g(\mathbf{x})$$
+then solve $\nabla\mathcal{L}=0$.
+
+
+## Geometrical understand of Lagrange multipliers
+
+- Take a function $f(x,y)$. 
+
+- A constraint is expressed by fixing the value of a second function $g(x,y)=c$ 
+- We want to find the extrema of $f(x,y)$ subject to the constraint $g(x,y)=c$: It has to be a curve
+- This means find the extremal values of $f$ on the curve $\mathcal{C}: g(x,y)=c$
+- We could parametrise $\mathcal{C}$ but we can also simply think in terms of its geometrical features.
+
+Take the example of a minimum:
+    - at every point of $\mathcal{C}$ there is a tangent vector $\vec{t}$
+    - we want to find the points on $\mathcal{C}$ where $f$ is miniimal. This means that *changes of f* along $\mathcal{C}$ are minimal.
+    - we can calculate such changes as the projection of the local gradient with the tangent vector and  state that $$\vec{\nabla}{f} \perp \vec{t}$$
+    - Notice that, by definition, the $$\vec{\nabla}{g}\perp \vec{t}$$
+    - So we are simply saying that
+
+$$\vec{\nabla}{f}\parallel \vec{\nabla}{g}\to \vec{\nabla}{f}=\lambda\vec{\nabla}{g}$$
+
+for some scalar $\lambda$
+
+
+## Example
+
+![](9NIoJ.png)
+
+## Generalise to many variables: Example of probabilities
+
+**Discrete case**: Find extremum of entropy
+$$
+S = -\sum_i p_i \ln p_i
+$$
+subject to normalization constraint:
+$$
+\sum_i p_i = 1
+$$
+and average energy constraint:
+$$
+\sum_i p_i E_i = \langle E \rangle
+$$
+
+Using Lagrange multipliers:
+$$
+\mathcal{L} = -\sum_i p_i \ln p_i - \lambda_1 \left(\sum_i p_i - 1\right) - \lambda_2 \left(\sum_i p_i E_i - \langle E \rangle\right)
+$$
+
+Setting $\frac{\partial \mathcal{L}}{\partial p_i} = 0$:
+$$
+-\ln p_i - 1 - \lambda_1 - \lambda_2 E_i = 0 \quad \Rightarrow \quad p_i = \exp(-\lambda_2 E_i - \lambda_1 - 1)
+$$
+
+This is the **Boltzmann distribution**: $p_i \propto \exp(-\beta E_i)$ with $\beta = \lambda_2$.
+
 ---
+
+## Continuous Limit
+
+Replace sums with integrals. Let $p_i \to p(x)$ where $x$ is a continuous variable.
+
+Constraints become:
+$$
+\int p(x) dx = 1, \quad \int p(x) E(x) dx = \langle E \rangle
+$$
+
+Entropy functional:
+$$
+S[p] = -\int p(x) \ln p(x) dx
+$$
+
+Lagrangian:
+$$
+\mathcal{L} = -\int p(x) \ln p(x) dx - \lambda_1 \left(\int p(x) dx - 1\right) - \lambda_2 \left(\int p(x) E(x) dx - \langle E \rangle\right)
+$$
+
+Functional derivative $\frac{\delta \mathcal{L}}{\delta p(x)} = 0$:
+$$
+-\ln p(x) - 1 - \lambda_1 - \lambda_2 E(x) = 0 \quad \Rightarrow \quad p(x) = \exp(-\beta E(x) - c)
+$$
+
+
+<!-- 
+
 
 ## Probability Distribution
 
