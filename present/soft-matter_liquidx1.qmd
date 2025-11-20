@@ -394,12 +394,9 @@ for some scalar $\lambda$
 $$
 S = -\sum_i p_i \ln p_i
 $$
-subject to normalization constraint:
+with constraints 
 $$
-\sum_i p_i = 1
-$$
-and average energy constraint:
-$$
+\sum_i p_i = 1 \quad 
 \sum_i p_i E_i = \langle E \rangle
 $$
 
