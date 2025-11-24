@@ -487,7 +487,14 @@
     "href": "soft-matter_surfactants1.html#hydrophobicity-and-amphiphiles",
     "title": "Complex Disordered Systems",
     "section": "Hydrophobicity and amphiphiles",
-    "text": "Hydrophobicity and amphiphiles\nWater is the standard solvent for a lot of chemistry and (almost all) biology.\nMolecules in water can be classified by their affinity to water:\n\nHydrophilic (“water-loving”) molecules interact favorably with water (e.g., via hydrogen bonding or dipole interactions).\nHydrophobic (“water-fearing”) molecules do not interact favorably with water (e.g., non-polar molecules).\n\nAmphiphiles are molecules that contain both hydrophilic and hydrophobic parts. They include:\n\nSurfactants (detergents, soaps, SURFace ACTive AgeNT)\nLipids (cell membranes)\nSome proteins (with hydrophobic and hydrophilic amino acids)"
+    "text": "Hydrophobicity and amphiphiles\nWater is the standard solvent for a lot of chemistry and (almost all) biology.\nMolecules in water can be classified by their affinity to water:\n\nHydrophilic (“water-loving”) molecules interact favorably with water (e.g., via hydrogen bonding or dipole interactions).\nHydrophobic (“water-fearing”) molecules do not interact favorably with water (e.g., non-polar molecules).\n\n\n\nAmphiphiles are molecules that contain both hydrophilic and hydrophobic parts. They include:\n\nSurfactants (detergents, soaps, SURFace ACTive AgeNT)\nLipids (cell membranes)\nSome proteins (with hydrophobic and hydrophilic amino acids)\n\n\n\n\nSchematic model of a surfactant\n\n\n\n\n\nSelf assembly of surfactants\n\nSurfactants are at the molecular scale so they are nanometer sized\nThis means that their diffusion is fast (e.g. use D=\\frac{k_B T}{6 \\pi \\eta R} to compare a colloid to a surfactant molecule)\nFast diffusion in the solvent meanns that they quickly explore possible conformations and minimise free energy."
+  },
+  {
+    "objectID": "soft-matter_surfactants1.html#self-assembly-of-surfactants",
+    "href": "soft-matter_surfactants1.html#self-assembly-of-surfactants",
+    "title": "Complex Disordered Systems",
+    "section": "Self assembly of surfactants",
+    "text": "Self assembly of surfactants\n\nSurfactants are at the molecular scale so they are nanometer sized\nThis means that their diffusion is fast (e.g. use D=\\frac{k_B T}{6 \\pi \\eta R} to compare a colloid to a surfactant molecule)\nFast diffusion in the solvent meanns that they quickly explore possible conformations and minimise free energy."
   },
   {
     "objectID": "soft-matter_liquidx2.html#aside-functional-derivatives",
