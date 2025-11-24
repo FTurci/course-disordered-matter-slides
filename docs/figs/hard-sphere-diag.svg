@@ -1,0 +1,53 @@
+<svg width="800" height="180" viewBox="10 0 600 150" xmlns="http://www.w3.org/2000/svg">
+  <!-- Axes -->
+  <line x1="60" y1="140" x2="460" y2="140" stroke="black" stroke-width="2"/>
+
+  <!-- Phase regions rectangles -->
+  <rect x="60" y="100" width="110" height="40" fill="#aee" fill-opacity="0.6"/>
+  <rect x="170" y="100" width="110" height="40" fill="#ffd700" fill-opacity="0.5"/>
+  <rect x="280" y="100" width="120" height="40" fill="#cfc" fill-opacity="0.6"/>
+  <rect x="400" y="100" width="60" height="40" fill="#ccc" fill-opacity="0.7"/>
+
+  <!-- Transition lines -->
+  <line x1="170" y1="90" x2="170" y2="140" stroke="#333" stroke-width="2" stroke-dasharray="4,2"/>
+  <line x1="280" y1="90" x2="280" y2="140" stroke="#333" stroke-width="2" stroke-dasharray="4,2"/>
+  <line x1="400" y1="90" x2="400" y2="140" stroke="#333" stroke-width="2" stroke-dasharray="4,2"/>
+  <line x1="460" y1="90" x2="460" y2="140" stroke="#333" stroke-width="2" stroke-dasharray="4,2"/>
+
+  <!-- Axis ticks -->
+  <line x1="60" y1="140" x2="60" y2="145" stroke="black"/>
+  <line x1="170" y1="140" x2="170" y2="145" stroke="black"/>
+  <line x1="280" y1="140" x2="280" y2="145" stroke="black"/>
+  <line x1="400" y1="140" x2="400" y2="145" stroke="black"/>
+  <line x1="460" y1="140" x2="460" y2="145" stroke="black"/>
+
+  <!-- Phase labels -->
+  <text x="115" y="125" font-size="15" font-family="sans-serif" text-anchor="middle" fill="#005">Fluid</text>
+  <text x="225" y="125" font-size="15" font-family="sans-serif" text-anchor="middle" fill="#a60">Fluid + Crystal</text>
+  <text x="340" y="125" font-size="15" font-family="sans-serif" text-anchor="middle" fill="#060">Crystal</text>
+  <text x="430" y="125" font-size="15" font-family="sans-serif" text-anchor="middle" fill="#666">Glass</text>
+
+  <!-- Transition labels with subscript -->1d
+  <text x="170" y="85" font-size="13" font-family="sans-serif" text-anchor="middle" fill="#333">
+    ϕ<tspan baseline-shift="sub" font-size="10">f</tspan> ≈ 0.494
+  </text>
+  <text x="280" y="85" font-size="13" font-family="sans-serif" text-anchor="middle" fill="#333">
+    ϕ<tspan baseline-shift="sub" font-size="10">m</tspan> ≈ 0.545
+  </text>
+  <text x="400" y="85" font-size="13" font-family="sans-serif" text-anchor="middle" fill="#333">
+    ϕ<tspan baseline-shift="sub" font-size="10">g</tspan> ≈ 0.58
+  </text>
+  <text x="460" y="85" font-size="13" font-family="sans-serif" text-anchor="middle" fill="#333">
+    ϕ<tspan baseline-shift="sub" font-size="10">cp</tspan> ≈ 0.74
+  </text>
+
+  <!-- Axis number labels -->
+  <text x="60" y="160" font-size="13" font-family="sans-serif" text-anchor="middle">0</text>
+  <text x="170" y="160" font-size="13" font-family="sans-serif" text-anchor="middle">0.494</text>
+  <text x="280" y="160" font-size="13" font-family="sans-serif" text-anchor="middle">0.545</text>
+  <text x="400" y="160" font-size="13" font-family="sans-serif" text-anchor="middle">0.58</text>
+  <text x="460" y="160" font-size="13" font-family="sans-serif" text-anchor="middle">0.74</text>
+
+  <!-- Axis main label -->
+  <text x="470" y="145" font-size="16" font-family="sans-serif">Packing fraction ϕ</text>
+</svg>

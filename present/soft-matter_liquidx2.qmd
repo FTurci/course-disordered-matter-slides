@@ -32,6 +32,8 @@ $$
 
 If we want $S[\phi]$ to be stationary with respect to arbitrary perturbations $\eta(x)$, then $\delta S=0$  for all $\eta(x)$. 
 
+## Aside: Functional Derivatives
+
 This leads to the **Euler-Lagrange equation**:
 
 $$\frac{\partial \mathcal{L}}{\partial \phi}-\frac{d}{d x}\left(\frac{\partial \mathcal{L}}{\partial \phi^{\prime}}\right)=0$$
