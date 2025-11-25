@@ -483,39 +483,53 @@
     "text": "Thermoplastics behaviour upon cooling\n\n\n\nAt high temperature the free energy is dominated by entropy.\n\nrandom assembly of intertwined flexible coils\n\nUpon cooling, potential energy dominates and chain rotation becomes restricted, favoring more extended configurations.\nBelow melting temperature T_m, crystals form (lowest free energy state), but require slow cooling and significant molecular ordering.\nRapid cooling below glass transition temperature T_g (&lt; T_m) prevents crystallization, forming an amorphous glassy state instead—a metastable, long-lived solid.\nSolid thermoplastics typically contain a mixture of crystalline and amorphous regions."
   },
   {
+    "objectID": "soft-matter_surfactants1.html#hydrophobicity-and-amhiphiles",
+    "href": "soft-matter_surfactants1.html#hydrophobicity-and-amhiphiles",
+    "title": "Complex Disordered Systems",
+    "section": "Hydrophobicity and amhiphiles",
+    "text": "Hydrophobicity and amhiphiles\nWater is the standard solvent for a lot of chemistry and (almost all) biology.\nMolecules in water can be classified by their affinity to water:\n\nHydrophilic (“water-loving”) molecules interact favorably with water (e.g., via hydrogen bonding or dipole interactions).\nHydrophobic (“water-fearing”) molecules do not interact favorably with water (e.g., non-polar molecules).\n\nAmphiphiles are molecules that contain both hydrophilic and hydrophobic parts. They include:\n\nSurfactants (detergents, soaps, SURFace ACTive AgeNT)\nLipids (cell membranes)\nSome proteins (with hydrophobic and hydrophilic amino acids)\n\n\nSchematic model of a surfactant"
+  },
+  {
     "objectID": "soft-matter_surfactants1.html#hydrophobicity-and-amphiphiles",
     "href": "soft-matter_surfactants1.html#hydrophobicity-and-amphiphiles",
     "title": "Complex Disordered Systems",
     "section": "Hydrophobicity and amphiphiles",
-    "text": "Hydrophobicity and amphiphiles\nWater is the standard solvent for a lot of chemistry and (almost all) biology.\nMolecules in water can be classified by their affinity to water:\n\nHydrophilic (“water-loving”) molecules interact favorably with water (e.g., via hydrogen bonding or dipole interactions).\nHydrophobic (“water-fearing”) molecules do not interact favorably with water (e.g., non-polar molecules).\n\nAmphiphiles are molecules that contain both hydrophilic and hydrophobic parts. They include:\n\nSurfactants (detergents, soaps, SURFace ACTive AgeNT)\nLipids (cell membranes)\nSome proteins (with hydrophobic and hydrophilic amino acids)\n\n\nSchematic model of a surfactant"
+    "text": "Hydrophobicity and amphiphiles\n\nPhospholipid bilayers form the cellular membranes. They self-assemble!"
   },
   {
-    "objectID": "soft-matter_surfactants1.html#hydrophobicity-and-amphiphiles-1",
-    "href": "soft-matter_surfactants1.html#hydrophobicity-and-amphiphiles-1",
+    "objectID": "soft-matter_surfactants1.html#hydrophobicity-in-brief",
+    "href": "soft-matter_surfactants1.html#hydrophobicity-in-brief",
     "title": "Complex Disordered Systems",
-    "section": "Hydrophobicity and amphiphiles",
-    "text": "Hydrophobicity and amphiphiles\n\nPhospholipid bilayers form the cellular membranes. They self-assemble!"
+    "section": "Hydrophobicity in brief",
+    "text": "Hydrophobicity in brief\nThe hydrophobic interactions is a topic of active research.\nVarious approaches\n\n(from to 1950s) structural approach: water forms cages around molecules. When the cage is disrupted, entropy increases. Solutes come together to minimise the disruption.\n(from 2000s) interfaces approach: water is a fluctuating medium. Large hydrophobic solutes create interfaces that suppress fluctuations. Solutes come together to minimise the interface area.\n(current research) avoided criticality: water is close to a liquid-vapour critical point. Local curvature and interactions promote large density fluctuations. Solutes interact on scales controlled by these fluctuations.\n\n\nEffective hydrophobic interactions between spherical solutes of variable solute-solvent affinities \\varepsilon_{sw}. A depletion-like construction produces a surface tension-controlled interaction. from Wilding & Turci PRR (2025)In all cases, the hydrophobic effect originates in fluctuations of the solvent, i.e. the way the solvent explores the available configuration."
   },
   {
     "objectID": "soft-matter_surfactants1.html#self-assembly-of-surfactants",
     "href": "soft-matter_surfactants1.html#self-assembly-of-surfactants",
     "title": "Complex Disordered Systems",
     "section": "Self assembly of surfactants",
-    "text": "Self assembly of surfactants\n\nSurfactants are at the molecular scale so they are nanometer sized\nThis means that their diffusion is fast (e.g. use D=\\frac{k_B T}{6 \\pi \\eta R} to compare a colloid to a surfactant molecule)\nFast diffusion in the solvent means that they quickly explore possible conformations and minimise free energy.\nThe amphiphilic structure means that special orientations can be achieved to satisfy the energetic constraints.\nThe molecules spontaneously form structures: this is called self-assembly.\nUnderlying phase transitions typically drive the self-assembly."
+    "text": "Self assembly of surfactants\n\nviewof temperature = Inputs.range([0.01, 2], {step: 0.05, label: \"Temperature (kT)\", value: 0.5})\n\n\n\n\n\n\n\nviewof numChains = Inputs.range([3, 300], {step: 10, label: \"Number of Chains\", value: 100})\n\n\n\n\n\n\n\n\nCode\n// This is ObservableJS code  \n// You can run at observableehq.com or convert it to an equivalent (and faster?) Python version if you like\nviewof simulation = {\n    // --- Parameters ---\n    const width = 40, height = 40;\n    const chainLength = 3;\n    const chainsToCreate = numChains;\n    const T = temperature;\n    // const numChains = 10;\n    const E_TS = 1.0;     // tail-solvent energy (solvophobic)\n    const E_HS = -1.5;    // head-solvent energy (solvophilic)\n    // const T = 0.1;        // temperature (kT units)\n\n    // --- Initialize grid and chains ---\n    let grid = Array.from({length: width}, () =&gt; Array(height).fill(null));\n    let chains = [];\n\n    // Periodic boundary helper\n    function mod(n, m) { return ((n % m) + m) % m; }\n\n    function getNeighbors(x, y) {\n        return [\n            {x: mod(x - 1, width), y: y},\n            {x: mod(x + 1, width), y: y},\n            {x: x, y: mod(y - 1, height)},\n            {x: x, y: mod(y + 1, height)}\n        ];\n    }\n\n    function placeChains() {\n        for (let id = 0; id &lt; numChains; id++) {\n            for (let tries = 0; tries &lt; 100; tries++) {\n                let x = Math.floor(Math.random() * width);\n                let y = Math.floor(Math.random() * height);\n                if (grid[x][y]) continue;\n\n                let chain = [{x, y, type: 'head'}];\n                grid[x][y] = {id, type: 'head'};\n                let ok = true;\n\n                for (let i = 1; i &lt; chainLength; i++) {\n                    let last = chain[chain.length - 1];\n                    let nbs = getNeighbors(last.x, last.y).filter(p =&gt; !grid[p.x][p.y]);\n                    if (nbs.length === 0) { ok = false; break; }\n                    let next = nbs[Math.floor(Math.random() * nbs.length)];\n                    chain.push({...next, type: 'tail'});\n                    grid[next.x][next.y] = {id, type: 'tail'};\n                }\n\n                if (ok) { chains.push({id, segments: chain}); break; }\n                else { chain.forEach(p =&gt; grid[p.x][p.y] = null); }\n            }\n        }\n    }\n\n    function energy(seg) {\n        let solventNbs = getNeighbors(seg.x, seg.y).filter(p =&gt; !grid[p.x][p.y]).length;\n        return seg.type === 'head' ? solventNbs * E_HS : solventNbs * E_TS;\n    }\n\n    function attemptMove(chain) {\n        const forward = Math.random() &lt; 0.5;\n        const tail = forward ? chain.segments[0] : chain.segments.at(-1);\n        const head = forward ? chain.segments.at(-1) : chain.segments[0];\n        const options = getNeighbors(head.x, head.y).filter(p =&gt; !grid[p.x][p.y]);\n\n        if (options.length === 0) return;\n        const next = options[Math.floor(Math.random() * options.length)];\n\n        const dE_old = energy(tail);\n        grid[tail.x][tail.y] = null;\n        const dE_new = energy({...next, type: tail.type});\n        grid[tail.x][tail.y] = {id: chain.id, type: tail.type};\n\n        const deltaU = dE_new - dE_old;\n        const accept = deltaU &lt; 0 || Math.random() &lt; Math.exp(-deltaU / T);\n\n        if (accept) {\n            grid[tail.x][tail.y] = null;\n            grid[next.x][next.y] = {id: chain.id, type: tail.type};\n            if (forward) {\n                chain.segments.shift();\n                chain.segments.push({...next, type: tail.type});\n            } else {\n                chain.segments.pop();\n                chain.segments.unshift({...next, type: tail.type});\n            }\n        }\n    }\n\n    // --- Visualization ---\n    const svg = d3.create(\"svg\")\n        .attr(\"viewBox\", `0 0 ${width} ${height}`)\n        .style(\"width\", \"400px\")\n        .style(\"height\", \"400px\")\n        .style(\"border\", \"1px solid #ccc\");\n\n    const g = svg.append(\"g\");\n\n    function draw() {\n        const data = chains.flatMap(c =&gt; c.segments);\n        g.selectAll(\"circle\")\n            .data(data, d =&gt; `${d.x}-${d.y}`)\n            .join(\"circle\")\n            .attr(\"cx\", d =&gt; d.x + 0.5)\n            .attr(\"cy\", d =&gt; d.y + 0.5)\n            .attr(\"r\", 0.45)\n            .attr(\"fill\", d =&gt; d.type === \"head\" ? \"blue\" : \"red\");\n    }\n\n    // --- Main Loop ---\n    placeChains();\n    draw();\n\n    let running = true;\n    const button = html`&lt;button&gt;⏸ Pause&lt;/button&gt;`;\n    button.onclick = () =&gt; {\n        running = !running;\n        button.textContent = running ? \"⏸ Pause\" : \"▶ Resume\";\n    };\n\n    (async () =&gt; {\n        while (true) {\n            if (running) {\n                for (let i = 0; i &lt; chains.length; i++) {\n                    const c = chains[Math.floor(Math.random() * chains.length)];\n                    attemptMove(c);\n                }\n                draw();\n            }\n            await new Promise(r =&gt; setTimeout(r, 50));\n        }\n    })();\n\n    return html`&lt;div&gt;${button}&lt;br&gt;${svg.node()}&lt;/div&gt;`;\n}"
+  },
+  {
+    "objectID": "soft-matter_surfactants1.html#self-assembly-of-surfactants-1",
+    "href": "soft-matter_surfactants1.html#self-assembly-of-surfactants-1",
+    "title": "Complex Disordered Systems",
+    "section": "Self assembly of surfactants",
+    "text": "Self assembly of surfactants\n\nSurfactants are at the molecular scale so they are nanometer sized\n\nDiffusion is fast (e.g. use D=\\frac{k_B T}{6 \\pi \\eta R} to compare a colloid to a surfactant molecule)\n\\to quickly explore possible conformations and minimise free energy.\n\nThe amphiphilic structure means that special orientations can be achieved to satisfy the energetic constraints.\nThe molecules spontaneously form structures: this is called self-assembly.\nUnderlying phase transitions typically drive the self-assembly."
   },
   {
     "objectID": "soft-matter_surfactants1.html#aggregation-general-case",
     "href": "soft-matter_surfactants1.html#aggregation-general-case",
     "title": "Complex Disordered Systems",
     "section": "Aggregation: general case",
-    "text": "Aggregation: general case\n\nConsider a generic problem of aggregation of particles (generic)\nSimple model: we have cluster of size N and a free energy cost \\epsilon_N pto add a particle to the cluster.\nLet \\mu_1 and \\mu_N be the chemical potential of isolated particles and aggregates of size N respectively.\nIn equilibrium, \\mu_1 = \\mu_N := \\mu\n\nWe can express \\mu in terms of\n\nthe interaction energy from being in the aggregate (\\epsilon_N)\nthe entropy of the aggregate as a whole (\\propto {\\text{ number of aggregates}}\\times \\ln {\\text{ number of aggregates}})"
+    "text": "Aggregation: general case\n\nConsider a generic problem of aggregation of particles (generic)\nSimple model: we have cluster of size N and a free energy cost \\epsilon_N pto add a particle to the cluster.\nLet \\mu_1 and \\mu_N be the chemical potential of isolated particles and aggregates of size N respectively.\nIn equilibrium, \\mu_1 = \\mu_N := \\mu\n\nWe can express \\mu in terms of\n\nthe interaction energy from being in the aggregate \\epsilon_N\nthe entropy of the aggregate as a whole \\propto {\\text{ number of aggregates}}\\times \\ln {\\text{ number of aggregates}}"
   },
   {
     "objectID": "soft-matter_surfactants1.html#aggregation-general-case-1",
     "href": "soft-matter_surfactants1.html#aggregation-general-case-1",
     "title": "Complex Disordered Systems",
     "section": "Aggregation: general case",
-    "text": "Aggregation: general case\n\nLet the overall volume fraction to be \\phi\nCall X_N the volume fraction in an aggregate of size N, so that \\sum_N X_N = \\phi.\nThe numbers of aggregates of size N is then simply X_N/N\n\nThe uniform chemical potential is the comnination of\n\\mu = \\text{\\{energy per particle in aggregate of size N\\}} + \\text{\\{entropy of mixing  per particle in aggregate of size N\\}}\nor \\mu = \\epsilon_N + \\dfrac{k_B T}{N}\\ln{\\dfrac{X_N}{N}}"
+    "text": "Aggregation: general case\n\n\n\nLet the overall volume fraction to be \\phi\nCall X_N the volume fraction in an aggregate of size N, so that \\sum_N X_N = \\phi.\nThe numbers of aggregates of size N per unit volume is then simply X_N/N\n\n\n\n\n\n\n\n\nExample\n\n\n\nSuppose \\phi = 0.1 (10% of the volume is particles).\nLet X_3 = 0.06, X_2 = 0.04 (so \\sum X_N = 0.06 + 0.04 = 0.1 = \\phi).\nThen the number of trimers is 0.06 / 3 = 0.02 (fraction of solution volume in separate trimer aggregates).\nThe number of dimers is 0.04 / 2 = 0.02.\n\n\n\n\n\n\n___The uniform chemical potential is then\n\\mu = \\text{\\{energy per particle in aggregate of size N\\}} + \\text{\\{entropy of mixing  per particle in aggregate of size N\\}}\nor \\mu = \\epsilon_N + \\dfrac{k_B T}{N}\\ln{\\dfrac{X_N}{N}}"
   },
   {
     "objectID": "soft-matter_surfactants1.html#aggregation-general-case-2",
@@ -529,14 +543,84 @@
     "href": "soft-matter_surfactants1.html#aggregation-general-case-3",
     "title": "Complex Disordered Systems",
     "section": "Aggregation: general case",
-    "text": "Aggregation: general case\nX_N = N X_1^N \\exp{\\left( \\dfrac{N(\\epsilon_1-\\epsilon_N)}{k_BT}\\right)}\nmeans that knowing the form of \\epsilon_N is key to predicting aggregation behaviour.\n\nConsider an aggregate of N particles of total radius r\\approx (Nv)^{1/3} where v is the volume of a single particle.\nThen \\epsilon_N is the free energy per particle of the aggregate of size N, G_N=\\text{ bulk free energy}+\\text{surface free energy}\nAssuming that there is a surface free energy cost (a surface tension) \\gamma we write\n\n\\epsilon_N = \\dfrac{G_N}{N} = \\epsilon_\\infty  +\\dfrac{1}{N}\\gamma r^2 =\\epsilon_\\infty +\\gamma\\left(\\dfrac{v^2}{N}\\right)^{1/3}\nwhich is a monotonically decreasing function of N.\nDefine \\alpha k_B T = \\gamma v^{2/3} and extract a relation between X_N and X_1 parametrised solely by \\alpha, i.e.\n\\text{number of aggregates of size N per unit volume} = \\dfrac{X_N}{N}\\sim (X_1 e^{\\alpha})^N"
+    "text": "Aggregation: general case\nX_N = N X_1^N \\exp{\\left( \\dfrac{N(\\epsilon_1-\\epsilon_N)}{k_BT}\\right)}\nmeans that knowing the form of \\epsilon_N is key to predicting aggregation behaviour.\n\nConsider an aggregate of N particles of total radius r\\approx (Nv)^{1/3} where v is the volume of a single particle.\nThen \\epsilon_N is the free energy per particle of the aggregate of size N, G_N/N=\\dfrac{1}{N}(\\text{ bulk free energy}+\\text{surface free energy})\nAssuming that there is a surface free energy cost (a surface tension) \\gamma we write\n\n\\epsilon_N = \\dfrac{G_N}{N} = \\epsilon_\\infty  +\\dfrac{1}{N}\\gamma r^2 =\\epsilon_\\infty +\\gamma\\left(\\dfrac{v^2}{N}\\right)^{1/3}\nwhich is a monotonically decreasing function of N.\nDefine \\alpha k_B T = \\gamma v^{2/3} and extract a relation between X_N and X_1 parametrised solely by \\alpha, i.e.\n\\text{number of aggregates of size N per unit volume} = \\dfrac{X_N}{N}\\sim (X_1 e^{\\alpha})^N"
   },
   {
     "objectID": "soft-matter_surfactants1.html#aggregation-general-case-4",
     "href": "soft-matter_surfactants1.html#aggregation-general-case-4",
     "title": "Complex Disordered Systems",
     "section": "Aggregation: general case",
-    "text": "Aggregation: general case\n\\text{number of aggregates of size N per unit volume} = \\dfrac{X_N}{N}\\sim (X_1 e^{\\alpha})^N This presents us with a few cases\n\nX_1 e^{\\alpha} &lt; 1: Few isolated particles exist, and (X_1 e^{\\alpha})^N becomes vanishingly small for large N, resulting in very few large aggregates.\nX_1 e^{\\alpha} = 1 (critical point): Aggregates of all sizes become equally probable. The system undergoes phase separation into a dilute phase of isolated monomers (with X_1 pinned at e^{-\\alpha}) in coexistence with a dense phase of very large aggregates.\nX_1 e^{\\alpha} &gt; 1: Above the critical aggregation concentration, the system cannot remain homogeneous and phase separates.\n\nThe volume fraction \\phi at which this occurs is called critical aggregation concentration, or CAC."
+    "text": "Aggregation: general case\n\\text{number of aggregates of size N per unit volume} = \\dfrac{X_N}{N}\\sim (X_1 e^{\\alpha})^N This presents us with a few cases depending on \\alpha= \\gamma v^{2/3}/k_B T\n\nX_1 e^{\\alpha} &lt; 1: Few isolated particles, and (X_1 e^{\\alpha})^N becomes vanishingly small for large N\nX_1 e^{\\alpha} = 1 (critical point): Aggregates of all sizes become equally probable. The system undergoes phase separation into a dilute phase of isolated monomers (with X_1 pinned at e^{-\\alpha}) in coexistence with a dense phase of very large aggregates.\nX_1 e^{\\alpha} &gt; 1: Above the critical aggregation concentration, the system cannot remain homogeneous and phase separates. The volume fraction \\phi at which this occurs is called critical aggregation concentration, or CAC.\n\n\\text{CAC} = X_1^* = e^{-\\alpha} = \\exp\\left(-\\frac{\\gamma v^{2/3}}{k_B T}\\right)"
+  },
+  {
+    "objectID": "soft-matter_surfactants1.html#aggregation-general-case-5",
+    "href": "soft-matter_surfactants1.html#aggregation-general-case-5",
+    "title": "Complex Disordered Systems",
+    "section": "Aggregation: general case",
+    "text": "Aggregation: general case"
+  },
+  {
+    "objectID": "soft-matter_surfactants1.html#aggregation-surfactants-case",
+    "href": "soft-matter_surfactants1.html#aggregation-surfactants-case",
+    "title": "Complex Disordered Systems",
+    "section": "Aggregation: surfactants case",
+    "text": "Aggregation: surfactants case\nEarlier we assumed that the free energy per particle was \\epsilon_N = \\epsilon_\\infty +\\gamma\\left(\\dfrac{v^2}{N}\\right)^{1/3} a monotonically decreasing function of N.\nFor surfactants, it is not necessarily the case.\n\nTypically \\epsilon_N has a minimum at some finite N=N^* resulting from the fact that beyond a certain size, the aggregate becomes unfavourable (e.g., due to packing constraints, curvature energy, etc).\nTherefore the distribution of aggregates of size N is peaked around N^*.\nThis leads to the formation of micelles: aggregates of a characteristic size."
+  },
+  {
+    "objectID": "soft-matter_surfactants1.html#aggregation-surfactants-case-1",
+    "href": "soft-matter_surfactants1.html#aggregation-surfactants-case-1",
+    "title": "Complex Disordered Systems",
+    "section": "Aggregation: surfactants case",
+    "text": "Aggregation: surfactants case\n\nSurfactants in solution: normally, this is done in water in the presence of an interface with air. Due to their nature as amphiphiles, the surfactants typically sit at the air-water interface in a dynamical, equilibrium process that exchanges monomers between the bulk and the surface. The bulk surfactants, when the concentration is larger than a critical value, also self-assemble into micellar structures, which are at equilibrium with the isolated single surfactants."
+  },
+  {
+    "objectID": "soft-matter_surfactants1.html#critical-micellar-concentration-cmc",
+    "href": "soft-matter_surfactants1.html#critical-micellar-concentration-cmc",
+    "title": "Complex Disordered Systems",
+    "section": "Critical micellar concentration (CMC)",
+    "text": "Critical micellar concentration (CMC)\nThe addition of surfactants to water initially reduces the water-air surface tension, but when the surface is saturated, further addition leads to crossing the a critical micellar concentration (CMC) and micelle formation.\n\nBelow the CMC, almost all surfactant molecules are present as monomers\nAbove the CMC, additional surfactant molecules predominantly form micelles of size N^* while the monomer concentration remains nearly constant.\n\nThe aggregation in water follows specific patterns:\n\nhydrophobic tails cluster together to avoid water\nhydrophilic heads face the water\n\nThe structure on the micelle surface (formed by the heads) is disordered and fluid-like, similar to a 2D liquid.\n\nSchematic of micelles (from DataPhysics Instruments)."
+  },
+  {
+    "objectID": "soft-matter_surfactants1.html#critical-micellar-concentration-cmc-1",
+    "href": "soft-matter_surfactants1.html#critical-micellar-concentration-cmc-1",
+    "title": "Complex Disordered Systems",
+    "section": "Critical micellar concentration (CMC)",
+    "text": "Critical micellar concentration (CMC)\n\nSurface tension of a surfactant solution with increasing concentration, formation of micelles, from Kruss Scientific"
+  },
+  {
+    "objectID": "soft-matter_surfactants1.html#shape-of-surfactant-assemblies",
+    "href": "soft-matter_surfactants1.html#shape-of-surfactant-assemblies",
+    "title": "Complex Disordered Systems",
+    "section": "Shape of surfactant assemblies",
+    "text": "Shape of surfactant assemblies\n\nGeometric model of a surfactant molecule:\n\noptimal headgroup area a_{0}: depends on chemical structure, pH and temeprature.\nvolume v of the hydrophobic part: The hydrophobic part usually consists of hydrocarbon chains. Its volume v\\propto n the number of carbon atoms in the chain.\ncritical chain length \\boldsymbol{l}_{\\boldsymbol{c}} : the effective length of the chain, taking into account chain flexibility, temperature, branching and chemical structure. It also scales like l_c \\propto n.\n\n\nA balance between energy and entropy leads to different self-assembled structures .\n\nDifferent types of self assembled structures: (A) spherical micelles, (B) cylindrical micelles and (C) bilayers."
+  },
+  {
+    "objectID": "soft-matter_surfactants1.html#spherical-micelle",
+    "href": "soft-matter_surfactants1.html#spherical-micelle",
+    "title": "Complex Disordered Systems",
+    "section": "Spherical micelle",
+    "text": "Spherical micelle\nFor a spherical micelle of radius R with aggregation number N , the total volume and surface area are given by\n\n\\begin{gathered}\nN v=\\frac{4 \\pi}{3} R^{3} \\\\\nN a_{0}=4 \\pi R^{2}\\end{gathered}\nTherefore $$=&lt;\n$$\nwhere we used the fact that the radius R cannot be larger than the critical chain length \\mathrm{l}_{\\mathrm{c}}. We thus obtain for the critical packing parameter P\n\nP=\\frac{v}{a_{0} l_{c}}&lt;\\frac{1}{3}"
+  },
+  {
+    "objectID": "soft-matter_surfactants1.html#cylindrical-micelles",
+    "href": "soft-matter_surfactants1.html#cylindrical-micelles",
+    "title": "Complex Disordered Systems",
+    "section": "Cylindrical micelles",
+    "text": "Cylindrical micelles\nFor a cylindrical micelle the total volume and surface area are given by N v=\\pi R^{2} L\nand\nN a_{0}=2 \\pi R L\nTherefore \\dfrac{v}{a_{0}}=\\dfrac{R}{2}&lt;\\dfrac{l_{c}}{2} again using R&lt;l_{C}.\nWe thus obtain for the critical packing parameter P=\\dfrac{v}{a_{0} l_{c}} that \\dfrac{1}{3}&lt;P&lt;\\dfrac{1}{2}\nBelow the lower limit spherical micelles are formed."
+  },
+  {
+    "objectID": "soft-matter_surfactants1.html#bilayers-lamellar",
+    "href": "soft-matter_surfactants1.html#bilayers-lamellar",
+    "title": "Complex Disordered Systems",
+    "section": "Bilayers lamellar)",
+    "text": "Bilayers lamellar)\nFor a bilayer (with separation D between the layers) the total volume and surface area are given by\n\n\\begin{aligned}\n& N v=A D \\\\\n& N a_{0}=2 A \\\\\n& \\frac{v}{a_{0}}=\\frac{D}{2}&lt;l_{c} \\quad\\left(\\text { using } D&lt;2 l_{c}\\right)\n\\end{aligned}\n\nWe thus obtain for the critical packing parameter P=\\dfrac{v}{a_{0} l_{c}} that \\dfrac{1}{2}&lt;P&lt;1\nBelow the lower limit cylindrical micelles are formed."
+  },
+  {
+    "objectID": "soft-matter_surfactants1.html#packing-parameter-summary",
+    "href": "soft-matter_surfactants1.html#packing-parameter-summary",
+    "title": "Complex Disordered Systems",
+    "section": "Packing parameter summary",
+    "text": "Packing parameter summary\n\n\n\nMesophases formed by surfactants as we vary the packing parameter P=\\dfrac{v}{a_{0} l_{c}} , from Israelachvili, J. N., Intermolecular and Surface Forces, 3rd Edition, Academic Press, 2011."
   },
   {
     "objectID": "soft-matter_liquidx2.html#aside-functional-derivatives",

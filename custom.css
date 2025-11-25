@@ -1,0 +1,16 @@
+/* Make all range sliders wider */
+input[type="range"] {
+  width: 1520px !important;
+  max-width: 1500px !important;
+}
+
+/* Prevent label overlap */
+.observablehq--inspect label,
+.ojs-input label {
+  display: block !important;
+  white-space: normal !important;
+}
+
+body {
+  outline: 5px solid hotpink !important;
+}

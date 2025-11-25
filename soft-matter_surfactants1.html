@@ -30,6 +30,72 @@
       margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
       vertical-align: middle;
     }
+    /* CSS for syntax highlighting */
+    html { -webkit-text-size-adjust: 100%; }
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    .sourceCode { overflow: visible; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+        color: #aaaaaa;
+      }
+    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+    div.sourceCode
+      { color: #003b4f; background-color: #f1f3f5; }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span { color: #003b4f; } /* Normal */
+    code span.al { color: #ad0000; } /* Alert */
+    code span.an { color: #5e5e5e; } /* Annotation */
+    code span.at { color: #657422; } /* Attribute */
+    code span.bn { color: #ad0000; } /* BaseN */
+    code span.bu { } /* BuiltIn */
+    code span.cf { color: #003b4f; font-weight: bold; } /* ControlFlow */
+    code span.ch { color: #20794d; } /* Char */
+    code span.cn { color: #8f5902; } /* Constant */
+    code span.co { color: #5e5e5e; } /* Comment */
+    code span.cv { color: #5e5e5e; font-style: italic; } /* CommentVar */
+    code span.do { color: #5e5e5e; font-style: italic; } /* Documentation */
+    code span.dt { color: #ad0000; } /* DataType */
+    code span.dv { color: #ad0000; } /* DecVal */
+    code span.er { color: #ad0000; } /* Error */
+    code span.ex { } /* Extension */
+    code span.fl { color: #ad0000; } /* Float */
+    code span.fu { color: #4758ab; } /* Function */
+    code span.im { color: #00769e; } /* Import */
+    code span.in { color: #5e5e5e; } /* Information */
+    code span.kw { color: #003b4f; font-weight: bold; } /* Keyword */
+    code span.op { color: #5e5e5e; } /* Operator */
+    code span.ot { color: #003b4f; } /* Other */
+    code span.pp { color: #ad0000; } /* Preprocessor */
+    code span.sc { color: #5e5e5e; } /* SpecialChar */
+    code span.ss { color: #20794d; } /* SpecialString */
+    code span.st { color: #20794d; } /* String */
+    code span.va { color: #111111; } /* Variable */
+    code span.vs { color: #20794d; } /* VerbatimString */
+    code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   </style>
   <link rel="stylesheet" href="site_libs/revealjs/dist/theme/quarto-534cd8e3a96973385dffff3f4709048d.css">
   <link rel="stylesheet" href="styles.css">
@@ -160,8 +226,8 @@ Francesco Turci
 </div>
 
 </section>
-<section id="hydrophobicity-and-amphiphiles" class="slide level2">
-<h2>Hydrophobicity and amphiphiles</h2>
+<section id="hydrophobicity-and-amhiphiles" class="slide level2">
+<h2>Hydrophobicity and amhiphiles</h2>
 <p>Water is the standard solvent for a lot of chemistry and (almost all) biology.</p>
 <p>Molecules in water can be classified by their <strong>affinity</strong> to water:</p>
 <ul>
@@ -176,16 +242,195 @@ Francesco Turci
 </ul>
 
 <img data-src="./figs/amphiphile.svg" class="r-stretch quarto-figure-center"><p class="caption">Schematic model of a surfactant</p></section>
-<section id="hydrophobicity-and-amphiphiles-1" class="slide level2">
+<section id="hydrophobicity-and-amphiphiles" class="slide level2">
 <h2>Hydrophobicity and amphiphiles</h2>
 
 <img data-src="./figs/membrane.jpg" class="r-stretch quarto-figure-center"><p class="caption">Phospholipid <strong>bilayers</strong> form the cellular membranes. They <strong>self-assemble</strong>!</p></section>
+<section id="hydrophobicity-in-brief" class="slide level2">
+<h2>Hydrophobicity in brief</h2>
+<p>The hydrophobic interactions is a topic of active research.</p>
+<p>Various approaches</p>
+<ul>
+<li>(from to 1950s) structural approach: water forms cages around molecules. When the cage is disrupted, entropy increases. Solutes come together to minimise the disruption.</li>
+<li>(from 2000s) interfaces approach: water is a fluctuating medium. Large hydrophobic solutes create interfaces that suppress fluctuations. Solutes come together to minimise the interface area.</li>
+<li>(current research) avoided criticality: water is close to a liquid-vapour critical point. Local curvature and interactions promote large density fluctuations. Solutes interact on scales controlled by these fluctuations.</li>
+</ul>
+
+<img data-src="./figs/medium.png" class="r-stretch quarto-figure-center"><p class="caption">Effective hydrophobic interactions between spherical solutes of variable solute-solvent affinities <span class="math inline">\varepsilon_{sw}</span>. A depletion-like construction produces a surface tension-controlled interaction. from Wilding &amp; Turci PRR (2025)</p><p>In all cases, the hydrophobic effect originates in <strong>fluctuations of the solvent</strong>, i.e.&nbsp;the way the solvent explores the available configuration.</p>
+</section>
 <section id="self-assembly-of-surfactants" class="slide level2">
 <h2>Self assembly of surfactants</h2>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code hidden" id="cb1" data-startfrom="57" data-source-offset="0"><pre class="sourceCode numberSource js number-lines code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 56;"><span id="cb1-57"><a></a>viewof temperature <span class="op">=</span> Inputs<span class="op">.</span><span class="fu">range</span>([<span class="fl">0.01</span><span class="op">,</span> <span class="dv">2</span>]<span class="op">,</span> {<span class="dt">step</span><span class="op">:</span> <span class="fl">0.05</span><span class="op">,</span> <span class="dt">label</span><span class="op">:</span> <span class="st">"Temperature (kT)"</span><span class="op">,</span> <span class="dt">value</span><span class="op">:</span> <span class="fl">0.5</span>})</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-display">
+<div id="ojs-cell-1" data-nodetype="declaration">
+
+</div>
+</div>
+</div>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code hidden" id="cb2" data-startfrom="61" data-source-offset="0"><pre class="sourceCode numberSource js number-lines code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 60;"><span id="cb2-61"><a></a>viewof numChains <span class="op">=</span> Inputs<span class="op">.</span><span class="fu">range</span>([<span class="dv">3</span><span class="op">,</span> <span class="dv">300</span>]<span class="op">,</span> {<span class="dt">step</span><span class="op">:</span> <span class="dv">10</span><span class="op">,</span> <span class="dt">label</span><span class="op">:</span> <span class="st">"Number of Chains"</span><span class="op">,</span> <span class="dt">value</span><span class="op">:</span> <span class="dv">100</span>})</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-display">
+<div id="ojs-cell-2" data-nodetype="declaration">
+
+</div>
+</div>
+</div>
+<div class="cell">
+<details class="code-fold hidden">
+<summary>Code</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code hidden" id="cb3" data-startfrom="65" data-source-offset="0"><pre class="sourceCode numberSource js number-lines code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 64;"><span id="cb3-65"><a></a><span class="co">// This is ObservableJS code  </span></span>
+<span id="cb3-66"><a></a><span class="co">// You can run at observableehq.com or convert it to an equivalent (and faster?) Python version if you like</span></span>
+<span id="cb3-67"><a></a>viewof simulation <span class="op">=</span> {</span>
+<span id="cb3-68"><a></a>    <span class="co">// --- Parameters ---</span></span>
+<span id="cb3-69"><a></a>    <span class="kw">const</span> width <span class="op">=</span> <span class="dv">40</span><span class="op">,</span> height <span class="op">=</span> <span class="dv">40</span><span class="op">;</span></span>
+<span id="cb3-70"><a></a>    <span class="kw">const</span> chainLength <span class="op">=</span> <span class="dv">3</span><span class="op">;</span></span>
+<span id="cb3-71"><a></a>    <span class="kw">const</span> chainsToCreate <span class="op">=</span> numChains<span class="op">;</span></span>
+<span id="cb3-72"><a></a>    <span class="kw">const</span> T <span class="op">=</span> temperature<span class="op">;</span></span>
+<span id="cb3-73"><a></a>    <span class="co">// const numChains = 10;</span></span>
+<span id="cb3-74"><a></a>    <span class="kw">const</span> E_TS <span class="op">=</span> <span class="fl">1.0</span><span class="op">;</span>     <span class="co">// tail-solvent energy (solvophobic)</span></span>
+<span id="cb3-75"><a></a>    <span class="kw">const</span> E_HS <span class="op">=</span> <span class="op">-</span><span class="fl">1.5</span><span class="op">;</span>    <span class="co">// head-solvent energy (solvophilic)</span></span>
+<span id="cb3-76"><a></a>    <span class="co">// const T = 0.1;        // temperature (kT units)</span></span>
+<span id="cb3-77"><a></a></span>
+<span id="cb3-78"><a></a>    <span class="co">// --- Initialize grid and chains ---</span></span>
+<span id="cb3-79"><a></a>    <span class="kw">let</span> grid <span class="op">=</span> <span class="bu">Array</span><span class="op">.</span><span class="fu">from</span>({<span class="dt">length</span><span class="op">:</span> width}<span class="op">,</span> () <span class="kw">=&gt;</span> <span class="bu">Array</span>(height)<span class="op">.</span><span class="fu">fill</span>(<span class="kw">null</span>))<span class="op">;</span></span>
+<span id="cb3-80"><a></a>    <span class="kw">let</span> chains <span class="op">=</span> []<span class="op">;</span></span>
+<span id="cb3-81"><a></a></span>
+<span id="cb3-82"><a></a>    <span class="co">// Periodic boundary helper</span></span>
+<span id="cb3-83"><a></a>    <span class="kw">function</span> <span class="fu">mod</span>(n<span class="op">,</span> m) { <span class="cf">return</span> ((n <span class="op">%</span> m) <span class="op">+</span> m) <span class="op">%</span> m<span class="op">;</span> }</span>
+<span id="cb3-84"><a></a></span>
+<span id="cb3-85"><a></a>    <span class="kw">function</span> <span class="fu">getNeighbors</span>(x<span class="op">,</span> y) {</span>
+<span id="cb3-86"><a></a>        <span class="cf">return</span> [</span>
+<span id="cb3-87"><a></a>            {<span class="dt">x</span><span class="op">:</span> <span class="fu">mod</span>(x <span class="op">-</span> <span class="dv">1</span><span class="op">,</span> width)<span class="op">,</span> <span class="dt">y</span><span class="op">:</span> y}<span class="op">,</span></span>
+<span id="cb3-88"><a></a>            {<span class="dt">x</span><span class="op">:</span> <span class="fu">mod</span>(x <span class="op">+</span> <span class="dv">1</span><span class="op">,</span> width)<span class="op">,</span> <span class="dt">y</span><span class="op">:</span> y}<span class="op">,</span></span>
+<span id="cb3-89"><a></a>            {<span class="dt">x</span><span class="op">:</span> x<span class="op">,</span> <span class="dt">y</span><span class="op">:</span> <span class="fu">mod</span>(y <span class="op">-</span> <span class="dv">1</span><span class="op">,</span> height)}<span class="op">,</span></span>
+<span id="cb3-90"><a></a>            {<span class="dt">x</span><span class="op">:</span> x<span class="op">,</span> <span class="dt">y</span><span class="op">:</span> <span class="fu">mod</span>(y <span class="op">+</span> <span class="dv">1</span><span class="op">,</span> height)}</span>
+<span id="cb3-91"><a></a>        ]<span class="op">;</span></span>
+<span id="cb3-92"><a></a>    }</span>
+<span id="cb3-93"><a></a></span>
+<span id="cb3-94"><a></a>    <span class="kw">function</span> <span class="fu">placeChains</span>() {</span>
+<span id="cb3-95"><a></a>        <span class="cf">for</span> (<span class="kw">let</span> id <span class="op">=</span> <span class="dv">0</span><span class="op">;</span> id <span class="op">&lt;</span> numChains<span class="op">;</span> id<span class="op">++</span>) {</span>
+<span id="cb3-96"><a></a>            <span class="cf">for</span> (<span class="kw">let</span> tries <span class="op">=</span> <span class="dv">0</span><span class="op">;</span> tries <span class="op">&lt;</span> <span class="dv">100</span><span class="op">;</span> tries<span class="op">++</span>) {</span>
+<span id="cb3-97"><a></a>                <span class="kw">let</span> x <span class="op">=</span> <span class="bu">Math</span><span class="op">.</span><span class="fu">floor</span>(<span class="bu">Math</span><span class="op">.</span><span class="fu">random</span>() <span class="op">*</span> width)<span class="op">;</span></span>
+<span id="cb3-98"><a></a>                <span class="kw">let</span> y <span class="op">=</span> <span class="bu">Math</span><span class="op">.</span><span class="fu">floor</span>(<span class="bu">Math</span><span class="op">.</span><span class="fu">random</span>() <span class="op">*</span> height)<span class="op">;</span></span>
+<span id="cb3-99"><a></a>                <span class="cf">if</span> (grid[x][y]) <span class="cf">continue</span><span class="op">;</span></span>
+<span id="cb3-100"><a></a></span>
+<span id="cb3-101"><a></a>                <span class="kw">let</span> chain <span class="op">=</span> [{x<span class="op">,</span> y<span class="op">,</span> <span class="dt">type</span><span class="op">:</span> <span class="st">'head'</span>}]<span class="op">;</span></span>
+<span id="cb3-102"><a></a>                grid[x][y] <span class="op">=</span> {id<span class="op">,</span> <span class="dt">type</span><span class="op">:</span> <span class="st">'head'</span>}<span class="op">;</span></span>
+<span id="cb3-103"><a></a>                <span class="kw">let</span> ok <span class="op">=</span> <span class="kw">true</span><span class="op">;</span></span>
+<span id="cb3-104"><a></a></span>
+<span id="cb3-105"><a></a>                <span class="cf">for</span> (<span class="kw">let</span> i <span class="op">=</span> <span class="dv">1</span><span class="op">;</span> i <span class="op">&lt;</span> chainLength<span class="op">;</span> i<span class="op">++</span>) {</span>
+<span id="cb3-106"><a></a>                    <span class="kw">let</span> last <span class="op">=</span> chain[chain<span class="op">.</span><span class="at">length</span> <span class="op">-</span> <span class="dv">1</span>]<span class="op">;</span></span>
+<span id="cb3-107"><a></a>                    <span class="kw">let</span> nbs <span class="op">=</span> <span class="fu">getNeighbors</span>(last<span class="op">.</span><span class="at">x</span><span class="op">,</span> last<span class="op">.</span><span class="at">y</span>)<span class="op">.</span><span class="fu">filter</span>(p <span class="kw">=&gt;</span> <span class="op">!</span>grid[p<span class="op">.</span><span class="at">x</span>][p<span class="op">.</span><span class="at">y</span>])<span class="op">;</span></span>
+<span id="cb3-108"><a></a>                    <span class="cf">if</span> (nbs<span class="op">.</span><span class="at">length</span> <span class="op">===</span> <span class="dv">0</span>) { ok <span class="op">=</span> <span class="kw">false</span><span class="op">;</span> <span class="cf">break</span><span class="op">;</span> }</span>
+<span id="cb3-109"><a></a>                    <span class="kw">let</span> next <span class="op">=</span> nbs[<span class="bu">Math</span><span class="op">.</span><span class="fu">floor</span>(<span class="bu">Math</span><span class="op">.</span><span class="fu">random</span>() <span class="op">*</span> nbs<span class="op">.</span><span class="at">length</span>)]<span class="op">;</span></span>
+<span id="cb3-110"><a></a>                    chain<span class="op">.</span><span class="fu">push</span>({<span class="op">...</span>next<span class="op">,</span> <span class="dt">type</span><span class="op">:</span> <span class="st">'tail'</span>})<span class="op">;</span></span>
+<span id="cb3-111"><a></a>                    grid[next<span class="op">.</span><span class="at">x</span>][next<span class="op">.</span><span class="at">y</span>] <span class="op">=</span> {id<span class="op">,</span> <span class="dt">type</span><span class="op">:</span> <span class="st">'tail'</span>}<span class="op">;</span></span>
+<span id="cb3-112"><a></a>                }</span>
+<span id="cb3-113"><a></a></span>
+<span id="cb3-114"><a></a>                <span class="cf">if</span> (ok) { chains<span class="op">.</span><span class="fu">push</span>({id<span class="op">,</span> <span class="dt">segments</span><span class="op">:</span> chain})<span class="op">;</span> <span class="cf">break</span><span class="op">;</span> }</span>
+<span id="cb3-115"><a></a>                <span class="cf">else</span> { chain<span class="op">.</span><span class="fu">forEach</span>(p <span class="kw">=&gt;</span> grid[p<span class="op">.</span><span class="at">x</span>][p<span class="op">.</span><span class="at">y</span>] <span class="op">=</span> <span class="kw">null</span>)<span class="op">;</span> }</span>
+<span id="cb3-116"><a></a>            }</span>
+<span id="cb3-117"><a></a>        }</span>
+<span id="cb3-118"><a></a>    }</span>
+<span id="cb3-119"><a></a></span>
+<span id="cb3-120"><a></a>    <span class="kw">function</span> <span class="fu">energy</span>(seg) {</span>
+<span id="cb3-121"><a></a>        <span class="kw">let</span> solventNbs <span class="op">=</span> <span class="fu">getNeighbors</span>(seg<span class="op">.</span><span class="at">x</span><span class="op">,</span> seg<span class="op">.</span><span class="at">y</span>)<span class="op">.</span><span class="fu">filter</span>(p <span class="kw">=&gt;</span> <span class="op">!</span>grid[p<span class="op">.</span><span class="at">x</span>][p<span class="op">.</span><span class="at">y</span>])<span class="op">.</span><span class="at">length</span><span class="op">;</span></span>
+<span id="cb3-122"><a></a>        <span class="cf">return</span> seg<span class="op">.</span><span class="at">type</span> <span class="op">===</span> <span class="st">'head'</span> <span class="op">?</span> solventNbs <span class="op">*</span> E_HS <span class="op">:</span> solventNbs <span class="op">*</span> E_TS<span class="op">;</span></span>
+<span id="cb3-123"><a></a>    }</span>
+<span id="cb3-124"><a></a></span>
+<span id="cb3-125"><a></a>    <span class="kw">function</span> <span class="fu">attemptMove</span>(chain) {</span>
+<span id="cb3-126"><a></a>        <span class="kw">const</span> forward <span class="op">=</span> <span class="bu">Math</span><span class="op">.</span><span class="fu">random</span>() <span class="op">&lt;</span> <span class="fl">0.5</span><span class="op">;</span></span>
+<span id="cb3-127"><a></a>        <span class="kw">const</span> tail <span class="op">=</span> forward <span class="op">?</span> chain<span class="op">.</span><span class="at">segments</span>[<span class="dv">0</span>] <span class="op">:</span> chain<span class="op">.</span><span class="at">segments</span><span class="op">.</span><span class="fu">at</span>(<span class="op">-</span><span class="dv">1</span>)<span class="op">;</span></span>
+<span id="cb3-128"><a></a>        <span class="kw">const</span> head <span class="op">=</span> forward <span class="op">?</span> chain<span class="op">.</span><span class="at">segments</span><span class="op">.</span><span class="fu">at</span>(<span class="op">-</span><span class="dv">1</span>) <span class="op">:</span> chain<span class="op">.</span><span class="at">segments</span>[<span class="dv">0</span>]<span class="op">;</span></span>
+<span id="cb3-129"><a></a>        <span class="kw">const</span> options <span class="op">=</span> <span class="fu">getNeighbors</span>(head<span class="op">.</span><span class="at">x</span><span class="op">,</span> head<span class="op">.</span><span class="at">y</span>)<span class="op">.</span><span class="fu">filter</span>(p <span class="kw">=&gt;</span> <span class="op">!</span>grid[p<span class="op">.</span><span class="at">x</span>][p<span class="op">.</span><span class="at">y</span>])<span class="op">;</span></span>
+<span id="cb3-130"><a></a></span>
+<span id="cb3-131"><a></a>        <span class="cf">if</span> (options<span class="op">.</span><span class="at">length</span> <span class="op">===</span> <span class="dv">0</span>) <span class="cf">return</span><span class="op">;</span></span>
+<span id="cb3-132"><a></a>        <span class="kw">const</span> next <span class="op">=</span> options[<span class="bu">Math</span><span class="op">.</span><span class="fu">floor</span>(<span class="bu">Math</span><span class="op">.</span><span class="fu">random</span>() <span class="op">*</span> options<span class="op">.</span><span class="at">length</span>)]<span class="op">;</span></span>
+<span id="cb3-133"><a></a></span>
+<span id="cb3-134"><a></a>        <span class="kw">const</span> dE_old <span class="op">=</span> <span class="fu">energy</span>(tail)<span class="op">;</span></span>
+<span id="cb3-135"><a></a>        grid[tail<span class="op">.</span><span class="at">x</span>][tail<span class="op">.</span><span class="at">y</span>] <span class="op">=</span> <span class="kw">null</span><span class="op">;</span></span>
+<span id="cb3-136"><a></a>        <span class="kw">const</span> dE_new <span class="op">=</span> <span class="fu">energy</span>({<span class="op">...</span>next<span class="op">,</span> <span class="dt">type</span><span class="op">:</span> tail<span class="op">.</span><span class="at">type</span>})<span class="op">;</span></span>
+<span id="cb3-137"><a></a>        grid[tail<span class="op">.</span><span class="at">x</span>][tail<span class="op">.</span><span class="at">y</span>] <span class="op">=</span> {<span class="dt">id</span><span class="op">:</span> chain<span class="op">.</span><span class="at">id</span><span class="op">,</span> <span class="dt">type</span><span class="op">:</span> tail<span class="op">.</span><span class="at">type</span>}<span class="op">;</span></span>
+<span id="cb3-138"><a></a></span>
+<span id="cb3-139"><a></a>        <span class="kw">const</span> deltaU <span class="op">=</span> dE_new <span class="op">-</span> dE_old<span class="op">;</span></span>
+<span id="cb3-140"><a></a>        <span class="kw">const</span> accept <span class="op">=</span> deltaU <span class="op">&lt;</span> <span class="dv">0</span> <span class="op">||</span> <span class="bu">Math</span><span class="op">.</span><span class="fu">random</span>() <span class="op">&lt;</span> <span class="bu">Math</span><span class="op">.</span><span class="fu">exp</span>(<span class="op">-</span>deltaU <span class="op">/</span> T)<span class="op">;</span></span>
+<span id="cb3-141"><a></a></span>
+<span id="cb3-142"><a></a>        <span class="cf">if</span> (accept) {</span>
+<span id="cb3-143"><a></a>            grid[tail<span class="op">.</span><span class="at">x</span>][tail<span class="op">.</span><span class="at">y</span>] <span class="op">=</span> <span class="kw">null</span><span class="op">;</span></span>
+<span id="cb3-144"><a></a>            grid[next<span class="op">.</span><span class="at">x</span>][next<span class="op">.</span><span class="at">y</span>] <span class="op">=</span> {<span class="dt">id</span><span class="op">:</span> chain<span class="op">.</span><span class="at">id</span><span class="op">,</span> <span class="dt">type</span><span class="op">:</span> tail<span class="op">.</span><span class="at">type</span>}<span class="op">;</span></span>
+<span id="cb3-145"><a></a>            <span class="cf">if</span> (forward) {</span>
+<span id="cb3-146"><a></a>                chain<span class="op">.</span><span class="at">segments</span><span class="op">.</span><span class="fu">shift</span>()<span class="op">;</span></span>
+<span id="cb3-147"><a></a>                chain<span class="op">.</span><span class="at">segments</span><span class="op">.</span><span class="fu">push</span>({<span class="op">...</span>next<span class="op">,</span> <span class="dt">type</span><span class="op">:</span> tail<span class="op">.</span><span class="at">type</span>})<span class="op">;</span></span>
+<span id="cb3-148"><a></a>            } <span class="cf">else</span> {</span>
+<span id="cb3-149"><a></a>                chain<span class="op">.</span><span class="at">segments</span><span class="op">.</span><span class="fu">pop</span>()<span class="op">;</span></span>
+<span id="cb3-150"><a></a>                chain<span class="op">.</span><span class="at">segments</span><span class="op">.</span><span class="fu">unshift</span>({<span class="op">...</span>next<span class="op">,</span> <span class="dt">type</span><span class="op">:</span> tail<span class="op">.</span><span class="at">type</span>})<span class="op">;</span></span>
+<span id="cb3-151"><a></a>            }</span>
+<span id="cb3-152"><a></a>        }</span>
+<span id="cb3-153"><a></a>    }</span>
+<span id="cb3-154"><a></a></span>
+<span id="cb3-155"><a></a>    <span class="co">// --- Visualization ---</span></span>
+<span id="cb3-156"><a></a>    <span class="kw">const</span> svg <span class="op">=</span> d3<span class="op">.</span><span class="fu">create</span>(<span class="st">"svg"</span>)</span>
+<span id="cb3-157"><a></a>        <span class="op">.</span><span class="fu">attr</span>(<span class="st">"viewBox"</span><span class="op">,</span> <span class="vs">`0 0 </span><span class="sc">${</span>width<span class="sc">}</span><span class="vs"> </span><span class="sc">${</span>height<span class="sc">}</span><span class="vs">`</span>)</span>
+<span id="cb3-158"><a></a>        <span class="op">.</span><span class="fu">style</span>(<span class="st">"width"</span><span class="op">,</span> <span class="st">"400px"</span>)</span>
+<span id="cb3-159"><a></a>        <span class="op">.</span><span class="fu">style</span>(<span class="st">"height"</span><span class="op">,</span> <span class="st">"400px"</span>)</span>
+<span id="cb3-160"><a></a>        <span class="op">.</span><span class="fu">style</span>(<span class="st">"border"</span><span class="op">,</span> <span class="st">"1px solid #ccc"</span>)<span class="op">;</span></span>
+<span id="cb3-161"><a></a></span>
+<span id="cb3-162"><a></a>    <span class="kw">const</span> g <span class="op">=</span> svg<span class="op">.</span><span class="fu">append</span>(<span class="st">"g"</span>)<span class="op">;</span></span>
+<span id="cb3-163"><a></a></span>
+<span id="cb3-164"><a></a>    <span class="kw">function</span> <span class="fu">draw</span>() {</span>
+<span id="cb3-165"><a></a>        <span class="kw">const</span> data <span class="op">=</span> chains<span class="op">.</span><span class="fu">flatMap</span>(c <span class="kw">=&gt;</span> c<span class="op">.</span><span class="at">segments</span>)<span class="op">;</span></span>
+<span id="cb3-166"><a></a>        g<span class="op">.</span><span class="fu">selectAll</span>(<span class="st">"circle"</span>)</span>
+<span id="cb3-167"><a></a>            <span class="op">.</span><span class="fu">data</span>(data<span class="op">,</span> d <span class="kw">=&gt;</span> <span class="vs">`</span><span class="sc">${</span>d<span class="op">.</span><span class="at">x</span><span class="sc">}</span><span class="vs">-</span><span class="sc">${</span>d<span class="op">.</span><span class="at">y</span><span class="sc">}</span><span class="vs">`</span>)</span>
+<span id="cb3-168"><a></a>            <span class="op">.</span><span class="fu">join</span>(<span class="st">"circle"</span>)</span>
+<span id="cb3-169"><a></a>            <span class="op">.</span><span class="fu">attr</span>(<span class="st">"cx"</span><span class="op">,</span> d <span class="kw">=&gt;</span> d<span class="op">.</span><span class="at">x</span> <span class="op">+</span> <span class="fl">0.5</span>)</span>
+<span id="cb3-170"><a></a>            <span class="op">.</span><span class="fu">attr</span>(<span class="st">"cy"</span><span class="op">,</span> d <span class="kw">=&gt;</span> d<span class="op">.</span><span class="at">y</span> <span class="op">+</span> <span class="fl">0.5</span>)</span>
+<span id="cb3-171"><a></a>            <span class="op">.</span><span class="fu">attr</span>(<span class="st">"r"</span><span class="op">,</span> <span class="fl">0.45</span>)</span>
+<span id="cb3-172"><a></a>            <span class="op">.</span><span class="fu">attr</span>(<span class="st">"fill"</span><span class="op">,</span> d <span class="kw">=&gt;</span> d<span class="op">.</span><span class="at">type</span> <span class="op">===</span> <span class="st">"head"</span> <span class="op">?</span> <span class="st">"blue"</span> <span class="op">:</span> <span class="st">"red"</span>)<span class="op">;</span></span>
+<span id="cb3-173"><a></a>    }</span>
+<span id="cb3-174"><a></a></span>
+<span id="cb3-175"><a></a>    <span class="co">// --- Main Loop ---</span></span>
+<span id="cb3-176"><a></a>    <span class="fu">placeChains</span>()<span class="op">;</span></span>
+<span id="cb3-177"><a></a>    <span class="fu">draw</span>()<span class="op">;</span></span>
+<span id="cb3-178"><a></a></span>
+<span id="cb3-179"><a></a>    <span class="kw">let</span> running <span class="op">=</span> <span class="kw">true</span><span class="op">;</span></span>
+<span id="cb3-180"><a></a>    <span class="kw">const</span> button <span class="op">=</span> <span class="fu">html</span><span class="vs">`&lt;button&gt;⏸ Pause&lt;/button&gt;`</span><span class="op">;</span></span>
+<span id="cb3-181"><a></a>    button<span class="op">.</span><span class="at">onclick</span> <span class="op">=</span> () <span class="kw">=&gt;</span> {</span>
+<span id="cb3-182"><a></a>        running <span class="op">=</span> <span class="op">!</span>running<span class="op">;</span></span>
+<span id="cb3-183"><a></a>        button<span class="op">.</span><span class="at">textContent</span> <span class="op">=</span> running <span class="op">?</span> <span class="st">"⏸ Pause"</span> <span class="op">:</span> <span class="st">"▶ Resume"</span><span class="op">;</span></span>
+<span id="cb3-184"><a></a>    }<span class="op">;</span></span>
+<span id="cb3-185"><a></a></span>
+<span id="cb3-186"><a></a>    (<span class="kw">async</span> () <span class="kw">=&gt;</span> {</span>
+<span id="cb3-187"><a></a>        <span class="cf">while</span> (<span class="kw">true</span>) {</span>
+<span id="cb3-188"><a></a>            <span class="cf">if</span> (running) {</span>
+<span id="cb3-189"><a></a>                <span class="cf">for</span> (<span class="kw">let</span> i <span class="op">=</span> <span class="dv">0</span><span class="op">;</span> i <span class="op">&lt;</span> chains<span class="op">.</span><span class="at">length</span><span class="op">;</span> i<span class="op">++</span>) {</span>
+<span id="cb3-190"><a></a>                    <span class="kw">const</span> c <span class="op">=</span> chains[<span class="bu">Math</span><span class="op">.</span><span class="fu">floor</span>(<span class="bu">Math</span><span class="op">.</span><span class="fu">random</span>() <span class="op">*</span> chains<span class="op">.</span><span class="at">length</span>)]<span class="op">;</span></span>
+<span id="cb3-191"><a></a>                    <span class="fu">attemptMove</span>(c)<span class="op">;</span></span>
+<span id="cb3-192"><a></a>                }</span>
+<span id="cb3-193"><a></a>                <span class="fu">draw</span>()<span class="op">;</span></span>
+<span id="cb3-194"><a></a>            }</span>
+<span id="cb3-195"><a></a>            <span class="cf">await</span> <span class="kw">new</span> <span class="bu">Promise</span>(r <span class="kw">=&gt;</span> <span class="pp">setTimeout</span>(r<span class="op">,</span> <span class="dv">50</span>))<span class="op">;</span></span>
+<span id="cb3-196"><a></a>        }</span>
+<span id="cb3-197"><a></a>    })()<span class="op">;</span></span>
+<span id="cb3-198"><a></a></span>
+<span id="cb3-199"><a></a>    <span class="cf">return</span> <span class="fu">html</span><span class="vs">`&lt;div&gt;</span><span class="sc">${</span>button<span class="sc">}</span><span class="vs">&lt;br&gt;</span><span class="sc">${</span>svg<span class="op">.</span><span class="fu">node</span>()<span class="sc">}</span><span class="vs">&lt;/div&gt;`</span><span class="op">;</span></span>
+<span id="cb3-200"><a></a>}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+<div class="cell-output cell-output-display">
+<div id="ojs-cell-3" data-nodetype="declaration">
+
+</div>
+</div>
+</div>
+</section>
+<section id="self-assembly-of-surfactants-1" class="slide level2">
+<h2>Self assembly of surfactants</h2>
 <ul>
-<li><p>Surfactants are at the molecular scale so they are <em>nanometer</em> sized</p></li>
-<li><p>This means that their diffusion is <strong>fast</strong> (e.g.&nbsp;use <span class="math inline">D=\frac{k_B T}{6 \pi \eta R}</span> to compare a colloid to a surfactant molecule)</p></li>
-<li><p>Fast diffusion in the solvent means that they quickly explore possible conformations and minimise free energy.</p></li>
+<li><p>Surfactants are at the molecular scale so they are <em>nanometer</em> sized</p>
+<ul>
+<li>Diffusion is <strong>fast</strong> (e.g.&nbsp;use <span class="math inline">D=\frac{k_B T}{6 \pi \eta R}</span> to compare a colloid to a surfactant molecule)</li>
+<li><span class="math inline">\to</span> quickly explore possible conformations and minimise free energy.</li>
+</ul></li>
 <li><p>The amphiphilic structure means that special orientations can be achieved to satisfy the energetic constraints.</p></li>
 <li><p>The molecules spontaneously form structures: this is called <strong>self-assembly</strong>.</p></li>
 <li><p>Underlying phase transitions typically <strong>drive</strong> the self-assembly.</p></li>
@@ -201,18 +446,41 @@ Francesco Turci
 </ul>
 <p>We can express <span class="math inline">\mu</span> in terms of</p>
 <ul>
-<li>the interaction energy from being in the aggregate (<span class="math inline">\epsilon_N</span>)</li>
-<li>the entropy of the aggregate as a whole (<span class="math inline">\propto {\text{ number of aggregates}}\times \ln {\text{ number of aggregates}}</span>)</li>
+<li>the interaction energy from being in the aggregate <span class="math inline">\epsilon_N</span></li>
+<li>the entropy of the aggregate as a whole <span class="math inline">\propto {\text{ number of aggregates}}\times \ln {\text{ number of aggregates}}</span></li>
 </ul>
 </section>
 <section id="aggregation-general-case-1" class="slide level2">
 <h2>Aggregation: general case</h2>
+<div class="columns">
+<div class="column">
 <ul>
 <li>Let the overall <strong>volume fraction</strong> to be <span class="math inline">\phi</span></li>
 <li>Call <span class="math inline">X_N</span> the volume fraction in an aggregate of size <span class="math inline">N</span>, so that <span class="math inline">\sum_N X_N = \phi</span>.</li>
-<li>The numbers of aggregates of size <span class="math inline">N</span> is then simply <span class="math inline">X_N/N</span></li>
+<li>The numbers of aggregates of size <span class="math inline">N</span> per unit volume is then simply <span class="math inline">X_N/N</span></li>
 </ul>
-<p>The uniform chemical potential is the comnination of</p>
+</div><div class="column">
+<div class="callout callout-note callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Example</strong></p>
+</div>
+<div class="callout-content">
+<ul>
+<li>Suppose <span class="math inline">\phi = 0.1</span> (10% of the volume is particles).</li>
+<li>Let <span class="math inline">X_3 = 0.06</span>, <span class="math inline">X_2 = 0.04</span> (so <span class="math inline">\sum X_N = 0.06 + 0.04 = 0.1 = \phi</span>).</li>
+<li>Then the <strong>number of trimers</strong> is <span class="math inline">0.06 / 3 = 0.02</span> (fraction of solution volume in separate trimer aggregates).</li>
+<li>The <strong>number of dimers</strong> is <span class="math inline">0.04 / 2 = 0.02</span>.</li>
+</ul>
+</div>
+</div>
+</div>
+</div></div>
+
+<img data-src="./figs/aggregation.png" width="800" class="r-stretch quarto-figure-center"><p class="caption">___</p><p>The uniform chemical potential is then</p>
 <p><span class="math display">\mu = \text{\{energy per particle in aggregate of size N\}} + \text{\{entropy of mixing  per particle in aggregate of size N\}}</span></p>
 <p>or <span class="math display">\mu = \epsilon_N + \dfrac{k_B T}{N}\ln{\dfrac{X_N}{N}}</span></p>
 </section>
@@ -231,7 +499,7 @@ Francesco Turci
 <p>means that knowing the form of <span class="math inline">\epsilon_N</span> is key to predicting aggregation behaviour.</p>
 <ul>
 <li>Consider an aggregate of <span class="math inline">N</span> particles of total radius <span class="math inline">r\approx (Nv)^{1/3}</span> where <span class="math inline">v</span> is the volume of a single particle.</li>
-<li>Then <span class="math inline">\epsilon_N</span> is the free energy per particle of the aggregate of size <span class="math inline">N</span>, <span class="math display">G_N=\text{ bulk free energy}+\text{surface free energy}</span></li>
+<li>Then <span class="math inline">\epsilon_N</span> is the free energy per particle of the aggregate of size <span class="math inline">N</span>, <span class="math display">G_N/N=\dfrac{1}{N}(\text{ bulk free energy}+\text{surface free energy})</span></li>
 <li>Assuming that there is a surface free energy cost (a surface tension) <span class="math inline">\gamma</span> we write</li>
 </ul>
 <p><span class="math display">\epsilon_N = \dfrac{G_N}{N} = \epsilon_\infty  +\dfrac{1}{N}\gamma r^2 =\epsilon_\infty +\gamma\left(\dfrac{v^2}{N}\right)^{1/3}</span></p>
@@ -241,17 +509,125 @@ Francesco Turci
 </section>
 <section id="aggregation-general-case-4" class="slide level2">
 <h2>Aggregation: general case</h2>
-<p><span class="math display">\text{number of aggregates of size N per unit volume} = \dfrac{X_N}{N}\sim (X_1 e^{\alpha})^N</span> This presents us with a few cases</p>
+<p><span class="math display">\text{number of aggregates of size N per unit volume} = \dfrac{X_N}{N}\sim (X_1 e^{\alpha})^N</span> This presents us with a few cases depending on <span class="math inline">\alpha= \gamma v^{2/3}/k_B T</span></p>
 <ul>
-<li><strong><span class="math inline">X_1 e^{\alpha} &lt; 1</span></strong>: Few isolated particles exist, and <span class="math inline">(X_1 e^{\alpha})^N</span> becomes vanishingly small for large <span class="math inline">N</span>, resulting in very few large aggregates.</li>
+<li><strong><span class="math inline">X_1 e^{\alpha} &lt; 1</span></strong>: Few isolated particles, and <span class="math inline">(X_1 e^{\alpha})^N</span> becomes vanishingly small for large <span class="math inline">N</span></li>
 <li><strong><span class="math inline">X_1 e^{\alpha} = 1</span> (critical point)</strong>: Aggregates of all sizes become equally probable. The system undergoes phase separation into a dilute phase of isolated monomers (with <span class="math inline">X_1</span> pinned at <span class="math inline">e^{-\alpha}</span>) in coexistence with a dense phase of very large aggregates.</li>
-<li><strong><span class="math inline">X_1 e^{\alpha} &gt; 1</span></strong>: Above the critical aggregation concentration, the system cannot remain homogeneous and phase separates.</li>
+<li><strong><span class="math inline">X_1 e^{\alpha} &gt; 1</span></strong>: Above the critical aggregation concentration, the system cannot remain homogeneous and phase separates. The volume fraction <span class="math inline">\phi</span> at which this occurs is called <strong>critical aggregation concentration</strong>, or CAC.</li>
 </ul>
-<p>The volume fraction <span class="math inline">\phi</span> at which this occurs is called <strong>critical aggregation concentration</strong>, or CAC.</p>
+<p><span class="math display">\text{CAC} = X_1^* = e^{-\alpha} = \exp\left(-\frac{\gamma v^{2/3}}{k_B T}\right)</span></p>
+</section>
+<section id="aggregation-general-case-5" class="slide level2">
+<h2>Aggregation: general case</h2>
+<div>
+<div id="pyodide-1" class="exercise-cell">
+
+</div>
+<script type="pyodide-1-contents">
+eyJhdHRyIjp7ImVjaG8iOmZhbHNlLCJlZGl0IjpmYWxzZSwiZXZhbCI6dHJ1ZX0sImNvZGUiOiJpbXBvcnQgbnVtcHkgYXMgbnBcbmltcG9ydCBtYXRwbG90bGliLnB5cGxvdCBhcyBwbHRcblxuZGVmIHBsb3RfYWdncmVnYXRlX2Rpc3RyaWJ1dGlvbihhbHBoYSwgWDEsIE5fbWF4PTUwKTpcbiAgICBcIlwiXCJcbiAgICBQbG90IHRoZSBudW1iZXIgb2YgYWdncmVnYXRlcyBvZiBzaXplIE4gcGVyIHVuaXQgdm9sdW1lXG4gICAgXG4gICAgUGFyYW1ldGVyczpcbiAgICBhbHBoYTogZGltZW5zaW9ubGVzcyBzdXJmYWNlIHRlbnNpb24gcGFyYW1ldGVyIChnYW1tYSAqIHZeKDIvMykgLyBrX0IgVClcbiAgICBYMTogdm9sdW1lIGZyYWN0aW9uIG9mIG1vbm9tZXJzXG4gICAgTl9tYXg6IG1heGltdW0gYWdncmVnYXRlIHNpemUgdG8gcGxvdFxuICAgIFwiXCJcIlxuICAgIE4gPSBucC5hcmFuZ2UoMSwgTl9tYXggKyAxKVxuICAgIFxuICAgICMgTnVtYmVyIG9mIGFnZ3JlZ2F0ZXMgb2Ygc2l6ZSBOIHBlciB1bml0IHZvbHVtZTogWF9OL04gfiAoWDEgKiBleHAoYWxwaGEpKV5OXG4gICAgYWdncmVnYXRlX2RlbnNpdHkgPSAoWDEgKiBucC5leHAoYWxwaGEpKSoqTlxuICAgIFxuICAgIHBsdC5maWd1cmUoZmlnc2l6ZT0oMTAsIDQpKVxuICAgIHBsdC5wbG90KE4sIGFnZ3JlZ2F0ZV9kZW5zaXR5LCAnby0nLCBsaW5ld2lkdGg9MiwgbWFya2Vyc2l6ZT00KVxuICAgIHBsdC54bGFiZWwoJ0FnZ3JlZ2F0ZSBzaXplIE4nKVxuICAgIHBsdC55bGFiZWwoJ051bWJlciBvZiBhZ2dyZWdhdGVzIHBlciB1bml0IHZvbHVtZScpXG4gICAgcGx0LnRpdGxlKGYnQWdncmVnYXRlIHNpemUgZGlzdHJpYnV0aW9uXFxuKM6xID0ge2FscGhhOi4yZn0sIFjigoEgPSB7WDE6LjRmfSknKVxuICAgIFxuICAgICMgQWRkIHZlcnRpY2FsIGxpbmUgYXQgY3JpdGljYWwgcG9pbnRcbiAgICBjcml0aWNhbF9wcm9kdWN0ID0gWDEgKiBucC5leHAoYWxwaGEpXG4gICAgaWYgYWJzKGNyaXRpY2FsX3Byb2R1Y3QgLSAxKSA8IDAuMTpcbiAgICAgICAgcGx0LmF4aGxpbmUoeT0xLCBjb2xvcj0ncmVkJywgbGluZXN0eWxlPSctLScsIGFscGhhPTAuNywgXG4gICAgICAgICAgICAgICAgICAgbGFiZWw9ZidDcml0aWNhbCBwb2ludCAoWOKCgWVezrEgPSB7Y3JpdGljYWxfcHJvZHVjdDouM2Z9KScpXG4gICAgICAgIHBsdC5sZWdlbmQoKVxuICAgIFxuICAgICMgQWRkIHRleHQgYW5ub3RhdGlvbiBhYm91dCB0aGUgcmVnaW1lXG4gICAgaWYgY3JpdGljYWxfcHJvZHVjdCA8IDE6XG4gICAgICAgIHJlZ2ltZSA9IGZcIkJlbG93IENBQyAoWOKCgWVezrEgPSB7Y3JpdGljYWxfcHJvZHVjdDouM2Z9IDwgMSlcIlxuICAgIGVsaWYgY3JpdGljYWxfcHJvZHVjdCA+IDE6XG4gICAgICAgIHJlZ2ltZSA9IGZcIkFib3ZlIENBQyAoWOKCgWVezrEgPSB7Y3JpdGljYWxfcHJvZHVjdDouM2Z9ID4gMSlcIlxuICAgIGVsc2U6XG4gICAgICAgIHJlZ2ltZSA9IGZcIkF0IENBQyAoWOKCgWVezrEgPSB7Y3JpdGljYWxfcHJvZHVjdDouM2Z9ID0gMSlcIlxuICAgIFxuICAgIHBsdC50ZXh0KDAuMDIsIDAuOTgsIHJlZ2ltZSwgdHJhbnNmb3JtPXBsdC5nY2EoKS50cmFuc0F4ZXMsIFxuICAgICAgICAgICAgIHZlcnRpY2FsYWxpZ25tZW50PSd0b3AnLCBiYm94PWRpY3QoYm94c3R5bGU9J3JvdW5kJywgZmFjZWNvbG9yPSd3aGVhdCcsIGFscGhhPTAuOCkpXG4gICAgXG4gICAgcGx0LnRpZ2h0X2xheW91dCgpXG4gICAgcGx0LnNob3coKSJ9
+</script>
+</div>
+<div>
+<div id="pyodide-2" class="exercise-cell">
+
+</div>
+<script type="pyodide-2-contents">
+eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoiYWxwaGEgPSAyLjBcbkNBQyA9IG5wLmV4cCgtYWxwaGEpXG5OMSA9IENBQyAqMC4xXG5wbG90X2FnZ3JlZ2F0ZV9kaXN0cmlidXRpb24oYWxwaGEsIE4xKSJ9
+</script>
+</div>
+</section>
+<section id="aggregation-surfactants-case" class="slide level2">
+<h2>Aggregation: surfactants case</h2>
+<p>Earlier we assumed that the free energy per particle was <span class="math display">\epsilon_N = \epsilon_\infty +\gamma\left(\dfrac{v^2}{N}\right)^{1/3}</span> a monotonically decreasing function of <span class="math inline">N</span>.</p>
+<p>For surfactants, it is not necessarily the case.</p>
+<ul>
+<li>Typically <span class="math inline">\epsilon_N</span> has a minimum at some finite <span class="math inline">N=N^*</span> resulting from the fact that beyond a certain size, the aggregate becomes <strong>unfavourable</strong> (e.g., due to packing constraints, curvature energy, etc).</li>
+<li>Therefore the distribution of aggregates of size <span class="math inline">N</span> is <strong>peaked</strong> around <span class="math inline">N^*</span>.</li>
+<li>This leads to the formation of <strong>micelles</strong>: aggregates of a characteristic size.</li>
+</ul>
+</section>
+<section id="aggregation-surfactants-case-1" class="slide level2">
+<h2>Aggregation: surfactants case</h2>
+
+<img data-src="./figs/interface.svg" class="r-stretch quarto-figure-center"><p class="caption">Surfactants in solution: normally, this is done in water in the presence of an interface with air. Due to their nature as amphiphiles, the surfactants typically sit at the air-water interface in a dynamical, equilibrium process that exchanges monomers between the bulk and the surface. The bulk surfactants, when the concentration is larger than a critical value, also self-assemble into micellar structures, which are at equilibrium with the isolated single surfactants.</p></section>
+<section id="critical-micellar-concentration-cmc" class="slide level2">
+<h2>Critical micellar concentration (CMC)</h2>
+<p>The addition of surfactants to water initially reduces the water-air surface tension, but when the surface is saturated, further addition leads to crossing the a critical micellar concentration (CMC) and micelle formation.</p>
+<ul>
+<li><strong>Below</strong> the CMC, almost all surfactant molecules are present as <strong>monomers</strong></li>
+<li><strong>Above</strong> the CMC, additional surfactant molecules predominantly form <strong>micelles</strong> of size <span class="math inline">N^*</span> while the monomer concentration remains nearly constant.</li>
+</ul>
+<p>The aggregation in water follows specific patterns:</p>
+<ul>
+<li>hydrophobic tails cluster together to avoid water</li>
+<li>hydrophilic heads face the water</li>
+</ul>
+<p>The structure on the micelle surface (formed by the heads) is disordered and fluid-like, similar to a 2D liquid.</p>
+
+<img data-src="./figs/Schematic-Micelle.svg" class="r-stretch quarto-figure-center"><p class="caption">Schematic of micelles (from <a href="https://www.dataphysics-instruments.com/">DataPhysics Instruments</a>).</p></section>
+<section id="critical-micellar-concentration-cmc-1" class="slide level2">
+<h2>Critical micellar concentration (CMC)</h2>
+
+<img data-src="./figs/kruss-cmc.png" class="r-stretch quarto-figure-center"><p class="caption">Surface tension of a surfactant solution with increasing concentration, formation of micelles, from <a href="https://www.kruss-scientific.com/">Kruss Scientific</a></p></section>
+<section id="shape-of-surfactant-assemblies" class="slide level2">
+<h2>Shape of surfactant assemblies</h2>
+<ul>
+<li><p>Geometric model of a surfactant molecule:</p>
+<ul>
+<li><strong>optimal headgroup area <span class="math inline">a_{0}</span></strong>: depends on chemical structure, pH and temeprature.</li>
+<li><strong>volume <span class="math inline">v</span> of the hydrophobic part</strong>: The hydrophobic part usually consists of hydrocarbon chains. Its volume <span class="math inline">v\propto n</span> the number of carbon atoms in the chain.</li>
+<li><strong>critical chain length</strong> <span class="math inline">\boldsymbol{l}_{\boldsymbol{c}}</span> : the effective length of the chain, taking into account chain flexibility, temperature, branching and chemical structure. It also scales like <span class="math inline">l_c \propto n</span>.</li>
+</ul></li>
+</ul>
+<p>A balance between energy and entropy leads to different self-assembled structures .</p>
+
+<img data-src="./figs/selfassemblies.svg" class="r-stretch quarto-figure-center"><p class="caption">Different types of self assembled structures: (A) spherical micelles, (B) cylindrical micelles and (C) bilayers.</p></section>
+<section id="spherical-micelle" class="slide level2">
+<h2>Spherical micelle</h2>
+<p>For a spherical micelle of radius <span class="math inline">R</span> with aggregation number <span class="math inline">N</span> , the total volume and surface area are given by</p>
+<p><span class="math display">
+\begin{gathered}
+N v=\frac{4 \pi}{3} R^{3} \\
+N a_{0}=4 \pi R^{2}\end{gathered}</span></p>
+<p>Therefore $$=&lt;</p>
+<p>$$</p>
+<p>where we used the fact that the radius <span class="math inline">R</span> cannot be larger than the critical chain length <span class="math inline">\mathrm{l}_{\mathrm{c}}</span>. We thus obtain for the critical packing parameter <span class="math inline">P</span></p>
+<p><span class="math display">
+P=\frac{v}{a_{0} l_{c}}&lt;\frac{1}{3}
+</span></p>
+</section>
+<section id="cylindrical-micelles" class="slide level2">
+<h2>Cylindrical micelles</h2>
+<p>For a cylindrical micelle the total volume and surface area are given by <span class="math display">N v=\pi R^{2} L</span></p>
+<p>and</p>
+<p><span class="math display">N a_{0}=2 \pi R L</span></p>
+<p>Therefore <span class="math inline">\dfrac{v}{a_{0}}=\dfrac{R}{2}&lt;\dfrac{l_{c}}{2}</span> again using <span class="math inline">R&lt;l_{C}</span>.</p>
+<p>We thus obtain for the critical packing parameter <span class="math inline">P=\dfrac{v}{a_{0} l_{c}}</span> that <span class="math display">\dfrac{1}{3}&lt;P&lt;\dfrac{1}{2}</span></p>
+<p>Below the lower limit spherical micelles are formed.</p>
+</section>
+<section id="bilayers-lamellar" class="slide level2">
+<h2>Bilayers lamellar)</h2>
+<p>For a bilayer (with separation <span class="math inline">D</span> between the layers) the total volume and surface area are given by</p>
+<p><span class="math display">
+\begin{aligned}
+&amp; N v=A D \\
+&amp; N a_{0}=2 A \\
+&amp; \frac{v}{a_{0}}=\frac{D}{2}&lt;l_{c} \quad\left(\text { using } D&lt;2 l_{c}\right)
+\end{aligned}
+</span></p>
+<p>We thus obtain for the critical packing parameter <span class="math inline">P=\dfrac{v}{a_{0} l_{c}}</span> that <span class="math display">\dfrac{1}{2}&lt;P&lt;1</span></p>
+<p>Below the lower limit cylindrical micelles are formed.</p>
+</section>
+<section id="packing-parameter-summary" class="slide level2">
+<h2>Packing parameter summary</h2>
 
 
+
+<img data-src="./figs/israechvili-mesophases.png" class="r-stretch quarto-figure-center"><p class="caption"><strong>Mesophases</strong> formed by surfactants as we vary the packing parameter <span class="math inline">P=\dfrac{v}{a_{0} l_{c}}</span> , from Israelachvili, J. N., Intermolecular and Surface Forces, 3rd Edition, Academic Press, 2011.</p><script type="pyodide-data">
+eyJvcHRpb25zIjp7ImVudiI6eyJQTE9UTFlfUkVOREVSRVIiOiJwbG90bHlfbWltZXR5cGUifSwiaW5kZXhVUkwiOiJodHRwczovL2Nkbi5qc2RlbGl2ci5uZXQvcHlvZGlkZS92MC4yOC4xL2Z1bGwvIn0sInBhY2thZ2VzIjp7InBrZ3MiOlsicHlvZGlkZV9odHRwIiwibWljcm9waXAiLCJpcHl0aG9uIiwibnVtcHkiLCJtYXRwbG90bGliIl19fQ==
+</script>
 <script type="ojs-module-contents">
-eyJjb250ZW50cyI6W119
+eyJjb250ZW50cyI6W3siY2VsbE5hbWUiOiJweW9kaWRlLTIiLCJpbmxpbmUiOmZhbHNlLCJtZXRob2ROYW1lIjoiaW50ZXJwcmV0Iiwic291cmNlIjoidmlld29mIF9weW9kaWRlX2VkaXRvcl8yID0ge1xuICBjb25zdCB7IFB5b2RpZGVFeGVyY2lzZUVkaXRvciwgYjY0RGVjb2RlIH0gPSB3aW5kb3cuX2V4ZXJjaXNlX29qc19ydW50aW1lO1xuXG4gIGNvbnN0IHNjcmlwdENvbnRlbnQgPSBkb2N1bWVudC5xdWVyeVNlbGVjdG9yKGBzY3JpcHRbdHlwZT1cXFwicHlvZGlkZS0yLWNvbnRlbnRzXFxcIl1gKS50ZXh0Q29udGVudDtcbiAgY29uc3QgYmxvY2sgPSBKU09OLnBhcnNlKGI2NERlY29kZShzY3JpcHRDb250ZW50KSk7XG5cbiAgY29uc3Qgb3B0aW9ucyA9IE9iamVjdC5hc3NpZ24oeyBpZDogYHB5b2RpZGUtMi1jb250ZW50c2AgfSwgYmxvY2suYXR0cik7XG4gIGNvbnN0IGVkaXRvciA9IG5ldyBQeW9kaWRlRXhlcmNpc2VFZGl0b3IoXG4gICAgcHlvZGlkZU9qcy5weW9kaWRlUHJvbWlzZSxcbiAgICBibG9jay5jb2RlLFxuICAgIG9wdGlvbnNcbiAgKTtcblxuICByZXR1cm4gZWRpdG9yLmNvbnRhaW5lcjtcbn1cbl9weW9kaWRlX3ZhbHVlXzIgPSBweW9kaWRlT2pzLnByb2Nlc3MoX3B5b2RpZGVfZWRpdG9yXzIsIHt9KTtcbiJ9LHsiY2VsbE5hbWUiOiJweW9kaWRlLTEiLCJpbmxpbmUiOmZhbHNlLCJtZXRob2ROYW1lIjoiaW50ZXJwcmV0Iiwic291cmNlIjoiX3B5b2RpZGVfdmFsdWVfMSA9IHtcbiAgY29uc3QgeyBoaWdobGlnaHRQeXRob24sIGI2NERlY29kZX0gPSB3aW5kb3cuX2V4ZXJjaXNlX29qc19ydW50aW1lO1xuXG4gIGNvbnN0IHNjcmlwdENvbnRlbnQgPSBkb2N1bWVudC5xdWVyeVNlbGVjdG9yKGBzY3JpcHRbdHlwZT1cXFwicHlvZGlkZS0xLWNvbnRlbnRzXFxcIl1gKS50ZXh0Q29udGVudDtcbiAgY29uc3QgYmxvY2sgPSBKU09OLnBhcnNlKGI2NERlY29kZShzY3JpcHRDb250ZW50KSk7XG5cbiAgLy8gRGVmYXVsdCBldmFsdWF0aW9uIGNvbmZpZ3VyYXRpb25cbiAgY29uc3Qgb3B0aW9ucyA9IE9iamVjdC5hc3NpZ24oe1xuICAgIGlkOiBcInB5b2RpZGUtMS1jb250ZW50c1wiLFxuICAgIGVjaG86IHRydWUsXG4gICAgb3V0cHV0OiB0cnVlXG4gIH0sIGJsb2NrLmF0dHIpO1xuXG4gIC8vIEV2YWx1YXRlIHRoZSBwcm92aWRlZCBQeXRob24gY29kZVxuICBjb25zdCByZXN1bHQgPSBweW9kaWRlT2pzLnByb2Nlc3Moe2NvZGU6IGJsb2NrLmNvZGUsIG9wdGlvbnN9LCB7fSk7XG5cbiAgLy8gRWFybHkgeWllbGQgd2hpbGUgd2Ugd2FpdCBmb3IgdGhlIGZpcnN0IGV2YWx1YXRpb24gYW5kIHJlbmRlclxuICBpZiAob3B0aW9ucy5vdXRwdXQgJiYgIShcIjFcIiBpbiBweW9kaWRlT2pzLnJlbmRlcmVkT2pzKSkge1xuICAgIGNvbnN0IGNvbnRhaW5lciA9IGRvY3VtZW50LmNyZWF0ZUVsZW1lbnQoXCJkaXZcIik7XG4gICAgY29uc3Qgc3Bpbm5lciA9IGRvY3VtZW50LmNyZWF0ZUVsZW1lbnQoXCJkaXZcIik7XG5cbiAgICBpZiAob3B0aW9ucy5lY2hvKSB7XG4gICAgICAvLyBTaG93IG91dHB1dCBhcyBoaWdobGlnaHRlZCBzb3VyY2VcbiAgICAgIGNvbnN0IHByZUVsZW0gPSBkb2N1bWVudC5jcmVhdGVFbGVtZW50KFwicHJlXCIpO1xuICAgICAgY29udGFpbmVyLmNsYXNzTmFtZSA9IFwic291cmNlQ29kZVwiO1xuICAgICAgcHJlRWxlbS5jbGFzc05hbWUgPSBcInNvdXJjZUNvZGUgcHl0aG9uXCI7XG4gICAgICBwcmVFbGVtLmFwcGVuZENoaWxkKGhpZ2hsaWdodFB5dGhvbihibG9jay5jb2RlKSk7XG4gICAgICBzcGlubmVyLmNsYXNzTmFtZSA9IFwic3Bpbm5lci1ncm93IHNwaW5uZXItZ3Jvdy1zbSBtLTIgcG9zaXRpb24tYWJzb2x1dGUgdG9wLTAgZW5kLTBcIjtcbiAgICAgIHByZUVsZW0uYXBwZW5kQ2hpbGQoc3Bpbm5lcik7XG4gICAgICBjb250YWluZXIuYXBwZW5kQ2hpbGQocHJlRWxlbSk7XG4gICAgfSBlbHNlIHtcbiAgICAgIHNwaW5uZXIuY2xhc3NOYW1lID0gXCJzcGlubmVyLWJvcmRlciBzcGlubmVyLWJvcmRlci1zbVwiO1xuICAgICAgY29udGFpbmVyLmFwcGVuZENoaWxkKHNwaW5uZXIpO1xuICAgIH1cblxuICAgIHlpZWxkIGNvbnRhaW5lcjtcbiAgfVxuXG4gIHB5b2RpZGVPanMucmVuZGVyZWRPanNbXCIxXCJdID0gdHJ1ZTtcbiAgeWllbGQgYXdhaXQgcmVzdWx0O1xufVxuIn0seyJjZWxsTmFtZSI6InB5b2RpZGUtcHJlbHVkZSIsImlubGluZSI6ZmFsc2UsIm1ldGhvZE5hbWUiOiJpbnRlcnByZXRRdWlldCIsInNvdXJjZSI6InB5b2RpZGVPanMgPSB7XG4gIGNvbnN0IHtcbiAgICBQeW9kaWRlRXZhbHVhdG9yLFxuICAgIFB5b2RpZGVFbnZpcm9ubWVudE1hbmFnZXIsXG4gICAgc2V0dXBQeXRob24sXG4gICAgc3RhcnRQeW9kaWRlV29ya2VyLFxuICAgIGI2NERlY29kZSxcbiAgICBjb2xsYXBzZVBhdGgsXG4gIH0gPSB3aW5kb3cuX2V4ZXJjaXNlX29qc19ydW50aW1lO1xuXG4gIGNvbnN0IHN0YXR1c0NvbnRhaW5lciA9IGRvY3VtZW50LmdldEVsZW1lbnRCeUlkKFwiZXhlcmNpc2UtbG9hZGluZy1zdGF0dXNcIik7XG4gIGNvbnN0IGluZGljYXRvckNvbnRhaW5lciA9IGRvY3VtZW50LmdldEVsZW1lbnRCeUlkKFwiZXhlcmNpc2UtbG9hZGluZy1pbmRpY2F0b3JcIik7XG4gIGluZGljYXRvckNvbnRhaW5lci5jbGFzc0xpc3QucmVtb3ZlKFwiZC1ub25lXCIpO1xuXG4gIGxldCBzdGF0dXNUZXh0ID0gZG9jdW1lbnQuY3JlYXRlRWxlbWVudChcImRpdlwiKVxuICBzdGF0dXNUZXh0LmNsYXNzTGlzdCA9IFwiZXhlcmNpc2UtbG9hZGluZy1kZXRhaWxzXCI7XG4gIHN0YXR1c1RleHQgPSBzdGF0dXNDb250YWluZXIuYXBwZW5kQ2hpbGQoc3RhdHVzVGV4dCk7XG4gIHN0YXR1c1RleHQudGV4dENvbnRlbnQgPSBgSW5pdGlhbGlzZWA7XG5cbiAgLy8gSG9pc3QgaW5kaWNhdG9yIG91dCBmcm9tIGZpbmFsIHNsaWRlIHdoZW4gcnVubmluZyB1bmRlciByZXZlYWxcbiAgY29uc3QgcmV2ZWFsU3RhdHVzID0gZG9jdW1lbnQucXVlcnlTZWxlY3RvcihcIi5yZXZlYWwgLmV4ZXJjaXNlLWxvYWRpbmctaW5kaWNhdG9yXCIpO1xuICBpZiAocmV2ZWFsU3RhdHVzKSB7XG4gICAgcmV2ZWFsU3RhdHVzLnJlbW92ZSgpO1xuICAgIGRvY3VtZW50LnF1ZXJ5U2VsZWN0b3IoXCIucmV2ZWFsID4gLnNsaWRlc1wiKS5hcHBlbmRDaGlsZChyZXZlYWxTdGF0dXMpO1xuICB9XG5cbiAgLy8gTWFrZSBhbnkgcmV2ZWFsIHNsaWRlcyB3aXRoIGxpdmUgY2VsbHMgc2Nyb2xsYWJsZVxuICBkb2N1bWVudC5xdWVyeVNlbGVjdG9yQWxsKFwiLnJldmVhbCAuZXhlcmNpc2UtY2VsbFwiKS5mb3JFYWNoKChlbCkgPT4ge1xuICAgIGVsLmNsb3Nlc3QoJ3NlY3Rpb24uc2xpZGUnKS5jbGFzc0xpc3QuYWRkKFwic2Nyb2xsYWJsZVwiKTtcbiAgfSlcblxuICAvLyBQeW9kaWRlIHN1cHBsZW1lbnRhbCBkYXRhIGFuZCBvcHRpb25zXG4gIGNvbnN0IGRhdGFDb250ZW50ID0gZG9jdW1lbnQucXVlcnlTZWxlY3Rvcihgc2NyaXB0W3R5cGU9XFxcInB5b2RpZGUtZGF0YVxcXCJdYCkudGV4dENvbnRlbnQ7XG4gIGNvbnN0IGRhdGEgPSBKU09OLnBhcnNlKGI2NERlY29kZShkYXRhQ29udGVudCkpO1xuXG4gIC8vIEdyYWIgbGlzdCBvZiByZXNvdXJjZXMgdG8gYmUgZG93bmxvYWRlZFxuICBjb25zdCBmaWxlc0NvbnRlbnQgPSBkb2N1bWVudC5xdWVyeVNlbGVjdG9yKGBzY3JpcHRbdHlwZT1cXFwidmZzLWZpbGVcXFwiXWApLnRleHRDb250ZW50O1xuICBjb25zdCBmaWxlcyA9IEpTT04ucGFyc2UoYjY0RGVjb2RlKGZpbGVzQ29udGVudCkpO1xuXG4gIGxldCBweW9kaWRlUHJvbWlzZSA9IChhc3luYyAoKSA9PiB7XG4gICAgc3RhdHVzVGV4dC50ZXh0Q29udGVudCA9IGBEb3dubG9hZGluZyBQeW9kaWRlYDtcbiAgICBjb25zdCBweW9kaWRlID0gYXdhaXQgc3RhcnRQeW9kaWRlV29ya2VyKGRhdGEub3B0aW9ucyk7XG5cbiAgICBzdGF0dXNUZXh0LnRleHRDb250ZW50ID0gYERvd25sb2FkaW5nIHBhY2thZ2U6IG1pY3JvcGlwYDtcbiAgICBhd2FpdCBweW9kaWRlLmxvYWRQYWNrYWdlKFwibWljcm9waXBcIik7XG4gICAgY29uc3QgbWljcm9waXAgPSBhd2FpdCBweW9kaWRlLnB5aW1wb3J0KFwibWljcm9waXBcIik7XG4gICAgYXdhaXQgZGF0YS5wYWNrYWdlcy5wa2dzLm1hcCgocGtnKSA9PiAoKSA9PiB7XG4gICAgICBzdGF0dXNUZXh0LnRleHRDb250ZW50ID0gYERvd25sb2FkaW5nIHBhY2thZ2U6ICR7cGtnfWA7XG4gICAgICByZXR1cm4gbWljcm9waXAuaW5zdGFsbChwa2cpO1xuICAgIH0pLnJlZHVjZSgoY3VyLCBuZXh0KSA9PiBjdXIudGhlbihuZXh0KSwgUHJvbWlzZS5yZXNvbHZlKCkpO1xuICAgIGF3YWl0IG1pY3JvcGlwLmRlc3Ryb3koKTtcblxuICAgIC8vIERvd25sb2FkIGFuZCBpbnN0YWxsIHJlc291cmNlc1xuICAgIGF3YWl0IGZpbGVzLm1hcCgoZmlsZSkgPT4gYXN5bmMgKCkgPT4ge1xuICAgICAgY29uc3QgbmFtZSA9IGZpbGUuc3Vic3RyaW5nKGZpbGUubGFzdEluZGV4T2YoJy8nKSArIDEpO1xuICAgICAgc3RhdHVzVGV4dC50ZXh0Q29udGVudCA9IGBEb3dubG9hZGluZyByZXNvdXJjZTogJHtuYW1lfWA7XG4gICAgICBjb25zdCByZXNwb25zZSA9IGF3YWl0IGZldGNoKGZpbGUpO1xuICAgICAgaWYgKCFyZXNwb25zZS5vaykge1xuICAgICAgICB0aHJvdyBuZXcgRXJyb3IoYENhbid0IGRvd25sb2FkIFxcYCR7ZmlsZX1cXGAuIEVycm9yICR7cmVzcG9uc2Uuc3RhdHVzfTogXCIke3Jlc3BvbnNlLnN0YXR1c1RleHR9XCIuYCk7XG4gICAgICB9XG4gICAgICBjb25zdCBkYXRhID0gYXdhaXQgcmVzcG9uc2UuYXJyYXlCdWZmZXIoKTtcblxuICAgICAgLy8gU3RvcmUgVVJMcyBpbiB0aGUgY3dkIHdpdGhvdXQgYW55IHN1YmRpcmVjdG9yeSBzdHJ1Y3R1cmVcbiAgICAgIGlmIChmaWxlLmluY2x1ZGVzKFwiOi8vXCIpKSB7XG4gICAgICAgIGZpbGUgPSBuYW1lO1xuICAgICAgfVxuXG4gICAgICAvLyBDb2xsYXBzZSBoaWdoZXIgZGlyZWN0b3J5IHN0cnVjdHVyZVxuICAgICAgZmlsZSA9IGNvbGxhcHNlUGF0aChmaWxlKTtcblxuICAgICAgLy8gQ3JlYXRlIGRpcmVjdG9yeSB0cmVlLCBpZ25vcmluZyBcImRpcmVjdG9yeSBleGlzdHNcIiBWRlMgZXJyb3JzXG4gICAgICBjb25zdCBwYXJ0cyA9IGZpbGUuc3BsaXQoJy8nKS5zbGljZSgwLCAtMSk7XG4gICAgICBsZXQgcGF0aCA9ICcnO1xuICAgICAgd2hpbGUgKHBhcnRzLmxlbmd0aCA+IDApIHtcbiAgICAgICAgcGF0aCArPSBwYXJ0cy5zaGlmdCgpICsgJy8nO1xuICAgICAgICB0cnkge1xuICAgICAgICAgIGF3YWl0IHB5b2RpZGUuRlMubWtkaXIocGF0aCk7XG4gICAgICAgIH0gY2F0Y2ggKGUpIHtcbiAgICAgICAgICBpZiAoZS5uYW1lICE9PSBcIkVycm5vRXJyb3JcIikgdGhyb3cgZTtcbiAgICAgICAgICBpZiAoZS5lcnJubyAhPT0gMjApIHtcbiAgICAgICAgICAgIGNvbnN0IGVycm9yVGV4dFB0ciA9IGF3YWl0IHB5b2RpZGUuX21vZHVsZS5fc3RyZXJyb3IoZS5lcnJubyk7XG4gICAgICAgICAgICBjb25zdCBlcnJvclRleHQgPSBhd2FpdCBweW9kaWRlLl9tb2R1bGUuVVRGOFRvU3RyaW5nKGVycm9yVGV4dFB0cik7XG4gICAgICAgICAgICB0aHJvdyBuZXcgRXJyb3IoYEZpbGVzeXN0ZW0gRXJyb3IgJHtlLmVycm5vfSBcIiR7ZXJyb3JUZXh0fVwiLmApO1xuICAgICAgICAgIH1cbiAgICAgICAgfVxuICAgICAgfVxuXG4gICAgICAvLyBXcml0ZSB0aGlzIGZpbGUgdG8gdGhlIFZGU1xuICAgICAgdHJ5IHtcbiAgICAgICAgcmV0dXJuIGF3YWl0IHB5b2RpZGUuRlMud3JpdGVGaWxlKGZpbGUsIG5ldyBVaW50OEFycmF5KGRhdGEpKTtcbiAgICAgIH0gY2F0Y2ggKGUpIHtcbiAgICAgICAgaWYgKGUubmFtZSAhPT0gXCJFcnJub0Vycm9yXCIpIHRocm93IGU7XG4gICAgICAgIGNvbnN0IGVycm9yVGV4dFB0ciA9IGF3YWl0IHB5b2RpZGUuX21vZHVsZS5fc3RyZXJyb3IoZS5lcnJubyk7XG4gICAgICAgIGNvbnN0IGVycm9yVGV4dCA9IGF3YWl0IHB5b2RpZGUuX21vZHVsZS5VVEY4VG9TdHJpbmcoZXJyb3JUZXh0UHRyKTtcbiAgICAgICAgdGhyb3cgbmV3IEVycm9yKGBGaWxlc3lzdGVtIEVycm9yICR7ZS5lcnJub30gXCIke2Vycm9yVGV4dH1cIi5gKTtcbiAgICAgIH1cbiAgICB9KS5yZWR1Y2UoKGN1ciwgbmV4dCkgPT4gY3VyLnRoZW4obmV4dCksIFByb21pc2UucmVzb2x2ZSgpKTtcblxuICAgIHN0YXR1c1RleHQudGV4dENvbnRlbnQgPSBgUHlvZGlkZSBlbnZpcm9ubWVudCBzZXR1cGA7XG4gICAgYXdhaXQgc2V0dXBQeXRob24ocHlvZGlkZSk7XG5cbiAgICBzdGF0dXNUZXh0LnJlbW92ZSgpO1xuICAgIGlmIChzdGF0dXNDb250YWluZXIuY2hpbGRyZW4ubGVuZ3RoID09IDApIHtcbiAgICAgIHN0YXR1c0NvbnRhaW5lci5wYXJlbnROb2RlLnJlbW92ZSgpO1xuICAgIH1cbiAgICByZXR1cm4gcHlvZGlkZTtcbiAgfSkoKS5jYXRjaCgoZXJyKSA9PiB7XG4gICAgc3RhdHVzVGV4dC5zdHlsZS5jb2xvciA9IFwidmFyKC0tZXhlcmNpc2UtZWRpdG9yLWhsLWVyLCAjQUQwMDAwKVwiO1xuICAgIHN0YXR1c1RleHQudGV4dENvbnRlbnQgPSBlcnIubWVzc2FnZTtcbiAgICAvL2luZGljYXRvckNvbnRhaW5lci5xdWVyeVNlbGVjdG9yKFwiLnNwaW5uZXItZ3Jvd1wiKS5jbGFzc0xpc3QuYWRkKFwiZC1ub25lXCIpO1xuICAgIHRocm93IGVycjtcbiAgfSk7XG5cbiAgLy8gS2VlcCB0cmFjayBvZiBpbml0aWFsIE9KUyBibG9jayByZW5kZXJcbiAgY29uc3QgcmVuZGVyZWRPanMgPSB7fTtcblxuICBjb25zdCBwcm9jZXNzID0gYXN5bmMgKGNvbnRleHQsIGlucHV0cykgPT4ge1xuICAgIGNvbnN0IHB5b2RpZGUgPSBhd2FpdCBweW9kaWRlUHJvbWlzZTtcbiAgICBjb25zdCBldmFsdWF0b3IgPSBuZXcgUHlvZGlkZUV2YWx1YXRvcihweW9kaWRlLCBjb250ZXh0KTtcbiAgICBhd2FpdCBldmFsdWF0b3IucHJvY2VzcyhpbnB1dHMpO1xuICAgIHJldHVybiBldmFsdWF0b3IuY29udGFpbmVyO1xuICB9XG5cbiAgcmV0dXJuIHtcbiAgICBweW9kaWRlUHJvbWlzZSxcbiAgICByZW5kZXJlZE9qcyxcbiAgICBwcm9jZXNzLFxuICB9O1xufVxuIn1dfQ==
 </script>
 <div id="exercise-loading-indicator" class="exercise-loading-indicator d-none d-flex align-items-center gap-2">
 <div id="exercise-loading-status" class="d-flex gap-2">
@@ -462,7 +838,7 @@ W10=
       });
     </script>
     <script type="ojs-module-contents">
-    eyJjb250ZW50cyI6W119
+    eyJjb250ZW50cyI6W3sibWV0aG9kTmFtZSI6ImludGVycHJldCIsImNlbGxOYW1lIjoib2pzLWNlbGwtMSIsImlubGluZSI6ZmFsc2UsInNvdXJjZSI6InZpZXdvZiB0ZW1wZXJhdHVyZSA9IElucHV0cy5yYW5nZShbMC4wMSwgMl0sIHtzdGVwOiAwLjA1LCBsYWJlbDogXCJUZW1wZXJhdHVyZSAoa1QpXCIsIHZhbHVlOiAwLjV9KVxuIn0seyJtZXRob2ROYW1lIjoiaW50ZXJwcmV0IiwiY2VsbE5hbWUiOiJvanMtY2VsbC0yIiwiaW5saW5lIjpmYWxzZSwic291cmNlIjoidmlld29mIG51bUNoYWlucyA9IElucHV0cy5yYW5nZShbMywgMzAwXSwge3N0ZXA6IDEwLCBsYWJlbDogXCJOdW1iZXIgb2YgQ2hhaW5zXCIsIHZhbHVlOiAxMDB9KVxuIn0seyJtZXRob2ROYW1lIjoiaW50ZXJwcmV0IiwiY2VsbE5hbWUiOiJvanMtY2VsbC0zIiwiaW5saW5lIjpmYWxzZSwic291cmNlIjoiLy8gVGhpcyBpcyBPYnNlcnZhYmxlSlMgY29kZSAgXG4vLyBZb3UgY2FuIHJ1biBhdCBvYnNlcnZhYmxlZWhxLmNvbSBvciBjb252ZXJ0IGl0IHRvIGFuIGVxdWl2YWxlbnQgKGFuZCBmYXN0ZXI/KSBQeXRob24gdmVyc2lvbiBpZiB5b3UgbGlrZVxudmlld29mIHNpbXVsYXRpb24gPSB7XG4gICAgLy8gLS0tIFBhcmFtZXRlcnMgLS0tXG4gICAgY29uc3Qgd2lkdGggPSA0MCwgaGVpZ2h0ID0gNDA7XG4gICAgY29uc3QgY2hhaW5MZW5ndGggPSAzO1xuICAgIGNvbnN0IGNoYWluc1RvQ3JlYXRlID0gbnVtQ2hhaW5zO1xuICAgIGNvbnN0IFQgPSB0ZW1wZXJhdHVyZTtcbiAgICAvLyBjb25zdCBudW1DaGFpbnMgPSAxMDtcbiAgICBjb25zdCBFX1RTID0gMS4wOyAgICAgLy8gdGFpbC1zb2x2ZW50IGVuZXJneSAoc29sdm9waG9iaWMpXG4gICAgY29uc3QgRV9IUyA9IC0xLjU7ICAgIC8vIGhlYWQtc29sdmVudCBlbmVyZ3kgKHNvbHZvcGhpbGljKVxuICAgIC8vIGNvbnN0IFQgPSAwLjE7ICAgICAgICAvLyB0ZW1wZXJhdHVyZSAoa1QgdW5pdHMpXG5cbiAgICAvLyAtLS0gSW5pdGlhbGl6ZSBncmlkIGFuZCBjaGFpbnMgLS0tXG4gICAgbGV0IGdyaWQgPSBBcnJheS5mcm9tKHtsZW5ndGg6IHdpZHRofSwgKCkgPT4gQXJyYXkoaGVpZ2h0KS5maWxsKG51bGwpKTtcbiAgICBsZXQgY2hhaW5zID0gW107XG5cbiAgICAvLyBQZXJpb2RpYyBib3VuZGFyeSBoZWxwZXJcbiAgICBmdW5jdGlvbiBtb2QobiwgbSkgeyByZXR1cm4gKChuICUgbSkgKyBtKSAlIG07IH1cblxuICAgIGZ1bmN0aW9uIGdldE5laWdoYm9ycyh4LCB5KSB7XG4gICAgICAgIHJldHVybiBbXG4gICAgICAgICAgICB7eDogbW9kKHggLSAxLCB3aWR0aCksIHk6IHl9LFxuICAgICAgICAgICAge3g6IG1vZCh4ICsgMSwgd2lkdGgpLCB5OiB5fSxcbiAgICAgICAgICAgIHt4OiB4LCB5OiBtb2QoeSAtIDEsIGhlaWdodCl9LFxuICAgICAgICAgICAge3g6IHgsIHk6IG1vZCh5ICsgMSwgaGVpZ2h0KX1cbiAgICAgICAgXTtcbiAgICB9XG5cbiAgICBmdW5jdGlvbiBwbGFjZUNoYWlucygpIHtcbiAgICAgICAgZm9yIChsZXQgaWQgPSAwOyBpZCA8IG51bUNoYWluczsgaWQrKykge1xuICAgICAgICAgICAgZm9yIChsZXQgdHJpZXMgPSAwOyB0cmllcyA8IDEwMDsgdHJpZXMrKykge1xuICAgICAgICAgICAgICAgIGxldCB4ID0gTWF0aC5mbG9vcihNYXRoLnJhbmRvbSgpICogd2lkdGgpO1xuICAgICAgICAgICAgICAgIGxldCB5ID0gTWF0aC5mbG9vcihNYXRoLnJhbmRvbSgpICogaGVpZ2h0KTtcbiAgICAgICAgICAgICAgICBpZiAoZ3JpZFt4XVt5XSkgY29udGludWU7XG5cbiAgICAgICAgICAgICAgICBsZXQgY2hhaW4gPSBbe3gsIHksIHR5cGU6ICdoZWFkJ31dO1xuICAgICAgICAgICAgICAgIGdyaWRbeF1beV0gPSB7aWQsIHR5cGU6ICdoZWFkJ307XG4gICAgICAgICAgICAgICAgbGV0IG9rID0gdHJ1ZTtcblxuICAgICAgICAgICAgICAgIGZvciAobGV0IGkgPSAxOyBpIDwgY2hhaW5MZW5ndGg7IGkrKykge1xuICAgICAgICAgICAgICAgICAgICBsZXQgbGFzdCA9IGNoYWluW2NoYWluLmxlbmd0aCAtIDFdO1xuICAgICAgICAgICAgICAgICAgICBsZXQgbmJzID0gZ2V0TmVpZ2hib3JzKGxhc3QueCwgbGFzdC55KS5maWx0ZXIocCA9PiAhZ3JpZFtwLnhdW3AueV0pO1xuICAgICAgICAgICAgICAgICAgICBpZiAobmJzLmxlbmd0aCA9PT0gMCkgeyBvayA9IGZhbHNlOyBicmVhazsgfVxuICAgICAgICAgICAgICAgICAgICBsZXQgbmV4dCA9IG5ic1tNYXRoLmZsb29yKE1hdGgucmFuZG9tKCkgKiBuYnMubGVuZ3RoKV07XG4gICAgICAgICAgICAgICAgICAgIGNoYWluLnB1c2goey4uLm5leHQsIHR5cGU6ICd0YWlsJ30pO1xuICAgICAgICAgICAgICAgICAgICBncmlkW25leHQueF1bbmV4dC55XSA9IHtpZCwgdHlwZTogJ3RhaWwnfTtcbiAgICAgICAgICAgICAgICB9XG5cbiAgICAgICAgICAgICAgICBpZiAob2spIHsgY2hhaW5zLnB1c2goe2lkLCBzZWdtZW50czogY2hhaW59KTsgYnJlYWs7IH1cbiAgICAgICAgICAgICAgICBlbHNlIHsgY2hhaW4uZm9yRWFjaChwID0+IGdyaWRbcC54XVtwLnldID0gbnVsbCk7IH1cbiAgICAgICAgICAgIH1cbiAgICAgICAgfVxuICAgIH1cblxuICAgIGZ1bmN0aW9uIGVuZXJneShzZWcpIHtcbiAgICAgICAgbGV0IHNvbHZlbnROYnMgPSBnZXROZWlnaGJvcnMoc2VnLngsIHNlZy55KS5maWx0ZXIocCA9PiAhZ3JpZFtwLnhdW3AueV0pLmxlbmd0aDtcbiAgICAgICAgcmV0dXJuIHNlZy50eXBlID09PSAnaGVhZCcgPyBzb2x2ZW50TmJzICogRV9IUyA6IHNvbHZlbnROYnMgKiBFX1RTO1xuICAgIH1cblxuICAgIGZ1bmN0aW9uIGF0dGVtcHRNb3ZlKGNoYWluKSB7XG4gICAgICAgIGNvbnN0IGZvcndhcmQgPSBNYXRoLnJhbmRvbSgpIDwgMC41O1xuICAgICAgICBjb25zdCB0YWlsID0gZm9yd2FyZCA/IGNoYWluLnNlZ21lbnRzWzBdIDogY2hhaW4uc2VnbWVudHMuYXQoLTEpO1xuICAgICAgICBjb25zdCBoZWFkID0gZm9yd2FyZCA/IGNoYWluLnNlZ21lbnRzLmF0KC0xKSA6IGNoYWluLnNlZ21lbnRzWzBdO1xuICAgICAgICBjb25zdCBvcHRpb25zID0gZ2V0TmVpZ2hib3JzKGhlYWQueCwgaGVhZC55KS5maWx0ZXIocCA9PiAhZ3JpZFtwLnhdW3AueV0pO1xuXG4gICAgICAgIGlmIChvcHRpb25zLmxlbmd0aCA9PT0gMCkgcmV0dXJuO1xuICAgICAgICBjb25zdCBuZXh0ID0gb3B0aW9uc1tNYXRoLmZsb29yKE1hdGgucmFuZG9tKCkgKiBvcHRpb25zLmxlbmd0aCldO1xuXG4gICAgICAgIGNvbnN0IGRFX29sZCA9IGVuZXJneSh0YWlsKTtcbiAgICAgICAgZ3JpZFt0YWlsLnhdW3RhaWwueV0gPSBudWxsO1xuICAgICAgICBjb25zdCBkRV9uZXcgPSBlbmVyZ3koey4uLm5leHQsIHR5cGU6IHRhaWwudHlwZX0pO1xuICAgICAgICBncmlkW3RhaWwueF1bdGFpbC55XSA9IHtpZDogY2hhaW4uaWQsIHR5cGU6IHRhaWwudHlwZX07XG5cbiAgICAgICAgY29uc3QgZGVsdGFVID0gZEVfbmV3IC0gZEVfb2xkO1xuICAgICAgICBjb25zdCBhY2NlcHQgPSBkZWx0YVUgPCAwIHx8IE1hdGgucmFuZG9tKCkgPCBNYXRoLmV4cCgtZGVsdGFVIC8gVCk7XG5cbiAgICAgICAgaWYgKGFjY2VwdCkge1xuICAgICAgICAgICAgZ3JpZFt0YWlsLnhdW3RhaWwueV0gPSBudWxsO1xuICAgICAgICAgICAgZ3JpZFtuZXh0LnhdW25leHQueV0gPSB7aWQ6IGNoYWluLmlkLCB0eXBlOiB0YWlsLnR5cGV9O1xuICAgICAgICAgICAgaWYgKGZvcndhcmQpIHtcbiAgICAgICAgICAgICAgICBjaGFpbi5zZWdtZW50cy5zaGlmdCgpO1xuICAgICAgICAgICAgICAgIGNoYWluLnNlZ21lbnRzLnB1c2goey4uLm5leHQsIHR5cGU6IHRhaWwudHlwZX0pO1xuICAgICAgICAgICAgfSBlbHNlIHtcbiAgICAgICAgICAgICAgICBjaGFpbi5zZWdtZW50cy5wb3AoKTtcbiAgICAgICAgICAgICAgICBjaGFpbi5zZWdtZW50cy51bnNoaWZ0KHsuLi5uZXh0LCB0eXBlOiB0YWlsLnR5cGV9KTtcbiAgICAgICAgICAgIH1cbiAgICAgICAgfVxuICAgIH1cblxuICAgIC8vIC0tLSBWaXN1YWxpemF0aW9uIC0tLVxuICAgIGNvbnN0IHN2ZyA9IGQzLmNyZWF0ZShcInN2Z1wiKVxuICAgICAgICAuYXR0cihcInZpZXdCb3hcIiwgYDAgMCAke3dpZHRofSAke2hlaWdodH1gKVxuICAgICAgICAuc3R5bGUoXCJ3aWR0aFwiLCBcIjQwMHB4XCIpXG4gICAgICAgIC5zdHlsZShcImhlaWdodFwiLCBcIjQwMHB4XCIpXG4gICAgICAgIC5zdHlsZShcImJvcmRlclwiLCBcIjFweCBzb2xpZCAjY2NjXCIpO1xuXG4gICAgY29uc3QgZyA9IHN2Zy5hcHBlbmQoXCJnXCIpO1xuXG4gICAgZnVuY3Rpb24gZHJhdygpIHtcbiAgICAgICAgY29uc3QgZGF0YSA9IGNoYWlucy5mbGF0TWFwKGMgPT4gYy5zZWdtZW50cyk7XG4gICAgICAgIGcuc2VsZWN0QWxsKFwiY2lyY2xlXCIpXG4gICAgICAgICAgICAuZGF0YShkYXRhLCBkID0+IGAke2QueH0tJHtkLnl9YClcbiAgICAgICAgICAgIC5qb2luKFwiY2lyY2xlXCIpXG4gICAgICAgICAgICAuYXR0cihcImN4XCIsIGQgPT4gZC54ICsgMC41KVxuICAgICAgICAgICAgLmF0dHIoXCJjeVwiLCBkID0+IGQueSArIDAuNSlcbiAgICAgICAgICAgIC5hdHRyKFwiclwiLCAwLjQ1KVxuICAgICAgICAgICAgLmF0dHIoXCJmaWxsXCIsIGQgPT4gZC50eXBlID09PSBcImhlYWRcIiA/IFwiYmx1ZVwiIDogXCJyZWRcIik7XG4gICAgfVxuXG4gICAgLy8gLS0tIE1haW4gTG9vcCAtLS1cbiAgICBwbGFjZUNoYWlucygpO1xuICAgIGRyYXcoKTtcblxuICAgIGxldCBydW5uaW5nID0gdHJ1ZTtcbiAgICBjb25zdCBidXR0b24gPSBodG1sYDxidXR0b24+4o+4IFBhdXNlPC9idXR0b24+YDtcbiAgICBidXR0b24ub25jbGljayA9ICgpID0+IHtcbiAgICAgICAgcnVubmluZyA9ICFydW5uaW5nO1xuICAgICAgICBidXR0b24udGV4dENvbnRlbnQgPSBydW5uaW5nID8gXCLij7ggUGF1c2VcIiA6IFwi4pa2IFJlc3VtZVwiO1xuICAgIH07XG5cbiAgICAoYXN5bmMgKCkgPT4ge1xuICAgICAgICB3aGlsZSAodHJ1ZSkge1xuICAgICAgICAgICAgaWYgKHJ1bm5pbmcpIHtcbiAgICAgICAgICAgICAgICBmb3IgKGxldCBpID0gMDsgaSA8IGNoYWlucy5sZW5ndGg7IGkrKykge1xuICAgICAgICAgICAgICAgICAgICBjb25zdCBjID0gY2hhaW5zW01hdGguZmxvb3IoTWF0aC5yYW5kb20oKSAqIGNoYWlucy5sZW5ndGgpXTtcbiAgICAgICAgICAgICAgICAgICAgYXR0ZW1wdE1vdmUoYyk7XG4gICAgICAgICAgICAgICAgfVxuICAgICAgICAgICAgICAgIGRyYXcoKTtcbiAgICAgICAgICAgIH1cbiAgICAgICAgICAgIGF3YWl0IG5ldyBQcm9taXNlKHIgPT4gc2V0VGltZW91dChyLCA1MCkpO1xuICAgICAgICB9XG4gICAgfSkoKTtcblxuICAgIHJldHVybiBodG1sYDxkaXY+JHtidXR0b259PGJyPiR7c3ZnLm5vZGUoKX08L2Rpdj5gO1xufVxuXG4ifSx7Im1ldGhvZE5hbWUiOiJpbnRlcnByZXRRdWlldCIsInNvdXJjZSI6InNoaW55SW5wdXQoJ3RlbXBlcmF0dXJlJykifSx7Im1ldGhvZE5hbWUiOiJpbnRlcnByZXRRdWlldCIsInNvdXJjZSI6InNoaW55SW5wdXQoJ251bUNoYWlucycpIn0seyJtZXRob2ROYW1lIjoiaW50ZXJwcmV0UXVpZXQiLCJzb3VyY2UiOiJzaGlueUlucHV0KCdzaW11bGF0aW9uJykifV19
     </script>
     <script type="module">
     if (window.location.protocol === "file:") { alert("The OJS runtime does not work with file:// URLs. Please use a web server to view this document."); }
