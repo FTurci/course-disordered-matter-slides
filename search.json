@@ -487,14 +487,56 @@
     "href": "soft-matter_surfactants1.html#hydrophobicity-and-amphiphiles",
     "title": "Complex Disordered Systems",
     "section": "Hydrophobicity and amphiphiles",
-    "text": "Hydrophobicity and amphiphiles\nWater is the standard solvent for a lot of chemistry and (almost all) biology.\nMolecules in water can be classified by their affinity to water:\n\nHydrophilic (“water-loving”) molecules interact favorably with water (e.g., via hydrogen bonding or dipole interactions).\nHydrophobic (“water-fearing”) molecules do not interact favorably with water (e.g., non-polar molecules).\n\n\n\nAmphiphiles are molecules that contain both hydrophilic and hydrophobic parts. They include:\n\nSurfactants (detergents, soaps, SURFace ACTive AgeNT)\nLipids (cell membranes)\nSome proteins (with hydrophobic and hydrophilic amino acids)\n\n\n\n\nSchematic model of a surfactant\n\n\n\n\n\nSelf assembly of surfactants\n\nSurfactants are at the molecular scale so they are nanometer sized\nThis means that their diffusion is fast (e.g. use D=\\frac{k_B T}{6 \\pi \\eta R} to compare a colloid to a surfactant molecule)\nFast diffusion in the solvent meanns that they quickly explore possible conformations and minimise free energy."
+    "text": "Hydrophobicity and amphiphiles\nWater is the standard solvent for a lot of chemistry and (almost all) biology.\nMolecules in water can be classified by their affinity to water:\n\nHydrophilic (“water-loving”) molecules interact favorably with water (e.g., via hydrogen bonding or dipole interactions).\nHydrophobic (“water-fearing”) molecules do not interact favorably with water (e.g., non-polar molecules).\n\nAmphiphiles are molecules that contain both hydrophilic and hydrophobic parts. They include:\n\nSurfactants (detergents, soaps, SURFace ACTive AgeNT)\nLipids (cell membranes)\nSome proteins (with hydrophobic and hydrophilic amino acids)\n\n\nSchematic model of a surfactant"
+  },
+  {
+    "objectID": "soft-matter_surfactants1.html#hydrophobicity-and-amphiphiles-1",
+    "href": "soft-matter_surfactants1.html#hydrophobicity-and-amphiphiles-1",
+    "title": "Complex Disordered Systems",
+    "section": "Hydrophobicity and amphiphiles",
+    "text": "Hydrophobicity and amphiphiles\n\nPhospholipid bilayers form the cellular membranes. They self-assemble!"
   },
   {
     "objectID": "soft-matter_surfactants1.html#self-assembly-of-surfactants",
     "href": "soft-matter_surfactants1.html#self-assembly-of-surfactants",
     "title": "Complex Disordered Systems",
     "section": "Self assembly of surfactants",
-    "text": "Self assembly of surfactants\n\nSurfactants are at the molecular scale so they are nanometer sized\nThis means that their diffusion is fast (e.g. use D=\\frac{k_B T}{6 \\pi \\eta R} to compare a colloid to a surfactant molecule)\nFast diffusion in the solvent meanns that they quickly explore possible conformations and minimise free energy."
+    "text": "Self assembly of surfactants\n\nSurfactants are at the molecular scale so they are nanometer sized\nThis means that their diffusion is fast (e.g. use D=\\frac{k_B T}{6 \\pi \\eta R} to compare a colloid to a surfactant molecule)\nFast diffusion in the solvent means that they quickly explore possible conformations and minimise free energy.\nThe amphiphilic structure means that special orientations can be achieved to satisfy the energetic constraints.\nThe molecules spontaneously form structures: this is called self-assembly.\nUnderlying phase transitions typically drive the self-assembly."
+  },
+  {
+    "objectID": "soft-matter_surfactants1.html#aggregation-general-case",
+    "href": "soft-matter_surfactants1.html#aggregation-general-case",
+    "title": "Complex Disordered Systems",
+    "section": "Aggregation: general case",
+    "text": "Aggregation: general case\n\nConsider a generic problem of aggregation of particles (generic)\nSimple model: we have cluster of size N and a free energy cost \\epsilon_N pto add a particle to the cluster.\nLet \\mu_1 and \\mu_N be the chemical potential of isolated particles and aggregates of size N respectively.\nIn equilibrium, \\mu_1 = \\mu_N := \\mu\n\nWe can express \\mu in terms of\n\nthe interaction energy from being in the aggregate (\\epsilon_N)\nthe entropy of the aggregate as a whole (\\propto {\\text{ number of aggregates}}\\times \\ln {\\text{ number of aggregates}})"
+  },
+  {
+    "objectID": "soft-matter_surfactants1.html#aggregation-general-case-1",
+    "href": "soft-matter_surfactants1.html#aggregation-general-case-1",
+    "title": "Complex Disordered Systems",
+    "section": "Aggregation: general case",
+    "text": "Aggregation: general case\n\nLet the overall volume fraction to be \\phi\nCall X_N the volume fraction in an aggregate of size N, so that \\sum_N X_N = \\phi.\nThe numbers of aggregates of size N is then simply X_N/N\n\nThe uniform chemical potential is the comnination of\n\\mu = \\text{\\{energy per particle in aggregate of size N\\}} + \\text{\\{entropy of mixing  per particle in aggregate of size N\\}}\nor \\mu = \\epsilon_N + \\dfrac{k_B T}{N}\\ln{\\dfrac{X_N}{N}}"
+  },
+  {
+    "objectID": "soft-matter_surfactants1.html#aggregation-general-case-2",
+    "href": "soft-matter_surfactants1.html#aggregation-general-case-2",
+    "title": "Complex Disordered Systems",
+    "section": "Aggregation: general case",
+    "text": "Aggregation: general case\nFrom \\mu = \\epsilon_N + \\dfrac{k_B T}{N}\\ln{\\dfrac{X_N}{N}}\nwe can rewrite this as\nX_N = N \\exp{\\left( \\dfrac{N(\\mu-\\epsilon_N)}{k_BT}\\right)}\nand eliminate \\mu by evaluating the expression for for N=1 and plugging it back to get\nX_N = N X_1^N \\exp{\\left( \\dfrac{N(\\epsilon_1-\\epsilon_N)}{k_BT}\\right)}\nThe fraction of solutes in the aggregated state is large only if \\epsilon_1&gt;\\epsilon_N., i.e. there is an energetic advantage."
+  },
+  {
+    "objectID": "soft-matter_surfactants1.html#aggregation-general-case-3",
+    "href": "soft-matter_surfactants1.html#aggregation-general-case-3",
+    "title": "Complex Disordered Systems",
+    "section": "Aggregation: general case",
+    "text": "Aggregation: general case\nX_N = N X_1^N \\exp{\\left( \\dfrac{N(\\epsilon_1-\\epsilon_N)}{k_BT}\\right)}\nmeans that knowing the form of \\epsilon_N is key to predicting aggregation behaviour.\n\nConsider an aggregate of N particles of total radius r\\approx (Nv)^{1/3} where v is the volume of a single particle.\nThen \\epsilon_N is the free energy per particle of the aggregate of size N, G_N=\\text{ bulk free energy}+\\text{surface free energy}\nAssuming that there is a surface free energy cost (a surface tension) \\gamma we write\n\n\\epsilon_N = \\dfrac{G_N}{N} = \\epsilon_\\infty  +\\dfrac{1}{N}\\gamma r^2 =\\epsilon_\\infty +\\gamma\\left(\\dfrac{v^2}{N}\\right)^{1/3}\nwhich is a monotonically decreasing function of N.\nDefine \\alpha k_B T = \\gamma v^{2/3} and extract a relation between X_N and X_1 parametrised solely by \\alpha, i.e.\n\\text{number of aggregates of size N per unit volume} = \\dfrac{X_N}{N}\\sim (X_1 e^{\\alpha})^N"
+  },
+  {
+    "objectID": "soft-matter_surfactants1.html#aggregation-general-case-4",
+    "href": "soft-matter_surfactants1.html#aggregation-general-case-4",
+    "title": "Complex Disordered Systems",
+    "section": "Aggregation: general case",
+    "text": "Aggregation: general case\n\\text{number of aggregates of size N per unit volume} = \\dfrac{X_N}{N}\\sim (X_1 e^{\\alpha})^N This presents us with a few cases\n\nX_1 e^{\\alpha} &lt; 1: Few isolated particles exist, and (X_1 e^{\\alpha})^N becomes vanishingly small for large N, resulting in very few large aggregates.\nX_1 e^{\\alpha} = 1 (critical point): Aggregates of all sizes become equally probable. The system undergoes phase separation into a dilute phase of isolated monomers (with X_1 pinned at e^{-\\alpha}) in coexistence with a dense phase of very large aggregates.\nX_1 e^{\\alpha} &gt; 1: Above the critical aggregation concentration, the system cannot remain homogeneous and phase separates.\n\nThe volume fraction \\phi at which this occurs is called critical aggregation concentration, or CAC."
   },
   {
     "objectID": "soft-matter_liquidx2.html#aside-functional-derivatives",
@@ -607,6 +649,20 @@
     "title": "Complex Disordered Systems",
     "section": "Topological Charge of a Defect",
     "text": "Topological Charge of a Defect\n\nThe topological charge (or winding number) s of a defect quantifies how many times the director field rotates by 2\\pi when encircling the defect once.\n\n\\Delta \\theta=2 \\pi s\nFor example, a charge of s=1/2 is a rotation by \\pi is performed when going around the defect once."
+  },
+  {
+    "objectID": "soft-matter_liquidx2.html#conservation-of-topological-charge",
+    "href": "soft-matter_liquidx2.html#conservation-of-topological-charge",
+    "title": "Complex Disordered Systems",
+    "section": "Conservation of Topological Charge",
+    "text": "Conservation of Topological Charge\n\nTopological charge is conserved: the total charge in a closed system remains constant over time.\nDefects can be created or annihilated only in pairs of opposite charge (e.g., +1/2 and -1/2).\nThe topology of the space imposes such constraints of conservation via the Poincaré-Hopf theorem, which states\n\n\nThe total topological charge of the defects in a field confined to a compact space is equal to the Euler characteristic of that space\n\nIn practice:\n\nOn a plane (Euler characteristic = 1), the total topological charge must sum to 1.\nOn a sphere (Euler characteristic = 2), the total topological charge must sum to 2.\nOn a torus (Euler characteristic = 0), the total topological charge must sum to 0. \\to in periodic systmes the total charge must be zero.\nThis imposes constraints on the dynamics and interactions of defects.\n\n\nDirector fields on a sphere, on a torus and a double torus. The number of hadles (the genus g) determines the Euler characteristic \\chi=2-2g. From Nelson (2002)"
+  },
+  {
+    "objectID": "soft-matter_liquidx2.html#topological-defects",
+    "href": "soft-matter_liquidx2.html#topological-defects",
+    "title": "Complex Disordered Systems",
+    "section": "Topological defects",
+    "text": "Topological defects\n\n\nAnalogies well-beyond liquid crystals:\n\nvortices in superfluids and superconductors\ndislocations in crystals\nelectromagnetic field configurations\nflow fields microfluidic junctions\n\n\n\n\nTopological defects in microfluidic devices\n\n\n\n\n\n\nVortex anti-vortex pair in a supefluis (a) initial configuration and (b) after relaxation. From Magierski, Eur Phys J (2024)"
   },
   {
     "objectID": "soft-matter_liquidx2.html#defects-in-3-dimensions",
