@@ -33,6 +33,22 @@
   </style>
   <link rel="stylesheet" href="site_libs/revealjs/dist/theme/quarto-534cd8e3a96973385dffff3f4709048d.css">
   <link rel="stylesheet" href="styles.css">
+  <script>window.backupDefine = window.define; window.define = undefined;</script><script src="https://cdn.jsdelivr.net/npm/katex@latest/dist/katex.min.js"></script>
+  <script>document.addEventListener("DOMContentLoaded", function () {
+ var mathElements = document.getElementsByClassName("math");
+ var macros = [];
+ for (var i = 0; i < mathElements.length; i++) {
+  var texText = mathElements[i].firstChild;
+  if (mathElements[i].tagName == "SPAN") {
+   katex.render(texText.data, mathElements[i], {
+    displayMode: mathElements[i].classList.contains('display'),
+    throwOnError: false,
+    macros: macros,
+    fleqn: false
+   });
+}}});
+  </script>
+  <script>window.define = window.backupDefine; window.backupDefine = undefined;</script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@latest/dist/katex.min.css">
   <link href="site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
   <link href="site_libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
   <link href="site_libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
@@ -158,6 +174,80 @@ Francesco Turci
 <li>Lipids (cell membranes)</li>
 <li>Some proteins (with hydrophobic and hydrophilic amino acids)</li>
 </ul>
+
+<img data-src="./figs/amphiphile.svg" class="r-stretch quarto-figure-center"><p class="caption">Schematic model of a surfactant</p></section>
+<section id="hydrophobicity-and-amphiphiles-1" class="slide level2">
+<h2>Hydrophobicity and amphiphiles</h2>
+
+<img data-src="./figs/membrane.jpg" class="r-stretch quarto-figure-center"><p class="caption">Phospholipid <strong>bilayers</strong> form the cellular membranes. They <strong>self-assemble</strong>!</p></section>
+<section id="self-assembly-of-surfactants" class="slide level2">
+<h2>Self assembly of surfactants</h2>
+<ul>
+<li><p>Surfactants are at the molecular scale so they are <em>nanometer</em> sized</p></li>
+<li><p>This means that their diffusion is <strong>fast</strong> (e.g.&nbsp;use <span class="math inline">D=\frac{k_B T}{6 \pi \eta R}</span> to compare a colloid to a surfactant molecule)</p></li>
+<li><p>Fast diffusion in the solvent means that they quickly explore possible conformations and minimise free energy.</p></li>
+<li><p>The amphiphilic structure means that special orientations can be achieved to satisfy the energetic constraints.</p></li>
+<li><p>The molecules spontaneously form structures: this is called <strong>self-assembly</strong>.</p></li>
+<li><p>Underlying phase transitions typically <strong>drive</strong> the self-assembly.</p></li>
+</ul>
+</section>
+<section id="aggregation-general-case" class="slide level2">
+<h2>Aggregation: general case</h2>
+<ul>
+<li><p>Consider a generic problem of aggregation of particles (generic)</p></li>
+<li><p>Simple model: we have cluster of size <span class="math inline">N</span> and a free energy cost <span class="math inline">\epsilon_N</span> pto add a particle to the cluster.</p></li>
+<li><p>Let <span class="math inline">\mu_1</span> and <span class="math inline">\mu_N</span> be the chemical potential of isolated particles and aggregates of size <span class="math inline">N</span> respectively.</p></li>
+<li><p>In equilibrium, <span class="math inline">\mu_1 = \mu_N := \mu</span></p></li>
+</ul>
+<p>We can express <span class="math inline">\mu</span> in terms of</p>
+<ul>
+<li>the interaction energy from being in the aggregate (<span class="math inline">\epsilon_N</span>)</li>
+<li>the entropy of the aggregate as a whole (<span class="math inline">\propto {\text{ number of aggregates}}\times \ln {\text{ number of aggregates}}</span>)</li>
+</ul>
+</section>
+<section id="aggregation-general-case-1" class="slide level2">
+<h2>Aggregation: general case</h2>
+<ul>
+<li>Let the overall <strong>volume fraction</strong> to be <span class="math inline">\phi</span></li>
+<li>Call <span class="math inline">X_N</span> the volume fraction in an aggregate of size <span class="math inline">N</span>, so that <span class="math inline">\sum_N X_N = \phi</span>.</li>
+<li>The numbers of aggregates of size <span class="math inline">N</span> is then simply <span class="math inline">X_N/N</span></li>
+</ul>
+<p>The uniform chemical potential is the comnination of</p>
+<p><span class="math display">\mu = \text{\{energy per particle in aggregate of size N\}} + \text{\{entropy of mixing  per particle in aggregate of size N\}}</span></p>
+<p>or <span class="math display">\mu = \epsilon_N + \dfrac{k_B T}{N}\ln{\dfrac{X_N}{N}}</span></p>
+</section>
+<section id="aggregation-general-case-2" class="slide level2">
+<h2>Aggregation: general case</h2>
+<p>From <span class="math display">\mu = \epsilon_N + \dfrac{k_B T}{N}\ln{\dfrac{X_N}{N}}</span></p>
+<p>we can rewrite this as</p>
+<p><span class="math display">X_N = N \exp{\left( \dfrac{N(\mu-\epsilon_N)}{k_BT}\right)}</span></p>
+<p>and eliminate <span class="math inline">\mu</span> by evaluating the expression for for <span class="math inline">N=1</span> and plugging it back to get</p>
+<p><span class="math display">X_N = N X_1^N \exp{\left( \dfrac{N(\epsilon_1-\epsilon_N)}{k_BT}\right)}</span></p>
+<p>The fraction of solutes in the aggregated state is large only if <span class="math inline">\epsilon_1&gt;\epsilon_N</span>., i.e.&nbsp;there is an energetic advantage.</p>
+</section>
+<section id="aggregation-general-case-3" class="slide level2">
+<h2>Aggregation: general case</h2>
+<p><span class="math display">X_N = N X_1^N \exp{\left( \dfrac{N(\epsilon_1-\epsilon_N)}{k_BT}\right)}</span></p>
+<p>means that knowing the form of <span class="math inline">\epsilon_N</span> is key to predicting aggregation behaviour.</p>
+<ul>
+<li>Consider an aggregate of <span class="math inline">N</span> particles of total radius <span class="math inline">r\approx (Nv)^{1/3}</span> where <span class="math inline">v</span> is the volume of a single particle.</li>
+<li>Then <span class="math inline">\epsilon_N</span> is the free energy per particle of the aggregate of size <span class="math inline">N</span>, <span class="math display">G_N=\text{ bulk free energy}+\text{surface free energy}</span></li>
+<li>Assuming that there is a surface free energy cost (a surface tension) <span class="math inline">\gamma</span> we write</li>
+</ul>
+<p><span class="math display">\epsilon_N = \dfrac{G_N}{N} = \epsilon_\infty  +\dfrac{1}{N}\gamma r^2 =\epsilon_\infty +\gamma\left(\dfrac{v^2}{N}\right)^{1/3}</span></p>
+<p>which is a <strong>monotonically decreasing</strong> function of <span class="math inline">N</span>.</p>
+<p>Define <span class="math inline">\alpha k_B T = \gamma v^{2/3}</span> and extract a relation between <span class="math inline">X_N</span> and <span class="math inline">X_1</span> parametrised solely by <span class="math inline">\alpha</span>, i.e.</p>
+<p><span class="math display">\text{number of aggregates of size N per unit volume} = \dfrac{X_N}{N}\sim (X_1 e^{\alpha})^N</span></p>
+</section>
+<section id="aggregation-general-case-4" class="slide level2">
+<h2>Aggregation: general case</h2>
+<p><span class="math display">\text{number of aggregates of size N per unit volume} = \dfrac{X_N}{N}\sim (X_1 e^{\alpha})^N</span> This presents us with a few cases</p>
+<ul>
+<li><strong><span class="math inline">X_1 e^{\alpha} &lt; 1</span></strong>: Few isolated particles exist, and <span class="math inline">(X_1 e^{\alpha})^N</span> becomes vanishingly small for large <span class="math inline">N</span>, resulting in very few large aggregates.</li>
+<li><strong><span class="math inline">X_1 e^{\alpha} = 1</span> (critical point)</strong>: Aggregates of all sizes become equally probable. The system undergoes phase separation into a dilute phase of isolated monomers (with <span class="math inline">X_1</span> pinned at <span class="math inline">e^{-\alpha}</span>) in coexistence with a dense phase of very large aggregates.</li>
+<li><strong><span class="math inline">X_1 e^{\alpha} &gt; 1</span></strong>: Above the critical aggregation concentration, the system cannot remain homogeneous and phase separates.</li>
+</ul>
+<p>The volume fraction <span class="math inline">\phi</span> at which this occurs is called <strong>critical aggregation concentration</strong>, or CAC.</p>
 
 
 <script type="ojs-module-contents">

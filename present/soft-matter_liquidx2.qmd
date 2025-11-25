@@ -478,6 +478,41 @@ plt.tight_layout()
 plt.show()
 ```
 
+## Conservation of Topological Charge
+
+- Topological charge is **conserved**: the total charge in a closed system remains constant over time.
+- Defects can be created or annihilated only **in pairs** of opposite charge (e.g., +1/2 and -1/2).
+- The **topology** of the space imposes such constraints of conservation via the *Poincaré-Hopf theorem*, which states
+
+> The total topological charge of the defects in a field confined to a compact space is equal to the Euler characteristic of that space
+
+In practice:
+
+- On a plane (Euler characteristic = 1), the total topological charge must sum to 1.
+- On a sphere (Euler characteristic = 2), the total topological charge must sum to 2.
+- On a torus (Euler characteristic = 0), the total topological charge must sum to 0. $\to$ in periodic systmes the total charge must be zero.
+
+- This imposes constraints on the dynamics and interactions of defects.
+
+![Director fields on a sphere, on a torus and a double torus. The number of hadles (the genus $g$) determines the Euler characteristic $\chi=2-2g$. From Nelson (2002)](./figs/genus.png)
+
+
+## Topological defects
+:::{.columns}
+:::{.column}
+Analogies well-beyond liquid crystals:
+
+- vortices in superfluids and superconductors
+- dislocations in crystals
+- electromagnetic field configurations
+- flow fields microfluidic junctions
+
+![Topological defects in microfluidic devices](./figs/microfluid.png)
+:::
+:::{.column}
+![Vortex anti-vortex  pair in a supefluis (a) initial configuration and (b) after relaxation. From Magierski, *Eur Phys J* (2024)  ](./figs/superfluid.png)
+:::
+:::
 ## Defects in 3 Dimensions
 
 - In 3D the disclinations become **lines**
