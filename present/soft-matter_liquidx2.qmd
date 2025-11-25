@@ -24,7 +24,19 @@ $\mathcal{L}$ is the **Lagrangian function**: e.g.  $x$ is space,  $\phi(x)$ a f
 
 - Perturb $S[\phi]$ by an amount $\epsilon$ with an arbitrary function $\eta(x)$ vanishing at the boundaries
 
--  Integrate by part the second term to cast it all as an expression proportional to the test function $\eta(x)$:
+$$S[\phi+\epsilon\eta]=\int \mathcal{L}(\phi+\epsilon\eta, \phi'+\epsilon\eta', x) dx$$
+
+Expanding to first order in $\epsilon$:
+
+$$S[\phi+\epsilon\eta]\approx S[\phi]+\epsilon\int\left[\frac{\partial \mathcal{L}}{\partial \phi}\eta+\frac{\partial \mathcal{L}}{\partial \phi'}\eta'\right] dx$$
+
+## Aside: Functional Derivatives
+Integrating by parts the second term:
+
+$$\int\frac{\partial \mathcal{L}}{\partial \phi'}\eta' dx = \left[\frac{\partial \mathcal{L}}{\partial \phi'}\eta\right]_{\text{boundary}}^{\phantom{x}}-\int\frac{d}{dx}\left(\frac{\partial \mathcal{L}}{\partial \phi'}\right)\eta dx$$
+
+
+Since $\eta(x)$ vanishes at the boundaries, the first term drops out, giving:
 
 $$
 \delta S=\int\left[\frac{\partial \mathcal{L}}{\partial \phi}-\frac{d}{d x}\left(\frac{\partial \mathcal{L}}{\partial \phi^{\prime}}\right)\right] \eta(x) d x
@@ -32,7 +44,6 @@ $$
 
 If we want $S[\phi]$ to be stationary with respect to arbitrary perturbations $\eta(x)$, then $\delta S=0$  for all $\eta(x)$. 
 
-## Aside: Functional Derivatives
 
 This leads to the **Euler-Lagrange equation**:
 
@@ -69,10 +80,10 @@ As for the Landau-de Gennes theory, we will focus on :
 
 ### Energetic Contribution
 
-- We assume molecules interact with an angular potential that depends on their orientations
+- We assume molecules interact with an angular potential that depends on their orientations via a the second Legendre polynomial $P_2(x)=\frac{1}{2}\left(3 x^2-1\right)$:
 
 $$
-V\left(\Omega_i, \Omega_j\right)=-U_0 P_2\left(\mathbf{u}_i \cdot \mathbf{u}_j\right)
+V\left(\Omega_i, \Omega_j\right)=-u P_2\left(\mathbf{u}_i \cdot \mathbf{u}_j\right)
 $$
 
 
@@ -86,11 +97,11 @@ $$
 S=\int P_2\left(\mathbf{u} \cdot \mathbf{n}\right) p(\Omega) d \Omega
 $$ and identified the director $\mathbf{n}$ and the energetic **coupling** $u$. 
 
-So we can average the mean-field potential over all orientations of molecule $i$ to get the average interaction energy per molecule (and divide by 2 to avoid double counting):
+Average  over all orientations of molecule $i$ to get the average interaction energy per molecule (and divide by 2 to avoid double counting):
 
 $$U^{mf} =  -\dfrac{u}{2} S^2$$
 
-In essence, we get a potential that aligns molecules with the director, and that is quadratic to reflect head-tail symmetry.
+A potential that aligns molecules with the director, quadratic to reflect head-tail symmetry.
 
 
 ## Maier-Saupe Theory of Nematic Liquid Crystals
@@ -225,34 +236,42 @@ plt.show()
 
 import numpy as np
 import matplotlib.pyplot as plt
-
-import numpy as np
-import matplotlib.pyplot as plt
+from scipy.optimize import minimize_scalar
 
 plt.rcParams['font.size'] = 20
 plt.figure(figsize=(15,8))
+
 thetas = np.linspace(0, np.pi, 200)
 P2 = 0.5*(3*np.cos(thetas)**2 - 1)
-u_values = np.linspace(0, 10, 100)
+u_values = np.concatenate((np.linspace(0, 4, 30),np.linspace(4, 5, 500), np.linspace(5, 10, 30)))
 T = 1.0
 S_vs_u = []
 
-for u in u_values:
-    S_min_f = None
-    λ_vals = np.linspace(0.01, 20, 500)
-    for l in λ_vals:
-        p_theta = np.exp(l * P2)
-        p_theta /= np.trapz(p_theta * np.sin(thetas), thetas)  # normalization
-        S_l = np.trapz(p_theta * P2 * np.sin(thetas), thetas)
-        f = -0.5 * u * S_l**2 + T * np.trapz(p_theta * np.log(4*np.pi*p_theta) * np.sin(thetas), thetas)
-        if S_min_f is None or f < S_min_f[1]:
-            S_min_f = (S_l, f)
-    S_vs_u.append(S_min_f[0])
+def free_energy(lam, u):
+    """Free energy as a function of lambda for given u"""
+    a = lam * P2
+    a -= np.max(a)  # stabilize exponent
+    p_theta = np.exp(a)
+    p_theta /= np.trapz(p_theta * np.sin(thetas), thetas)  # normalize
+    S_l = np.trapz(p_theta * P2 * np.sin(thetas), thetas)
+    F = -0.5 * u * S_l**2 + T * np.trapz(p_theta * np.log(4*np.pi*p_theta) * np.sin(thetas), thetas)
+    return F
 
-plt.plot(u_values, S_vs_u, 'o-')
+for u in u_values:
+    res = minimize_scalar(free_energy, bounds=(0.01, 20), args=(u,), method='bounded')
+    lam_min = res.x
+    a = lam_min * P2
+    a -= np.max(a)
+    p_theta = np.exp(a)
+    p_theta /= np.trapz(p_theta * np.sin(thetas), thetas)
+    S_min = np.trapz(p_theta * P2 * np.sin(thetas), thetas)
+    S_vs_u.append(S_min)
+
+plt.plot(u_values, S_vs_u, 'o-', ms=5, mfc="None")
 plt.xlabel(r"$u / k_B T$")
 plt.ylabel("Order parameter S")
 plt.show()
+
 
 ```
 The resulting phase transition is weakly first order with a discontinuous jump in $S$ at the transition temperature. $u/k_BT \approx 4.55$.

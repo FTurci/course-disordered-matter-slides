@@ -27,3 +27,25 @@
 #bigger-callout {
   font-size: 1.15em; /* Adjust the value as needed */
 }
+
+/* Center Observable sliders inside slide */
+.observablehq--input {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  text-align: center !important;
+  margin-bottom: 10em;
+}
+
+/* Make slider fill most of the slide width, max 900px */
+.observablehq .observablehq--input input[type="range"] {
+  width: 100% !important;
+  max-width: 1800px !important;
+}
+.reveal .mermaid {
+  width: 95% !important;
+  height: auto !important;
+  font-size: 20px !important; /* fallback if themeVariables fails */
+  display: block;
+  margin: 0 auto;
+}
