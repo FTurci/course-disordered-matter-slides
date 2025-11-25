@@ -1,0 +1,124 @@
+---
+title: "Complex Disordered Systems"
+subtitle: "Surfactants"
+format: 
+    live-revealjs:
+        incremental: false
+pyodide:
+    packages:
+        - numpy
+        - matplotlib
+# bibliography: references.bib
+mermaid-format: svg # png also works
+---
+
+## Hydrophobicity and amphiphiles
+
+Water is the standard solvent for a lot of chemistry and (almost all) biology.
+
+Molecules in water can be classified by their **affinity** to water:
+
+- **Hydrophilic** ("water-loving") molecules interact favorably with water (e.g., via hydrogen bonding or dipole interactions).
+- **Hydrophobic** ("water-fearing") molecules do not interact favorably with water (e.g., non-polar molecules).
+
+
+**Amphiphiles** are molecules that contain both hydrophilic and hydrophobic parts. They include:
+
+- Surfactants (detergents, soaps, *SURFace ACTive AgeNT*)
+- Lipids (cell membranes)
+- Some proteins (with hydrophobic and hydrophilic amino acids)
+
+
+![Schematic model of a surfactant](./figs/amphiphile.svg)
+
+## Hydrophobicity and amphiphiles
+
+![Phospholipid **bilayers** form the cellular membranes. They **self-assemble**!](./figs/membrane.jpg)
+
+## Self assembly of surfactants
+
+- Surfactants are at the molecular scale so they are *nanometer* sized
+- This means that their diffusion is **fast** (e.g. use $D=\frac{k_B T}{6 \pi \eta R}$ to compare a colloid to a surfactant molecule)
+- Fast diffusion in the solvent means that they quickly explore possible conformations and minimise free energy.
+- The amphiphilic structure means that special orientations can be achieved to satisfy the energetic constraints.
+
+- The molecules spontaneously form structures: this is called **self-assembly**.
+- Underlying phase transitions typically **drive** the self-assembly.
+
+
+## Aggregation: general case
+
+- Consider a generic problem of aggregation of particles (generic)
+- Simple model: we have cluster of size $N$ and a free energy cost $\epsilon_N$ pto add a particle to the cluster.
+- Let $\mu_1$ and $\mu_N$ be the chemical potential of isolated particles and aggregates of size $N$ respectively. 
+
+- In equilibrium, $\mu_1 = \mu_N := \mu$
+
+ We can express $\mu$ in terms of 
+
+- the interaction energy from being in the aggregate ($\epsilon_N$)
+- the entropy of the aggregate as a whole ($\propto {\text{ number of aggregates}}\times \ln {\text{ number of aggregates}}$)
+
+
+
+## Aggregation: general case
+
+- Let the overall **volume fraction** to be $\phi$
+- Call $X_N$ the volume fraction in an aggregate of size $N$, so that $\sum_N X_N = \phi$.
+-  The numbers of aggregates of size $N$ is then simply $X_N/N$
+
+The uniform chemical potential is the comnination of
+
+$$\mu = \text{\{energy per particle in aggregate of size N\}} + \text{\{entropy of mixing  per particle in aggregate of size N\}}$$
+
+or 
+$$\mu = \epsilon_N + \dfrac{k_B T}{N}\ln{\dfrac{X_N}{N}}$$
+
+## Aggregation: general case
+
+
+From $$\mu = \epsilon_N + \dfrac{k_B T}{N}\ln{\dfrac{X_N}{N}}$$
+
+we can rewrite this as 
+
+$$X_N = N \exp{\left( \dfrac{N(\mu-\epsilon_N)}{k_BT}\right)}$$
+
+and eliminate $\mu$ by evaluating the expression for for $N=1$ and plugging it back to get 
+
+$$X_N = N X_1^N \exp{\left( \dfrac{N(\epsilon_1-\epsilon_N)}{k_BT}\right)}$$
+
+
+The fraction of solutes in the aggregated state is large only if  $\epsilon_1>\epsilon_N$., i.e. there is an energetic advantage.
+
+
+## Aggregation: general case
+
+
+$$X_N = N X_1^N \exp{\left( \dfrac{N(\epsilon_1-\epsilon_N)}{k_BT}\right)}$$
+
+means that knowing the form of $\epsilon_N$ is key to predicting aggregation behaviour.
+
+- Consider an aggregate of $N$ particles of total radius $r\approx (Nv)^{1/3}$ where $v$ is the volume of a single particle.
+- Then $\epsilon_N$ is the free energy per particle of the aggregate of size $N$, $$G_N=\text{ bulk free energy}+\text{surface free energy}$$
+-  Assuming that there is a surface free energy cost (a surface tension) $\gamma$ we write
+
+$$\epsilon_N = \dfrac{G_N}{N} = \epsilon_\infty  +\dfrac{1}{N}\gamma r^2 =\epsilon_\infty +\gamma\left(\dfrac{v^2}{N}\right)^{1/3}$$
+
+which is a **monotonically decreasing** function of $N$. 
+
+Define $\alpha k_B T = \gamma v^{2/3}$ and extract a relation between $X_N$ and $X_1$ parametrised solely by $\alpha$, i.e.
+
+$$\text{number of aggregates of size N per unit volume} = \dfrac{X_N}{N}\sim (X_1 e^{\alpha})^N$$
+ 
+
+## Aggregation: general case
+
+$$\text{number of aggregates of size N per unit volume} = \dfrac{X_N}{N}\sim (X_1 e^{\alpha})^N$$
+This presents us with a few cases
+
+
+- **$X_1 e^{\alpha} < 1$**: Few isolated particles exist, and $(X_1 e^{\alpha})^N$ becomes vanishingly small for large $N$, resulting in very few large aggregates.
+- **$X_1 e^{\alpha} = 1$ (critical point)**: Aggregates of all sizes become equally probable. The system undergoes phase separation into a dilute phase of isolated monomers (with $X_1$ pinned at $e^{-\alpha}$) in coexistence with a dense phase of very large aggregates.
+- **$X_1 e^{\alpha} > 1$**: Above the critical aggregation concentration, the system cannot remain homogeneous and phase separates.
+
+The volume fraction $\phi$ at which this occurs is called **critical aggregation concentration**, or CAC. 
