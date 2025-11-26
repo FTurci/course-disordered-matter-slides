@@ -994,11 +994,18 @@
     "text": "Configurational entropy\n\nThe number of distinct minima (metabasins) can be very large.\nWe can define a configurational entropy S_{conf} that counts the number of distinct states \\Omega: S_{conf} = k_{B} \\ln N_{\\mathrm minima}"
   },
   {
-    "objectID": "soft-matter_glasses.html#glass-formation",
-    "href": "soft-matter_glasses.html#glass-formation",
+    "objectID": "soft-matter_glasses.html#configurational-entropy-1",
+    "href": "soft-matter_glasses.html#configurational-entropy-1",
     "title": "Complex Disordered Systems",
-    "section": "Glass formation",
-    "text": "Glass formation\nGlassy systems are a broad class of systems, not necessarily atomic or molecular, that exhibit arrested dynamics\n\nupon changing a thermodynamic parameter (e.g. temperature, density) the system’s relaxation time \\tau increases dramatically\nthe system falls out of equilibrium and becomes non-ergodic\nthe system behaves as a solid, but lacks long-range order (it is amorphous)"
+    "section": "Configurational entropy",
+    "text": "Configurational entropy\nThe total entropy S can be obtained from thermodynamic relations, e.g. \nS(T) = S(T_0) + \\int_{T_0}^{T} \\frac{1}{T'} \\left( \\frac{\\partial P}{\\partial T'} \\right)_V dV\n\nor (at constant volume)\n\nS(T) = S(T_0) + \\int_{T_0}^{T} \\frac{C_V(T')}{T'} dT'\n where C_V is the heat capacity at constant volume and T_0 is a reference temperature.\nFluid, and liquid at high T: only the total entropy is well defined."
+  },
+  {
+    "objectID": "soft-matter_glasses.html#configurational-entropy-2",
+    "href": "soft-matter_glasses.html#configurational-entropy-2",
+    "title": "Complex Disordered Systems",
+    "section": "Configurational entropy",
+    "text": "Configurational entropy\nAt low temperatures, in the glassy state, we can separate the total entropy into a vibrational and configurational part: S(T) = S_{vib}(T) + S_{conf}(T)\nWe are describing the thermodynamics of a disordered system in a way closer to what we would do for a crystal, where the reference conformations are provided by the crystalline packings (e.g. FCC, HCP, BCC etc.). ## Glass formation\nGlassy systems are a broad class of systems, not necessarily atomic or molecular, that exhibit arrested dynamics\n\nupon changing a thermodynamic parameter (e.g. temperature, density) the system’s relaxation time \\tau increases dramatically\nthe system falls out of equilibrium and becomes non-ergodic\nthe system behaves as a solid, but lacks long-range order (it is amorphous)"
   },
   {
     "objectID": "soft-matter_intro.html#today",
