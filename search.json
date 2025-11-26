@@ -977,35 +977,98 @@
     "href": "soft-matter_glasses.html#energy-landscapes-1",
     "title": "Complex Disordered Systems",
     "section": "Energy landscapes",
-    "text": "Energy landscapes\n\nDifferent minima correspond to different conformations or states of the system. Example:\n\nliquid/gas\ncrystal/amorphous solid\nfolded/unfolded protein\n\nThey are separated by energy barriers \\Delta F\nThe time to transition is often modelled as Arrhenius \\tau \\sim \\exp\\left(\\dfrac{\\Delta F}{k_{B} T}\\right)"
+    "text": "Energy landscapes\n\nDifferent minima correspond to different conformations or states of the system. (e.g. liquid/gas, crystal/amorphous solid, folded/unfolded protein)\nThey are separated by energy barriers \\Delta F\nThe time to transition is often modelled as Arrhenius \\tau \\sim \\exp\\left(\\dfrac{\\Delta F}{k_{B} T}\\right)\n\n\nMinima in the free energy landscape"
   },
   {
     "objectID": "soft-matter_glasses.html#metabasins",
     "href": "soft-matter_glasses.html#metabasins",
     "title": "Complex Disordered Systems",
     "section": "Metabasins",
-    "text": "Metabasins\nWhen the temperature allows it, connected minima can be grouped into single basins called metabasins.\n\nthey are not just energy minima, they include entropy\nthey can behave as bone-fide local equilibria\nThese are akin the the metastable states we discussed before."
+    "text": "Metabasins\nWhen the temperature allows it, connected minima can be grouped into single basins called metabasins.\n\nthey are not just energy minima, they include entropy\nthey can behave as bone-fide local equilibria\nThese are akin to the metastable states.\n\n\nmetabasins in the free energy landscape"
   },
   {
     "objectID": "soft-matter_glasses.html#configurational-entropy",
     "href": "soft-matter_glasses.html#configurational-entropy",
     "title": "Complex Disordered Systems",
     "section": "Configurational entropy",
-    "text": "Configurational entropy\n\nThe number of distinct minima (metabasins) can be very large.\nWe can define a configurational entropy S_{conf} that counts the number of distinct states \\Omega: S_{conf} = k_{B} \\ln N_{\\mathrm minima}"
+    "text": "Configurational entropy\n\nThe number of distinct metabasins can be very large.\nWe can define a configurational entropy S_{conf} that counts the number of distinct states \\Omega: S_{conf} = k_{B} \\ln N_{\\mathrm minima}\n\nDifferent from the total entropy S \nS(T) = S(T_0) + \\int_{T_0}^{T} \\frac{1}{T'} \\left( \\frac{\\partial P}{\\partial T'} \\right)_V dV\n\nor (at constant volume)\n\nS(T) = S(T_0) + \\int_{T_0}^{T} \\frac{C_V(T')}{T'} dT'\n where C_V is the heat capacity at constant volume and T_0 is a reference temperature.\n0 For gas, fluids, and liquids at high T only the total entropy is well defined."
   },
   {
     "objectID": "soft-matter_glasses.html#configurational-entropy-1",
     "href": "soft-matter_glasses.html#configurational-entropy-1",
     "title": "Complex Disordered Systems",
     "section": "Configurational entropy",
-    "text": "Configurational entropy\nThe total entropy S can be obtained from thermodynamic relations, e.g. \nS(T) = S(T_0) + \\int_{T_0}^{T} \\frac{1}{T'} \\left( \\frac{\\partial P}{\\partial T'} \\right)_V dV\n\nor (at constant volume)\n\nS(T) = S(T_0) + \\int_{T_0}^{T} \\frac{C_V(T')}{T'} dT'\n where C_V is the heat capacity at constant volume and T_0 is a reference temperature.\nFluid, and liquid at high T: only the total entropy is well defined."
+    "text": "Configurational entropy\n\n\nAt low temperatures, in the glassy state, we can separate the total entropy into a vibrational and configurational part and define  S_{conf}(T) = S(T) -S_{vib}(T) +\nFor several fluids, this decreasess with temperature in an intriguing way.\n\n[…] Perhaps in some instances a thermodynamic “freezing-in” of degrees of freedom does take place as a desperate result of the liquid’s excessive generosity with its limited supply of entropy and energy as its temperature is lowered below the melting point. This would imply the existence of some kind of state of high order for the liquid at low temperature which differs from the normal crystalline state. A plausible structure for such a state seems, however, difficult to conceive, and we believe that the paradox is better resolved in another way […] (W. Kauzmann, Chem. Rev. 43, 219 (1948)).\n\n\n\n\n\nKauzmann paradox"
   },
   {
-    "objectID": "soft-matter_glasses.html#configurational-entropy-2",
-    "href": "soft-matter_glasses.html#configurational-entropy-2",
+    "objectID": "soft-matter_glasses.html#glasses",
+    "href": "soft-matter_glasses.html#glasses",
     "title": "Complex Disordered Systems",
-    "section": "Configurational entropy",
-    "text": "Configurational entropy\nAt low temperatures, in the glassy state, we can separate the total entropy into a vibrational and configurational part: S(T) = S_{vib}(T) + S_{conf}(T)\nWe are describing the thermodynamics of a disordered system in a way closer to what we would do for a crystal, where the reference conformations are provided by the crystalline packings (e.g. FCC, HCP, BCC etc.). ## Glass formation\nGlassy systems are a broad class of systems, not necessarily atomic or molecular, that exhibit arrested dynamics\n\nupon changing a thermodynamic parameter (e.g. temperature, density) the system’s relaxation time \\tau increases dramatically\nthe system falls out of equilibrium and becomes non-ergodic\nthe system behaves as a solid, but lacks long-range order (it is amorphous)"
+    "section": "Glasses",
+    "text": "Glasses\nGlassy systems are a broad class of systems, not necessarily atomic or molecular, that exhibit arrested dynamics\n\nupon changing a thermodynamic parameter (e.g. temperature, density) the system’s relaxation time \\tau increases dramatically\nthe system falls out of equilibrium and becomes non-ergodic\nthe system behaves as a solid, but lacks long-range order (it is amorphous)\n\n\n\n\n\n\n\n\n\nGlassformer\nScale of Constituents\nProperties\n\n\n\n\nSilicate glass\nAtomic (Si, O atoms)\nStrong, transparent, high melting point\n\n\nMetallic glass\nAtomic (metal atoms)\nHigh strength, corrosion resistant, ductile\n\n\nPolymer glass\nMacromolecular (polymers)\nFlexible, low density, tunable glass transition\n\n\nColloidal glass\nMesoscopic (colloids, ~nm–μm)\nOpaque, tunable rheology, soft solid-like\n\n\nMolecular glass\nMolecular (organic molecules)\nLow melting point, fragile, optical uses\n\n\nSugar glass\nMolecular (sucrose, glucose)\nBrittle, water soluble, low thermal stability\n\n\nChalcogenide glass\nAtomic (S, Se, Te atoms)\nInfrared transparency, phase-change memory"
+  },
+  {
+    "objectID": "soft-matter_glasses.html#glassy-systems",
+    "href": "soft-matter_glasses.html#glassy-systems",
+    "title": "Complex Disordered Systems",
+    "section": "Glassy systems",
+    "text": "Glassy systems\nBut glassy physics is broader than glassy materials: dense assemblies in general will display glassy dynamics.\n\n(a) Colloidal glasses, (b) dense cellular tissues, (c) ant colonies from Facets fo glassy physics, Berthier and Ediger, Physics Today (2016)"
+  },
+  {
+    "objectID": "soft-matter_glasses.html#glass-formation",
+    "href": "soft-matter_glasses.html#glass-formation",
+    "title": "Complex Disordered Systems",
+    "section": "Glass formation",
+    "text": "Glass formation\n\n\nTo form a glass we:\n\nstart from the liquid at high temperature\ncool with a finite cooling rate fast enough to avoid crystallisation\nenter a local equilibrium state (the supercooled liquid)\nat some point the relaxation time \\tau becomes longer than the experimental time scale and the system falls out of equilibrium into a glassy state\nchanging the cooling rate changes the glass transition temperature T_g and the final glass properties\n\n\n\n\n\nGlass formation tracked by specific volume, or enthalpy or configurational entropy (they all share the same behaviour)"
+  },
+  {
+    "objectID": "soft-matter_glasses.html#macroscopic-glass-properties",
+    "href": "soft-matter_glasses.html#macroscopic-glass-properties",
+    "title": "Complex Disordered Systems",
+    "section": "Macroscopic Glass properties",
+    "text": "Macroscopic Glass properties\n\nGlasses are solids: they have a finite shear modulus and yield stress\nGlasses are amorphous: they lack long-range order (no Bragg peaks in scattering experiments)\nGlasses are history-dependent: their properties depend on the cooling rate and thermal history\nGlasses exhibit ageing: their properties slowly evolve with time as they explore deeper minima in the energy landscape\n\n\nExample of brittle response in a simulated glassy model form Ozawa et al PNAS (2018): (a) stress-strain curves for different preparation temperatures; (b) initial deformation field, (b) final deformation field demonstrating fracture"
+  },
+  {
+    "objectID": "soft-matter_glasses.html#slowing-down",
+    "href": "soft-matter_glasses.html#slowing-down",
+    "title": "Complex Disordered Systems",
+    "section": "Slowing down",
+    "text": "Slowing down\n\n\nTheir solid-like behavior arises from the dramatic slowing down of their dynamics as they approach the glass transition.\nWe quantify this with density autocorrelation functions such as the intermediate scattering function: F(k, t) = \\frac{1}{N} \\left\\langle \\sum_{j=1}^{N} e^{i \\mathbf{k} \\cdot [\\mathbf{r}_j(t) - \\mathbf{r}_j(0)]} \\right\\rangle\nIt decays in two steps:\n\na fast decay corresponding to vibrations within the cage formed by neighbouring particles, occuring on a timescale called the beta relaxation time \\tau_{\\beta}\na slow decay corresponding to structural relaxation as particles escape their cages, taking place on the much longer alpha relaxation time \\tau_{\\alpha}\n\n\n\n\n\nIntermediate scattering function behaviour with lowering the temperature at a particular wave-vector corresponding to the first structural peak (first coordination shell), from Coslovich et al EPJE (2018)"
+  },
+  {
+    "objectID": "soft-matter_glasses.html#divergence-of-relaxation-time-and-viscosity",
+    "href": "soft-matter_glasses.html#divergence-of-relaxation-time-and-viscosity",
+    "title": "Complex Disordered Systems",
+    "section": "Divergence of relaxation time and viscosity",
+    "text": "Divergence of relaxation time and viscosity\n\n\nThe alpha relaxation time \\tau_{\\alpha} is proportional to the viscosity \\eta and both increase dramatically as the temperature approaches the glass transition temperature T_g.\nPhenomenologically one distinguishes between:\n\nStrong glassformers: Arrhenius behaviour of \\tau_{\\alpha} and \\eta \\sim \\exp\\left(\\dfrac{E_a}{k_{B} T}\\right)\nFragile glassformers: super-Arrhenius behaviour \\tau_{\\alpha} and \\eta. Often modelled with the Vogel-Fulcher-Tammann (VFT) equation \\tau \\sim \\exp\\left(\\dfrac{A}{T - T_0}\\right) where T_0 corrsponds to a divergence at finite temperature \\to phase transition?\n\n\n\n\n\nAngell plot showing the dramatic increase of viscosity and relaxation time as temperature approaches Tg for different glassformers, from Angell Science (1995)"
+  },
+  {
+    "objectID": "soft-matter_glasses.html#explaining-the-glass-transition",
+    "href": "soft-matter_glasses.html#explaining-the-glass-transition",
+    "title": "Complex Disordered Systems",
+    "section": "Explaining the glass transition",
+    "text": "Explaining the glass transition\n\nThe glass transition is still not fully understood.\nIt is one of the major open problems in condensed matter physics.\n\nWe have however various theories, mainly in two broad classes:\n\nThermodynamic theories: posit an underlying phase transition at a temperature T_K (Kauzmann temperature) where the configurational entropy vanishes.\nDynamic theories: attribute the slowing down to kinetic effects without invoking an underlying thermodynamic transition."
+  },
+  {
+    "objectID": "soft-matter_glasses.html#a-thermodynamic-theory-the-adam-gibbs-scenario",
+    "href": "soft-matter_glasses.html#a-thermodynamic-theory-the-adam-gibbs-scenario",
+    "title": "Complex Disordered Systems",
+    "section": "A thermodynamic theory: the Adam-Gibbs scenario",
+    "text": "A thermodynamic theory: the Adam-Gibbs scenario\nThe Adam-Gibbs model links the dramatic slowdown of dynamics to the underlying thermodynamics through configurational entropy S_{\\rm conf}.\nThe Adam-Gibbs relation: \n\\tau_\\alpha(T) = \\tau_0 \\exp\\left(\\frac{A}{T S_{\\rm conf}(T)}\\right)\n\nAs temperature decreases, S_{\\rm conf} drops, causing \\tau_\\alpha to increase rapidly. If S_{\\rm conf} vanishes at the Kauzmann temperature T_K, relaxation time diverges, reproducing the VFT form: \n\\tau_\\alpha(T) \\sim \\exp\\left(\\frac{B}{T - T_0}\\right)\n with T_0 \\approx T_K. This connects the kinetic slowdown to loss of configurational entropy.\n\nEvidence for decreasing configurational entropy and growing relaxation times exists, but the existence of a true thermodynamic transition at T_K remains debated."
+  },
+  {
+    "objectID": "soft-matter_glasses.html#a-dynamic-theory-dynamical-facilitation",
+    "href": "soft-matter_glasses.html#a-dynamic-theory-dynamical-facilitation",
+    "title": "Complex Disordered Systems",
+    "section": "A dynamic theory: dynamical facilitation",
+    "text": "A dynamic theory: dynamical facilitation\n\n\nDynamical facilitation theory provides an alternative to thermodynamic models:\nKey idea: Mobility facilitates more mobility\n\nRelaxation occurs only near already-mobile regions\nNo underlying thermodynamic transition required\n\nTemperature dependence:\n\nHigh T: Many mobile regions → fast relaxation\nLow T: Few mobile regions → cooperative motion required → slow relaxation\n\nThe relaxation time follows a parabolic law \\log \\tau_\\alpha(T) \\sim J^2 \\left( \\frac{1}{T} - \\frac{1}{T_0} \\right)^2\nUnlike VFT, no finite-temperature divergence, but still captures super-Arrhenius behavior.\n\n\n\n\nRecent evidence suggests facilitation as a dominating mechanism for relaxation at low temperatures."
+  },
+  {
+    "objectID": "soft-matter_glasses.html#demonstration-of-facilitated-dynamics",
+    "href": "soft-matter_glasses.html#demonstration-of-facilitated-dynamics",
+    "title": "Complex Disordered Systems",
+    "section": "Demonstration of facilitated dynamics",
+    "text": "Demonstration of facilitated dynamics\nTime evolution of the magnitude of the displacement field in a model of glass governed by dynamical facilitation from Hasym and Mandadapu PNAS (2024):\n\n\n\n\n\n\n\n\nExcitations emerge and trigger further mobility in their vicinity, leading to a cascade of relaxation events."
   },
   {
     "objectID": "soft-matter_intro.html#today",

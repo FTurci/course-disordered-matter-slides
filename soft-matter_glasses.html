@@ -8,7 +8,9 @@
 <link href="site_libs/quarto-html/light-border.css" rel="stylesheet">
 <link href="site_libs/quarto-html/quarto-syntax-highlighting-7b89279ff1a6dce999919e0e67d4d9ec.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/quarto-contrib/live-runtime/live-runtime.js" type="module"></script>
-<link href="site_libs/quarto-contrib/live-runtime/live-runtime.css" rel="stylesheet"><meta charset="utf-8">
+<link href="site_libs/quarto-contrib/live-runtime/live-runtime.css" rel="stylesheet">
+<script src="site_libs/quarto-contrib/videojs/video.min.js"></script>
+<link href="site_libs/quarto-contrib/videojs/video-js.css" rel="stylesheet"><meta charset="utf-8">
   <meta name="generator" content="quarto-1.8.25">
 
   <meta name="author" content="Francesco Turci">
@@ -253,53 +255,251 @@ Some configurations are forbidden (constraints on the rules of motion) and non-e
 <section id="energy-landscapes-1" class="slide level2">
 <h2>Energy landscapes</h2>
 <ul>
-<li>Different minima correspond to different conformations or <strong>states</strong> of the system. Example:
-<ul>
-<li>liquid/gas</li>
-<li>crystal/amorphous solid</li>
-<li>folded/unfolded protein</li>
-</ul></li>
+<li>Different minima correspond to different conformations or <strong>states</strong> of the system. (e.g.&nbsp;liquid/gas, crystal/amorphous solid, folded/unfolded protein)</li>
 <li>They are separated by <strong>energy barriers</strong> <span class="math inline">\Delta F</span></li>
-<li>The time to transition is often modelled as Arrhenius <span class="math inline">\tau \sim \exp\left(\dfrac{\Delta F}{k_{B} T}\right)</span> <img data-src="./figs/landscape-topo.png" height="500" alt="Minima in the free energy landscape"></li>
+<li>The time to transition is often modelled as Arrhenius <span class="math inline">\tau \sim \exp\left(\dfrac{\Delta F}{k_{B} T}\right)</span></li>
 </ul>
-</section>
+
+<img data-src="./figs/landscape-topo.png" class="r-stretch quarto-figure-center"><p class="caption">Minima in the free energy landscape</p></section>
 <section id="metabasins" class="slide level2">
 <h2>Metabasins</h2>
 <p>When the temperature allows it, connected minima can be grouped into single <strong>basins</strong> called <strong>metabasins</strong>.</p>
 <ul>
 <li>they are not just energy minima, they include entropy</li>
 <li>they can behave as bone-fide local <strong>equilibria</strong></li>
-<li>These are akin the the <strong>metastable states</strong> we discussed before.</li>
+<li>These are akin to the <strong>metastable states</strong>.</li>
 </ul>
-</section>
+
+<img data-src="./figs/landscape-basins.png" class="r-stretch quarto-figure-center"><p class="caption">metabasins in the free energy landscape</p></section>
 <section id="configurational-entropy" class="slide level2">
 <h2>Configurational entropy</h2>
 <ul>
-<li>The number of distinct minima (metabasins) can be very large.</li>
+<li>The number of distinct metabasins can be very large.</li>
 <li>We can define a <strong>configurational entropy</strong> <span class="math inline">S_{conf}</span> that counts the number of distinct states <span class="math inline">\Omega</span>: <span class="math display">S_{conf} = k_{B} \ln N_{\mathrm minima}</span></li>
 </ul>
-</section>
-<section id="configurational-entropy-1" class="slide level2">
-<h2>Configurational entropy</h2>
-<p>The total entropy <span class="math inline">S</span> can be obtained from thermodynamic relations, e.g. <span class="math display">
+<p><strong>Different</strong> from the total entropy <span class="math inline">S</span> <span class="math display">
 S(T) = S(T_0) + \int_{T_0}^{T} \frac{1}{T'} \left( \frac{\partial P}{\partial T'} \right)_V dV
 </span></p>
 <p>or (at constant volume)</p>
 <p><span class="math display">
 S(T) = S(T_0) + \int_{T_0}^{T} \frac{C_V(T')}{T'} dT'
 </span> where <span class="math inline">C_V</span> is the heat capacity at constant volume and <span class="math inline">T_0</span> is a reference temperature.</p>
-<p>Fluid, and liquid at high T: only the total entropy is well defined.</p>
+<p>0 For gas, fluids, and liquids at high T only the <strong>total entropy</strong> is well defined.</p>
 </section>
-<section id="configurational-entropy-2" class="slide level2">
+<section id="configurational-entropy-1" class="slide level2">
 <h2>Configurational entropy</h2>
-<p>At low temperatures, in the glassy state, we can separate the total entropy into a vibrational and configurational part: <span class="math display">S(T) = S_{vib}(T) + S_{conf}(T)</span></p>
-<p>We are describing the thermodynamics of a disordered system in a way closer to what we would do for a crystal, where the reference conformations are provided by the crystalline packings (e.g.&nbsp;FCC, HCP, BCC etc.). ## Glass formation</p>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p>At low temperatures, in the glassy state, we can separate the total entropy into a vibrational and configurational part and define <span class="math display"> S_{conf}(T) = S(T) -S_{vib}(T) +</span></p>
+<p>For several fluids, this <em>decreasess</em> with temperature in an intriguing way.</p>
+<blockquote>
+<p>[…] Perhaps in some instances a thermodynamic <strong>“freezing-in”</strong> of degrees of freedom does take place as a desperate result of the liquid’s excessive generosity with its limited supply of entropy and energy as its temperature is lowered below the melting point. This would imply the existence of <strong>some kind of state of high order</strong> for the liquid at low temperature which <strong>differs</strong> from the normal crystalline state. A plausible structure for such a state seems, however, difficult to conceive, and we believe that the paradox is better resolved in another way […] (W. Kauzmann, Chem. Rev.&nbsp;43, 219 (1948)).</p>
+</blockquote>
+</div><div class="column" style="width:50%;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="./figs/kauzmann.png"></p>
+<figcaption>Kauzmann paradox</figcaption>
+</figure>
+</div>
+</div></div>
+</section>
+<section id="glasses" class="slide level2">
+<h2>Glasses</h2>
 <p>Glassy systems are a broad class of systems, not necessarily atomic or molecular, that exhibit <strong>arrested dynamics</strong></p>
 <ul>
 <li>upon changing a thermodynamic parameter (e.g.&nbsp;temperature, density) the system’s relaxation time <span class="math inline">\tau</span> increases dramatically</li>
 <li>the system falls out of equilibrium and becomes <strong>non-ergodic</strong></li>
 <li>the system behaves as a solid, but lacks long-range order (it is <strong>amorphous</strong>)</li>
 </ul>
+<table class="caption-top">
+<colgroup>
+<col style="width: 21%">
+<col style="width: 27%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Glassformer</th>
+<th>Scale of Constituents</th>
+<th>Properties</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Silicate glass</td>
+<td>Atomic (Si, O atoms)</td>
+<td>Strong, transparent, high melting point</td>
+</tr>
+<tr class="even">
+<td>Metallic glass</td>
+<td>Atomic (metal atoms)</td>
+<td>High strength, corrosion resistant, ductile</td>
+</tr>
+<tr class="odd">
+<td>Polymer glass</td>
+<td>Macromolecular (polymers)</td>
+<td>Flexible, low density, tunable glass transition</td>
+</tr>
+<tr class="even">
+<td>Colloidal glass</td>
+<td>Mesoscopic (colloids, ~nm–μm)</td>
+<td>Opaque, tunable rheology, soft solid-like</td>
+</tr>
+<tr class="odd">
+<td>Molecular glass</td>
+<td>Molecular (organic molecules)</td>
+<td>Low melting point, fragile, optical uses</td>
+</tr>
+<tr class="even">
+<td>Sugar glass</td>
+<td>Molecular (sucrose, glucose)</td>
+<td>Brittle, water soluble, low thermal stability</td>
+</tr>
+<tr class="odd">
+<td>Chalcogenide glass</td>
+<td>Atomic (S, Se, Te atoms)</td>
+<td>Infrared transparency, phase-change memory</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="glassy-systems" class="slide level2">
+<h2>Glassy systems</h2>
+<p>But glassy physics is broader than glassy materials: dense assemblies in general will display glassy dynamics.</p>
+
+<img data-src="./figs/facets.png" class="r-stretch quarto-figure-center"><p class="caption">(a) Colloidal glasses, (b) dense cellular tissues, (c) ant colonies from <em>Facets fo glassy physics</em>, Berthier and Ediger, Physics Today (2016)</p></section>
+<section id="glass-formation" class="slide level2">
+<h2>Glass formation</h2>
+<div class="columns">
+<div class="column" style="width:30%;">
+<p>To form a glass we:</p>
+<ul>
+<li>start from the liquid at high temperature</li>
+<li>cool with a finite cooling rate fast enough to <strong>avoid crystallisation</strong></li>
+<li>enter a local equilibrium state (the <strong>supercooled liquid</strong>)</li>
+<li>at some point the relaxation time <span class="math inline">\tau</span> becomes longer than the experimental time scale and the system <strong>falls out of equilibrium</strong> into a glassy state</li>
+<li>changing the cooling rate changes the glass transition temperature <span class="math inline">T_g</span> and the final glass properties</li>
+</ul>
+</div><div class="column" style="width:70%;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="./figs/glass.svg"></p>
+<figcaption>Glass formation tracked by specific volume, or enthalpy or configurational entropy (they all share the same behaviour)</figcaption>
+</figure>
+</div>
+</div></div>
+</section>
+<section id="macroscopic-glass-properties" class="slide level2">
+<h2>Macroscopic Glass properties</h2>
+<ul>
+<li>Glasses are <strong>solids</strong>: they have a finite shear modulus and yield stress</li>
+<li>Glasses are <strong>amorphous</strong>: they lack long-range order (no Bragg peaks in scattering experiments)</li>
+<li>Glasses are <strong>history-dependent</strong>: their properties depend on the cooling rate and thermal history</li>
+<li>Glasses exhibit <strong>ageing</strong>: their properties slowly evolve with time as they explore deeper minima in the energy landscape</li>
+</ul>
+
+<img data-src="./figs/brittle.png" class="r-stretch quarto-figure-center"><p class="caption">Example of brittle response in a simulated glassy model form Ozawa et al PNAS (2018): (a) stress-strain curves for different preparation temperatures; (b) initial deformation field, (b) final deformation field demonstrating fracture</p></section>
+<section id="slowing-down" class="slide level2">
+<h2>Slowing down</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p>Their solid-like behavior arises from the dramatic slowing down of their dynamics as they approach the glass transition.</p>
+<p>We quantify this with density autocorrelation functions such as the intermediate scattering function: <span class="math display">F(k, t) = \frac{1}{N} \left\langle \sum_{j=1}^{N} e^{i \mathbf{k} \cdot [\mathbf{r}_j(t) - \mathbf{r}_j(0)]} \right\rangle</span></p>
+<p>It decays in two steps:</p>
+<ul>
+<li>a fast decay corresponding to <strong>vibrations</strong> within the cage formed by neighbouring particles, occuring on a timescale called the <strong>beta relaxation time</strong> <span class="math inline">\tau_{\beta}</span></li>
+<li>a slow decay corresponding to <strong>structural relaxation</strong> as particles escape their cages, taking place on the much longer <strong>alpha relaxation time</strong> <span class="math inline">\tau_{\alpha}</span></li>
+</ul>
+</div><div class="column" style="width:50%;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="./figs/fskt.png"></p>
+<figcaption>Intermediate scattering function behaviour with lowering the temperature at a particular wave-vector corresponding to the first structural peak (first coordination shell), from Coslovich et al EPJE (2018)</figcaption>
+</figure>
+</div>
+</div></div>
+</section>
+<section id="divergence-of-relaxation-time-and-viscosity" class="slide level2">
+<h2>Divergence of relaxation time and viscosity</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p>The alpha relaxation time <span class="math inline">\tau_{\alpha}</span> is proportional to the viscosity <span class="math inline">\eta</span> and both increase dramatically as the temperature approaches the glass transition temperature <span class="math inline">T_g</span>.</p>
+<p>Phenomenologically one distinguishes between:</p>
+<ul>
+<li><strong>Strong glassformers</strong>: Arrhenius behaviour of <span class="math inline">\tau_{\alpha}</span> and <span class="math inline">\eta</span> <span class="math inline">\sim \exp\left(\dfrac{E_a}{k_{B} T}\right)</span></li>
+<li><strong>Fragile glassformers</strong>: super-Arrhenius behaviour <span class="math inline">\tau_{\alpha}</span> and <span class="math inline">\eta</span>. Often modelled with the <strong>Vogel-Fulcher-Tammann</strong> (VFT) equation <span class="math inline">\tau \sim \exp\left(\dfrac{A}{T - T_0}\right)</span> where <span class="math inline">T_0</span> corrsponds to a <strong>divergence</strong> at <strong>finite</strong> temperature <span class="math inline">\to</span> <strong>phase transition?</strong></li>
+</ul>
+</div><div class="column" style="width:50%;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="./figs/figangell.svg"></p>
+<figcaption>Angell plot showing the dramatic increase of viscosity and relaxation time as temperature approaches Tg for different glassformers, from Angell Science (1995)</figcaption>
+</figure>
+</div>
+</div></div>
+</section>
+<section id="explaining-the-glass-transition" class="slide level2">
+<h2>Explaining the glass transition</h2>
+<ul>
+<li>The glass transition is still not fully understood.</li>
+<li>It is one of the major open problems in condensed matter physics.</li>
+</ul>
+<p>We have however various theories, mainly in two broad classes:</p>
+<ul>
+<li><strong>Thermodynamic theories</strong>: posit an underlying phase transition at a temperature <span class="math inline">T_K</span> (Kauzmann temperature) where the configurational entropy vanishes.</li>
+<li><strong>Dynamic theories</strong>: attribute the slowing down to kinetic effects without invoking an underlying thermodynamic transition.</li>
+</ul>
+</section>
+<section id="a-thermodynamic-theory-the-adam-gibbs-scenario" class="slide level2">
+<h2>A thermodynamic theory: the Adam-Gibbs scenario</h2>
+<p>The <strong>Adam-Gibbs model</strong> links the dramatic slowdown of dynamics to the underlying thermodynamics through <strong>configurational entropy</strong> <span class="math inline">S_{\rm conf}</span>.</p>
+<p>The Adam-Gibbs relation: <span class="math display">
+\tau_\alpha(T) = \tau_0 \exp\left(\frac{A}{T S_{\rm conf}(T)}\right)
+</span></p>
+<p>As temperature decreases, <span class="math inline">S_{\rm conf}</span> drops, causing <span class="math inline">\tau_\alpha</span> to increase rapidly. If <span class="math inline">S_{\rm conf}</span> vanishes at the Kauzmann temperature <span class="math inline">T_K</span>, relaxation time diverges, reproducing the VFT form: <span class="math display">
+\tau_\alpha(T) \sim \exp\left(\frac{B}{T - T_0}\right)
+</span> with <span class="math inline">T_0 \approx T_K</span>. This connects the kinetic slowdown to loss of configurational entropy.</p>
+<ul>
+<li>Evidence for decreasing configurational entropy and growing relaxation times exists, but the existence of a true thermodynamic transition at <span class="math inline">T_K</span> remains debated.</li>
+</ul>
+</section>
+<section id="a-dynamic-theory-dynamical-facilitation" class="slide level2">
+<h2>A dynamic theory: dynamical facilitation</h2>
+<div class="columns">
+<div class="column" style="width:70%;">
+<p><strong>Dynamical facilitation theory</strong> provides an alternative to thermodynamic models:</p>
+<p><strong>Key idea</strong>: Mobility facilitates more mobility</p>
+<ul>
+<li>Relaxation occurs only near already-mobile regions</li>
+<li>No underlying thermodynamic transition required</li>
+</ul>
+<p><strong>Temperature dependence</strong>:</p>
+<ul>
+<li><strong>High T</strong>: Many mobile regions → fast relaxation</li>
+<li><strong>Low T</strong>: Few mobile regions → cooperative motion required → slow relaxation</li>
+</ul>
+<p>The relaxation time follows a parabolic law <span class="math display">\log \tau_\alpha(T) \sim J^2 \left( \frac{1}{T} - \frac{1}{T_0} \right)^2</span></p>
+<p>Unlike VFT, no finite-temperature divergence, but still captures super-Arrhenius behavior.</p>
+</div><div class="column" style="width:30%;">
+<p><img data-src="./figs/facilitation.png"></p>
+</div></div>
+<ul>
+<li>Recent evidence suggests facilitation as a dominating mechanism for relaxation at low temperatures.</li>
+</ul>
+</section>
+<section id="demonstration-of-facilitated-dynamics" class="slide level2">
+<h2>Demonstration of facilitated dynamics</h2>
+<p>Time evolution of the magnitude of the displacement field in a model of glass governed by dynamical facilitation from Hasym and Mandadapu PNAS (2024):</p>
+<div class="columns">
+<div class="column" style="width:25%;">
+
+</div><div class="column" style="width:60%;">
+<video id="video_shortcode_videojs_video1" height="800" class="video-js vjs-default-skin " controls="" preload="auto" data-setup="{}" title=""><source src="./figs/pnas.2322592121.sm04.mp4"></video>
+</div><div class="column" style="width:15%;">
+
+</div></div>
+<p>Excitations emerge and trigger further mobility in their vicinity, leading to a cascade of relaxation events.</p>
 <!-- 
 - the phase space is difficult to explore and so the system is **stuck**
 - the system is just very slow and keeps on changing as we observe it (**ageing**)
@@ -697,6 +897,7 @@ W10=
         }
       });
       </script>
+    <script>videojs(video_shortcode_videojs_video1);</script>
     
 
 </body></html>
