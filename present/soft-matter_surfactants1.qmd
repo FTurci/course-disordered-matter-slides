@@ -432,9 +432,7 @@ N v=\frac{4 \pi}{3} R^{3} \\
 N a_{0}=4 \pi R^{2}\end{gathered}$$
 
 Therefore
-$$\dfrac{v}{a_{0}}=\dfrac{R}{3}<\dfrac{l_{c}}{3}
-
-$$
+$$\dfrac{v}{a_{0}}=\dfrac{R}{3}<\dfrac{l_{c}}{3}$$
 
 where we used the fact that the radius $R$ cannot be larger than the critical chain length $\mathrm{l}_{\mathrm{c}}$. We thus obtain for the critical packing parameter $P$
 
@@ -444,7 +442,7 @@ $$
 
 ## Cylindrical micelles
 
-For a cylindrical micelle the total volume and surface area are given by
+For a cylindrical micelle of length $L$ the total volume and surface area are given by
 $$N v=\pi R^{2} L$$
 
 and
@@ -459,9 +457,9 @@ We thus obtain for the critical packing parameter $P=\dfrac{v}{a_{0} l_{c}}$
 
 Below the lower limit spherical micelles are formed.
 
-## Bilayers lamellar)
+## Bilayers (lamellar)
 
-For a bilayer (with separation $D$ between the layers) the total volume and surface area are given by
+For a bilayer (with separation $D$ between the layers and area $A$) the total volume and surface area are given by
 
 $$
 \begin{aligned}

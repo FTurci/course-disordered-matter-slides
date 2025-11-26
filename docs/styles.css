@@ -49,3 +49,23 @@
   display: block;
   margin: 0 auto;
 }
+.absolute-box {
+  position: absolute;
+  width: 31%;
+  background: #f2c186;     /* post-it color */
+  padding: 2em;
+  border-radius: 8px;
+  box-shadow: 3px 3px 8px rgba(0,0,0,0.25);
+  transform: rotate(-2deg); /* “post-it” feel */
+}
+
+
+.rot1 { transform: rotate(-5deg); }
+.rot2 { transform: rotate(3deg); }
+.rot3 { transform: rotate(-8deg); }
+.rot4 { transform: rotate(6deg); }
+
+.color1 { background: #fff9c4; }  /* yellow */
+.color2 { background: #c8e6c9; }  /* green */
+.color3 { background: #bbdefb; }  /* blue */
+.color4 { background: #ffe0b2; }  /* orange */
