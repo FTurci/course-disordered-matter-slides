@@ -606,14 +606,14 @@
     "href": "soft-matter_surfactants1.html#cylindrical-micelles",
     "title": "Complex Disordered Systems",
     "section": "Cylindrical micelles",
-    "text": "Cylindrical micelles\nFor a cylindrical micelle the total volume and surface area are given by N v=\\pi R^{2} L\nand\nN a_{0}=2 \\pi R L\nTherefore \\dfrac{v}{a_{0}}=\\dfrac{R}{2}&lt;\\dfrac{l_{c}}{2} again using R&lt;l_{C}.\nWe thus obtain for the critical packing parameter P=\\dfrac{v}{a_{0} l_{c}} that \\dfrac{1}{3}&lt;P&lt;\\dfrac{1}{2}\nBelow the lower limit spherical micelles are formed."
+    "text": "Cylindrical micelles\nFor a cylindrical micelle of length L the total volume and surface area are given by N v=\\pi R^{2} L\nand\nN a_{0}=2 \\pi R L\nTherefore \\dfrac{v}{a_{0}}=\\dfrac{R}{2}&lt;\\dfrac{l_{c}}{2} again using R&lt;l_{C}.\nWe thus obtain for the critical packing parameter P=\\dfrac{v}{a_{0} l_{c}} that \\dfrac{1}{3}&lt;P&lt;\\dfrac{1}{2}\nBelow the lower limit spherical micelles are formed."
   },
   {
     "objectID": "soft-matter_surfactants1.html#bilayers-lamellar",
     "href": "soft-matter_surfactants1.html#bilayers-lamellar",
     "title": "Complex Disordered Systems",
-    "section": "Bilayers lamellar)",
-    "text": "Bilayers lamellar)\nFor a bilayer (with separation D between the layers) the total volume and surface area are given by\n\n\\begin{aligned}\n& N v=A D \\\\\n& N a_{0}=2 A \\\\\n& \\frac{v}{a_{0}}=\\frac{D}{2}&lt;l_{c} \\quad\\left(\\text { using } D&lt;2 l_{c}\\right)\n\\end{aligned}\n\nWe thus obtain for the critical packing parameter P=\\dfrac{v}{a_{0} l_{c}} that \\dfrac{1}{2}&lt;P&lt;1\nBelow the lower limit cylindrical micelles are formed."
+    "section": "Bilayers (lamellar)",
+    "text": "Bilayers (lamellar)\nFor a bilayer (with separation D between the layers and area A) the total volume and surface area are given by\n\n\\begin{aligned}\n& N v=A D \\\\\n& N a_{0}=2 A \\\\\n& \\frac{v}{a_{0}}=\\frac{D}{2}&lt;l_{c} \\quad\\left(\\text { using } D&lt;2 l_{c}\\right)\n\\end{aligned}\n\nWe thus obtain for the critical packing parameter P=\\dfrac{v}{a_{0} l_{c}} that \\dfrac{1}{2}&lt;P&lt;1\nBelow the lower limit cylindrical micelles are formed."
   },
   {
     "objectID": "soft-matter_surfactants1.html#packing-parameter-summary",
