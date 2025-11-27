@@ -284,14 +284,14 @@ S(T) = S(T_0) + \int_{T_0}^{T} \frac{1}{T'} \left( \frac{\partial P}{\partial T'
 <p><span class="math display">
 S(T) = S(T_0) + \int_{T_0}^{T} \frac{C_V(T')}{T'} dT'
 </span> where <span class="math inline">C_V</span> is the heat capacity at constant volume and <span class="math inline">T_0</span> is a reference temperature.</p>
-<p>0 For gas, fluids, and liquids at high T only the <strong>total entropy</strong> is well defined.</p>
+<p>For gas, fluids, and liquids at high T only the <strong>total entropy</strong> is well defined.</p>
 </section>
 <section id="configurational-entropy-1" class="slide level2">
 <h2>Configurational entropy</h2>
 <div class="columns">
 <div class="column" style="width:50%;">
-<p>At low temperatures, in the glassy state, we can separate the total entropy into a vibrational and configurational part and define <span class="math display"> S_{conf}(T) = S(T) -S_{vib}(T) +</span></p>
-<p>For several fluids, this <em>decreasess</em> with temperature in an intriguing way.</p>
+<p>As we take liquids to low temperatures, we can separate the total entropy into a vibrational and configurational part and define <span class="math display"> S_{conf}(T) = S(T) -S_{vib}(T)</span></p>
+<p>For several fluids, this <em>decreases</em> with temperature in an intriguing way.</p>
 <blockquote>
 <p>[…] Perhaps in some instances a thermodynamic <strong>“freezing-in”</strong> of degrees of freedom does take place as a desperate result of the liquid’s excessive generosity with its limited supply of entropy and energy as its temperature is lowered below the melting point. This would imply the existence of <strong>some kind of state of high order</strong> for the liquid at low temperature which <strong>differs</strong> from the normal crystalline state. A plausible structure for such a state seems, however, difficult to conceive, and we believe that the paradox is better resolved in another way […] (W. Kauzmann, Chem. Rev.&nbsp;43, 219 (1948)).</p>
 </blockquote>
@@ -299,7 +299,7 @@ S(T) = S(T_0) + \int_{T_0}^{T} \frac{C_V(T')}{T'} dT'
 <div class="quarto-figure quarto-figure-center">
 <figure>
 <p><img data-src="./figs/kauzmann.png"></p>
-<figcaption>Kauzmann paradox</figcaption>
+<figcaption>Kauzmann paradox: the entropy difference between the liquid and the crystal is extrapolated to low temperatures: glasses plateau, but what if we could equilibrate at very low T?</figcaption>
 </figure>
 </div>
 </div></div>
@@ -453,13 +453,38 @@ S(T) = S(T_0) + \int_{T_0}^{T} \frac{C_V(T')}{T'} dT'
 </section>
 <section id="a-thermodynamic-theory-the-adam-gibbs-scenario" class="slide level2">
 <h2>A thermodynamic theory: the Adam-Gibbs scenario</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
 <p>The <strong>Adam-Gibbs model</strong> links the dramatic slowdown of dynamics to the underlying thermodynamics through <strong>configurational entropy</strong> <span class="math inline">S_{\rm conf}</span>.</p>
-<p>The Adam-Gibbs relation: <span class="math display">
+<ul>
+<li>The key idea is the existense of <strong>cooperatively rearranging regions</strong> (CRRs): to relax, particles need to move together and explore a new metabasin in the energy landscape.</li>
+</ul>
+<p><em>Mosaic</em> of <span class="math inline">M_{CRR}</span> independent cooperatively rearranging regions of size <span class="math inline">n_{CRR}</span> particles each. The total number of particles is <span class="math inline">N = M_{CRR} n_{CRR}</span>.</p>
+<p>We <strong>assume</strong> that the total configurational entropy is additive and that each CRR contributes a constant amount <span class="math inline">s_{conf}</span>, irrespective of its size</p>
+<p><span class="math inline">S_{conf} = M_{CRR} s^* = \dfrac{N}{n_{CRR}} s^*</span></p>
+<p>Rearranging gives the size of a CRR as a function of the configurational entropy per particle <span class="math inline">S_{conf}/N</span>: <span class="math display">n_{CRR}(T) \propto \dfrac{1}{S_{conf}(T)/N}</span></p>
+</div><div class="column" style="width:50%;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="./figs/mosaic.png"></p>
+<figcaption>Mosaic of cooperatively rearranging regions</figcaption>
+</figure>
+</div>
+</div></div>
+</section>
+<section id="a-thermodynamic-theory-the-adam-gibbs-scenario-1" class="slide level2">
+<h2>A thermodynamic theory: the Adam-Gibbs scenario</h2>
+<p>We can then assume that the dynamics is activated with an energy barrier proportional to the size of a CRR:</p>
+<p><span class="math display">\Delta E(T) \propto n_{CRR}(T)
+</span></p>
+<p>From Arrhenius activation, the relaxation time is then</p>
+<p><span class="math display">
 \tau_\alpha(T) = \tau_0 \exp\left(\frac{A}{T S_{\rm conf}(T)}\right)
 </span></p>
 <p>As temperature decreases, <span class="math inline">S_{\rm conf}</span> drops, causing <span class="math inline">\tau_\alpha</span> to increase rapidly. If <span class="math inline">S_{\rm conf}</span> vanishes at the Kauzmann temperature <span class="math inline">T_K</span>, relaxation time diverges, reproducing the VFT form: <span class="math display">
 \tau_\alpha(T) \sim \exp\left(\frac{B}{T - T_0}\right)
-</span> with <span class="math inline">T_0 \approx T_K</span>. This connects the kinetic slowdown to loss of configurational entropy.</p>
+</span> with <span class="math inline">T_0 \approx T_K</span>. This connects the kinetic slowdown to loss of configurational entropy making the theory thermodynamic.</p>
+<p>It also points to a <strong>critical divergence</strong>: the size of the CRR needs to diverge as we approach <span class="math inline">T_K</span> to have <span class="math inline">S_{conf} \to 0</span>.</p>
 <ul>
 <li>Evidence for decreasing configurational entropy and growing relaxation times exists, but the existence of a true thermodynamic transition at <span class="math inline">T_K</span> remains debated.</li>
 </ul>
@@ -468,7 +493,8 @@ S(T) = S(T_0) + \int_{T_0}^{T} \frac{C_V(T')}{T'} dT'
 <h2>A dynamic theory: dynamical facilitation</h2>
 <div class="columns">
 <div class="column" style="width:70%;">
-<p><strong>Dynamical facilitation theory</strong> provides an alternative to thermodynamic models:</p>
+<p><strong>Dynamical facilitation theory</strong> provides an alternative to thermodynamic model. It stems from the observations that glassy systems are universally heterogenous in space and time: their mobility is very broadly distributed, with regions of high mobility <strong>coexisting</strong> with regions of low mobility.</p>
+<p>This <strong>dynamical coexistence</strong> is called <strong>dynamical heterogeneity</strong> and can be formalised as a dynamical phase transition.</p>
 <p><strong>Key idea</strong>: Mobility facilitates more mobility</p>
 <ul>
 <li>Relaxation occurs only near already-mobile regions</li>
@@ -480,7 +506,7 @@ S(T) = S(T_0) + \int_{T_0}^{T} \frac{C_V(T')}{T'} dT'
 <li><strong>Low T</strong>: Few mobile regions → cooperative motion required → slow relaxation</li>
 </ul>
 <p>The relaxation time follows a parabolic law <span class="math display">\log \tau_\alpha(T) \sim J^2 \left( \frac{1}{T} - \frac{1}{T_0} \right)^2</span></p>
-<p>Unlike VFT, no finite-temperature divergence, but still captures super-Arrhenius behavior.</p>
+<p>Unlike VFT, no finite-temperature divergence, no criticality, but still captures super-Arrhenius behavior.</p>
 </div><div class="column" style="width:30%;">
 <p><img data-src="./figs/facilitation.png"></p>
 </div></div>
@@ -488,8 +514,8 @@ S(T) = S(T_0) + \int_{T_0}^{T} \frac{C_V(T')}{T'} dT'
 <li>Recent evidence suggests facilitation as a dominating mechanism for relaxation at low temperatures.</li>
 </ul>
 </section>
-<section id="demonstration-of-facilitated-dynamics" class="slide level2">
-<h2>Demonstration of facilitated dynamics</h2>
+<section id="demonstration-of-facilitated-dynamics-and-dynamical-heterogeneities" class="slide level2">
+<h2>Demonstration of facilitated dynamics and dynamical heterogeneities</h2>
 <p>Time evolution of the magnitude of the displacement field in a model of glass governed by dynamical facilitation from Hasym and Mandadapu PNAS (2024):</p>
 <div class="columns">
 <div class="column" style="width:25%;">
@@ -500,6 +526,33 @@ S(T) = S(T_0) + \int_{T_0}^{T} \frac{C_V(T')}{T'} dT'
 
 </div></div>
 <p>Excitations emerge and trigger further mobility in their vicinity, leading to a cascade of relaxation events.</p>
+</section>
+<section id="unification" class="slide level2">
+<h2>Unification</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<ul>
+<li>Much more to glassy dynamics:
+<ul>
+<li>geometrical frustration</li>
+<li>local structures</li>
+<li>growth of lengthscales</li>
+<li>jamming</li>
+<li>mean field solutions (see Nobel Prize Giorgio Parisi)</li>
+</ul></li>
+</ul>
+<p>Ongoing work to unify the various scenarios.</p>
+<ul>
+<li>Example: Turci et al PRX (2017): a numerical demonstration that an extension dynamical facilitation is compatible with decreasing entropies, emergence of local structures and criticality.</li>
+</ul>
+</div><div class="column" style="width:50%;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="./figs/eyecatchingfigure.png"></p>
+<figcaption>Phase diagram for structural-dynamical coexistence in glasses.</figcaption>
+</figure>
+</div>
+</div></div>
 <!-- 
 - the phase space is difficult to explore and so the system is **stuck**
 - the system is just very slow and keeps on changing as we observe it (**ageing**)

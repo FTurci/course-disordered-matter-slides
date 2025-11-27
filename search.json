@@ -991,14 +991,14 @@
     "href": "soft-matter_glasses.html#configurational-entropy",
     "title": "Complex Disordered Systems",
     "section": "Configurational entropy",
-    "text": "Configurational entropy\n\nThe number of distinct metabasins can be very large.\nWe can define a configurational entropy S_{conf} that counts the number of distinct states \\Omega: S_{conf} = k_{B} \\ln N_{\\mathrm minima}\n\nDifferent from the total entropy S \nS(T) = S(T_0) + \\int_{T_0}^{T} \\frac{1}{T'} \\left( \\frac{\\partial P}{\\partial T'} \\right)_V dV\n\nor (at constant volume)\n\nS(T) = S(T_0) + \\int_{T_0}^{T} \\frac{C_V(T')}{T'} dT'\n where C_V is the heat capacity at constant volume and T_0 is a reference temperature.\n0 For gas, fluids, and liquids at high T only the total entropy is well defined."
+    "text": "Configurational entropy\n\nThe number of distinct metabasins can be very large.\nWe can define a configurational entropy S_{conf} that counts the number of distinct states \\Omega: S_{conf} = k_{B} \\ln N_{\\mathrm minima}\n\nDifferent from the total entropy S \nS(T) = S(T_0) + \\int_{T_0}^{T} \\frac{1}{T'} \\left( \\frac{\\partial P}{\\partial T'} \\right)_V dV\n\nor (at constant volume)\n\nS(T) = S(T_0) + \\int_{T_0}^{T} \\frac{C_V(T')}{T'} dT'\n where C_V is the heat capacity at constant volume and T_0 is a reference temperature.\nFor gas, fluids, and liquids at high T only the total entropy is well defined."
   },
   {
     "objectID": "soft-matter_glasses.html#configurational-entropy-1",
     "href": "soft-matter_glasses.html#configurational-entropy-1",
     "title": "Complex Disordered Systems",
     "section": "Configurational entropy",
-    "text": "Configurational entropy\n\n\nAt low temperatures, in the glassy state, we can separate the total entropy into a vibrational and configurational part and define  S_{conf}(T) = S(T) -S_{vib}(T) +\nFor several fluids, this decreasess with temperature in an intriguing way.\n\n[…] Perhaps in some instances a thermodynamic “freezing-in” of degrees of freedom does take place as a desperate result of the liquid’s excessive generosity with its limited supply of entropy and energy as its temperature is lowered below the melting point. This would imply the existence of some kind of state of high order for the liquid at low temperature which differs from the normal crystalline state. A plausible structure for such a state seems, however, difficult to conceive, and we believe that the paradox is better resolved in another way […] (W. Kauzmann, Chem. Rev. 43, 219 (1948)).\n\n\n\n\n\nKauzmann paradox"
+    "text": "Configurational entropy\n\n\nAs we take liquids to low temperatures, we can separate the total entropy into a vibrational and configurational part and define  S_{conf}(T) = S(T) -S_{vib}(T)\nFor several fluids, this decreases with temperature in an intriguing way.\n\n[…] Perhaps in some instances a thermodynamic “freezing-in” of degrees of freedom does take place as a desperate result of the liquid’s excessive generosity with its limited supply of entropy and energy as its temperature is lowered below the melting point. This would imply the existence of some kind of state of high order for the liquid at low temperature which differs from the normal crystalline state. A plausible structure for such a state seems, however, difficult to conceive, and we believe that the paradox is better resolved in another way […] (W. Kauzmann, Chem. Rev. 43, 219 (1948)).\n\n\n\n\n\nKauzmann paradox: the entropy difference between the liquid and the crystal is extrapolated to low temperatures: glasses plateau, but what if we could equilibrate at very low T?"
   },
   {
     "objectID": "soft-matter_glasses.html#glasses",
@@ -1054,21 +1054,35 @@
     "href": "soft-matter_glasses.html#a-thermodynamic-theory-the-adam-gibbs-scenario",
     "title": "Complex Disordered Systems",
     "section": "A thermodynamic theory: the Adam-Gibbs scenario",
-    "text": "A thermodynamic theory: the Adam-Gibbs scenario\nThe Adam-Gibbs model links the dramatic slowdown of dynamics to the underlying thermodynamics through configurational entropy S_{\\rm conf}.\nThe Adam-Gibbs relation: \n\\tau_\\alpha(T) = \\tau_0 \\exp\\left(\\frac{A}{T S_{\\rm conf}(T)}\\right)\n\nAs temperature decreases, S_{\\rm conf} drops, causing \\tau_\\alpha to increase rapidly. If S_{\\rm conf} vanishes at the Kauzmann temperature T_K, relaxation time diverges, reproducing the VFT form: \n\\tau_\\alpha(T) \\sim \\exp\\left(\\frac{B}{T - T_0}\\right)\n with T_0 \\approx T_K. This connects the kinetic slowdown to loss of configurational entropy.\n\nEvidence for decreasing configurational entropy and growing relaxation times exists, but the existence of a true thermodynamic transition at T_K remains debated."
+    "text": "A thermodynamic theory: the Adam-Gibbs scenario\n\n\nThe Adam-Gibbs model links the dramatic slowdown of dynamics to the underlying thermodynamics through configurational entropy S_{\\rm conf}.\n\nThe key idea is the existense of cooperatively rearranging regions (CRRs): to relax, particles need to move together and explore a new metabasin in the energy landscape.\n\nMosaic of M_{CRR} independent cooperatively rearranging regions of size n_{CRR} particles each. The total number of particles is N = M_{CRR} n_{CRR}.\nWe assume that the total configurational entropy is additive and that each CRR contributes a constant amount s_{conf}, irrespective of its size\nS_{conf} = M_{CRR} s^* = \\dfrac{N}{n_{CRR}} s^*\nRearranging gives the size of a CRR as a function of the configurational entropy per particle S_{conf}/N: n_{CRR}(T) \\propto \\dfrac{1}{S_{conf}(T)/N}\n\n\n\n\nMosaic of cooperatively rearranging regions"
+  },
+  {
+    "objectID": "soft-matter_glasses.html#a-thermodynamic-theory-the-adam-gibbs-scenario-1",
+    "href": "soft-matter_glasses.html#a-thermodynamic-theory-the-adam-gibbs-scenario-1",
+    "title": "Complex Disordered Systems",
+    "section": "A thermodynamic theory: the Adam-Gibbs scenario",
+    "text": "A thermodynamic theory: the Adam-Gibbs scenario\nWe can then assume that the dynamics is activated with an energy barrier proportional to the size of a CRR:\n\\Delta E(T) \\propto n_{CRR}(T)\n\nFrom Arrhenius activation, the relaxation time is then\n\n\\tau_\\alpha(T) = \\tau_0 \\exp\\left(\\frac{A}{T S_{\\rm conf}(T)}\\right)\n\nAs temperature decreases, S_{\\rm conf} drops, causing \\tau_\\alpha to increase rapidly. If S_{\\rm conf} vanishes at the Kauzmann temperature T_K, relaxation time diverges, reproducing the VFT form: \n\\tau_\\alpha(T) \\sim \\exp\\left(\\frac{B}{T - T_0}\\right)\n with T_0 \\approx T_K. This connects the kinetic slowdown to loss of configurational entropy making the theory thermodynamic.\nIt also points to a critical divergence: the size of the CRR needs to diverge as we approach T_K to have S_{conf} \\to 0.\n\nEvidence for decreasing configurational entropy and growing relaxation times exists, but the existence of a true thermodynamic transition at T_K remains debated."
   },
   {
     "objectID": "soft-matter_glasses.html#a-dynamic-theory-dynamical-facilitation",
     "href": "soft-matter_glasses.html#a-dynamic-theory-dynamical-facilitation",
     "title": "Complex Disordered Systems",
     "section": "A dynamic theory: dynamical facilitation",
-    "text": "A dynamic theory: dynamical facilitation\n\n\nDynamical facilitation theory provides an alternative to thermodynamic models:\nKey idea: Mobility facilitates more mobility\n\nRelaxation occurs only near already-mobile regions\nNo underlying thermodynamic transition required\n\nTemperature dependence:\n\nHigh T: Many mobile regions → fast relaxation\nLow T: Few mobile regions → cooperative motion required → slow relaxation\n\nThe relaxation time follows a parabolic law \\log \\tau_\\alpha(T) \\sim J^2 \\left( \\frac{1}{T} - \\frac{1}{T_0} \\right)^2\nUnlike VFT, no finite-temperature divergence, but still captures super-Arrhenius behavior.\n\n\n\n\nRecent evidence suggests facilitation as a dominating mechanism for relaxation at low temperatures."
+    "text": "A dynamic theory: dynamical facilitation\n\n\nDynamical facilitation theory provides an alternative to thermodynamic model. It stems from the observations that glassy systems are universally heterogenous in space and time: their mobility is very broadly distributed, with regions of high mobility coexisting with regions of low mobility.\nThis dynamical coexistence is called dynamical heterogeneity and can be formalised as a dynamical phase transition.\nKey idea: Mobility facilitates more mobility\n\nRelaxation occurs only near already-mobile regions\nNo underlying thermodynamic transition required\n\nTemperature dependence:\n\nHigh T: Many mobile regions → fast relaxation\nLow T: Few mobile regions → cooperative motion required → slow relaxation\n\nThe relaxation time follows a parabolic law \\log \\tau_\\alpha(T) \\sim J^2 \\left( \\frac{1}{T} - \\frac{1}{T_0} \\right)^2\nUnlike VFT, no finite-temperature divergence, no criticality, but still captures super-Arrhenius behavior.\n\n\n\n\nRecent evidence suggests facilitation as a dominating mechanism for relaxation at low temperatures."
   },
   {
-    "objectID": "soft-matter_glasses.html#demonstration-of-facilitated-dynamics",
-    "href": "soft-matter_glasses.html#demonstration-of-facilitated-dynamics",
+    "objectID": "soft-matter_glasses.html#demonstration-of-facilitated-dynamics-and-dynamical-heterogeneities",
+    "href": "soft-matter_glasses.html#demonstration-of-facilitated-dynamics-and-dynamical-heterogeneities",
     "title": "Complex Disordered Systems",
-    "section": "Demonstration of facilitated dynamics",
-    "text": "Demonstration of facilitated dynamics\nTime evolution of the magnitude of the displacement field in a model of glass governed by dynamical facilitation from Hasym and Mandadapu PNAS (2024):\n\n\n\n\n\n\n\n\nExcitations emerge and trigger further mobility in their vicinity, leading to a cascade of relaxation events."
+    "section": "Demonstration of facilitated dynamics and dynamical heterogeneities",
+    "text": "Demonstration of facilitated dynamics and dynamical heterogeneities\nTime evolution of the magnitude of the displacement field in a model of glass governed by dynamical facilitation from Hasym and Mandadapu PNAS (2024):\n\n\n\n\n\n\n\n\nExcitations emerge and trigger further mobility in their vicinity, leading to a cascade of relaxation events."
+  },
+  {
+    "objectID": "soft-matter_glasses.html#unification",
+    "href": "soft-matter_glasses.html#unification",
+    "title": "Complex Disordered Systems",
+    "section": "Unification",
+    "text": "Unification\n\n\n\nMuch more to glassy dynamics:\n\ngeometrical frustration\nlocal structures\ngrowth of lengthscales\njamming\nmean field solutions (see Nobel Prize Giorgio Parisi)\n\n\nOngoing work to unify the various scenarios.\n\nExample: Turci et al PRX (2017): a numerical demonstration that an extension dynamical facilitation is compatible with decreasing entropies, emergence of local structures and criticality.\n\n\n\n\n\nPhase diagram for structural-dynamical coexistence in glasses."
   },
   {
     "objectID": "soft-matter_intro.html#today",
