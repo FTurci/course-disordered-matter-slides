@@ -1057,18 +1057,32 @@
     "text": "A thermodynamic theory: the Adam-Gibbs scenario\n\n\nThe Adam-Gibbs model links the dramatic slowdown of dynamics to the underlying thermodynamics through configurational entropy S_{\\rm conf}.\n\nThe key idea is the existense of cooperatively rearranging regions (CRRs): to relax, particles need to move together and explore a new metabasin in the energy landscape.\n\nMosaic of M_{CRR} independent cooperatively rearranging regions of size n_{CRR} particles each. The total number of particles is N = M_{CRR} n_{CRR}.\nWe assume that the total configurational entropy is additive and that each CRR contributes a constant amount s_{conf}, irrespective of its size\nS_{conf} = M_{CRR} s^* = \\dfrac{N}{n_{CRR}} s^*\nRearranging gives the size of a CRR as a function of the configurational entropy per particle S_{conf}/N: n_{CRR}(T) \\propto \\dfrac{1}{S_{conf}(T)/N}\n\n\n\n\nMosaic of cooperatively rearranging regions"
   },
   {
+    "objectID": "soft-matter_glasses.html#a-thermodynamic-theory-the-adam-gibbs-scenario-1",
+    "href": "soft-matter_glasses.html#a-thermodynamic-theory-the-adam-gibbs-scenario-1",
+    "title": "Complex Disordered Systems",
+    "section": "A thermodynamic theory: the Adam-Gibbs scenario",
+    "text": "A thermodynamic theory: the Adam-Gibbs scenario\nWe can then assume that the dynamics is activated with an energy barrier proportional to the size of a CRR:\n\\Delta E(T) \\propto n_{CRR}(T)\n\nFrom Arrhenius activation, the relaxation time is then\n\n\\tau_\\alpha(T) = \\tau_0 \\exp\\left(\\frac{A}{T S_{\\rm conf}(T)}\\right)\n\nAs temperature decreases, S_{\\rm conf} drops, causing \\tau_\\alpha to increase rapidly. If S_{\\rm conf} vanishes at the Kauzmann temperature T_K, relaxation time diverges, reproducing the VFT form: \n\\tau_\\alpha(T) \\sim \\exp\\left(\\frac{B}{T - T_0}\\right)\n with T_0 \\approx T_K. This connects the kinetic slowdown to loss of configurational entropy making the theory thermodynamic.\nIt also points to a critical divergence: the size of the CRR needs to diverge as we approach T_K to have S_{conf} \\to 0.\n\nEvidence for decreasing configurational entropy, but debated existence of a true thermodynamic transition."
+  },
+  {
     "objectID": "soft-matter_glasses.html#a-dynamic-theory-dynamical-facilitation",
     "href": "soft-matter_glasses.html#a-dynamic-theory-dynamical-facilitation",
     "title": "Complex Disordered Systems",
     "section": "A dynamic theory: dynamical facilitation",
-    "text": "A dynamic theory: dynamical facilitation\n\n\nDynamical facilitation theory provides an alternative to thermodynamic model. It stems from the observations that glassy systems are universally heterogenous in space and time: their mobility is very broadly distributed, with regions of high mobility coexisting with regions of low mobility.\nThis dynamical coexistence is called dynamical heterogeneity and can be formalised as a dynamical phase transition.\nKey idea: Mobility facilitates more mobility\n\nRelaxation occurs only near already-mobile regions\nNo underlying thermodynamic transition required\n\nTemperature dependence:\n\nHigh T: Many mobile regions → fast relaxation\nLow T: Few mobile regions → cooperative motion required → slow relaxation\n\nThe relaxation time follows a parabolic law \\log \\tau_\\alpha(T) \\sim J^2 \\left( \\frac{1}{T} - \\frac{1}{T_0} \\right)^2\nUnlike VFT, no finite-temperature divergence, no criticality, but still captures super-Arrhenius behavior.\n\n\n\n\nRecent evidence suggests facilitation as a dominating mechanism for relaxation at low temperatures."
+    "text": "A dynamic theory: dynamical facilitation\n\n\nAlternative model: glassy systems are universally heterogeneous in space and time: their mobility is very broadly distributed, with regions of high mobility coexisting with regions of low mobility.\nThis dynamical coexistence is called dynamical heterogeneity and can be formalised as a dynamical phase transition.\nKey idea: Mobility facilitates more mobility\n\nRelaxation occurs only near already-mobile regions\nNo underlying thermodynamic transition required\n\nTemperature dependence:\n\nHigh T: Many mobile regions → fast relaxation\nLow T: Few mobile regions → cooperative motion required → slow relaxation\n\nThe relaxation time follows a parabolic law \\log \\tau_\\alpha(T) \\sim J^2 \\left( \\frac{1}{T} - \\frac{1}{T_0} \\right)^2\nUnlike VFT, no finite-temperature divergence, no criticality, but still captures super-Arrhenius behavior.\n\n - Recent evidence suggests facilitation as a dominating mechanism for relaxation at low temperatures."
   },
   {
-    "objectID": "soft-matter_glasses.html#demonstration-of-facilitated-dynamics",
-    "href": "soft-matter_glasses.html#demonstration-of-facilitated-dynamics",
+    "objectID": "soft-matter_glasses.html#demonstration-of-facilitated-dynamics-and-dynamical-heterogeneities",
+    "href": "soft-matter_glasses.html#demonstration-of-facilitated-dynamics-and-dynamical-heterogeneities",
     "title": "Complex Disordered Systems",
-    "section": "Demonstration of facilitated dynamics",
-    "text": "Demonstration of facilitated dynamics\nTime evolution of the magnitude of the displacement field in a model of glass governed by dynamical facilitation from Hasym and Mandadapu PNAS (2024):\n\n\n\n\n\n\n\n\nExcitations emerge and trigger further mobility in their vicinity, leading to a cascade of relaxation events."
+    "section": "Demonstration of facilitated dynamics and dynamical heterogeneities",
+    "text": "Demonstration of facilitated dynamics and dynamical heterogeneities\nTime evolution of the magnitude of the displacement field in a model of glass governed by dynamical facilitation from Hasym and Mandadapu PNAS (2024):\n\n\n\n\n\n\n\n\nExcitations emerge and trigger further mobility in their vicinity, leading to a cascade of relaxation events."
+  },
+  {
+    "objectID": "soft-matter_glasses.html#unification",
+    "href": "soft-matter_glasses.html#unification",
+    "title": "Complex Disordered Systems",
+    "section": "Unification",
+    "text": "Unification\n\n\n\nMuch more to glassy dynamics:\n\ngeometrical frustration\nlocal structures\ngrowth of lengthscales\njamming\nmean field solutions (see Nobel Prize Giorgio Parisi)\n\n\nOngoing work to unify the various scenarios.\n\nExample: Turci et al PRX (2017): a numerical demonstration that an extension dynamical facilitation is compatible with decreasing entropies, emergence of local structures and criticality.\n\n\n\n\n\nPhase diagram for structural-dynamical coexistence in glasses."
   },
   {
     "objectID": "soft-matter_intro.html#today",
@@ -1540,24 +1554,122 @@
     "text": "Coexistence: Metastability and Instability\n\nThe spinodal line marks the boundary of metastability. It is the limit of stability \n\\frac{\\partial^2 G}{\\partial \\phi^2}=0\n\nBetween the binodal and spinodal lines, the system is metastable, meaning it can persist in a non-equilibrium state for a finite time.\nThe nucleation time \\tau is related to the free energy barrier \\Delta G^* by an activated (also called Arrhenius) law\n  \\tau \\propto \\exp\\left(\\frac{\\Delta G^*}{k_B T}\\right)    \nInside the spinodal there is no nucleation: coarsening occurs.\n\nYou have seen some of this physics when discussing the Ising model."
   },
   {
-    "objectID": "soft-matter_glasses.html#a-thermodynamic-theory-the-adam-gibbs-scenario-1",
-    "href": "soft-matter_glasses.html#a-thermodynamic-theory-the-adam-gibbs-scenario-1",
+    "objectID": "soft-matter_gels.html#today",
+    "href": "soft-matter_gels.html#today",
     "title": "Complex Disordered Systems",
-    "section": "A thermodynamic theory: the Adam-Gibbs scenario",
-    "text": "A thermodynamic theory: the Adam-Gibbs scenario\nWe can then assume that the dynamics is activated with an energy barrier proportional to the size of a CRR:\n\\Delta E(T) \\propto n_{CRR}(T)\n\nFrom Arrhenius activation, the relaxation time is then\n\n\\tau_\\alpha(T) = \\tau_0 \\exp\\left(\\frac{A}{T S_{\\rm conf}(T)}\\right)\n\nAs temperature decreases, S_{\\rm conf} drops, causing \\tau_\\alpha to increase rapidly. If S_{\\rm conf} vanishes at the Kauzmann temperature T_K, relaxation time diverges, reproducing the VFT form: \n\\tau_\\alpha(T) \\sim \\exp\\left(\\frac{B}{T - T_0}\\right)\n with T_0 \\approx T_K. This connects the kinetic slowdown to loss of configurational entropy making the theory thermodynamic.\nIt also points to a critical divergence: the size of the CRR needs to diverge as we approach T_K to have S_{conf} \\to 0.\n\nEvidence for decreasing configurational entropy and growing relaxation times exists, but the existence of a true thermodynamic transition at T_K remains debated."
+    "section": "Today",
+    "text": "Today\n\nPhysical gels and percolation\nColloid-polymer mixtures\nStructure and characterization\nArrested spinodal decomposition"
   },
   {
-    "objectID": "soft-matter_glasses.html#demonstration-of-facilitated-dynamics-and-dynamical-heterogeneities",
-    "href": "soft-matter_glasses.html#demonstration-of-facilitated-dynamics-and-dynamical-heterogeneities",
+    "objectID": "soft-matter_gels.html#what-is-a-physical-gel",
+    "href": "soft-matter_gels.html#what-is-a-physical-gel",
     "title": "Complex Disordered Systems",
-    "section": "Demonstration of facilitated dynamics and dynamical heterogeneities",
-    "text": "Demonstration of facilitated dynamics and dynamical heterogeneities\nTime evolution of the magnitude of the displacement field in a model of glass governed by dynamical facilitation from Hasym and Mandadapu PNAS (2024):\n\n\n\n\n\n\n\n\nExcitations emerge and trigger further mobility in their vicinity, leading to a cascade of relaxation events."
+    "section": "What is a Physical Gel?",
+    "text": "What is a Physical Gel?\nPhysical gel: Particles/polymers connected via reversible, non-covalent bonds forming a percolating network\n\n\nKey features:\n\nBonds break/reform dynamically\nEnergy ~ k_BT\nSelf-healing possible\nThermoreversible\n\n\nExamples:\n\nGelatin\nAgarose\nYoghurt\nPaint, inks\n\n\nCross-links form via dense local regions (microcrystalline/glassy)"
   },
   {
-    "objectID": "soft-matter_glasses.html#unification",
-    "href": "soft-matter_glasses.html#unification",
+    "objectID": "soft-matter_gels.html#physical-vs-chemical-gels",
+    "href": "soft-matter_gels.html#physical-vs-chemical-gels",
     "title": "Complex Disordered Systems",
-    "section": "Unification",
-    "text": "Unification\n\n\n\nMuch more to glassy dynamics:\n\ngeometrical frustration\nlocal structures\ngrowth of lengthscales\njamming\nmean field solutions (see Nobel Prize Giorgio Parisi)\n\n\nOngoing work to unify the various scenarios.\n\nExample: Turci et al PRX (2017): a numerical demonstration that an extension dynamical facilitation is compatible with decreasing entropies, emergence of local structures and criticality.\n\n\n\n\n\nPhase diagram for structural-dynamical coexistence in glasses."
+    "section": "Physical vs Chemical Gels",
+    "text": "Physical vs Chemical Gels\n\n\nPhysical Gels\n\nReversible bonds\nEnergy ~ k_BT\nDynamic network\nThermoreversible\n\n\nChemical Gels\n\nIrreversible covalent bonds\nHigh energy barriers\nPermanent network\n\n\nKey transition:\n\nFluid → Gel occurs when a system-spanning cluster forms (percolation)\nDramatic viscosity increase + elastic response\n\nGels are a second example of disordered solids (after glasses)"
+  },
+  {
+    "objectID": "soft-matter_gels.html#percolation-theory",
+    "href": "soft-matter_gels.html#percolation-theory",
+    "title": "Complex Disordered Systems",
+    "section": "Percolation Theory",
+    "text": "Percolation Theory\nProblem: Square grid L\\times L sites, randomly label N of them. When does a spanning cluster form?\n\n\n\np = N/L^2 = occupation probability\nPercolation threshold p_c\nBelow p_c: small clusters\nAbove p_c: giant spanning cluster\n\n\n2D square lattice: p_c \\approx 0.5927\nTransition: Continuous (2nd order)"
+  },
+  {
+    "objectID": "soft-matter_gels.html#percolation-simulation",
+    "href": "soft-matter_gels.html#percolation-simulation",
+    "title": "Complex Disordered Systems",
+    "section": "Percolation Simulation",
+    "text": "Percolation Simulation"
+  },
+  {
+    "objectID": "soft-matter_gels.html#percolation-threshold-p_c-values",
+    "href": "soft-matter_gels.html#percolation-threshold-p_c-values",
+    "title": "Complex Disordered Systems",
+    "section": "Percolation Threshold: p_c Values",
+    "text": "Percolation Threshold: p_c Values\nNon-universal: p_c depends on lattice type and dimension\n\n\n\nLattice\nDim\nz\np_c^{site}\np_c^{bond}\n\n\n\n\nSquare\n2\n4\n0.593\n0.5\n\n\nTriangular\n2\n6\n0.5\n0.347\n\n\nCubic\n3\n6\n0.312\n0.249\n\n\nHypercubic\n4\n8\n0.197\n0.160\n\n\nHypercubic\n6\n12\n0.109\n0.094\n\n\n\nHigher dimensions → lower p_c (easier to percolate)"
+  },
+  {
+    "objectID": "soft-matter_gels.html#critical-exponents-universal",
+    "href": "soft-matter_gels.html#critical-exponents-universal",
+    "title": "Complex Disordered Systems",
+    "section": "Critical Exponents: Universal",
+    "text": "Critical Exponents: Universal\nUniversal: Critical exponents independent of lattice details\nP_{\\infty}(p)\\propto (p-p_c)^{\\beta}\n\n\n\nDimension d\n\\beta\n\n\n\n\n2\n5/36 ≈ 0.14\n\n\n3\n≈ 0.41\n\n\n≥6\n1 (mean-field)\n\n\n\nGels require percolation for mechanical stability!"
+  },
+  {
+    "objectID": "soft-matter_gels.html#colloidal-gel-formation",
+    "href": "soft-matter_gels.html#colloidal-gel-formation",
+    "title": "Complex Disordered Systems",
+    "section": "Colloidal Gel Formation",
+    "text": "Colloidal Gel Formation\n\nMD simulation of dilute colloidal gel formation (largest cluster in red)Percolating cluster → mechanical rigidity"
+  },
+  {
+    "objectID": "soft-matter_gels.html#colloid-polymer-mixtures",
+    "href": "soft-matter_gels.html#colloid-polymer-mixtures",
+    "title": "Complex Disordered Systems",
+    "section": "Colloid-Polymer Mixtures",
+    "text": "Colloid-Polymer Mixtures\nDepletion interactions like the Asakura-Oosawa model produce a very short ranged potential with strong attractive part. \nW_{\\mathrm{AO}}(r)=-\\frac{4 \\pi \\rho_p k_B T}{3} R^3(1+q)^3\\left[1-\\frac{3}{4} \\frac{r}{R(1+q)}+\\frac{1}{16}\\left(\\frac{r}{R(1+q)}\\right)^3\\right], \\quad 2R&lt;r&lt;2(R+R_p), \\quad q=\\dfrac{R_p}{R}\n\nattractive + very short ranged → sticky interaction\n\nColloids cluster into nonequilibrium branched phase\nBinodal becomes metastable to fluid-solid coexistence\n\n\nPhase diagram of colloid-polymer mixtures for varying polymer-colloid aspect ration q. Small"
+  },
+  {
+    "objectID": "soft-matter_gels.html#simple-model-potentials",
+    "href": "soft-matter_gels.html#simple-model-potentials",
+    "title": "Complex Disordered Systems",
+    "section": "Simple Model Potentials",
+    "text": "Simple Model Potentials\nSquare-well potential:\n\nU(r) =\n\\begin{cases}\n\\infty & r &lt; \\sigma \\\\\n-\\epsilon & \\sigma \\leq r &lt; \\lambda \\sigma \\\\\n0 & r \\geq \\lambda \\sigma\n\\end{cases}\n\n\n\\sigma: particle diameter\n\\epsilon: well depth\n\\lambda: range parameter"
+  },
+  {
+    "objectID": "soft-matter_gels.html#morse-potential-md-simulations",
+    "href": "soft-matter_gels.html#morse-potential-md-simulations",
+    "title": "Complex Disordered Systems",
+    "section": "Morse Potential (MD Simulations)",
+    "text": "Morse Potential (MD Simulations)\nSmooth short-range attractive potential:\n\nU_{\\mathrm{Morse}}(r) = D \\left[ e^{-2\\alpha (r - r_0)} - 2 e^{-\\alpha (r - r_0)} \\right]\n\n\nD: well depth\n\\alpha: steepness (controls range)\nr_0: equilibrium distance\n\n\n\n\nMorse potential placeholder"
+  },
+  {
+    "objectID": "soft-matter_gels.html#pair-correlations-gr",
+    "href": "soft-matter_gels.html#pair-correlations-gr",
+    "title": "Complex Disordered Systems",
+    "section": "Pair Correlations: g(r)",
+    "text": "Pair Correlations: g(r)\nRadial distribution function g(r): best at short distances\n\n\n\nCaptures cluster structure\nSharp peaks at dilute concentrations\nNearest/second-nearest neighbor shells\n\n\n\n\n\nTime evolution of g(r) ina dilute gel in units of the time to percolate \\tau_{\\mathrm perc}"
+  },
+  {
+    "objectID": "soft-matter_gels.html#structure-factor-sq-and-fractals",
+    "href": "soft-matter_gels.html#structure-factor-sq-and-fractals",
+    "title": "Complex Disordered Systems",
+    "section": "Structure Factor: S(q) and Fractals",
+    "text": "Structure Factor: S(q) and Fractals\nNear percolation threshold, the loq-q trend from the trsucture factor links to the compressibility: power-law behavior:\nClusters become fractal objects with self-similar structure at all length scales.\n\n\nFor a fractal object with dimension D_f:\n\nMass scales as M(R) \\sim R^{D_f}\nDensity correlations decay as \\rho(r) \\sim r^{-(d-D_f)}\n\nFourier transform of power-law correlations gives: S(q) \\sim q^{-D_f}\n\nD_f: fractal dimension\nNo characteristic length scale\nTypical 3D: D_f \\approx 2.5\n\n\n\n\n\nTime evolution of the structure factor S(q)"
+  },
+  {
+    "objectID": "soft-matter_gels.html#arrested-spinodal-decomposition",
+    "href": "soft-matter_gels.html#arrested-spinodal-decomposition",
+    "title": "Complex Disordered Systems",
+    "section": "Arrested Spinodal Decomposition",
+    "text": "Arrested Spinodal Decomposition\nHow do gels form?\n\n\nScenario:\n\nRapid quench into unstable region\nPhase separation begins (spinodal)\nDense regions arrest (glass/jamming)\nBicontinuous frozen structure\n\nThe picture suggest the progressive freezing of coarsening upon spinodal decomposition."
+  },
+  {
+    "objectID": "soft-matter_gels.html#phase-diagram-arrested-spinodal",
+    "href": "soft-matter_gels.html#phase-diagram-arrested-spinodal",
+    "title": "Complex Disordered Systems",
+    "section": "Phase Diagram: Arrested Spinodal",
+    "text": "Phase Diagram: Arrested Spinodal\n\nArrested spinodal scenario, see Zaccarelli et al 2007Key lines:: - Binodal (red): liqiid-gase coexistence at equilibrium - Spinodal (dashed): limit of stability of the metastable phases. Instability (i.e. spinodal decomposition) starts inside - Percolation (purple): At some density, the clusters percolate (span the system) - Glass transition (blue): Dense phase becomes dynamically arrested (non-ergodic)\nGel path: Rapid cooling → arrested dense phase + vapor"
+  },
+  {
+    "objectID": "soft-matter_gels.html#summary",
+    "href": "soft-matter_gels.html#summary",
+    "title": "Complex Disordered Systems",
+    "section": "Summary",
+    "text": "Summary\n\nPhysical gels: Reversible bonds, percolating network\nPercolation theory: Critical threshold p_c, universal exponents\nColloid-polymer mixtures: Sticky interactions → gel formation\nStructure: Fractal (D_f \\approx 2.5), characterized by g(r) and S(q)\nFormation: Arrested spinodal decomposition\n\nSee (Zaccarelli2007?) for comprehensive review"
+  },
+  {
+    "objectID": "soft-matter_gels.html#percolation-transition",
+    "href": "soft-matter_gels.html#percolation-transition",
+    "title": "Complex Disordered Systems",
+    "section": "Percolation Transition",
+    "text": "Percolation Transition"
   }
 ]

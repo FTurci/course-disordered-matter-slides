@@ -306,13 +306,13 @@ with $T_0 \approx T_K$. This connects the kinetic slowdown to loss of configurat
 It also points to a **critical divergence**: the size of the CRR needs to diverge as we approach $T_K$ to have $S_{conf} \to 0$.
 
 
-- Evidence for decreasing configurational entropy and growing relaxation times exists, but the existence of a true thermodynamic transition at $T_K$ remains debated.
+- Evidence for decreasing configurational entropy, but debated existence of a true thermodynamic transition.
 
 ## A dynamic theory: dynamical facilitation
 
 :::{.columns}
 ::: {.column width="70%"}
-**Dynamical facilitation theory** provides an alternative to thermodynamic model. It stems from the observations that glassy systems are universally heterogenous in space and time: their mobility is very broadly distributed, with regions of high mobility **coexisting** with regions of low mobility. 
+Alternative model: glassy systems are **universally** heterogeneous in space and time: their mobility is very broadly distributed, with regions of high mobility **coexisting** with regions of low mobility. 
 
 This **dynamical coexistence** is called **dynamical heterogeneity** and can be formalised as a dynamical phase transition.
 
@@ -333,11 +333,11 @@ Unlike VFT, no finite-temperature divergence, no criticality, but still captures
 :::
 ::: {.column width="30%"}
 ![](./figs/facilitation.png)
-
-
-:::
-:::
 - Recent evidence suggests facilitation as a dominating mechanism for relaxation at low temperatures.
+
+:::
+:::
+
 
 
 ## Demonstration of facilitated dynamics and dynamical heterogeneities
