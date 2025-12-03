@@ -777,6 +777,125 @@
     "text": "Continuous Limit\nReplace sums with integrals. Let p_i \\to p(x) where x is a continuous variable.\nConstraints become: \n\\int p(x) dx = 1, \\quad \\int p(x) E(x) dx = \\langle E \\rangle\n\nEntropy functional: \nS[p] = -\\int p(x) \\ln p(x) dx\n\nLagrangian: \n\\mathcal{L} = -\\int p(x) \\ln p(x) dx - \\lambda_1 \\left(\\int p(x) dx - 1\\right) - \\lambda_2 \\left(\\int p(x) E(x) dx - \\langle E \\rangle\\right)\n\nFunctional derivative \\frac{\\delta \\mathcal{L}}{\\delta p(x)} = 0: \n-\\ln p(x) - 1 - \\lambda_1 - \\lambda_2 E(x) = 0 \\quad \\Rightarrow \\quad p(x) = \\exp(-\\beta E(x) - c)"
   },
   {
+    "objectID": "soft-matter_active.html#today",
+    "href": "soft-matter_active.html#today",
+    "title": "Complex Disordered Systems",
+    "section": "Today",
+    "text": "Today\n\nBeyond thermal equilibrium\nRun-and-tumble dynamics\nActive Brownian particles\nMotility-induced phase separation (MIPS)"
+  },
+  {
+    "objectID": "soft-matter_active.html#beyond-thermal-systems",
+    "href": "soft-matter_active.html#beyond-thermal-systems",
+    "title": "Complex Disordered Systems",
+    "section": "Beyond Thermal Systems",
+    "text": "Beyond Thermal Systems\n\n\nEquilibrium systems systems:\n\nFree energy is optimised (subject to constraints):\nDistribution of states given by Boltzmann statistics: P(\\text{state}) \\propto e^{-E(\\text{state})/k_BT}\n\nArrested systems\n\nSupercooled liquids: local equilibrium (thermal)\nGlasses/gels: slow relaxation (towards equilibrium)\n\n\nActive matter: Nonequilibrium via local dissipation\n\nLocal energy consumption\nSelf-propulsion\nDissipation at microscopic scale\n\nExamples:\n\nBacteria\nSynthetic microswimmers\nMolecular motors\nBird flocks, fish schools\n\n\n\n\n\nIn a active systems, the distribution of states is not given by Boltzmann statistics!"
+  },
+  {
+    "objectID": "soft-matter_active.html#examples-of-active-matter",
+    "href": "soft-matter_active.html#examples-of-active-matter",
+    "title": "Complex Disordered Systems",
+    "section": "Examples of Active Matter",
+    "text": "Examples of Active Matter\nSome examples"
+  },
+  {
+    "objectID": "soft-matter_active.html#flocking-as-a-minimal-model",
+    "href": "soft-matter_active.html#flocking-as-a-minimal-model",
+    "title": "Complex Disordered Systems",
+    "section": "Flocking as a minimal model",
+    "text": "Flocking as a minimal model"
+  },
+  {
+    "objectID": "soft-matter_active.html#flocking-as-a-minimal-model-1",
+    "href": "soft-matter_active.html#flocking-as-a-minimal-model-1",
+    "title": "Complex Disordered Systems",
+    "section": "Flocking as a minimal model",
+    "text": "Flocking as a minimal model\nThe Vicsek model (1995) was one of the simplest models of active matter. Key ingredients: alignment + self propulsion\n\n\n\nN particles with positions \\mathbf{r}_i and orientations \\theta_i\nUpdate rules: \\mathbf{r}_i(t+1) = \\mathbf{r}_i(t) + v_0 \\hat{\\mathbf{n}}_i(t) \\theta_i(t+1) = \\langle \\theta_j \\rangle_{|\\mathbf{r}_j - \\mathbf{r}_i| &lt; R} + \\eta_i\nv_0: constant speed\nR: interaction radius\n\\eta_i: noise term (uniform random in [-\\pi/2, \\pi/2])"
+  },
+  {
+    "objectID": "soft-matter_active.html#flocking-as-a-minimal-model-2",
+    "href": "soft-matter_active.html#flocking-as-a-minimal-model-2",
+    "title": "Complex Disordered Systems",
+    "section": "Flocking as a minimal model",
+    "text": "Flocking as a minimal model\n\nVicsek simulation"
+  },
+  {
+    "objectID": "soft-matter_active.html#run-and-tumble-motion",
+    "href": "soft-matter_active.html#run-and-tumble-motion",
+    "title": "Complex Disordered Systems",
+    "section": "Run-and-Tumble Motion",
+    "text": "Run-and-Tumble Motion\nFurther inspirations from the microbial world, where dissipation can be more directly observed (and even tuned).\nInspired by bacterial motion (E. coli)\n\n\nTwo phases:\n\nRun: Straight-line motion at constant speed v_0\nTumble: Random reorientation\n\nKey parameter: Tumble rate \\lambda"
+  },
+  {
+    "objectID": "soft-matter_active.html#run-and-tumble-dynamics",
+    "href": "soft-matter_active.html#run-and-tumble-dynamics",
+    "title": "Complex Disordered Systems",
+    "section": "Run-and-Tumble: Dynamics",
+    "text": "Run-and-Tumble: Dynamics\n\n\nCode\nviewof simulation = {\n    const n = 300, W = 1000, H = 500, dt = 0.5, v0 = 1.5;\n\n    const tumbleSlider = Inputs.range([0.01, 1.0\n    ], {step:0.01, value:0.1, label:\"Tumble rate λ\"});\n    const button = html`&lt;button&gt;Pause&lt;/button&gt;`;\n    let running = true;\n    button.onclick = () =&gt; {\n        running = !running;\n        button.textContent = running ? \"Pause\" : \"Resume\";\n    };\n\n    let state = Array.from({length: n}, () =&gt; ({\n        x: Math.random() * W,\n        y: Math.random() * H,\n        theta: Math.random() * 2 * Math.PI\n    }));\n\n    // Each particle gets a trace array\n    let traces = Array.from({length: n}, () =&gt; []);\n\n    // Reset traces when tumble rate changes\n    let lastLambda = tumbleSlider.value;\n    tumbleSlider.addEventListener(\"input\", () =&gt; {\n        traces = Array.from({length: n}, () =&gt; []);\n        lastLambda = tumbleSlider.value;\n    });\n\n    function step(state, λ) {\n        return state.map((p, i) =&gt; {\n            if (Math.random() &lt; λ * dt) p.theta = Math.random() * 2 * Math.PI;\n\n            // Predict next position\n            let nx = p.x + v0 * Math.cos(p.theta) * dt;\n            let ny = p.y + v0 * Math.sin(p.theta) * dt;\n\n            // Bounce at left/right walls\n            if (nx &lt; 0) {\n                p.x = 0;\n                p.theta = Math.PI - Math.random() * Math.PI; // random angle pointing right\n            } else if (nx &gt; W) {\n                p.x = W;\n                p.theta = Math.PI + Math.random() * Math.PI; // random angle pointing left\n            } else {\n                p.x = nx;\n            }\n\n            // Bounce at top/bottom walls\n            if (ny &lt; 0) {\n                p.y = 0;\n                p.theta = (Math.random() * Math.PI); // random angle pointing down\n            } else if (ny &gt; H) {\n                p.y = H;\n                p.theta = Math.PI + (Math.random() * Math.PI); // random angle pointing up\n            } else {\n                p.y = ny;\n            }\n\n            // Add current position to trace\n            traces[i].push([p.x, p.y]);\n            // Limit trace length for performance\n            if (traces[i].length &gt; 200) traces[i].shift();\n            return p;\n        });\n    }\n\n    const container = html`&lt;div&gt;&lt;/div&gt;`;\n    container.append(tumbleSlider, button);\n    const svg = d3.select(container).append(\"svg\")\n        .attr(\"width\", W)\n        .attr(\"height\", H)\n        .style(\"background\", \"#f8f8f8\");\n\n    while (true) {\n        const λ = tumbleSlider.value;\n        if (running) state = step(state, λ);\n\n        svg.selectAll(\"*\").remove();\n\n        // Draw traces\n        traces.forEach(trace =&gt; {\n            if (trace.length &gt; 1) {\n                svg.append(\"path\")\n                    .attr(\"d\", d3.line()(trace))\n                    .attr(\"stroke\", \"#90caf9\")\n                    .attr(\"stroke-width\", 1)\n                    .attr(\"fill\", \"none\");\n            }\n        });\n\n        // Draw particles\n        svg.selectAll(\"circle\")\n            .data(state)\n            .enter().append(\"circle\")\n            .attr(\"cx\", d =&gt; d.x)\n            .attr(\"cy\", d =&gt; d.y)\n            .attr(\"r\", 3)\n            .attr(\"fill\", \"#1976d2\");\n\n        svg.selectAll(\"line\")\n            .data(state)\n            .enter().append(\"line\")\n            .attr(\"x1\", d =&gt; d.x)\n            .attr(\"y1\", d =&gt; d.y)\n            .attr(\"x2\", d =&gt; d.x + 10 * Math.cos(d.theta))\n            .attr(\"y2\", d =&gt; d.y + 10 * Math.sin(d.theta))\n            .attr(\"stroke\", \"#1976d2\")\n            .attr(\"stroke-width\", 1.2);\n\n        yield container;\n        await Promises.delay(16);\n    }\n}\n\n\n\n\n\n\n\n\n\nFigure 1: Non-interacting run and tumble particles."
+  },
+  {
+    "objectID": "soft-matter_active.html#run-and-tumble-dynamics-1",
+    "href": "soft-matter_active.html#run-and-tumble-dynamics-1",
+    "title": "Complex Disordered Systems",
+    "section": "Run-and-Tumble dynamics",
+    "text": "Run-and-Tumble dynamics\nRun phase (constant velocity): \\mathbf{r}(t + \\Delta t) = \\mathbf{r}(t) + v_0 \\hat{\\mathbf{n}}(t) \\Delta t\nTumble phase (random reorientation):\n\nWith probability \\lambda \\Delta t: randomize \\hat{\\mathbf{n}}\nOtherwise: continue running"
+  },
+  {
+    "objectID": "soft-matter_active.html#mean-squared-displacement",
+    "href": "soft-matter_active.html#mean-squared-displacement",
+    "title": "Complex Disordered Systems",
+    "section": "Mean Squared Displacement",
+    "text": "Mean Squared Displacement\nTwo regimes\n\nBallistic (short times): \\langle \\Delta r^2(t) \\rangle \\sim v_0^2 t^2\nDiffusive (long times, t \\gg 1/\\lambda): \\langle \\Delta r^2(t) \\rangle \\sim 2 D_{\\text{eff}} t\n\nEffective diffusion: D_{\\text{eff}} = \\frac{v_0^2}{2\\lambda} (2D)\n\n\nCrossover time: t_c \\sim 1/\\lambda"
+  },
+  {
+    "objectID": "soft-matter_active.html#active-brownian-particles-abps",
+    "href": "soft-matter_active.html#active-brownian-particles-abps",
+    "title": "Complex Disordered Systems",
+    "section": "Active Brownian Particles (ABPs)",
+    "text": "Active Brownian Particles (ABPs)\nMinimal model for self-propelled colloids (e.g., Janus particles)\n\n\nDynamics:\n\nTranslational motion \\frac{d\\mathbf{r}}{dt} = v_0 \\hat{\\mathbf{n}}(t) + \\sqrt{2D_t} \\boldsymbol{\\xi}(t)\nRotational motion \\frac{d\\theta}{dt} = \\sqrt{2D_r} \\eta(t)\n\n\n\nv_0: self-propulsion speed\nD_t: translational diffusion\nD_r: rotational diffusion\nContinuous reorientation\n\nPéclet Number: Pe = \\frac{v_0}{\\sqrt{D_t D_r}} = \\frac{v_0}{D_r L}\n\nMeasures activity strength vs thermal motion\nPe \\ll 1: thermal equilibrium limit\nPe \\gg 1: strong activity, far from equilibrium\nL = \\sqrt{D_t/D_r}: characteristic length scale"
+  },
+  {
+    "objectID": "soft-matter_active.html#abp-mean-squared-displacement",
+    "href": "soft-matter_active.html#abp-mean-squared-displacement",
+    "title": "Complex Disordered Systems",
+    "section": "ABP: Mean Squared Displacement",
+    "text": "ABP: Mean Squared Displacement\nThree regimes:\n\\langle \\Delta r^2(\\tau) \\rangle = \\left[4 D_T + 2 v^2 \\tau_R \\right] \\tau + 2 v^2 \\tau_R^2 \\left( e^{-\\tau / \\tau_R} - 1 \\right)\n\n\n\nShort times: Diffusive \\sim 4D_T\\tau\nIntermediate: Ballistic \\sim v_0^2\\tau^2\nLong times: Enhanced diffusion\n\n\n\\tau_R = 1/D_r: persistence time\nD_{\\mathrm{eff}} = \\frac{v_0^2}{2D_r}: effective diffusion\n\n\n\n\n\nMean squared displacement for ABPs at different self-propulsion speeds."
+  },
+  {
+    "objectID": "soft-matter_active.html#effective-interactions",
+    "href": "soft-matter_active.html#effective-interactions",
+    "title": "Complex Disordered Systems",
+    "section": "Effective Interactions",
+    "text": "Effective Interactions\n\n\nThe persistence of active motion can lead to effective interactions between particles.\n\nHead-to-head collisions lead to a persistence time of contact between two particles\nThis can be seen as an effective attraction between particles\n\n\n\n\n\n\nEffective twobody potential for ABPs, Turci & wilding PRl 2021\n\n\n\n(The realiity is more complex, with many-body effects!)"
+  },
+  {
+    "objectID": "soft-matter_active.html#motility-induced-phase-separation-mips",
+    "href": "soft-matter_active.html#motility-induced-phase-separation-mips",
+    "title": "Complex Disordered Systems",
+    "section": "Motility-Induced Phase Separation (MIPS)",
+    "text": "Motility-Induced Phase Separation (MIPS)\nInteracting ABPs → nonequilibrium self-organization\n\nMIPS in 3D ABPs from Turci and Wilding Physical Review Letters 2021Key idea: Purely repulsive particles (hard spheres) + ABP dynamics"
+  },
+  {
+    "objectID": "soft-matter_active.html#mips-mechanism",
+    "href": "soft-matter_active.html#mips-mechanism",
+    "title": "Complex Disordered Systems",
+    "section": "MIPS Mechanism",
+    "text": "MIPS Mechanism\n\n\nEquilibrium (no self-propulsion):\n\nHard spheres\nNo liquid-gas separation\n\nActive (with self-propulsion):\n\nHead-to-head collisions\nFinite residence time\nMany-body caging\nDensity heterogeneities\n\n\nAs D_r decreases:\n\nMore persistent motion\nSystem more out-of-equilibrium\nEnhanced density fluctuations\nSpontaneous phase separation"
+  },
+  {
+    "objectID": "soft-matter_active.html#mips-critical-like-behavior",
+    "href": "soft-matter_active.html#mips-critical-like-behavior",
+    "title": "Complex Disordered Systems",
+    "section": "MIPS: Critical-like Behavior",
+    "text": "MIPS: Critical-like Behavior\nPhase diagram features:\n\nLow D_r: Dense + dilute phases (like liquid-gas)\nCritical point: Enhanced fluctuations\nMIPS exists both in 2d and 3D:\n\nin 2D, disk ordering at high densities\nin 3D, MIPS is metastable to gas-crystal, like colloid polymer mixtures.\n\nShort-range effective interactions between active particles\n\nResult: Nonequilibrium phase transition in purely repulsive system!"
+  },
+  {
+    "objectID": "soft-matter_active.html#experimental-realisation-of-active-matter",
+    "href": "soft-matter_active.html#experimental-realisation-of-active-matter",
+    "title": "Complex Disordered Systems",
+    "section": "Experimental realisation of active matter",
+    "text": "Experimental realisation of active matter\nIn experiments, active systems can be realised in various ways:\n\n\n\nBacterial suspensions: e.g., E. coli, B. subtilis\nSynthetic microswimmers: Janus particles with catalytic coatings\nLight-activated colloids: Particles that change motility under light\n\n\n\nVibrated granular matter: Macroscopic particles on vibrating plates\nNano- and micro-robots: Swarms of tiny robots with programmed motion\n\n\n\n\n\nExperimental systems and active. matter behaviours"
+  },
+  {
     "objectID": "soft-matter_gels.html#today",
     "href": "soft-matter_gels.html#today",
     "title": "Complex Disordered Systems",
