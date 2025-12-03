@@ -777,6 +777,118 @@
     "text": "Continuous Limit\nReplace sums with integrals. Let p_i \\to p(x) where x is a continuous variable.\nConstraints become: \n\\int p(x) dx = 1, \\quad \\int p(x) E(x) dx = \\langle E \\rangle\n\nEntropy functional: \nS[p] = -\\int p(x) \\ln p(x) dx\n\nLagrangian: \n\\mathcal{L} = -\\int p(x) \\ln p(x) dx - \\lambda_1 \\left(\\int p(x) dx - 1\\right) - \\lambda_2 \\left(\\int p(x) E(x) dx - \\langle E \\rangle\\right)\n\nFunctional derivative \\frac{\\delta \\mathcal{L}}{\\delta p(x)} = 0: \n-\\ln p(x) - 1 - \\lambda_1 - \\lambda_2 E(x) = 0 \\quad \\Rightarrow \\quad p(x) = \\exp(-\\beta E(x) - c)"
   },
   {
+    "objectID": "soft-matter_gels.html#today",
+    "href": "soft-matter_gels.html#today",
+    "title": "Complex Disordered Systems",
+    "section": "Today",
+    "text": "Today\n\nPhysical gels and percolation\nColloid-polymer mixtures\nStructure and characterization\nArrested spinodal decomposition"
+  },
+  {
+    "objectID": "soft-matter_gels.html#what-is-a-physical-gel",
+    "href": "soft-matter_gels.html#what-is-a-physical-gel",
+    "title": "Complex Disordered Systems",
+    "section": "What is a Physical Gel?",
+    "text": "What is a Physical Gel?\nPhysical gel: Particles/polymers connected via reversible, non-covalent bonds forming a percolating network\n\n\nKey features:\n\nBonds break/reform dynamically\nEnergy ~ k_BT\nSelf-healing possible\nThermoreversible\n\n\nExamples:\n\nGelatin\nAgarose\nYoghurt\nPaint, inks\n\n\nCross-links form via dense local regions (microcrystalline/glassy)"
+  },
+  {
+    "objectID": "soft-matter_gels.html#physical-vs-chemical-gels",
+    "href": "soft-matter_gels.html#physical-vs-chemical-gels",
+    "title": "Complex Disordered Systems",
+    "section": "Physical vs Chemical Gels",
+    "text": "Physical vs Chemical Gels\n\n\nPhysical Gels\n\nReversible bonds\nEnergy ~ k_BT\nDynamic network\nThermoreversible\n\n\nChemical Gels\n\nIrreversible covalent bonds\nHigh energy barriers\nPermanent network\n\n\nKey transition:\n\nFluid → Gel occurs when a system-spanning cluster forms (percolation)\nDramatic viscosity increase + elastic response\n\nGels are a second example of disordered solids (after glasses)"
+  },
+  {
+    "objectID": "soft-matter_gels.html#percolation-theory",
+    "href": "soft-matter_gels.html#percolation-theory",
+    "title": "Complex Disordered Systems",
+    "section": "Percolation Theory",
+    "text": "Percolation Theory\nProblem: Square grid L\\times L sites, randomly label N of them. When does a spanning cluster form?\n\n\n\np = N/L^2 = occupation probability\nPercolation threshold p_c\nBelow p_c: small clusters\nAbove p_c: giant spanning cluster\n\n\n2D square lattice: p_c \\approx 0.5927\nTransition: Continuous (2nd order)"
+  },
+  {
+    "objectID": "soft-matter_gels.html#percolation-simulation",
+    "href": "soft-matter_gels.html#percolation-simulation",
+    "title": "Complex Disordered Systems",
+    "section": "Percolation Simulation",
+    "text": "Percolation Simulation"
+  },
+  {
+    "objectID": "soft-matter_gels.html#percolation-transition",
+    "href": "soft-matter_gels.html#percolation-transition",
+    "title": "Complex Disordered Systems",
+    "section": "Percolation Transition",
+    "text": "Percolation Transition"
+  },
+  {
+    "objectID": "soft-matter_gels.html#percolation-threshold-p_c-values",
+    "href": "soft-matter_gels.html#percolation-threshold-p_c-values",
+    "title": "Complex Disordered Systems",
+    "section": "Percolation Threshold: p_c Values",
+    "text": "Percolation Threshold: p_c Values\nNon-universal: p_c depends on lattice type and dimension\n\n\n\nLattice\nDim\nz\np_c^{site}\np_c^{bond}\n\n\n\n\nSquare\n2\n4\n0.593\n0.5\n\n\nTriangular\n2\n6\n0.5\n0.347\n\n\nCubic\n3\n6\n0.312\n0.249\n\n\nHypercubic\n4\n8\n0.197\n0.160\n\n\nHypercubic\n6\n12\n0.109\n0.094\n\n\n\nHigher dimensions → lower p_c (easier to percolate)"
+  },
+  {
+    "objectID": "soft-matter_gels.html#critical-exponents-universal",
+    "href": "soft-matter_gels.html#critical-exponents-universal",
+    "title": "Complex Disordered Systems",
+    "section": "Critical Exponents: Universal",
+    "text": "Critical Exponents: Universal\nUniversal: Critical exponents independent of lattice details\nP_{\\infty}(p)\\propto (p-p_c)^{\\beta}\n\n\n\nDimension d\n\\beta\n\n\n\n\n2\n5/36 ≈ 0.14\n\n\n3\n≈ 0.41\n\n\n≥6\n1 (mean-field)\n\n\n\nGels require percolation for mechanical stability!"
+  },
+  {
+    "objectID": "soft-matter_gels.html#colloidal-gel-formation",
+    "href": "soft-matter_gels.html#colloidal-gel-formation",
+    "title": "Complex Disordered Systems",
+    "section": "Colloidal Gel Formation",
+    "text": "Colloidal Gel Formation\n\nMD simulation of dilute colloidal gel formation (largest cluster in red)Percolating cluster → mechanical rigidity"
+  },
+  {
+    "objectID": "soft-matter_gels.html#colloid-polymer-mixtures",
+    "href": "soft-matter_gels.html#colloid-polymer-mixtures",
+    "title": "Complex Disordered Systems",
+    "section": "Colloid-Polymer Mixtures",
+    "text": "Colloid-Polymer Mixtures\nDepletion interactions like the Asakura-Oosawa model produce a very short ranged potential with strong attractive part. \nW_{\\mathrm{AO}}(r)=-\\frac{4 \\pi \\rho_p k_B T}{3} R^3(1+q)^3\\left[1-\\frac{3}{4} \\frac{r}{R(1+q)}+\\frac{1}{16}\\left(\\frac{r}{R(1+q)}\\right)^3\\right], \\quad 2R&lt;r&lt;2(R+R_p), \\quad q=\\dfrac{R_p}{R}\n\nattractive + very short ranged → sticky interaction\n\nColloids cluster into nonequilibrium branched phase\nBinodal becomes metastable to fluid-solid coexistence\n\n\nPhase diagram of colloid-polymer mixtures for varying polymer-colloid aspect ration q. Small"
+  },
+  {
+    "objectID": "soft-matter_gels.html#simple-model-potentials",
+    "href": "soft-matter_gels.html#simple-model-potentials",
+    "title": "Complex Disordered Systems",
+    "section": "Simple Model Potentials",
+    "text": "Simple Model Potentials\nSquare-well potential:\n\nU(r) =\n\\begin{cases}\n\\infty & r &lt; \\sigma \\\\\n-\\epsilon & \\sigma \\leq r &lt; \\lambda \\sigma \\\\\n0 & r \\geq \\lambda \\sigma\n\\end{cases}\n\n\n\\sigma: particle diameter\n\\epsilon: well depth\n\\lambda: range parameter"
+  },
+  {
+    "objectID": "soft-matter_gels.html#morse-potential-md-simulations",
+    "href": "soft-matter_gels.html#morse-potential-md-simulations",
+    "title": "Complex Disordered Systems",
+    "section": "Morse Potential (MD Simulations)",
+    "text": "Morse Potential (MD Simulations)\nSmooth short-range attractive potential:\n\nU_{\\mathrm{Morse}}(r) = D \\left[ e^{-2\\alpha (r - r_0)} - 2 e^{-\\alpha (r - r_0)} \\right]\n\n\nD: well depth\n\\alpha: steepness (controls range)\nr_0: equilibrium distance"
+  },
+  {
+    "objectID": "soft-matter_gels.html#pair-correlations-gr",
+    "href": "soft-matter_gels.html#pair-correlations-gr",
+    "title": "Complex Disordered Systems",
+    "section": "Pair Correlations: g(r)",
+    "text": "Pair Correlations: g(r)\nRadial distribution function g(r): best at short distances\n\n\n\nCaptures cluster structure\nSharp peaks at dilute concentrations\nNearest/second-nearest neighbor shells\n\n\n\n\n\nTime evolution of g(r) ina dilute gel in units of the time to percolate \\tau_{\\mathrm perc}"
+  },
+  {
+    "objectID": "soft-matter_gels.html#structure-factor-sq-and-fractals",
+    "href": "soft-matter_gels.html#structure-factor-sq-and-fractals",
+    "title": "Complex Disordered Systems",
+    "section": "Structure Factor: S(q) and Fractals",
+    "text": "Structure Factor: S(q) and Fractals\nNear percolation threshold, the loq-q trend from the trsucture factor links to the compressibility: power-law behavior:\nClusters become fractal objects with self-similar structure at all length scales.\n\n\nFor a fractal object with dimension D_f:\n\nMass scales as M(R) \\sim R^{D_f}\nDensity correlations decay as \\rho(r) \\sim r^{-(d-D_f)}\n\nFourier transform of power-law correlations gives: S(q) \\sim q^{-D_f}\n\nD_f: fractal dimension\nNo characteristic length scale\nTypical 3D: D_f \\approx 2.5\n\n\n\n\n\nTime evolution of the structure factor S(q)"
+  },
+  {
+    "objectID": "soft-matter_gels.html#arrested-spinodal-decomposition",
+    "href": "soft-matter_gels.html#arrested-spinodal-decomposition",
+    "title": "Complex Disordered Systems",
+    "section": "Arrested Spinodal Decomposition",
+    "text": "Arrested Spinodal Decomposition\nHow do gels form?\n\n\nScenario:\n\nRapid quench into unstable region\nPhase separation begins (spinodal)\nDense regions arrest (glass/jamming)\nBicontinuous frozen structure\n\nThe picture suggest the progressive freezing of coarsening upon spinodal decomposition."
+  },
+  {
+    "objectID": "soft-matter_gels.html#phase-diagram-arrested-spinodal",
+    "href": "soft-matter_gels.html#phase-diagram-arrested-spinodal",
+    "title": "Complex Disordered Systems",
+    "section": "Phase Diagram: Arrested Spinodal",
+    "text": "Phase Diagram: Arrested Spinodal\n\nArrested spinodal scenario, see Zaccarelli et al 2007Key lines:: - Binodal (red): liqiid-gase coexistence at equilibrium - Spinodal (dashed): limit of stability of the metastable phases. Instability (i.e. spinodal decomposition) starts inside - Percolation (purple): At some density, the clusters percolate (span the system) - Glass transition (blue): Dense phase becomes dynamically arrested (non-ergodic)\nGel path: Rapid cooling → arrested dense phase + vapor"
+  },
+  {
     "objectID": "soft-matter_liquidx2.html#aside-functional-derivatives",
     "href": "soft-matter_liquidx2.html#aside-functional-derivatives",
     "title": "Complex Disordered Systems",
@@ -1554,122 +1666,164 @@
     "text": "Coexistence: Metastability and Instability\n\nThe spinodal line marks the boundary of metastability. It is the limit of stability \n\\frac{\\partial^2 G}{\\partial \\phi^2}=0\n\nBetween the binodal and spinodal lines, the system is metastable, meaning it can persist in a non-equilibrium state for a finite time.\nThe nucleation time \\tau is related to the free energy barrier \\Delta G^* by an activated (also called Arrhenius) law\n  \\tau \\propto \\exp\\left(\\frac{\\Delta G^*}{k_B T}\\right)    \nInside the spinodal there is no nucleation: coarsening occurs.\n\nYou have seen some of this physics when discussing the Ising model."
   },
   {
-    "objectID": "soft-matter_gels.html#today",
-    "href": "soft-matter_gels.html#today",
+    "objectID": "soft-matter_active.html#today",
+    "href": "soft-matter_active.html#today",
     "title": "Complex Disordered Systems",
     "section": "Today",
-    "text": "Today\n\nPhysical gels and percolation\nColloid-polymer mixtures\nStructure and characterization\nArrested spinodal decomposition"
+    "text": "Today\n\nBeyond thermal equilibrium\nRun-and-tumble dynamics\nActive Brownian particles\nMotility-induced phase separation (MIPS)"
   },
   {
-    "objectID": "soft-matter_gels.html#what-is-a-physical-gel",
-    "href": "soft-matter_gels.html#what-is-a-physical-gel",
+    "objectID": "soft-matter_active.html#beyond-thermal-systems",
+    "href": "soft-matter_active.html#beyond-thermal-systems",
     "title": "Complex Disordered Systems",
-    "section": "What is a Physical Gel?",
-    "text": "What is a Physical Gel?\nPhysical gel: Particles/polymers connected via reversible, non-covalent bonds forming a percolating network\n\n\nKey features:\n\nBonds break/reform dynamically\nEnergy ~ k_BT\nSelf-healing possible\nThermoreversible\n\n\nExamples:\n\nGelatin\nAgarose\nYoghurt\nPaint, inks\n\n\nCross-links form via dense local regions (microcrystalline/glassy)"
+    "section": "Beyond Thermal Systems",
+    "text": "Beyond Thermal Systems\n\n\nEquilibrium systems systems:\n\nFree energy is optimised (subject to constraints):\nDistribution of states given by Boltzmann statistics: P(\\text{state}) \\propto e^{-E(\\text{state})/k_BT}\n\nArrested systems\n\nSupercooled liquids: local equilibrium (thermal)\nGlasses/gels: slow relaxation (towards equilibrium)\n\n\nActive matter: Nonequilibrium via local dissipation\n\nLocal energy consumption\nSelf-propulsion\nDissipation at microscopic scale\n\nExamples:\n\nBacteria\nSynthetic microswimmers\nMolecular motors\nBird flocks, fish schools\n\n\n\n\n\nIn a active systems, the distribution of states is not given by Boltzmann statistics!"
   },
   {
-    "objectID": "soft-matter_gels.html#physical-vs-chemical-gels",
-    "href": "soft-matter_gels.html#physical-vs-chemical-gels",
+    "objectID": "soft-matter_active.html#run-and-tumble-motion",
+    "href": "soft-matter_active.html#run-and-tumble-motion",
     "title": "Complex Disordered Systems",
-    "section": "Physical vs Chemical Gels",
-    "text": "Physical vs Chemical Gels\n\n\nPhysical Gels\n\nReversible bonds\nEnergy ~ k_BT\nDynamic network\nThermoreversible\n\n\nChemical Gels\n\nIrreversible covalent bonds\nHigh energy barriers\nPermanent network\n\n\nKey transition:\n\nFluid → Gel occurs when a system-spanning cluster forms (percolation)\nDramatic viscosity increase + elastic response\n\nGels are a second example of disordered solids (after glasses)"
+    "section": "Run-and-Tumble Motion",
+    "text": "Run-and-Tumble Motion\nFurther inspirations from the microbial world, where dissipation can be more directly observed (and even tuned).\nInspired by bacterial motion (E. coli)\n\n\nTwo phases:\n\nRun: Straight-line motion at constant speed v_0\nTumble: Random reorientation\n\nKey parameter: Tumble rate \\lambda"
   },
   {
-    "objectID": "soft-matter_gels.html#percolation-theory",
-    "href": "soft-matter_gels.html#percolation-theory",
+    "objectID": "soft-matter_active.html#run-and-tumble-dynamics",
+    "href": "soft-matter_active.html#run-and-tumble-dynamics",
     "title": "Complex Disordered Systems",
-    "section": "Percolation Theory",
-    "text": "Percolation Theory\nProblem: Square grid L\\times L sites, randomly label N of them. When does a spanning cluster form?\n\n\n\np = N/L^2 = occupation probability\nPercolation threshold p_c\nBelow p_c: small clusters\nAbove p_c: giant spanning cluster\n\n\n2D square lattice: p_c \\approx 0.5927\nTransition: Continuous (2nd order)"
+    "section": "Run-and-Tumble: Dynamics",
+    "text": "Run-and-Tumble: Dynamics\n\n\nCode\nviewof simulation = {\n    const n = 300, W = 1000, H = 500, dt = 0.5, v0 = 1.5;\n\n    const tumbleSlider = Inputs.range([0.01, 1.0\n    ], {step:0.01, value:0.1, label:\"Tumble rate λ\"});\n    const button = html`&lt;button&gt;Pause&lt;/button&gt;`;\n    let running = true;\n    button.onclick = () =&gt; {\n        running = !running;\n        button.textContent = running ? \"Pause\" : \"Resume\";\n    };\n\n    let state = Array.from({length: n}, () =&gt; ({\n        x: Math.random() * W,\n        y: Math.random() * H,\n        theta: Math.random() * 2 * Math.PI\n    }));\n\n    // Each particle gets a trace array\n    let traces = Array.from({length: n}, () =&gt; []);\n\n    // Reset traces when tumble rate changes\n    let lastLambda = tumbleSlider.value;\n    tumbleSlider.addEventListener(\"input\", () =&gt; {\n        traces = Array.from({length: n}, () =&gt; []);\n        lastLambda = tumbleSlider.value;\n    });\n\n    function step(state, λ) {\n        return state.map((p, i) =&gt; {\n            if (Math.random() &lt; λ * dt) p.theta = Math.random() * 2 * Math.PI;\n\n            // Predict next position\n            let nx = p.x + v0 * Math.cos(p.theta) * dt;\n            let ny = p.y + v0 * Math.sin(p.theta) * dt;\n\n            // Bounce at left/right walls\n            if (nx &lt; 0) {\n                p.x = 0;\n                p.theta = Math.PI - Math.random() * Math.PI; // random angle pointing right\n            } else if (nx &gt; W) {\n                p.x = W;\n                p.theta = Math.PI + Math.random() * Math.PI; // random angle pointing left\n            } else {\n                p.x = nx;\n            }\n\n            // Bounce at top/bottom walls\n            if (ny &lt; 0) {\n                p.y = 0;\n                p.theta = (Math.random() * Math.PI); // random angle pointing down\n            } else if (ny &gt; H) {\n                p.y = H;\n                p.theta = Math.PI + (Math.random() * Math.PI); // random angle pointing up\n            } else {\n                p.y = ny;\n            }\n\n            // Add current position to trace\n            traces[i].push([p.x, p.y]);\n            // Limit trace length for performance\n            if (traces[i].length &gt; 200) traces[i].shift();\n            return p;\n        });\n    }\n\n    const container = html`&lt;div&gt;&lt;/div&gt;`;\n    container.append(tumbleSlider, button);\n    const svg = d3.select(container).append(\"svg\")\n        .attr(\"width\", W)\n        .attr(\"height\", H)\n        .style(\"background\", \"#f8f8f8\");\n\n    while (true) {\n        const λ = tumbleSlider.value;\n        if (running) state = step(state, λ);\n\n        svg.selectAll(\"*\").remove();\n\n        // Draw traces\n        traces.forEach(trace =&gt; {\n            if (trace.length &gt; 1) {\n                svg.append(\"path\")\n                    .attr(\"d\", d3.line()(trace))\n                    .attr(\"stroke\", \"#90caf9\")\n                    .attr(\"stroke-width\", 1)\n                    .attr(\"fill\", \"none\");\n            }\n        });\n\n        // Draw particles\n        svg.selectAll(\"circle\")\n            .data(state)\n            .enter().append(\"circle\")\n            .attr(\"cx\", d =&gt; d.x)\n            .attr(\"cy\", d =&gt; d.y)\n            .attr(\"r\", 3)\n            .attr(\"fill\", \"#1976d2\");\n\n        svg.selectAll(\"line\")\n            .data(state)\n            .enter().append(\"line\")\n            .attr(\"x1\", d =&gt; d.x)\n            .attr(\"y1\", d =&gt; d.y)\n            .attr(\"x2\", d =&gt; d.x + 10 * Math.cos(d.theta))\n            .attr(\"y2\", d =&gt; d.y + 10 * Math.sin(d.theta))\n            .attr(\"stroke\", \"#1976d2\")\n            .attr(\"stroke-width\", 1.2);\n\n        yield container;\n        await Promises.delay(16);\n    }\n}\n\n\n\n\n\n\n\n\n\nFigure 1: Non-interacting run and tumble particles."
   },
   {
-    "objectID": "soft-matter_gels.html#percolation-simulation",
-    "href": "soft-matter_gels.html#percolation-simulation",
+    "objectID": "soft-matter_active.html#run-and-tumble-equations",
+    "href": "soft-matter_active.html#run-and-tumble-equations",
     "title": "Complex Disordered Systems",
-    "section": "Percolation Simulation",
-    "text": "Percolation Simulation"
+    "section": "Run-and-Tumble: Equations",
+    "text": "Run-and-Tumble: Equations\nRun phase (constant velocity): \\mathbf{r}(t + \\Delta t) = \\mathbf{r}(t) + v_0 \\hat{\\mathbf{n}}(t) \\Delta t\nTumble phase (random reorientation): - With probability \\lambda \\Delta t: randomize \\hat{\\mathbf{n}} - Otherwise: continue running"
   },
   {
-    "objectID": "soft-matter_gels.html#percolation-threshold-p_c-values",
-    "href": "soft-matter_gels.html#percolation-threshold-p_c-values",
+    "objectID": "soft-matter_active.html#mean-squared-displacement",
+    "href": "soft-matter_active.html#mean-squared-displacement",
     "title": "Complex Disordered Systems",
-    "section": "Percolation Threshold: p_c Values",
-    "text": "Percolation Threshold: p_c Values\nNon-universal: p_c depends on lattice type and dimension\n\n\n\nLattice\nDim\nz\np_c^{site}\np_c^{bond}\n\n\n\n\nSquare\n2\n4\n0.593\n0.5\n\n\nTriangular\n2\n6\n0.5\n0.347\n\n\nCubic\n3\n6\n0.312\n0.249\n\n\nHypercubic\n4\n8\n0.197\n0.160\n\n\nHypercubic\n6\n12\n0.109\n0.094\n\n\n\nHigher dimensions → lower p_c (easier to percolate)"
+    "section": "Mean Squared Displacement",
+    "text": "Mean Squared Displacement\nTwo regimes\n\nBallistic (short times): \\langle \\Delta r^2(t) \\rangle \\sim v_0^2 t^2\nDiffusive (long times, t \\gg 1/\\lambda): \\langle \\Delta r^2(t) \\rangle \\sim 2 D_{\\text{eff}} t\n\nEffective diffusion: D_{\\text{eff}} = \\frac{v_0^2}{2\\lambda} (2D)\n\n\nCrossover time: t_c \\sim 1/\\lambda"
   },
   {
-    "objectID": "soft-matter_gels.html#critical-exponents-universal",
-    "href": "soft-matter_gels.html#critical-exponents-universal",
+    "objectID": "soft-matter_active.html#msd-simulation",
+    "href": "soft-matter_active.html#msd-simulation",
     "title": "Complex Disordered Systems",
-    "section": "Critical Exponents: Universal",
-    "text": "Critical Exponents: Universal\nUniversal: Critical exponents independent of lattice details\nP_{\\infty}(p)\\propto (p-p_c)^{\\beta}\n\n\n\nDimension d\n\\beta\n\n\n\n\n2\n5/36 ≈ 0.14\n\n\n3\n≈ 0.41\n\n\n≥6\n1 (mean-field)\n\n\n\nGels require percolation for mechanical stability!"
+    "section": "MSD Simulation",
+    "text": "MSD Simulation"
   },
   {
-    "objectID": "soft-matter_gels.html#colloidal-gel-formation",
-    "href": "soft-matter_gels.html#colloidal-gel-formation",
+    "objectID": "soft-matter_active.html#active-brownian-particles-abps",
+    "href": "soft-matter_active.html#active-brownian-particles-abps",
     "title": "Complex Disordered Systems",
-    "section": "Colloidal Gel Formation",
-    "text": "Colloidal Gel Formation\n\nMD simulation of dilute colloidal gel formation (largest cluster in red)Percolating cluster → mechanical rigidity"
+    "section": "Active Brownian Particles (ABPs)",
+    "text": "Active Brownian Particles (ABPs)\nMinimal model for self-propelled colloids (e.g., Janus particles)\n\n\nDynamics:\n\nTranslational motion \\frac{d\\mathbf{r}}{dt} = v_0 \\hat{\\mathbf{n}}(t) + \\sqrt{2D_t} \\boldsymbol{\\xi}(t)\nRotational motion \\frac{d\\theta}{dt} = \\sqrt{2D_r} \\eta(t)\n\n\n\nv_0: self-propulsion speed\nD_t: translational diffusion\nD_r: rotational diffusion\nContinuous reorientation\n\nPéclet Number: Pe = \\frac{v_0}{\\sqrt{D_t D_r}} = \\frac{v_0}{D_r L}\n\nMeasures activity strength vs thermal motion\nPe \\ll 1: thermal equilibrium limit\nPe \\gg 1: strong activity, far from equilibrium\nL = \\sqrt{D_t/D_r}: characteristic length scale"
   },
   {
-    "objectID": "soft-matter_gels.html#colloid-polymer-mixtures",
-    "href": "soft-matter_gels.html#colloid-polymer-mixtures",
+    "objectID": "soft-matter_active.html#abp-mean-squared-displacement",
+    "href": "soft-matter_active.html#abp-mean-squared-displacement",
     "title": "Complex Disordered Systems",
-    "section": "Colloid-Polymer Mixtures",
-    "text": "Colloid-Polymer Mixtures\nDepletion interactions like the Asakura-Oosawa model produce a very short ranged potential with strong attractive part. \nW_{\\mathrm{AO}}(r)=-\\frac{4 \\pi \\rho_p k_B T}{3} R^3(1+q)^3\\left[1-\\frac{3}{4} \\frac{r}{R(1+q)}+\\frac{1}{16}\\left(\\frac{r}{R(1+q)}\\right)^3\\right], \\quad 2R&lt;r&lt;2(R+R_p), \\quad q=\\dfrac{R_p}{R}\n\nattractive + very short ranged → sticky interaction\n\nColloids cluster into nonequilibrium branched phase\nBinodal becomes metastable to fluid-solid coexistence\n\n\nPhase diagram of colloid-polymer mixtures for varying polymer-colloid aspect ration q. Small"
+    "section": "ABP: Mean Squared Displacement",
+    "text": "ABP: Mean Squared Displacement\nThree regimes:\n\\langle \\Delta r^2(\\tau) \\rangle = \\left[4 D_T + 2 v^2 \\tau_R \\right] \\tau + 2 v^2 \\tau_R^2 \\left( e^{-\\tau / \\tau_R} - 1 \\right)\n\n\n\nShort times: Diffusive \\sim 4D_T\\tau\nIntermediate: Ballistic \\sim v_0^2\\tau^2\nLong times: Enhanced diffusion\n\n\n\\tau_R = 1/D_r: persistence time\nD_{\\mathrm{eff}} = \\frac{v_0^2}{2D_r}: effective diffusion\n\n\n\n\n\nMean squared displacement for ABPs at different self-propulsion speeds."
   },
   {
-    "objectID": "soft-matter_gels.html#simple-model-potentials",
-    "href": "soft-matter_gels.html#simple-model-potentials",
+    "objectID": "soft-matter_active.html#abp-msd-simulation",
+    "href": "soft-matter_active.html#abp-msd-simulation",
     "title": "Complex Disordered Systems",
-    "section": "Simple Model Potentials",
-    "text": "Simple Model Potentials\nSquare-well potential:\n\nU(r) =\n\\begin{cases}\n\\infty & r &lt; \\sigma \\\\\n-\\epsilon & \\sigma \\leq r &lt; \\lambda \\sigma \\\\\n0 & r \\geq \\lambda \\sigma\n\\end{cases}\n\n\n\\sigma: particle diameter\n\\epsilon: well depth\n\\lambda: range parameter"
+    "section": "ABP MSD Simulation",
+    "text": "ABP MSD Simulation"
   },
   {
-    "objectID": "soft-matter_gels.html#morse-potential-md-simulations",
-    "href": "soft-matter_gels.html#morse-potential-md-simulations",
+    "objectID": "soft-matter_active.html#motility-induced-phase-separation-mips",
+    "href": "soft-matter_active.html#motility-induced-phase-separation-mips",
     "title": "Complex Disordered Systems",
-    "section": "Morse Potential (MD Simulations)",
-    "text": "Morse Potential (MD Simulations)\nSmooth short-range attractive potential:\n\nU_{\\mathrm{Morse}}(r) = D \\left[ e^{-2\\alpha (r - r_0)} - 2 e^{-\\alpha (r - r_0)} \\right]\n\n\nD: well depth\n\\alpha: steepness (controls range)\nr_0: equilibrium distance\n\n\n\n\nMorse potential placeholder"
+    "section": "Motility-Induced Phase Separation (MIPS)",
+    "text": "Motility-Induced Phase Separation (MIPS)\nInteracting ABPs → nonequilibrium self-organization\n\nMIPS in 3D ABPs from Turci and Wilding Physical Review Letters 2021Key idea: Purely repulsive particles (hard spheres) + ABP dynamics"
   },
   {
-    "objectID": "soft-matter_gels.html#pair-correlations-gr",
-    "href": "soft-matter_gels.html#pair-correlations-gr",
+    "objectID": "soft-matter_active.html#mips-mechanism",
+    "href": "soft-matter_active.html#mips-mechanism",
     "title": "Complex Disordered Systems",
-    "section": "Pair Correlations: g(r)",
-    "text": "Pair Correlations: g(r)\nRadial distribution function g(r): best at short distances\n\n\n\nCaptures cluster structure\nSharp peaks at dilute concentrations\nNearest/second-nearest neighbor shells\n\n\n\n\n\nTime evolution of g(r) ina dilute gel in units of the time to percolate \\tau_{\\mathrm perc}"
+    "section": "MIPS Mechanism",
+    "text": "MIPS Mechanism\n\n\nEquilibrium (no self-propulsion):\n\nHard spheres\nNo liquid-gas separation\n\nActive (with self-propulsion):\n\nHead-to-head collisions\nFinite residence time\nMany-body caging\nDensity heterogeneities\n\n\nAs D_r decreases:\n\nMore persistent motion\nSystem more out-of-equilibrium\nEnhanced density fluctuations\nSpontaneous phase separation"
   },
   {
-    "objectID": "soft-matter_gels.html#structure-factor-sq-and-fractals",
-    "href": "soft-matter_gels.html#structure-factor-sq-and-fractals",
+    "objectID": "soft-matter_active.html#mips-critical-like-behavior",
+    "href": "soft-matter_active.html#mips-critical-like-behavior",
     "title": "Complex Disordered Systems",
-    "section": "Structure Factor: S(q) and Fractals",
-    "text": "Structure Factor: S(q) and Fractals\nNear percolation threshold, the loq-q trend from the trsucture factor links to the compressibility: power-law behavior:\nClusters become fractal objects with self-similar structure at all length scales.\n\n\nFor a fractal object with dimension D_f:\n\nMass scales as M(R) \\sim R^{D_f}\nDensity correlations decay as \\rho(r) \\sim r^{-(d-D_f)}\n\nFourier transform of power-law correlations gives: S(q) \\sim q^{-D_f}\n\nD_f: fractal dimension\nNo characteristic length scale\nTypical 3D: D_f \\approx 2.5\n\n\n\n\n\nTime evolution of the structure factor S(q)"
+    "section": "MIPS: Critical-like Behavior",
+    "text": "MIPS: Critical-like Behavior\nPhase diagram features:\n\nLow D_r: Dense + dilute phases (like liquid-gas)\nCritical point: Enhanced fluctuations\nMIPS exists both in 2d and 3D:\n\nin 2D, disk ordering at high densities\nin 3D, MIPS is metastable to gas-crystal, like colloid polymer mixtures.\n\nShort-range effective interactions between active particles\n\nResult: Nonequilibrium phase transition in purely repulsive system!"
   },
   {
-    "objectID": "soft-matter_gels.html#arrested-spinodal-decomposition",
-    "href": "soft-matter_gels.html#arrested-spinodal-decomposition",
-    "title": "Complex Disordered Systems",
-    "section": "Arrested Spinodal Decomposition",
-    "text": "Arrested Spinodal Decomposition\nHow do gels form?\n\n\nScenario:\n\nRapid quench into unstable region\nPhase separation begins (spinodal)\nDense regions arrest (glass/jamming)\nBicontinuous frozen structure\n\nThe picture suggest the progressive freezing of coarsening upon spinodal decomposition."
-  },
-  {
-    "objectID": "soft-matter_gels.html#phase-diagram-arrested-spinodal",
-    "href": "soft-matter_gels.html#phase-diagram-arrested-spinodal",
-    "title": "Complex Disordered Systems",
-    "section": "Phase Diagram: Arrested Spinodal",
-    "text": "Phase Diagram: Arrested Spinodal\n\nArrested spinodal scenario, see Zaccarelli et al 2007Key lines:: - Binodal (red): liqiid-gase coexistence at equilibrium - Spinodal (dashed): limit of stability of the metastable phases. Instability (i.e. spinodal decomposition) starts inside - Percolation (purple): At some density, the clusters percolate (span the system) - Glass transition (blue): Dense phase becomes dynamically arrested (non-ergodic)\nGel path: Rapid cooling → arrested dense phase + vapor"
-  },
-  {
-    "objectID": "soft-matter_gels.html#summary",
-    "href": "soft-matter_gels.html#summary",
+    "objectID": "soft-matter_active.html#summary",
+    "href": "soft-matter_active.html#summary",
     "title": "Complex Disordered Systems",
     "section": "Summary",
-    "text": "Summary\n\nPhysical gels: Reversible bonds, percolating network\nPercolation theory: Critical threshold p_c, universal exponents\nColloid-polymer mixtures: Sticky interactions → gel formation\nStructure: Fractal (D_f \\approx 2.5), characterized by g(r) and S(q)\nFormation: Arrested spinodal decomposition\n\nSee (Zaccarelli2007?) for comprehensive review"
+    "text": "Summary\nActive matter: Out-of-equilibrium self-propelled systems\n\n\nModels: - Run-and-tumble (discrete) - Active Brownian particles (continuous)\n\nKey physics: - Persistent motion - Ballistic → diffusive crossover - MIPS in interacting systems\n\nEmergent phenomena beyond thermal equilibrium"
   },
   {
-    "objectID": "soft-matter_gels.html#percolation-transition",
-    "href": "soft-matter_gels.html#percolation-transition",
+    "objectID": "soft-matter_active.html#run-and-tumble-dynamics-1",
+    "href": "soft-matter_active.html#run-and-tumble-dynamics-1",
     "title": "Complex Disordered Systems",
-    "section": "Percolation Transition",
-    "text": "Percolation Transition"
+    "section": "Run-and-Tumble dynamics",
+    "text": "Run-and-Tumble dynamics\nRun phase (constant velocity): \\mathbf{r}(t + \\Delta t) = \\mathbf{r}(t) + v_0 \\hat{\\mathbf{n}}(t) \\Delta t\nTumble phase (random reorientation):\n\nWith probability \\lambda \\Delta t: randomize \\hat{\\mathbf{n}}\nOtherwise: continue running"
+  },
+  {
+    "objectID": "soft-matter_active.html#mean-squared-displacement-1",
+    "href": "soft-matter_active.html#mean-squared-displacement-1",
+    "title": "Complex Disordered Systems",
+    "section": "Mean Squared Displacement",
+    "text": "Mean Squared Displacement"
+  },
+  {
+    "objectID": "soft-matter_active.html#flocking-as-a-minimal-model",
+    "href": "soft-matter_active.html#flocking-as-a-minimal-model",
+    "title": "Complex Disordered Systems",
+    "section": "Flocking as a minimal model",
+    "text": "Flocking as a minimal model"
+  },
+  {
+    "objectID": "soft-matter_active.html#flocking-as-a-minimal-model-1",
+    "href": "soft-matter_active.html#flocking-as-a-minimal-model-1",
+    "title": "Complex Disordered Systems",
+    "section": "Flocking as a minimal model",
+    "text": "Flocking as a minimal model\nThe Vicsek model (1995) was one of the simplest models of active matter. Key ingredients: alignment + self propulsion\n\n\n\nN particles with positions \\mathbf{r}_i and orientations \\theta_i\nUpdate rules: \\mathbf{r}_i(t+1) = \\mathbf{r}_i(t) + v_0 \\hat{\\mathbf{n}}_i(t) \\theta_i(t+1) = \\langle \\theta_j \\rangle_{|\\mathbf{r}_j - \\mathbf{r}_i| &lt; R} + \\eta_i\nv_0: constant speed\nR: interaction radius\n\\eta_i: noise term (uniform random in [-\\pi/2, \\pi/2])"
+  },
+  {
+    "objectID": "soft-matter_active.html#effective-interactions",
+    "href": "soft-matter_active.html#effective-interactions",
+    "title": "Complex Disordered Systems",
+    "section": "Effective Interactions",
+    "text": "Effective Interactions\n\n\nThe persistence of active motion can lead to effective interactions between particles.\n\nHead-to-head collisions lead to a persistence time of contact between two particles\nThis can be seen as an effective attraction between particles\n\n\n\n\n\n\nEffective twobody potential for ABPs, Turci & wilding PRl 2021\n\n\n\n(The realiity is more complex, with many-body effects!)"
+  },
+  {
+    "objectID": "soft-matter_active.html#experimental-realisation-of-active-matter-and-some-mips",
+    "href": "soft-matter_active.html#experimental-realisation-of-active-matter-and-some-mips",
+    "title": "Complex Disordered Systems",
+    "section": "Experimental realisation of active matter (and some MIPS)",
+    "text": "Experimental realisation of active matter (and some MIPS)\nIn experiments, active systems can be realised in various ways:\n\nBacterial suspensions: e.g., E. coli, B. subtilis\nSynthetic microswimmers: Janus particles with catalytic coatings\nLight-activated colloids: Particles that change motility under light\nVibrated granular matter: Macroscopic particles on vibrating plates\nNano- and micro-robots: Swarms of tiny robots with programmed motion"
+  },
+  {
+    "objectID": "soft-matter_active.html#examples-of-active-matter",
+    "href": "soft-matter_active.html#examples-of-active-matter",
+    "title": "Complex Disordered Systems",
+    "section": "Examples of Active Matter",
+    "text": "Examples of Active Matter\nSome examples"
+  },
+  {
+    "objectID": "soft-matter_active.html#flocking-as-a-minimal-model-2",
+    "href": "soft-matter_active.html#flocking-as-a-minimal-model-2",
+    "title": "Complex Disordered Systems",
+    "section": "Flocking as a minimal model",
+    "text": "Flocking as a minimal model\n\nVicsek simulation"
+  },
+  {
+    "objectID": "soft-matter_active.html#experimental-realisation-of-active-matter",
+    "href": "soft-matter_active.html#experimental-realisation-of-active-matter",
+    "title": "Complex Disordered Systems",
+    "section": "Experimental realisation of active matter",
+    "text": "Experimental realisation of active matter\nIn experiments, active systems can be realised in various ways:\n\n\n\nBacterial suspensions: e.g., E. coli, B. subtilis\nSynthetic microswimmers: Janus particles with catalytic coatings\nLight-activated colloids: Particles that change motility under light\n\n\n\nVibrated granular matter: Macroscopic particles on vibrating plates\nNano- and micro-robots: Swarms of tiny robots with programmed motion\n\n\n\n\n\nExperimental systems and active. matter behaviours"
   }
 ]

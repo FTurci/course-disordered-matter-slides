@@ -7,10 +7,13 @@ atom_style      atomic
 dimension       3
 boundary        p p p
 
+
+variable        temp equal 2.0
+
 # System definition
-region          box block 0 20 0 20 0 20
+region          box block 0 30 0 30 0 30
 create_box      1 box
-create_atoms    1 random 1000 12345 box
+create_atoms    1 random 5000 12345 box
 
 # Set mass
 mass            1 1.0
@@ -18,19 +21,26 @@ mass            1 1.0
 # Morse potential parameters
 # U(r) = D0 * [exp(-2*alpha*(r-r0)) - 2*exp(-alpha*(r-r0))]
 # High alpha parameter for gel-like behavior
-pair_style      morse 5.0
-pair_coeff      1 1 1.0 7.0 1.5
-# D0=1.0 (well depth), alpha=7.0 (high value), r0=1.5 (equilibrium distance)
+pair_style      morse 2.0
+pair_coeff      1 1 1.0 30.0 1.0
 
 # Initial velocity (low temperature for stability)
-velocity        all create 0.3 87287 dist gaussian
+velocity        all create ${temp} 87287 dist gaussian
 
 # Neighbor list settings
 neighbor        0.3 bin
 neigh_modify    every 10 delay 0 check yes
 
-# Time integration
-fix             1 all nvt temp 0.3 0.3 1.0
+# Energy minimization to remove overlaps
+minimize        1.0e-4 1.0e-6 1000 10000
+
+# Reset velocities after minimization
+velocity        all create ${temp} 87287 dist gaussian
+
+# Langevin dynamics (almost overdamped)
+# langevin temp_start temp_stop damp seed
+fix             1 all langevin ${temp} ${temp} 0.1 48279
+fix             2 all nve
 
 # Output settings
 timestep        0.005
@@ -38,13 +48,13 @@ timestep        0.005
 thermo_style    custom step temp pe ke etotal press density
 thermo          100
 
-dump            1 all custom 1000 trajectory.lammpstrj id type x y z
-dump_modify     1 sort id
 
-# Equilibration run
-run             10000
+# Run 3: 10000-100000 steps, dump every 1000 steps
+dump            3 all custom 1000 trajectory-temp${temp}.lammpstrj id type x y z
+dump_modify     3 sort id 
+run             1000000
+undump          3
 
-# Production run
-run             20000
+
 
 write_data      final_config.data

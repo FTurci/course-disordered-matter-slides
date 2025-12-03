@@ -281,8 +281,6 @@ $$
 - $\alpha$: steepness (controls range)
 - $r_0$: equilibrium distance
 
-![Morse potential placeholder](./figs/morse_potential.png){width=50%}
-
 
 ```{python}
 #| echo: false
