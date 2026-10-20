@@ -1,0 +1,32 @@
+
+project:
+  type: website
+
+  output-dir: ../docs
+  resources:
+    - coursework2/saw_builder.html
+
+website:
+  site-url: "https://fturci.github.io/course-disordered-matter-slides/"
+
+format:
+
+  live-revealjs:
+    incremental: false
+    # subtitle: "Complex Disordered Systems"
+    slide-number: true
+    transition: fade
+    progress: true
+    touch: true
+    controls: true
+    auto-animate: true
+    # margin: 0.01
+    width: 1600
+    height: 900
+    author: Francesco Turci
+    css: styles.css
+    html-math-method: katex
+
+filters:
+  - jmbuhr/molstar
+

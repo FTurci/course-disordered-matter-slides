@@ -1,7 +1,6 @@
-_*
 .DS_Store
 .vscode/
-
-/.quarto/
+.quarto/
+__pycache__/
 
 **/*.quarto_ipynb
