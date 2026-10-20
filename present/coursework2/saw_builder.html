@@ -30,7 +30,10 @@
   h2 { font-size: 1.05rem; margin: 0 0 10px; }
   p.lead { color: var(--muted); margin: 0 0 16px; max-width: 75ch; }
   code, pre, table { font-family: ui-monospace, "SF Mono", Menlo, Consolas, monospace; font-size: 13px; }
-  .tabs { display: flex; gap: 8px; margin-bottom: 12px; flex-wrap: wrap; }
+  .topbar { display: flex; justify-content: space-between; align-items: center; gap: 8px; flex-wrap: wrap; margin-bottom: 12px; }
+  .tabs { display: flex; gap: 8px; flex-wrap: wrap; }
+  .quick { display: flex; gap: 6px; flex-wrap: wrap; }
+  .quick .btn { padding: 4px 10px; font-size: 13.5px; }
   button, select, input { font: inherit; color: var(--ink); }
   .tabs button { border: 1px solid var(--line); background: var(--panel); padding: 6px 14px;
                  border-radius: 6px; cursor: pointer; }
@@ -98,9 +101,16 @@
   <p class="lead">Drag blocks from the palette into the purple starting block to build each algorithm. Some blocks are not
     needed. Watch your algorithm run on the lattice, then use it to take measurements.</p>
 
-  <div class="tabs" role="tablist">
-    <button role="tab" data-ex="direct" aria-selected="true">1. Direct sampling</button>
-    <button role="tab" data-ex="pivot" aria-selected="false">2. Pivot algorithm</button>
+  <div class="topbar">
+    <div class="tabs" role="tablist">
+      <button role="tab" data-ex="direct" aria-selected="true">1. Direct sampling</button>
+      <button role="tab" data-ex="pivot" aria-selected="false">2. Pivot algorithm</button>
+    </div>
+    <div class="quick">
+      <button class="btn secondary" id="q-check" title="Runs the check; the result appears at the bottom of the page">Check my algorithm ↓</button>
+      <button class="btn secondary" id="q-save">Save my work</button>
+      <button class="btn secondary" id="q-load">Load saved work</button>
+    </div>
   </div>
 
   <div class="card task" id="task"></div>
@@ -1541,7 +1551,7 @@ function switchTo(ex) {
   document.querySelectorAll(".tabs button").forEach(b => b.setAttribute("aria-selected", b.dataset.ex === ex));
   for (const k of Object.keys(EX)) $("ws-" + k).hidden = k !== ex;
   $("task").innerHTML = EX[ex].task +
-    '<details class="guide" open><summary>Guided steps<span id="guide-count"></span></summary><ol id="guide-list"></ol></details>';
+    '<details class="guide" open><summary>Guided steps<span id="guide-count"></span><span>· questions and hints here are for your own reflection; only the tasks in the coursework brief are assessed</span></summary><ol id="guide-list"></ol></details>';
   renderGuide();
   const ws = ensureWorkspace(ex);
   Blockly.svgResize(ws);
@@ -1568,6 +1578,9 @@ $("b-measure").onclick = measure;
 $("b-csv").onclick = csv;
 $("b-clear").onclick = () => { TABLE[current] = []; renderTable(); };
 $("b-check").onclick = check;
+$("q-check").onclick = () => { $("check-out").hidden = false; $("check-out").scrollIntoView({ behavior: "smooth", block: "center" }); check(); };
+$("q-save").onclick = saveWorkFile;
+$("q-load").onclick = () => $("load-file").click();
 $("b-py").onclick = () => download("my_algorithms.py", pythonFile(), "text/x-python");
 $("b-save").onclick = saveWorkFile;
 $("b-load").onclick = () => $("load-file").click();
