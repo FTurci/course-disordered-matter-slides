@@ -101,6 +101,15 @@ This is the case of a 'good solvent', because the monomers prefer to be near the
 
 The attraction between the different monomers offset the excluded volume effect making the polymer collapse.
 
+:::{.columns}
+:::{.column width="70%"}
+Collapsed chains: hydrophobic polypeptides, polystyrene in water, chromatin in the cell nucleus.
+:::
+:::{.column width="30%"}
+![Chromatin globule model](./figs/chromatin-globule.png){height=220}
+:::
+:::
+
 
 - Tuning solvent properties (e.g. the temperature) leads to **conformational changes**
 

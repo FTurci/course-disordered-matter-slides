@@ -328,21 +328,21 @@ where $C = \frac{1 + \cos\theta}{1 - \cos\theta}$
    
    Nearly straight chain. The end-to-end distance is much larger than that of a flexible chain with the same number of segments.
 
-2. **$\theta \to \pi$**: $C \ll 1$ → **Collapsed globule**  
-   $$\langle R^2 \rangle \ll N b_0^2$$
-
-   Compact,  globular, collapsed assembly. Examples: polypeptides, polystyrene in water, chromatin 
-
-3. **$\theta = 90°$**: $C = 1$ → **Ideal random walk**
+2. **$\theta = 90°$**: $C = 1$ → **Ideal random walk**
    $$\langle R^2 \rangle = N b_0^2$$
 
    Corresponds to our original **freely jointed chain** (random walk).
 
+**Question:** what happens as $\theta \to \pi$? Is it physical?
+
+::: {.fragment}
+$C \to 0$, but the chain just folds back onto itself, bond by bond: forbidden by excluded volume. Still a random walk, **not** a collapsed globule.
+:::
 
    🪁 [Play with models](https://fturci.github.io/course-disordered-matter/soft-matter/soft-matter_polymers.html#freely-rotating-chain)
 :::
 :::{.column}
-![Kevlar fiber (top) and chromatin globule model (bottom)](./figs/kevlar-chromatin.png){height=500}
+![Kevlar fibres: stiff, rod-like polymers](./figs/kevlar.png){height=250}
 :::
 :::
 
@@ -652,6 +652,7 @@ plot_walk_2d(x_saw, y_saw, title="2D Random Walk", color="forestgreen")
 
 
 
+:::
 :::
 
 <!---
