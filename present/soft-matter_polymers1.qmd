@@ -96,7 +96,7 @@ Polymers have many possible architectures:
 - effectively, it produces a **random walk** in 3D
 
 
-- The key quantity is th **end-to-end vector:**
+- The key quantity is the **end-to-end vector:**
 $$\mathbf{R} = \mathbf{r}_1+\mathbf{r}_2+\dots+\mathbf{r}_N = \sum_{j=1}^N \mathbf{r}_j.$$
 
 
@@ -139,12 +139,12 @@ The polymer fluctuates between all possible random-walk-like configurations at *
 
 The mean squared end-to-end distance is then simply 
 $$\begin{aligned}\langle\mathbf{R}^2\rangle &= \left\langle \left( \sum_{i=1}^N \mathbf{r}_i\right) \cdot  \left( \sum_{j=1}^N \mathbf{r}_j\right) \right\rangle\\
-&= \left\langle \sum_{i=1}^N \sum_{j=1}^N  \mathbf{r}_i \mathbf{r}_j \right\rangle\\
+&= \left\langle \sum_{i=1}^N \sum_{j=1}^N  \mathbf{r}_i \cdot \mathbf{r}_j \right\rangle\\
 \end{aligned}$$
 We can split the sum into the terms where $i=j$ and the rest. This yields in general
 
 
-$$\langle \mathbf{R}^2\rangle = Nb_0^2+\langle \mathbf{r}_i \mathbf{r}_j  \rangle$$
+$$\langle \mathbf{R}^2\rangle = Nb_0^2+\sum_{i\neq j}\langle \mathbf{r}_i \cdot \mathbf{r}_j  \rangle$$
 
 We assume that successive segments are independent, so 
 
@@ -156,11 +156,11 @@ Any similarities with previous results? Think about the MSD.
 
 
 ## End-to-end vector statistics
-We can then use the results of by identifying $N$ (the number of moonomers) with $t$ (the number of steps).
+We can then use the results of the random walk by identifying $N$ (the number of monomers) with $t$ (the number of steps).
 $$
 \left\langle\mathbf{R}^2\right\rangle=\left\langle R_x^2\right\rangle+\left\langle R_y^2\right\rangle+\left\langle R_z^2\right\rangle=3 \sigma^2=N b_0^2 \Rightarrow \sigma^2=\frac{N b_0^2}{3}
 $$
-where $\sigma$ is the variance per component.
+where $\sigma^2$ is the variance per component.
 
 For long chains  the end-to-end distance is distributed as a **3D Gaussian**, centered at zero, with variance proportional to $N$:
 
@@ -172,7 +172,7 @@ $$
 
 - The end-to-end vector is most meaningful for linear structures.
 
-- Other conformation (compact,  branched or star-shaped polymers) are better characterised by  a measure of the (average) extent of the polymer chain: the**radius of gyration**,
+- Other conformation (compact,  branched or star-shaped polymers) are better characterised by  a measure of the (average) extent of the polymer chain: the **radius of gyration**,
 
 The radius of gyration is a generic quantity that can be measured from any point cloud. It is closely linked to the (co)-variance of the set of points.
 
@@ -181,7 +181,7 @@ We start with the standard **centre of mass**
 $$\mathbf{R}_{\rm CM}=\frac{1}{N} \sum_{j=1}^{N} \mathbf{R}_{j}$$
 
 
-In general terms, we cna define a matrix called the  **gyration tensor** (also called the configuration tensor):
+In general terms, we can define a matrix called the  **gyration tensor** (also called the configuration tensor):
 
 $$
 \mathbf{S} = \frac{1}{N} \sum_{j=1}^N (\mathbf{R}_j - \mathbf{R}_{\rm CM}) \otimes (\mathbf{R}_j - \mathbf{R}_{\rm CM})
@@ -204,7 +204,7 @@ $$
 R_g^2 = \mathrm{Tr}(\mathbf{S}) = S_{xx} + S_{yy} + S_{zz}
 $$
 
-The tensor is symmetric and real $\to$ diagonasable.
+The tensor is symmetric and real $\to$ diagonalisable.
 
 Eigenvalues and eigenvectors of $\mathbf{S}$ provide information about the principal axes and shape anisotropy of the polymer coil (do you remember 3D mechanics and Euler angles?). 
 
@@ -257,7 +257,7 @@ The valence (or bond) angle is the angle between two adjacent chemical bonds. Th
 :::{.column width="60%"}
 Simple but richer model than the  freely jointed model:
 
-- Fixed bond angle $\theta$
+- Fixed angle $\theta$ between consecutive bonds ($\pi$ minus the valence angle)
 - Torsional angle $\varphi$ can take any value $0 \leq \varphi \leq 2 \pi$. 
 
 Imagine we have a configuration $\{\mathbf{r}_{l}$, $\mathbf{r}_{2}, \ldots, \mathbf{r}_{j-1}\}$ and  want to add the **next segment**.
@@ -491,7 +491,6 @@ So **excluded-volume** interactions are meant to present a **small contribution*
 
 Yet they affect the **scaling properties**.
 
-=
 
 ## Self-Avoiding Walk 
 
@@ -523,14 +522,14 @@ $$
 
 The configurational part of the internal energy can be estimated by focusing on monomer-monomer contacts for monomers of volume $V_1$. 
 
-We approximate this with a *segment gas* confined in a volume $R^3$. The density (or probability) of contacts is 
+We approximate this with a *segment gas* confined in a volume $R^3$. The number of contacts is 
 
-$$\rho_c = N^2 V_1 / R^3 \sim N^{1 / 2}
+$$N_c \sim N^2 V_1 / R^3 \sim N^{1 / 2}
 $$
 
 by using $R^2\sim N$.
 
-We have $\sim N^2\rho_c$ pairs at some energy scale per bond $\varepsilon$ so  $$
+Each contact costs some energy scale $\varepsilon$, so $U\sim\varepsilon N_c$, i.e.  $$
 U \sim \varepsilon N^2 V_1 / R^3
 $$ and the total free energy is approximately 
 
@@ -563,7 +562,7 @@ $$
 So ultimately we get a scaling exponent **different** from freely jointed chain:
 
 - **freely jointed chain**: $R \sim N^{1 / 2}$
-- **self-avoidign walks**: $R \sim N^{3 / 5}$
+- **self-avoiding walks**: $R \sim N^{3 / 5}$
 
 $$0.6\neq 0.5$$
 (if you are precise!)
@@ -655,236 +654,3 @@ plot_walk_2d(x_saw, y_saw, title="2D Random Walk", color="forestgreen")
 :::
 :::
 
-<!---
-## Good vs. Poor Solvents 
-
-**Interaction energies**: $\varepsilon_{sp}$, $\varepsilon_{ss}$, $\varepsilon_{pp}$
-
-**Good solvent**: $\varepsilon_{sp} < \frac{1}{2}(\varepsilon_{ss} + \varepsilon_{pp})$
-- Monomers prefer solvent contact
-- Chain **swells**: $\nu = 3/5$
-
-**Poor solvent**: $\varepsilon_{sp} > \frac{1}{2}(\varepsilon_{ss} + \varepsilon_{pp})$  
-- Monomers prefer each other
-- Chain **collapses**
-
----
-
-## Theta Conditions 
-
-**Theta temperature** $T = \theta$:
-- Excluded volume and attraction **cancel**
-- Chain has **ideal dimensions**: $R \sim N^{1/2}$
-- **Theta solvent** at this temperature
-
-**Temperature effects:**
-- High $T$: Good solvent behavior
-- Low $T$: Poor solvent, phase separation
-- $T = \theta$: Ideal chain behavior
-
----
-
-## Scaling Exponents Summary 
-
-| **Chain type** | **Exponent $\nu$** | **Physics** |
-|---|---|---|
-| Freely-jointed | 1/2 | Random walk |
-| Freely-rotating | 1/2 | Persistent random walk |
-| Self-avoiding | 3/5 ≈ 0.6 | Excluded volume |
-| Theta conditions | 1/2 | Balanced interactions |
-| Poor solvent | < 1/2 | Collapsed |
-
-**Universal behavior**: $R \sim N^\nu$
-
----
-
-## Concentration Regimes 
-
-**Dilute regime**: $c \ll c^*$
-- Isolated coils, no overlap
-
-**Overlap concentration**:
-$$c^* = \frac{3M}{4\pi N_A R_g^3} \propto M^{1-3\nu}$$
-
-**Semi-dilute**: $c > c^*$  
-- Interpenetrating coils, entanglements
-
-**Concentrated/Bulk**: $c \approx \rho_{\text{bulk}}$
-- Polymer-dominated properties
-
----
-
-## Overlap Concentration Example 
-
-**Polystyrene**: $M = 10^6$ g/mol, good solvent ($\nu = 0.6$)
-
-$$c^* = 0.29 \text{ mg/ml}$$
-
-**Volume fraction**: $c^*/\rho = 0.28 \times 10^{-3}$
-
-**Key insight**: $c^*$ very small for large polymers!
-
----
-
-## Bulk Polymer Classes 
-
-**Cross-linked polymers:**
-- **Elastomers**: Low cross-linking → flexible, elastic
-- **Thermosets**: High cross-linking → rigid, brittle
-
-**Thermoplastics**: No cross-linking
-- **Melt**: High $T$, random coils
-- **Crystal**: $T < T_m$, ordered structure  
-- **Glass**: Rapid cooling below $T_g$, amorphous
-
----
-
-## Chain Flexibility and Persistence 
-
-**Correlation along chain:**
-$$\langle \mathbf{r}_i \cdot \mathbf{r}_{i+n} \rangle = b_0^2 e^{-n b_0/\ell_p}$$
-
-**Length scales:**
-- **Monomer scale**: Chemical structure
-- **Persistence scale**: $\ell_p$ (stiffness)
-- **Global scale**: $R_g$ (overall size)
-
-**Universal behavior** emerges at large scales!
-
----
-
-## Gyration Tensor 
-
-**Shape characterization:**
-$$\mathbf{S} = \frac{1}{N} \sum_{j=1}^N (\mathbf{R}_j - \mathbf{R}_{\text{CM}}) \otimes (\mathbf{R}_j - \mathbf{R}_{\text{CM}})$$
-
-- **Eigenvalues**: Principal dimensions
-- **Eigenvectors**: Principal axes
-- **Trace**: $R_g^2 = \text{Tr}(\mathbf{S})$
-
-**Versatile**: Works for any architecture!
-
----
-
-## Temperature Effects in Solutions 
-
-**High temperature**: 
-- Excluded volume dominates
-- Good solvent conditions
-- Extended conformations
-
-**Low temperature**:
-- Attractive interactions dominate  
-- Poor solvent conditions
-- Collapsed conformations
-
-**Crossover** at theta temperature
-
----
-
-## Experimental Observables 
-
-**Light scattering**: Measures $R_g$
-**Viscosity**: Sensitive to chain extension
-**Osmotic pressure**: Concentration effects
-**Neutron scattering**: Internal structure
-
-**Scaling relations**:
-- $R_g \sim N^\nu$
-- $[\eta] \sim M^\alpha$ (intrinsic viscosity)
-- $\Pi \sim c^{9/4}$ (semi-dilute osmotic pressure)
-
----
-
-## Biological Relevance 
-
-**DNA**: Persistence length ~50 nm
-- Semiflexible polymer
-- Supercoiling, packaging
-
-**Proteins**: Folded vs. unfolded states
-- Good/poor solvent analogy
-- Collapse transitions
-
-**Chromatin**: Hierarchical organization
-- Multiple length scales
-- Fractal-like structures
-
----
-
-## Simulation Approaches 
-
-**Molecular dynamics**: Atomistic detail
-**Monte Carlo**: Statistical sampling
-**Coarse-grained models**: 
-- Bead-spring chains
-- Worm-like chains
-- Lattice models
-
-**Key**: Match experimental scaling laws
-
----
-
-## Theoretical Framework 
-
-**Statistical mechanics** of **single chains**:
-1. **Microscopic model** (chemical structure)
-2. **Coarse-graining** (effective parameters)  
-3. **Universal behavior** (scaling exponents)
-4. **Environmental effects** (solvent quality)
-
-**Success**: Simple theories capture complex behavior!
-
----
-
-## Applications and Examples 
-
-**Synthetic polymers**:
-- Polystyrene, PMMA, natural rubber
-- Industrial applications
-
-**Biological polymers**:
-- DNA, proteins, polysaccharides
-- Cellular functions
-
-**Modern materials**:
-- Smart polymers, hydrogels
-- Responsive systems
-
----
-
-## Key Takeaways 
-
-1. **Large scale dominates**: Chemical details → Universal scaling
-2. **Entropy vs. energy**: Competition determines conformation
-3. **Solvent quality**: Critical for polymer behavior  
-4. **Concentration effects**: Dilute → semi-dilute → bulk transitions
-5. **Multiple length scales**: From monomers to global dimensions
-
-**Central concept**: **Coarse-graining** reveals universal physics
-
----
-
-## Open Questions & Research 
-
-- **Non-equilibrium dynamics**: Active polymers
-- **Confined geometries**: Polymers in channels, pores
-- **Polyelectrolytes**: Charged polymers
-- **Entanglement dynamics**: Reptation theory
-- **Machine learning**: Predicting polymer properties
-
-**Future**: Connecting molecular design to macroscopic function
-
----
-
-## Summary 
-
-**Polymers as statistical objects**:
-- Random walk → Self-avoiding walk
-- Universal scaling exponents
-- Solvent quality effects
-- Concentration regimes
-
-**Theoretical success**: Simple models capture complex behavior through **coarse-graining** and **universality**
-
-**Impact**: Foundation for understanding both synthetic and biological macromolecules -->

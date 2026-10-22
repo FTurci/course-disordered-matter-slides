@@ -122,7 +122,7 @@ The various affinities have temperature dependencies. Typically:
 - There is an intermediate temperature where the excluded volume and attractive interaction compensate each other and  allow for the polymer to behave like an ideal chain (freely jointed chain). 
 
     - The temperature is conventionally named $\Theta$ temperature (or *Flory* temperature, after physicist Paul Flory)
-    - The $\Theta$ temperature increases wth the solvent-polymer attractions (we need higher temperature to reach ideal behaviour)
+    - The $\Theta$ temperature increases with the effective monomer-monomer attractions (we need higher temperature to reach ideal behaviour)
 
 
 ![Swelling behaviour of polymers in solvent.](./figs/polymersolvents.png)
@@ -146,7 +146,7 @@ We will see gelation in a few sessions.
 
 ## Concentrated polymer solutions
 
-- We mostly dealt with **single polymers** and their propertie up to now.
+- We mostly dealt with **single polymers** and their properties up to now.
 
 -  Many polymers together make a **polymer solution**
 
@@ -165,9 +165,9 @@ We will increase the concentration in steps to reach **bulk polymers**
 - The polymer coils are well-separated on average. 
 
 - The system is dilute if the polymer concentration $c$ is such that
-![](https://cdn.mathpix.com/cropped/2025_01_27_a9af280ad9752fe3d0c0g-29.jpg?height=478&width=803&top_left_y=1343&top_left_x=1009){width=600}
 
-<!-- $$ \left(\dfrac{c}{M}N_A\right)  \left(\dfrac{4\pi}{3}R_g^3\right)\ll 1$$ -->
+$$ \left(\dfrac{c}{M}N_A\right)  \left(\dfrac{4\pi}{3}R_g^3\right)\ll 1$$
+
 where $N_A$ is Avogadro's number, $M$ is the molar mass of a single chain and $R_g$ is the radius of gyration of the chain.
 
 
@@ -177,7 +177,7 @@ Essentially, the polymers **do not overlap**.
 
 
 :::{.column width="40%"}
-![](https://cdn.mathpix.com/cropped/2025_01_27_a9af280ad9752fe3d0c0g-29.jpg?height=375&width=366&top_left_y=1206&top_left_x=288)
+![](./figs/coils_dilute.svg)
 :::
 :::
 
@@ -201,7 +201,7 @@ $$
 :::
 :::{.column width="40%"}
 
-![](https://cdn.mathpix.com/cropped/2025_01_27_a9af280ad9752fe3d0c0g-29.jpg?height=375&width=375&top_left_y=1960&top_left_x=284)
+![](./figs/coils_overlap.svg)
 :::
 :::
 
@@ -217,7 +217,7 @@ Example of polystyrene in a good solvent:
 |-----------|-------|------|
 | Molar mass (M) | $10^{6}$ | g mol$^{-1}$ |
 | Flory exponent (ν) | 0.6 | |
-| Kuhn length (B) | 0.028 | nm (g mol$^{-1}$)$^{-0.6}$ |
+| Prefactor (B) | 0.028 | nm (g mol$^{-1}$)$^{-0.6}$ |
 | Overlap concentration (c*) | 0.29 | kg m$^{-3}$ (or 0.29 mg/ml) |
 | Polystyrene density (ρ) | 1050 | kg m$^{-3}$ |
 | Volume fraction of monomers | $0.28 \times 10^{-3}$ | |
@@ -242,7 +242,7 @@ For large polymers, $c^*$ can be very small.
 Start of the formation of a **polymer network** with transient **crowded regions** *within* the solvent.
 :::
 :::{.column width="40%"}
-![](https://cdn.mathpix.com/cropped/2025_01_27_a9af280ad9752fe3d0c0g-30.jpg?height=361&width=361&top_left_y=522&top_left_x=291)
+![](./figs/coils_semidilute.svg)
 :::
 :::
 
@@ -340,3 +340,20 @@ Polymer bulks are often referred to as **resins**.
 
 :::
 :::
+
+
+## Summary: polymers {.smaller .scrollable}
+
+| Topic | Key result |
+|---|---|
+| Freely-jointed chain | $\langle R^2\rangle=Nb_0^2$, Gaussian $P(\mathbf R)$: a chain is a random walk |
+| Radius of gyration | $\langle R_g^2\rangle=\langle R^2\rangle/6$ |
+| Freely-rotating chain | $\langle R^2\rangle=CNb_0^2$, $C=\frac{1+\cos\theta}{1-\cos\theta}$: stiffness only changes the prefactor |
+| Kuhn length | $b=Cb_0$, $N'=N/C$: chemistry is hidden in $b$ |
+| Excluded volume | $R\sim N^{3/5}$ (self-avoiding walk) |
+| Solvent quality | good $\nu\approx3/5$; $\Theta$ $\nu=1/2$; poor: collapsed globule $\nu=1/3$ |
+| Overlap concentration | $c^*=\frac{3M}{4\pi N_AR_g^3}\propto M^{1-3\nu}$, very small for long chains |
+| Semi-dilute | $c>c^*$: interpenetration, entanglement, slow flow |
+| Bulk polymers | elastomers, thermosets, thermoplastics; on cooling crystal (slow) or glass (fast) |
+
+[Full summary with links in the notes](https://fturci.github.io/course-disordered-matter/soft-matter/soft-matter_polymers.html#summary){target="_blank"}
