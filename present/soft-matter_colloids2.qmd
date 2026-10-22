@@ -331,6 +331,12 @@ In conclusion, the one-dimensional phase diagram of hard spheres is the followin
 
 Notice that the **glass phase** is purely non-equilibrium: if a system has enough time to relax, it will eventually form a **crystal**.
 
+## Colloidal hard spheres: seeing the phases
+
+Colloids are big enough to be imaged directly: confocal microscopy shows the structure along the equation of state.
+
+![Equation of state of hard spheres with confocal microscopy images at the indicated state points: dilute fluid, dense fluid, supercooled liquid (metastable, dashed) and crystal. From Royall et al, *Reviews of Modern Physics* (2024), CC BY 4.0.](./figs/royall2024_hs_eos_confocal.png){height=500}
+
 ## Beyond hard spheres: simple liquids
 
 :::{.columns}
