@@ -12,7 +12,7 @@ mermaid-format: svg # png also works
 ## Today
 
 - **Characterisation of colloids**
-    - Static (pair) corrleations
+    - Static (pair) correlations
     - Diffusive dynamics
 
 
@@ -30,20 +30,20 @@ Their theoretical description focuses on **essential ingredients**.
 A simplifying assumption is that the potential energy of a collection of colloids is purely **pairwise**
 
 $$
-U_N\left(\mathbf{r}^N\right)=\sum_{i=1}^{N-1} \sum_{j=i+1}^N V\left(r_i j\right)=\frac{1}{2} \sum_{i \neq j} V\left(r_{i j}\right)
+U_N\left(\mathbf{r}^N\right)=\sum_{i=1}^{N-1} \sum_{j=i+1}^N V\left(r_{i j}\right)=\frac{1}{2} \sum_{i \neq j} V\left(r_{i j}\right)
 $$
 
-where $V(r_{ij})$ is the pairwise, radial interaction potential that only depends on the distance between particle centres $r_{ij} = \mathbf{r}_i-\mathbf{r}_j$.
+where $V(r_{ij})$ is the pairwise, radial interaction potential that only depends on the distance between particle centres $r_{ij} = |\mathbf{r}_i-\mathbf{r}_j|$.
 
 
 ## Aside: Not pairwise?
 
-Some examples of non-pariwise situations:
+Some examples of non-pairwise situations:
 
 - **Atomistic models**: Electronic densities that fluctuate due to quantum effects are intrinsically many-body
-- **True colloid-cpolymer mixtures**: if the polymers are not ideal, their spatial distribution and their forces depend on the positions of more than two colloids 
+- **True colloid-polymer mixtures**: if the polymers are not ideal, their spatial distribution and their forces depend on the positions of more than two colloids 
 
-![$C_{60}$ isosurface via density functional theory (Wikipedia) and configuration of non-deal colloid-polymer mixture, Rohrbach et al JCP (2022)](./figs/dft-nonideal-colloid-polymer.png){height=450}
+![$C_{60}$ isosurface via density functional theory (Wikipedia) and configuration of non-ideal colloid-polymer mixture, Rohrbach et al JCP (2022)](./figs/dft-nonideal-colloid-polymer.png){height=450}
 
 
 
@@ -57,15 +57,8 @@ You have already seen such correlations in other contexts (Ising model, lattice 
 The key pair correlation is the real space **radial distribution function**:
 
 $$
-g(r)=\frac{1}{\rho N}\left\langle\sum_{i=1}^N \sum_{j \neq i} \delta\left(\left|\mathbf{r}_i-\mathbf{r}_j\right|-r\right)\right\rangle
+g(r)=\frac{1}{4\pi r^2\rho N}\left\langle\sum_{i=1}^N \sum_{j \neq i} \delta\left(\left|\mathbf{r}_i-\mathbf{r}_j\right|-r\right)\right\rangle
 $$
-
-The free energy can then be written as 
-$$
-\frac{F_{\mathrm{ex}}}{k_B T}=2 \pi \rho N \int_0^{\infty}[g(r) \ln g(r)-g(r)+1] r^2 d r+\frac{\rho N}{2 k_B T} \int V(r) g(r) d^3 r
-$$
-
-and you should be able to read out a part very reminiscent of an (information-theoretical) entropy and one reminiscent of an internal energy.
 
 ## Radial distribution function
 
@@ -83,7 +76,7 @@ $$
 $$
 Averaging over all particles and normalizing by the bulk density $\rho$ gives the radial distribution function:
 $$
-g(r) = \frac{1}{\rho N} \left\langle \sum_{i=1}^N \sum_{j \neq i} \delta\left(|\mathbf{r}_i - \mathbf{r}_j| - r\right) \right\rangle = \frac{\langle \rho(r) \rangle}{\rho}
+g(r) = \frac{1}{4\pi r^2\rho N} \left\langle \sum_{i=1}^N \sum_{j \neq i} \delta\left(|\mathbf{r}_i - \mathbf{r}_j| - r\right) \right\rangle = \frac{\langle \rho(r) \rangle}{\rho}
 $$
 
     where $\langle \rho(r) \rangle$ is the average density at distance $r$ from a particle, and $\rho$ is the bulk density.
@@ -95,7 +88,7 @@ $$
 -   For **hard spheres**, $g(r) = 0$ for $r < \sigma$ (no overlap), and $g(r)$ shows oscillations at higher $r$ due to packing effects.
 
 :::{.callout-note}
-Hard spheres in 3D are not exactly solvable! We only have perturbative solutons to hard spheres
+Hard spheres in 3D are not exactly solvable! We only have perturbative solutions to hard spheres
 :::
 
 - The $g(r)$ is the central object of (equilibrium) liquid state theory
@@ -110,17 +103,17 @@ Hard spheres in 3D are not exactly solvable! We only have perturbative solutons 
 
 
 - The $g(r)$ contains **both**.
-- We can assume the existence of a correlation function that instead only incl;udes the **direct** part and call it $c(r)$. Then a hierarchy exists
+- We can assume the existence of a correlation function that instead only includes the **direct** part and call it $c(r)$. Then a hierarchy exists
 
 $$
 h\left(r_{12}\right)=c\left(r_{12}\right)+\rho \int c\left(r_{13}\right) h\left(r_{32}\right) d \mathbf{r}_3
 $$
 
-where $h(r) = g(r)-1$. This is the **Ornstein-Zernicke integral equation** between particles 1,2 and 3.
+where $h(r) = g(r)-1$. This is the **Ornstein-Zernike integral equation** between particles 1,2 and 3.
 
-Both $h(r)$ and $c(r)$ are unknwon in principle. One needs an additional condition to fix box: these are **physical closures** leading to approximations.
+Both $h(r)$ and $c(r)$ are unknown in principle. One needs an additional condition to fix box: these are **physical closures** leading to approximations.
 
-![Meaning of teh Ornstein-Zernicke relation, adapted from Santos, Springer(2016)](./figs/ornstein-zernicke.png)
+![Meaning of the Ornstein-Zernike relation, adapted from Santos, Springer(2016)](./figs/ornstein-zernicke.png)
 
 
 ## Percus-Yevick approximation
@@ -132,7 +125,7 @@ c(r)=[1+h(r)]\left[1-e^{\beta U(r)}\right]
 $$
 
 
-This closure interpolates between the hard-core exclusion (for $U(r) \to \infty$, $c(r) \to 0$ inside the core) and the ideal gas limit (for $U(r) = 0$, $c(r) = 0$).
+This closure interpolates between the hard-core exclusion (for $U(r) \to \infty$ inside the core, $g(r) = 0$) and the ideal gas limit (for $U(r) = 0$, $c(r) = 0$, so for hard spheres $c(r)=0$ outside the core).
 
 The result (semi) analytical. For hard spheres, it allows to calculate the g(r) accurately in a wide range of packing fractions
 
@@ -157,7 +150,7 @@ $$
 
 Substituting into the pressure equation:
 $$
-P = \rho k_B T + \frac{2\pi\rho^2}{3} \sigma^3 g(\sigma)
+P = \rho k_B T + \frac{2\pi\rho^2}{3} k_B T \sigma^3 g(\sigma)
 $$
 
 Therefore, for hard spheres, the equation of state only requires knowledge of the contact value $g(\sigma)$.
@@ -188,13 +181,13 @@ $$
 
 ## Structure factor
 
-Interestingly, reciprocal space simplifies integral equations such as Ornstein-Zernicke
+Interestingly, reciprocal space simplifies integral equations such as Ornstein-Zernike
 
 $$
 \tilde{h}(k)=\frac{\tilde{c}(k)}{1-\rho \tilde{c}(k)}
 $$
 
-allowing one to read the direct correlation function directly from scattering data, as $\tilde{h}(k)=$ can be identified with the structure factor.
+allowing one to read the direct correlation function directly from scattering data, as $S(k)=1+\rho\tilde{h}(k)$.
 
 ![Structure factors (left) and radial distribution functions (right) for Gallium at extreme conditions, Drewitt et al PRL (2020)](./figs/gallium.png){height=450}
 
@@ -233,7 +226,7 @@ $$
 
 ## Diffusion equation: macroscopic picture
 
-It is possible to (re)-derive the diffusion equation solely from macroscopic requirements. We have a macroscopic density $\rho(r,t)$ and a macroscpic flux $\vec{J}(r,t)$
+It is possible to (re)-derive the diffusion equation solely from macroscopic requirements. We have a macroscopic density $\rho(r,t)$ and a macroscopic flux $\vec{J}(r,t)$
 
 - **continuity**: there is no mass loss in the dynamics
 
@@ -279,7 +272,7 @@ where $F= m_B g$ is the force from the buoyant mass.
 
 A flux is produced $J_F = n(x) v=\frac{n(x) F}{\xi}$
 
-where we used the fact that the velocity is set by the viscosity $\eta$ as $v=F/\eta$. 
+where we used the fact that the velocity is set by the friction coefficient $\xi$ as $v=F/\xi$. 
 
 Diffusion occurs at the same time, driven by the gradient (Fick's law)
 $$
@@ -288,7 +281,7 @@ $$
 
 ## Stokes-Einstein relation: fluctuation dissipation for colloids
 
-Equating the two we have
+In equilibrium the two fluxes cancel, $J_F+J_D=0$ (the force pushes the particles towards negative $x$, so the drift flux is $-n(x)F/\xi$), and we have
 
 $$
 \frac{n(x) F}{\xi}=-D \frac{\partial n(x)}{d x}=D \frac{F}{k_B T} n(x)
@@ -339,7 +332,7 @@ def plot_tj(positions, msd, walker=0, loglog=False):
     slope, intercept = np.polyfit(time[:len(time)//2], msd[:len(time)//2], 1)
     fit_line = slope * time + intercept
     D = slope/4
-    ax[1].plot(time, fit_line, 'g--', alpha=0.8, label=f'Half data: D={slope:.2f}')
+    ax[1].plot(time, fit_line, 'g--', alpha=0.8, label=f'Half data: D={D:.2f}')
 
     ax[1].legend(fontsize=8, frameon=False)
     ax[1].set(xlabel="time",ylabel="MSD")
@@ -380,7 +373,7 @@ plot_tj(positions,msd,walker=0,loglog=False)
 
 - Consider hard spheres in a fluid.
 
-- At low volume fractions $\phi$ they rarely collide and they perofrm under/over-damped (Langevin) dynamics. They will therefore diffuse as $\operatorname{MSD} (t)= 6D_0 t$
+- At low volume fractions $\phi$ they rarely collide and they perform under/over-damped (Langevin) dynamics. They will therefore diffuse as $\operatorname{MSD} (t)= 6D_0 t$
 
 - Things change when we increase the packing. 
     - Short times: $D_s <D_0$, diffusion within **cages** formed by the neighbours. Mostly free, but with some collisions.
@@ -391,12 +384,12 @@ plot_tj(positions,msd,walker=0,loglog=False)
 
 ## Dilute vs dense diffusion
 
-- At **very high** volume fractions the cage mechanism becomes more complex: paricles are trapped for long times and only occasionaly break cages:
+- At **very high** volume fractions the cage mechanism becomes more complex: particles are trapped for long times and only occasionally break cages:
     - cage-jump dynamics $\to$ glassy dynamics (see future lectures)
-    - rare events $\to$ Levy-flight statistics $\neq$ Gaussian/diffusive statistics
-    - Breaking of fluctuation-dissipation condition encoded in the **Stokes-Einstein** relation 
+    - rare events $\to$ non-Gaussian (exponential tails) $\neq$ Gaussian/diffusive statistics
+    - Breakdown of the **Stokes-Einstein** relation 
         - the viscosity increases much faster than the decrease in diffusion $D\xi/T\neq \mathrm{constant}$
-        - This means tha $D\eta\neq \text{constant}$ and since the viscosity $\eta\sim \tau$ (a characteristic relaxation time) $D\tau\neq \text{constant}$
+        - This means that $D\eta\neq \text{constant}$ and since the viscosity $\eta\sim \tau$ (a characteristic relaxation time) $D\tau\neq \text{constant}$
 
 
-![Stokes-Einstein brakdown in a theoretical model of glassy behaviour](./figs/seModel.png)
+![Stokes-Einstein breakdown in a theoretical model of glassy behaviour](./figs/seModel.png)

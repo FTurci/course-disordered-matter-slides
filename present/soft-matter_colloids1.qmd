@@ -155,7 +155,7 @@ Integrating the London interaction over all volume elements yields the **van der
 
 :::{.callout-important}
 # Colloid-colloid van der Waals attractive interaction
-$$\Large W_{w d W}(h)=-\frac{A_H}{g} f(h / R)$$
+$$\Large W_{v d W}(h)=-\frac{A_H}{6} f(h / R)$$
 
 :::
 
@@ -181,7 +181,7 @@ def plot():
     # Van der Waals potential
     def van_der_waals_potential(h, R, A_H):
         f_h_R = (2 * R**2 / (h**2 - 4 * R**2)) + (2 * R**2 / h**2) + np.log((h**2 - 4 * R**2) / h**2)
-        return -A_H * f_h_R
+        return -A_H / 6 * f_h_R
     W_vdW = van_der_waals_potential(h, R, A_H)
     plt.figure(figsize=(9,3))
     plt.plot(h, W_vdW)
@@ -310,7 +310,7 @@ h = np.linspace(2.01 * R, 5+R*2, 1000)  # Separation distance (h > 2R)
 # Van der Waals attractive potential
 def van_der_waals_potential(h, R, A_H):
     f_h_R = (2 * R**2 / (h**2 - 4 * R**2)) + (2 * R**2 / h**2) + np.log((h**2 - 4 * R**2) / h**2)
-    return -A_H * f_h_R
+    return -A_H / 6 * f_h_R
 # double layer repulsive potential
 def double_layer(h, R,B,ns ):
     lambdaB = 0.0007 # typical Bjerrum length for water at 25 degrees (micron)
@@ -586,8 +586,8 @@ No internal energy, only entropy, so temperature is only a **scale parameter**.
 
 - Two situations:
 
-    1. $\forall r >R_d = 2R+2\delta$ the accessible volume remains the same, constant $\Omega(r)=\Omega_{\infty}$
-    2. For $2R<r<R_d$ the accessible volume changes: **overlap** between exclusion volumes.
+    1. $\forall r >2R_d = 2R+2\delta$ the accessible volume remains the same, constant $\Omega(r)=\Omega_{\infty}$
+    2. For $2R<r<2R_d$ the accessible volume changes: **overlap** between exclusion volumes.
     
 
 
@@ -632,7 +632,7 @@ The result is an attractive depletion potential controlled by the geometry of th
 # Asakura-Oosawa potential (1954)
 $$
 \Large
-W_{\rm AO} (r) = - \dfrac{4 \pi \rho_p^r k_B T}{3} (R+\delta)^3\left[1-\dfrac{3}{4} \dfrac{r}{R+\delta}+\frac{1}{16}\left(\dfrac{r}{R+\delta}\right)^3\right] \quad 2R\leq r< 2R+\delta
+W_{\rm AO} (r) = - \dfrac{4 \pi \rho_p^r k_B T}{3} (R+\delta)^3\left[1-\dfrac{3}{4} \dfrac{r}{R+\delta}+\frac{1}{16}\left(\dfrac{r}{R+\delta}\right)^3\right] \quad 2R\leq r< 2(R+\delta)
 $$
 :::
 
@@ -651,7 +651,9 @@ def AO_potential(r, R, delta, eta_p, kBT=1):
     W = np.zeros_like(r)
     mask = (r >= 2*R) & (r < 2*Rd)
     x = r[mask] / Rd
-    W[mask] = - (4 * np.pi * eta_p * kBT / 3) * Rd**3 * (1 - 0.75 * x + 0.0625 * x**3)
+    # number density from packing fraction, polymer diameter 2*delta
+    rho_p = eta_p / (np.pi / 6 * (2 * delta)**3)
+    W[mask] = - (4 * np.pi * rho_p * kBT / 3) * Rd**3 * (1 - 0.75 * x + 0.0625 * x**3)
     return W
 ```
 ```{pyodide}
