@@ -3,8 +3,6 @@ project:
   type: website
 
   output-dir: ../docs
-  resources:
-    - coursework2/saw_builder.html
 
 website:
   site-url: "https://fturci.github.io/course-disordered-matter-slides/"

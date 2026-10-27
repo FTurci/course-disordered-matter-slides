@@ -6,12 +6,12 @@
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="site_libs/quarto-html/light-border.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-7b89279ff1a6dce999919e0e67d4d9ec.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-845c23b38eaddc0f92fda52bfe77a8c8.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/quarto-contrib/live-runtime/live-runtime.js" type="module"></script>
 <link href="site_libs/quarto-contrib/live-runtime/live-runtime.css" rel="stylesheet">
 <script src="site_libs/quarto-contrib/videojs/video.min.js"></script>
 <link href="site_libs/quarto-contrib/videojs/video-js.css" rel="stylesheet"><meta charset="utf-8">
-  <meta name="generator" content="quarto-1.8.25">
+  <meta name="generator" content="quarto-1.9.36">
 
   <meta name="author" content="Francesco Turci">
   <title>Complex Disordered Systems</title>
@@ -21,6 +21,9 @@
   <link rel="stylesheet" href="site_libs/revealjs/dist/reset.css">
   <link rel="stylesheet" href="site_libs/revealjs/dist/reveal.css">
   <style>
+    /* Default styles provided by pandoc.
+    ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+    */
     code{white-space: pre-wrap;}
     span.smallcaps{font-variant: small-caps;}
     div.columns{display: flex; gap: min(4vw, 1.5em);}
@@ -33,7 +36,7 @@
       vertical-align: middle;
     }
   </style>
-  <link rel="stylesheet" href="site_libs/revealjs/dist/theme/quarto-534cd8e3a96973385dffff3f4709048d.css">
+  <link rel="stylesheet" href="site_libs/revealjs/dist/theme/quarto-2740581606dc327e82f18f789b69d8a0.css">
   <link rel="stylesheet" href="styles.css">
   <script>window.backupDefine = window.define; window.define = undefined;</script><script src="https://cdn.jsdelivr.net/npm/katex@latest/dist/katex.min.js"></script>
   <script>document.addEventListener("DOMContentLoaded", function () {
@@ -174,12 +177,12 @@ Francesco Turci
 <h2>Equilibrium</h2>
 <p>Equilibrium means:</p>
 <ul>
-<li class="fragment"><p>no change in entropy wirh time (zero entropy production)</p></li>
+<li class="fragment"><p>no change in entropy with time (zero entropy production)</p></li>
 <li class="fragment"><p>no net flows of matter or energy</p></li>
 <li class="fragment"><p>detailed balance <span class="math display">\pi_i P_{i \rightarrow j} = \pi_j P_{j \rightarrow i}</span></p></li>
 <li class="fragment"><p>time reversibility</p></li>
 <li class="fragment"><p>state of maximum entropy given the constraints (we saw this in multiple instances, e.g.&nbsp;liquid crystals)</p></li>
-<li class="fragment"><p>macroscopic obserbvables do not change with time (<strong>stationarity</strong>)</p></li>
+<li class="fragment"><p>macroscopic observables do not change with time (<strong>stationarity</strong>)</p></li>
 <li class="fragment"><p>equivalence between time and ensemble averages (<strong>ergodicity</strong>)</p></li>
 </ul>
 </section>
@@ -242,7 +245,7 @@ Some configurations are forbidden (constraints on the rules of motion) and non-e
 <section id="energy-landscapes" class="slide level2">
 <h2>Energy landscapes</h2>
 <ul>
-<li>A system of many partcles has many degrees of freedom.</li>
+<li>A system of many particles has many degrees of freedom.</li>
 <li>The free energy is a <strong>scalar function</strong> of all these degrees of freedom: <span class="math inline">F(x_1, x_2, \ldots, x_N)</span>.</li>
 <li>We can think of it is the altitude of a <strong>landscape</strong> in a high-dimensional space.</li>
 <li>The landscape represents the (negative log) of the probability distribution of configurations: low energy = high probability.
@@ -266,7 +269,7 @@ Some configurations are forbidden (constraints on the rules of motion) and non-e
 <p>When the temperature allows it, connected minima can be grouped into single <strong>basins</strong> called <strong>metabasins</strong>.</p>
 <ul>
 <li>they are not just energy minima, they include entropy</li>
-<li>they can behave as bone-fide local <strong>equilibria</strong></li>
+<li>they can behave as bona fide local <strong>equilibria</strong></li>
 <li>These are akin to the <strong>metastable states</strong>.</li>
 </ul>
 
@@ -278,7 +281,7 @@ Some configurations are forbidden (constraints on the rules of motion) and non-e
 <li>We can define a <strong>configurational entropy</strong> <span class="math inline">S_{conf}</span> that counts the number of distinct states <span class="math inline">\Omega</span>: <span class="math display">S_{conf} = k_{B} \ln N_{\mathrm minima}</span></li>
 </ul>
 <p><strong>Different</strong> from the total entropy <span class="math inline">S</span> <span class="math display">
-S(T) = S(T_0) + \int_{T_0}^{T} \frac{1}{T'} \left( \frac{\partial P}{\partial T'} \right)_V dV
+S(V) = S(V_0) + \int_{V_0}^{V} \left( \frac{\partial P}{\partial T} \right)_{V'} dV' \quad (\text{at fixed } T)
 </span></p>
 <p>or (at constant volume)</p>
 <p><span class="math display">
@@ -368,7 +371,7 @@ S(T) = S(T_0) + \int_{T_0}^{T} \frac{C_V(T')}{T'} dT'
 <h2>Glassy systems</h2>
 <p>But glassy physics is broader than glassy materials: dense assemblies in general will display glassy dynamics.</p>
 
-<img data-src="./figs/facets.png" class="r-stretch quarto-figure-center"><p class="caption">(a) Colloidal glasses, (b) dense cellular tissues, (c) ant colonies from <em>Facets fo glassy physics</em>, Berthier and Ediger, Physics Today (2016)</p></section>
+<img data-src="./figs/facets.png" class="r-stretch quarto-figure-center"><p class="caption">(a) Colloidal glasses, (b) dense cellular tissues, (c) ant colonies from <em>Facets of glassy physics</em>, Berthier and Ediger, Physics Today (2016)</p></section>
 <section id="glass-formation" class="slide level2">
 <h2>Glass formation</h2>
 <div class="columns">
@@ -405,10 +408,10 @@ S(T) = S(T_0) + \int_{T_0}^{T} \frac{C_V(T')}{T'} dT'
 <div class="columns">
 <div class="column" style="width:50%;">
 <p>Their solid-like behavior arises from the dramatic slowing down of their dynamics as they approach the glass transition.</p>
-<p>We quantify this with density autocorrelation functions such as the intermediate scattering function: <span class="math display">F(k, t) = \frac{1}{N} \left\langle \sum_{j=1}^{N} e^{i \mathbf{k} \cdot [\mathbf{r}_j(t) - \mathbf{r}_j(0)]} \right\rangle</span></p>
+<p>We quantify this with density autocorrelation functions such as the self-intermediate scattering function: <span class="math display">F(k, t) = \frac{1}{N} \left\langle \sum_{j=1}^{N} e^{i \mathbf{k} \cdot [\mathbf{r}_j(t) - \mathbf{r}_j(0)]} \right\rangle</span></p>
 <p>It decays in two steps:</p>
 <ul>
-<li>a fast decay corresponding to <strong>vibrations</strong> within the cage formed by neighbouring particles, occuring on a timescale called the <strong>beta relaxation time</strong> <span class="math inline">\tau_{\beta}</span></li>
+<li>a fast decay corresponding to <strong>vibrations</strong> within the cage formed by neighbouring particles, occurring on a timescale called the <strong>beta relaxation time</strong> <span class="math inline">\tau_{\beta}</span></li>
 <li>a slow decay corresponding to <strong>structural relaxation</strong> as particles escape their cages, taking place on the much longer <strong>alpha relaxation time</strong> <span class="math inline">\tau_{\alpha}</span></li>
 </ul>
 </div><div class="column" style="width:50%;">
@@ -428,13 +431,13 @@ S(T) = S(T_0) + \int_{T_0}^{T} \frac{C_V(T')}{T'} dT'
 <p>Phenomenologically one distinguishes between:</p>
 <ul>
 <li><strong>Strong glassformers</strong>: Arrhenius behaviour of <span class="math inline">\tau_{\alpha}</span> and <span class="math inline">\eta</span> <span class="math inline">\sim \exp\left(\dfrac{E_a}{k_{B} T}\right)</span></li>
-<li><strong>Fragile glassformers</strong>: super-Arrhenius behaviour <span class="math inline">\tau_{\alpha}</span> and <span class="math inline">\eta</span>. Often modelled with the <strong>Vogel-Fulcher-Tammann</strong> (VFT) equation <span class="math inline">\tau \sim \exp\left(\dfrac{A}{T - T_0}\right)</span> where <span class="math inline">T_0</span> corrsponds to a <strong>divergence</strong> at <strong>finite</strong> temperature <span class="math inline">\to</span> <strong>phase transition?</strong></li>
+<li><strong>Fragile glassformers</strong>: super-Arrhenius behaviour <span class="math inline">\tau_{\alpha}</span> and <span class="math inline">\eta</span>. Often modelled with the <strong>Vogel-Fulcher-Tammann</strong> (VFT) equation <span class="math inline">\tau \sim \exp\left(\dfrac{A}{T - T_0}\right)</span> where <span class="math inline">T_0</span> corresponds to a <strong>divergence</strong> at <strong>finite</strong> temperature <span class="math inline">\to</span> <strong>phase transition?</strong></li>
 </ul>
 </div><div class="column" style="width:50%;">
 <div class="quarto-figure quarto-figure-center">
 <figure>
 <p><img data-src="./figs/figangell.svg"></p>
-<figcaption>Angell plot showing the dramatic increase of viscosity and relaxation time as temperature approaches Tg for different glassformers, from Angell Science (1995)</figcaption>
+<figcaption>Angell plot showing the dramatic increase of viscosity and relaxation time as temperature approaches Tg for different glassformers, adapted from Debenedetti and Stillinger, Nature (2001)</figcaption>
 </figure>
 </div>
 </div></div>
@@ -457,7 +460,7 @@ S(T) = S(T_0) + \int_{T_0}^{T} \frac{C_V(T')}{T'} dT'
 <div class="column" style="width:50%;">
 <p>The <strong>Adam-Gibbs model</strong> links the dramatic slowdown of dynamics to the underlying thermodynamics through <strong>configurational entropy</strong> <span class="math inline">S_{\rm conf}</span>.</p>
 <ul>
-<li>The key idea is the existense of <strong>cooperatively rearranging regions</strong> (CRRs): to relax, particles need to move together and explore a new metabasin in the energy landscape.</li>
+<li>The key idea is the existence of <strong>cooperatively rearranging regions</strong> (CRRs): to relax, particles need to move together and explore a new metabasin in the energy landscape.</li>
 </ul>
 <p><em>Mosaic</em> of <span class="math inline">M_{CRR}</span> independent cooperatively rearranging regions of size <span class="math inline">n_{CRR}</span> particles each. The total number of particles is <span class="math inline">N = M_{CRR} n_{CRR}</span>.</p>
 <p>We <strong>assume</strong> that the total configurational entropy is additive and that each CRR contributes a constant amount <span class="math inline">s_{conf}</span>, irrespective of its size</p>
@@ -513,12 +516,12 @@ S(T) = S(T_0) + \int_{T_0}^{T} \frac{C_V(T')}{T'} dT'
 </section>
 <section id="demonstration-of-facilitated-dynamics-and-dynamical-heterogeneities" class="slide level2">
 <h2>Demonstration of facilitated dynamics and dynamical heterogeneities</h2>
-<p>Time evolution of the magnitude of the displacement field in a model of glass governed by dynamical facilitation from Hasym and Mandadapu PNAS (2024):</p>
+<p>Time evolution of the magnitude of the displacement field in a model of glass governed by dynamical facilitation from Hasyim and Mandadapu PNAS (2024):</p>
 <div class="columns">
 <div class="column" style="width:25%;">
 
 </div><div class="column" style="width:60%;">
-<video id="video_shortcode_videojs_video1" height="800" class="video-js vjs-default-skin " controls="" preload="auto" data-setup="{}" title=""><source src="./figs/pnas.2322592121.sm04.mp4"></video>
+<video id="video_shortcode_videojs_video1" height="800" class="video-js vjs-default-skin vjs-big-play-centered " controls="" preload="auto" data-setup="{}" title=""><source src="./figs/pnas.2322592121.sm04.mp4"></video>
 </div><div class="column" style="width:15%;">
 
 </div></div>
@@ -550,11 +553,48 @@ S(T) = S(T_0) + \int_{T_0}^{T} \frac{C_V(T')}{T'} dT'
 </figure>
 </div>
 </div></div>
-<!-- 
-- the phase space is difficult to explore and so the system is **stuck**
-- the system is just very slow and keeps on changing as we observe it (**ageing**)
-- the system is driven by **external/internal** forces and so it never reaches equilibrium
-- the system may have constraints on its dynamics that stop it from exploring all configurations (non-ergodic) -->
+</section>
+<section id="summary-glasses" class="slide level2 smaller scrollable">
+<h2>Summary: glasses</h2>
+<table class="caption-top">
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Topic</th>
+<th>Key result</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Energy landscape</td>
+<td><span class="math inline">F=-k_BT\ln P</span> of coarse-grained states; minima grouped into metabasins</td>
+</tr>
+<tr class="even">
+<td>Configurational entropy</td>
+<td><span class="math inline">S=S_{\rm conf}+S_{\rm vib}</span>, <span class="math inline">S_{\rm conf}=k_B\ln N_{\rm minima}</span></td>
+</tr>
+<tr class="odd">
+<td>Glass formation</td>
+<td>avoid crystallisation; <span class="math inline">T_g</span> where <span class="math inline">\tau_\alpha&gt;t_{\rm obs}</span>: ergodicity lost, protocol dependent</td>
+</tr>
+<tr class="even">
+<td>Relaxation</td>
+<td>two-step <span class="math inline">F_s(q,t)</span>: <span class="math inline">\beta</span> (cage), <span class="math inline">\alpha</span> (structural); <span class="math inline">\tau_\alpha\propto\eta</span></td>
+</tr>
+<tr class="odd">
+<td>Strong vs fragile</td>
+<td>Arrhenius vs VFT <span class="math inline">\eta\propto e^{B/(T-T_0)}</span></td>
+</tr>
+<tr class="even">
+<td>Theories</td>
+<td>Adam-Gibbs <span class="math inline">\tau_\alpha=\tau_0\,e^{A/TS_{\rm conf}}</span> (thermodynamic) vs dynamical facilitation (no finite-<span class="math inline">T</span> divergence)</td>
+</tr>
+</tbody>
+</table>
+<p><a href="https://fturci.github.io/course-disordered-matter/soft-matter/soft-matter_glasses.html#summary" target="_blank">Full summary with links in the notes</a></p>
 
 
 <script type="ojs-module-contents">
