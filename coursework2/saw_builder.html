@@ -68,6 +68,10 @@
   label.f input, label.f select { width: 96px; padding: 3px 6px; border: 1px solid var(--line);
                                   border-radius: 5px; background: var(--bg); }
   label.f input.wide { width: 170px; }
+  label.f select#pview { width: 210px; }
+  label.chk { font-size: 13px; color: var(--ink); display: flex; gap: 4px; align-items: center; }
+  .plotctl { margin-top: 8px; }
+  .plotctl [hidden] { display: none; }
   .btn { border: 1px solid var(--accent); background: var(--accent); color: var(--panel);
          padding: 5px 12px; border-radius: 6px; cursor: pointer; }
   .btn.secondary { background: transparent; color: var(--accent); }
@@ -135,6 +139,7 @@
       <canvas id="lattice"></canvas>
       <div class="legend" id="legend"></div>
       <canvas id="trace" hidden></canvas>
+      <div class="row" id="trace-ctl" hidden><button class="btn secondary" id="b-trace">Download R² plot (PNG)</button></div>
       <div class="stats" id="stats"></div>
       <div class="msg" id="msg"></div>
     </div>
@@ -151,7 +156,16 @@
     </div>
     <div class="measure-grid">
       <div class="tablewrap"><table id="mtable"></table></div>
-      <div><canvas id="mplot"></canvas><div class="legend" id="mlegend"></div></div>
+      <div><canvas id="mplot"></canvas><div class="legend" id="mlegend"></div>
+        <div class="row plotctl">
+          <label class="f" id="pview-wrap">plot
+            <select id="pview"><option value="loglog">ln⟨R²⟩ against ln N</option><option value="local">local exponents against N</option></select>
+          </label>
+          <label class="chk"><input type="checkbox" id="perr" checked> error bars</label>
+          <label class="chk" id="pref-wrap"><input type="checkbox" id="pref" checked> exact and Flory values</label>
+          <button class="btn secondary" id="b-fig">Download figure (PNG)</button>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -978,16 +992,34 @@ function tick() {
 }
 
 // ------------------------------------------------------------------ drawing
-function fitCanvas(c) {
-  const dpr = window.devicePixelRatio || 1;
-  const w = c.clientWidth, h = c.clientHeight;
+function fitCanvas(c, size) {
+  const dpr = size ? 2 : (window.devicePixelRatio || 1);
+  const w = size ? size[0] : c.clientWidth, h = size ? size[1] : c.clientHeight;
   if (c.width !== Math.round(w * dpr) || c.height !== Math.round(h * dpr)) {
     c.width = Math.round(w * dpr); c.height = Math.round(h * dpr);
   }
   const ctx = c.getContext("2d");
   ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
   ctx.clearRect(0, 0, w, h);
+  if (size) { ctx.fillStyle = "#ffffff"; ctx.fillRect(0, 0, w, h); }
   return [ctx, w, h];
+}
+
+// Draws a figure on an off-screen canvas in light colours and downloads it as PNG.
+function exportFigure(draw, size, name) {
+  const root = document.documentElement, prev = root.dataset.theme;
+  root.dataset.theme = "light";
+  const c = document.createElement("canvas");
+  try { draw(c, size); } finally {
+    if (prev === undefined) delete root.dataset.theme; else root.dataset.theme = prev;
+  }
+  c.toBlob(blob => {
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement("a");
+    a.href = url; a.download = name;
+    document.body.append(a); a.click(); a.remove();
+    setTimeout(() => URL.revokeObjectURL(url), 1000);
+  }, "image/png");
 }
 
 function pointsOf(w) {
@@ -1079,6 +1111,7 @@ function legend(items) {
 function draw() {
   const walkC = css("--walk"), trialC = css("--trial"), badC = css("--bad"), okC = css("--ok"), contactC = css("--contact");
   $("trace").hidden = current !== "pivot";
+  $("trace-ctl").hidden = current !== "pivot";
   if (!R) {
     drawLattice([]);
     $("stats").textContent = "";
@@ -1121,8 +1154,8 @@ function draw() {
   }
 }
 
-function drawTrace(s, P) {
-  const [ctx, W, H] = fitCanvas($("trace"));
+function drawTrace(s, P, canvas, size) {
+  const [ctx, W, H] = fitCanvas(canvas || $("trace"), size);
   const pad = { l: 44, r: 8, t: 8, b: 18 };
   ctx.fillStyle = css("--muted"); ctx.font = "11px sans-serif";
   const R2 = s ? s.R2 : [], steps = s ? s.recSteps : [];
@@ -1215,52 +1248,116 @@ function renderTable() {
 
 const SERIES = ["#2f5fb3", "#d9822b", "#3f9b7f", "#a5649a", "#b0554f", "#5764b0", "#8c7a2b"];
 
-function drawMeasurePlot() {
-  const [ctx, W, H] = fitCanvas($("mplot"));
-  const pad = { l: 56, r: 12, t: 12, b: 40 };
+const plotOpts = { view: "loglog", err: true, ref: true };
+
+function localExponents(rows) {
+  const out = [];
+  const byBeta = new Map();
+  for (const r of rows) if (r[6] > 0) {
+    const k = r[1].toFixed(3);
+    if (!byBeta.has(k)) byBeta.set(k, []);
+    byBeta.get(k).push(r);
+  }
+  for (const [k, rs] of byBeta) {
+    rs.sort((a, b) => a[0] - b[0]);
+    for (let i = 1; i < rs.length; i++) {
+      const [a, b] = [rs[i - 1], rs[i]];
+      if (a[0] === b[0]) continue;
+      const L = Math.log(b[0] / a[0]);
+      const e = Math.hypot(a[8] / a[6], b[8] / b[6]) / (2 * L);
+      out.push({ x: Math.log(Math.sqrt(a[0] * b[0])), y: Math.log(b[6] / a[6]) / (2 * L), e, s: k });
+    }
+  }
+  return out;
+}
+
+function drawMeasurePlot(canvas, size) {
+  const [ctx, W, H] = fitCanvas(canvas || $("mplot"), size);
+  const pad = { l: 60, r: 16, t: 16, b: 44 };
   const rows = TABLE[current];
-  ctx.fillStyle = css("--muted"); ctx.font = "12px sans-serif";
-  let pts, xlab, ylab;
+  const ink = css("--ink"), muted = css("--muted");
+  ctx.fillStyle = muted; ctx.font = "12px sans-serif";
+  let pts, xlab, ylab, xTicks = null, refs = [];
   if (current === "direct") {
-    pts = rows.filter(r => r[3] > 0).map(r => ({ x: r[0], y: Math.log(r[3]), s: "all" }));
+    pts = rows.filter(r => r[3] > 0).map(r => ({ x: r[0], y: Math.log(r[3]), e: Math.sqrt((1 - r[3]) / (r[3] * r[1])), s: "direct" }));
     xlab = "N"; ylab = "ln(fraction kept)";
+  } else if (plotOpts.view === "local") {
+    pts = localExponents(rows);
+    xlab = "N (geometric mean of each pair)"; ylab = "local exponent ν_eff";
+    xTicks = "N";
+    if (plotOpts.ref) refs = [[3 / 4, "3/4 good solvent"], [2 / 3, "2/3 Flory θ"], [4 / 7, "4/7 exact θ"], [1 / 2, "1/2 ideal"]];
   } else {
     pts = rows.filter(r => r[6] > 0).map(r => ({ x: Math.log(r[0]), y: Math.log(r[6]), e: r[8] / r[6], s: r[1].toFixed(3) }));
     xlab = "ln N"; ylab = "ln⟨R²⟩";
   }
-  $("mlegend").innerHTML = "";
-  if (!pts.length) { ctx.textAlign = "center"; ctx.fillText("Run a measurement to see a plot.", W / 2, H / 2); return; }
+  if (!plotOpts.err) pts = pts.map(p => ({ ...p, e: 0 }));
+  $("mlegend").textContent = current === "pivot" && plotOpts.err ? "Error bars: block standard error." : "";
+  if (!pts.length) {
+    ctx.textAlign = "center";
+    ctx.fillText(current === "pivot" && plotOpts.view === "local" ? "Local exponents need at least two values of N at the same βε."
+                                                                : "Run a measurement to see a plot.", W / 2, H / 2);
+    return;
+  }
   let x0 = Math.min(...pts.map(p => p.x)), x1 = Math.max(...pts.map(p => p.x));
-  let y0 = Math.min(...pts.map(p => p.y - (p.e || 0))), y1 = Math.max(...pts.map(p => p.y + (p.e || 0)));
-  const dx = (x1 - x0) || 1, dy = (y1 - y0) || 1;
-  x0 -= 0.06 * dx; x1 += 0.06 * dx; y0 -= 0.08 * dy; y1 += 0.08 * dy;
+  let y0 = Math.min(...pts.map(p => p.y - p.e), ...refs.map(r => r[0])), y1 = Math.max(...pts.map(p => p.y + p.e), ...refs.map(r => r[0]));
+  const dx = (x1 - x0) || 1, dy = (y1 - y0) || 0.1;
+  x0 -= 0.06 * dx; x1 += (refs.length ? 0.45 : 0.06) * dx; y0 -= 0.08 * dy; y1 += 0.22 * dy;
   const X = x => pad.l + (x - x0) / (x1 - x0) * (W - pad.l - pad.r);
   const Y = y => H - pad.b - (y - y0) / (y1 - y0) * (H - pad.t - pad.b);
   ctx.strokeStyle = css("--line"); ctx.lineWidth = 1;
   ctx.beginPath(); ctx.moveTo(pad.l, pad.t); ctx.lineTo(pad.l, H - pad.b); ctx.lineTo(W - pad.r, H - pad.b); ctx.stroke();
-  ctx.textAlign = "center";
+  ctx.fillStyle = ink;
   for (let i = 0; i <= 4; i++) {
-    const xv = x0 + (x1 - x0) * i / 4, yv = y0 + (y1 - y0) * i / 4;
-    ctx.fillText(xv.toFixed(2), X(xv), H - pad.b + 14);
-    ctx.textAlign = "right"; ctx.fillText(yv.toFixed(2), pad.l - 6, Y(yv) + 4); ctx.textAlign = "center";
+    const yv = y0 + (y1 - y0) * i / 4;
+    ctx.textAlign = "right"; ctx.fillText(yv.toFixed(2), pad.l - 6, Y(yv) + 4);
   }
-  ctx.fillText(xlab, (pad.l + W - pad.r) / 2, H - 6);
-  ctx.save(); ctx.translate(14, (pad.t + H - pad.b) / 2); ctx.rotate(-Math.PI / 2); ctx.fillText(ylab, 0, 0); ctx.restore();
+  ctx.textAlign = "center";
+  if (xTicks === "N") {
+    for (const n of [10, 20, 30, 50, 70, 100, 150, 200]) {
+      const xv = Math.log(n);
+      if (xv >= x0 && xv <= x1 - 0.35 * dx) ctx.fillText(String(n), X(xv), H - pad.b + 15);
+    }
+  } else {
+    for (let i = 0; i <= 4; i++) { const xv = x0 + (x1 - x0) * i / 4; ctx.fillText(current === "direct" ? xv.toFixed(0) : xv.toFixed(2), X(xv), H - pad.b + 15); }
+  }
+  ctx.fillText(xlab, (pad.l + W - pad.r) / 2, H - 8);
+  ctx.save(); ctx.translate(15, (pad.t + H - pad.b) / 2); ctx.rotate(-Math.PI / 2); ctx.fillText(ylab, 0, 0); ctx.restore();
+  ctx.setLineDash([4, 4]); ctx.strokeStyle = muted;
+  ctx.textAlign = "left"; ctx.font = "11px sans-serif"; ctx.fillStyle = ink;
+  for (const [v, label] of refs) {
+    ctx.beginPath(); ctx.moveTo(pad.l, Y(v)); ctx.lineTo(X(x1 - 0.42 * dx), Y(v)); ctx.stroke();
+    ctx.fillText(label, X(x1 - 0.4 * dx), Y(v) + 4);
+  }
+  ctx.setLineDash([]); ctx.font = "12px sans-serif";
   const names = [...new Set(pts.map(p => p.s))];
   names.forEach((name, k) => {
     const c = SERIES[k % SERIES.length];
     ctx.strokeStyle = c; ctx.fillStyle = c; ctx.lineWidth = 1.5;
     const sp = pts.filter(p => p.s === name).sort((a, b) => a.x - b.x);
+    if (current === "pivot" && plotOpts.view === "local") {
+      ctx.beginPath(); sp.forEach((p, i) => i ? ctx.lineTo(X(p.x), Y(p.y)) : ctx.moveTo(X(p.x), Y(p.y))); ctx.stroke();
+    }
     for (const p of sp) {
       if (p.e) { ctx.beginPath(); ctx.moveTo(X(p.x), Y(p.y - p.e)); ctx.lineTo(X(p.x), Y(p.y + p.e)); ctx.stroke(); }
       ctx.beginPath(); ctx.arc(X(p.x), Y(p.y), 3.5, 0, 7); ctx.fill();
     }
+    if (current === "pivot") {
+      const lx = pad.l + 12 + k * 110, ly = pad.t + 8;
+      ctx.beginPath(); ctx.arc(lx, ly, 4, 0, 7); ctx.fill();
+      ctx.fillStyle = ink; ctx.textAlign = "left"; ctx.fillText(`βε = ${name}`, lx + 9, ly + 4);
+    }
   });
-  if (current === "pivot") {
-    $("mlegend").innerHTML = names.map((n, k) =>
-      `<span><i class="sw" style="background:${SERIES[k % SERIES.length]}"></i>βε = ${n}</span>`).join("") +
-      " · error bars: block standard error";
-  }
+}
+
+function figureName() {
+  if (current === "direct") return "direct_fraction_kept.png";
+  return plotOpts.view === "local" ? "pivot_local_exponents.png" : "pivot_loglog.png";
+}
+
+function syncPlotControls() {
+  $("pview-wrap").hidden = current !== "pivot";
+  $("pref-wrap").hidden = !(current === "pivot" && plotOpts.view === "local");
+  $("pview").value = plotOpts.view; $("perr").checked = plotOpts.err; $("pref").checked = plotOpts.ref;
 }
 
 async function measure() {
@@ -1561,6 +1658,7 @@ function switchTo(ex) {
   $("py-preview").textContent = pythonFor(ex);
   $("check-out").hidden = true;
   R = null; stopPlay(); setMsg("");
+  syncPlotControls();
   renderTable();
   draw();
 }
@@ -1578,6 +1676,14 @@ $("b-measure").onclick = measure;
 $("b-csv").onclick = csv;
 $("b-clear").onclick = () => { TABLE[current] = []; renderTable(); };
 $("b-check").onclick = check;
+$("pview").onchange = e => { plotOpts.view = e.target.value; syncPlotControls(); drawMeasurePlot(); };
+$("perr").onchange = e => { plotOpts.err = e.target.checked; drawMeasurePlot(); };
+$("pref").onchange = e => { plotOpts.ref = e.target.checked; drawMeasurePlot(); };
+$("b-fig").onclick = () => exportFigure(drawMeasurePlot, [720, 500], figureName());
+$("b-trace").onclick = () => {
+  if (!R || R.ex !== "pivot" || !R.s.R2.length) { setMsg("Run the chain first: the R² plot is empty.", "bad"); return; }
+  exportFigure((c, size) => drawTrace(R.s, R.P, c, size), [720, 300], "pivot_R2_time_evolution.png");
+};
 $("q-check").onclick = () => { $("check-out").hidden = false; $("check-out").scrollIntoView({ behavior: "smooth", block: "center" }); check(); };
 $("q-save").onclick = saveWorkFile;
 $("q-load").onclick = () => $("load-file").click();
