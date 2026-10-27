@@ -763,11 +763,18 @@
     "text": "Aside : constrained optimisation with Lagrange multipliers\nMany physics problems can be cast in terms of constrained optimisation\n\n\n\n\n\n\n\n\nArea\nProblem\nConstraint\n\n\n\n\nMechanics\nMinimize potential energy of a pendulum\nFixed length of the string\n\n\nThermodynamics\nMaximize entropy S\nFixed total energy E\n\n\nStatistical Mechanics\nMaximize Gibbs entropy -\\sum_i p_i\\ln p_i\nNormalisation \\sum_i p_i=1, fixed \\langle E\\rangle\n\n\nLiquid Crystals\nMinimize Frank energy\nDirector normalization \\|\\mathbf{n}\\|=1\n\n\nLiquid Crystals\nMinimize Maier-Saupe free energy f[p]\nNormalisation of p(\\theta)\n\n\n\nMethod: Use Lagrange multipliers \\lambda to convert constrained into unconstrained problem: \\mathcal{L}=f(\\mathbf{x})-\\lambda g(\\mathbf{x}) then solve \\nabla\\mathcal{L}=0."
   },
   {
-    "objectID": "soft-matter_liquidx1.html#geometrical-understand-of-lagrange-multipliers",
-    "href": "soft-matter_liquidx1.html#geometrical-understand-of-lagrange-multipliers",
+    "objectID": "soft-matter_liquidx1.html#geometrical-understanding-of-lagrange-multipliers",
+    "href": "soft-matter_liquidx1.html#geometrical-understanding-of-lagrange-multipliers",
     "title": "Complex Disordered Systems",
-    "section": "Geometrical understand of Lagrange multipliers",
-    "text": "Geometrical understand of Lagrange multipliers\n\nTake a function f(x,y).\nA constraint is expressed by fixing the value of a second function g(x,y)=c\nWe want to find the extrema of f(x,y) subject to the constraint g(x,y)=c: It has to be a curve\nThis means find the extremal values of f on the curve \\mathcal{C}: g(x,y)=c\nWe could parametrise \\mathcal{C} but we can also simply think in terms of its geometrical features.\n\nTake the example of a minimum: - at every point of \\mathcal{C} there is a tangent vector \\vec{t} - we want to find the points on \\mathcal{C} where f is minimal. This means that changes of f along \\mathcal{C} are minimal. - we can calculate such changes as the projection of the local gradient with the tangent vector and state that \\vec{\\nabla}{f} \\perp \\vec{t} - Notice that, by definition, the \\vec{\\nabla}{g}\\perp \\vec{t} - So we are simply saying that\n\\vec{\\nabla}{f}\\parallel \\vec{\\nabla}{g}\\to \\vec{\\nabla}{f}=\\lambda\\vec{\\nabla}{g}\nfor some scalar \\lambda"
+    "section": "Geometrical understanding of Lagrange multipliers",
+    "text": "Geometrical understanding of Lagrange multipliers\n\nTake a function f(x,y).\nA constraint is expressed by fixing the value of a second function g(x,y)=c\nWe want to find the extrema of f(x,y) subject to the constraint g(x,y)=c: It has to be a curve\nThis means find the extremal values of f on the curve \\mathcal{C}: g(x,y)=c\nWe could parametrise \\mathcal{C} but we can also simply think in terms of its geometrical features."
+  },
+  {
+    "objectID": "soft-matter_liquidx1.html#geometrical-understanding-of-lagrange-multipliers-1",
+    "href": "soft-matter_liquidx1.html#geometrical-understanding-of-lagrange-multipliers-1",
+    "title": "Complex Disordered Systems",
+    "section": "Geometrical understanding of Lagrange multipliers",
+    "text": "Geometrical understanding of Lagrange multipliers\nTake the example of a minimum:\n\nat every point of \\mathcal{C} there is a tangent vector \\vec{t}\nwe want to find the points on \\mathcal{C} where f is minimal. This means that changes of f along \\mathcal{C} are minimal.\nwe can calculate such changes as the projection of the local gradient with the tangent vector and state that \\vec{\\nabla}f \\perp \\vec{t}\nNotice that, by definition, \\vec{\\nabla}g\\perp \\vec{t}\nSo we are simply saying that\n\n\\vec{\\nabla}f\\parallel \\vec{\\nabla}g\\to \\vec{\\nabla}f=\\lambda\\vec{\\nabla}g\nfor some scalar \\lambda."
   },
   {
     "objectID": "soft-matter_liquidx1.html#example",

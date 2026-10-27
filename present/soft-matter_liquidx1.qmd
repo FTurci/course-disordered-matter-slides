@@ -361,26 +361,27 @@ $$\mathcal{L}=f(\mathbf{x})-\lambda g(\mathbf{x})$$
 then solve $\nabla\mathcal{L}=0$.
 
 
-## Geometrical understand of Lagrange multipliers
+## Geometrical understanding of Lagrange multipliers
 
-- Take a function $f(x,y)$. 
-
-- A constraint is expressed by fixing the value of a second function $g(x,y)=c$ 
+- Take a function $f(x,y)$.
+- A constraint is expressed by fixing the value of a second function $g(x,y)=c$
 - We want to find the extrema of $f(x,y)$ subject to the constraint $g(x,y)=c$: It has to be a curve
 - This means find the extremal values of $f$ on the curve $\mathcal{C}: g(x,y)=c$
 - We could parametrise $\mathcal{C}$ but we can also simply think in terms of its geometrical features.
 
+## Geometrical understanding of Lagrange multipliers
+
 Take the example of a minimum:
-    - at every point of $\mathcal{C}$ there is a tangent vector $\vec{t}$
-    - we want to find the points on $\mathcal{C}$ where $f$ is minimal. This means that *changes of f* along $\mathcal{C}$ are minimal.
-    - we can calculate such changes as the projection of the local gradient with the tangent vector and  state that $$\vec{\nabla}{f} \perp \vec{t}$$
-    - Notice that, by definition, the $$\vec{\nabla}{g}\perp \vec{t}$$
-    - So we are simply saying that
 
-$$\vec{\nabla}{f}\parallel \vec{\nabla}{g}\to \vec{\nabla}{f}=\lambda\vec{\nabla}{g}$$
+- at every point of $\mathcal{C}$ there is a tangent vector $\vec{t}$
+- we want to find the points on $\mathcal{C}$ where $f$ is minimal. This means that *changes of f* along $\mathcal{C}$ are minimal.
+- we can calculate such changes as the projection of the local gradient with the tangent vector and state that $\vec{\nabla}f \perp \vec{t}$
+- Notice that, by definition, $\vec{\nabla}g\perp \vec{t}$
+- So we are simply saying that
 
-for some scalar $\lambda$
+$$\vec{\nabla}f\parallel \vec{\nabla}g\to \vec{\nabla}f=\lambda\vec{\nabla}g$$
 
+for some scalar $\lambda$.
 
 ## Example
 
