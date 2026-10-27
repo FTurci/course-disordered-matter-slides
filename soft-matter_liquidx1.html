@@ -609,18 +609,28 @@ T_{N I}=T^{\ast}+\frac{b^2}{27 a c}
 </table>
 <p><strong>Method</strong>: Use <strong>Lagrange multipliers</strong> <span class="math inline">\lambda</span> to convert constrained into unconstrained problem: <span class="math display">\mathcal{L}=f(\mathbf{x})-\lambda g(\mathbf{x})</span> then solve <span class="math inline">\nabla\mathcal{L}=0</span>.</p>
 </section>
-<section id="geometrical-understand-of-lagrange-multipliers" class="slide level2">
-<h2>Geometrical understand of Lagrange multipliers</h2>
+<section id="geometrical-understanding-of-lagrange-multipliers" class="slide level2">
+<h2>Geometrical understanding of Lagrange multipliers</h2>
 <ul>
-<li><p>Take a function <span class="math inline">f(x,y)</span>.</p></li>
-<li><p>A constraint is expressed by fixing the value of a second function <span class="math inline">g(x,y)=c</span></p></li>
-<li><p>We want to find the extrema of <span class="math inline">f(x,y)</span> subject to the constraint <span class="math inline">g(x,y)=c</span>: It has to be a curve</p></li>
-<li><p>This means find the extremal values of <span class="math inline">f</span> on the curve <span class="math inline">\mathcal{C}: g(x,y)=c</span></p></li>
-<li><p>We could parametrise <span class="math inline">\mathcal{C}</span> but we can also simply think in terms of its geometrical features.</p></li>
+<li>Take a function <span class="math inline">f(x,y)</span>.</li>
+<li>A constraint is expressed by fixing the value of a second function <span class="math inline">g(x,y)=c</span></li>
+<li>We want to find the extrema of <span class="math inline">f(x,y)</span> subject to the constraint <span class="math inline">g(x,y)=c</span>: It has to be a curve</li>
+<li>This means find the extremal values of <span class="math inline">f</span> on the curve <span class="math inline">\mathcal{C}: g(x,y)=c</span></li>
+<li>We could parametrise <span class="math inline">\mathcal{C}</span> but we can also simply think in terms of its geometrical features.</li>
 </ul>
-<p>Take the example of a minimum: - at every point of <span class="math inline">\mathcal{C}</span> there is a tangent vector <span class="math inline">\vec{t}</span> - we want to find the points on <span class="math inline">\mathcal{C}</span> where <span class="math inline">f</span> is minimal. This means that <em>changes of f</em> along <span class="math inline">\mathcal{C}</span> are minimal. - we can calculate such changes as the projection of the local gradient with the tangent vector and state that <span class="math display">\vec{\nabla}{f} \perp \vec{t}</span> - Notice that, by definition, the <span class="math display">\vec{\nabla}{g}\perp \vec{t}</span> - So we are simply saying that</p>
-<p><span class="math display">\vec{\nabla}{f}\parallel \vec{\nabla}{g}\to \vec{\nabla}{f}=\lambda\vec{\nabla}{g}</span></p>
-<p>for some scalar <span class="math inline">\lambda</span></p>
+</section>
+<section id="geometrical-understanding-of-lagrange-multipliers-1" class="slide level2">
+<h2>Geometrical understanding of Lagrange multipliers</h2>
+<p>Take the example of a minimum:</p>
+<ul>
+<li>at every point of <span class="math inline">\mathcal{C}</span> there is a tangent vector <span class="math inline">\vec{t}</span></li>
+<li>we want to find the points on <span class="math inline">\mathcal{C}</span> where <span class="math inline">f</span> is minimal. This means that <em>changes of f</em> along <span class="math inline">\mathcal{C}</span> are minimal.</li>
+<li>we can calculate such changes as the projection of the local gradient with the tangent vector and state that <span class="math inline">\vec{\nabla}f \perp \vec{t}</span></li>
+<li>Notice that, by definition, <span class="math inline">\vec{\nabla}g\perp \vec{t}</span></li>
+<li>So we are simply saying that</li>
+</ul>
+<p><span class="math display">\vec{\nabla}f\parallel \vec{\nabla}g\to \vec{\nabla}f=\lambda\vec{\nabla}g</span></p>
+<p>for some scalar <span class="math inline">\lambda</span>.</p>
 </section>
 <section id="example" class="slide level2">
 <h2>Example</h2>
