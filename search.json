@@ -1446,7 +1446,7 @@
     "href": "soft-matter_intro.html#classes-of-systems",
     "title": "Complex Disordered Systems",
     "section": "Classes of systems",
-    "text": "Classes of systems\nIn our exploration of soft matter we will focus on six main classes of systems which display different physics:\n\ncolloidal dispersions\npolymeric systems\nliquid crystals\nsurfactant aggregates\narrested systems\nactive matter\n\n\n\n\nColloidal assemblies, polymers, surfactants, liquid crystals, glasses and bacteria."
+    "text": "Classes of systems\nIn our exploration of soft matter we will focus on five main classes of systems which display different physics:\n\ncolloidal dispersions\npolymeric systems\nliquid crystals \narrested systems\nactive matter\n\n\n\n\nColloidal assemblies, polymers, surfactants, liquid crystals, glasses and bacteria."
   },
   {
     "objectID": "soft-matter_intro.html#colloidal-dispersions",
@@ -1467,14 +1467,7 @@
     "href": "soft-matter_intro.html#liquid-crystals",
     "title": "Complex Disordered Systems",
     "section": "Liquid crystals",
-    "text": "Liquid crystals\n\nLiquid crystals form when anisotropic soft matter units (e.g., rod-like or disk-shaped molecules) pack densely, leading to partial order—intermediate between liquids and crystals.\nContinuum free energy theories describe liquid crystals by considering the symmetry of their order parameters.\nLiquid crystals are crucial in technologies like liquid crystal displays (LCDs).\n\n\nTexture of nematic liquid crystals, from https://doi.org/10.3986/alternator.2020.38"
-  },
-  {
-    "objectID": "soft-matter_intro.html#surfactant-aggregates",
-    "href": "soft-matter_intro.html#surfactant-aggregates",
-    "title": "Complex Disordered Systems",
-    "section": "Surfactant aggregates",
-    "text": "Surfactant aggregates\n\nSurfactants lower surface tension between fluid phases by accumulating at interfaces.\nThey are molecules with both hydrophilic heads and hydrophobic tails.\nAbove a critical concentration, surfactants self-assemble in the bulk, forming structures like bilayers and vesicles.\nThese assemblies are essential in cell biology and many soft matter systems.\n\n\nCellular membrane"
+    "text": "Liquid crystals\n\nLiquid crystals form when anisotropic soft matter units (e.g., rod-like or disk-shaped molecules) pack densely, leading to partial order—intermediate between liquids and crystals.\nContinuum free energy theories describe liquid crystals by considering the symmetry of their order parameters.\nLiquid crystals are crucial in technologies like liquid crystal displays (LCDs).\n\n\n\nTexture of nematic liquid crystals, from https://doi.org/10.3986/alternator.2020.38"
   },
   {
     "objectID": "soft-matter_intro.html#arrested-systems",
