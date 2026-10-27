@@ -31,7 +31,7 @@ mermaid-format: svg # png also works
 
 The strength of the ordering is determined by the **decay** of correlation functions:
 
-- in liquids we have at best short range order (expoential decay of the oscillations in the $g(r)$)
+- in liquids we have at best short range order (exponential decay of the oscillations in the $g(r)$)
 - in crystals we have long-range order — correlations do not decay (sharp Bragg peaks in $S(\mathbf{k})$ and $g(r)$); this order is only disrupted by defects (dislocations, grain boundaries) on macroscopic scales
 
 ## Anisotropic Particles
@@ -60,7 +60,7 @@ Many natural and artificial systems have anisotropy
 :::
 :::
 
-![Different liquid crystalline phases, from  Doostmohammadi and Ladoux, Trends in Cell Biology (2002)](./figs/b1_lrg.jpg)
+![Different liquid crystalline phases, from  Doostmohammadi and Ladoux, Trends in Cell Biology (2022)](./figs/b1_lrg.jpg)
 
 
 
@@ -119,7 +119,7 @@ For **head-tail symmetric** rods, we cannot simply average orientations.
 Instead, construct the **alignment tensor** 
 
 $$
-\mathbf{Q}=\dfrac{d}{2}\left\langle\mathbf{u}_i \otimes \mathbf{u}_i-\dfrac{1}{d}\mathbf{I}\right\rangle
+\mathbf{Q}=\dfrac{d}{d-1}\left\langle\mathbf{u}_i \otimes \mathbf{u}_i-\dfrac{1}{d}\mathbf{I}\right\rangle
 $$
 
 - we make it **traceless** by removing the identity
@@ -155,7 +155,7 @@ $$
 - $\mathcal{S} = 1$: perfect nematic order (all aligned)
 
 :::{.callout-caution}
-The nematic order parameter $\mathcal{S}$ should not nbe cconfused with the entropy $S$.
+The nematic order parameter $\mathcal{S}$ should not be confused with the entropy $S$.
 :::
 ---
 
@@ -202,13 +202,13 @@ This uses the **Legendre polynomial** $P_2(\cos\theta)$ to enforce head-tail sym
 Using the tensorial order parameter one can express a Landau theory of the isotropic-to-nematic transition (the simplest form of orientational order appearing in liquid crystals).
 
 
-Leveraging that $\mathcal{S}$ is an eigenvalue of $\mathbf{Q}$, i.e. $\mathbf{Qn} = S\mathbf{n}$ we have 
+For historical reasons, in 3D the alignment tensor of a uniaxial nematic is usually written as (equivalent to our definition up to a multiplicative factor)
 
 $$
-\mathbf{Q}=\mathcal{S}\left(\mathbf{n} \otimes \mathbf{n}-\frac{1}{d} \mathbf{I}\right)
+\mathbf{Q}=\mathcal{S}\left(\mathbf{n} \otimes \mathbf{n}-\frac{1}{3} \mathbf{I}\right)
 $$
 
-If we choose $z$ to be the axis along teh director $\mathbf{n}$ then explicitly
+If we choose $z$ to be the axis along the director $\mathbf{n}$ then explicitly
 
 
 $$
@@ -220,7 +220,7 @@ $$
 $$
 
 
-## Landau-de Gennes mean field theory
+## Orientational distribution and order parameter
 
 We want to characterise the deviations from the director's orientation.
 
@@ -232,9 +232,9 @@ We can think of compiling a **probability distribution** $p(\Omega)$ of finding 
 So, by definition of an average, the orientational order parameter reads
 
 $$\begin{align}\mathcal{S}&=\dfrac{3}{2}\left\langle(\mathbf{u} \cdot \mathbf{n})^2-\frac{1}{3}\right\rangle = \dfrac{1}{2}\langle 3 \cos^2\theta-1\rangle=\langle P_2(\cos\theta)\rangle\\
-&=2\pi \int_0^{\pi}P_2(\cos\theta)p(\theta)\sin\theta d\theta
+&=\int_0^{\pi}P_2(\cos\theta)p(\theta)\sin\theta d\theta
 \end{align}$$
-where we used the Jacobian in spherical coordinates.
+where we used the Jacobian in spherical coordinates and normalised $p(\theta)$ as $\int_0^\pi p(\theta)\sin\theta d\theta=1$.
 
 
 ## Landau-de Gennes mean field theory
@@ -291,7 +291,7 @@ The cubic term implies that there is a **temperature range** where **two minima 
 - $S_1=0$: isotropic
 - $S_2>0$: nematic
 
-First order phase transition. The cubic terms prevents the free energy from having an inflection at $S=0$ (the free energy nver gets truly flat)
+First order phase transition. The cubic terms prevents the free energy from having an inflection at $S=0$ (the free energy never gets truly flat)
 
 
 
@@ -346,17 +346,15 @@ while $T^{\ast}$ is a material dependent temperature, identifying instability (s
 
 ## Aside : constrained optimisation with Lagrange multipliers
 
-Many physics problems can be cast in terms of constraiend optimisation
+Many physics problems can be cast in terms of constrained optimisation
 
 | Area | Problem | Constraint |
 |------|---------|-----------|
-| **Mechanics** | Minimize action $S=\int L dt$ | Energy conservation |
+| **Mechanics** | Minimize potential energy of a pendulum | Fixed length of the string |
 | **Thermodynamics** | Maximize entropy $S$ | Fixed total energy $E$ |
-| **Electromagnetism** | Minimize energy | Gauss's law $\nabla \cdot \mathbf{E} = \rho/\epsilon_0$ |
-| **General Relativity** | Minimize Einstein-Hilbert action | Metric signature constraint |
+| **Statistical Mechanics** | Maximize Gibbs entropy $-\sum_i p_i\ln p_i$ | Normalisation $\sum_i p_i=1$, fixed $\langle E\rangle$ |
 | **Liquid Crystals** | Minimize Frank energy | Director normalization $\|\mathbf{n}\|=1$ |
-| **Statistical Mechanics** | Maximize partition function | Micro/Gran/canonical ensembles |
-| **Optics** | Minimize optical path (Fermat) | Snell's law at interfaces |
+| **Liquid Crystals** | Minimize Maier-Saupe free energy $f[p]$ | Normalisation of $p(\theta)$ |
 
 **Method**: Use **Lagrange multipliers** $\lambda$ to convert constrained into unconstrained problem:
 $$\mathcal{L}=f(\mathbf{x})-\lambda g(\mathbf{x})$$
@@ -374,7 +372,7 @@ then solve $\nabla\mathcal{L}=0$.
 
 Take the example of a minimum:
     - at every point of $\mathcal{C}$ there is a tangent vector $\vec{t}$
-    - we want to find the points on $\mathcal{C}$ where $f$ is miniimal. This means that *changes of f* along $\mathcal{C}$ are minimal.
+    - we want to find the points on $\mathcal{C}$ where $f$ is minimal. This means that *changes of f* along $\mathcal{C}$ are minimal.
     - we can calculate such changes as the projection of the local gradient with the tangent vector and  state that $$\vec{\nabla}{f} \perp \vec{t}$$
     - Notice that, by definition, the $$\vec{\nabla}{g}\perp \vec{t}$$
     - So we are simply saying that
@@ -439,237 +437,3 @@ $$
 $$
 
 
-<!-- 
-
-
-## Probability Distribution
-
-For a system with cylindrical symmetry around $\mathbf{n}$:
-
-$$
-p(\theta) = \text{probability density of finding rod at angle } \theta
-$$
-
-Then:
-
-$$
-\mathcal{S}=2\pi \int_0^{\pi}P_2(\cos\theta)p(\theta)\sin\theta d\theta
-$$
-
----
-
-## Landau-de Gennes Theory (1)
-
-Construct free energy density using tensor invariants:
-
-$$
-f=f_0+\frac{A}{2} \operatorname{tr} \mathbf{Q}^2-\frac{B}{3} \operatorname{tr} \mathbf{Q}^3+\frac{C}{4}\left(\operatorname{tr} \mathbf{Q}^2\right)^2
-$$
-
-For uniaxial nematic:
-
-$$
-\operatorname{Tr}\left(\mathbf{Q}^2\right)=\frac{2}{3} \mathcal{S}^2 \quad,\quad
-\operatorname{Tr}\left(\mathbf{Q}^3\right)=\frac{2}{9} \mathcal{S}^3
-$$
-
----
-
-## Landau-de Gennes Theory (2)
-
-Substitute to get:
-
-$$
-f=f_0+\frac{A}{3}\mathcal{S}^2-\frac{2B}{27}\mathcal{S}^3+\frac{C}{9}\mathcal{S}^4
-$$
-
-Expand coefficients around reference temperature $T^*$:
-
-$$
-A(T)=a\left(T-T^*\right), \quad B(T)= b, \quad C(T)=c
-$$
-
-with $a,b,c>0$.
-
----
-
-## Landau-de Gennes Theory (3)
-
-Final form:
-
-$$
-f-f_0=\frac{a}{3}\left(T-T^{\ast}\right) \mathcal{S}^2-\frac{2 b}{27} \mathcal{S}^3+\frac{c}{9} \mathcal{S}^4
-$$
-
-Predicts **first-order** isotropic-nematic transition at:
-
-$$
-T_{NI}=T^{\ast}+\frac{b^2}{27 a c}
-$$
-
-No critical point (different symmetries).
-
----
-
-## Maier-Saupe Theory (1)
-
-Minimal ingredients for nematic transition:
-
-1. **Attractive interactions** favoring alignment
-2. **Entropy** from orientational distribution
-
-Free energy:
-
-$$
-f = f_0 - u\dfrac{\mathcal{S}^2}{2}+k_BT \int_0^\pi p(\theta) \ln (4\pi p(\theta)) \sin\theta d\theta
-$$
-
----
-
-## Maier-Saupe Theory (2)
-
-Minimize with respect to $p(\theta)$ using Lagrange multiplier:
-
-$$
-p(\theta) = \frac{1}{Z} \exp\left( \frac{u \mathcal{S}}{k_B T} P_2(\cos\theta) \right)
-$$
-
-where $Z$ is the partition function:
-
-$$
-Z = \int_0^\pi \exp\left( \frac{u \mathcal{S}}{k_B T} P_2(\cos\theta) \right) \sin\theta d\theta
-$$
-
----
-
-## Maier-Saupe Theory (3)
-
-Self-consistency: $\mathcal{S}$ must satisfy:
-
-$$
-\mathcal{S}=2\pi \int_0^{\pi}P_2(\cos\theta)p(\theta)\sin\theta d\theta
-$$
-
-Yields **weakly first-order** transition with two stability basins.
-
----
-
-## Lebwohl-Lasher Lattice Model
-
-Discrete lattice version of Maier-Saupe:
-
-$$
-H = -\epsilon \sum_{\langle i, j \rangle} \left[ \frac{3}{2} (\mathbf{n}_i \cdot \mathbf{n}_j)^2 - \frac{1}{2} \right]
-$$
-
-- Each site has unit director $\mathbf{n}_i$
-- Favors alignment between neighbors
-- Captures isotropic-nematic transition
-
----
-
-## 2D Lebwohl-Lasher Model
-
-In 2D with angle $\theta_i$:
-
-$$
-H = -\epsilon \sum_{\langle i, j \rangle} \left[ \frac{3}{2} \cos^2(\theta_i - \theta_j) - \frac{1}{2} \right]
-$$
-
-Monte Carlo simulation shows:
-
-- High $T$: isotropic (random)
-- Low $T$: ordered patches (nematic)
-
----
-
-## Frank Elastic Theory
-
-In continuum limit, director field $\mathbf{n}(\mathbf{r})$ can deform.
-
-**Frank free energy density**:
-
-$$
-f = \frac{1}{2} K_1 (\nabla \cdot \mathbf{n})^2
-    + \frac{1}{2} K_2 [\mathbf{n} \cdot (\nabla \times \mathbf{n})]^2
-    + \frac{1}{2} K_3 [\mathbf{n} \times (\nabla \times \mathbf{n})]^2
-$$
-
----
-
-## Frank Elastic Constants
-
-Three deformation modes:
-
-- $K_1$: **Splay** elastic constant
-- $K_2$: **Twist** elastic constant  
-- $K_3$: **Bend** elastic constant
-
-Each penalizes a specific type of director distortion.
-
----
-
-## Topological Defects (1)
-
-**Disclinations**: Singularities in director field that cannot be removed by continuous deformation.
-
-**Topologically protected**: Cannot smoothly transform to uniform state.
-
-In 2D, characterized by **topological charge** $s$:
-
-$$
-\Delta \theta = 2\pi s
-$$
-
-(rotation of director around closed loop)
-
----
-
-## Topological Defects (2)
-
-Common charges:
-
-- $s = +1/2$: director rotates by $+\pi$
-- $s = -1/2$: director rotates by $-\pi$
-- $s = +1$: director rotates by $+2\pi$
-- $s = -1$: director rotates by $-2\pi$
-
----
-
-## Defect Annihilation
-
-When defects of **opposite charges** meet:
-
-$$
-s = +1/2 \quad + \quad s = -1/2 \quad \rightarrow \quad \text{annihilation}
-$$
-
-Restores uniform order. Key relaxation mechanism in liquid crystals.
-
----
-
-## 3D Topological Defects
-
-In 3D:
-
-- **Line defects** (not just points)
-- Complex topology: loops, entanglements, reconnections
-- **Hedgehogs**, **monopoles**, complex textures
-- Classified using rotation group SO(3)
-
-More complex than 2D case.
-
----
-
-## Summary
-
-
-- Liquid crystals: intermediate phases with orientational order
-- Order parameter $\mathcal{S}$ and director $\mathbf{n}$
-- Landau-de Gennes & Maier-Saupe theories predict first-order transitions
-- Lattice models (Lebwohl-Lasher) capture essential physics
-- Continuum: Frank elastic theory for deformations
-- Topological defects: protected singularities with charge conservation
-
-
- -->

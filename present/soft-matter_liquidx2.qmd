@@ -108,27 +108,27 @@ A potential that aligns molecules with the director, quadratic to reflect head-t
 
 ### Entropic contribution
 
-The second conrirbution is **entropic** in nature.
+The second contribution is **entropic** in nature.
 
 Use orientational distribution function $p(\Omega)$ and (as in Landau-de Gennes) and assume uniaxial symmetry around the director $\mathbf{n}$, i.e.  $p(\Omega)\sim p(\theta)$.
 
 The usual Gibbs (or Shannon) entropy functional $-k_B \int p(\Omega)\ln p(\Omega) d\Omega$ contributes to the free energy as
 
 $$
-f_{\rm entropy }=k_B T \int_0^\pi p(\theta) \ln (4 \pi p(\theta)) \sin \theta d \theta
+f_{\rm entropy }=k_B T \int_0^\pi p(\theta) \ln (2 p(\theta)) \sin \theta d \theta
 $$
 
-where $4\pi$ and $\sin \theta d \theta$ come from normalization over solid angle. [^1]
+where $\sin \theta d \theta$ comes from the solid angle and the factor $2$ comes from the normalisation $\int_0^\pi p(\theta)\sin\theta d\theta=1$. [^1]
 
 
-[^1]: Check that for the isotropic distribution $p(\theta)=1/4\pi$ the entropy is zero.
+[^1]: Check that for the isotropic distribution $p(\theta)=1/2$ the entropy term is zero.
 
 ## Maier-Saupe Theory of Nematic Liquid Crystals
 
 Together we, have the Maier-Saupe free energy functional per molecule
 
 $$
-f=f_0-u \frac{S^2}{2}+k_B T \int_0^\pi p(\theta) \ln (4 \pi p(\theta)) \sin \theta d \theta
+f=f_0-u \frac{S^2}{2}+k_B T \int_0^\pi p(\theta) \ln (2 p(\theta)) \sin \theta d \theta
 $$
 
 The only constraint is normalization of $p(\theta)$:
@@ -155,15 +155,15 @@ $$\dfrac{\delta S^2}{\delta p} =2 S P_2(\cos\theta)\sin\theta $$
 
 So when calculating the partial derivative we have
 
-$$\dfrac{\delta f}{\delta p} =-uS P_2(\cos\theta)\sin\theta +k_BT\left(\ln(4 \pi p(\theta)) + 1\right) \sin \theta $$
+$$\dfrac{\delta f}{\delta p} =-uS P_2(\cos\theta)\sin\theta +k_BT\left(\ln(2 p(\theta)) + 1\right) \sin \theta $$
 
 and hence, after simplifying $\sin \theta$, our Lagrange equation reads
 
-$$-u S P_2(\cos \theta)+k_B T(\ln (4 \pi p(\theta))+1)+\lambda=0$$
+$$-u S P_2(\cos \theta)+k_B T(\ln (2 p(\theta))+1)+\lambda=0$$
 
 Its solution yields 
 
-$$p(\theta)=\frac{1}{Z} \exp \left(\lambda P_2(\cos \theta)\right)=\frac{1}{Z} \exp \left(\frac{u S}{k_B T} P_2(\cos \theta)\right)
+$$p(\theta)=\frac{1}{Z} \exp \left(\frac{u S}{k_B T} P_2(\cos \theta)\right)
 $$
 
 where the partition function $Z$ ensures normalization.
@@ -212,7 +212,7 @@ for u in np.linspace(1, 10, 10):
         p_theta = np.exp(l * P2)
         p_theta /= np.trapz(p_theta * np.sin(thetas), thetas)
         S_l = np.trapz(p_theta * P2 * np.sin(thetas), thetas)
-        f = -0.5*u*S_l**2 + np.trapz(p_theta * np.log(4*np.pi*p_theta) * np.sin(thetas), thetas)
+        f = -0.5*u*S_l**2 + np.trapz(p_theta * np.log(2*p_theta) * np.sin(thetas), thetas)
         S_list.append(S_l)
         F_list.append(f)
     S_array = np.array(S_list)
@@ -254,7 +254,7 @@ def free_energy(lam, u):
     p_theta = np.exp(a)
     p_theta /= np.trapz(p_theta * np.sin(thetas), thetas)  # normalize
     S_l = np.trapz(p_theta * P2 * np.sin(thetas), thetas)
-    F = -0.5 * u * S_l**2 + T * np.trapz(p_theta * np.log(4*np.pi*p_theta) * np.sin(thetas), thetas)
+    F = -0.5 * u * S_l**2 + T * np.trapz(p_theta * np.log(2*p_theta) * np.sin(thetas), thetas)
     return F
 
 for u in u_values:
@@ -288,14 +288,20 @@ The resulting phase transition is weakly first order with a discontinuous jump i
 
 
 
-<details>
-<summary>What about <b> hard rods </b>? Can we get nematic order from purely entropic effects?</summary>
-The answer may look puzzling: if we take the Maier-Saupe model literally, $u$ must be nonzero for the transition to occur.
+## Hard rods: ordering from entropy alone
 
-However, we can think of the rod-rod interaction not as a true energetic one, but also representing effective interactions, such as depletion.
+Maier-Saupe needs $u\neq 0$. But even **hard rods**, with no attractions at all, go from **isotropic** to **nematic** at high density (Onsager, 1949): the transition is **purely entropic**.
 
-Then the answer is **yes**, and hard-rods undergo an isotropic-nematic transition driven purely by entropy (Onsager theory, beyond this course).
-</details>
+Two entropic contributions compete:
+
+- **orientational entropy** favours the **isotropic** phase: aligning reduces the available orientations
+- **translational entropy** favours the **nematic** phase: aligned rods exclude less volume to each other, so each rod has more free volume to move in
+
+At high density the translational gain wins: the nematic phase has the **higher** total entropy.
+
+:::{.callout-note}
+Same story as the freezing of hard spheres: the spheres lose the disorder of their positions, but each gains free volume to vibrate around its lattice site.
+:::
 
 
 ## Simple lattice model: Lebwohl-Lasher
@@ -360,7 +366,7 @@ With this free energy, one can model large-scale deformations and **defects** in
 ## Topological Defects in Nematic Liquid Crystals
 
 - We are working in the continuum with a director field $\mathbf{n}(\mathbf{r})$ that describes the local average orientation of molecules.
-- In this framekwork, defects are **singularities** of the field, called **disclinations**
+- In this framework, defects are **singularities** of the field, called **disclinations**
 
 - Examples in 2D:
 ```{python}
@@ -509,11 +515,11 @@ In practice:
 
 - On a plane (Euler characteristic = 1), the total topological charge must sum to 1.
 - On a sphere (Euler characteristic = 2), the total topological charge must sum to 2.
-- On a torus (Euler characteristic = 0), the total topological charge must sum to 0. $\to$ in periodic systmes the total charge must be zero.
+- On a torus (Euler characteristic = 0), the total topological charge must sum to 0. $\to$ in periodic systems the total charge must be zero.
 
 - This imposes constraints on the dynamics and interactions of defects.
 
-![Director fields on a sphere, on a torus and a double torus. The number of hadles (the genus $g$) determines the Euler characteristic $\chi=2-2g$. From Nelson (2002)](./figs/genus.png)
+![Director fields on a sphere, on a torus and a double torus. The number of handles (the genus $g$) determines the Euler characteristic $\chi=2-2g$. From Nelson (2002)](./figs/genus.png)
 
 
 ## Topological defects
@@ -529,7 +535,7 @@ Analogies well-beyond liquid crystals:
 ![Topological defects in microfluidic devices](./figs/microfluid.png)
 :::
 :::{.column}
-![Vortex anti-vortex  pair in a supefluis (a) initial configuration and (b) after relaxation. From Magierski, *Eur Phys J* (2024)  ](./figs/superfluid.png)
+![Vortex anti-vortex  pair in a superfluid (a) initial configuration and (b) after relaxation. From Magierski, *Eur Phys J* (2024)  ](./figs/superfluid.png)
 :::
 :::
 ## Defects in 3 Dimensions
@@ -630,9 +636,24 @@ Defects control the stability and dynamics of nematic liquid crystals and drive 
 
 ![Defect formation and nematic to smectic phase transition via defect branching, Gim et al Nature Communications (2017)](./figs/nematic-to-smectic.png)
 
-## Complex Disclocation Patterns
+## Complex Disclination Patterns
 
 Example from Kim et al Science Advances (2018)
 
 
-![Liquid-crystals defects createfd and controlled by external forces (air pillars through a substrate).](./figs/patterns.jpg)
+![Liquid-crystals defects created and controlled by external forces (air pillars through a substrate).](./figs/patterns.jpg)
+
+## Summary: liquid crystals {.smaller .scrollable}
+
+| Topic | Key result |
+|---|---|
+| Alignment tensor | $\mathbf Q=\frac{d}{d-1}\left\langle\mathbf u_i\otimes\mathbf u_i-\frac1d\mathbf I\right\rangle$: head-tail symmetry needs a tensor |
+| Order parameter, director | $\mathcal S$ = largest eigenvalue of $\mathbf Q$, $\mathbf n$ = its eigenvector; 3D: $\mathcal S=\langle P_2(\cos\theta)\rangle$ |
+| Landau-de Gennes | $f-f_0=\frac a3(T-T^*)\mathcal S^2-\frac{2b}{27}\mathcal S^3+\frac c9\mathcal S^4$: cubic term, first order |
+| Maier-Saupe | $p(\theta)\propto\exp\left(\frac{u\mathcal S}{k_BT}P_2(\cos\theta)\right)$, self-consistent, weakly first order |
+| Hard rods | purely entropic: orientational entropy lost, translational entropy gained |
+| Lebwohl-Lasher | lattice Maier-Saupe; in 2D only quasi-long-range order |
+| Frank elasticity | splay $K_1$, twist $K_2$, bend $K_3$ |
+| Topological defects | $\Delta\theta=2\pi s$, $s=\pm\frac12,\pm1$; annihilate in $\pm$ pairs |
+
+[Full summary with links in the notes](https://fturci.github.io/course-disordered-matter/soft-matter/soft-matter_liquidcrystals.html#summary){target="_blank"}
