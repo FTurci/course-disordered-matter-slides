@@ -180,7 +180,7 @@ Francesco Turci
 <p><strong>Key features:</strong></p>
 <ul>
 <li>Bonds break/reform dynamically</li>
-<li>Energy ~ <span class="math inline">k_BT</span></li>
+<li>Energy of a few to tens of <span class="math inline">k_BT</span></li>
 <li>Self-healing possible</li>
 <li><strong>Thermoreversible</strong></li>
 </ul>
@@ -202,7 +202,7 @@ Francesco Turci
 <p><strong>Physical Gels</strong></p>
 <ul>
 <li>Reversible bonds</li>
-<li>Energy ~ <span class="math inline">k_BT</span></li>
+<li>Energy of a few to tens of <span class="math inline">k_BT</span></li>
 <li>Dynamic network</li>
 <li>Thermoreversible</li>
 </ul>
@@ -372,7 +372,7 @@ W_{\mathrm{AO}}(r)=-\frac{4 \pi \rho_p k_B T}{3} R^3(1+q)^3\left[1-\frac{3}{4} \
 <li>Binodal becomes <strong>metastable</strong> to fluid-solid coexistence</li>
 </ul>
 
-<img data-src="./figs/colloid-polymers.svg" style="width:100.0%" class="r-stretch quarto-figure-center"><p class="caption">Phase diagram of colloid-polymer mixtures for varying polymer-colloid aspect ration <span class="math inline">q</span>. Small</p></section>
+<img data-src="./figs/colloid-polymers.svg" style="width:100.0%" class="r-stretch quarto-figure-center"><p class="caption">Phase diagram of colloid-polymer mixtures for varying polymer-colloid size ratio <span class="math inline">q</span>: small <span class="math inline">q</span> makes the gas-liquid binodal metastable.</p></section>
 <section id="simple-model-potentials" class="slide level2">
 <h2>Simple Model Potentials</h2>
 <p><strong>Square-well potential:</strong></p>
@@ -389,7 +389,7 @@ U(r) =
 <li><span class="math inline">\epsilon</span>: well depth</li>
 <li><span class="math inline">\lambda</span>: range parameter</li>
 </ul>
-<div id="96fa0b41" class="cell" data-execution_count="1">
+<div id="b7fce67f" class="cell" data-execution_count="1">
 <div class="cell-output cell-output-display">
 <div>
 <figure>
@@ -410,7 +410,7 @@ U_{\mathrm{Morse}}(r) = D \left[ e^{-2\alpha (r - r_0)} - 2 e^{-\alpha (r - r_0)
 <li><span class="math inline">\alpha</span>: steepness (controls range)</li>
 <li><span class="math inline">r_0</span>: equilibrium distance</li>
 </ul>
-<div id="816350a6" class="cell" data-execution_count="2">
+<div id="4a089368" class="cell" data-execution_count="2">
 <div class="cell-output cell-output-display">
 <div>
 <figure>
@@ -434,14 +434,14 @@ U_{\mathrm{Morse}}(r) = D \left[ e^{-2\alpha (r - r_0)} - 2 e^{-\alpha (r - r_0)
 <div class="quarto-figure quarto-figure-center">
 <figure>
 <p><img data-src="./figs/grtime.svg" style="width:100.0%"></p>
-<figcaption>Time evolution of <span class="math inline">g(r)</span> ina dilute gel in units of the time to percolate <span class="math inline">\tau_{\mathrm perc}</span></figcaption>
+<figcaption>Time evolution of <span class="math inline">g(r)</span> in a dilute gel in units of the time to percolate <span class="math inline">\tau_{\mathrm perc}</span></figcaption>
 </figure>
 </div>
 </div></div>
 </section>
 <section id="structure-factor-sq-and-fractals" class="slide level2">
 <h2>Structure Factor: <span class="math inline">S(q)</span> and Fractals</h2>
-<p>Near percolation threshold, the loq-q trend from the trsucture factor links to the compressibility: <strong>power-law behavior</strong>:</p>
+<p>Near the percolation threshold, the low-<span class="math inline">q</span> trend of the structure factor shows <strong>power-law behavior</strong>:</p>
 <p>Clusters become <strong>fractal objects</strong> with self-similar structure at all length scales.</p>
 <div class="columns">
 <div class="column" style="width:50%;">
@@ -485,8 +485,46 @@ U_{\mathrm{Morse}}(r) = D \left[ e^{-2\alpha (r - r_0)} - 2 e^{-\alpha (r - r_0)
 <section id="phase-diagram-arrested-spinodal" class="slide level2">
 <h2>Phase Diagram: Arrested Spinodal</h2>
 
-<img data-src="./figs/arrestedSpinodal.svg" class="r-stretch quarto-figure-center"><p class="caption">Arrested spinodal scenario, see Zaccarelli et al 2007</p><p><strong>Key lines:</strong>: - Binodal (red): liqiid-gase coexistence at equilibrium - Spinodal (dashed): limit of stability of the metastable phases. Instability (i.e.&nbsp;spinodal decomposition) starts <strong>inside</strong> - Percolation (purple): At some density, the clusters percolate (span the system) - Glass transition (blue): Dense phase becomes dynamically arrested (non-ergodic)</p>
+<img data-src="./figs/arrestedSpinodal.svg" class="r-stretch quarto-figure-center"><p class="caption">Arrested spinodal scenario, see Zaccarelli et al 2007</p><p><strong>Key lines:</strong> - Binodal (red): liquid-gas coexistence at equilibrium - Spinodal (dashed): limit of stability of the metastable phases. Instability (i.e.&nbsp;spinodal decomposition) starts <strong>inside</strong> - Percolation (purple): At some density, the clusters percolate (span the system) - Glass transition (blue): Dense phase becomes dynamically arrested (non-ergodic)</p>
 <p><strong>Gel path</strong>: Rapid cooling → arrested dense phase + vapor</p>
+</section>
+<section id="summary-gels" class="slide level2 smaller scrollable">
+<h2>Summary: gels</h2>
+<table class="caption-top">
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Topic</th>
+<th>Key result</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Physical gels</td>
+<td>reversible bonds (a few to tens of <span class="math inline">k_BT</span>) forming a percolating network</td>
+</tr>
+<tr class="even">
+<td>Percolation</td>
+<td><span class="math inline">P_\infty\propto(p-p_c)^\beta</span>: <span class="math inline">p_c</span> non-universal, <span class="math inline">\beta</span> universal</td>
+</tr>
+<tr class="odd">
+<td>Colloid-polymer mixtures</td>
+<td>short-range depletion (AO, square well, Morse): metastable binodal</td>
+</tr>
+<tr class="even">
+<td>Gel structure</td>
+<td><span class="math inline">g(r)</span> at short range; <span class="math inline">S(q)\sim q^{-D_f}</span>, <span class="math inline">M(R)\sim R^{D_f}</span> (fractal)</td>
+</tr>
+<tr class="odd">
+<td>Arrested spinodal</td>
+<td>phase separation interrupted by arrest of the dense phase: bicontinuous network</td>
+</tr>
+</tbody>
+</table>
+<p><a href="https://fturci.github.io/course-disordered-matter/soft-matter/soft-matter_glasses.html#summary" target="_blank">Full summary with links in the notes</a></p>
 
 
 <script type="pyodide-data">

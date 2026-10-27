@@ -168,7 +168,7 @@ Francesco Turci
 <ul>
 <li><strong>Characterisation of colloids</strong>
 <ul>
-<li>Static (pair) corrleations</li>
+<li>Static (pair) correlations</li>
 <li>Diffusive dynamics</li>
 </ul></li>
 </ul>
@@ -184,21 +184,21 @@ Francesco Turci
 <p>Their theoretical description focuses on <strong>essential ingredients</strong>.</p>
 <p>A simplifying assumption is that the potential energy of a collection of colloids is purely <strong>pairwise</strong></p>
 <p><span class="math display">
-U_N\left(\mathbf{r}^N\right)=\sum_{i=1}^{N-1} \sum_{j=i+1}^N V\left(r_i j\right)=\frac{1}{2} \sum_{i \neq j} V\left(r_{i j}\right)
+U_N\left(\mathbf{r}^N\right)=\sum_{i=1}^{N-1} \sum_{j=i+1}^N V\left(r_{i j}\right)=\frac{1}{2} \sum_{i \neq j} V\left(r_{i j}\right)
 </span></p>
-<p>where <span class="math inline">V(r_{ij})</span> is the pairwise, radial interaction potential that only depends on the distance between particle centres <span class="math inline">r_{ij} = \mathbf{r}_i-\mathbf{r}_j</span>.</p>
+<p>where <span class="math inline">V(r_{ij})</span> is the pairwise, radial interaction potential that only depends on the distance between particle centres <span class="math inline">r_{ij} = |\mathbf{r}_i-\mathbf{r}_j|</span>.</p>
 </section>
 <section id="aside-not-pairwise" class="slide level2">
 <h2>Aside: Not pairwise?</h2>
-<p>Some examples of non-pariwise situations:</p>
+<p>Some examples of non-pairwise situations:</p>
 <ul>
 <li><strong>Atomistic models</strong>: Electronic densities that fluctuate due to quantum effects are intrinsically many-body</li>
-<li><strong>True colloid-cpolymer mixtures</strong>: if the polymers are not ideal, their spatial distribution and their forces depend on the positions of more than two colloids</li>
+<li><strong>True colloid-polymer mixtures</strong>: if the polymers are not ideal, their spatial distribution and their forces depend on the positions of more than two colloids</li>
 </ul>
 <div class="quarto-figure quarto-figure-center">
 <figure>
 <p><img data-src="./figs/dft-nonideal-colloid-polymer.png" height="450"></p>
-<figcaption><span class="math inline">C_{60}</span> isosurface via density functional theory (Wikipedia) and configuration of non-deal colloid-polymer mixture, Rohrbach et al JCP (2022)</figcaption>
+<figcaption><span class="math inline">C_{60}</span> isosurface via density functional theory (Wikipedia) and configuration of non-ideal colloid-polymer mixture, Rohrbach et al JCP (2022)</figcaption>
 </figure>
 </div>
 </section>
@@ -210,12 +210,8 @@ U_N\left(\mathbf{r}^N\right)=\sum_{i=1}^{N-1} \sum_{j=i+1}^N V\left(r_i j\right)
 <p>You have already seen such correlations in other contexts (Ising model, lattice gas).</p>
 <p>The key pair correlation is the real space <strong>radial distribution function</strong>:</p>
 <p><span class="math display">
-g(r)=\frac{1}{\rho N}\left\langle\sum_{i=1}^N \sum_{j \neq i} \delta\left(\left|\mathbf{r}_i-\mathbf{r}_j\right|-r\right)\right\rangle
+g(r)=\frac{1}{4\pi r^2\rho N}\left\langle\sum_{i=1}^N \sum_{j \neq i} \delta\left(\left|\mathbf{r}_i-\mathbf{r}_j\right|-r\right)\right\rangle
 </span></p>
-<p>The free energy can then be written as <span class="math display">
-\frac{F_{\mathrm{ex}}}{k_B T}=2 \pi \rho N \int_0^{\infty}[g(r) \ln g(r)-g(r)+1] r^2 d r+\frac{\rho N}{2 k_B T} \int V(r) g(r) d^3 r
-</span></p>
-<p>and you should be able to read out a part very reminiscent of an (information-theoretical) entropy and one reminiscent of an internal energy.</p>
 </section>
 <section id="radial-distribution-function" class="slide level2">
 <h2>Radial distribution function</h2>
@@ -228,7 +224,7 @@ g(r)=\frac{1}{\rho N}\left\langle\sum_{i=1}^N \sum_{j \neq i} \delta\left(\left|
 <li class="fragment"><p>To formally derive this, consider a system of <span class="math inline">N</span> particles in volume <span class="math inline">V</span> with average density <span class="math inline">\rho = N/V</span>. The local density at a distance <span class="math inline">r</span> from a reference particle is defined as <span class="math display">
 \langle \rho(r) \rangle = \left\langle \sum_{j \neq i} \delta\left(|\mathbf{r}_i - \mathbf{r}_j| - r\right) \right\rangle
 </span> Averaging over all particles and normalizing by the bulk density <span class="math inline">\rho</span> gives the radial distribution function: <span class="math display">
-g(r) = \frac{1}{\rho N} \left\langle \sum_{i=1}^N \sum_{j \neq i} \delta\left(|\mathbf{r}_i - \mathbf{r}_j| - r\right) \right\rangle = \frac{\langle \rho(r) \rangle}{\rho}
+g(r) = \frac{1}{4\pi r^2\rho N} \left\langle \sum_{i=1}^N \sum_{j \neq i} \delta\left(|\mathbf{r}_i - \mathbf{r}_j| - r\right) \right\rangle = \frac{\langle \rho(r) \rangle}{\rho}
 </span></p>
 <p>where <span class="math inline">\langle \rho(r) \rangle</span> is the average density at distance <span class="math inline">r</span> from a particle, and <span class="math inline">\rho</span> is the bulk density.</p></li>
 </ul>
@@ -248,7 +244,7 @@ g(r) = \frac{1}{\rho N} \left\langle \sum_{i=1}^N \sum_{j \neq i} \delta\left(|\
 <p><strong>Note</strong></p>
 </div>
 <div class="callout-content">
-<p>Hard spheres in 3D are not exactly solvable! We only have perturbative solutons to hard spheres</p>
+<p>Hard spheres in 3D are not exactly solvable! We only have perturbative solutions to hard spheres</p>
 </div>
 </div>
 </div>
@@ -265,22 +261,22 @@ g(r) = \frac{1}{\rho N} \left\langle \sum_{i=1}^N \sum_{j \neq i} \delta\left(|\
 <h2>Direct and indirect correlations</h2>
 <ul>
 <li>The <span class="math inline">g(r)</span> contains <strong>both</strong>.</li>
-<li>We can assume the existence of a correlation function that instead only incl;udes the <strong>direct</strong> part and call it <span class="math inline">c(r)</span>. Then a hierarchy exists</li>
+<li>We can assume the existence of a correlation function that instead only includes the <strong>direct</strong> part and call it <span class="math inline">c(r)</span>. Then a hierarchy exists</li>
 </ul>
 <p><span class="math display">
 h\left(r_{12}\right)=c\left(r_{12}\right)+\rho \int c\left(r_{13}\right) h\left(r_{32}\right) d \mathbf{r}_3
 </span></p>
-<p>where <span class="math inline">h(r) = g(r)-1</span>. This is the <strong>Ornstein-Zernicke integral equation</strong> between particles 1,2 and 3.</p>
-<p>Both <span class="math inline">h(r)</span> and <span class="math inline">c(r)</span> are unknwon in principle. One needs an additional condition to fix box: these are <strong>physical closures</strong> leading to approximations.</p>
+<p>where <span class="math inline">h(r) = g(r)-1</span>. This is the <strong>Ornstein-Zernike integral equation</strong> between particles 1,2 and 3.</p>
+<p>Both <span class="math inline">h(r)</span> and <span class="math inline">c(r)</span> are unknown in principle. One needs an additional condition to fix box: these are <strong>physical closures</strong> leading to approximations.</p>
 
-<img data-src="./figs/ornstein-zernicke.png" class="r-stretch quarto-figure-center"><p class="caption">Meaning of teh Ornstein-Zernicke relation, adapted from Santos, Springer(2016)</p></section>
+<img data-src="./figs/ornstein-zernicke.png" class="r-stretch quarto-figure-center"><p class="caption">Meaning of the Ornstein-Zernike relation, adapted from Santos, Springer(2016)</p></section>
 <section id="percus-yevick-approximation" class="slide level2">
 <h2>Percus-Yevick approximation</h2>
 <p>A common closure is the <strong>Percus-Yevick approximation</strong>.</p>
 <p><span class="math display">
 c(r)=[1+h(r)]\left[1-e^{\beta U(r)}\right]
 </span></p>
-<p>This closure interpolates between the hard-core exclusion (for <span class="math inline">U(r) \to \infty</span>, <span class="math inline">c(r) \to 0</span> inside the core) and the ideal gas limit (for <span class="math inline">U(r) = 0</span>, <span class="math inline">c(r) = 0</span>).</p>
+<p>This closure interpolates between the hard-core exclusion (for <span class="math inline">U(r) \to \infty</span> inside the core, <span class="math inline">g(r) = 0</span>) and the ideal gas limit (for <span class="math inline">U(r) = 0</span>, <span class="math inline">c(r) = 0</span>, so for hard spheres <span class="math inline">c(r)=0</span> outside the core).</p>
 <p>The result (semi) analytical. For hard spheres, it allows to calculate the g(r) accurately in a wide range of packing fractions</p>
 <div class="quarto-figure quarto-figure-center">
 <figure>
@@ -308,7 +304,7 @@ P=\rho k_B T-\frac{2 \pi \rho^2}{3} \int_0^{\infty} r^3 \frac{d u(r)}{d r} g(r) 
 \frac{dV(r)}{dr} = -\infty \delta(r - \sigma)
 </span></p>
 <p>Substituting into the pressure equation: <span class="math display">
-P = \rho k_B T + \frac{2\pi\rho^2}{3} \sigma^3 g(\sigma)
+P = \rho k_B T + \frac{2\pi\rho^2}{3} k_B T \sigma^3 g(\sigma)
 </span></p>
 <p>Therefore, for hard spheres, the equation of state only requires knowledge of the contact value <span class="math inline">g(\sigma)</span>.</p>
 <p>We will see this in a problem class.</p>
@@ -334,11 +330,11 @@ S(k)=1+4 \pi \rho \int_0^{\infty} r^2[g(r)-1] \frac{\sin (k r)}{k r} d r
 </section>
 <section id="structure-factor-1" class="slide level2">
 <h2>Structure factor</h2>
-<p>Interestingly, reciprocal space simplifies integral equations such as Ornstein-Zernicke</p>
+<p>Interestingly, reciprocal space simplifies integral equations such as Ornstein-Zernike</p>
 <p><span class="math display">
 \tilde{h}(k)=\frac{\tilde{c}(k)}{1-\rho \tilde{c}(k)}
 </span></p>
-<p>allowing one to read the direct correlation function directly from scattering data, as <span class="math inline">\tilde{h}(k)=</span> can be identified with the structure factor.</p>
+<p>allowing one to read the direct correlation function directly from scattering data, as <span class="math inline">S(k)=1+\rho\tilde{h}(k)</span>.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure>
 <p><img data-src="./figs/gallium.png" height="450"></p>
@@ -371,7 +367,7 @@ D=\frac{k_B T}{\gamma}
 </section>
 <section id="diffusion-equation-macroscopic-picture" class="slide level2">
 <h2>Diffusion equation: macroscopic picture</h2>
-<p>It is possible to (re)-derive the diffusion equation solely from macroscopic requirements. We have a macroscopic density <span class="math inline">\rho(r,t)</span> and a macroscpic flux <span class="math inline">\vec{J}(r,t)</span></p>
+<p>It is possible to (re)-derive the diffusion equation solely from macroscopic requirements. We have a macroscopic density <span class="math inline">\rho(r,t)</span> and a macroscopic flux <span class="math inline">\vec{J}(r,t)</span></p>
 <ul>
 <li><strong>continuity</strong>: there is no mass loss in the dynamics</li>
 </ul>
@@ -406,14 +402,14 @@ n(x)=n_0 \exp \left(-U(x) / k_B T\right)=n_0 \exp \left(-F x / k_B T\right)
 </span></p>
 <p>where <span class="math inline">F= m_B g</span> is the force from the buoyant mass.</p>
 <p>A flux is produced <span class="math inline">J_F = n(x) v=\frac{n(x) F}{\xi}</span></p>
-<p>where we used the fact that the velocity is set by the viscosity <span class="math inline">\eta</span> as <span class="math inline">v=F/\eta</span>.</p>
+<p>where we used the fact that the velocity is set by the friction coefficient <span class="math inline">\xi</span> as <span class="math inline">v=F/\xi</span>.</p>
 <p>Diffusion occurs at the same time, driven by the gradient (Fick’s law) <span class="math display">
 J_D(x)=-D \frac{\partial n(x)}{\partial x}
 </span></p>
 </section>
 <section id="stokes-einstein-relation-fluctuation-dissipation-for-colloids-1" class="slide level2">
 <h2>Stokes-Einstein relation: fluctuation dissipation for colloids</h2>
-<p>Equating the two we have</p>
+<p>In equilibrium the two fluxes cancel, <span class="math inline">J_F+J_D=0</span> (the force pushes the particles towards negative <span class="math inline">x</span>, so the drift flux is <span class="math inline">-n(x)F/\xi</span>), and we have</p>
 <p><span class="math display">
 \frac{n(x) F}{\xi}=-D \frac{\partial n(x)}{d x}=D \frac{F}{k_B T} n(x)
 </span></p>
@@ -437,7 +433,7 @@ D=\frac{k_B T}{\xi}=\frac{k_B T}{6 \pi \eta R}
 
 </div>
 <script type="pyodide-1-contents">
-eyJhdHRyIjp7ImVjaG8iOmZhbHNlLCJlZGl0IjpmYWxzZSwiZXZhbCI6dHJ1ZX0sImNvZGUiOiJpbXBvcnQgbWF0cGxvdGxpYi5weXBsb3QgYXMgcGx0XG5cbmltcG9ydCBudW1weSBhcyBucFxuXG5cbmRlZiBwbG90X3RqKHBvc2l0aW9ucywgbXNkLCB3YWxrZXI9MCwgbG9nbG9nPUZhbHNlKTpcbiAgICAjIFBsb3RcbiAgICBmaWcsIGF4ID0gcGx0LnN1YnBsb3RzKDEsIDMsIGZpZ3NpemU9KDkuNSwyLjgpKVxuICAgIGF4WzBdLnBsb3QocG9zaXRpb25zWzAsIDosIDBdLCBwb3NpdGlvbnNbMCwgOiwgMV0sIGFscGhhPTAuNywgbGluZXdpZHRoPTAuOCkgICMgZXhhbXBsZSB0cmFqZWN0b3J5XG4gICAgdGltZSA9IG5wLmFyYW5nZShsZW4obXNkKSlcbiAgICBheFsxXS5wbG90KHRpbWUsIG1zZCwgJ28tJywgbWFya2Vyc2l6ZT0zKVxuICAgICMgRml0IGxpbmVhciBsaW5lIHRvIE1TRCBkYXRhXG4gICAgc2xvcGUsIGludGVyY2VwdCA9IG5wLnBvbHlmaXQodGltZSwgbXNkLCAxKVxuICAgIGZpdF9saW5lID0gc2xvcGUgKiB0aW1lICsgaW50ZXJjZXB0XG4gICAgRCA9IHNsb3BlLzRcbiAgICBheFsxXS5wbG90KHRpbWUsIGZpdF9saW5lLCAnci0tJywgYWxwaGE9MC44LCBsYWJlbD1mJ0FsbCBkYXRhOiBEPXtEOi4yZn0nKVxuXG4gICAgIyBwYXJ0aWFsIGRhdGFcbiAgICBzbG9wZSwgaW50ZXJjZXB0ID0gbnAucG9seWZpdCh0aW1lWzpsZW4odGltZSkvLzJdLCBtc2RbOmxlbih0aW1lKS8vMl0sIDEpXG4gICAgZml0X2xpbmUgPSBzbG9wZSAqIHRpbWUgKyBpbnRlcmNlcHRcbiAgICBEID0gc2xvcGUvNFxuICAgIGF4WzFdLnBsb3QodGltZSwgZml0X2xpbmUsICdnLS0nLCBhbHBoYT0wLjgsIGxhYmVsPWYnSGFsZiBkYXRhOiBEPXtzbG9wZTouMmZ9JylcblxuICAgIGF4WzFdLmxlZ2VuZChmb250c2l6ZT04LCBmcmFtZW9uPUZhbHNlKVxuICAgIGF4WzFdLnNldCh4bGFiZWw9XCJ0aW1lXCIseWxhYmVsPVwiTVNEXCIpXG4gICAgaWYgbG9nbG9nOlxuICAgICAgICBheFsxXS5zZXRfeHNjYWxlKCdsb2cnKVxuICAgICAgICBheFsxXS5zZXRfeXNjYWxlKCdsb2cnKVxuXG4gICAgYmlucyA9IG5wLmFyYW5nZSgtMjAwLDIwMCwyMC4wKVxuICAgIEgsIGVkZ2VzeCwgZWRnZXN5ID0gbnAuaGlzdG9ncmFtMmQocG9zaXRpb25zWzosLTEsMF0scG9zaXRpb25zWzosLTEsMV0sYmlucz0oYmlucyxiaW5zKSlcblxuXG4gICAgYXhbMl0uaW1zaG93KEguVClcbiAgICBheFswXS5heGlzKFwiZXF1YWxcIilcbiAgICBheFsyXS5heGlzKFwiZXF1YWxcIilcbiAgICBheFsyXS5heGlzKFwib2ZmXCIpXG4gICAgcGx0LnRpZ2h0X2xheW91dCgpXG4gICAgcGx0LnNob3coKSJ9
+eyJhdHRyIjp7ImVjaG8iOmZhbHNlLCJlZGl0IjpmYWxzZSwiZXZhbCI6dHJ1ZX0sImNvZGUiOiJpbXBvcnQgbWF0cGxvdGxpYi5weXBsb3QgYXMgcGx0XG5cbmltcG9ydCBudW1weSBhcyBucFxuXG5cbmRlZiBwbG90X3RqKHBvc2l0aW9ucywgbXNkLCB3YWxrZXI9MCwgbG9nbG9nPUZhbHNlKTpcbiAgICAjIFBsb3RcbiAgICBmaWcsIGF4ID0gcGx0LnN1YnBsb3RzKDEsIDMsIGZpZ3NpemU9KDkuNSwyLjgpKVxuICAgIGF4WzBdLnBsb3QocG9zaXRpb25zWzAsIDosIDBdLCBwb3NpdGlvbnNbMCwgOiwgMV0sIGFscGhhPTAuNywgbGluZXdpZHRoPTAuOCkgICMgZXhhbXBsZSB0cmFqZWN0b3J5XG4gICAgdGltZSA9IG5wLmFyYW5nZShsZW4obXNkKSlcbiAgICBheFsxXS5wbG90KHRpbWUsIG1zZCwgJ28tJywgbWFya2Vyc2l6ZT0zKVxuICAgICMgRml0IGxpbmVhciBsaW5lIHRvIE1TRCBkYXRhXG4gICAgc2xvcGUsIGludGVyY2VwdCA9IG5wLnBvbHlmaXQodGltZSwgbXNkLCAxKVxuICAgIGZpdF9saW5lID0gc2xvcGUgKiB0aW1lICsgaW50ZXJjZXB0XG4gICAgRCA9IHNsb3BlLzRcbiAgICBheFsxXS5wbG90KHRpbWUsIGZpdF9saW5lLCAnci0tJywgYWxwaGE9MC44LCBsYWJlbD1mJ0FsbCBkYXRhOiBEPXtEOi4yZn0nKVxuXG4gICAgIyBwYXJ0aWFsIGRhdGFcbiAgICBzbG9wZSwgaW50ZXJjZXB0ID0gbnAucG9seWZpdCh0aW1lWzpsZW4odGltZSkvLzJdLCBtc2RbOmxlbih0aW1lKS8vMl0sIDEpXG4gICAgZml0X2xpbmUgPSBzbG9wZSAqIHRpbWUgKyBpbnRlcmNlcHRcbiAgICBEID0gc2xvcGUvNFxuICAgIGF4WzFdLnBsb3QodGltZSwgZml0X2xpbmUsICdnLS0nLCBhbHBoYT0wLjgsIGxhYmVsPWYnSGFsZiBkYXRhOiBEPXtEOi4yZn0nKVxuXG4gICAgYXhbMV0ubGVnZW5kKGZvbnRzaXplPTgsIGZyYW1lb249RmFsc2UpXG4gICAgYXhbMV0uc2V0KHhsYWJlbD1cInRpbWVcIix5bGFiZWw9XCJNU0RcIilcbiAgICBpZiBsb2dsb2c6XG4gICAgICAgIGF4WzFdLnNldF94c2NhbGUoJ2xvZycpXG4gICAgICAgIGF4WzFdLnNldF95c2NhbGUoJ2xvZycpXG5cbiAgICBiaW5zID0gbnAuYXJhbmdlKC0yMDAsMjAwLDIwLjApXG4gICAgSCwgZWRnZXN4LCBlZGdlc3kgPSBucC5oaXN0b2dyYW0yZChwb3NpdGlvbnNbOiwtMSwwXSxwb3NpdGlvbnNbOiwtMSwxXSxiaW5zPShiaW5zLGJpbnMpKVxuXG5cbiAgICBheFsyXS5pbXNob3coSC5UKVxuICAgIGF4WzBdLmF4aXMoXCJlcXVhbFwiKVxuICAgIGF4WzJdLmF4aXMoXCJlcXVhbFwiKVxuICAgIGF4WzJdLmF4aXMoXCJvZmZcIilcbiAgICBwbHQudGlnaHRfbGF5b3V0KClcbiAgICBwbHQuc2hvdygpIn0=
 </script>
 </div>
 <div>
@@ -472,7 +468,7 @@ eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoibl9zdGVwcywgbl93YWxrZXJz
 <h2>Dilute vs dense diffusion</h2>
 <ul>
 <li><p>Consider hard spheres in a fluid.</p></li>
-<li><p>At low volume fractions <span class="math inline">\phi</span> they rarely collide and they perofrm under/over-damped (Langevin) dynamics. They will therefore diffuse as <span class="math inline">\operatorname{MSD} (t)= 6D_0 t</span></p></li>
+<li><p>At low volume fractions <span class="math inline">\phi</span> they rarely collide and they perform under/over-damped (Langevin) dynamics. They will therefore diffuse as <span class="math inline">\operatorname{MSD} (t)= 6D_0 t</span></p></li>
 <li><p>Things change when we increase the packing.</p>
 <ul>
 <li>Short times: <span class="math inline">D_s &lt;D_0</span>, diffusion within <strong>cages</strong> formed by the neighbours. Mostly free, but with some collisions.</li>
@@ -489,21 +485,83 @@ eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoibl9zdGVwcywgbl93YWxrZXJz
 <section id="dilute-vs-dense-diffusion-1" class="slide level2">
 <h2>Dilute vs dense diffusion</h2>
 <ul>
-<li>At <strong>very high</strong> volume fractions the cage mechanism becomes more complex: paricles are trapped for long times and only occasionaly break cages:
+<li>At <strong>very high</strong> volume fractions the cage mechanism becomes more complex: particles are trapped for long times and only occasionally break cages:
 <ul>
 <li>cage-jump dynamics <span class="math inline">\to</span> glassy dynamics (see future lectures)</li>
-<li>rare events <span class="math inline">\to</span> Levy-flight statistics <span class="math inline">\neq</span> Gaussian/diffusive statistics</li>
-<li>Breaking of fluctuation-dissipation condition encoded in the <strong>Stokes-Einstein</strong> relation
+<li>rare events <span class="math inline">\to</span> non-Gaussian (exponential tails) <span class="math inline">\neq</span> Gaussian/diffusive statistics</li>
+<li>Breakdown of the <strong>Stokes-Einstein</strong> relation
 <ul>
 <li>the viscosity increases much faster than the decrease in diffusion <span class="math inline">D\xi/T\neq \mathrm{constant}</span></li>
-<li>This means tha <span class="math inline">D\eta\neq \text{constant}</span> and since the viscosity <span class="math inline">\eta\sim \tau</span> (a characteristic relaxation time) <span class="math inline">D\tau\neq \text{constant}</span></li>
+<li>This means that <span class="math inline">D\eta\neq \text{constant}</span> and since the viscosity <span class="math inline">\eta\sim \tau</span> (a characteristic relaxation time) <span class="math inline">D\tau\neq \text{constant}</span></li>
 </ul></li>
 </ul></li>
 </ul>
 
+<img data-src="./figs/seModel.png" class="r-stretch quarto-figure-center"><p class="caption">Stokes-Einstein breakdown in a theoretical model of glassy behaviour</p></section>
+<section id="summary-colloids" class="slide level2 smaller scrollable">
+<h2>Summary: colloids</h2>
+<table class="caption-top">
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Topic</th>
+<th>Key result</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Colloidal scale</td>
+<td><span class="math inline">{\rm Pe}_g=\Delta m\, g R/k_BT\lesssim 1</span>: Brownian motion beats sedimentation</td>
+</tr>
+<tr class="even">
+<td>Van der Waals</td>
+<td><span class="math inline">W_{vdW}(h)=-\frac{A_H}{6}f(h/R)</span>, attractive, short-range</td>
+</tr>
+<tr class="odd">
+<td>Double layer</td>
+<td><span class="math inline">W_{DR}(h)=B\frac{R}{\lambda_B}e^{-h/\lambda_D}</span>, salt shortens <span class="math inline">\lambda_D</span></td>
+</tr>
+<tr class="even">
+<td>DLVO</td>
+<td><span class="math inline">W_{vdW}+W_{DR}</span>: salt switches between stable and aggregating</td>
+</tr>
+<tr class="odd">
+<td>Depletion (AO)</td>
+<td><span class="math inline">W_{AO}(r)=-k_BT\rho_p V_{\rm overlap}(r)</span>: attraction from entropy</td>
+</tr>
+<tr class="even">
+<td>Hard spheres</td>
+<td>single control parameter <span class="math inline">\phi=\pi\sigma^3\rho/6</span>; entropy only</td>
+</tr>
+<tr class="odd">
+<td>Equation of state</td>
+<td>dilute <span class="math inline">Z_{\rm comp}=1+4\phi</span>; dense <span class="math inline">Z_{\rm comp}=\left[1-(\phi/\phi_{cp})^{1/3}\right]^{-1}</span></td>
+</tr>
+<tr class="even">
+<td>Phase diagram</td>
+<td><span class="math inline">\phi_f=0.494</span>, <span class="math inline">\phi_m=0.545</span>, <span class="math inline">\phi_{cp}=0.74</span>: the crystal has <strong>higher</strong> entropy</td>
+</tr>
+<tr class="odd">
+<td>Structure</td>
+<td><span class="math inline">g(r)</span> from imaging, <span class="math inline">S(k)</span> from scattering; hard spheres <span class="math inline">Z_{\rm comp}=1+4\phi\, g(\sigma^+)</span></td>
+</tr>
+<tr class="even">
+<td>Diffusion</td>
+<td><span class="math inline">\langle\Delta r^2\rangle=2dDt</span>; dense: <span class="math inline">D_0&gt;D_s&gt;D_L</span> (cages)</td>
+</tr>
+<tr class="odd">
+<td>Stokes-Einstein</td>
+<td><span class="math inline">D=\dfrac{k_BT}{6\pi\eta R}</span>: fluctuation <span class="math inline">\leftrightarrow</span> dissipation</td>
+</tr>
+</tbody>
+</table>
+<p><a href="https://fturci.github.io/course-disordered-matter/soft-matter/soft-matter_colloids.html#summary" target="_blank">Full summary with links in the notes</a></p>
 
 
-<img data-src="./figs/seModel.png" class="r-stretch quarto-figure-center"><p class="caption">Stokes-Einstein brakdown in a theoretical model of glassy behaviour</p><script type="pyodide-data">
+<script type="pyodide-data">
 eyJvcHRpb25zIjp7ImVudiI6eyJQTE9UTFlfUkVOREVSRVIiOiJwbG90bHlfbWltZXR5cGUifSwiaW5kZXhVUkwiOiJodHRwczovL2Nkbi5qc2RlbGl2ci5uZXQvcHlvZGlkZS92MC4yOC4xL2Z1bGwvIn0sInBhY2thZ2VzIjp7InBrZ3MiOlsicHlvZGlkZV9odHRwIiwibWljcm9waXAiLCJpcHl0aG9uIl19fQ==
 </script>
 <script type="ojs-module-contents">

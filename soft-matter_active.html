@@ -244,7 +244,7 @@ Francesco Turci
 <h2>Beyond Thermal Systems</h2>
 <div class="columns">
 <div class="column" style="width:50%;">
-<p><strong>Equilibrium systems systems</strong>:</p>
+<p><strong>Equilibrium systems</strong>:</p>
 <ul>
 <li>Free energy is optimised (subject to constraints):</li>
 <li>Distribution of states given by Boltzmann statistics: <span class="math display">P(\text{state}) \propto e^{-E(\text{state})/k_BT}</span></li>
@@ -272,14 +272,14 @@ Francesco Turci
 <div class="callout callout-important no-icon callout-style-simple">
 <div class="callout-body">
 <div class="callout-content">
-<p>In a active systems, the distribution of states is <strong>not given</strong> by Boltzmann statistics!</p>
+<p>In active systems, the distribution of states is <strong>not given</strong> by Boltzmann statistics!</p>
 </div>
 </div>
 </div>
 </section>
 <section id="examples-of-active-matter" class="slide level2">
 <h2>Examples of Active Matter</h2>
-<p>Some examples <img data-src="./figs/example-active.png" alt="Active matter examples, from Vole et al.&nbsp;npj Microgravity (2022)"></p>
+<p>Some examples <img data-src="./figs/example-active.png" alt="Active matter examples, from Volpe et al.&nbsp;npj Microgravity (2022)"></p>
 </section>
 <section id="flocking-as-a-minimal-model" class="slide level2">
 <h2>Flocking as a minimal model</h2>
@@ -292,10 +292,10 @@ Francesco Turci
 <div class="column" style="width:50%;">
 <ul>
 <li><p><span class="math inline">N</span> particles with positions <span class="math inline">\mathbf{r}_i</span> and orientations <span class="math inline">\theta_i</span></p></li>
-<li><p>Update rules: <span class="math display">\mathbf{r}_i(t+1) = \mathbf{r}_i(t) + v_0 \hat{\mathbf{n}}_i(t)</span> <span class="math display">\theta_i(t+1) = \langle \theta_j \rangle_{|\mathbf{r}_j - \mathbf{r}_i| &lt; R} + \eta_i</span></p></li>
+<li><p>Update rules: <span class="math display">\mathbf{r}_i(t+1) = \mathbf{r}_i(t) + v_0 \hat{\mathbf{n}}_i(t)</span> <span class="math display">\theta_i(t+1) = \arg\Big(\sum_{|\mathbf{r}_j - \mathbf{r}_i| &lt; R} e^{i\theta_j(t)}\Big) + \xi_i</span></p></li>
 <li><p><span class="math inline">v_0</span>: constant speed</p></li>
 <li><p><span class="math inline">R</span>: interaction radius</p></li>
-<li><p><span class="math inline">\eta_i</span>: noise term (uniform random in <span class="math inline">[-\pi/2, \pi/2]</span>)</p></li>
+<li><p><span class="math inline">\xi_i</span>: noise, uniform in <span class="math inline">[-\eta/2, \eta/2]</span>; the amplitude <span class="math inline">\eta</span> is the control parameter</p></li>
 </ul>
 </div><div class="column" style="width:50%;">
 <p><img data-src="./figs/vicsek.png" height="600"></p>
@@ -468,13 +468,13 @@ Figure&nbsp;1: Non-interacting run and tumble particles.
 <p>Two regimes</p>
 <ol type="1">
 <li><p><strong>Ballistic</strong> (short times): <span class="math inline">\langle \Delta r^2(t) \rangle \sim v_0^2 t^2</span></p></li>
-<li><p><strong>Diffusive</strong> (long times, <span class="math inline">t \gg 1/\lambda</span>): <span class="math inline">\langle \Delta r^2(t) \rangle \sim 2 D_{\text{eff}} t</span></p>
+<li><p><strong>Diffusive</strong> (long times, <span class="math inline">t \gg 1/\lambda</span>): <span class="math inline">\langle \Delta r^2(t) \rangle \sim 4 D_{\text{eff}} t</span></p>
 <ul>
 <li>Effective diffusion: <span class="math inline">D_{\text{eff}} = \frac{v_0^2}{2\lambda}</span> (2D)</li>
 </ul></li>
 </ol>
 <p>Crossover time: <span class="math inline">t_c \sim 1/\lambda</span></p>
-<div id="e7cfb4f4" class="cell" data-autorun="true" data-execution_count="1">
+<div id="3f7a6d75" class="cell" data-autorun="true" data-execution_count="1">
 <div class="cell-output cell-output-display">
 <div>
 <figure>
@@ -523,7 +523,7 @@ Figure&nbsp;1: Non-interacting run and tumble particles.
 </ol>
 <ul>
 <li><span class="math inline">\tau_R = 1/D_r</span>: persistence time</li>
-<li><span class="math inline">D_{\mathrm{eff}} = \frac{v_0^2}{2D_r}</span>: effective diffusion</li>
+<li><span class="math inline">D_{\mathrm{eff}} = D_T + \frac{v_0^2}{2D_r}</span>: effective diffusion</li>
 </ul>
 </div><div class="column" style="width:70%;">
 <div class="quarto-figure quarto-figure-center">
@@ -548,11 +548,11 @@ Figure&nbsp;1: Non-interacting run and tumble particles.
 <div class="quarto-figure quarto-figure-center">
 <figure>
 <p><img data-src="./figs/active2body.png"></p>
-<figcaption>Effective twobody potential for ABPs, Turci &amp; wilding PRl 2021</figcaption>
+<figcaption>Effective two-body potential for ABPs, Turci &amp; Wilding PRL 2021</figcaption>
 </figure>
 </div>
 </div></div>
-<p>(The realiity is more complex, with many-body effects!)</p>
+<p>(The reality is more complex, with many-body effects!)</p>
 </section>
 <section id="motility-induced-phase-separation-mips" class="slide level2">
 <h2>Motility-Induced Phase Separation (MIPS)</h2>
@@ -618,9 +618,51 @@ Figure&nbsp;1: Non-interacting run and tumble particles.
 </ul>
 </div></div>
 
+<img data-src="./figs/active-behaviours.png" class="r-stretch quarto-figure-center"><p class="caption">Experimental systems and active matter behaviours</p></section>
+<section id="summary-active-matter" class="slide level2 smaller scrollable">
+<h2>Summary: active matter</h2>
+<table class="caption-top">
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Topic</th>
+<th>Key result</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Active matter</td>
+<td>local energy consumption → self-propulsion; no Boltzmann distribution</td>
+</tr>
+<tr class="even">
+<td>Vicsek model</td>
+<td>self-propulsion + alignment: flocking at low noise or high density</td>
+</tr>
+<tr class="odd">
+<td>Run-and-tumble</td>
+<td>straight runs at <span class="math inline">v_0</span>, tumbles at rate <span class="math inline">\lambda</span>; <span class="math inline">D_{\rm eff}=v_0^2/2\lambda</span> (2D)</td>
+</tr>
+<tr class="even">
+<td>Active Brownian particles</td>
+<td>constant speed, rotational diffusion <span class="math inline">D_r</span>; <span class="math inline">\mathrm{Pe}=v_0/\sqrt{D_tD_r}</span></td>
+</tr>
+<tr class="odd">
+<td>MSD</td>
+<td><span class="math inline">4D_T\tau</span> → <span class="math inline">v_0^2\tau^2</span> → <span class="math inline">4D_{\rm eff}\tau</span>, <span class="math inline">D_{\rm eff}=D_T+v_0^2/2D_r</span></td>
+</tr>
+<tr class="even">
+<td>MIPS</td>
+<td>purely repulsive ABPs phase separate at low <span class="math inline">D_r</span>, with a critical point</td>
+</tr>
+</tbody>
+</table>
+<p><a href="https://fturci.github.io/course-disordered-matter/soft-matter/soft-matter_active.html#summary" target="_blank">Full summary with links in the notes</a></p>
 
 
-<img data-src="./figs/active-behaviours.png" class="r-stretch quarto-figure-center"><p class="caption">Experimental systems and active. matter behaviours</p><script type="ojs-module-contents">
+<script type="ojs-module-contents">
 eyJjb250ZW50cyI6W119
 </script>
 <div id="exercise-loading-indicator" class="exercise-loading-indicator d-none d-flex align-items-center gap-2">

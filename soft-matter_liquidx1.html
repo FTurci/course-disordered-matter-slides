@@ -204,7 +204,7 @@ Francesco Turci
 </table>
 <p>The strength of the ordering is determined by the <strong>decay</strong> of correlation functions:</p>
 <ul>
-<li>in liquids we have at best short range order (expoential decay of the oscillations in the <span class="math inline">g(r)</span>)</li>
+<li>in liquids we have at best short range order (exponential decay of the oscillations in the <span class="math inline">g(r)</span>)</li>
 <li>in crystals we have long-range order — correlations do not decay (sharp Bragg peaks in <span class="math inline">S(\mathbf{k})</span> and <span class="math inline">g(r)</span>); this order is only disrupted by defects (dislocations, grain boundaries) on macroscopic scales</li>
 </ul>
 </section>
@@ -238,7 +238,7 @@ Francesco Turci
 </ul>
 </div></div>
 
-<img data-src="./figs/b1_lrg.jpg" class="r-stretch quarto-figure-center"><p class="caption">Different liquid crystalline phases, from Doostmohammadi and Ladoux, Trends in Cell Biology (2002)</p></section>
+<img data-src="./figs/b1_lrg.jpg" class="r-stretch quarto-figure-center"><p class="caption">Different liquid crystalline phases, from Doostmohammadi and Ladoux, Trends in Cell Biology (2022)</p></section>
 <section id="phase-comparison" class="slide level2">
 <h2>Phase Comparison</h2>
 <table class="caption-top">
@@ -350,7 +350,7 @@ Francesco Turci
 <p>For <strong>head-tail symmetric</strong> rods, we cannot simply average orientations.</p>
 <p>Instead, construct the <strong>alignment tensor</strong></p>
 <p><span class="math display">
-\mathbf{Q}=\dfrac{d}{2}\left\langle\mathbf{u}_i \otimes \mathbf{u}_i-\dfrac{1}{d}\mathbf{I}\right\rangle
+\mathbf{Q}=\dfrac{d}{d-1}\left\langle\mathbf{u}_i \otimes \mathbf{u}_i-\dfrac{1}{d}\mathbf{I}\right\rangle
 </span></p>
 <ul>
 <li>we make it <strong>traceless</strong> by removing the identity</li>
@@ -390,7 +390,7 @@ u_d u_1 &amp; u_d u_2 &amp; \cdots &amp; u_d u_d
 <p><strong>Caution</strong></p>
 </div>
 <div class="callout-content">
-<p>The nematic order parameter <span class="math inline">\mathcal{S}</span> should not nbe cconfused with the entropy <span class="math inline">S</span>.</p>
+<p>The nematic order parameter <span class="math inline">\mathcal{S}</span> should not be confused with the entropy <span class="math inline">S</span>.</p>
 </div>
 </div>
 </div>
@@ -460,11 +460,11 @@ u_d u_1 &amp; u_d u_2 &amp; \cdots &amp; u_d u_d
 <section id="landau-de-gennes-mean-field-theory" class="slide level2">
 <h2>Landau-de Gennes mean field theory</h2>
 <p>Using the tensorial order parameter one can express a Landau theory of the isotropic-to-nematic transition (the simplest form of orientational order appearing in liquid crystals).</p>
-<p>Leveraging that <span class="math inline">\mathcal{S}</span> is an eigenvalue of <span class="math inline">\mathbf{Q}</span>, i.e.&nbsp;<span class="math inline">\mathbf{Qn} = S\mathbf{n}</span> we have</p>
+<p>For historical reasons, in 3D the alignment tensor of a uniaxial nematic is usually written as (equivalent to our definition up to a multiplicative factor)</p>
 <p><span class="math display">
-\mathbf{Q}=\mathcal{S}\left(\mathbf{n} \otimes \mathbf{n}-\frac{1}{d} \mathbf{I}\right)
+\mathbf{Q}=\mathcal{S}\left(\mathbf{n} \otimes \mathbf{n}-\frac{1}{3} \mathbf{I}\right)
 </span></p>
-<p>If we choose <span class="math inline">z</span> to be the axis along teh director <span class="math inline">\mathbf{n}</span> then explicitly</p>
+<p>If we choose <span class="math inline">z</span> to be the axis along the director <span class="math inline">\mathbf{n}</span> then explicitly</p>
 <p><span class="math display">
 \mathbf{Q}=\mathcal{S}\left(\begin{array}{ccc}
 -\frac{1}{3} &amp; 0 &amp; 0 \\
@@ -473,8 +473,8 @@ u_d u_1 &amp; u_d u_2 &amp; \cdots &amp; u_d u_d
 \end{array}\right)
 </span></p>
 </section>
-<section id="landau-de-gennes-mean-field-theory-1" class="slide level2">
-<h2>Landau-de Gennes mean field theory</h2>
+<section id="orientational-distribution-and-order-parameter" class="slide level2">
+<h2>Orientational distribution and order parameter</h2>
 <p>We want to characterise the deviations from the director’s orientation.</p>
 <p>We can think of compiling a <strong>probability distribution</strong> <span class="math inline">p(\Omega)</span> of finding a rod with pair of polar angles <span class="math inline">\Omega=(\theta,\phi)</span> in a coordinates system with polar axis along <span class="math inline">\mathbf{n}</span>.</p>
 <ul>
@@ -483,10 +483,10 @@ u_d u_1 &amp; u_d u_2 &amp; \cdots &amp; u_d u_d
 </ul>
 <p>So, by definition of an average, the orientational order parameter reads</p>
 <p><span class="math display">\begin{align}\mathcal{S}&amp;=\dfrac{3}{2}\left\langle(\mathbf{u} \cdot \mathbf{n})^2-\frac{1}{3}\right\rangle = \dfrac{1}{2}\langle 3 \cos^2\theta-1\rangle=\langle P_2(\cos\theta)\rangle\\
-&amp;=2\pi \int_0^{\pi}P_2(\cos\theta)p(\theta)\sin\theta d\theta
-\end{align}</span> where we used the Jacobian in spherical coordinates.</p>
+&amp;=\int_0^{\pi}P_2(\cos\theta)p(\theta)\sin\theta d\theta
+\end{align}</span> where we used the Jacobian in spherical coordinates and normalised <span class="math inline">p(\theta)</span> as <span class="math inline">\int_0^\pi p(\theta)\sin\theta d\theta=1</span>.</p>
 </section>
-<section id="landau-de-gennes-mean-field-theory-2" class="slide level2">
+<section id="landau-de-gennes-mean-field-theory-1" class="slide level2">
 <h2>Landau-de Gennes mean field theory</h2>
 <p>The phenomenological Landau-de Gennes approach is to construct a <strong>generic free energy density</strong> as an expansion in scalar combinations of the tensor <span class="math inline">\mathbf{Q}</span> (of which <span class="math inline">\mathcal{S}</span> is an example)</p>
 <p><span class="math display">
@@ -500,7 +500,7 @@ f=f_0+\frac{A}{2} \operatorname{tr} \mathbf{Q}^2-\frac{B}{3} \operatorname{tr} \
 <li><span class="math inline">A, B, C</span> are phenomenological constants (and cannot be immediately linked to microscopic properties of the anisotropic particles)</li>
 </ul>
 </section>
-<section id="landau-de-gennes-mean-field-theory-3" class="slide level2">
+<section id="landau-de-gennes-mean-field-theory-2" class="slide level2">
 <h2>Landau-de Gennes mean field theory</h2>
 <p>According to our earlier 3D definitions</p>
 <p><span class="math display">
@@ -533,7 +533,7 @@ f-f_0=\frac{a}{3}\left(T-T^{\ast}\right) S^2-\frac{2 b}{27} S^3+\frac{c}{9} S^4 
 <li><span class="math inline">S_1=0</span>: isotropic</li>
 <li><span class="math inline">S_2&gt;0</span>: nematic</li>
 </ul>
-<p>First order phase transition. The cubic terms prevents the free energy from having an inflection at <span class="math inline">S=0</span> (the free energy nver gets truly flat)</p>
+<p>First order phase transition. The cubic terms prevents the free energy from having an inflection at <span class="math inline">S=0</span> (the free energy never gets truly flat)</p>
 </section>
 <section id="landau-de-gennes-theory-result-1" class="slide level2">
 <h2>Landau-de Gennes theory result</h2>
@@ -565,7 +565,7 @@ T_{N I}=T^{\ast}+\frac{b^2}{27 a c}
 </section>
 <section id="aside-constrained-optimisation-with-lagrange-multipliers" class="slide level2">
 <h2>Aside : constrained optimisation with Lagrange multipliers</h2>
-<p>Many physics problems can be cast in terms of constraiend optimisation</p>
+<p>Many physics problems can be cast in terms of constrained optimisation</p>
 <table class="caption-top">
 <colgroup>
 <col style="width: 23%">
@@ -582,8 +582,8 @@ T_{N I}=T^{\ast}+\frac{b^2}{27 a c}
 <tbody>
 <tr class="odd">
 <td><strong>Mechanics</strong></td>
-<td>Minimize action <span class="math inline">S=\int L dt</span></td>
-<td>Energy conservation</td>
+<td>Minimize potential energy of a pendulum</td>
+<td>Fixed length of the string</td>
 </tr>
 <tr class="even">
 <td><strong>Thermodynamics</strong></td>
@@ -591,29 +591,19 @@ T_{N I}=T^{\ast}+\frac{b^2}{27 a c}
 <td>Fixed total energy <span class="math inline">E</span></td>
 </tr>
 <tr class="odd">
-<td><strong>Electromagnetism</strong></td>
-<td>Minimize energy</td>
-<td>Gauss’s law <span class="math inline">\nabla \cdot \mathbf{E} = \rho/\epsilon_0</span></td>
+<td><strong>Statistical Mechanics</strong></td>
+<td>Maximize Gibbs entropy <span class="math inline">-\sum_i p_i\ln p_i</span></td>
+<td>Normalisation <span class="math inline">\sum_i p_i=1</span>, fixed <span class="math inline">\langle E\rangle</span></td>
 </tr>
 <tr class="even">
-<td><strong>General Relativity</strong></td>
-<td>Minimize Einstein-Hilbert action</td>
-<td>Metric signature constraint</td>
-</tr>
-<tr class="odd">
 <td><strong>Liquid Crystals</strong></td>
 <td>Minimize Frank energy</td>
 <td>Director normalization <span class="math inline">\|\mathbf{n}\|=1</span></td>
 </tr>
-<tr class="even">
-<td><strong>Statistical Mechanics</strong></td>
-<td>Maximize partition function</td>
-<td>Micro/Gran/canonical ensembles</td>
-</tr>
 <tr class="odd">
-<td><strong>Optics</strong></td>
-<td>Minimize optical path (Fermat)</td>
-<td>Snell’s law at interfaces</td>
+<td><strong>Liquid Crystals</strong></td>
+<td>Minimize Maier-Saupe free energy <span class="math inline">f[p]</span></td>
+<td>Normalisation of <span class="math inline">p(\theta)</span></td>
 </tr>
 </tbody>
 </table>
@@ -628,7 +618,7 @@ T_{N I}=T^{\ast}+\frac{b^2}{27 a c}
 <li><p>This means find the extremal values of <span class="math inline">f</span> on the curve <span class="math inline">\mathcal{C}: g(x,y)=c</span></p></li>
 <li><p>We could parametrise <span class="math inline">\mathcal{C}</span> but we can also simply think in terms of its geometrical features.</p></li>
 </ul>
-<p>Take the example of a minimum: - at every point of <span class="math inline">\mathcal{C}</span> there is a tangent vector <span class="math inline">\vec{t}</span> - we want to find the points on <span class="math inline">\mathcal{C}</span> where <span class="math inline">f</span> is miniimal. This means that <em>changes of f</em> along <span class="math inline">\mathcal{C}</span> are minimal. - we can calculate such changes as the projection of the local gradient with the tangent vector and state that <span class="math display">\vec{\nabla}{f} \perp \vec{t}</span> - Notice that, by definition, the <span class="math display">\vec{\nabla}{g}\perp \vec{t}</span> - So we are simply saying that</p>
+<p>Take the example of a minimum: - at every point of <span class="math inline">\mathcal{C}</span> there is a tangent vector <span class="math inline">\vec{t}</span> - we want to find the points on <span class="math inline">\mathcal{C}</span> where <span class="math inline">f</span> is minimal. This means that <em>changes of f</em> along <span class="math inline">\mathcal{C}</span> are minimal. - we can calculate such changes as the projection of the local gradient with the tangent vector and state that <span class="math display">\vec{\nabla}{f} \perp \vec{t}</span> - Notice that, by definition, the <span class="math display">\vec{\nabla}{g}\perp \vec{t}</span> - So we are simply saying that</p>
 <p><span class="math display">\vec{\nabla}{f}\parallel \vec{\nabla}{g}\to \vec{\nabla}{f}=\lambda\vec{\nabla}{g}</span></p>
 <p>for some scalar <span class="math inline">\lambda</span></p>
 </section>
@@ -667,240 +657,6 @@ S[p] = -\int p(x) \ln p(x) dx
 <p>Functional derivative <span class="math inline">\frac{\delta \mathcal{L}}{\delta p(x)} = 0</span>: <span class="math display">
 -\ln p(x) - 1 - \lambda_1 - \lambda_2 E(x) = 0 \quad \Rightarrow \quad p(x) = \exp(-\beta E(x) - c)
 </span></p>
-<!-- 
-
-
-## Probability Distribution
-
-For a system with cylindrical symmetry around $\mathbf{n}$:
-
-$$
-p(\theta) = \text{probability density of finding rod at angle } \theta
-$$
-
-Then:
-
-$$
-\mathcal{S}=2\pi \int_0^{\pi}P_2(\cos\theta)p(\theta)\sin\theta d\theta
-$$
-
----
-
-## Landau-de Gennes Theory (1)
-
-Construct free energy density using tensor invariants:
-
-$$
-f=f_0+\frac{A}{2} \operatorname{tr} \mathbf{Q}^2-\frac{B}{3} \operatorname{tr} \mathbf{Q}^3+\frac{C}{4}\left(\operatorname{tr} \mathbf{Q}^2\right)^2
-$$
-
-For uniaxial nematic:
-
-$$
-\operatorname{Tr}\left(\mathbf{Q}^2\right)=\frac{2}{3} \mathcal{S}^2 \quad,\quad
-\operatorname{Tr}\left(\mathbf{Q}^3\right)=\frac{2}{9} \mathcal{S}^3
-$$
-
----
-
-## Landau-de Gennes Theory (2)
-
-Substitute to get:
-
-$$
-f=f_0+\frac{A}{3}\mathcal{S}^2-\frac{2B}{27}\mathcal{S}^3+\frac{C}{9}\mathcal{S}^4
-$$
-
-Expand coefficients around reference temperature $T^*$:
-
-$$
-A(T)=a\left(T-T^*\right), \quad B(T)= b, \quad C(T)=c
-$$
-
-with $a,b,c>0$.
-
----
-
-## Landau-de Gennes Theory (3)
-
-Final form:
-
-$$
-f-f_0=\frac{a}{3}\left(T-T^{\ast}\right) \mathcal{S}^2-\frac{2 b}{27} \mathcal{S}^3+\frac{c}{9} \mathcal{S}^4
-$$
-
-Predicts **first-order** isotropic-nematic transition at:
-
-$$
-T_{NI}=T^{\ast}+\frac{b^2}{27 a c}
-$$
-
-No critical point (different symmetries).
-
----
-
-## Maier-Saupe Theory (1)
-
-Minimal ingredients for nematic transition:
-
-1. **Attractive interactions** favoring alignment
-2. **Entropy** from orientational distribution
-
-Free energy:
-
-$$
-f = f_0 - u\dfrac{\mathcal{S}^2}{2}+k_BT \int_0^\pi p(\theta) \ln (4\pi p(\theta)) \sin\theta d\theta
-$$
-
----
-
-## Maier-Saupe Theory (2)
-
-Minimize with respect to $p(\theta)$ using Lagrange multiplier:
-
-$$
-p(\theta) = \frac{1}{Z} \exp\left( \frac{u \mathcal{S}}{k_B T} P_2(\cos\theta) \right)
-$$
-
-where $Z$ is the partition function:
-
-$$
-Z = \int_0^\pi \exp\left( \frac{u \mathcal{S}}{k_B T} P_2(\cos\theta) \right) \sin\theta d\theta
-$$
-
----
-
-## Maier-Saupe Theory (3)
-
-Self-consistency: $\mathcal{S}$ must satisfy:
-
-$$
-\mathcal{S}=2\pi \int_0^{\pi}P_2(\cos\theta)p(\theta)\sin\theta d\theta
-$$
-
-Yields **weakly first-order** transition with two stability basins.
-
----
-
-## Lebwohl-Lasher Lattice Model
-
-Discrete lattice version of Maier-Saupe:
-
-$$
-H = -\epsilon \sum_{\langle i, j \rangle} \left[ \frac{3}{2} (\mathbf{n}_i \cdot \mathbf{n}_j)^2 - \frac{1}{2} \right]
-$$
-
-- Each site has unit director $\mathbf{n}_i$
-- Favors alignment between neighbors
-- Captures isotropic-nematic transition
-
----
-
-## 2D Lebwohl-Lasher Model
-
-In 2D with angle $\theta_i$:
-
-$$
-H = -\epsilon \sum_{\langle i, j \rangle} \left[ \frac{3}{2} \cos^2(\theta_i - \theta_j) - \frac{1}{2} \right]
-$$
-
-Monte Carlo simulation shows:
-
-- High $T$: isotropic (random)
-- Low $T$: ordered patches (nematic)
-
----
-
-## Frank Elastic Theory
-
-In continuum limit, director field $\mathbf{n}(\mathbf{r})$ can deform.
-
-**Frank free energy density**:
-
-$$
-f = \frac{1}{2} K_1 (\nabla \cdot \mathbf{n})^2
-    + \frac{1}{2} K_2 [\mathbf{n} \cdot (\nabla \times \mathbf{n})]^2
-    + \frac{1}{2} K_3 [\mathbf{n} \times (\nabla \times \mathbf{n})]^2
-$$
-
----
-
-## Frank Elastic Constants
-
-Three deformation modes:
-
-- $K_1$: **Splay** elastic constant
-- $K_2$: **Twist** elastic constant  
-- $K_3$: **Bend** elastic constant
-
-Each penalizes a specific type of director distortion.
-
----
-
-## Topological Defects (1)
-
-**Disclinations**: Singularities in director field that cannot be removed by continuous deformation.
-
-**Topologically protected**: Cannot smoothly transform to uniform state.
-
-In 2D, characterized by **topological charge** $s$:
-
-$$
-\Delta \theta = 2\pi s
-$$
-
-(rotation of director around closed loop)
-
----
-
-## Topological Defects (2)
-
-Common charges:
-
-- $s = +1/2$: director rotates by $+\pi$
-- $s = -1/2$: director rotates by $-\pi$
-- $s = +1$: director rotates by $+2\pi$
-- $s = -1$: director rotates by $-2\pi$
-
----
-
-## Defect Annihilation
-
-When defects of **opposite charges** meet:
-
-$$
-s = +1/2 \quad + \quad s = -1/2 \quad \rightarrow \quad \text{annihilation}
-$$
-
-Restores uniform order. Key relaxation mechanism in liquid crystals.
-
----
-
-## 3D Topological Defects
-
-In 3D:
-
-- **Line defects** (not just points)
-- Complex topology: loops, entanglements, reconnections
-- **Hedgehogs**, **monopoles**, complex textures
-- Classified using rotation group SO(3)
-
-More complex than 2D case.
-
----
-
-## Summary
-
-
-- Liquid crystals: intermediate phases with orientational order
-- Order parameter $\mathcal{S}$ and director $\mathbf{n}$
-- Landau-de Gennes & Maier-Saupe theories predict first-order transitions
-- Lattice models (Lebwohl-Lasher) capture essential physics
-- Continuum: Frank elastic theory for deformations
-- Topological defects: protected singularities with charge conservation
-
-
- -->
 
 
 <script type="pyodide-data">
