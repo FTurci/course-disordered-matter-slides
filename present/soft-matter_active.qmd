@@ -22,7 +22,7 @@ bibliography: references.bib
 
 :::{.columns}
 ::: {.column width="50%"}
-**Equilibrium systems systems**:
+**Equilibrium systems**:
 
 - Free energy is optimised (subject to constraints):
 - Distribution of states given by Boltzmann statistics:
@@ -52,12 +52,12 @@ bibliography: references.bib
 :::
 
 :::{.callout-important appearance="minimal"}
-In a active systems, the distribution of states is **not given** by Boltzmann statistics!
+In active systems, the distribution of states is **not given** by Boltzmann statistics!
 :::
 
 ## Examples of Active Matter
 Some examples
-![Active matter examples, from  Vole et al. npj Microgravity (2022)](./figs/example-active.png)
+![Active matter examples, from Volpe et al. npj Microgravity (2022)](./figs/example-active.png)
 
 ## Flocking as a minimal model
 
@@ -74,11 +74,11 @@ The **Vicsek model** (1995) was one of the simplest models of active matter. Key
 - $N$ particles with positions $\mathbf{r}_i$ and orientations $\theta_i$
 - Update rules:
     $$\mathbf{r}_i(t+1) = \mathbf{r}_i(t) + v_0 \hat{\mathbf{n}}_i(t)$$
-    $$\theta_i(t+1) = \langle \theta_j \rangle_{|\mathbf{r}_j - \mathbf{r}_i| < R} + \eta_i$$
+    $$\theta_i(t+1) = \arg\Big(\sum_{|\mathbf{r}_j - \mathbf{r}_i| < R} e^{i\theta_j(t)}\Big) + \xi_i$$
 
 - $v_0$: constant speed
 - $R$: interaction radius
-- $\eta_i$: noise term (uniform random in $[-\pi/2, \pi/2]$)
+- $\xi_i$: noise, uniform in $[-\eta/2, \eta/2]$; the amplitude $\eta$ is the control parameter
 :::
 
 ::: {.column width="50%"}
@@ -250,7 +250,7 @@ Two regimes
 
 1. **Ballistic** (short times): $\langle \Delta r^2(t) \rangle \sim v_0^2 t^2$
 
-2. **Diffusive** (long times, $t \gg 1/\lambda$): $\langle \Delta r^2(t) \rangle \sim 2 D_{\text{eff}} t$
+2. **Diffusive** (long times, $t \gg 1/\lambda$): $\langle \Delta r^2(t) \rangle \sim 4 D_{\text{eff}} t$
    - Effective diffusion: $D_{\text{eff}} = \frac{v_0^2}{2\lambda}$ (2D)
 
 Crossover time: $t_c \sim 1/\lambda$
@@ -349,7 +349,7 @@ $$\langle \Delta r^2(\tau) \rangle = \left[4 D_T + 2 v^2 \tau_R \right] \tau + 2
 3. **Long times**: Enhanced diffusion
 
 - $\tau_R = 1/D_r$: persistence time
-- $D_{\mathrm{eff}} = \frac{v_0^2}{2D_r}$: effective diffusion
+- $D_{\mathrm{eff}} = D_T + \frac{v_0^2}{2D_r}$: effective diffusion
 :::
 
 ::: {.column width="70%"}
@@ -375,11 +375,11 @@ The persistence of active motion can lead to effective interactions between part
 :::
 
 ::: {.column width="50%"}
-![Effective twobody potential for ABPs, Turci & wilding PRl 2021](./figs/active2body.png)
+![Effective two-body potential for ABPs, Turci & Wilding PRL 2021](./figs/active2body.png)
 :::
 ::::
 
-(The realiity is more complex, with many-body effects!)
+(The reality is more complex, with many-body effects!)
 
 
 ## Motility-Induced Phase Separation (MIPS)
@@ -447,4 +447,17 @@ In experiments, active systems can be realised in various ways:
 :::
 :::
 
-![Experimental systems and active. matter behaviours](./figs/active-behaviours.png)
+![Experimental systems and active matter behaviours](./figs/active-behaviours.png)
+
+## Summary: active matter {.smaller .scrollable}
+
+| Topic | Key result |
+|---|---|
+| Active matter | local energy consumption → self-propulsion; no Boltzmann distribution |
+| Vicsek model | self-propulsion + alignment: flocking at low noise or high density |
+| Run-and-tumble | straight runs at $v_0$, tumbles at rate $\lambda$; $D_{\rm eff}=v_0^2/2\lambda$ (2D) |
+| Active Brownian particles | constant speed, rotational diffusion $D_r$; $\mathrm{Pe}=v_0/\sqrt{D_tD_r}$ |
+| MSD | $4D_T\tau$ → $v_0^2\tau^2$ → $4D_{\rm eff}\tau$, $D_{\rm eff}=D_T+v_0^2/2D_r$ |
+| MIPS | purely repulsive ABPs phase separate at low $D_r$, with a critical point |
+
+[Full summary with links in the notes](https://fturci.github.io/course-disordered-matter/soft-matter/soft-matter_active.html#summary){target="_blank"}
