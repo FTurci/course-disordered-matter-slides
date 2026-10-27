@@ -245,12 +245,12 @@ Plot.plot({
 
 ## Classes of systems
  
-In our exploration of soft matter we will focus on six main classes of systems which display different physics:
+In our exploration of soft matter we will focus on five main classes of systems which display different physics:
 
 - colloidal dispersions
 - polymeric systems
 - liquid crystals
-- surfactant aggregates
+<!-- - surfactant aggregates -->
 - arrested systems
 - active matter
 
@@ -302,6 +302,7 @@ In our exploration of soft matter we will focus on six main classes of systems w
 
 ![Texture of nematic liquid crystals, from [https://doi.org/10.3986/alternator.2020.38](https://doi.org/10.3986/alternator.2020.38) ](./figs/nematic.jpeg){width=100%}
 
+<!--
 ## Surfactant aggregates 
 
 ::: {.nonincremental}
@@ -312,6 +313,7 @@ In our exploration of soft matter we will focus on six main classes of systems w
 :::
 
 ![Cellular membrane](./figs/membrane.jpg){width=100%}
+-->
 
 ## Arrested systems 
 
