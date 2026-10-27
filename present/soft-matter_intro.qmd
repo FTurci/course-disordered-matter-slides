@@ -56,10 +56,10 @@ We sometimes oversimplify...
 
 ## Complex fluids and soft condensed matter
 
-- **Soft condensed matter** includes assembllies of colloids, polymers, surfactants, and biological macromolecules and much more.    
+- **Soft condensed matter** includes assemblies of colloids, polymers, surfactants, and biological macromolecules and much more.    
     - Term due to Pierre-Gilles de Gennes (Nobel 1991)
 
-- Often, many ofthese are also referred to as **complex fluids**. 
+- Often, many of these are also referred to as **complex fluids**. 
 - These materials are **easily deformed** and show complex, disordered structures.
 - Their properties are determined by a balance between **energy and entropy**.
 - **Thermal fluctuations** play a major role in their behavior.
@@ -256,7 +256,7 @@ In our exploration of soft matter we will focus on six main classes of systems w
 
 
 
-![Colloidal assemblies, polymers, surfactants, liuqid crystals, glasses and bacteria.](./figs/SYSTEMS.png){ height=300}
+![Colloidal assemblies, polymers, surfactants, liquid crystals, glasses and bacteria.](./figs/SYSTEMS.png){ height=300}
 
 ## Colloidal dispersions 
 ::: {.nonincremental}
@@ -307,7 +307,7 @@ In our exploration of soft matter we will focus on six main classes of systems w
 ::: {.nonincremental}
 - **Surfactants** lower surface tension between fluid phases by accumulating at interfaces.
 - They are molecules with both **hydrophilic** heads and **hydrophobic** tails.
-- Surfactants **self-assemble** at interfaces, forming structures like **bilayers** and **vesicles**.
+- Above a critical concentration, surfactants **self-assemble** in the bulk, forming structures like **bilayers** and **vesicles**.
 - These assemblies are essential in **cell biology** and many soft matter systems.
 :::
 
@@ -323,7 +323,7 @@ In our exploration of soft matter we will focus on six main classes of systems w
 - Relaxation times are **longer than observable timescales**, making equilibrium statistical mechanics insufficient.
 
 :::
-![An gel (left) and a glass (right) from molecular dynamics with local structure highlighted un colours](./figs/gels-glass.png)
+![A gel (left) and a glass (right) from molecular dynamics with local structure highlighted in colours](./figs/gels-glass.png)
 
 ## Active matter 
 
@@ -426,7 +426,7 @@ Since $\mathrm{Pe}_g < 1$, **thermal motion dominates gravity** → particles re
 - When $\tau\ll t_{\rm obs}$ we can take time-averages and consider the system in a stable **steady state**.
 - In the absence of net currents, this is an **equilibrium state**
 
-- A colloidal dispersion is stable if it is able to remain dispersed and Brownian time much longer than $t_{\rm obs}$. 
+- A colloidal dispersion is stable if it is able to remain dispersed and Brownian for a time much longer than $t_{\rm obs}$. 
 
 - Instability leads to **aggregation**
 
@@ -460,10 +460,10 @@ flowchart LR
 :::{.nonincremental}
 
 - At the colloidal scale: **gravity** and **electrostatics** (eventually **magnetostatics**).
-- Electrostatics forces are the main **microscopic** forces: colloids are typically charged
+- Electrostatic forces are the main **microscopic** forces: colloids are typically charged
 - **Separation of length and timescales**: colloids are much larger and slower than the atomic or molecular constituents of the surrounding fluid.
 - Colloid–colloid interactions result from the collective effect (sum or average) of many microscopic interactions, evaluated over times much longer than microscopic relaxation times.
-- When we focus on colloidal scales, we **integrate out** the microscopic degrees of freedom (*coarse-graning*)
+- When we focus on colloidal scales, we **integrate out** the microscopic degrees of freedom (*coarse-graining*)
 - Coarse-grained interactions are then obtained and are called **effective interactions**.
 
 
