@@ -25,13 +25,13 @@ Equilibrium means:
 
 :::{.incremental}
 
-- no change in entropy wirh time (zero entropy production)
+- no change in entropy with time (zero entropy production)
 - no net flows of matter or energy
 - detailed balance $$\pi_i P_{i \rightarrow j} = \pi_j P_{j \rightarrow i}$$
 
 - time reversibility
 - state of maximum entropy given the constraints (we saw this in multiple instances, e.g. liquid crystals)
-- macroscopic obserbvables do not change with time (**stationarity**)
+- macroscopic observables do not change with time (**stationarity**)
 - equivalence between time and ensemble averages (**ergodicity**)
 :::
 
@@ -91,7 +91,7 @@ Some configurations are forbidden (constraints on the rules of motion) and non-e
 
 ## Energy landscapes
 
-- A system of many partcles has many degrees of freedom.
+- A system of many particles has many degrees of freedom.
 - The free energy is a **scalar function** of all these degrees of freedom: $F(x_1, x_2, \ldots, x_N)$.
 - We can think of it is the altitude of a **landscape** in a high-dimensional space.
 - The landscape represents the (negative log) of the probability distribution of configurations: low energy = high probability.
@@ -114,7 +114,7 @@ Some configurations are forbidden (constraints on the rules of motion) and non-e
 When the temperature allows it, connected minima can be grouped into single **basins** called **metabasins**.
 
 - they are not just energy minima, they include entropy
-- they can behave as bone-fide local **equilibria**
+- they can behave as bona fide local **equilibria**
 - These are akin to the **metastable states**.
 
 ![metabasins in the free energy landscape](./figs/landscape-basins.png)
@@ -128,7 +128,7 @@ $$S_{conf} = k_{B} \ln N_{\mathrm minima}$$
 
 **Different** from the total entropy $S$ 
 $$
-S(T) = S(T_0) + \int_{T_0}^{T} \frac{1}{T'} \left( \frac{\partial P}{\partial T'} \right)_V dV
+S(V) = S(V_0) + \int_{V_0}^{V} \left( \frac{\partial P}{\partial T} \right)_{V'} dV' \quad (\text{at fixed } T)
 $$
 
 or (at constant volume)
@@ -184,7 +184,7 @@ Glassy systems are a broad class of systems, not necessarily atomic or molecular
 
 But glassy physics is broader than glassy materials: dense assemblies in general will display glassy dynamics.
 
-![(a) Colloidal glasses, (b) dense cellular tissues, (c) ant colonies from *Facets fo glassy physics*, Berthier and Ediger, Physics Today (2016)](./figs/facets.png) 
+![(a) Colloidal glasses, (b) dense cellular tissues, (c) ant colonies from *Facets of glassy physics*, Berthier and Ediger, Physics Today (2016)](./figs/facets.png) 
 
 ## Glass formation
 
@@ -220,12 +220,12 @@ To form a glass we:
 ::: {.column width="50%"}
 Their solid-like behavior arises from the dramatic slowing down of their dynamics as they approach the glass transition.
 
-We quantify this with density autocorrelation functions such as the intermediate scattering function:
+We quantify this with density autocorrelation functions such as the self-intermediate scattering function:
 $$F(k, t) = \frac{1}{N} \left\langle \sum_{j=1}^{N} e^{i \mathbf{k} \cdot [\mathbf{r}_j(t) - \mathbf{r}_j(0)]} \right\rangle$$
 
 It decays in two steps:
 
-- a fast decay corresponding to **vibrations** within the cage formed by neighbouring particles, occuring on a timescale called the **beta relaxation time** $\tau_{\beta}$
+- a fast decay corresponding to **vibrations** within the cage formed by neighbouring particles, occurring on a timescale called the **beta relaxation time** $\tau_{\beta}$
 - a slow decay corresponding to **structural relaxation** as particles escape their cages, taking place on the much longer **alpha relaxation time** $\tau_{\alpha}$
 :::
 ::: {.column width="50%"}
@@ -242,10 +242,10 @@ The alpha relaxation time $\tau_{\alpha}$ is proportional to the viscosity $\eta
 Phenomenologically one distinguishes between:
 
 - **Strong glassformers**: Arrhenius behaviour of $\tau_{\alpha}$ and $\eta$ $\sim \exp\left(\dfrac{E_a}{k_{B} T}\right)$
-- **Fragile glassformers**: super-Arrhenius behaviour $\tau_{\alpha}$ and $\eta$. Often modelled with the **Vogel-Fulcher-Tammann** (VFT) equation $\tau \sim \exp\left(\dfrac{A}{T - T_0}\right)$ where $T_0$ corrsponds to a **divergence** at **finite** temperature $\to$ **phase transition?**
+- **Fragile glassformers**: super-Arrhenius behaviour $\tau_{\alpha}$ and $\eta$. Often modelled with the **Vogel-Fulcher-Tammann** (VFT) equation $\tau \sim \exp\left(\dfrac{A}{T - T_0}\right)$ where $T_0$ corresponds to a **divergence** at **finite** temperature $\to$ **phase transition?**
 :::
 ::: {.column width="50%"}
-![Angell plot showing the dramatic increase of viscosity and relaxation time as temperature approaches Tg for different glassformers, from Angell Science (1995)](./figs/figangell.svg)
+![Angell plot showing the dramatic increase of viscosity and relaxation time as temperature approaches Tg for different glassformers, adapted from Debenedetti and Stillinger, Nature (2001)](./figs/figangell.svg)
 :::
 :::
 
@@ -267,7 +267,7 @@ We have however various theories, mainly in two broad classes:
 ::: {.column width="50%"}
 The **Adam-Gibbs model** links the dramatic slowdown of dynamics to the underlying thermodynamics through **configurational entropy** $S_{\rm conf}$.
 
-- The key idea is the existense of **cooperatively rearranging regions** (CRRs): to relax, particles need to move together and explore a new metabasin in the energy landscape.
+- The key idea is the existence of **cooperatively rearranging regions** (CRRs): to relax, particles need to move together and explore a new metabasin in the energy landscape.
 
 *Mosaic* of $M_{CRR}$ independent cooperatively rearranging regions of size $n_{CRR}$ particles each. The total number of particles is $N = M_{CRR} n_{CRR}$.
 
@@ -342,7 +342,7 @@ Unlike VFT, no finite-temperature divergence, no criticality, but still captures
 
 ## Demonstration of facilitated dynamics and dynamical heterogeneities
 
-Time evolution of the magnitude of the displacement field in a model of glass governed by dynamical facilitation from Hasym and Mandadapu PNAS (2024):
+Time evolution of the magnitude of the displacement field in a model of glass governed by dynamical facilitation from Hasyim and Mandadapu PNAS (2024):
 
 :::{.columns}
 ::: {.column width="25%"}
@@ -378,8 +378,16 @@ Ongoing work to unify the various scenarios.
 :::
 
 
-<!-- 
-- the phase space is difficult to explore and so the system is **stuck**
-- the system is just very slow and keeps on changing as we observe it (**ageing**)
-- the system is driven by **external/internal** forces and so it never reaches equilibrium
-- the system may have constraints on its dynamics that stop it from exploring all configurations (non-ergodic) -->
+
+## Summary: glasses {.smaller .scrollable}
+
+| Topic | Key result |
+|---|---|
+| Energy landscape | $F=-k_BT\ln P$ of coarse-grained states; minima grouped into metabasins |
+| Configurational entropy | $S=S_{\rm conf}+S_{\rm vib}$, $S_{\rm conf}=k_B\ln N_{\rm minima}$ |
+| Glass formation | avoid crystallisation; $T_g$ where $\tau_\alpha>t_{\rm obs}$: ergodicity lost, protocol dependent |
+| Relaxation | two-step $F_s(q,t)$: $\beta$ (cage), $\alpha$ (structural); $\tau_\alpha\propto\eta$ |
+| Strong vs fragile | Arrhenius vs VFT $\eta\propto e^{B/(T-T_0)}$ |
+| Theories | Adam-Gibbs $\tau_\alpha=\tau_0\,e^{A/TS_{\rm conf}}$ (thermodynamic) vs dynamical facilitation (no finite-$T$ divergence) |
+
+[Full summary with links in the notes](https://fturci.github.io/course-disordered-matter/soft-matter/soft-matter_glasses.html#summary){target="_blank"}

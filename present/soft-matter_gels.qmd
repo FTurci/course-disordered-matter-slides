@@ -29,7 +29,7 @@ mermaid-format: svg # png also works
 **Key features:**
 
 - Bonds break/reform dynamically
-- Energy ~ $k_BT$
+- Energy of a few to tens of $k_BT$
 - Self-healing possible
 - **Thermoreversible**
 :::
@@ -53,7 +53,7 @@ Cross-links form via dense local regions (microcrystalline/glassy)
 **Physical Gels**
 
 - Reversible bonds
-- Energy ~ $k_BT$
+- Energy of a few to tens of $k_BT$
 - Dynamic network
 - Thermoreversible
 :::
@@ -211,7 +211,7 @@ $$
 - Colloids cluster into nonequilibrium branched phase
 - Binodal becomes **metastable** to fluid-solid coexistence
 
-![Phase diagram of colloid-polymer mixtures for varying polymer-colloid aspect ration $q$. Small ](./figs/colloid-polymers.svg){width=100%}
+![Phase diagram of colloid-polymer mixtures for varying polymer-colloid size ratio $q$: small $q$ makes the gas-liquid binodal metastable.](./figs/colloid-polymers.svg){width=100%}
 
 
 ## Simple Model Potentials
@@ -318,13 +318,13 @@ plt.show()
 :::
 
 ::: {.column width="50%"}
-![Time evolution of $g(r)$ ina dilute gel in units of the time to percolate $\tau_{\mathrm perc}$](./figs/grtime.svg){width=100%}
+![Time evolution of $g(r)$ in a dilute gel in units of the time to percolate $\tau_{\mathrm perc}$](./figs/grtime.svg){width=100%}
 :::
 ::::
 
 ## Structure Factor: $S(q)$ and Fractals
 
-Near percolation threshold, the loq-q trend from the trsucture factor links to the compressibility: **power-law behavior**:
+Near the percolation threshold, the low-$q$ trend of the structure factor shows **power-law behavior**:
 
 Clusters become **fractal objects** with self-similar structure at all length scales.
 
@@ -381,11 +381,24 @@ The picture suggest the progressive **freezing of coarsening upon spinodal decom
 
 ![Arrested spinodal scenario, see Zaccarelli et al 2007](./figs/arrestedSpinodal.svg)
 
-**Key lines:**:
--  Binodal (red): liqiid-gase coexistence at equilibrium
+**Key lines:**
+-  Binodal (red): liquid-gas coexistence at equilibrium
 - Spinodal (dashed): limit of stability of the metastable phases. Instability (i.e. spinodal decomposition) starts **inside** 
 - Percolation (purple): At some density, the clusters percolate (span the system)
 - Glass transition (blue): Dense phase becomes dynamically arrested (non-ergodic) 
 
 
 **Gel path**: Rapid cooling → arrested dense phase + vapor
+
+
+## Summary: gels {.smaller .scrollable}
+
+| Topic | Key result |
+|---|---|
+| Physical gels | reversible bonds (a few to tens of $k_BT$) forming a percolating network |
+| Percolation | $P_\infty\propto(p-p_c)^\beta$: $p_c$ non-universal, $\beta$ universal |
+| Colloid-polymer mixtures | short-range depletion (AO, square well, Morse): metastable binodal |
+| Gel structure | $g(r)$ at short range; $S(q)\sim q^{-D_f}$, $M(R)\sim R^{D_f}$ (fractal) |
+| Arrested spinodal | phase separation interrupted by arrest of the dense phase: bicontinuous network |
+
+[Full summary with links in the notes](https://fturci.github.io/course-disordered-matter/soft-matter/soft-matter_glasses.html#summary){target="_blank"}
