@@ -74,7 +74,7 @@
     "href": "soft-matter_colloids1.html#double-layer-interaction-nonlinear-poisson-bolztmann-equation",
     "title": "Complex Disordered Systems",
     "section": "Double-layer interaction: nonlinear Poisson-Bolztmann equation",
-    "text": "Double-layer interaction: nonlinear Poisson-Bolztmann equation\nWhen two colloids come close, the charges in their double layers will interact, giving rise to a repulsive interaction. This is not simply a Coulombic interaction, as it is mediated by the other (opposite) charges in the medium.\nThis means in practice taking Poisson’s equation\n\n\\nabla^2 \\psi(\\mathbf{r})=-\\frac{\\rho_{\\mathrm{tot}}(\\mathbf{r})}{\\varepsilon}= -\\frac{\\rho_{\\mathrm{fixed}}(\\mathbf{r})+\\sum_i \\rho_{\\mathrm{ions},i}(\\mathbf{r})}{\\varepsilon}\n\nand making the ion concentration depend on the electrostatic potential \\psi(\\mathbf{r}) itself via a Boltzmann weight\n\n\\rho_{\\mathrm{ions},i}(\\mathbf{r})= z_i e n_{s,i} \\exp \\left(-\\frac{z_i e \\psi}{k_B T}\\right)\n\nwith n_{s,i} the far-away (bulk) concentration of ions of species i and z_i e the ion charge.\nThis yields the nonlinear Poisson-Bolztmann equation\n\n\\nabla^2 \\psi(\\mathbf{r})=-\\frac{1}{\\varepsilon}\\left[\\rho_{\\text {fixed }}+ \\sum_i z_i e  n_{s,i} \\exp \\left(-\\frac{z_i e \\psi}{k_B T}\\right)\\right] .\n\n\n\n\nNo need to memorise this."
+    "text": "Double-layer interaction: nonlinear Poisson-Bolztmann equation\nWhen two colloids come close, the charges in their double layers will interact, giving rise to a repulsive interaction.\nThis is not simply a Coulombic interaction, as it is mediated by the other (opposite) charges in the medium. Combining Poisson’s equation with ion concentrations given by a Boltzmann weight of the electrostatic potential \\psi(\\mathbf{r}) yields the nonlinear Poisson-Bolztmann equation\n\n\\nabla^2 \\psi(\\mathbf{r})=-\\frac{1}{\\varepsilon}\\left[\\rho_{\\text {fixed }}+ \\sum_i z_i e  n_{s,i} \\exp \\left(-\\frac{z_i e \\psi}{k_B T}\\right)\\right]\n\nwith n_{s,i} the far-away (bulk) concentration of ions of species i and z_i e the ion charge (see the problem Interaction of two charged colloidal spheres).\n\n\n\nNo need to memorise this."
   },
   {
     "objectID": "soft-matter_colloids1.html#double-layer-interaction-screened-repulsion",
@@ -319,7 +319,7 @@
     "href": "soft-matter_colloids3.html#stokes-einstein-relation-fluctuation-dissipation-for-colloids",
     "title": "Complex Disordered Systems",
     "section": "Stokes-Einstein relation: fluctuation dissipation for colloids",
-    "text": "Stokes-Einstein relation: fluctuation dissipation for colloids\nIn dilute conditions, let’s think of a particle slowly sedimenting in a viscous fluid.\nThe density distribution is Boltzmann\n\nn(x)=n_0 \\exp \\left(-U(x) / k_B T\\right)=n_0 \\exp \\left(-F x / k_B T\\right)\n\nwhere F= m_B g is the force from the buoyant mass.\nA flux is produced J_F = n(x) v=\\frac{n(x) F}{\\xi}\nwhere we used the fact that the velocity is set by the friction coefficient \\xi as v=F/\\xi.\nDiffusion occurs at the same time, driven by the gradient (Fick’s law) \nJ_D(x)=-D \\frac{\\partial n(x)}{\\partial x}"
+    "text": "Stokes-Einstein relation: fluctuation dissipation for colloids\nYou have seen the Einstein relation for a Brownian particle with friction coefficient \\xi (Langevin dynamics): \nD=\\frac{k_B T}{\\xi}\n (equivalently, in sedimentation equilibrium the drift flux n F/\\xi balances the Fickian flux -D\\,\\partial n/\\partial x of the Boltzmann profile).\nFor a sphere, Stoke’s law \\xi=6 \\pi \\eta R yields simply\n\nD=\\frac{k_B T}{6 \\pi \\eta R}\n\nThis is the Stokes-Einstein relation, a balance between thermal fluctuations and viscous dissipation:\n\n\\text { Fluctuations: } k_B T \\quad \\longrightarrow \\quad \\text { Observed motion: } D \\quad \\longrightarrow \\quad \\text { Dissipation: } 6 \\pi \\eta R ."
   },
   {
     "objectID": "soft-matter_colloids3.html#stokes-einstein-relation-fluctuation-dissipation-for-colloids-1",
@@ -1789,7 +1789,7 @@
     "href": "soft-matter_colloids2.html#dense-packing-cell-model",
     "title": "Complex Disordered Systems",
     "section": "Dense packing: cell model",
-    "text": "Dense packing: cell model\n\nIn an FCC cell, particles can move very little beyond their own diameter \\sigma.\nAssume that the volume per particle is v and the (geometrically constrained) close packed volume is v_{cp}.\nThe maximum displacement is \n\\delta=\\frac{\\sigma}{\\sqrt{2}}\\left(\\left(\\frac{v}{v_{c p}}\\right)^{1 / 3}-1\\right)\n\nThe corresponding free volume is then v_f=\\frac{4 \\pi}{3} \\delta^3 from which we can calculate the entropy \nS = N k_B \\ln \\left(v_f / \\Lambda^3\\right)\nAnd the pressure P=T\\left(\\frac{\\partial S}{\\partial V}\\right)_{N, T}=\\frac{k_B T}{v_{c p}} \\frac{\\left(v / v_{c p}\\right)^{-2 / 3}}{\\left(v / v_{c p}\\right)^{1 / 3}-1}"
+    "text": "Dense packing: cell model\n\nIn an FCC crystal, each particle can move very little beyond its own diameter \\sigma: it rattles in a cage formed by its neighbours.\nIts free volume v_f vanishes at close packing \\phi_{cp}, and the entropy is S = N k_B \\ln \\left(v_f / \\Lambda^3\\right).\nTaking the pressure from this entropy (see the notes for the derivation) yields \nZ_{\\rm comp}=\\frac{1}{1-\\left(\\phi / \\phi_{c p}\\right)^{1 / 3}}\n\nThis expression is completely different from the low density regime Z_{\\text {comp }}^{\\mathrm{low}}=1+B_2 \\rho+B_3 \\rho^2+\\ldots\nThe incompatibility signals non-analyticity and hence a discontinuous phase transition: first order transition, with interfaces and coexistence between phases."
   },
   {
     "objectID": "soft-matter_colloids2.html#dense-packing-cell-model-1",
@@ -1824,7 +1824,7 @@
     "href": "soft-matter_colloids2.html#beyond-hard-spheres-simple-liquids",
     "title": "Complex Disordered Systems",
     "section": "Beyond hard spheres: simple liquids",
-    "text": "Beyond hard spheres: simple liquids\n\n\n\nA simple liquid is a system of particles interacting via short-range, spherically symmetric (isotropic) pair potentials.\nA very common model is the Lennard-Jones (LJ) potential U_{\\mathrm{LJ}}(r) = 4\\epsilon \\left[ \\left( \\frac{\\sigma}{r} \\right)^{12} - \\left( \\frac{\\sigma}{r} \\right)^6 \\right] where \\epsilon sets the depth of the potential well (interaction strength) and \\sigma is the particle diameter (distance at which U=0).\nThe r^{-12} term models steep repulsion, while r^{-6} describes the attractive tail.\nThe Lennard-Jones fluid exhibits rich phase behavior: gas, liquid, supercritical fluid and crystalline solid\nThe LJ model is widely used to study atomic and molecular liquids, and serves as a reference for understanding real fluids and their phase transitions.\n\n\n\n\n\nPhase diagram of the Lennard-Jones Fluid, adapted from Wikimedia."
+    "text": "Beyond hard spheres: simple liquids\n\n\n\nA simple liquid is a system of particles interacting via short-range, spherically symmetric (isotropic) pair potentials.\nA very common model is the Lennard-Jones (LJ) potential U_{\\mathrm{LJ}}(r) = 4\\epsilon \\left[ \\left( \\frac{\\sigma}{r} \\right)^{12} - \\left( \\frac{\\sigma}{r} \\right)^6 \\right] with steep repulsion (r^{-12}) and an attractive tail (r^{-6}).\nIts phase behaviour adds a gas–liquid transition to the fluid and crystal of hard spheres.\n\n\n\n\n\nPhase diagram of the Lennard-Jones Fluid, adapted from Wikimedia."
   },
   {
     "objectID": "soft-matter_colloids2.html#coexistence-metastability-and-instability",
@@ -1839,5 +1839,61 @@
     "title": "Complex Disordered Systems",
     "section": "Coexistence: Metastability and Instability",
     "text": "Coexistence: Metastability and Instability\n\nThe spinodal line marks the boundary of metastability. It is the limit of stability \n\\frac{\\partial^2 G}{\\partial \\phi^2}=0\n\nBetween the binodal and spinodal lines, the system is metastable, meaning it can persist in a non-equilibrium state for a finite time.\nThe nucleation time \\tau is related to the free energy barrier \\Delta G^* by an activated (also called Arrhenius) law\n  \\tau \\propto \\exp\\left(\\frac{\\Delta G^*}{k_B T}\\right)    \nInside the spinodal there is no nucleation: coarsening occurs.\n\nYou have seen some of this physics when discussing the Ising model."
+  },
+  {
+    "objectID": "soft-matter_colloids1.html#van-der-waals-interactions-from-dipoles-to-dispersion",
+    "href": "soft-matter_colloids1.html#van-der-waals-interactions-from-dipoles-to-dispersion",
+    "title": "Complex Disordered Systems",
+    "section": "van der Waals interactions: from dipoles to dispersion",
+    "text": "van der Waals interactions: from dipoles to dispersion\nWe are focusing on atoms that are globally neutral. The first non-trivial term of the multipole expansion is the dipole.\n\ndipole–dipole: U(r) \\propto-\\dfrac{\\mu_1 \\mu_2}{r^3}\ndipole–induced dipole: a permanent dipole induces \\mu_B \\propto \\alpha\\mu/r^3 in a neutral atom, so U(r) \\propto -\\dfrac{\\mu^2 \\alpha}{r^6}\ninduced dipole–induced dipole: even when the average density is neutral, quantum fluctuations of the electron density make it instantaneously asymmetric. These fluctuations produce the London dispersion forces\n\n\n\n\n\n\n\nLondon dispersion interaction\n\n\n\\Large U(r)=-\\frac{C}{r^6} \n\n\n\nThe key insight is the 1/r^{6} decay of the interaction which decays much more rapidly than Coulomb’s 1/r. They are short-range in 3D, since the total energy scales like \\sim \\int V(r) r^{d-1} d r and 6&gt;3"
+  },
+  {
+    "objectID": "soft-matter_colloids2.html#aside-optional-cluster-expansion-and-second-virial",
+    "href": "soft-matter_colloids2.html#aside-optional-cluster-expansion-and-second-virial",
+    "title": "Complex Disordered Systems",
+    "section": "Aside (optional): cluster expansion and second virial",
+    "text": "Aside (optional): cluster expansion and second virial\nOne can expand the product\n\n\\prod_{i&lt;j}\\left(1+f_{i j}\\right)=1+\\sum_{i&lt;j} f_{i j}+\\sum_{i&lt;j, k&lt;l}^{\\text {distinct }} f_{i j} f_{k l}+\\ldots\n The first term is the ideal gas, the second is clearly pair correlations (only pairwise distances).\nThis motivates one to define \nB_2(T)=-\\frac{1}{2} \\int f(r) d \\mathbf{r}=-2 \\pi \\int_0^{\\infty}\\left[e^{-\\beta U(r)}-1\\right] r^2 d r\n\nFor hard spheres this results in \nB_2 =  \\frac{2\\pi}{3} \\sigma^3\n\nSo Z = 1 + \\dfrac{2\\pi}{3} \\sigma^3\\rho = 1+ 4\\left( \\dfrac{\\pi}{6} \\sigma^3\\rho\\right)=1+4\\phi as we calculated earlier."
+  },
+  {
+    "objectID": "soft-matter_colloids2.html#coexistence-metastability-and-instability-recall",
+    "href": "soft-matter_colloids2.html#coexistence-metastability-and-instability-recall",
+    "title": "Complex Disordered Systems",
+    "section": "Coexistence: Metastability and Instability (recall)",
+    "text": "Coexistence: Metastability and Instability (recall)\n\n\nYou have seen this physics when discussing the Ising model:\n\nCrossing the binodal (equal chemical potential and pressure between phases) the fluid becomes metastable: it crystallises by nucleation, with \\tau \\propto \\exp\\left(\\Delta G^*/k_B T\\right).\nThe spinodal marks the limit of stability, \\partial^2 G/\\partial \\phi^2=0: inside it there is no barrier and coarsening occurs.\n\n\n\n\n\nSchematic free energy for hard spheres compressed at high pressures: the fluid branch becomes metastable and the free energy minimum is located in the crystal phase"
+  },
+  {
+    "objectID": "soft-matter_colloids3.html#aside-optional-not-pairwise",
+    "href": "soft-matter_colloids3.html#aside-optional-not-pairwise",
+    "title": "Complex Disordered Systems",
+    "section": "Aside (optional): Not pairwise?",
+    "text": "Aside (optional): Not pairwise?\nSome examples of non-pairwise situations:\n\nAtomistic models: Electronic densities that fluctuate due to quantum effects are intrinsically many-body\nTrue colloid-polymer mixtures: if the polymers are not ideal, their spatial distribution and their forces depend on the positions of more than two colloids\n\n\n\n\nC_{60} isosurface via density functional theory (Wikipedia) and configuration of non-ideal colloid-polymer mixture, Rohrbach et al JCP (2022)"
+  },
+  {
+    "objectID": "soft-matter_colloids3.html#aside-optional-direct-and-indirect-correlations",
+    "href": "soft-matter_colloids3.html#aside-optional-direct-and-indirect-correlations",
+    "title": "Complex Disordered Systems",
+    "section": "Aside (optional): direct and indirect correlations",
+    "text": "Aside (optional): direct and indirect correlations\n\nThe g(r) contains both.\nWe can assume the existence of a correlation function that instead only includes the direct part and call it c(r). Then a hierarchy exists\n\n\nh\\left(r_{12}\\right)=c\\left(r_{12}\\right)+\\rho \\int c\\left(r_{13}\\right) h\\left(r_{32}\\right) d \\mathbf{r}_3\n\nwhere h(r) = g(r)-1. This is the Ornstein-Zernike integral equation between particles 1,2 and 3.\nBoth h(r) and c(r) are unknown in principle. One needs an additional condition to fix box: these are physical closures leading to approximations.\n\nMeaning of the Ornstein-Zernike relation, adapted from Santos, Springer(2016)"
+  },
+  {
+    "objectID": "soft-matter_colloids3.html#aside-optional-percus-yevick-approximation",
+    "href": "soft-matter_colloids3.html#aside-optional-percus-yevick-approximation",
+    "title": "Complex Disordered Systems",
+    "section": "Aside (optional): Percus-Yevick approximation",
+    "text": "Aside (optional): Percus-Yevick approximation\nA common closure is the Percus-Yevick approximation.\n\nc(r)=[1+h(r)]\\left[1-e^{\\beta U(r)}\\right]\n\nThis closure interpolates between the hard-core exclusion (for U(r) \\to \\infty inside the core, g(r) = 0) and the ideal gas limit (for U(r) = 0, c(r) = 0, so for hard spheres c(r)=0 outside the core).\nThe result (semi) analytical. For hard spheres, it allows to calculate the g(r) accurately in a wide range of packing fractions\n\n\n\nPY approximation vs simulated data for hard spheres."
+  },
+  {
+    "objectID": "soft-matter_colloids3.html#aside-optional-higher-order-correlations",
+    "href": "soft-matter_colloids3.html#aside-optional-higher-order-correlations",
+    "title": "Complex Disordered Systems",
+    "section": "Aside (optional): higher order correlations",
+    "text": "Aside (optional): higher order correlations\nNothing prevents us to quantify higher order correlations. In general these are non-trivial are controlled by the indirect part of the correlations.\nStandard ways to identify n-particle* correlations is to measure structural motifs.\n\nMany body correlations in hard spheres, seminal work from Josh Robinson, PhD student in Bristol a few years ago, Robinson et al PRL (2019)This is particularly important for dense systems (e.g. glasses, see future lecture)."
+  },
+  {
+    "objectID": "soft-matter_colloids3.html#aside-optional-random-walkers-in-2d-example",
+    "href": "soft-matter_colloids3.html#aside-optional-random-walkers-in-2d-example",
+    "title": "Complex Disordered Systems",
+    "section": "Aside (optional): random walkers in 2d, example",
+    "text": "Aside (optional): random walkers in 2d, example"
   }
 ]
