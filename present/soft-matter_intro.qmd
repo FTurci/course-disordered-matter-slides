@@ -76,13 +76,15 @@ We sometimes oversimplify...
 - Helmholtz Free energy per particle
 $$f = u-Ts$$
 
-- Entropy approximately counts the number of arrangements per particle $s = \dfrac{k_B}{N} \ln{\Omega}$. For hundreds of arrangements per particle one has $s=O(1) k_B$
+- Entropy counts the arrangements: $s = \dfrac{k_B}{N}\ln\Omega = k_B\ln\omega$, with $\omega=\Omega^{1/N}$ arrangements per particle. Because of the logarithm, $\omega\sim 10$–$1000$ gives $s\approx 2$–$7\,k_B$, so $Ts$ is a few $k_BT$.
 
-- **Fluctuations of the internal energy** are on the same scale as **thermal fluctuations**:
+- In soft matter the **interaction energies** per particle are also a few $k_BT$:
 $$
 \boxed{\Delta u \sim k_B T}
 $$
-where $k_B$ is the Boltzmann constant and $\Delta u$ indicates standard deviations from the average internal energy.
+so thermal fluctuations can break and rearrange the structure.
+
+- The two terms in $f$ are comparable: **entropy can decide the structure**.
 
 ## Thermal fluctuations: single particle in a double well
 

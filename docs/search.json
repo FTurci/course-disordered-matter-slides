@@ -1418,7 +1418,7 @@
     "href": "soft-matter_intro.html#thermal-fluctuations-and-entropy",
     "title": "Complex Disordered Systems",
     "section": "Thermal fluctuations and entropy",
-    "text": "Thermal fluctuations and entropy\n\nHelmholtz Free energy per particle f = u-Ts\nEntropy approximately counts the number of arrangements per particle s = \\dfrac{k_B}{N} \\ln{\\Omega}. For hundreds of arrangements per particle one has s=O(1) k_B\nFluctuations of the internal energy are on the same scale as thermal fluctuations: \n\\boxed{\\Delta u \\sim k_B T}\n where k_B is the Boltzmann constant and \\Delta u indicates standard deviations from the average internal energy."
+    "text": "Thermal fluctuations and entropy\n\nHelmholtz Free energy per particle f = u-Ts\nEntropy counts the arrangements: s = \\dfrac{k_B}{N}\\ln\\Omega = k_B\\ln\\omega, with \\omega=\\Omega^{1/N} arrangements per particle. Because of the logarithm, \\omega\\sim 10–1000 gives s\\approx 2–7\\,k_B, so Ts is a few k_BT.\nIn soft matter the interaction energies per particle are also a few k_BT: \n\\boxed{\\Delta u \\sim k_B T}\n so thermal fluctuations can break and rearrange the structure.\nThe two terms in f are comparable: entropy can decide the structure."
   },
   {
     "objectID": "soft-matter_intro.html#thermal-fluctuations-single-particle-in-a-double-well",
