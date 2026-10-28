@@ -191,7 +191,7 @@ $$
 Z_N=\frac{1}{N!\Lambda^{3 N}} \int \cdots \int \prod_{i<j}\left(1+f_{i j}\right) d \mathbf{r}_1 \ldots d \mathbf{r}_N
 $$
 
-## Cluster expansion and second virial
+## Aside (optional): cluster expansion and second virial
 
 One can expand the product 
 
@@ -288,35 +288,15 @@ The video shows a Monte Carlo simulation at packing $\phi=0.49$ for a small syst
 
 ## Dense packing: cell model
 
- - In an FCC cell, particles can move very little beyond their own diameter $\sigma$. 
- - Assume that the volume per particle is $v$ and the (geometrically constrained) close packed volume is $v_{cp}$.
-
-- The maximum displacement is $$
-\delta=\frac{\sigma}{\sqrt{2}}\left(\left(\frac{v}{v_{c p}}\right)^{1 / 3}-1\right)
-$$ 
-
-- The corresponding free volume is then $v_f=\frac{4 \pi}{3} \delta^3$ from which we can calculate the entropy $$
-S = N k_B \ln \left(v_f / \Lambda^3\right)$$
-
-- And the pressure $$P=T\left(\frac{\partial S}{\partial V}\right)_{N, T}=\frac{k_B T}{v_{c p}} \frac{\left(v / v_{c p}\right)^{-2 / 3}}{\left(v / v_{c p}\right)^{1 / 3}-1}$$ 
-
-
-## Dense packing: cell model
-
-
-
-Rearranging and expressing everything in terms of packing fraction $\phi = \dfrac{\pi\sigma^3}{6v}$ yields $$
+ - In an FCC crystal, each particle can move very little beyond its own diameter $\sigma$: it rattles in a **cage** formed by its neighbours.
+ - Its **free volume** $v_f$ vanishes at close packing $\phi_{cp}$, and the entropy is $S = N k_B \ln \left(v_f / \Lambda^3\right)$.
+ - Taking the pressure from this entropy (see the notes for the derivation) yields $$
 Z_{\rm comp}=\frac{1}{1-\left(\phi / \phi_{c p}\right)^{1 / 3}}
-$$ 
+$$
 
+- This expression is **completely different from the low density regime**  $Z_{\text {comp }}^{\mathrm{low}}=1+B_2 \rho+B_3 \rho^2+\ldots$
 
-- This expression is **completely different from the low density regime**  $$Z_{\text {comp }}^{\mathrm{low}}=1+B_2 \rho+B_3 \rho^2+\ldots$$
-
-- The incompatibility signals **non-analyticity** and hence a **discontinuous phase transition**: **first order transition**.
-
-- First order phase transitions are characterised by **interfaces** and **coexistence between phases**.
-
-- We should therefore observe **phase coexistence** in simulations and experiments of hard spheres.
+- The incompatibility signals **non-analyticity** and hence a **discontinuous phase transition**: **first order transition**, with **interfaces** and **coexistence between phases**.
 
 
 ## Colloidal hard spheres: phase behaviour
@@ -343,13 +323,9 @@ Colloids are big enough to be imaged directly: confocal microscopy shows the str
 ::: {.column}
 - A **simple liquid** is a system of particles interacting via short-range, spherically symmetric (isotropic) pair potentials.
 
-- A very common model is the **Lennard-Jones (LJ) potential** $$U_{\mathrm{LJ}}(r) = 4\epsilon \left[ \left( \frac{\sigma}{r} \right)^{12} - \left( \frac{\sigma}{r} \right)^6 \right]$$ where $\epsilon$ sets the depth of the potential well (interaction strength) and $\sigma$ is the particle diameter (distance at which $U=0$). 
+- A very common model is the **Lennard-Jones (LJ) potential** $$U_{\mathrm{LJ}}(r) = 4\epsilon \left[ \left( \frac{\sigma}{r} \right)^{12} - \left( \frac{\sigma}{r} \right)^6 \right]$$ with steep repulsion ($r^{-12}$) and an attractive tail ($r^{-6}$).
 
-- The $r^{-12}$ term models steep repulsion, while $r^{-6}$ describes the attractive tail.
-
-- The Lennard-Jones fluid exhibits rich phase behavior: gas, liquid, supercritical fluid and crystalline solid
-
-- The LJ model is widely used to study atomic and molecular liquids, and serves as a reference for understanding real fluids and their phase transitions.
+- Its phase behaviour adds a gas–liquid transition to the fluid and crystal of hard spheres.
 :::
 :::{.column}
 ![Phase diagram of the Lennard-Jones Fluid, adapted from Wikimedia.](./figs/LJPhaseDiagram.png)
@@ -357,36 +333,17 @@ Colloids are big enough to be imaged directly: confocal microscopy shows the str
 :::
 
 
-## Coexistence: Metastability and Instability
+## Coexistence: Metastability and Instability (recall)
 
-:::{.nonincremental}
-- Lennard-Jones and hard sphere fluids present **coexistence regions**.
+:::{.columns}
+::: {.column}
+You have seen this physics when discussing the **Ising model**:
 
-- The **binodal** line determines phase coexistence. It is the locus where the free energy satisfies the condition of equal chemical potential and pressure between coexisting phases. When crossing the binodal, one enters a regime of **metastability**.
+- Crossing the **binodal** (equal chemical potential and pressure between phases) the fluid becomes **metastable**: it crystallises by **nucleation**, with $\tau \propto \exp\left(\Delta G^*/k_B T\right)$.
 
+- The **spinodal** marks the limit of stability, $\partial^2 G/\partial \phi^2=0$: inside it there is no barrier and **coarsening** occurs.
+:::
+::: {.column}
 ![Schematic free energy for hard spheres compressed at high pressures: the fluid branch becomes metastable and the free energy minimum is located in the crystal phase](./figs/metastable.png){height=400}
-
 :::
-
-## Coexistence: Metastability and Instability
-:::{.nonincremental}
-
-- The **spinodal** line marks the boundary of metastability. It is the **limit of stability** $$
-\frac{\partial^2 G}{\partial \phi^2}=0
-$$
-
-- Between the binodal and spinodal lines, the system is metastable, meaning it can persist in a non-equilibrium state for a finite time.
-
-- The nucleation time $\tau$ is related to the free energy barrier $\Delta G^*$ by an activated (also called Arrhenius) law$$
-    \tau \propto \exp\left(\frac{\Delta G^*}{k_B T}\right)    $$
-
-- Inside the spinodal there is no nucleation: **coarsening** occurs.
-
-
-You have seen some of this physics when discussing the **Ising model**.
-
 :::
-
-
-
-

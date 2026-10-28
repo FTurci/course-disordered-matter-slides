@@ -60,88 +60,22 @@ IUPAC definition:
 >    The term is sometimes used loosely for the totality of nonspecific attractive or repulsive intermolecular forces. 
 :::
 
-## Reminder: Multipole expansion
+## van der Waals interactions: from dipoles to dispersion
 
 :::{.nonincremental}
+We are focusing on atoms that are globally neutral. The first non-trivial term of the multipole expansion is the **dipole**.
 
-The electrostatic potential of a charge distribution can be expanded as:
-
-$$ V(\mathbf{r})=\frac{1}{4 \pi \epsilon_0} \sum_{l=0}^{\infty} \sum_{m=-l}^l \frac{4 \pi}{2 l+1} \frac{Q_{l m}}{r^{l+1}} Y_l^m(\theta, \phi)$$
-
-
-where $Y_l^m(\theta, \phi)$ are spherical harmonics and $Q_{l m}=\int r^{\prime l} Y_l^{m *}\left(\theta^{\prime}, \phi^{\prime}\right) \rho\left(\mathbf{r}^{\prime}\right) d^3 r^{\prime}$:
-
-- $Q_{00} = Q$ (monopole - total charge)
-- $Q_{1m}$ terms give the **dipole moment** $\mathbf{p}$
-- $Q_{2m}$ terms give the **quadrupole moment**
-- Higher terms: octupole, hexadecapole, etc.
-
-For large distances ($r \gg$ molecular size), the potential is dominated by the lowest **non-zero multipole** moment.
-
-:::{.callout-note appearance="minimal"}
-No need to memorise this.
-
-:::
-
-:::
-
-
-## van der Waals interactions: dipole-dipole
-
-We are focusing on atoms that are globally neutral. The first non-trivial term is the dipole.
-
-Static dipoles are asymmetric distributions of charge stationary in time
-
-![Dipole-dipole interaction](./figs/dipole-dipole.png){height=200}
-
-The interaction energy between two dipoles $\mu_1$ and $\mu_2$ separated by a distance $r$ is proportional to:
-
-$$U(r) \propto-\frac{\mu_1 \mu_2}{r^3}$$
-
-
-## van der Waals interactions: dipole-induced dipole
-
-A permanent dipole can induce a temporary dipole in a nearby neutral atom. The induced dipole then interacts with the permanent dipole.
-
-![Atom A with permanent dipole approaches neutral atom B.](./figs/dipole-induceddipole1.png){height=100}
-
-
-:::{.fragment}
-![B's charge density changes and B takes an **induced** dipole](./figs/dipole-induceddipole2.png){height=100}
-:::
-
-The induced dipole itself is proportional to the electric field of the incoming dipole, and it is $\mu_B \propto \mu_A E_A \propto \dfrac{\mu}{r^3}$. 
-
-Then the interaction energy is just
-
-$$U(r) \propto -\frac{\mu^2 \alpha}{r^6}$$
-
-where $\alpha$ is the polarizability of the neutral atom. 
-
-
-
-
-## Induced dipole-induced dipole interactions
-
-:::{.nonincremental}
-
-- Orbitals provide the **average expected electron density** at every point in space, $\langle\rho(\mathbf{r})\rangle=|\psi(\mathbf{r})|^2$
-- Instantaneous fluctuations from the mean occur in time and depend on density-density **correlations**. **The variance is non-uniform** .
-
-- This means that even when the density is neutral, on short timescales (femtoseconds, electronic transition times) the density distributions can be thought of as **asymmetric**.
-
-These quantum-mechanical fluctuations again produce interactions known as **London dispersion forces**
+- **dipole–dipole**: $U(r) \propto-\dfrac{\mu_1 \mu_2}{r^3}$
+- **dipole–induced dipole**: a permanent dipole induces $\mu_B \propto \alpha\mu/r^3$ in a neutral atom, so $U(r) \propto -\dfrac{\mu^2 \alpha}{r^6}$
+- **induced dipole–induced dipole**: even when the average density is neutral, quantum fluctuations of the electron density make it instantaneously **asymmetric**. These fluctuations produce the **London dispersion forces**
 
 :::{.callout-important}
 ## London dispersion interaction
-
 $$\Large U(r)=-\frac{C}{r^6} $$
 :::
 
 The key insight is the $1/r^{6}$ decay of the interaction which decays much more rapidly than Coulomb's $1/r$.
-
 They are **short-range** in 3D, since the total energy scales like $\sim \int V(r) r^{d-1} d r$ and $6>3$
-
 :::
 
 ## van der Waals attractive interaction between spheres 
@@ -231,27 +165,14 @@ Colloids are often charged. In the solution there will be
 ## Double-layer interaction: nonlinear Poisson-Bolztmann equation
 
 When two colloids come close, the charges in their double layers will interact, giving rise to a **repulsive interaction**.
-This is not simply a Coulombic interaction, as it is mediated by the other (opposite) charges in the medium. 
 
-This means in practice taking Poisson's equation 
-
-$$
-\nabla^2 \psi(\mathbf{r})=-\frac{\rho_{\mathrm{tot}}(\mathbf{r})}{\varepsilon}= -\frac{\rho_{\mathrm{fixed}}(\mathbf{r})+\sum_i \rho_{\mathrm{ions},i}(\mathbf{r})}{\varepsilon}
-$$
-
-and making the ion concentration depend on the electrostatic potential $\psi(\mathbf{r})$ itself via a Boltzmann weight
+This is not simply a Coulombic interaction, as it is mediated by the other (opposite) charges in the medium. Combining Poisson's equation with ion concentrations given by a Boltzmann weight of the electrostatic potential $\psi(\mathbf{r})$ yields the **nonlinear Poisson-Bolztmann equation**
 
 $$
-\rho_{\mathrm{ions},i}(\mathbf{r})= z_i e n_{s,i} \exp \left(-\frac{z_i e \psi}{k_B T}\right)
+\nabla^2 \psi(\mathbf{r})=-\frac{1}{\varepsilon}\left[\rho_{\text {fixed }}+ \sum_i z_i e  n_{s,i} \exp \left(-\frac{z_i e \psi}{k_B T}\right)\right]
 $$
 
-with $n_{s,i}$ the far-away (bulk) concentration of ions of species $i$ and $z_i e$ the ion charge. 
-
-This yields the **nonlinear Poisson-Bolztmann equation**
-
-$$
-\nabla^2 \psi(\mathbf{r})=-\frac{1}{\varepsilon}\left[\rho_{\text {fixed }}+ \sum_i z_i e  n_{s,i} \exp \left(-\frac{z_i e \psi}{k_B T}\right)\right] .
-$$
+with $n_{s,i}$ the far-away (bulk) concentration of ions of species $i$ and $z_i e$ the ion charge (see the problem *Interaction of two charged colloidal spheres*).
 
 ::: {.callout-note appearance="minimal"}
 No need to memorise this.

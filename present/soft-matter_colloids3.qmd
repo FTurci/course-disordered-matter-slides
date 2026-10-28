@@ -36,7 +36,7 @@ $$
 where $V(r_{ij})$ is the pairwise, radial interaction potential that only depends on the distance between particle centres $r_{ij} = |\mathbf{r}_i-\mathbf{r}_j|$.
 
 
-## Aside: Not pairwise?
+## Aside (optional): Not pairwise?
 
 Some examples of non-pairwise situations:
 
@@ -99,7 +99,7 @@ Hard spheres in 3D are not exactly solvable! We only have perturbative solutions
 
 
 
-## Direct and indirect correlations
+## Aside (optional): direct and indirect correlations
 
 
 - The $g(r)$ contains **both**.
@@ -116,7 +116,7 @@ Both $h(r)$ and $c(r)$ are unknown in principle. One needs an additional conditi
 ![Meaning of the Ornstein-Zernike relation, adapted from Santos, Springer(2016)](./figs/ornstein-zernicke.png)
 
 
-## Percus-Yevick approximation
+## Aside (optional): Percus-Yevick approximation
 
 A common closure is the **Percus-Yevick approximation**.
 
@@ -191,7 +191,7 @@ allowing one to read the direct correlation function directly from scattering da
 
 ![Structure factors (left) and radial distribution functions (right) for Gallium at extreme conditions, Drewitt et al PRL (2020)](./figs/gallium.png){height=450}
 
-## Aside: higher order correlations
+## Aside (optional): higher order correlations
 
 Nothing prevents us to quantify higher order correlations. In general these are non-trivial are controlled by the indirect part of the correlations.
 
@@ -260,54 +260,25 @@ Hence $D$ can be extracted from linear fits to the MSD.
 
 ## Stokes-Einstein relation: fluctuation dissipation for colloids
 
-In dilute conditions, let's think of a particle slowly sedimenting in a viscous fluid.
+You have seen the **Einstein relation** for a Brownian particle with friction coefficient $\xi$ (Langevin dynamics):
+$$
+D=\frac{k_B T}{\xi}
+$$
+(equivalently, in sedimentation equilibrium the drift flux $n F/\xi$ balances the Fickian flux $-D\,\partial n/\partial x$ of the Boltzmann profile).
 
-The density distribution is Boltzmann
+For a sphere, **Stoke's law** $\xi=6 \pi \eta R$ yields simply
 
 $$
-n(x)=n_0 \exp \left(-U(x) / k_B T\right)=n_0 \exp \left(-F x / k_B T\right)
+D=\frac{k_B T}{6 \pi \eta R}
 $$
 
-where $F= m_B g$ is the force from the buoyant mass.
-
-A flux is produced $J_F = n(x) v=\frac{n(x) F}{\xi}$
-
-where we used the fact that the velocity is set by the friction coefficient $\xi$ as $v=F/\xi$. 
-
-Diffusion occurs at the same time, driven by the gradient (Fick's law)
-$$
-J_D(x)=-D \frac{\partial n(x)}{\partial x}
-$$
-
-## Stokes-Einstein relation: fluctuation dissipation for colloids
-
-In equilibrium the two fluxes cancel, $J_F+J_D=0$ (the force pushes the particles towards negative $x$, so the drift flux is $-n(x)F/\xi$), and we have
-
-$$
-\frac{n(x) F}{\xi}=-D \frac{\partial n(x)}{d x}=D \frac{F}{k_B T} n(x)
-$$
-
-and differentiating the Boltzmann distribution gives
-$$
-\frac{n(x) F}{\xi}= D \frac{F}{k_B T} n(x)
-$$
-
-Hence a balance exists between thermal fluctuations and viscosities. For a sphere, **Stoke's law** $\xi=6 \pi \eta R$ yielding simply
-
-$$
-D=\frac{k_B T}{\xi}=\frac{k_B T}{6 \pi \eta R}
-$$
-
-This is a re-statement of the Einstein relation, called the **Stokes-Einstein** relation.
+This is the **Stokes-Einstein** relation, a balance between thermal fluctuations and viscous dissipation:
 
 $$
 \text { Fluctuations: } k_B T \quad \longrightarrow \quad \text { Observed motion: } D \quad \longrightarrow \quad \text { Dissipation: } 6 \pi \eta R .
 $$
 
-Which is generic under (moderate) driving.
-
-
-## Random walkers in 2d, example
+## Aside (optional): random walkers in 2d, example
 
 ```{pyodide}
 #| echo: false

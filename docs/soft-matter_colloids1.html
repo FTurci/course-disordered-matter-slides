@@ -217,69 +217,14 @@ Francesco Turci
 <p>The term is sometimes used loosely for the totality of nonspecific attractive or repulsive intermolecular forces.</p>
 </blockquote>
 </section>
-<section id="reminder-multipole-expansion" class="slide level2">
-<h2>Reminder: Multipole expansion</h2>
-<p>The electrostatic potential of a charge distribution can be expanded as:</p>
-<p><span class="math display"> V(\mathbf{r})=\frac{1}{4 \pi \epsilon_0} \sum_{l=0}^{\infty} \sum_{m=-l}^l \frac{4 \pi}{2 l+1} \frac{Q_{l m}}{r^{l+1}} Y_l^m(\theta, \phi)</span></p>
-<p>where <span class="math inline">Y_l^m(\theta, \phi)</span> are spherical harmonics and <span class="math inline">Q_{l m}=\int r^{\prime l} Y_l^{m *}\left(\theta^{\prime}, \phi^{\prime}\right) \rho\left(\mathbf{r}^{\prime}\right) d^3 r^{\prime}</span>:</p>
+<section id="van-der-waals-interactions-from-dipoles-to-dispersion" class="slide level2">
+<h2>van der Waals interactions: from dipoles to dispersion</h2>
+<p>We are focusing on atoms that are globally neutral. The first non-trivial term of the multipole expansion is the <strong>dipole</strong>.</p>
 <ul>
-<li><span class="math inline">Q_{00} = Q</span> (monopole - total charge)</li>
-<li><span class="math inline">Q_{1m}</span> terms give the <strong>dipole moment</strong> <span class="math inline">\mathbf{p}</span></li>
-<li><span class="math inline">Q_{2m}</span> terms give the <strong>quadrupole moment</strong></li>
-<li>Higher terms: octupole, hexadecapole, etc.</li>
+<li><strong>dipole–dipole</strong>: <span class="math inline">U(r) \propto-\dfrac{\mu_1 \mu_2}{r^3}</span></li>
+<li><strong>dipole–induced dipole</strong>: a permanent dipole induces <span class="math inline">\mu_B \propto \alpha\mu/r^3</span> in a neutral atom, so <span class="math inline">U(r) \propto -\dfrac{\mu^2 \alpha}{r^6}</span></li>
+<li><strong>induced dipole–induced dipole</strong>: even when the average density is neutral, quantum fluctuations of the electron density make it instantaneously <strong>asymmetric</strong>. These fluctuations produce the <strong>London dispersion forces</strong></li>
 </ul>
-<p>For large distances (<span class="math inline">r \gg</span> molecular size), the potential is dominated by the lowest <strong>non-zero multipole</strong> moment.</p>
-<div class="callout callout-note no-icon callout-style-simple">
-<div class="callout-body">
-<div class="callout-content">
-<p>No need to memorise this.</p>
-</div>
-</div>
-</div>
-</section>
-<section id="van-der-waals-interactions-dipole-dipole" class="slide level2">
-<h2>van der Waals interactions: dipole-dipole</h2>
-<p>We are focusing on atoms that are globally neutral. The first non-trivial term is the dipole.</p>
-<p>Static dipoles are asymmetric distributions of charge stationary in time</p>
-<div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="./figs/dipole-dipole.png" height="200"></p>
-<figcaption>Dipole-dipole interaction</figcaption>
-</figure>
-</div>
-<p>The interaction energy between two dipoles <span class="math inline">\mu_1</span> and <span class="math inline">\mu_2</span> separated by a distance <span class="math inline">r</span> is proportional to:</p>
-<p><span class="math display">U(r) \propto-\frac{\mu_1 \mu_2}{r^3}</span></p>
-</section>
-<section id="van-der-waals-interactions-dipole-induced-dipole" class="slide level2">
-<h2>van der Waals interactions: dipole-induced dipole</h2>
-<p>A permanent dipole can induce a temporary dipole in a nearby neutral atom. The induced dipole then interacts with the permanent dipole.</p>
-<div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="./figs/dipole-induceddipole1.png" height="100"></p>
-<figcaption>Atom A with permanent dipole approaches neutral atom B.</figcaption>
-</figure>
-</div>
-<div class="fragment">
-<div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="./figs/dipole-induceddipole2.png" height="100"></p>
-<figcaption>B’s charge density changes and B takes an <strong>induced</strong> dipole</figcaption>
-</figure>
-</div>
-</div>
-<p>The induced dipole itself is proportional to the electric field of the incoming dipole, and it is <span class="math inline">\mu_B \propto \mu_A E_A \propto \dfrac{\mu}{r^3}</span>.</p>
-<p>Then the interaction energy is just</p>
-<p><span class="math display">U(r) \propto -\frac{\mu^2 \alpha}{r^6}</span></p>
-<p>where <span class="math inline">\alpha</span> is the polarizability of the neutral atom.</p>
-</section>
-<section id="induced-dipole-induced-dipole-interactions" class="slide level2">
-<h2>Induced dipole-induced dipole interactions</h2>
-<ul>
-<li><p>Orbitals provide the <strong>average expected electron density</strong> at every point in space, <span class="math inline">\langle\rho(\mathbf{r})\rangle=|\psi(\mathbf{r})|^2</span></p></li>
-<li><p>Instantaneous fluctuations from the mean occur in time and depend on density-density <strong>correlations</strong>. <strong>The variance is non-uniform</strong> .</p></li>
-<li><p>This means that even when the density is neutral, on short timescales (femtoseconds, electronic transition times) the density distributions can be thought of as <strong>asymmetric</strong>.</p></li>
-</ul>
-<p>These quantum-mechanical fluctuations again produce interactions known as <strong>London dispersion forces</strong></p>
 <div class="callout callout-important callout-titled callout-style-default">
 <div class="callout-body">
 <div class="callout-title">
@@ -293,8 +238,7 @@ Francesco Turci
 </div>
 </div>
 </div>
-<p>The key insight is the <span class="math inline">1/r^{6}</span> decay of the interaction which decays much more rapidly than Coulomb’s <span class="math inline">1/r</span>.</p>
-<p>They are <strong>short-range</strong> in 3D, since the total energy scales like <span class="math inline">\sim \int V(r) r^{d-1} d r</span> and <span class="math inline">6&gt;3</span></p>
+<p>The key insight is the <span class="math inline">1/r^{6}</span> decay of the interaction which decays much more rapidly than Coulomb’s <span class="math inline">1/r</span>. They are <strong>short-range</strong> in 3D, since the total energy scales like <span class="math inline">\sim \int V(r) r^{d-1} d r</span> and <span class="math inline">6&gt;3</span></p>
 </section>
 <section id="van-der-waals-attractive-interaction-between-spheres" class="slide level2">
 <h2>van der Waals attractive interaction between spheres</h2>
@@ -364,20 +308,12 @@ eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoiIyBwYXJhbWV0ZXJzOiBjaGFu
 </section>
 <section id="double-layer-interaction-nonlinear-poisson-bolztmann-equation" class="slide level2">
 <h2>Double-layer interaction: nonlinear Poisson-Bolztmann equation</h2>
-<p>When two colloids come close, the charges in their double layers will interact, giving rise to a <strong>repulsive interaction</strong>. This is not simply a Coulombic interaction, as it is mediated by the other (opposite) charges in the medium.</p>
-<p>This means in practice taking Poisson’s equation</p>
+<p>When two colloids come close, the charges in their double layers will interact, giving rise to a <strong>repulsive interaction</strong>.</p>
+<p>This is not simply a Coulombic interaction, as it is mediated by the other (opposite) charges in the medium. Combining Poisson’s equation with ion concentrations given by a Boltzmann weight of the electrostatic potential <span class="math inline">\psi(\mathbf{r})</span> yields the <strong>nonlinear Poisson-Bolztmann equation</strong></p>
 <p><span class="math display">
-\nabla^2 \psi(\mathbf{r})=-\frac{\rho_{\mathrm{tot}}(\mathbf{r})}{\varepsilon}= -\frac{\rho_{\mathrm{fixed}}(\mathbf{r})+\sum_i \rho_{\mathrm{ions},i}(\mathbf{r})}{\varepsilon}
+\nabla^2 \psi(\mathbf{r})=-\frac{1}{\varepsilon}\left[\rho_{\text {fixed }}+ \sum_i z_i e  n_{s,i} \exp \left(-\frac{z_i e \psi}{k_B T}\right)\right]
 </span></p>
-<p>and making the ion concentration depend on the electrostatic potential <span class="math inline">\psi(\mathbf{r})</span> itself via a Boltzmann weight</p>
-<p><span class="math display">
-\rho_{\mathrm{ions},i}(\mathbf{r})= z_i e n_{s,i} \exp \left(-\frac{z_i e \psi}{k_B T}\right)
-</span></p>
-<p>with <span class="math inline">n_{s,i}</span> the far-away (bulk) concentration of ions of species <span class="math inline">i</span> and <span class="math inline">z_i e</span> the ion charge.</p>
-<p>This yields the <strong>nonlinear Poisson-Bolztmann equation</strong></p>
-<p><span class="math display">
-\nabla^2 \psi(\mathbf{r})=-\frac{1}{\varepsilon}\left[\rho_{\text {fixed }}+ \sum_i z_i e  n_{s,i} \exp \left(-\frac{z_i e \psi}{k_B T}\right)\right] .
-</span></p>
+<p>with <span class="math inline">n_{s,i}</span> the far-away (bulk) concentration of ions of species <span class="math inline">i</span> and <span class="math inline">z_i e</span> the ion charge (see the problem <em>Interaction of two charged colloidal spheres</em>).</p>
 <div class="callout callout-note no-icon callout-style-simple">
 <div class="callout-body">
 <div class="callout-content">
@@ -422,7 +358,7 @@ W_{D R}(h)=B \frac{R}{\lambda_B} \exp \left(-h / \lambda_D\right)
 <li><p>a double layer component <strong>repulsive in nature</strong></p></li>
 </ul>
 <p>The sum of the two gives rise to the DLVO (Derjaguin–Landau–Verwey–Overbeek) interaction which is an elementary model for colloid stability and aggregation.</p>
-<div id="39e6472f" class="cell" data-execution_count="1">
+<div id="a525a01d" class="cell" data-execution_count="1">
 <div class="cell-output cell-output-display">
 <div>
 <figure>

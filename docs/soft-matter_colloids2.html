@@ -320,8 +320,8 @@ Z_N=\frac{1}{N!\Lambda^{3 N}} \int \cdots \int \exp \left[-\beta \sum_{i&lt;j} U
 Z_N=\frac{1}{N!\Lambda^{3 N}} \int \cdots \int \prod_{i&lt;j}\left(1+f_{i j}\right) d \mathbf{r}_1 \ldots d \mathbf{r}_N
 </span></p>
 </section>
-<section id="cluster-expansion-and-second-virial" class="slide level2">
-<h2>Cluster expansion and second virial</h2>
+<section id="aside-optional-cluster-expansion-and-second-virial" class="slide level2">
+<h2>Aside (optional): cluster expansion and second virial</h2>
 <p>One can expand the product</p>
 <p><span class="math display">
 \prod_{i&lt;j}\left(1+f_{i j}\right)=1+\sum_{i&lt;j} f_{i j}+\sum_{i&lt;j, k&lt;l}^{\text {distinct }} f_{i j} f_{k l}+\ldots
@@ -415,26 +415,13 @@ B_2(T)=-2 \pi \int_0^{\infty}\left[e^{-\beta U(r)}-1\right] r^2 d r
 <section id="dense-packing-cell-model" class="slide level2">
 <h2>Dense packing: cell model</h2>
 <ul>
-<li><p>In an FCC cell, particles can move very little beyond their own diameter <span class="math inline">\sigma</span>.</p></li>
-<li><p>Assume that the volume per particle is <span class="math inline">v</span> and the (geometrically constrained) close packed volume is <span class="math inline">v_{cp}</span>.</p></li>
-<li><p>The maximum displacement is <span class="math display">
-\delta=\frac{\sigma}{\sqrt{2}}\left(\left(\frac{v}{v_{c p}}\right)^{1 / 3}-1\right)
-</span></p></li>
-<li><p>The corresponding free volume is then <span class="math inline">v_f=\frac{4 \pi}{3} \delta^3</span> from which we can calculate the entropy <span class="math display">
-S = N k_B \ln \left(v_f / \Lambda^3\right)</span></p></li>
-<li><p>And the pressure <span class="math display">P=T\left(\frac{\partial S}{\partial V}\right)_{N, T}=\frac{k_B T}{v_{c p}} \frac{\left(v / v_{c p}\right)^{-2 / 3}}{\left(v / v_{c p}\right)^{1 / 3}-1}</span></p></li>
-</ul>
-</section>
-<section id="dense-packing-cell-model-1" class="slide level2">
-<h2>Dense packing: cell model</h2>
-<p>Rearranging and expressing everything in terms of packing fraction <span class="math inline">\phi = \dfrac{\pi\sigma^3}{6v}</span> yields <span class="math display">
+<li><p>In an FCC crystal, each particle can move very little beyond its own diameter <span class="math inline">\sigma</span>: it rattles in a <strong>cage</strong> formed by its neighbours.</p></li>
+<li><p>Its <strong>free volume</strong> <span class="math inline">v_f</span> vanishes at close packing <span class="math inline">\phi_{cp}</span>, and the entropy is <span class="math inline">S = N k_B \ln \left(v_f / \Lambda^3\right)</span>.</p></li>
+<li><p>Taking the pressure from this entropy (see the notes for the derivation) yields <span class="math display">
 Z_{\rm comp}=\frac{1}{1-\left(\phi / \phi_{c p}\right)^{1 / 3}}
-</span></p>
-<ul>
-<li><p>This expression is <strong>completely different from the low density regime</strong> <span class="math display">Z_{\text {comp }}^{\mathrm{low}}=1+B_2 \rho+B_3 \rho^2+\ldots</span></p></li>
-<li><p>The incompatibility signals <strong>non-analyticity</strong> and hence a <strong>discontinuous phase transition</strong>: <strong>first order transition</strong>.</p></li>
-<li><p>First order phase transitions are characterised by <strong>interfaces</strong> and <strong>coexistence between phases</strong>.</p></li>
-<li><p>We should therefore observe <strong>phase coexistence</strong> in simulations and experiments of hard spheres.</p></li>
+</span></p></li>
+<li><p>This expression is <strong>completely different from the low density regime</strong> <span class="math inline">Z_{\text {comp }}^{\mathrm{low}}=1+B_2 \rho+B_3 \rho^2+\ldots</span></p></li>
+<li><p>The incompatibility signals <strong>non-analyticity</strong> and hence a <strong>discontinuous phase transition</strong>: <strong>first order transition</strong>, with <strong>interfaces</strong> and <strong>coexistence between phases</strong>.</p></li>
 </ul>
 </section>
 <section id="colloidal-hard-spheres-phase-behaviour" class="slide level2">
@@ -468,10 +455,8 @@ Z_{\rm comp}=\frac{1}{1-\left(\phi / \phi_{c p}\right)^{1 / 3}}
 <div class="column">
 <ul>
 <li><p>A <strong>simple liquid</strong> is a system of particles interacting via short-range, spherically symmetric (isotropic) pair potentials.</p></li>
-<li><p>A very common model is the <strong>Lennard-Jones (LJ) potential</strong> <span class="math display">U_{\mathrm{LJ}}(r) = 4\epsilon \left[ \left( \frac{\sigma}{r} \right)^{12} - \left( \frac{\sigma}{r} \right)^6 \right]</span> where <span class="math inline">\epsilon</span> sets the depth of the potential well (interaction strength) and <span class="math inline">\sigma</span> is the particle diameter (distance at which <span class="math inline">U=0</span>).</p></li>
-<li><p>The <span class="math inline">r^{-12}</span> term models steep repulsion, while <span class="math inline">r^{-6}</span> describes the attractive tail.</p></li>
-<li><p>The Lennard-Jones fluid exhibits rich phase behavior: gas, liquid, supercritical fluid and crystalline solid</p></li>
-<li><p>The LJ model is widely used to study atomic and molecular liquids, and serves as a reference for understanding real fluids and their phase transitions.</p></li>
+<li><p>A very common model is the <strong>Lennard-Jones (LJ) potential</strong> <span class="math display">U_{\mathrm{LJ}}(r) = 4\epsilon \left[ \left( \frac{\sigma}{r} \right)^{12} - \left( \frac{\sigma}{r} \right)^6 \right]</span> with steep repulsion (<span class="math inline">r^{-12}</span>) and an attractive tail (<span class="math inline">r^{-6}</span>).</p></li>
+<li><p>Its phase behaviour adds a gas–liquid transition to the fluid and crystal of hard spheres.</p></li>
 </ul>
 </div><div class="column">
 <div class="quarto-figure quarto-figure-center">
@@ -482,31 +467,23 @@ Z_{\rm comp}=\frac{1}{1-\left(\phi / \phi_{c p}\right)^{1 / 3}}
 </div>
 </div></div>
 </section>
-<section id="coexistence-metastability-and-instability" class="slide level2">
-<h2>Coexistence: Metastability and Instability</h2>
+<section id="coexistence-metastability-and-instability-recall" class="slide level2">
+<h2>Coexistence: Metastability and Instability (recall)</h2>
+<div class="columns">
+<div class="column">
+<p>You have seen this physics when discussing the <strong>Ising model</strong>:</p>
 <ul>
-<li><p>Lennard-Jones and hard sphere fluids present <strong>coexistence regions</strong>.</p></li>
-<li><p>The <strong>binodal</strong> line determines phase coexistence. It is the locus where the free energy satisfies the condition of equal chemical potential and pressure between coexisting phases. When crossing the binodal, one enters a regime of <strong>metastability</strong>.</p></li>
+<li><p>Crossing the <strong>binodal</strong> (equal chemical potential and pressure between phases) the fluid becomes <strong>metastable</strong>: it crystallises by <strong>nucleation</strong>, with <span class="math inline">\tau \propto \exp\left(\Delta G^*/k_B T\right)</span>.</p></li>
+<li><p>The <strong>spinodal</strong> marks the limit of stability, <span class="math inline">\partial^2 G/\partial \phi^2=0</span>: inside it there is no barrier and <strong>coarsening</strong> occurs.</p></li>
 </ul>
+</div><div class="column">
 <div class="quarto-figure quarto-figure-center">
 <figure>
 <p><img data-src="./figs/metastable.png" height="400"></p>
 <figcaption>Schematic free energy for hard spheres compressed at high pressures: the fluid branch becomes metastable and the free energy minimum is located in the crystal phase</figcaption>
 </figure>
 </div>
-</section>
-<section id="coexistence-metastability-and-instability-1" class="slide level2">
-<h2>Coexistence: Metastability and Instability</h2>
-<ul>
-<li><p>The <strong>spinodal</strong> line marks the boundary of metastability. It is the <strong>limit of stability</strong> <span class="math display">
-\frac{\partial^2 G}{\partial \phi^2}=0
-</span></p></li>
-<li><p>Between the binodal and spinodal lines, the system is metastable, meaning it can persist in a non-equilibrium state for a finite time.</p></li>
-<li><p>The nucleation time <span class="math inline">\tau</span> is related to the free energy barrier <span class="math inline">\Delta G^*</span> by an activated (also called Arrhenius) law<span class="math display">
-  \tau \propto \exp\left(\frac{\Delta G^*}{k_B T}\right)    </span></p></li>
-<li><p>Inside the spinodal there is no nucleation: <strong>coarsening</strong> occurs.</p></li>
-</ul>
-<p>You have seen some of this physics when discussing the <strong>Ising model</strong>.</p>
+</div></div>
 
 
 <script type="ojs-module-contents">
