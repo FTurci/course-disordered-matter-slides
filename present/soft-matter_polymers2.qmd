@@ -268,56 +268,18 @@ Start of the formation of a **polymer network** with transient **crowded regions
 
 :::{.columns}
 :::{.column}
-- Polymer concentration approaches **bulk density**
-- Monomers occupy significant fraction of total volume
-- **Highly interpenetrated coils** form **continuous network**
-- **Polymer-polymer** interactions dominate over polymer-solvent interactions
-- Chain entanglements restrict segment motion
-- Transition from solution-like to **solid-like** behavior
-- Increased mechanical strength and viscosity
-- Complex dynamics due to crowding effects
+- Polymer concentration approaches **bulk density**: **highly interpenetrated coils**, entanglements restrict segment motion, **solid-like** behaviour.
 
-These are the feature of density-driven glassy behaviour.
+- **Cross-linking** forms **covalent bonds between separate polymer chains**, creating a **three-dimensional network**. Three main classes of bulk polymers, characterised by their degree of cross-linking:
 
+    - **Elastomers** (rubbers): **low cross-linking** → flexible and elastic (natural rubber, silicone)
+    - **Thermosets**: **high cross-linking** → rigid, hard, brittle network (epoxy resins)
+    - **Thermoplastics**: **no cross-linking** → most everyday plastics (PE, PET, PS); behaviour upon cooling shows similarities to colloids
 :::
 :::{.column}
-
-![Polyethylene Glycol polymer melt (from Martini project)](./figs/PEG9-Melt.png){height=500}
-:::
-:::
-
-## Cross-linking
-
-Cross-linking is the process of forming **covalent bonds between separate polymer chains**, creating a **three-dimensional network structure**. These bonds:
-
-- **Connect different chains** at specific points
-- **Restrict chain movement** and deformation
-- **Increase mechanical strength and rigidity**
-- Can be **temporary (reversible) or permanent (irreversible)**
-- **Determine material properties**: low cross-linking allows flexibility, high cross-linking creates brittleness
-
-![Cross linking bonds (reversibly or irreversibly) different chains.](./figs/polymer-structure.png){height=300}
-
-## Bulk polymer classes 
-
-Two main classes of bulk polymers, characterised by whether they are cross-linked or not. 
-
-- **Elastomers** (rubbers): **low cross-linking** → flexible and elastic (stretch and return to original shape)
-- **Thermosets**: **high cross-linking** → rigid, hard, brittle network
-- **Thermoplastics**: **no cross-linking** → most everyday plastics; behavior upon cooling shows similarities to colloids
-
-Polymer bulks are often referred to as **resins**.
-
-
-## Examples of bulk polymer classes
-
-| Class | Examples | Properties | Applications |
-|-------|----------|-----------|--------------|
-| **Elastomers** | Natural rubber, silicone rubber, neoprene | Flexible, elastic, low cross-linking | Tires, seals, gaskets, flexible tubing |
-| **Thermosets** | Epoxy resins, phenolic resins, polyurethane foam | Rigid, hard, high cross-linking, irreversible | Circuit boards, adhesives, insulation, structural composites |
-| **Thermoplastics** | Polyethylene (PE), polypropylene (PP), PET, polystyrene (PS), PVC | Recyclable, moldable upon heating, no cross-linking | Packaging, bottles, pipes, automotive parts, consumer products |
-
 ![Natural rubber, epoxy substrate for circuits, PET used in plastic bottles](./figs/typesofbulks.png)
+:::
+:::
 
 ## Thermoplastics behaviour upon cooling
 

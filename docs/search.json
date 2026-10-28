@@ -459,7 +459,7 @@
     "href": "soft-matter_polymers2.html#concentrated-bulk-polymers",
     "title": "Complex Disordered Systems",
     "section": "Concentrated: bulk polymers",
-    "text": "Concentrated: bulk polymers\n\n\n\nPolymer concentration approaches bulk density\nMonomers occupy significant fraction of total volume\nHighly interpenetrated coils form continuous network\nPolymer-polymer interactions dominate over polymer-solvent interactions\nChain entanglements restrict segment motion\nTransition from solution-like to solid-like behavior\nIncreased mechanical strength and viscosity\nComplex dynamics due to crowding effects\n\nThese are the feature of density-driven glassy behaviour.\n\n\n\n\nPolyethylene Glycol polymer melt (from Martini project)"
+    "text": "Concentrated: bulk polymers\n\n\n\nPolymer concentration approaches bulk density: highly interpenetrated coils, entanglements restrict segment motion, solid-like behaviour.\nCross-linking forms covalent bonds between separate polymer chains, creating a three-dimensional network. Three main classes of bulk polymers, characterised by their degree of cross-linking:\n\nElastomers (rubbers): low cross-linking → flexible and elastic (natural rubber, silicone)\nThermosets: high cross-linking → rigid, hard, brittle network (epoxy resins)\nThermoplastics: no cross-linking → most everyday plastics (PE, PET, PS); behaviour upon cooling shows similarities to colloids\n\n\n\n\n\n\nNatural rubber, epoxy substrate for circuits, PET used in plastic bottles"
   },
   {
     "objectID": "soft-matter_polymers2.html#cross-linking",
@@ -1895,5 +1895,166 @@
     "title": "Complex Disordered Systems",
     "section": "Aside (optional): random walkers in 2d, example",
     "text": "Aside (optional): random walkers in 2d, example"
+  },
+  {
+    "objectID": "soft-matter_liquidx2.html#aside-constrained-optimisation-with-lagrange-multipliers",
+    "href": "soft-matter_liquidx2.html#aside-constrained-optimisation-with-lagrange-multipliers",
+    "title": "Complex Disordered Systems",
+    "section": "Aside : constrained optimisation with Lagrange multipliers",
+    "text": "Aside : constrained optimisation with Lagrange multipliers\nMany physics problems can be cast in terms of constrained optimisation\n\n\n\n\n\n\n\n\nArea\nProblem\nConstraint\n\n\n\n\nMechanics\nMinimize potential energy of a pendulum\nFixed length of the string\n\n\nThermodynamics\nMaximize entropy S\nFixed total energy E\n\n\nStatistical Mechanics\nMaximize Gibbs entropy -\\sum_i p_i\\ln p_i\nNormalisation \\sum_i p_i=1, fixed \\langle E\\rangle\n\n\nLiquid Crystals\nMinimize Frank energy\nDirector normalization \\|\\mathbf{n}\\|=1\n\n\nLiquid Crystals\nMinimize Maier-Saupe free energy f[p]\nNormalisation of p(\\theta)\n\n\n\nMethod: Use Lagrange multipliers \\lambda to convert constrained into unconstrained problem: \\mathcal{L}=f(\\mathbf{x})-\\lambda g(\\mathbf{x}) then solve \\nabla\\mathcal{L}=0."
+  },
+  {
+    "objectID": "soft-matter_liquidx2.html#geometrical-understanding-of-lagrange-multipliers",
+    "href": "soft-matter_liquidx2.html#geometrical-understanding-of-lagrange-multipliers",
+    "title": "Complex Disordered Systems",
+    "section": "Geometrical understanding of Lagrange multipliers",
+    "text": "Geometrical understanding of Lagrange multipliers\n\nTake a function f(x,y).\nA constraint is expressed by fixing the value of a second function g(x,y)=c\nWe want to find the extrema of f(x,y) subject to the constraint g(x,y)=c: It has to be a curve\nThis means find the extremal values of f on the curve \\mathcal{C}: g(x,y)=c\nWe could parametrise \\mathcal{C} but we can also simply think in terms of its geometrical features."
+  },
+  {
+    "objectID": "soft-matter_liquidx2.html#geometrical-understanding-of-lagrange-multipliers-1",
+    "href": "soft-matter_liquidx2.html#geometrical-understanding-of-lagrange-multipliers-1",
+    "title": "Complex Disordered Systems",
+    "section": "Geometrical understanding of Lagrange multipliers",
+    "text": "Geometrical understanding of Lagrange multipliers\nTake the example of a minimum:\n\nat every point of \\mathcal{C} there is a tangent vector \\vec{t}\nwe want to find the points on \\mathcal{C} where f is minimal. This means that changes of f along \\mathcal{C} are minimal.\nwe can calculate such changes as the projection of the local gradient with the tangent vector and state that \\vec{\\nabla}f \\perp \\vec{t}\nNotice that, by definition, \\vec{\\nabla}g\\perp \\vec{t}\nSo we are simply saying that\n\n\\vec{\\nabla}f\\parallel \\vec{\\nabla}g\\to \\vec{\\nabla}f=\\lambda\\vec{\\nabla}g\nfor some scalar \\lambda."
+  },
+  {
+    "objectID": "soft-matter_liquidx2.html#example",
+    "href": "soft-matter_liquidx2.html#example",
+    "title": "Complex Disordered Systems",
+    "section": "Example",
+    "text": "Example"
+  },
+  {
+    "objectID": "soft-matter_liquidx2.html#generalise-to-many-variables-example-of-probabilities",
+    "href": "soft-matter_liquidx2.html#generalise-to-many-variables-example-of-probabilities",
+    "title": "Complex Disordered Systems",
+    "section": "Generalise to many variables: Example of probabilities",
+    "text": "Generalise to many variables: Example of probabilities\nDiscrete case: Find extremum of entropy \nS = -\\sum_i p_i \\ln p_i\n with constraints \n\\sum_i p_i = 1 \\quad\n\\sum_i p_i E_i = \\langle E \\rangle\n\nUsing Lagrange multipliers: \n\\mathcal{L} = -\\sum_i p_i \\ln p_i - \\lambda_1 \\left(\\sum_i p_i - 1\\right) - \\lambda_2 \\left(\\sum_i p_i E_i - \\langle E \\rangle\\right)\n\nSetting \\frac{\\partial \\mathcal{L}}{\\partial p_i} = 0: \n-\\ln p_i - 1 - \\lambda_1 - \\lambda_2 E_i = 0 \\quad \\Rightarrow \\quad p_i = \\exp(-\\lambda_2 E_i - \\lambda_1 - 1)\n\nThis is the Boltzmann distribution: p_i \\propto \\exp(-\\beta E_i) with \\beta = \\lambda_2."
+  },
+  {
+    "objectID": "soft-matter_liquidx2.html#continuous-limit",
+    "href": "soft-matter_liquidx2.html#continuous-limit",
+    "title": "Complex Disordered Systems",
+    "section": "Continuous Limit",
+    "text": "Continuous Limit\nReplace sums with integrals. Let p_i \\to p(x) where x is a continuous variable.\nConstraints become: \n\\int p(x) dx = 1, \\quad \\int p(x) E(x) dx = \\langle E \\rangle\n\nEntropy functional: \nS[p] = -\\int p(x) \\ln p(x) dx\n\nLagrangian: \n\\mathcal{L} = -\\int p(x) \\ln p(x) dx - \\lambda_1 \\left(\\int p(x) dx - 1\\right) - \\lambda_2 \\left(\\int p(x) E(x) dx - \\langle E \\rangle\\right)\n\nFunctional derivative \\frac{\\delta \\mathcal{L}}{\\delta p(x)} = 0: \n-\\ln p(x) - 1 - \\lambda_1 - \\lambda_2 E(x) = 0 \\quad \\Rightarrow \\quad p(x) = \\exp(-\\beta E(x) - c)"
+  },
+  {
+    "objectID": "soft-matter_liquidx2.html#aside-optional-constrained-optimisation-with-lagrange-multipliers",
+    "href": "soft-matter_liquidx2.html#aside-optional-constrained-optimisation-with-lagrange-multipliers",
+    "title": "Complex Disordered Systems",
+    "section": "Aside (optional): constrained optimisation with Lagrange multipliers",
+    "text": "Aside (optional): constrained optimisation with Lagrange multipliers\nMany physics problems can be cast in terms of constrained optimisation\n\n\n\n\n\n\n\n\nArea\nProblem\nConstraint\n\n\n\n\nMechanics\nMinimize potential energy of a pendulum\nFixed length of the string\n\n\nThermodynamics\nMaximize entropy S\nFixed total energy E\n\n\nStatistical Mechanics\nMaximize Gibbs entropy -\\sum_i p_i\\ln p_i\nNormalisation \\sum_i p_i=1, fixed \\langle E\\rangle\n\n\nLiquid Crystals\nMinimize Frank energy\nDirector normalization \\|\\mathbf{n}\\|=1\n\n\nLiquid Crystals\nMinimize Maier-Saupe free energy f[p]\nNormalisation of p(\\theta)\n\n\n\nMethod: Use Lagrange multipliers \\lambda to convert constrained into unconstrained problem: \\mathcal{L}=f(\\mathbf{x})-\\lambda g(\\mathbf{x}) then solve \\nabla\\mathcal{L}=0."
+  },
+  {
+    "objectID": "soft-matter_liquidx2.html#aside-optional-geometrical-understanding-of-lagrange-multipliers",
+    "href": "soft-matter_liquidx2.html#aside-optional-geometrical-understanding-of-lagrange-multipliers",
+    "title": "Complex Disordered Systems",
+    "section": "Aside (optional): geometrical understanding of Lagrange multipliers",
+    "text": "Aside (optional): geometrical understanding of Lagrange multipliers\n\nTake a function f(x,y).\nA constraint is expressed by fixing the value of a second function g(x,y)=c\nWe want to find the extrema of f(x,y) subject to the constraint g(x,y)=c: It has to be a curve\nThis means find the extremal values of f on the curve \\mathcal{C}: g(x,y)=c\nWe could parametrise \\mathcal{C} but we can also simply think in terms of its geometrical features."
+  },
+  {
+    "objectID": "soft-matter_liquidx2.html#aside-optional-geometrical-understanding-of-lagrange-multipliers-1",
+    "href": "soft-matter_liquidx2.html#aside-optional-geometrical-understanding-of-lagrange-multipliers-1",
+    "title": "Complex Disordered Systems",
+    "section": "Aside (optional): geometrical understanding of Lagrange multipliers",
+    "text": "Aside (optional): geometrical understanding of Lagrange multipliers\nTake the example of a minimum:\n\nat every point of \\mathcal{C} there is a tangent vector \\vec{t}\nwe want to find the points on \\mathcal{C} where f is minimal. This means that changes of f along \\mathcal{C} are minimal.\nwe can calculate such changes as the projection of the local gradient with the tangent vector and state that \\vec{\\nabla}f \\perp \\vec{t}\nNotice that, by definition, \\vec{\\nabla}g\\perp \\vec{t}\nSo we are simply saying that\n\n\\vec{\\nabla}f\\parallel \\vec{\\nabla}g\\to \\vec{\\nabla}f=\\lambda\\vec{\\nabla}g\nfor some scalar \\lambda."
+  },
+  {
+    "objectID": "soft-matter_liquidx2.html#aside-optional-example",
+    "href": "soft-matter_liquidx2.html#aside-optional-example",
+    "title": "Complex Disordered Systems",
+    "section": "Aside (optional): example",
+    "text": "Aside (optional): example"
+  },
+  {
+    "objectID": "soft-matter_liquidx2.html#aside-optional-many-variables-example-of-probabilities",
+    "href": "soft-matter_liquidx2.html#aside-optional-many-variables-example-of-probabilities",
+    "title": "Complex Disordered Systems",
+    "section": "Aside (optional): many variables, example of probabilities",
+    "text": "Aside (optional): many variables, example of probabilities\nDiscrete case: Find extremum of entropy \nS = -\\sum_i p_i \\ln p_i\n with constraints \n\\sum_i p_i = 1 \\quad\n\\sum_i p_i E_i = \\langle E \\rangle\n\nUsing Lagrange multipliers: \n\\mathcal{L} = -\\sum_i p_i \\ln p_i - \\lambda_1 \\left(\\sum_i p_i - 1\\right) - \\lambda_2 \\left(\\sum_i p_i E_i - \\langle E \\rangle\\right)\n\nSetting \\frac{\\partial \\mathcal{L}}{\\partial p_i} = 0: \n-\\ln p_i - 1 - \\lambda_1 - \\lambda_2 E_i = 0 \\quad \\Rightarrow \\quad p_i = \\exp(-\\lambda_2 E_i - \\lambda_1 - 1)\n\nThis is the Boltzmann distribution: p_i \\propto \\exp(-\\beta E_i) with \\beta = \\lambda_2."
+  },
+  {
+    "objectID": "soft-matter_liquidx2.html#aside-optional-functional-derivatives",
+    "href": "soft-matter_liquidx2.html#aside-optional-functional-derivatives",
+    "title": "Complex Disordered Systems",
+    "section": "Aside (optional): Functional Derivatives",
+    "text": "Aside (optional): Functional Derivatives\n\nFunctional derivative is the extension of ordinary derivative to functionals (functions of functions)\nA general formulation (that you may have already seen) starts from an action functional S[\\phi]:\n\nS[\\phi] = \\int \\mathcal{L}(\\phi(x), \\phi'(x), x) dx\n\\mathcal{L} is the Lagrangian function: e.g. x is space, \\phi(x) a field defined over space (e.g. density)\n\nPerturb S[\\phi] by an amount \\epsilon with an arbitrary function \\eta(x) vanishing at the boundaries\n\nS[\\phi+\\epsilon\\eta]=\\int \\mathcal{L}(\\phi+\\epsilon\\eta, \\phi'+\\epsilon\\eta', x) dx\nExpanding to first order in \\epsilon:\nS[\\phi+\\epsilon\\eta]\\approx S[\\phi]+\\epsilon\\int\\left[\\frac{\\partial \\mathcal{L}}{\\partial \\phi}\\eta+\\frac{\\partial \\mathcal{L}}{\\partial \\phi'}\\eta'\\right] dx"
+  },
+  {
+    "objectID": "soft-matter_liquidx2.html#aside-optional-functional-derivatives-1",
+    "href": "soft-matter_liquidx2.html#aside-optional-functional-derivatives-1",
+    "title": "Complex Disordered Systems",
+    "section": "Aside (optional): Functional Derivatives",
+    "text": "Aside (optional): Functional Derivatives\nIntegrating by parts the second term:\n\\int\\frac{\\partial \\mathcal{L}}{\\partial \\phi'}\\eta' dx = \\left[\\frac{\\partial \\mathcal{L}}{\\partial \\phi'}\\eta\\right]_{\\text{boundary}}^{\\phantom{x}}-\\int\\frac{d}{dx}\\left(\\frac{\\partial \\mathcal{L}}{\\partial \\phi'}\\right)\\eta dx\nSince \\eta(x) vanishes at the boundaries, the first term drops out, giving:\n\n\\delta S=\\int\\left[\\frac{\\partial \\mathcal{L}}{\\partial \\phi}-\\frac{d}{d x}\\left(\\frac{\\partial \\mathcal{L}}{\\partial \\phi^{\\prime}}\\right)\\right] \\eta(x) d x\n\nIf we want S[\\phi] to be stationary with respect to arbitrary perturbations \\eta(x), then \\delta S=0 for all \\eta(x).\nThis leads to the Euler-Lagrange equation:\n\\frac{\\partial \\mathcal{L}}{\\partial \\phi}-\\frac{d}{d x}\\left(\\frac{\\partial \\mathcal{L}}{\\partial \\phi^{\\prime}}\\right)=0\nwhich defines the functional derivative as \\frac{\\delta S}{\\delta \\phi(x)}=\\frac{\\partial \\mathcal{L}}{\\partial \\phi}-\\frac{d}{d x}\\left(\\frac{\\partial \\mathcal{L}}{\\partial \\phi^{\\prime}}\\right)"
+  },
+  {
+    "objectID": "soft-matter_liquidx2.html#aside-optional-continuous-limit",
+    "href": "soft-matter_liquidx2.html#aside-optional-continuous-limit",
+    "title": "Complex Disordered Systems",
+    "section": "Aside (optional): continuous limit",
+    "text": "Aside (optional): continuous limit\nReplace sums with integrals. Let p_i \\to p(x) where x is a continuous variable.\nConstraints become: \n\\int p(x) dx = 1, \\quad \\int p(x) E(x) dx = \\langle E \\rangle\n\nEntropy functional: \nS[p] = -\\int p(x) \\ln p(x) dx\n\nLagrangian: \n\\mathcal{L} = -\\int p(x) \\ln p(x) dx - \\lambda_1 \\left(\\int p(x) dx - 1\\right) - \\lambda_2 \\left(\\int p(x) E(x) dx - \\langle E \\rangle\\right)\n\nFunctional derivative \\frac{\\delta \\mathcal{L}}{\\delta p(x)} = 0: \n-\\ln p(x) - 1 - \\lambda_1 - \\lambda_2 E(x) = 0 \\quad \\Rightarrow \\quad p(x) = \\exp(-\\beta E(x) - c)"
+  },
+  {
+    "objectID": "soft-matter_liquidx2.html#aside-optional-maier-saupe-numerical-solution",
+    "href": "soft-matter_liquidx2.html#aside-optional-maier-saupe-numerical-solution",
+    "title": "Complex Disordered Systems",
+    "section": "Aside (optional): Maier-Saupe numerical solution",
+    "text": "Aside (optional): Maier-Saupe numerical solution\n\n\n\n\n\n\n\n\n\n🪁 Play with the numerical solution"
+  },
+  {
+    "objectID": "soft-matter_liquidx2.html#aside-optional-maier-saupe-numerical-solution-1",
+    "href": "soft-matter_liquidx2.html#aside-optional-maier-saupe-numerical-solution-1",
+    "title": "Complex Disordered Systems",
+    "section": "Aside (optional): Maier-Saupe numerical solution",
+    "text": "Aside (optional): Maier-Saupe numerical solution\n\n\n\n\n\n\n\n\n\nThe resulting phase transition is weakly first order with a discontinuous jump in S at the transition temperature. u/k_BT \\approx 4.55."
+  },
+  {
+    "objectID": "soft-matter_liquidx2.html#aside-optional-simple-lattice-model-lebwohl-lasher",
+    "href": "soft-matter_liquidx2.html#aside-optional-simple-lattice-model-lebwohl-lasher",
+    "title": "Complex Disordered Systems",
+    "section": "Aside (optional): simple lattice model, Lebwohl-Lasher",
+    "text": "Aside (optional): simple lattice model, Lebwohl-Lasher\n\nA way to construct a Maier-Saupe-like model on lattice.\nVectors on a lattice represent the orientations of molecules.\nNearest-neighbor interactions favor alignment of neighboring vectors.\n\nIn 2D\n\nH=-\\epsilon \\sum_{\\langle i, j\\rangle}\\left[\\frac{3}{2} \\cos ^2\\left(\\theta_i-\\theta_j\\right)-\\frac{1}{2}\\right]\n🪁 Demonstration in class"
+  },
+  {
+    "objectID": "soft-matter_liquidx2.html#aside-optional-simple-lattice-model-lebwohl-lasher-1",
+    "href": "soft-matter_liquidx2.html#aside-optional-simple-lattice-model-lebwohl-lasher-1",
+    "title": "Complex Disordered Systems",
+    "section": "Aside (optional): simple lattice model, Lebwohl-Lasher",
+    "text": "Aside (optional): simple lattice model, Lebwohl-Lasher\n\n\n\n\n\n\n\n\nin 2d the transition is rounded, not true first order (Kosterlitz-Thouless only quasi long range order) due to a key theorem due to Mermin and Wagner  which states that\n\n(Mermin-Wagner theorem) Continuous symmetries cannot be spontaneously broken at finite temperature in systems with sufficiently short-range interactions in dimensions d \\leq 2.\n\nLong-range fluctuations are favoured in d \\leq 2.\nHere the continuous symmetry is the rotational invariance of the director field in the plane."
+  },
+  {
+    "objectID": "soft-matter_liquidx2.html#aside-optional-conservation-of-topological-charge",
+    "href": "soft-matter_liquidx2.html#aside-optional-conservation-of-topological-charge",
+    "title": "Complex Disordered Systems",
+    "section": "Aside (optional): conservation of topological charge",
+    "text": "Aside (optional): conservation of topological charge\n\nTopological charge is conserved: the total charge in a closed system remains constant over time.\nDefects can be created or annihilated only in pairs of opposite charge (e.g., +1/2 and -1/2).\nThe topology of the space imposes such constraints of conservation via the Poincaré-Hopf theorem, which states\n\n\nThe total topological charge of the defects in a field confined to a compact space is equal to the Euler characteristic of that space\n\nIn practice:\n\nOn a plane (Euler characteristic = 1), the total topological charge must sum to 1.\nOn a sphere (Euler characteristic = 2), the total topological charge must sum to 2.\nOn a torus (Euler characteristic = 0), the total topological charge must sum to 0. \\to in periodic systems the total charge must be zero.\nThis imposes constraints on the dynamics and interactions of defects.\n\n\nDirector fields on a sphere, on a torus and a double torus. The number of handles (the genus g) determines the Euler characteristic \\chi=2-2g. From Nelson (2002)"
+  },
+  {
+    "objectID": "soft-matter_liquidx2.html#aside-optional-topological-defects",
+    "href": "soft-matter_liquidx2.html#aside-optional-topological-defects",
+    "title": "Complex Disordered Systems",
+    "section": "Aside (optional): topological defects",
+    "text": "Aside (optional): topological defects\n\n\nAnalogies well-beyond liquid crystals:\n\nvortices in superfluids and superconductors\ndislocations in crystals\nelectromagnetic field configurations\nflow fields microfluidic junctions\n\n\n\n\nTopological defects in microfluidic devices\n\n\n\n\n\n\nVortex anti-vortex pair in a superfluid (a) initial configuration and (b) after relaxation. From Magierski, Eur Phys J (2024)"
+  },
+  {
+    "objectID": "soft-matter_liquidx2.html#aside-optional-defects-in-3-dimensions",
+    "href": "soft-matter_liquidx2.html#aside-optional-defects-in-3-dimensions",
+    "title": "Complex Disordered Systems",
+    "section": "Aside (optional): defects in 3 dimensions",
+    "text": "Aside (optional): defects in 3 dimensions\n\nIn 3D the disclinations become lines\nThe director field wraps around the line defect in a similar way as in 2D.\nThe classification of disclination in 3D involves the rotation group SO(3) (that generalises the construction we have seen in two dimensions) and are more complex in general. They include\n\nlines\nclosed loops\npoint-like features (hedgehogs and monopoles)\ncomplex textures."
+  },
+  {
+    "objectID": "soft-matter_liquidx2.html#aside-optional-defects-and-phase-transitions",
+    "href": "soft-matter_liquidx2.html#aside-optional-defects-and-phase-transitions",
+    "title": "Complex Disordered Systems",
+    "section": "Aside (optional): defects and phase transitions",
+    "text": "Aside (optional): defects and phase transitions\nDefects control the stability and dynamics of nematic liquid crystals and drive the phase transitions between phases.\n\nDefect formation and nematic to smectic phase transition via defect branching, Gim et al Nature Communications (2017)"
+  },
+  {
+    "objectID": "soft-matter_liquidx2.html#aside-optional-complex-disclination-patterns",
+    "href": "soft-matter_liquidx2.html#aside-optional-complex-disclination-patterns",
+    "title": "Complex Disordered Systems",
+    "section": "Aside (optional): complex disclination patterns",
+    "text": "Aside (optional): complex disclination patterns\nExample from Kim et al Science Advances (2018)\n\nLiquid-crystals defects created and controlled by external forces (air pillars through a substrate)."
   }
 ]

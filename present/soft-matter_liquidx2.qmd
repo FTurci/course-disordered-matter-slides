@@ -12,7 +12,74 @@ pyodide:
 mermaid-format: svg # png also works
 ---
 
-## Aside: Functional Derivatives
+## Aside (optional): constrained optimisation with Lagrange multipliers
+
+Many physics problems can be cast in terms of constrained optimisation
+
+| Area | Problem | Constraint |
+|------|---------|-----------|
+| **Mechanics** | Minimize potential energy of a pendulum | Fixed length of the string |
+| **Thermodynamics** | Maximize entropy $S$ | Fixed total energy $E$ |
+| **Statistical Mechanics** | Maximize Gibbs entropy $-\sum_i p_i\ln p_i$ | Normalisation $\sum_i p_i=1$, fixed $\langle E\rangle$ |
+| **Liquid Crystals** | Minimize Frank energy | Director normalization $\|\mathbf{n}\|=1$ |
+| **Liquid Crystals** | Minimize Maier-Saupe free energy $f[p]$ | Normalisation of $p(\theta)$ |
+
+**Method**: Use **Lagrange multipliers** $\lambda$ to convert constrained into unconstrained problem:
+$$\mathcal{L}=f(\mathbf{x})-\lambda g(\mathbf{x})$$
+then solve $\nabla\mathcal{L}=0$.
+
+
+## Aside (optional): geometrical understanding of Lagrange multipliers
+
+- Take a function $f(x,y)$.
+- A constraint is expressed by fixing the value of a second function $g(x,y)=c$
+- We want to find the extrema of $f(x,y)$ subject to the constraint $g(x,y)=c$: It has to be a curve
+- This means find the extremal values of $f$ on the curve $\mathcal{C}: g(x,y)=c$
+- We could parametrise $\mathcal{C}$ but we can also simply think in terms of its geometrical features.
+
+## Aside (optional): geometrical understanding of Lagrange multipliers
+
+Take the example of a minimum:
+
+- at every point of $\mathcal{C}$ there is a tangent vector $\vec{t}$
+- we want to find the points on $\mathcal{C}$ where $f$ is minimal. This means that *changes of f* along $\mathcal{C}$ are minimal.
+- we can calculate such changes as the projection of the local gradient with the tangent vector and state that $\vec{\nabla}f \perp \vec{t}$
+- Notice that, by definition, $\vec{\nabla}g\perp \vec{t}$
+- So we are simply saying that
+
+$$\vec{\nabla}f\parallel \vec{\nabla}g\to \vec{\nabla}f=\lambda\vec{\nabla}g$$
+
+for some scalar $\lambda$.
+
+## Aside (optional): example
+
+![](9NIoJ.png)
+
+## Aside (optional): many variables, example of probabilities
+
+**Discrete case**: Find extremum of entropy
+$$
+S = -\sum_i p_i \ln p_i
+$$
+with constraints 
+$$
+\sum_i p_i = 1 \quad 
+\sum_i p_i E_i = \langle E \rangle
+$$
+
+Using Lagrange multipliers:
+$$
+\mathcal{L} = -\sum_i p_i \ln p_i - \lambda_1 \left(\sum_i p_i - 1\right) - \lambda_2 \left(\sum_i p_i E_i - \langle E \rangle\right)
+$$
+
+Setting $\frac{\partial \mathcal{L}}{\partial p_i} = 0$:
+$$
+-\ln p_i - 1 - \lambda_1 - \lambda_2 E_i = 0 \quad \Rightarrow \quad p_i = \exp(-\lambda_2 E_i - \lambda_1 - 1)
+$$
+
+This is the **Boltzmann distribution**: $p_i \propto \exp(-\beta E_i)$ with $\beta = \lambda_2$.
+
+## Aside (optional): Functional Derivatives
 
 - Functional derivative is the extension of ordinary derivative to functionals (functions of functions)
 
@@ -30,7 +97,7 @@ Expanding to first order in $\epsilon$:
 
 $$S[\phi+\epsilon\eta]\approx S[\phi]+\epsilon\int\left[\frac{\partial \mathcal{L}}{\partial \phi}\eta+\frac{\partial \mathcal{L}}{\partial \phi'}\eta'\right] dx$$
 
-## Aside: Functional Derivatives
+## Aside (optional): Functional Derivatives
 Integrating by parts the second term:
 
 $$\int\frac{\partial \mathcal{L}}{\partial \phi'}\eta' dx = \left[\frac{\partial \mathcal{L}}{\partial \phi'}\eta\right]_{\text{boundary}}^{\phantom{x}}-\int\frac{d}{dx}\left(\frac{\partial \mathcal{L}}{\partial \phi'}\right)\eta dx$$
@@ -51,6 +118,30 @@ $$\frac{\partial \mathcal{L}}{\partial \phi}-\frac{d}{d x}\left(\frac{\partial \
 
 which defines the functional derivative as 
 $$\frac{\delta S}{\delta \phi(x)}=\frac{\partial \mathcal{L}}{\partial \phi}-\frac{d}{d x}\left(\frac{\partial \mathcal{L}}{\partial \phi^{\prime}}\right)$$
+
+## Aside (optional): continuous limit
+
+Replace sums with integrals. Let $p_i \to p(x)$ where $x$ is a continuous variable.
+
+Constraints become:
+$$
+\int p(x) dx = 1, \quad \int p(x) E(x) dx = \langle E \rangle
+$$
+
+Entropy functional:
+$$
+S[p] = -\int p(x) \ln p(x) dx
+$$
+
+Lagrangian:
+$$
+\mathcal{L} = -\int p(x) \ln p(x) dx - \lambda_1 \left(\int p(x) dx - 1\right) - \lambda_2 \left(\int p(x) E(x) dx - \langle E \rangle\right)
+$$
+
+Functional derivative $\frac{\delta \mathcal{L}}{\delta p(x)} = 0$:
+$$
+-\ln p(x) - 1 - \lambda_1 - \lambda_2 E(x) = 0 \quad \Rightarrow \quad p(x) = \exp(-\beta E(x) - c)
+$$
 
 ## Maier-Saupe Theory of Nematic Liquid Crystals
 
@@ -191,7 +282,7 @@ In general, this requires a **numerical** solution (see problem classes for a sp
 
 <br></br>
 
-##  Maier-Saupe: Numerical Solution
+## Aside (optional): Maier-Saupe numerical solution
 
 ```{python}
 #| echo: false
@@ -229,7 +320,7 @@ plt.show()
 [🪁 Play with the numerical solution](https://fturci.github.io/course-disordered-matter/soft-matter/soft-matter_liquidcrystals.html#maier-saupe-theory)
 
 
-##  Maier-Saupe: Numerical Solution
+## Aside (optional): Maier-Saupe numerical solution
 
 ```{python}
 #| echo: false
@@ -304,7 +395,7 @@ Same story as the freezing of hard spheres: the spheres lose the disorder of the
 :::
 
 
-## Simple lattice model: Lebwohl-Lasher
+## Aside (optional): simple lattice model, Lebwohl-Lasher
 
 - A way to construct a Maier-Saupe-like model on lattice.
 - Vectors on a lattice represent the orientations of molecules.
@@ -319,7 +410,7 @@ H=-\epsilon \sum_{\langle i, j\rangle}\left[\frac{3}{2} \cos ^2\left(\theta_i-\t
 
 🪁 Demonstration in class
 
-## Simple lattice model: Lebwohl-Lasher
+## Aside (optional): simple lattice model, Lebwohl-Lasher
 
 ::: {.columns}
 
@@ -503,7 +594,7 @@ plt.tight_layout()
 plt.show()
 ```
 
-## Conservation of Topological Charge
+## Aside (optional): conservation of topological charge
 
 - Topological charge is **conserved**: the total charge in a closed system remains constant over time.
 - Defects can be created or annihilated only **in pairs** of opposite charge (e.g., +1/2 and -1/2).
@@ -522,7 +613,7 @@ In practice:
 ![Director fields on a sphere, on a torus and a double torus. The number of handles (the genus $g$) determines the Euler characteristic $\chi=2-2g$. From Nelson (2002)](./figs/genus.png)
 
 
-## Topological defects
+## Aside (optional): topological defects
 :::{.columns}
 :::{.column}
 Analogies well-beyond liquid crystals:
@@ -538,7 +629,7 @@ Analogies well-beyond liquid crystals:
 ![Vortex anti-vortex  pair in a superfluid (a) initial configuration and (b) after relaxation. From Magierski, *Eur Phys J* (2024)  ](./figs/superfluid.png)
 :::
 :::
-## Defects in 3 Dimensions
+## Aside (optional): defects in 3 dimensions
 
 - In 3D the disclinations become **lines**
 - The director field wraps around the line defect in a similar way as in 2D.
@@ -630,13 +721,13 @@ fig.update_layout(
 fig.show()
 ```
 
-## Defects and Phase Transitions
+## Aside (optional): defects and phase transitions
 
 Defects control the stability and dynamics of nematic liquid crystals and drive the phase transitions between phases.
 
 ![Defect formation and nematic to smectic phase transition via defect branching, Gim et al Nature Communications (2017)](./figs/nematic-to-smectic.png)
 
-## Complex Disclination Patterns
+## Aside (optional): complex disclination patterns
 
 Example from Kim et al Science Advances (2018)
 
