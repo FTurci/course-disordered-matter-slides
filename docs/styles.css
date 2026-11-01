@@ -69,3 +69,6 @@
 .color2 { background: #c8e6c9; }  /* green */
 .color3 { background: #bbdefb; }  /* blue */
 .color4 { background: #ffe0b2; }  /* orange */
+.reveal table th[colspan] {
+  text-align: center;
+}
