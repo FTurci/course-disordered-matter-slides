@@ -76,7 +76,7 @@ We sometimes oversimplify...
 - Helmholtz Free energy per particle
 $$f = u-Ts$$
 
-- Entropy counts the arrangements: $s = \dfrac{k_B}{N}\ln\Omega = k_B\ln\omega$, with $\omega=\Omega^{1/N}$ arrangements per particle. Because of the logarithm, $\omega\sim 10$–$1000$ gives $s\approx 2$–$7\,k_B$, so $Ts$ is a few $k_BT$.
+- Entropy counts the arrangements: $s = \dfrac{k_B}{N}\ln\Omega = k_B\ln\omega$, with $\omega=\Omega^{1/N}$ arrangements per particle (geometric mean). Because of the logarithm, $\omega\sim 10$–$1000$ gives $s\approx 2$–$7\,k_B$, so $Ts$ is a few $k_BT$.
 
 - In soft matter the **interaction energies** per particle are also a few $k_BT$:
 $$
