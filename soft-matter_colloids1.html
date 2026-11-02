@@ -360,7 +360,7 @@ W_{D R}(h)=B \frac{R}{\lambda_B} \exp \left(-\frac{h-2R}{\lambda_D}\right)
 <li><p>a double layer component <strong>repulsive in nature</strong></p></li>
 </ul>
 <p>The sum of the two gives rise to the DLVO (Derjaguin–Landau–Verwey–Overbeek) interaction which is an elementary model for colloid stability and aggregation.</p>
-<div id="d8d005c9" class="cell" data-execution_count="1">
+<div id="9df3bc71" class="cell" data-execution_count="1">
 <div class="cell-output cell-output-display">
 <div>
 <figure>
@@ -625,6 +625,11 @@ W_{\rm AO} (r) = - \dfrac{4 \pi \rho_p^r k_B T}{3} (R+\delta)^3\left[1-\dfrac{3}
 </section>
 <section id="ao-potential" class="slide level2">
 <h2>AO potential</h2>
+<p>At contact: <span class="math inline">\quad W_{\rm AO}(2R) = -\left(1+\dfrac{3}{2}\dfrac{R}{\delta}\right)\phi_p^r\, k_BT</span></p>
+<ul>
+<li>polymer concentration <span class="math inline">\phi_p^r</span> sets the <strong>strength</strong>, polymer size sets the <strong>range</strong> <span class="math inline">2\delta</span></li>
+<li>the size ratio <span class="math inline">R/\delta</span> <strong>amplifies</strong> the attraction: <span class="math inline">\phi_p^r=0.1</span>, <span class="math inline">\delta=R/10</span> gives <span class="math inline">\approx -1.6\,k_BT</span></li>
+</ul>
 <div>
 <div id="pyodide-5" class="exercise-cell">
 
@@ -680,7 +685,7 @@ eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoiUiA9IDEuMCAgICAgICAgICAg
 </tr>
 <tr class="even">
 <td>Depletion</td>
-<td>attractive, purely entropic</td>
+<td>attractive, purely entropic; <span class="math inline">\approx -\frac{3R}{2\delta}\phi_p^r k_BT</span> at contact</td>
 <td>polymer size <span class="math inline">2\delta</span></td>
 <td>polymer concentration and size</td>
 </tr>

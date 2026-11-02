@@ -193,14 +193,14 @@
     "href": "soft-matter_colloids1.html#ao-potential",
     "title": "Complex Disordered Systems",
     "section": "AO potential",
-    "text": "AO potential"
+    "text": "AO potential\nAt contact: \\quad W_{\\rm AO}(2R) = -\\left(1+\\dfrac{3}{2}\\dfrac{R}{\\delta}\\right)\\phi_p^r\\, k_BT\n\npolymer concentration \\phi_p^r sets the strength, polymer size sets the range 2\\delta\nthe size ratio R/\\delta amplifies the attraction: \\phi_p^r=0.1, \\delta=R/10 gives \\approx -1.6\\,k_BT"
   },
   {
     "objectID": "soft-matter_colloids1.html#summary-of-main-colloid-colloid-interactions",
     "href": "soft-matter_colloids1.html#summary-of-main-colloid-colloid-interactions",
     "title": "Complex Disordered Systems",
     "section": "Summary of main colloid-colloid interactions",
-    "text": "Summary of main colloid-colloid interactions\n\n\n\n\n\n\n\n\n\nInteraction\nOrigin\nRange\nControl knob\n\n\n\n\nVan der Waals\nattractive, from fluctuating dipoles; \\approx -A_HR/12D near contact\ntens of nm, \\propto A_HR\nmaterials (A_H), index matching\n\n\nDouble layer\nrepulsive, screened electrostatics\nDebye length \\lambda_D: \\sim 1 nm (100 mM) to \\sim 100 nm (deionised)\nsalt\n\n\nDLVO\nsum: barrier (stability) and secondary minimum\nbarrier at \\simnm, secondary minimum at several \\lambda_D\nsalt switches stable \\leftrightarrow aggregating\n\n\nDepletion\nattractive, purely entropic\npolymer size 2\\delta\npolymer concentration and size"
+    "text": "Summary of main colloid-colloid interactions\n\n\n\n\n\n\n\n\n\nInteraction\nOrigin\nRange\nControl knob\n\n\n\n\nVan der Waals\nattractive, from fluctuating dipoles; \\approx -A_HR/12D near contact\ntens of nm, \\propto A_HR\nmaterials (A_H), index matching\n\n\nDouble layer\nrepulsive, screened electrostatics\nDebye length \\lambda_D: \\sim 1 nm (100 mM) to \\sim 100 nm (deionised)\nsalt\n\n\nDLVO\nsum: barrier (stability) and secondary minimum\nbarrier at \\simnm, secondary minimum at several \\lambda_D\nsalt switches stable \\leftrightarrow aggregating\n\n\nDepletion\nattractive, purely entropic; \\approx -\\frac{3R}{2\\delta}\\phi_p^r k_BT at contact\npolymer size 2\\delta\npolymer concentration and size"
   },
   {
     "objectID": "soft-matter_colloids3.html#today",
