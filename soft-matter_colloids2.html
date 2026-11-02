@@ -170,8 +170,8 @@ Francesco Turci
 <ul>
 <li>Colloidal hard spheres</li>
 <li>Phase diagram of hard spheres</li>
-<li>Metastability</li>
 <li>Phase diagrams of simple liquids</li>
+<li>Metastability</li>
 </ul></li>
 </ul>
 </section>
@@ -185,7 +185,7 @@ Francesco Turci
 <li>Examples:
 <ul>
 <li><strong>Hard-sphere colloids</strong></li>
-<li>Charged-stabilized colloids</li>
+<li>Charge-stabilised colloids</li>
 </ul></li>
 </ul>
 <div class="quarto-figure quarto-figure-center">
@@ -278,7 +278,7 @@ e^{-\beta U(r)} =
 <p>We integrate over valid (<strong>non-overlapping</strong>) configurations such that <span class="math inline">|\mathbf{r}_i - \mathbf{r}_j| \geq \sigma</span> for all <span class="math inline">i \neq j</span>. This yields <span class="math display">\mathcal{Z} = \dfrac{(V-Nv_{\rm ex}/2)^N}{N!\Lambda^{3N}},</span></p>
 <p>with the <span class="math inline">1/2</span> factor coming from the fact that we avoid double counting the excluded volume of pairs.</p>
 <ul>
-<li><p>We immediately obtain the entropy as <span class="math display">S = k_B \ln \mathcal{Z} = k_B \left[ N \ln(V - N v_{\rm ex}/2) - \ln N! - 3N \ln \Lambda \right]</span></p></li>
+<li><p>The only energy is kinetic and independent of <span class="math inline">V</span>, so <span class="math inline">F=-k_BT\ln\mathcal{Z}=-TS</span>, with <span class="math inline">S</span> known up to a term <span class="math inline">\frac32 Nk_B</span> from the momenta that does not depend on <span class="math inline">V</span>: only the <strong>configurations</strong> matter for the pressure <span class="math display">S = k_B \ln \mathcal{Z} = k_B \left[ N \ln(V - N v_{\rm ex}/2) - \ln N! - 3N \ln \Lambda \right]</span></p></li>
 <li><p>Via Stirling’s approximation <span class="math inline">\ln N! = N\ln N -N</span> we get <span class="math display">S = k_B \left[ N \ln(V - N v_{\rm ex}/2) - (N \ln N - N) - 3N \ln \Lambda \right]</span></p></li>
 <li><p>This can be rewritten as <span class="math display">S = N k_B \left[ \ln\left( \frac{V - N v_{\rm ex}/2}{N \Lambda^3} \right) + 1 \right]</span></p></li>
 </ul>
@@ -315,7 +315,7 @@ e^{-\beta U(r)} =
 <p><span class="math display">
 Z_N=\frac{1}{N!\Lambda^{3 N}} \int \cdots \int \exp \left[-\beta \sum_{i&lt;j} U\left(r_{i j}\right)\right] d \mathbf{r}_1 \ldots d \mathbf{r}_N
 </span></p>
-<p>can be re-written using the <strong>Mayer function</strong> <span class="math inline">f_{i j}=e^{-\beta u\left(r_{i j}\right)}-1</span> and <span class="math inline">e^{-\beta \sum_{i&lt;j} U\left(r_{i j}\right)}=\prod_{i&lt;j}\left(1+f_{i j}\right)</span> yielding</p>
+<p>can be re-written using the <strong>Mayer function</strong> <span class="math inline">f_{i j}=e^{-\beta U\left(r_{i j}\right)}-1</span> and <span class="math inline">e^{-\beta \sum_{i&lt;j} U\left(r_{i j}\right)}=\prod_{i&lt;j}\left(1+f_{i j}\right)</span> yielding</p>
 <p><span class="math display">
 Z_N=\frac{1}{N!\Lambda^{3 N}} \int \cdots \int \prod_{i&lt;j}\left(1+f_{i j}\right) d \mathbf{r}_1 \ldots d \mathbf{r}_N
 </span></p>
@@ -367,7 +367,7 @@ B_2(T)=-2 \pi \int_0^{\infty}\left[e^{-\beta U(r)}-1\right] r^2 d r
 <ul>
 <li><p>As we increase the packing fraction, the accessible (free) volume reduces rapidly and thermal motion is hindered.</p></li>
 <li><p>Tight disordered (random) packing of spheres are described as <strong>jammed</strong>: link with glasses (in future lectures).</p></li>
-<li><p>Densest packing reaches a maximum packing of around <span class="math inline">\phi_{\mathrm{rcp}} \approx 0.64</span>: this is not unique and depends on the <strong>protocol of preparation</strong>.</p></li>
+<li><p><strong>Random</strong> (disordered) packings reach at most <span class="math inline">\phi_{\mathrm{rcp}} \approx 0.64</span> (random close packing): this is not unique and depends on the <strong>protocol of preparation</strong>.</p></li>
 <li><p>Kepler’s conjecture (1611, proved by Hales in 1998, formally verified only in 2017):</p></li>
 <li><p>Densest packings are <strong>Face Centred Cubic (FCC) or Hexagonally Close Packed (HCP)</strong> <span class="math inline">\phi_{\max }=\frac{\pi}{3 \sqrt{2}} \approx 0.74</span></p></li>
 </ul>
@@ -385,7 +385,7 @@ B_2(T)=-2 \pi \int_0^{\infty}\left[e^{-\beta U(r)}-1\right] r^2 d r
 <div class="column" style="flex:1; background-color:#d4edda; padding:10px; margin-right:5px;">
 <p><strong>YES</strong></p>
 <ul>
-<li>Entropy in AO interactions causes an effective interaction that has a minimum<br>
+<li>By analogy with AO, entropy causes an effective interaction that has a minimum<br>
 </li>
 <li>Disordered packings are <strong>less efficient</strong> than ordered ones</li>
 </ul>
@@ -422,6 +422,7 @@ Z_{\rm comp}=\frac{1}{1-\left(\phi / \phi_{c p}\right)^{1 / 3}}
 </span></p></li>
 <li><p>This expression is <strong>completely different from the low density regime</strong> <span class="math inline">Z_{\text {comp }}^{\mathrm{low}}=1+B_2 \rho+B_3 \rho^2+\ldots</span></p></li>
 <li><p>The incompatibility signals <strong>non-analyticity</strong> and hence a <strong>discontinuous phase transition</strong>: <strong>first order transition</strong>, with <strong>interfaces</strong> and <strong>coexistence between phases</strong>.</p></li>
+<li><p>Crystallisation is <strong>entropy-driven</strong>: crystals pack more efficiently, so each sphere has more volume to explore, i.e.&nbsp;<strong>more available configurations</strong>. The ordered crystal has a <strong>higher entropy</strong> than the disordered fluid.</p></li>
 </ul>
 </section>
 <section id="colloidal-hard-spheres-phase-behaviour" class="slide level2">
@@ -435,7 +436,7 @@ Z_{\rm comp}=\frac{1}{1-\left(\phi / \phi_{c p}\right)^{1 / 3}}
 </section>
 <section id="colloidal-hard-spheres-phase-behaviour-1" class="slide level2">
 <h2>Colloidal hard spheres: phase behaviour</h2>
-<p>In conclusion, the one-dimensional phase diagram of hard spheres is the following</p>
+<p>In conclusion, the one-dimensional phase diagram of hard spheres is the following: fluid below freezing <span class="math inline">\phi_f=0.494</span>, crystal above melting <span class="math inline">\phi_m=0.545</span>, coexistence in between.</p>
 
 <img data-src="./figs/hard-sphere-diag.svg" class="r-stretch quarto-figure-center"><p class="caption">Hard spheres phase diagram</p><p>Notice that the <strong>glass phase</strong> is purely non-equilibrium: if a system has enough time to relax, it will eventually form a <strong>crystal</strong>.</p>
 </section>
@@ -473,8 +474,7 @@ Z_{\rm comp}=\frac{1}{1-\left(\phi / \phi_{c p}\right)^{1 / 3}}
 <div class="column">
 <p>You have seen this physics when discussing the <strong>Ising model</strong>:</p>
 <ul>
-<li><p>Crossing the <strong>binodal</strong> (equal chemical potential and pressure between phases) the fluid becomes <strong>metastable</strong>: it crystallises by <strong>nucleation</strong>, with <span class="math inline">\tau \propto \exp\left(\Delta G^*/k_B T\right)</span>.</p></li>
-<li><p>The <strong>spinodal</strong> marks the limit of stability, <span class="math inline">\partial^2 G/\partial \phi^2=0</span>: inside it there is no barrier and <strong>coarsening</strong> occurs.</p></li>
+<li>Crossing the <strong>binodal</strong> (equal chemical potential and pressure between phases) the fluid becomes <strong>metastable</strong>: it crystallises by <strong>nucleation</strong>, with <span class="math inline">\tau \propto \exp\left(\Delta G^*/k_B T\right)</span>.</li>
 </ul>
 </div><div class="column">
 <div class="quarto-figure quarto-figure-center">
