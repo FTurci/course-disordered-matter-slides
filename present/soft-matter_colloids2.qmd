@@ -18,8 +18,8 @@ mermaid-format: svg # png also works
 - **Colloids as big atoms**
     - Colloidal hard spheres
     - Phase diagram of hard spheres
-    - Metastability
     - Phase diagrams of simple liquids
+    - Metastability
 
 
 
@@ -34,7 +34,7 @@ mermaid-format: svg # png also works
 - Serve as models for studying phase transitions, transformations, surface phenomena
 - Examples:
     - **Hard-sphere colloids**
-    - Charged-stabilized colloids
+    - Charge-stabilised colloids
 
 ![Coalescence of a colloidal liquid droplet, Aarts et al. *Science* (2004)](./figs/coalescence.png)
 :::
@@ -144,7 +144,7 @@ $$\mathcal{Z} = \dfrac{(V-Nv_{\rm ex}/2)^N}{N!\Lambda^{3N}},$$
 
 with the $1/2$ factor coming from the fact that we avoid double counting the excluded volume of pairs.
 
-- We immediately obtain the entropy as $$S = k_B \ln \mathcal{Z} = k_B \left[ N \ln(V - N v_{\rm ex}/2) - \ln N! - 3N \ln \Lambda \right]$$
+- The only energy is kinetic and independent of $V$, so $F=-k_BT\ln\mathcal{Z}=-TS$, with $S$ known up to a term $\frac32 Nk_B$ from the momenta that does not depend on $V$: only the **configurations** matter for the pressure $$S = k_B \ln \mathcal{Z} = k_B \left[ N \ln(V - N v_{\rm ex}/2) - \ln N! - 3N \ln \Lambda \right]$$
 
 - Via Stirling's approximation  $\ln N! = N\ln N -N$  we get $$S = k_B \left[ N \ln(V - N v_{\rm ex}/2) - (N \ln N - N) - 3N \ln \Lambda \right]$$
 
@@ -185,7 +185,7 @@ $$
 Z_N=\frac{1}{N!\Lambda^{3 N}} \int \cdots \int \exp \left[-\beta \sum_{i<j} U\left(r_{i j}\right)\right] d \mathbf{r}_1 \ldots d \mathbf{r}_N
 $$
 
-can be re-written using the **Mayer function** $f_{i j}=e^{-\beta u\left(r_{i j}\right)}-1$ and  $e^{-\beta \sum_{i<j} U\left(r_{i j}\right)}=\prod_{i<j}\left(1+f_{i j}\right)$ yielding
+can be re-written using the **Mayer function** $f_{i j}=e^{-\beta U\left(r_{i j}\right)}-1$ and  $e^{-\beta \sum_{i<j} U\left(r_{i j}\right)}=\prod_{i<j}\left(1+f_{i j}\right)$ yielding
 
 $$
 Z_N=\frac{1}{N!\Lambda^{3 N}} \int \cdots \int \prod_{i<j}\left(1+f_{i j}\right) d \mathbf{r}_1 \ldots d \mathbf{r}_N
@@ -240,7 +240,7 @@ $$
 
 - Tight disordered (random) packing of spheres are described as **jammed**: link with glasses (in future lectures).
 
-- Densest packing reaches a maximum packing of around $\phi_{\mathrm{rcp}} \approx 0.64$: this is not unique and depends on the **protocol of preparation**.
+- **Random** (disordered) packings reach at most $\phi_{\mathrm{rcp}} \approx 0.64$ (random close packing): this is not unique and depends on the **protocol of preparation**.
 
 - Kepler's conjecture (1611, proved by Hales in 1998, formally verified only in 2017):
 
@@ -259,7 +259,7 @@ $$
 :::{.column style="flex:1; background-color:#d4edda; padding:10px; margin-right:5px;"}
 **YES**
 
-- Entropy in AO interactions causes an effective interaction that has a minimum  
+- By analogy with AO, entropy causes an effective interaction that has a minimum  
 - Disordered packings are **less efficient** than ordered ones
 :::
 
@@ -298,6 +298,8 @@ $$
 
 - The incompatibility signals **non-analyticity** and hence a **discontinuous phase transition**: **first order transition**, with **interfaces** and **coexistence between phases**.
 
+- Crystallisation is **entropy-driven**: crystals pack more efficiently, so each sphere has more volume to explore, i.e. **more available configurations**. The ordered crystal has a **higher entropy** than the disordered fluid.
+
 
 ## Colloidal hard spheres: phase behaviour
 
@@ -305,7 +307,7 @@ $$
 
 ## Colloidal hard spheres: phase behaviour
 
-In conclusion, the one-dimensional phase diagram of hard spheres is the following
+In conclusion, the one-dimensional phase diagram of hard spheres is the following: fluid below freezing $\phi_f=0.494$, crystal above melting $\phi_m=0.545$, coexistence in between.
 
 ![Hard spheres phase diagram](./figs/hard-sphere-diag.svg)
 
@@ -340,8 +342,6 @@ Colloids are big enough to be imaged directly: confocal microscopy shows the str
 You have seen this physics when discussing the **Ising model**:
 
 - Crossing the **binodal** (equal chemical potential and pressure between phases) the fluid becomes **metastable**: it crystallises by **nucleation**, with $\tau \propto \exp\left(\Delta G^*/k_B T\right)$.
-
-- The **spinodal** marks the limit of stability, $\partial^2 G/\partial \phi^2=0$: inside it there is no barrier and **coarsening** occurs.
 :::
 ::: {.column}
 ![Schematic free energy for hard spheres compressed at high pressures: the fluid branch becomes metastable and the free energy minimum is located in the crystal phase](./figs/metastable.png){height=400}

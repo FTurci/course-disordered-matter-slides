@@ -1684,14 +1684,14 @@
     "href": "soft-matter_colloids2.html#today",
     "title": "Complex Disordered Systems",
     "section": "Today",
-    "text": "Today\n\nColloids as big atoms\n\nColloidal hard spheres\nPhase diagram of hard spheres\nMetastability\nPhase diagrams of simple liquids"
+    "text": "Today\n\nColloids as big atoms\n\nColloidal hard spheres\nPhase diagram of hard spheres\nPhase diagrams of simple liquids\nMetastability"
   },
   {
     "objectID": "soft-matter_colloids2.html#colloids-as-big-atoms",
     "href": "soft-matter_colloids2.html#colloids-as-big-atoms",
     "title": "Complex Disordered Systems",
     "section": "Colloids as big atoms",
-    "text": "Colloids as big atoms\n\n\n\nColloids can mimic atomic systems\nServe as models for studying phase transitions, transformations, surface phenomena\nExamples:\n\nHard-sphere colloids\nCharged-stabilized colloids\n\n\n\n\n\nCoalescence of a colloidal liquid droplet, Aarts et al. Science (2004)\n\n\n\n\n\n\nThe self-assembly of colloids can be controlled by changing the shape, topology, or patchiness of the particles, by introducing attractions between particles, or by constraining them to a curved surface. From Manoharan Science (2015)"
+    "text": "Colloids as big atoms\n\n\n\nColloids can mimic atomic systems\nServe as models for studying phase transitions, transformations, surface phenomena\nExamples:\n\nHard-sphere colloids\nCharge-stabilised colloids\n\n\n\n\n\nCoalescence of a colloidal liquid droplet, Aarts et al. Science (2004)\n\n\n\n\n\n\nThe self-assembly of colloids can be controlled by changing the shape, topology, or patchiness of the particles, by introducing attractions between particles, or by constraining them to a curved surface. From Manoharan Science (2015)"
   },
   {
     "objectID": "soft-matter_colloids2.html#colloidal-hard-spheres",
@@ -1733,7 +1733,7 @@
     "href": "soft-matter_colloids2.html#low-packing-fractions-entropy",
     "title": "Complex Disordered Systems",
     "section": "Low packing fractions: entropy",
-    "text": "Low packing fractions: entropy\nWe integrate over valid (non-overlapping) configurations such that |\\mathbf{r}_i - \\mathbf{r}_j| \\geq \\sigma for all i \\neq j. This yields \\mathcal{Z} = \\dfrac{(V-Nv_{\\rm ex}/2)^N}{N!\\Lambda^{3N}},\nwith the 1/2 factor coming from the fact that we avoid double counting the excluded volume of pairs.\n\nWe immediately obtain the entropy as S = k_B \\ln \\mathcal{Z} = k_B \\left[ N \\ln(V - N v_{\\rm ex}/2) - \\ln N! - 3N \\ln \\Lambda \\right]\nVia Stirling’s approximation \\ln N! = N\\ln N -N we get S = k_B \\left[ N \\ln(V - N v_{\\rm ex}/2) - (N \\ln N - N) - 3N \\ln \\Lambda \\right]\nThis can be rewritten as S = N k_B \\left[ \\ln\\left( \\frac{V - N v_{\\rm ex}/2}{N \\Lambda^3} \\right) + 1 \\right]"
+    "text": "Low packing fractions: entropy\nWe integrate over valid (non-overlapping) configurations such that |\\mathbf{r}_i - \\mathbf{r}_j| \\geq \\sigma for all i \\neq j. This yields \\mathcal{Z} = \\dfrac{(V-Nv_{\\rm ex}/2)^N}{N!\\Lambda^{3N}},\nwith the 1/2 factor coming from the fact that we avoid double counting the excluded volume of pairs.\n\nThe only energy is kinetic and independent of V, so F=-k_BT\\ln\\mathcal{Z}=-TS, with S known up to a term \\frac32 Nk_B from the momenta that does not depend on V: only the configurations matter for the pressure S = k_B \\ln \\mathcal{Z} = k_B \\left[ N \\ln(V - N v_{\\rm ex}/2) - \\ln N! - 3N \\ln \\Lambda \\right]\nVia Stirling’s approximation \\ln N! = N\\ln N -N we get S = k_B \\left[ N \\ln(V - N v_{\\rm ex}/2) - (N \\ln N - N) - 3N \\ln \\Lambda \\right]\nThis can be rewritten as S = N k_B \\left[ \\ln\\left( \\frac{V - N v_{\\rm ex}/2}{N \\Lambda^3} \\right) + 1 \\right]"
   },
   {
     "objectID": "soft-matter_colloids2.html#low-packing-fraction-equation-of-state",
@@ -1747,7 +1747,7 @@
     "href": "soft-matter_colloids2.html#virial-expansion",
     "title": "Complex Disordered Systems",
     "section": "Virial expansion",
-    "text": "Virial expansion\nThe expression Z_{\\rm comp} = 1+4\\phi+O(\\phi^2) is just the simplest form of the more generic virial expansion, the perturbative series\nZ_{\\rm comp}= 1 + B_2 \\rho + B_3 \\rho^2+ \\dots\nThe B_2, B_3, \\dots are known as virial coefficients and for non-hard-sphere systems they also depend on temperature, B_2(T), B_3(T),\\dots\nThey encode correlations (pairs, triplets and so on). In a generic setting\n\nZ_N=\\frac{1}{N!\\Lambda^{3 N}} \\int \\cdots \\int \\exp \\left[-\\beta \\sum_{i&lt;j} U\\left(r_{i j}\\right)\\right] d \\mathbf{r}_1 \\ldots d \\mathbf{r}_N\n\ncan be re-written using the Mayer function f_{i j}=e^{-\\beta u\\left(r_{i j}\\right)}-1 and e^{-\\beta \\sum_{i&lt;j} U\\left(r_{i j}\\right)}=\\prod_{i&lt;j}\\left(1+f_{i j}\\right) yielding\n\nZ_N=\\frac{1}{N!\\Lambda^{3 N}} \\int \\cdots \\int \\prod_{i&lt;j}\\left(1+f_{i j}\\right) d \\mathbf{r}_1 \\ldots d \\mathbf{r}_N"
+    "text": "Virial expansion\nThe expression Z_{\\rm comp} = 1+4\\phi+O(\\phi^2) is just the simplest form of the more generic virial expansion, the perturbative series\nZ_{\\rm comp}= 1 + B_2 \\rho + B_3 \\rho^2+ \\dots\nThe B_2, B_3, \\dots are known as virial coefficients and for non-hard-sphere systems they also depend on temperature, B_2(T), B_3(T),\\dots\nThey encode correlations (pairs, triplets and so on). In a generic setting\n\nZ_N=\\frac{1}{N!\\Lambda^{3 N}} \\int \\cdots \\int \\exp \\left[-\\beta \\sum_{i&lt;j} U\\left(r_{i j}\\right)\\right] d \\mathbf{r}_1 \\ldots d \\mathbf{r}_N\n\ncan be re-written using the Mayer function f_{i j}=e^{-\\beta U\\left(r_{i j}\\right)}-1 and e^{-\\beta \\sum_{i&lt;j} U\\left(r_{i j}\\right)}=\\prod_{i&lt;j}\\left(1+f_{i j}\\right) yielding\n\nZ_N=\\frac{1}{N!\\Lambda^{3 N}} \\int \\cdots \\int \\prod_{i&lt;j}\\left(1+f_{i j}\\right) d \\mathbf{r}_1 \\ldots d \\mathbf{r}_N"
   },
   {
     "objectID": "soft-matter_colloids2.html#cluster-expansion-and-second-virial",
@@ -1768,14 +1768,14 @@
     "href": "soft-matter_colloids2.html#dense-packing",
     "title": "Complex Disordered Systems",
     "section": "Dense packing",
-    "text": "Dense packing\n\nAs we increase the packing fraction, the accessible (free) volume reduces rapidly and thermal motion is hindered.\nTight disordered (random) packing of spheres are described as jammed: link with glasses (in future lectures).\nDensest packing reaches a maximum packing of around \\phi_{\\mathrm{rcp}} \\approx 0.64: this is not unique and depends on the protocol of preparation.\nKepler’s conjecture (1611, proved by Hales in 1998, formally verified only in 2017):\nDensest packings are Face Centred Cubic (FCC) or Hexagonally Close Packed (HCP) \\phi_{\\max }=\\frac{\\pi}{3 \\sqrt{2}} \\approx 0.74\n\n\n\n\nPackings"
+    "text": "Dense packing\n\nAs we increase the packing fraction, the accessible (free) volume reduces rapidly and thermal motion is hindered.\nTight disordered (random) packing of spheres are described as jammed: link with glasses (in future lectures).\nRandom (disordered) packings reach at most \\phi_{\\mathrm{rcp}} \\approx 0.64 (random close packing): this is not unique and depends on the protocol of preparation.\nKepler’s conjecture (1611, proved by Hales in 1998, formally verified only in 2017):\nDensest packings are Face Centred Cubic (FCC) or Hexagonally Close Packed (HCP) \\phi_{\\max }=\\frac{\\pi}{3 \\sqrt{2}} \\approx 0.74\n\n\n\n\nPackings"
   },
   {
     "objectID": "soft-matter_colloids2.html#dense-packing-1",
     "href": "soft-matter_colloids2.html#dense-packing-1",
     "title": "Complex Disordered Systems",
     "section": "Dense packing",
-    "text": "Dense packing\nQ: Can purely repulsive spheres assemble spontaneously into an FCC crystal?\n\n\nYES\n\nEntropy in AO interactions causes an effective interaction that has a minimum\n\nDisordered packings are less efficient than ordered ones\n\n\nNO\n\nHard sphere potential only prevents overlaps\n\nThere is no minimum in the interaction potential to favour a crystal lattice and localisation\n\nEntropy is just disorder\n\n\n\nThe matter was hotly debated in conferences in the 1950s and got to evenly split votes multiple times"
+    "text": "Dense packing\nQ: Can purely repulsive spheres assemble spontaneously into an FCC crystal?\n\n\nYES\n\nBy analogy with AO, entropy causes an effective interaction that has a minimum\n\nDisordered packings are less efficient than ordered ones\n\n\nNO\n\nHard sphere potential only prevents overlaps\n\nThere is no minimum in the interaction potential to favour a crystal lattice and localisation\n\nEntropy is just disorder\n\n\n\nThe matter was hotly debated in conferences in the 1950s and got to evenly split votes multiple times"
   },
   {
     "objectID": "soft-matter_colloids2.html#dense-packing-and-crystallisation",
@@ -1789,7 +1789,7 @@
     "href": "soft-matter_colloids2.html#dense-packing-cell-model",
     "title": "Complex Disordered Systems",
     "section": "Dense packing: cell model",
-    "text": "Dense packing: cell model\n\nIn an FCC crystal, each particle can move very little beyond its own diameter \\sigma: it rattles in a cage formed by its neighbours.\nIts free volume v_f vanishes at close packing \\phi_{cp}, and the entropy is S = N k_B \\ln \\left(v_f / \\Lambda^3\\right).\nTaking the pressure from this entropy (see the notes for the derivation) yields \nZ_{\\rm comp}=\\frac{1}{1-\\left(\\phi / \\phi_{c p}\\right)^{1 / 3}}\n\nThis expression is completely different from the low density regime Z_{\\text {comp }}^{\\mathrm{low}}=1+B_2 \\rho+B_3 \\rho^2+\\ldots\nThe incompatibility signals non-analyticity and hence a discontinuous phase transition: first order transition, with interfaces and coexistence between phases."
+    "text": "Dense packing: cell model\n\nIn an FCC crystal, each particle can move very little beyond its own diameter \\sigma: it rattles in a cage formed by its neighbours.\nIts free volume v_f vanishes at close packing \\phi_{cp}, and the entropy is S = N k_B \\ln \\left(v_f / \\Lambda^3\\right).\nTaking the pressure from this entropy (see the notes for the derivation) yields \nZ_{\\rm comp}=\\frac{1}{1-\\left(\\phi / \\phi_{c p}\\right)^{1 / 3}}\n\nThis expression is completely different from the low density regime Z_{\\text {comp }}^{\\mathrm{low}}=1+B_2 \\rho+B_3 \\rho^2+\\ldots\nThe incompatibility signals non-analyticity and hence a discontinuous phase transition: first order transition, with interfaces and coexistence between phases.\nCrystallisation is entropy-driven: crystals pack more efficiently, so each sphere has more volume to explore, i.e. more available configurations. The ordered crystal has a higher entropy than the disordered fluid."
   },
   {
     "objectID": "soft-matter_colloids2.html#dense-packing-cell-model-1",
@@ -1810,7 +1810,7 @@
     "href": "soft-matter_colloids2.html#colloidal-hard-spheres-phase-behaviour-1",
     "title": "Complex Disordered Systems",
     "section": "Colloidal hard spheres: phase behaviour",
-    "text": "Colloidal hard spheres: phase behaviour\nIn conclusion, the one-dimensional phase diagram of hard spheres is the following\n\nHard spheres phase diagramNotice that the glass phase is purely non-equilibrium: if a system has enough time to relax, it will eventually form a crystal."
+    "text": "Colloidal hard spheres: phase behaviour\nIn conclusion, the one-dimensional phase diagram of hard spheres is the following: fluid below freezing \\phi_f=0.494, crystal above melting \\phi_m=0.545, coexistence in between.\n\nHard spheres phase diagramNotice that the glass phase is purely non-equilibrium: if a system has enough time to relax, it will eventually form a crystal."
   },
   {
     "objectID": "soft-matter_colloids2.html#colloidal-hard-spheres-seeing-the-phases",
@@ -1859,7 +1859,7 @@
     "href": "soft-matter_colloids2.html#coexistence-metastability-and-instability-recall",
     "title": "Complex Disordered Systems",
     "section": "Coexistence: Metastability and Instability (recall)",
-    "text": "Coexistence: Metastability and Instability (recall)\n\n\nYou have seen this physics when discussing the Ising model:\n\nCrossing the binodal (equal chemical potential and pressure between phases) the fluid becomes metastable: it crystallises by nucleation, with \\tau \\propto \\exp\\left(\\Delta G^*/k_B T\\right).\nThe spinodal marks the limit of stability, \\partial^2 G/\\partial \\phi^2=0: inside it there is no barrier and coarsening occurs.\n\n\n\n\n\nSchematic free energy for hard spheres compressed at high pressures: the fluid branch becomes metastable and the free energy minimum is located in the crystal phase"
+    "text": "Coexistence: Metastability and Instability (recall)\n\n\nYou have seen this physics when discussing the Ising model:\n\nCrossing the binodal (equal chemical potential and pressure between phases) the fluid becomes metastable: it crystallises by nucleation, with \\tau \\propto \\exp\\left(\\Delta G^*/k_B T\\right).\n\n\n\n\n\nSchematic free energy for hard spheres compressed at high pressures: the fluid branch becomes metastable and the free energy minimum is located in the crystal phase"
   },
   {
     "objectID": "soft-matter_colloids3.html#aside-optional-not-pairwise",
