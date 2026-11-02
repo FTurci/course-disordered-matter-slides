@@ -70,11 +70,11 @@ $$
 
 - The radial distribution function $g(r)$ is related to the average local density at a distance $r$ from a reference particle:
 
-- To formally derive this, consider a system of $N$ particles in volume $V$ with average density $\rho = N/V$. The local density at a distance $r$ from a reference particle is defined as
+- To formally derive this, consider a system of $N$ particles in volume $V$ with average density $\rho = N/V$. The local density at a distance $r$ from a reference particle is the number of particles in a shell of radius $r$ divided by the shell volume $4\pi r^2 dr$. Averaging over the $N$ reference particles,
 $$
-\langle \rho(r) \rangle = \left\langle \sum_{j \neq i} \delta\left(|\mathbf{r}_i - \mathbf{r}_j| - r\right) \right\rangle
+\langle \rho(r) \rangle = \frac{1}{4\pi r^2 N}\left\langle \sum_{i=1}^N\sum_{j \neq i} \delta\left(|\mathbf{r}_i - \mathbf{r}_j| - r\right) \right\rangle
 $$
-Averaging over all particles and normalizing by the bulk density $\rho$ gives the radial distribution function:
+Normalising by the bulk density $\rho$ gives the radial distribution function:
 $$
 g(r) = \frac{1}{4\pi r^2\rho N} \left\langle \sum_{i=1}^N \sum_{j \neq i} \delta\left(|\mathbf{r}_i - \mathbf{r}_j| - r\right) \right\rangle = \frac{\langle \rho(r) \rangle}{\rho}
 $$
@@ -88,11 +88,11 @@ $$
 -   For **hard spheres**, $g(r) = 0$ for $r < \sigma$ (no overlap), and $g(r)$ shows oscillations at higher $r$ due to packing effects.
 
 :::{.callout-note}
-Hard spheres in 3D are not exactly solvable! We only have perturbative solutions to hard spheres
+Hard spheres in 3D are not exactly solvable: we only have approximate theories (e.g. Percus-Yevick, below) and simulations. In 1D (hard rods) they are exactly solvable.
 :::
 
 - The $g(r)$ is the central object of (equilibrium) liquid state theory
-- Correlations between two particles $1$ and $2$ in a fluid to have two possible origins
+- Correlations between two particles $1$ and $2$ in a fluid can have two possible origins
     -   a **direct** correlation between the two particles, mediated by direct interactions (e.g. collisions) between 1 and 2.
     -   an **indirect correlation**, mediated by other particles in the fluid
 
@@ -111,7 +111,7 @@ $$
 
 where $h(r) = g(r)-1$. This is the **Ornstein-Zernike integral equation** between particles 1,2 and 3.
 
-Both $h(r)$ and $c(r)$ are unknown in principle. One needs an additional condition to fix box: these are **physical closures** leading to approximations.
+Both $h(r)$ and $c(r)$ are unknown in principle. One needs an additional condition to close the equation: these are **physical closures** leading to approximations.
 
 ![Meaning of the Ornstein-Zernike relation, adapted from Santos, Springer(2016)](./figs/ornstein-zernicke.png)
 
@@ -121,13 +121,13 @@ Both $h(r)$ and $c(r)$ are unknown in principle. One needs an additional conditi
 A common closure is the **Percus-Yevick approximation**.
 
 $$
-c(r)=[1+h(r)]\left[1-e^{\beta U(r)}\right]
+c(r)=[1+h(r)]\left[1-e^{\beta V(r)}\right]
 $$
 
 
-This closure interpolates between the hard-core exclusion (for $U(r) \to \infty$ inside the core, $g(r) = 0$) and the ideal gas limit (for $U(r) = 0$, $c(r) = 0$, so for hard spheres $c(r)=0$ outside the core).
+This closure interpolates between the hard-core exclusion (for $V(r) \to \infty$ inside the core, $g(r) = 0$) and the ideal gas limit (for $V(r) = 0$, $c(r) = 0$, so for hard spheres $c(r)=0$ outside the core).
 
-The result (semi) analytical. For hard spheres, it allows to calculate the g(r) accurately in a wide range of packing fractions
+The result is (semi-)analytical. For hard spheres, it allows one to calculate the g(r) accurately in a wide range of packing fractions
 
 
 ![PY approximation vs simulated data for hard spheres.](./figs/hs47.png){height=350}
@@ -137,23 +137,23 @@ The result (semi) analytical. For hard spheres, it allows to calculate the g(r) 
 The knowledge of the pair correlations also  allows one to extract equation of states and significantly improve on the virial expansion, as the $g(r)$ contains packing effects!
 
 $$
-P=\rho k_B T-\frac{2 \pi \rho^2}{3} \int_0^{\infty} r^3 \frac{d u(r)}{d r} g(r) d r
+P=\rho k_B T-\frac{2 \pi \rho^2}{3} \int_0^{\infty} r^3 \frac{d V(r)}{d r} g(r) d r
 $$
 
 
 :::{.callout-note}
 For hard spheres, 
-The derivative $\frac{du(r)}{dr}$ is zero everywhere except at the contact point $r = \sigma$, where it becomes a delta function:
+$V(r)$ jumps at contact, so write $g(r)=y(r)\,e^{-\beta V(r)}$ with $y(r)$ continuous. Since $e^{-\beta V(r)}$ is a step at $r=\sigma$,
 $$
-\frac{dV(r)}{dr} = -\infty \delta(r - \sigma)
+\beta\frac{dV}{dr}\,g(r) = -y(r)\frac{d e^{-\beta V}}{dr} = -g(\sigma^+)\,\delta(r - \sigma)
 $$
 
 Substituting into the pressure equation:
 $$
-P = \rho k_B T + \frac{2\pi\rho^2}{3} k_B T \sigma^3 g(\sigma)
+P = \rho k_B T + \frac{2\pi\rho^2}{3} k_B T \sigma^3 g(\sigma^+)
 $$
 
-Therefore, for hard spheres, the equation of state only requires knowledge of the contact value $g(\sigma)$.
+Therefore, for hard spheres, the equation of state only requires knowledge of the contact value $g(\sigma^+)$.
 
 We will see this in a problem class.
 :::
@@ -193,9 +193,9 @@ allowing one to read the direct correlation function directly from scattering da
 
 ## Aside (optional): higher order correlations
 
-Nothing prevents us to quantify higher order correlations. In general these are non-trivial are controlled by the indirect part of the correlations.
+Nothing prevents us from quantifying higher order correlations. In general these are non-trivial and controlled by the indirect part of the correlations.
 
-Standard ways to identify **n-particle*** correlations is to measure **structural motifs**. 
+Standard ways to identify **n-particle** correlations is to measure **structural motifs**. 
 
 ![Many body correlations in hard spheres, seminal work from Josh Robinson, PhD student in Bristol a few years ago, Robinson et al PRL (2019)](./figs/josh.png)
 
@@ -260,17 +260,19 @@ Hence $D$ can be extracted from linear fits to the MSD.
 
 ## Stokes-Einstein relation: fluctuation dissipation for colloids
 
-You have seen the **Einstein relation** for a Brownian particle with friction coefficient $\xi$ (Langevin dynamics):
+You have seen the **Einstein relation** for a Brownian particle with friction coefficient $\gamma$ (Langevin dynamics):
 $$
-D=\frac{k_B T}{\xi}
+D=\frac{k_B T}{\gamma}
 $$
-(equivalently, in sedimentation equilibrium the drift flux $n F/\xi$ balances the Fickian flux $-D\,\partial n/\partial x$ of the Boltzmann profile).
+(equivalently, in sedimentation equilibrium the drift flux $n F/\gamma$ balances the Fickian flux $-D\,\partial n/\partial x$ of the Boltzmann profile).
 
-For a sphere, **Stoke's law** $\xi=6 \pi \eta R$ yields simply
+For a sphere, **Stokes' law** $\gamma=6 \pi \eta R$ yields simply
 
 $$
 D=\frac{k_B T}{6 \pi \eta R}
 $$
+
+Water, $R=0.5\,\mu$m: $D\approx0.5\,\mu\text{m}^2/\text{s}$, so a colloid needs $\tau_B=R^2/D\approx0.5$ s to move its own radius (an atom: $\sim10$ ps). Colloidal liquids and crystals can be **filmed** under a microscope.
 
 This is the **Stokes-Einstein** relation, a balance between thermal fluctuations and viscous dissipation:
 
@@ -344,10 +346,10 @@ plot_tj(positions,msd,walker=0,loglog=False)
 
 - Consider hard spheres in a fluid.
 
-- At low volume fractions $\phi$ they rarely collide and they perform under/over-damped (Langevin) dynamics. They will therefore diffuse as $\operatorname{MSD} (t)= 6D_0 t$
+- At low volume fractions $\phi$ they rarely collide and they perform overdamped (Brownian) dynamics. They will therefore diffuse as $\operatorname{MSD} (t)= 6D_0 t$
 
 - Things change when we increase the packing. 
-    - Short times: $D_s <D_0$, diffusion within **cages** formed by the neighbours. Mostly free, but with some collisions.
+    - Short times: $D_s <D_0$, free motion inside the **cage** formed by the neighbours, slowed only by **hydrodynamic** interactions (without them $D_s=D_0$).
     - Long times: $D_L\ll D_0$ cage breaking. Interactions are both hard core and hydrodynamic
 
 ![MSD of colloids ](./figs/colloids-msd.png){height=430}
@@ -359,7 +361,7 @@ plot_tj(positions,msd,walker=0,loglog=False)
     - cage-jump dynamics $\to$ glassy dynamics (see future lectures)
     - rare events $\to$ non-Gaussian (exponential tails) $\neq$ Gaussian/diffusive statistics
     - Breakdown of the **Stokes-Einstein** relation 
-        - the viscosity increases much faster than the decrease in diffusion $D\xi/T\neq \mathrm{constant}$
+        - the viscosity increases much faster than the decrease in diffusion $D\gamma/T\neq \mathrm{constant}$
         - This means that $D\eta\neq \text{constant}$ and since the viscosity $\eta\sim \tau$ (a characteristic relaxation time) $D\tau\neq \text{constant}$
 
 
@@ -370,12 +372,12 @@ plot_tj(positions,msd,walker=0,loglog=False)
 | Topic | Key result |
 |---|---|
 | Colloidal scale | ${\rm Pe}_g=\Delta m\, g R/k_BT\lesssim 1$: Brownian motion beats sedimentation |
-| Van der Waals | $W_{vdW}(h)=-\frac{A_H}{6}f(h/R)$, attractive, short-range |
+| Van der Waals | $W_{vdW}(h)=-\frac{A_H}{6}f(h/R)$, attractive, $\approx -A_HR/12D$ near contact |
 | Double layer | $W_{DR}(h)=B\frac{R}{\lambda_B}e^{-(h-2R)/\lambda_D}$ (gap $h-2R$), salt shortens $\lambda_D$ |
 | DLVO | $W_{vdW}+W_{DR}$: salt switches between stable and aggregating |
-| Depletion (AO) | $W_{AO}(r)=-k_BT\rho_p V_{\rm overlap}(r)$: attraction from entropy |
+| Depletion (AO) | $W_{AO}(r)=-k_BT\rho_p^r V_{\rm overlap}(r)$: entropic, $-(1+\frac{3R}{2\delta})\phi_p^r k_BT$ at contact |
 | Hard spheres | single control parameter $\phi=\pi\sigma^3\rho/6$; entropy only |
-| Equation of state | dilute $Z_{\rm comp}=1+4\phi$; dense $Z_{\rm comp}=\left[1-(\phi/\phi_{cp})^{1/3}\right]^{-1}$ |
+| Equation of state | dilute fluid $Z_{\rm comp}=1+4\phi$; crystal (cell model) $Z_{\rm comp}=\left[1-(\phi/\phi_{cp})^{1/3}\right]^{-1}$ |
 | Phase diagram | $\phi_f=0.494$, $\phi_m=0.545$, $\phi_{cp}=0.74$: the crystal has **higher** entropy |
 | Structure | $g(r)$ from imaging, $S(k)$ from scattering; hard spheres $Z_{\rm comp}=1+4\phi\, g(\sigma^+)$ |
 | Diffusion | $\langle\Delta r^2\rangle=2dDt$; dense: $D_0>D_s>D_L$ (cages) |

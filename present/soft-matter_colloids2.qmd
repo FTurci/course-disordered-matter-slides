@@ -63,7 +63,7 @@ They are characterised by the simplest of potentials.
 
 <svg width="800" height="440" viewBox="0 0 400 220" xmlns="http://www.w3.org/2000/svg">
 <!-- Axes -->
-<line x1="40" y1="180" x2="370" y2="180" stroke="black" stroke-width="2"/> <line x1="60" y1="200" x2="60" y2="30" stroke="black" stroke-width="2"/> <!-- x axis label --> <text x="360" y="195" font-size="16" font-family="sans-serif">r</text> <!-- y axis label --> <text x="30" y="40" font-size="16" font-family="sans-serif" transform="rotate(-90 30,40)">U(r)</text> <!-- Hard sphere potential: vertical line at r=2R, infinite wall --> <line x1="120" y1="180" x2="120" y2="40" stroke="red" stroke-width="4"/> <!-- Dashed line for r < 2R (forbidden region) --> <rect x="60" y="40" width="60" height="140" fill="#f88" fill-opacity="0.2"/> <!-- Label for r=2R --> <text x="115" y="195" font-size="14" font-family="sans-serif" text-anchor="middle">2R</text> <!-- Flat line for r > 2R (U=0) --> <line x1="120" y1="180" x2="360" y2="180" stroke="blue" stroke-width="3"/> <!-- Dotted line at U=infty --> <text x="80" y="55" font-size="14" font-family="sans-serif" fill="red" text-anchor="middle">∞</text> <!-- Label for U=0 --> <text x="70" y="175" font-size="14" font-family="sans-serif" fill="blue">0</text> <!-- Bracket for forbidden region --> <text x="95" y="210" font-size="13" font-family="sans-serif" text-anchor="middle" fill="#f88">forbidden</text> <!-- Title --> <text x="200" y="25" font-size="18" font-family="sans-serif" text-anchor="middle">Hard Sphere Potential</text>
+<line x1="40" y1="180" x2="370" y2="180" stroke="black" stroke-width="2"/> <line x1="60" y1="200" x2="60" y2="30" stroke="black" stroke-width="2"/> <!-- x axis label --> <text x="360" y="195" font-size="16" font-family="sans-serif">r</text> <!-- y axis label --> <text x="30" y="40" font-size="16" font-family="sans-serif" transform="rotate(-90 30,40)">V(r)</text> <!-- Hard sphere potential: vertical line at r=2R, infinite wall --> <line x1="120" y1="180" x2="120" y2="40" stroke="red" stroke-width="4"/> <!-- Dashed line for r < 2R (forbidden region) --> <rect x="60" y="40" width="60" height="140" fill="#f88" fill-opacity="0.2"/> <!-- Label for r=2R --> <text x="115" y="195" font-size="14" font-family="sans-serif" text-anchor="middle">2R</text> <!-- Flat line for r > 2R (U=0) --> <line x1="120" y1="180" x2="360" y2="180" stroke="blue" stroke-width="3"/> <!-- Dotted line at U=infty --> <text x="80" y="55" font-size="14" font-family="sans-serif" fill="red" text-anchor="middle">∞</text> <!-- Label for U=0 --> <text x="70" y="175" font-size="14" font-family="sans-serif" fill="blue">0</text> <!-- Bracket for forbidden region --> <text x="95" y="210" font-size="13" font-family="sans-serif" text-anchor="middle" fill="#f88">forbidden</text> <!-- Title --> <text x="200" y="25" font-size="18" font-family="sans-serif" text-anchor="middle">Hard Sphere Potential</text>
 </svg>
 
 
@@ -72,14 +72,14 @@ They are characterised by the simplest of potentials.
 For a sphere of diameter $\sigma$, enormous simplification of the Boltzmann factor:
 
 $$
-e^{-\beta U(r)} = 
+e^{-\beta V(r)} = 
 \begin{cases} 
 0 & \text{if } r < \sigma \\
 1 & \text{if } r \geq \sigma
 \end{cases}
 $$
 
-This simplification arises because the potential \( U(r) \) is either infinite (forbidden region) or zero (allowed region).
+This simplification arises because the potential \( V(r) \) is either infinite (forbidden region) or zero (allowed region).
 
 For this reason, hard spheres are **entropy driven**.
 
@@ -182,10 +182,10 @@ The $B_2, B_3, \dots$ are known as **virial coefficients** and for non-hard-sphe
 They encode **correlations** (pairs, triplets and so on). In a generic setting
 
 $$
-Z_N=\frac{1}{N!\Lambda^{3 N}} \int \cdots \int \exp \left[-\beta \sum_{i<j} U\left(r_{i j}\right)\right] d \mathbf{r}_1 \ldots d \mathbf{r}_N
+Z_N=\frac{1}{N!\Lambda^{3 N}} \int \cdots \int \exp \left[-\beta \sum_{i<j} V\left(r_{i j}\right)\right] d \mathbf{r}_1 \ldots d \mathbf{r}_N
 $$
 
-can be re-written using the **Mayer function** $f_{i j}=e^{-\beta U\left(r_{i j}\right)}-1$ and  $e^{-\beta \sum_{i<j} U\left(r_{i j}\right)}=\prod_{i<j}\left(1+f_{i j}\right)$ yielding
+can be re-written using the **Mayer function** $f_{i j}=e^{-\beta V\left(r_{i j}\right)}-1$ and  $e^{-\beta \sum_{i<j} V\left(r_{i j}\right)}=\prod_{i<j}\left(1+f_{i j}\right)$ yielding
 
 $$
 Z_N=\frac{1}{N!\Lambda^{3 N}} \int \cdots \int \prod_{i<j}\left(1+f_{i j}\right) d \mathbf{r}_1 \ldots d \mathbf{r}_N
@@ -202,7 +202,7 @@ The first term is the ideal gas, the second is clearly **pair correlations** (on
 
 
 This motivates one to define $$
-B_2(T)=-\frac{1}{2} \int f(r) d \mathbf{r}=-2 \pi \int_0^{\infty}\left[e^{-\beta U(r)}-1\right] r^2 d r
+B_2(T)=-\frac{1}{2} \int f(r) d \mathbf{r}=-2 \pi \int_0^{\infty}\left[e^{-\beta V(r)}-1\right] r^2 d r
 $$
 
 
@@ -228,7 +228,7 @@ Z_{\text {comp }}=1+B_2 \rho+B_3 \rho^2+\ldots
 $$
 
 - The first nontrivial correction is the **second virial coefficient** $$
-B_2(T)=-2 \pi \int_0^{\infty}\left[e^{-\beta U(r)}-1\right] r^2 d r
+B_2(T)=-2 \pi \int_0^{\infty}\left[e^{-\beta V(r)}-1\right] r^2 d r
 $$
 :::
 
@@ -325,7 +325,7 @@ Colloids are big enough to be imaged directly: confocal microscopy shows the str
 ::: {.column}
 - A **simple liquid** is a system of particles interacting via short-range, spherically symmetric (isotropic) pair potentials.
 
-- A very common model is the **Lennard-Jones (LJ) potential** $$U_{\mathrm{LJ}}(r) = 4\epsilon \left[ \left( \frac{\sigma}{r} \right)^{12} - \left( \frac{\sigma}{r} \right)^6 \right]$$ with steep repulsion ($r^{-12}$) and an attractive tail ($r^{-6}$).
+- A very common model is the **Lennard-Jones (LJ) potential** $$V_{\mathrm{LJ}}(r) = 4\epsilon \left[ \left( \frac{\sigma}{r} \right)^{12} - \left( \frac{\sigma}{r} \right)^6 \right]$$ with steep repulsion ($r^{-12}$) and an attractive tail ($r^{-6}$).
 
 - Its phase behaviour adds a gas–liquid transition to the fluid and crystal of hard spheres.
 :::

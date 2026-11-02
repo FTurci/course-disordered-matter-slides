@@ -65,13 +65,13 @@ IUPAC definition:
 :::{.nonincremental}
 We are focusing on atoms that are globally neutral. The first non-trivial term of the multipole expansion is the **dipole**.
 
-- **dipole–dipole**: $U(r) \propto-\dfrac{\mu_1 \mu_2}{r^3}$
-- **dipole–induced dipole**: a permanent dipole induces $\mu_B \propto \alpha\mu/r^3$ in a neutral atom, so $U(r) \propto -\dfrac{\mu^2 \alpha}{r^6}$
+- **dipole–dipole**: $V(r) \propto-\dfrac{\mu_1 \mu_2}{r^3}$
+- **dipole–induced dipole**: a permanent dipole induces $\mu_B \propto \alpha\mu/r^3$ in a neutral atom, so $V(r) \propto -\dfrac{\mu^2 \alpha}{r^6}$
 - **induced dipole–induced dipole**: even when the average density is neutral, quantum fluctuations of the electron density make it instantaneously **asymmetric**. These fluctuations produce the **London dispersion forces**
 
 :::{.callout-important}
 ## London dispersion interaction
-$$\Large U(r)=-\frac{C}{r^6} $$
+$$\Large V(r)=-\frac{C}{r^6} $$
 :::
 
 The key insight is the $1/r^{6}$ decay of the interaction which decays much more rapidly than Coulomb's $1/r$.
