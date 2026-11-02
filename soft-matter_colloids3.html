@@ -221,9 +221,9 @@ g(r)=\frac{1}{4\pi r^2\rho N}\left\langle\sum_{i=1}^N \sum_{j \neq i} \delta\lef
 <h2>Radial distribution function</h2>
 <ul>
 <li class="fragment"><p>The radial distribution function <span class="math inline">g(r)</span> is related to the average local density at a distance <span class="math inline">r</span> from a reference particle:</p></li>
-<li class="fragment"><p>To formally derive this, consider a system of <span class="math inline">N</span> particles in volume <span class="math inline">V</span> with average density <span class="math inline">\rho = N/V</span>. The local density at a distance <span class="math inline">r</span> from a reference particle is defined as <span class="math display">
-\langle \rho(r) \rangle = \left\langle \sum_{j \neq i} \delta\left(|\mathbf{r}_i - \mathbf{r}_j| - r\right) \right\rangle
-</span> Averaging over all particles and normalizing by the bulk density <span class="math inline">\rho</span> gives the radial distribution function: <span class="math display">
+<li class="fragment"><p>To formally derive this, consider a system of <span class="math inline">N</span> particles in volume <span class="math inline">V</span> with average density <span class="math inline">\rho = N/V</span>. The local density at a distance <span class="math inline">r</span> from a reference particle is the number of particles in a shell of radius <span class="math inline">r</span> divided by the shell volume <span class="math inline">4\pi r^2 dr</span>. Averaging over the <span class="math inline">N</span> reference particles, <span class="math display">
+\langle \rho(r) \rangle = \frac{1}{4\pi r^2 N}\left\langle \sum_{i=1}^N\sum_{j \neq i} \delta\left(|\mathbf{r}_i - \mathbf{r}_j| - r\right) \right\rangle
+</span> Normalising by the bulk density <span class="math inline">\rho</span> gives the radial distribution function: <span class="math display">
 g(r) = \frac{1}{4\pi r^2\rho N} \left\langle \sum_{i=1}^N \sum_{j \neq i} \delta\left(|\mathbf{r}_i - \mathbf{r}_j| - r\right) \right\rangle = \frac{\langle \rho(r) \rangle}{\rho}
 </span></p>
 <p>where <span class="math inline">\langle \rho(r) \rangle</span> is the average density at distance <span class="math inline">r</span> from a particle, and <span class="math inline">\rho</span> is the bulk density.</p></li>
@@ -244,13 +244,13 @@ g(r) = \frac{1}{4\pi r^2\rho N} \left\langle \sum_{i=1}^N \sum_{j \neq i} \delta
 <p><strong>Note</strong></p>
 </div>
 <div class="callout-content">
-<p>Hard spheres in 3D are not exactly solvable! We only have perturbative solutions to hard spheres</p>
+<p>Hard spheres in 3D are not exactly solvable: we only have approximate theories (e.g.&nbsp;Percus-Yevick, below) and simulations. In 1D (hard rods) they are exactly solvable.</p>
 </div>
 </div>
 </div>
 <ul>
 <li>The <span class="math inline">g(r)</span> is the central object of (equilibrium) liquid state theory</li>
-<li>Correlations between two particles <span class="math inline">1</span> and <span class="math inline">2</span> in a fluid to have two possible origins
+<li>Correlations between two particles <span class="math inline">1</span> and <span class="math inline">2</span> in a fluid can have two possible origins
 <ul>
 <li>a <strong>direct</strong> correlation between the two particles, mediated by direct interactions (e.g.&nbsp;collisions) between 1 and 2.</li>
 <li>an <strong>indirect correlation</strong>, mediated by other particles in the fluid</li>
@@ -267,17 +267,17 @@ g(r) = \frac{1}{4\pi r^2\rho N} \left\langle \sum_{i=1}^N \sum_{j \neq i} \delta
 h\left(r_{12}\right)=c\left(r_{12}\right)+\rho \int c\left(r_{13}\right) h\left(r_{32}\right) d \mathbf{r}_3
 </span></p>
 <p>where <span class="math inline">h(r) = g(r)-1</span>. This is the <strong>Ornstein-Zernike integral equation</strong> between particles 1,2 and 3.</p>
-<p>Both <span class="math inline">h(r)</span> and <span class="math inline">c(r)</span> are unknown in principle. One needs an additional condition to fix box: these are <strong>physical closures</strong> leading to approximations.</p>
+<p>Both <span class="math inline">h(r)</span> and <span class="math inline">c(r)</span> are unknown in principle. One needs an additional condition to close the equation: these are <strong>physical closures</strong> leading to approximations.</p>
 
 <img data-src="./figs/ornstein-zernicke.png" class="r-stretch quarto-figure-center"><p class="caption">Meaning of the Ornstein-Zernike relation, adapted from Santos, Springer(2016)</p></section>
 <section id="aside-optional-percus-yevick-approximation" class="slide level2">
 <h2>Aside (optional): Percus-Yevick approximation</h2>
 <p>A common closure is the <strong>Percus-Yevick approximation</strong>.</p>
 <p><span class="math display">
-c(r)=[1+h(r)]\left[1-e^{\beta U(r)}\right]
+c(r)=[1+h(r)]\left[1-e^{\beta V(r)}\right]
 </span></p>
-<p>This closure interpolates between the hard-core exclusion (for <span class="math inline">U(r) \to \infty</span> inside the core, <span class="math inline">g(r) = 0</span>) and the ideal gas limit (for <span class="math inline">U(r) = 0</span>, <span class="math inline">c(r) = 0</span>, so for hard spheres <span class="math inline">c(r)=0</span> outside the core).</p>
-<p>The result (semi) analytical. For hard spheres, it allows to calculate the g(r) accurately in a wide range of packing fractions</p>
+<p>This closure interpolates between the hard-core exclusion (for <span class="math inline">V(r) \to \infty</span> inside the core, <span class="math inline">g(r) = 0</span>) and the ideal gas limit (for <span class="math inline">V(r) = 0</span>, <span class="math inline">c(r) = 0</span>, so for hard spheres <span class="math inline">c(r)=0</span> outside the core).</p>
+<p>The result is (semi-)analytical. For hard spheres, it allows one to calculate the g(r) accurately in a wide range of packing fractions</p>
 <div class="quarto-figure quarto-figure-center">
 <figure>
 <p><img data-src="./figs/hs47.png" height="350"></p>
@@ -289,7 +289,7 @@ c(r)=[1+h(r)]\left[1-e^{\beta U(r)}\right]
 <h2>Equation of states from <span class="math inline">g(r)</span></h2>
 <p>The knowledge of the pair correlations also allows one to extract equation of states and significantly improve on the virial expansion, as the <span class="math inline">g(r)</span> contains packing effects!</p>
 <p><span class="math display">
-P=\rho k_B T-\frac{2 \pi \rho^2}{3} \int_0^{\infty} r^3 \frac{d u(r)}{d r} g(r) d r
+P=\rho k_B T-\frac{2 \pi \rho^2}{3} \int_0^{\infty} r^3 \frac{d V(r)}{d r} g(r) d r
 </span></p>
 <div class="callout callout-note callout-titled callout-style-default">
 <div class="callout-body">
@@ -300,13 +300,13 @@ P=\rho k_B T-\frac{2 \pi \rho^2}{3} \int_0^{\infty} r^3 \frac{d u(r)}{d r} g(r) 
 <p><strong>Note</strong></p>
 </div>
 <div class="callout-content">
-<p>For hard spheres, The derivative <span class="math inline">\frac{du(r)}{dr}</span> is zero everywhere except at the contact point <span class="math inline">r = \sigma</span>, where it becomes a delta function: <span class="math display">
-\frac{dV(r)}{dr} = -\infty \delta(r - \sigma)
+<p>For hard spheres, <span class="math inline">V(r)</span> jumps at contact, so write <span class="math inline">g(r)=y(r)\,e^{-\beta V(r)}</span> with <span class="math inline">y(r)</span> continuous. Since <span class="math inline">e^{-\beta V(r)}</span> is a step at <span class="math inline">r=\sigma</span>, <span class="math display">
+\beta\frac{dV}{dr}\,g(r) = -y(r)\frac{d e^{-\beta V}}{dr} = -g(\sigma^+)\,\delta(r - \sigma)
 </span></p>
 <p>Substituting into the pressure equation: <span class="math display">
-P = \rho k_B T + \frac{2\pi\rho^2}{3} k_B T \sigma^3 g(\sigma)
+P = \rho k_B T + \frac{2\pi\rho^2}{3} k_B T \sigma^3 g(\sigma^+)
 </span></p>
-<p>Therefore, for hard spheres, the equation of state only requires knowledge of the contact value <span class="math inline">g(\sigma)</span>.</p>
+<p>Therefore, for hard spheres, the equation of state only requires knowledge of the contact value <span class="math inline">g(\sigma^+)</span>.</p>
 <p>We will see this in a problem class.</p>
 </div>
 </div>
@@ -344,8 +344,8 @@ S(k)=1+4 \pi \rho \int_0^{\infty} r^2[g(r)-1] \frac{\sin (k r)}{k r} d r
 </section>
 <section id="aside-optional-higher-order-correlations" class="slide level2">
 <h2>Aside (optional): higher order correlations</h2>
-<p>Nothing prevents us to quantify higher order correlations. In general these are non-trivial are controlled by the indirect part of the correlations.</p>
-<p>Standard ways to identify <strong>n-particle</strong>* correlations is to measure <strong>structural motifs</strong>.</p>
+<p>Nothing prevents us from quantifying higher order correlations. In general these are non-trivial and controlled by the indirect part of the correlations.</p>
+<p>Standard ways to identify <strong>n-particle</strong> correlations is to measure <strong>structural motifs</strong>.</p>
 
 <img data-src="./figs/josh.png" class="r-stretch quarto-figure-center"><p class="caption">Many body correlations in hard spheres, seminal work from Josh Robinson, PhD student in Bristol a few years ago, Robinson et al PRL (2019)</p><p>This is particularly important for dense systems (e.g.&nbsp;glasses, see future lecture).</p>
 </section>
@@ -395,13 +395,14 @@ D=\frac{k_B T}{\gamma}
 </section>
 <section id="stokes-einstein-relation-fluctuation-dissipation-for-colloids" class="slide level2">
 <h2>Stokes-Einstein relation: fluctuation dissipation for colloids</h2>
-<p>You have seen the <strong>Einstein relation</strong> for a Brownian particle with friction coefficient <span class="math inline">\xi</span> (Langevin dynamics): <span class="math display">
-D=\frac{k_B T}{\xi}
-</span> (equivalently, in sedimentation equilibrium the drift flux <span class="math inline">n F/\xi</span> balances the Fickian flux <span class="math inline">-D\,\partial n/\partial x</span> of the Boltzmann profile).</p>
-<p>For a sphere, <strong>Stoke’s law</strong> <span class="math inline">\xi=6 \pi \eta R</span> yields simply</p>
+<p>You have seen the <strong>Einstein relation</strong> for a Brownian particle with friction coefficient <span class="math inline">\gamma</span> (Langevin dynamics): <span class="math display">
+D=\frac{k_B T}{\gamma}
+</span> (equivalently, in sedimentation equilibrium the drift flux <span class="math inline">n F/\gamma</span> balances the Fickian flux <span class="math inline">-D\,\partial n/\partial x</span> of the Boltzmann profile).</p>
+<p>For a sphere, <strong>Stokes’ law</strong> <span class="math inline">\gamma=6 \pi \eta R</span> yields simply</p>
 <p><span class="math display">
 D=\frac{k_B T}{6 \pi \eta R}
 </span></p>
+<p>Water, <span class="math inline">R=0.5\,\mu</span>m: <span class="math inline">D\approx0.5\,\mu\text{m}^2/\text{s}</span>, so a colloid needs <span class="math inline">\tau_B=R^2/D\approx0.5</span> s to move its own radius (an atom: <span class="math inline">\sim10</span> ps). Colloidal liquids and crystals can be <strong>filmed</strong> under a microscope.</p>
 <p>This is the <strong>Stokes-Einstein</strong> relation, a balance between thermal fluctuations and viscous dissipation:</p>
 <p><span class="math display">
 \text { Fluctuations: } k_B T \quad \longrightarrow \quad \text { Observed motion: } D \quad \longrightarrow \quad \text { Dissipation: } 6 \pi \eta R .
@@ -449,10 +450,10 @@ eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoibl9zdGVwcywgbl93YWxrZXJz
 <h2>Dilute vs dense diffusion</h2>
 <ul>
 <li><p>Consider hard spheres in a fluid.</p></li>
-<li><p>At low volume fractions <span class="math inline">\phi</span> they rarely collide and they perform under/over-damped (Langevin) dynamics. They will therefore diffuse as <span class="math inline">\operatorname{MSD} (t)= 6D_0 t</span></p></li>
+<li><p>At low volume fractions <span class="math inline">\phi</span> they rarely collide and they perform overdamped (Brownian) dynamics. They will therefore diffuse as <span class="math inline">\operatorname{MSD} (t)= 6D_0 t</span></p></li>
 <li><p>Things change when we increase the packing.</p>
 <ul>
-<li>Short times: <span class="math inline">D_s &lt;D_0</span>, diffusion within <strong>cages</strong> formed by the neighbours. Mostly free, but with some collisions.</li>
+<li>Short times: <span class="math inline">D_s &lt;D_0</span>, free motion inside the <strong>cage</strong> formed by the neighbours, slowed only by <strong>hydrodynamic</strong> interactions (without them <span class="math inline">D_s=D_0</span>).</li>
 <li>Long times: <span class="math inline">D_L\ll D_0</span> cage breaking. Interactions are both hard core and hydrodynamic</li>
 </ul></li>
 </ul>
@@ -472,7 +473,7 @@ eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoibl9zdGVwcywgbl93YWxrZXJz
 <li>rare events <span class="math inline">\to</span> non-Gaussian (exponential tails) <span class="math inline">\neq</span> Gaussian/diffusive statistics</li>
 <li>Breakdown of the <strong>Stokes-Einstein</strong> relation
 <ul>
-<li>the viscosity increases much faster than the decrease in diffusion <span class="math inline">D\xi/T\neq \mathrm{constant}</span></li>
+<li>the viscosity increases much faster than the decrease in diffusion <span class="math inline">D\gamma/T\neq \mathrm{constant}</span></li>
 <li>This means that <span class="math inline">D\eta\neq \text{constant}</span> and since the viscosity <span class="math inline">\eta\sim \tau</span> (a characteristic relaxation time) <span class="math inline">D\tau\neq \text{constant}</span></li>
 </ul></li>
 </ul></li>
@@ -499,7 +500,7 @@ eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoibl9zdGVwcywgbl93YWxrZXJz
 </tr>
 <tr class="even">
 <td>Van der Waals</td>
-<td><span class="math inline">W_{vdW}(h)=-\frac{A_H}{6}f(h/R)</span>, attractive, short-range</td>
+<td><span class="math inline">W_{vdW}(h)=-\frac{A_H}{6}f(h/R)</span>, attractive, <span class="math inline">\approx -A_HR/12D</span> near contact</td>
 </tr>
 <tr class="odd">
 <td>Double layer</td>
@@ -511,7 +512,7 @@ eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoibl9zdGVwcywgbl93YWxrZXJz
 </tr>
 <tr class="odd">
 <td>Depletion (AO)</td>
-<td><span class="math inline">W_{AO}(r)=-k_BT\rho_p V_{\rm overlap}(r)</span>: attraction from entropy</td>
+<td><span class="math inline">W_{AO}(r)=-k_BT\rho_p^r V_{\rm overlap}(r)</span>: entropic, <span class="math inline">-(1+\frac{3R}{2\delta})\phi_p^r k_BT</span> at contact</td>
 </tr>
 <tr class="even">
 <td>Hard spheres</td>
@@ -519,7 +520,7 @@ eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoibl9zdGVwcywgbl93YWxrZXJz
 </tr>
 <tr class="odd">
 <td>Equation of state</td>
-<td>dilute <span class="math inline">Z_{\rm comp}=1+4\phi</span>; dense <span class="math inline">Z_{\rm comp}=\left[1-(\phi/\phi_{cp})^{1/3}\right]^{-1}</span></td>
+<td>dilute fluid <span class="math inline">Z_{\rm comp}=1+4\phi</span>; crystal (cell model) <span class="math inline">Z_{\rm comp}=\left[1-(\phi/\phi_{cp})^{1/3}\right]^{-1}</span></td>
 </tr>
 <tr class="even">
 <td>Phase diagram</td>
