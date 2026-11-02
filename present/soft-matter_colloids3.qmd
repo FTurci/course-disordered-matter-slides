@@ -371,7 +371,7 @@ plot_tj(positions,msd,walker=0,loglog=False)
 |---|---|
 | Colloidal scale | ${\rm Pe}_g=\Delta m\, g R/k_BT\lesssim 1$: Brownian motion beats sedimentation |
 | Van der Waals | $W_{vdW}(h)=-\frac{A_H}{6}f(h/R)$, attractive, short-range |
-| Double layer | $W_{DR}(h)=B\frac{R}{\lambda_B}e^{-h/\lambda_D}$, salt shortens $\lambda_D$ |
+| Double layer | $W_{DR}(h)=B\frac{R}{\lambda_B}e^{-(h-2R)/\lambda_D}$ (gap $h-2R$), salt shortens $\lambda_D$ |
 | DLVO | $W_{vdW}+W_{DR}$: salt switches between stable and aggregating |
 | Depletion (AO) | $W_{AO}(r)=-k_BT\rho_p V_{\rm overlap}(r)$: attraction from entropy |
 | Hard spheres | single control parameter $\phi=\pi\sigma^3\rho/6$; entropy only |

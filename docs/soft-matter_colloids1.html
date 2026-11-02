@@ -242,7 +242,7 @@ Francesco Turci
 </section>
 <section id="van-der-waals-attractive-interaction-between-spheres" class="slide level2">
 <h2>van der Waals attractive interaction between spheres</h2>
-<p>Take now two spherical colloids of radius <span class="math inline">R</span> at distance <span class="math inline">H</span>.</p>
+<p>Take now two spherical colloids of radius <span class="math inline">R</span>, centres at distance <span class="math inline">h</span>: the surfaces are separated by the <strong>gap</strong> <span class="math inline">D=h-2R</span>.</p>
 <p>Integrating the London interaction over all volume elements yields the <strong>van der Waals attractive potential</strong></p>
 <div class="quarto-figure quarto-figure-center">
 <figure>
@@ -345,11 +345,12 @@ eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoiUiA9IDAuNSAgICAjIHJhZGl1
 <div class="callout-content">
 <p><span class="math display">
 \Large
-W_{D R}(h)=B \frac{R}{\lambda_B} \exp \left(-h / \lambda_D\right)
+W_{D R}(h)=B \frac{R}{\lambda_B} \exp \left(-\frac{h-2R}{\lambda_D}\right)
 </span></p>
 </div>
 </div>
 </div>
+<p>Same <span class="math inline">h</span> as in <span class="math inline">W_{vdW}</span>: the repulsion decays with the gap <span class="math inline">D=h-2R</span> between the surfaces. <span class="math inline">B\le 8</span> depends on the surface potential.</p>
 </section>
 <section id="vdw-double-layer-dlvo-interaction" class="slide level2">
 <h2>vdW + double layer = DLVO interaction</h2>
@@ -359,11 +360,11 @@ W_{D R}(h)=B \frac{R}{\lambda_B} \exp \left(-h / \lambda_D\right)
 <li><p>a double layer component <strong>repulsive in nature</strong></p></li>
 </ul>
 <p>The sum of the two gives rise to the DLVO (Derjaguin–Landau–Verwey–Overbeek) interaction which is an elementary model for colloid stability and aggregation.</p>
-<div id="da4b7c8d" class="cell" data-execution_count="1">
+<div id="d8d005c9" class="cell" data-execution_count="1">
 <div class="cell-output cell-output-display">
 <div>
 <figure>
-<p><img data-src="soft-matter_colloids1_files/figure-revealjs/cell-2-output-1.png" width="1474" height="473"></p>
+<p><img data-src="soft-matter_colloids1_files/figure-revealjs/cell-2-output-1.png" width="1444" height="472"></p>
 </figure>
 </div>
 </div>
@@ -643,39 +644,45 @@ eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoiUiA9IDEuMCAgICAgICAgICAg
 </section>
 <section id="summary-of-main-colloid-colloid-interactions" class="slide level2">
 <h2>Summary of main colloid-colloid interactions</h2>
-<table class="caption-top" style="width:99%;">
+<table class="caption-top">
 <colgroup>
-<col style="width: 13%">
-<col style="width: 69%">
-<col style="width: 16%">
+<col style="width: 25%">
+<col style="width: 25%">
+<col style="width: 25%">
+<col style="width: 25%">
 </colgroup>
 <thead>
 <tr class="header">
-<th>Interaction Type</th>
-<th>Description</th>
+<th>Interaction</th>
+<th>Origin</th>
 <th>Range</th>
+<th>Control knob</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td>Van der Waals</td>
-<td>Attractive forces arising from induced dipoles between particles.</td>
-<td>Short-range</td>
+<td>attractive, from fluctuating dipoles; <span class="math inline">\approx -A_HR/12D</span> near contact</td>
+<td>tens of nm, <span class="math inline">\propto A_HR</span></td>
+<td>materials (<span class="math inline">A_H</span>), index matching</td>
 </tr>
 <tr class="even">
-<td>Double Layer</td>
-<td>Electrostatic repulsion due to overlapping electrical double layers around charged particles.</td>
-<td>Long-range</td>
+<td>Double layer</td>
+<td>repulsive, screened electrostatics</td>
+<td>Debye length <span class="math inline">\lambda_D</span>: <span class="math inline">\sim 1</span> nm (100 mM) to <span class="math inline">\sim 100</span> nm (deionised)</td>
+<td>salt</td>
 </tr>
 <tr class="odd">
 <td>DLVO</td>
-<td>Combination of van der Waals attraction and double layer repulsion.</td>
-<td>Short and long range</td>
+<td>sum: barrier (stability) and secondary minimum</td>
+<td>barrier at <span class="math inline">\sim</span>nm, secondary minimum at several <span class="math inline">\lambda_D</span></td>
+<td>salt switches stable <span class="math inline">\leftrightarrow</span> aggregating</td>
 </tr>
 <tr class="even">
 <td>Depletion</td>
-<td>Typically attractive interactions emerging from purely entropic interactions</td>
-<td>Short range</td>
+<td>attractive, purely entropic</td>
+<td>polymer size <span class="math inline">2\delta</span></td>
+<td>polymer concentration and size</td>
 </tr>
 </tbody>
 </table>

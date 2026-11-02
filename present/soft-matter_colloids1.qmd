@@ -80,7 +80,7 @@ They are **short-range** in 3D, since the total energy scales like $\sim \int V(
 
 ## van der Waals attractive interaction between spheres 
 
-Take now two spherical colloids of radius $R$ at distance $H$. 
+Take now two spherical colloids of radius $R$, centres at distance $h$: the surfaces are separated by the **gap** $D=h-2R$. 
 
 Integrating the London interaction over all volume elements yields the **van der Waals attractive potential**
 
@@ -193,9 +193,11 @@ The final form of the potential is an **exponential repulsion** with scale $\lam
 
 $$
 \Large
-W_{D R}(h)=B \frac{R}{\lambda_B} \exp \left(-h / \lambda_D\right)
+W_{D R}(h)=B \frac{R}{\lambda_B} \exp \left(-\frac{h-2R}{\lambda_D}\right)
 $$
 :::
+
+Same $h$ as in $W_{vdW}$: the repulsion decays with the gap $D=h-2R$ between the surfaces. $B\le 8$ depends on the surface potential.
 
 
 ## vdW + double layer = DLVO interaction
@@ -219,42 +221,29 @@ The sum of the two gives rise to the DLVO (Derjaguin–Landau–Verwey–Overbee
 import numpy as np
 import matplotlib.pyplot as plt
 
-R = 0.5  # Radius of the colloid (micron) 
-h = np.linspace(2.01 * R, 5+R*2, 1000)  # Separation distance (h > 2R)
-# Van der Waals attractive potential
+R = 1.0  # Radius of the colloid (micron)
+D = np.geomspace(1e-4, 0.03, 1000)  # gap (micron)
+h = 2*R + D
 def van_der_waals_potential(h, R, A_H):
     f_h_R = (2 * R**2 / (h**2 - 4 * R**2)) + (2 * R**2 / h**2) + np.log((h**2 - 4 * R**2) / h**2)
     return -A_H / 6 * f_h_R
-# double layer repulsive potential
-def double_layer(h, R,B,ns ):
-    lambdaB = 0.0007 # typical Bjerrum length for water at 25 degrees (micron)
-    lambdaD = np.sqrt(1/(8*np.pi*lambdaB*ns))
-    # print("Debye length of", lambdaD)
-    return  B*R/lambdaB*np.exp(-h/lambdaD)
+def double_layer(h, R, B, salt_mM):
+    lambdaB = 0.0007 # Bjerrum length in water (micron)
+    lambdaD = np.sqrt(1/(8*np.pi*lambdaB*salt_mM*6.02e5))
+    return B*R/lambdaB*np.exp(-(h-2*R)/lambdaD)
 
 plt.figure(figsize=(6,2.), dpi=250)
-A_H = 1.0  # Hamaker constant (kBT)
-B = 0.8 # double layer energy scale 
-salts={"low":200, "medium":1000, "high":2200,"very high":2800 }
-for k,v in salts.items():
-    # compute potentials
-    W_vdW = van_der_waals_potential(h, R, A_H)
-    W_DR = double_layer(h, R, B,v)
-    DLVO = W_vdW+W_DR
-
-    plt.plot(h, DLVO, label=f"{k} salt")
-plt.plot(h, np.zeros_like(h), "--k")
-
-# nicer cliping
-
-ylim  = max(DLVO.max(),0.5)
-# plt.xlim(1, 5.0)
-plt.ylim(-0.1,0.1)
-plt.xlabel(r"h/2R")
-plt.ylabel("DLVO(h)")
-plt.legend(loc="lower right", frameon=False)
+A_H, B = 2.4, 0.5  # kBT, dimensionless
+for c in [1, 10, 100, 200]:
+    DLVO = van_der_waals_potential(h, R, A_H) + double_layer(h, R, B, c)
+    plt.plot(D*1e3, DLVO, label=f"{c} mM")
+plt.axhline(0, color="k", ls="--", lw=0.8)
+plt.ylim(-40, 80)
+plt.xlabel(r"gap $D=h-2R$ [nm]")
+plt.ylabel(r"$W_{DLVO}$ [$k_BT$]")
+plt.legend(title="salt", loc="upper left", bbox_to_anchor=(1.0, 1.0), frameon=False)
 plt.tight_layout()
-plt.show()  
+plt.show()
 ```  
 
 [🪁 Play with the potential](https://fturci.github.io/course-disordered-matter/soft-matter/soft-matter_colloids.html#double-layer-interaction){target="_blank"}
@@ -581,17 +570,9 @@ plt.gca().set(xlabel="Separation $r/R$", ylabel="$W_{AO}(r)$"); plt.tight_layout
 
 ## Summary of main colloid-colloid interactions
 
-
-
-
-+------------------+-----------------------------------------------------------------------------------------------+----------------------+
-| Interaction Type | Description                                                                                   | Range                |
-+==================+===============================================================================================+======================+
-| Van der Waals    | Attractive forces arising from induced dipoles between particles.                             | Short-range          |
-+------------------+-----------------------------------------------------------------------------------------------+----------------------+
-| Double Layer     | Electrostatic repulsion due to overlapping electrical double layers around charged particles. | Long-range           |
-+------------------+-----------------------------------------------------------------------------------------------+----------------------+
-| DLVO             | Combination of van der Waals attraction and double layer repulsion.                           | Short and long range |
-+------------------+-----------------------------------------------------------------------------------------------+----------------------+
-| Depletion        | Typically attractive interactions emerging from purely entropic interactions                  | Short range          |
-+------------------+-----------------------------------------------------------------------------------------------+----------------------+
+| Interaction | Origin | Range | Control knob |
+|---|---|---|---|
+| Van der Waals | attractive, from fluctuating dipoles; $\approx -A_HR/12D$ near contact | tens of nm, $\propto A_HR$ | materials ($A_H$), index matching |
+| Double layer | repulsive, screened electrostatics | Debye length $\lambda_D$: $\sim 1$ nm (100 mM) to $\sim 100$ nm (deionised) | salt |
+| DLVO | sum: barrier (stability) and secondary minimum | barrier at $\sim$nm, secondary minimum at several $\lambda_D$ | salt switches stable $\leftrightarrow$ aggregating |
+| Depletion | attractive, purely entropic | polymer size $2\delta$ | polymer concentration and size |
