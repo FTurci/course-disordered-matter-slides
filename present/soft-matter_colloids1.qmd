@@ -544,6 +544,11 @@ $$
 
 ## AO potential
 
+At contact: $\quad W_{\rm AO}(2R) = -\left(1+\dfrac{3}{2}\dfrac{R}{\delta}\right)\phi_p^r\, k_BT$
+
+- polymer concentration $\phi_p^r$ sets the **strength**, polymer size sets the **range** $2\delta$
+- the size ratio $R/\delta$ **amplifies** the attraction: $\phi_p^r=0.1$, $\delta=R/10$ gives $\approx -1.6\,k_BT$
+
 ```{pyodide}
 #| echo: false
 import numpy as np
@@ -575,4 +580,4 @@ plt.gca().set(xlabel="Separation $r/R$", ylabel="$W_{AO}(r)$"); plt.tight_layout
 | Van der Waals | attractive, from fluctuating dipoles; $\approx -A_HR/12D$ near contact | tens of nm, $\propto A_HR$ | materials ($A_H$), index matching |
 | Double layer | repulsive, screened electrostatics | Debye length $\lambda_D$: $\sim 1$ nm (100 mM) to $\sim 100$ nm (deionised) | salt |
 | DLVO | sum: barrier (stability) and secondary minimum | barrier at $\sim$nm, secondary minimum at several $\lambda_D$ | salt switches stable $\leftrightarrow$ aggregating |
-| Depletion | attractive, purely entropic | polymer size $2\delta$ | polymer concentration and size |
+| Depletion | attractive, purely entropic; $\approx -\frac{3R}{2\delta}\phi_p^r k_BT$ at contact | polymer size $2\delta$ | polymer concentration and size |
