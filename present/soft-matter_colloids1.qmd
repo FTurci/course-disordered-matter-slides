@@ -98,7 +98,7 @@ where $A_H$ is the **Hamaker** constant and $f(h / R)=\left[\frac{2 R^2}{h^2-4 R
 
 ## van der Waals attractive interaction between spheres 
 
-
+Near contact $-W_{vdW}\approx A_HR/12D \gg k_BT$ (touching colloids stick); far away the atomic $1/h^6$ is recovered.
 
 ```{pyodide}
 #| autorun: true
@@ -106,33 +106,26 @@ where $A_H$ is the **Hamaker** constant and $f(h / R)=\left[\frac{2 R^2}{h^2-4 R
 #| runbutton: false
 import numpy as np
 import matplotlib.pyplot as plt
-R = 5.0  # Radius of the colloid
-A_H = 1e-20  # Hamaker constant (in Joules)
 
-def plot():
-
-    h = np.linspace(2.01 * R, 20, 1000)  # Separation distance (h > 2R)
-    # Van der Waals potential
-    def van_der_waals_potential(h, R, A_H):
-        f_h_R = (2 * R**2 / (h**2 - 4 * R**2)) + (2 * R**2 / h**2) + np.log((h**2 - 4 * R**2) / h**2)
-        return -A_H / 6 * f_h_R
-    W_vdW = van_der_waals_potential(h, R, A_H)
-    plt.figure(figsize=(9,3))
-    plt.plot(h, W_vdW)
-    plt.xlabel("h")
-    plt.ylabel("WvdW")
-    plt.tight_layout()
-    plt.xlim(5,20)
-    return h, W_vdW
+def plot(R, A_H):
+    D = np.logspace(-3, 1, 400)  # surface-to-surface gap (micron)
+    h = 2*R + D
+    f = 2*R**2/(h**2 - 4*R**2) + 2*R**2/h**2 + np.log((h**2 - 4*R**2)/h**2)
+    W_vdW = -A_H/6*f
+    plt.figure(figsize=(9, 4))
+    plt.loglog(D, -W_vdW, label="exact (Hamaker)")
+    plt.loglog(D, A_H*R/(12*D), '--', label=r"contact: $A_HR/12D$")
+    plt.loglog(D, 16*A_H*R**6/(9*h**6), ':', label=r"far: $16A_HR^6/9h^6$")
+    plt.axhline(1, color='k', lw=0.8)
+    plt.xlabel(r"gap $D=h-2R$ [µm]"); plt.ylabel(r"$-W_{vdW}$ [$k_BT$]")
+    plt.ylim(1e-6, 1e3); plt.yticks(10.0**np.arange(-6, 4, 2)); plt.legend(frameon=False); plt.tight_layout(); plt.show()
 
 ```
 
 ```{pyodide}
-# parameters: change them to explore the interaction!
-R = 5.0  # Radius of the colloid
-A_H = 1e-20  # Hamaker constant (in Joules)
-h,W = plot()
-plt.show()
+R = 0.5    # radius (micron)
+A_H = 2.4  # Hamaker constant (kBT) = 1e-20 J
+plot(R, A_H)
 ```
 
 
