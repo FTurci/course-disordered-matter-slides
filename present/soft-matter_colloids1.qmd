@@ -577,7 +577,7 @@ plt.gca().set(xlabel="Separation $r/R$", ylabel="$W_{AO}(r)$"); plt.tight_layout
 
 | Interaction | Origin | Range | Control knob |
 |---|---|---|---|
-| Van der Waals | attractive, from fluctuating dipoles; $\approx -A_HR/12D$ near contact | tens of nm, $\propto A_HR$ | materials ($A_H$), index matching |
+| Van der Waals | attractive, from fluctuating dipoles; $\approx -A_HR/12D$ near contact | tens of nm, $\propto A_HR$ | materials ($A_H$) |
 | Double layer | repulsive, screened electrostatics | Debye length $\lambda_D$: $\sim 1$ nm (100 mM) to $\sim 100$ nm (deionised) | salt |
 | DLVO | sum: barrier (stability) and secondary minimum | barrier at $\sim$nm, secondary minimum at several $\lambda_D$ | salt switches stable $\leftrightarrow$ aggregating |
 | Depletion | attractive, purely entropic; $\approx -\frac{3R}{2\delta}\phi_p^r k_BT$ at contact | polymer size $2\delta$ | polymer concentration and size |
