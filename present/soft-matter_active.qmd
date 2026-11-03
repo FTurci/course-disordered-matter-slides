@@ -14,6 +14,7 @@ bibliography: references.bib
 ## Today
 
 - Beyond thermal equilibrium
+- Flocking: the Vicsek model
 - Run-and-tumble dynamics
 - Active Brownian particles
 - Motility-induced phase separation (MIPS)
@@ -52,7 +53,7 @@ bibliography: references.bib
 :::
 
 :::{.callout-important appearance="minimal"}
-In active systems, the distribution of states is **not given** by Boltzmann statistics!
+In active systems, the distribution of states is **not given** by Boltzmann statistics! Steady states can be **stationary** but have **positive entropy production**: detailed balance is broken.
 :::
 
 ## Examples of Active Matter
@@ -79,12 +80,14 @@ The **Vicsek model** (1995) was one of the simplest models of active matter. Key
 - $v_0$: constant speed
 - $R$: interaction radius
 - $\xi_i$: noise, uniform in $[-\eta/2, \eta/2]$; the amplitude $\eta$ is the control parameter
+- Polar order $\phi=\big|\frac1N\sum_i e^{i\theta_i}\big|$: $0$ (disordered) to $1$ (flock)
+- The transition is **discontinuous**, with travelling bands
 :::
 
 ::: {.column width="50%"}
 
 
-![](./figs/vicsek.png){height=600}
+![Vicsek et al. PRL (1995); phase diagram from Grégoire & Chaté PRL (2004)](./figs/vicsek.png){height=540}
 :::
 ::::
 
@@ -253,55 +256,47 @@ Two regimes
 2. **Diffusive** (long times, $t \gg 1/\lambda$): $\langle \Delta r^2(t) \rangle \sim 4 D_{\text{eff}} t$
    - Effective diffusion: $D_{\text{eff}} = \frac{v_0^2}{2\lambda}$ (2D)
 
-Crossover time: $t_c \sim 1/\lambda$
+Crossover time $t_c \sim 1/\lambda$; exact (2D): $\langle \Delta r^2\rangle=\frac{2v_0^2}{\lambda^2}\left(\lambda t-1+e^{-\lambda t}\right)$
 
 ```{python}
-#| autorun: true
+#| echo: false
 import numpy as np
 import matplotlib.pyplot as plt
 
-# Parameters
-N = 300           # number of particles
+N = 300             # number of particles
 v0 = 1.0            # speed
 lambda_tumble = 0.1 # tumble rate
 dt = 0.01           # time step
-T = 1000             # total time
+T = 1000            # total time
 steps = int(T/dt)
+stride = 100        # store one configuration every `stride` steps to limit memory
 
-# Arrays to store positions
-x = np.zeros((N, steps))
-y = np.zeros((N, steps))
+x = np.zeros((N, steps // stride))
+y = np.zeros((N, steps // stride))
+xc, yc = np.zeros(N), np.zeros(N)
 theta = np.random.uniform(0, 2*np.pi, N)
 
-# Simulate run-and-tumble
 for t in range(1, steps):
     tumble = np.random.rand(N) < lambda_tumble * dt
     theta[tumble] = np.random.uniform(0, 2*np.pi, tumble.sum())
-    x[:, t] = x[:, t-1] + v0 * np.cos(theta) * dt
-    y[:, t] = y[:, t-1] + v0 * np.sin(theta) * dt 
+    xc += v0 * np.cos(theta) * dt
+    yc += v0 * np.sin(theta) * dt
+    if t % stride == 0:
+        x[:, t // stride], y[:, t // stride] = xc, yc
 
-# Compute MSD
 msd = np.mean((x - x[:, 0:1])**2 + (y - y[:, 0:1])**2, axis=0)
-time = np.arange(steps) * dt
+time = np.arange(steps // stride) * stride * dt
 
-#Plotting
 plt.figure(figsize=(9,4))
-t_ballistic = 1 / (10 * lambda_tumble)
-t_crossover = 1 / lambda_tumble
-t_diffusive = 10 / lambda_tumble
-# Plot
 plt.loglog(time, msd, label="Simulated MSD")
 plt.loglog(time, (v0*time)**2, '--', label=r"Ballistic: $v_0^2 t^2$")
-plt.loglog(time, 2*(v0**2/(2*lambda_tumble))*time, '--', label=r"Diffusive: $2D_\mathrm{eff} t$")
-plt.xlim(1*dt,time.max())
+plt.loglog(time, 4*(v0**2/(2*lambda_tumble))*time, '--', label=r"Diffusive: $4D_\mathrm{eff} t$")
+plt.xlim(stride*dt, time.max())
 plt.tick_params(axis='both', labelsize=8, pad=15)
-plt.tight_layout()
-
-
 plt.xlabel("Time $t$")
 plt.ylabel(r"MSD $\langle \Delta r^2(t) \rangle$")
 plt.legend(frameon=False)
-
+plt.tight_layout()
 plt.show()
 ```
 
@@ -340,21 +335,22 @@ $$Pe = \frac{v_0}{\sqrt{D_t D_r}} = \frac{v_0}{D_r L}$$
 
 **Three regimes:**
 
-$$\langle \Delta r^2(\tau) \rangle = \left[4 D_T + 2 v^2 \tau_R \right] \tau + 2 v^2 \tau_R^2 \left( e^{-\tau / \tau_R} - 1 \right)$$
+$$\langle \Delta r^2(\tau) \rangle = \left[4 D_t + 2 v_0^2 \tau_R \right] \tau + 2 v_0^2 \tau_R^2 \left( e^{-\tau / \tau_R} - 1 \right)$$
 
 :::: {.columns}
 ::: {.column width="30%"}
-1. **Short times**: Diffusive $\sim 4D_T\tau$
+1. **Short times**: Diffusive $\sim 4D_t\tau$
 2. **Intermediate**: Ballistic $\sim v_0^2\tau^2$
 3. **Long times**: Enhanced diffusion
 
-- $\tau_R = 1/D_r$: persistence time
-- $D_{\mathrm{eff}} = D_T + \frac{v_0^2}{2D_r}$: effective diffusion
+- $\tau_R = 1/D_r$: persistence time (2D)
+- $D_{\mathrm{eff}} = D_t + \frac{v_0^2}{2D_r}$: effective diffusion
+- Same as run-and-tumble with $\lambda=1/\tau_R$ (in $d$ dimensions: $\lambda=(d-1)D_r$)
 :::
 
 ::: {.column width="70%"}
 
-![Mean squared displacement for ABPs at different self-propulsion speeds. ](./figs/msd-abp.png.png){height=500}
+![Mean squared displacement for ABPs at different self-propulsion speeds. ](./figs/msd-abp.png){height=500}
 
 :::
 ::::
@@ -417,6 +413,18 @@ The persistence of active motion can lead to effective interactions between part
 :::
 ::::
 
+## MIPS: a positive feedback
+
+- Active particles **accumulate where they move slowly**: for non-interacting particles with a slowly varying speed $v(\mathbf r)$,
+$$\rho(\mathbf r)\propto\frac{1}{v(\mathbf r)}$$
+  no potential, yet a non-uniform density: **not Boltzmann**
+- Collisions make the speed **decrease with density**: $v(\rho)$
+- Feedback: dense $\to$ slow $\to$ denser
+- The homogeneous state is unstable (spinodal) when
+$$\frac{d\ln v}{d\ln\rho}<-1$$
+
+Cates & Tailleur, *Annu. Rev. Condens. Matter Phys.* **6**, 219 (2015)
+
 ## MIPS: Critical-like Behavior
 
 **Phase diagram features:**
@@ -457,7 +465,7 @@ In experiments, active systems can be realised in various ways:
 | Vicsek model | self-propulsion + alignment: flocking at low noise or high density |
 | Run-and-tumble | straight runs at $v_0$, tumbles at rate $\lambda$; $D_{\rm eff}=v_0^2/2\lambda$ (2D) |
 | Active Brownian particles | constant speed, rotational diffusion $D_r$; $\mathrm{Pe}=v_0/\sqrt{D_tD_r}$ |
-| MSD | $4D_T\tau$ → $v_0^2\tau^2$ → $4D_{\rm eff}\tau$, $D_{\rm eff}=D_T+v_0^2/2D_r$ |
-| MIPS | purely repulsive ABPs phase separate at low $D_r$, with a critical point |
+| MSD | $4D_t\tau$ → $v_0^2\tau^2$ → $4D_{\rm eff}\tau$, $D_{\rm eff}=D_t+v_0^2/2D_r$; same as run-and-tumble for $\lambda=(d-1)D_r$ |
+| MIPS | purely repulsive ABPs phase separate at low $D_r$: dense $\to$ slow $\to$ denser, unstable if $d\ln v/d\ln\rho<-1$; critical point |
 
 [Full summary with links in the notes](https://fturci.github.io/course-disordered-matter/soft-matter/soft-matter_active.html#summary){target="_blank"}

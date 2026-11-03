@@ -802,14 +802,14 @@
     "href": "soft-matter_active.html#today",
     "title": "Complex Disordered Systems",
     "section": "Today",
-    "text": "Today\n\nBeyond thermal equilibrium\nRun-and-tumble dynamics\nActive Brownian particles\nMotility-induced phase separation (MIPS)"
+    "text": "Today\n\nBeyond thermal equilibrium\nFlocking: the Vicsek model\nRun-and-tumble dynamics\nActive Brownian particles\nMotility-induced phase separation (MIPS)"
   },
   {
     "objectID": "soft-matter_active.html#beyond-thermal-systems",
     "href": "soft-matter_active.html#beyond-thermal-systems",
     "title": "Complex Disordered Systems",
     "section": "Beyond Thermal Systems",
-    "text": "Beyond Thermal Systems\n\n\nEquilibrium systems:\n\nFree energy is optimised (subject to constraints):\nDistribution of states given by Boltzmann statistics: P(\\text{state}) \\propto e^{-E(\\text{state})/k_BT}\n\nArrested systems\n\nSupercooled liquids: local equilibrium (thermal)\nGlasses/gels: slow relaxation (towards equilibrium)\n\n\nActive matter: Nonequilibrium via local dissipation\n\nLocal energy consumption\nSelf-propulsion\nDissipation at microscopic scale\n\nExamples:\n\nBacteria\nSynthetic microswimmers\nMolecular motors\nBird flocks, fish schools\n\n\n\n\n\nIn active systems, the distribution of states is not given by Boltzmann statistics!"
+    "text": "Beyond Thermal Systems\n\n\nEquilibrium systems:\n\nFree energy is optimised (subject to constraints):\nDistribution of states given by Boltzmann statistics: P(\\text{state}) \\propto e^{-E(\\text{state})/k_BT}\n\nArrested systems\n\nSupercooled liquids: local equilibrium (thermal)\nGlasses/gels: slow relaxation (towards equilibrium)\n\n\nActive matter: Nonequilibrium via local dissipation\n\nLocal energy consumption\nSelf-propulsion\nDissipation at microscopic scale\n\nExamples:\n\nBacteria\nSynthetic microswimmers\nMolecular motors\nBird flocks, fish schools\n\n\n\n\n\nIn active systems, the distribution of states is not given by Boltzmann statistics! Steady states can be stationary but have positive entropy production: detailed balance is broken."
   },
   {
     "objectID": "soft-matter_active.html#examples-of-active-matter",
@@ -830,7 +830,7 @@
     "href": "soft-matter_active.html#flocking-as-a-minimal-model-1",
     "title": "Complex Disordered Systems",
     "section": "Flocking as a minimal model",
-    "text": "Flocking as a minimal model\nThe Vicsek model (1995) was one of the simplest models of active matter. Key ingredients: alignment + self propulsion\n\n\n\nN particles with positions \\mathbf{r}_i and orientations \\theta_i\nUpdate rules: \\mathbf{r}_i(t+1) = \\mathbf{r}_i(t) + v_0 \\hat{\\mathbf{n}}_i(t) \\theta_i(t+1) = \\arg\\Big(\\sum_{|\\mathbf{r}_j - \\mathbf{r}_i| &lt; R} e^{i\\theta_j(t)}\\Big) + \\xi_i\nv_0: constant speed\nR: interaction radius\n\\xi_i: noise, uniform in [-\\eta/2, \\eta/2]; the amplitude \\eta is the control parameter"
+    "text": "Flocking as a minimal model\nThe Vicsek model (1995) was one of the simplest models of active matter. Key ingredients: alignment + self propulsion\n\n\n\nN particles with positions \\mathbf{r}_i and orientations \\theta_i\nUpdate rules: \\mathbf{r}_i(t+1) = \\mathbf{r}_i(t) + v_0 \\hat{\\mathbf{n}}_i(t) \\theta_i(t+1) = \\arg\\Big(\\sum_{|\\mathbf{r}_j - \\mathbf{r}_i| &lt; R} e^{i\\theta_j(t)}\\Big) + \\xi_i\nv_0: constant speed\nR: interaction radius\n\\xi_i: noise, uniform in [-\\eta/2, \\eta/2]; the amplitude \\eta is the control parameter\nPolar order \\phi=\\big|\\frac1N\\sum_i e^{i\\theta_i}\\big|: 0 (disordered) to 1 (flock)\nThe transition is discontinuous, with travelling bands\n\n\n\n\n\nVicsek et al. PRL (1995); phase diagram from Grégoire & Chaté PRL (2004)"
   },
   {
     "objectID": "soft-matter_active.html#flocking-as-a-minimal-model-2",
@@ -865,7 +865,7 @@
     "href": "soft-matter_active.html#mean-squared-displacement",
     "title": "Complex Disordered Systems",
     "section": "Mean Squared Displacement",
-    "text": "Mean Squared Displacement\nTwo regimes\n\nBallistic (short times): \\langle \\Delta r^2(t) \\rangle \\sim v_0^2 t^2\nDiffusive (long times, t \\gg 1/\\lambda): \\langle \\Delta r^2(t) \\rangle \\sim 4 D_{\\text{eff}} t\n\nEffective diffusion: D_{\\text{eff}} = \\frac{v_0^2}{2\\lambda} (2D)\n\n\nCrossover time: t_c \\sim 1/\\lambda"
+    "text": "Mean Squared Displacement\nTwo regimes\n\nBallistic (short times): \\langle \\Delta r^2(t) \\rangle \\sim v_0^2 t^2\nDiffusive (long times, t \\gg 1/\\lambda): \\langle \\Delta r^2(t) \\rangle \\sim 4 D_{\\text{eff}} t\n\nEffective diffusion: D_{\\text{eff}} = \\frac{v_0^2}{2\\lambda} (2D)\n\n\nCrossover time t_c \\sim 1/\\lambda; exact (2D): \\langle \\Delta r^2\\rangle=\\frac{2v_0^2}{\\lambda^2}\\left(\\lambda t-1+e^{-\\lambda t}\\right)"
   },
   {
     "objectID": "soft-matter_active.html#active-brownian-particles-abps",
@@ -879,7 +879,7 @@
     "href": "soft-matter_active.html#abp-mean-squared-displacement",
     "title": "Complex Disordered Systems",
     "section": "ABP: Mean Squared Displacement",
-    "text": "ABP: Mean Squared Displacement\nThree regimes:\n\\langle \\Delta r^2(\\tau) \\rangle = \\left[4 D_T + 2 v^2 \\tau_R \\right] \\tau + 2 v^2 \\tau_R^2 \\left( e^{-\\tau / \\tau_R} - 1 \\right)\n\n\n\nShort times: Diffusive \\sim 4D_T\\tau\nIntermediate: Ballistic \\sim v_0^2\\tau^2\nLong times: Enhanced diffusion\n\n\n\\tau_R = 1/D_r: persistence time\nD_{\\mathrm{eff}} = D_T + \\frac{v_0^2}{2D_r}: effective diffusion\n\n\n\n\n\nMean squared displacement for ABPs at different self-propulsion speeds."
+    "text": "ABP: Mean Squared Displacement\nThree regimes:\n\\langle \\Delta r^2(\\tau) \\rangle = \\left[4 D_t + 2 v_0^2 \\tau_R \\right] \\tau + 2 v_0^2 \\tau_R^2 \\left( e^{-\\tau / \\tau_R} - 1 \\right)\n\n\n\nShort times: Diffusive \\sim 4D_t\\tau\nIntermediate: Ballistic \\sim v_0^2\\tau^2\nLong times: Enhanced diffusion\n\n\n\\tau_R = 1/D_r: persistence time (2D)\nD_{\\mathrm{eff}} = D_t + \\frac{v_0^2}{2D_r}: effective diffusion\nSame as run-and-tumble with \\lambda=1/\\tau_R (in d dimensions: \\lambda=(d-1)D_r)\n\n\n\n\n\nMean squared displacement for ABPs at different self-propulsion speeds."
   },
   {
     "objectID": "soft-matter_active.html#effective-interactions",
@@ -921,7 +921,7 @@
     "href": "soft-matter_active.html#summary-active-matter",
     "title": "Complex Disordered Systems",
     "section": "Summary: active matter",
-    "text": "Summary: active matter\n\n\n\n\n\n\n\nTopic\nKey result\n\n\n\n\nActive matter\nlocal energy consumption → self-propulsion; no Boltzmann distribution\n\n\nVicsek model\nself-propulsion + alignment: flocking at low noise or high density\n\n\nRun-and-tumble\nstraight runs at v_0, tumbles at rate \\lambda; D_{\\rm eff}=v_0^2/2\\lambda (2D)\n\n\nActive Brownian particles\nconstant speed, rotational diffusion D_r; \\mathrm{Pe}=v_0/\\sqrt{D_tD_r}\n\n\nMSD\n4D_T\\tau → v_0^2\\tau^2 → 4D_{\\rm eff}\\tau, D_{\\rm eff}=D_T+v_0^2/2D_r\n\n\nMIPS\npurely repulsive ABPs phase separate at low D_r, with a critical point\n\n\n\nFull summary with links in the notes"
+    "text": "Summary: active matter\n\n\n\n\n\n\n\nTopic\nKey result\n\n\n\n\nActive matter\nlocal energy consumption → self-propulsion; no Boltzmann distribution\n\n\nVicsek model\nself-propulsion + alignment: flocking at low noise or high density\n\n\nRun-and-tumble\nstraight runs at v_0, tumbles at rate \\lambda; D_{\\rm eff}=v_0^2/2\\lambda (2D)\n\n\nActive Brownian particles\nconstant speed, rotational diffusion D_r; \\mathrm{Pe}=v_0/\\sqrt{D_tD_r}\n\n\nMSD\n4D_t\\tau → v_0^2\\tau^2 → 4D_{\\rm eff}\\tau, D_{\\rm eff}=D_t+v_0^2/2D_r; same as run-and-tumble for \\lambda=(d-1)D_r\n\n\nMIPS\npurely repulsive ABPs phase separate at low D_r: dense \\to slow \\to denser, unstable if d\\ln v/d\\ln\\rho&lt;-1; critical point\n\n\n\nFull summary with links in the notes"
   },
   {
     "objectID": "soft-matter_gels.html#today",
@@ -2084,5 +2084,12 @@
     "title": "Complex Disordered Systems",
     "section": "Configurational entropy and the Kauzmann paradox",
     "text": "Configurational entropy and the Kauzmann paradox\n\n\nAs we take liquids to low temperatures, we can separate the total entropy into a vibrational and configurational part and define  S_{conf}(T) = S(T) -S_{vib}(T)\nFor several fluids, this decreases as the temperature is lowered, in an intriguing way. It is estimated from the entropy difference between liquid and crystal (similar vibrational entropies).\n\n[…] Perhaps in some instances a thermodynamic “freezing-in” of degrees of freedom does take place as a desperate result of the liquid’s excessive generosity with its limited supply of entropy and energy as its temperature is lowered below the melting point. This would imply the existence of some kind of state of high order for the liquid at low temperature which differs from the normal crystalline state. A plausible structure for such a state seems, however, difficult to conceive, and we believe that the paradox is better resolved in another way […] (W. Kauzmann, Chem. Rev. 43, 219 (1948)).\n\n\n\n\n\nKauzmann paradox: the entropy difference between the liquid and the crystal is extrapolated to low temperatures: glasses plateau, but what if we could equilibrate at very low T?"
+  },
+  {
+    "objectID": "soft-matter_active.html#mips-a-positive-feedback",
+    "href": "soft-matter_active.html#mips-a-positive-feedback",
+    "title": "Complex Disordered Systems",
+    "section": "MIPS: a positive feedback",
+    "text": "MIPS: a positive feedback\n\nActive particles accumulate where they move slowly: for non-interacting particles with a slowly varying speed v(\\mathbf r), \\rho(\\mathbf r)\\propto\\frac{1}{v(\\mathbf r)} no potential, yet a non-uniform density: not Boltzmann\nCollisions make the speed decrease with density: v(\\rho)\nFeedback: dense \\to slow \\to denser\nThe homogeneous state is unstable (spinodal) when \\frac{d\\ln v}{d\\ln\\rho}&lt;-1\n\nCates & Tailleur, Annu. Rev. Condens. Matter Phys. 6, 219 (2015)"
   }
 ]
