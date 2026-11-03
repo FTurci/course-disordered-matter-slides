@@ -140,19 +140,13 @@ The various affinities have temperature dependencies. Typically:
 
 ## Examples
 
-:::{.columns}
-:::{.column}
-- Example: Food polymer — gelatine (from collagen) in water
+- Example: **cold cataract**. The eye lens is a concentrated solution of proteins (crystallins) in water.
 
-    - Good solvent (hot water): gelatin chains hydrate and swell; the protein dissolves and the solution is fluid.
-    - Θ / marginal: intermediate temperature where hydration and chain self‑attraction roughly balance; solution is viscous but not set.
-    - Poor solvent (cold): effective attractions dominate; chains associate into a network, causing gelation (collapsed/aggregated network).
-:::
-:::{.column}
-![](./figs/gelatine.png)
-:::
-:::
-We will see gelation in a few sessions.
+    - At body temperature water is a good solvent: the lens is transparent.
+    - On cooling, water becomes a poorer solvent: the mixture separates into protein-rich and protein-poor regions, which scatter light, and the lens turns opaque.
+    - Warming back to $37\,^\circ$C clears the lens within minutes: the change is reversible.
+
+![Mouse lenses at $4\,^\circ$C, $25\,^\circ$C and $37\,^\circ$C (left to right). Images from Li *et al.*, *Front. Chem.* **9**, 767696 (2021), CC BY. Phase separation in cold cataract: Tanaka, Ishimoto & Chylack, *Science* **197**, 1010 (1977).](./figs/cold_cataract_li2021.jpg){width=80%}
 
 ## Concentrated polymer solutions
 
