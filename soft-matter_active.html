@@ -235,6 +235,7 @@ Francesco Turci
 <h2>Today</h2>
 <ul>
 <li>Beyond thermal equilibrium</li>
+<li>Flocking: the Vicsek model</li>
 <li>Run-and-tumble dynamics</li>
 <li>Active Brownian particles</li>
 <li>Motility-induced phase separation (MIPS)</li>
@@ -272,7 +273,7 @@ Francesco Turci
 <div class="callout callout-important no-icon callout-style-simple">
 <div class="callout-body">
 <div class="callout-content">
-<p>In active systems, the distribution of states is <strong>not given</strong> by Boltzmann statistics!</p>
+<p>In active systems, the distribution of states is <strong>not given</strong> by Boltzmann statistics! Steady states can be <strong>stationary</strong> but have <strong>positive entropy production</strong>: detailed balance is broken.</p>
 </div>
 </div>
 </div>
@@ -296,9 +297,16 @@ Francesco Turci
 <li><p><span class="math inline">v_0</span>: constant speed</p></li>
 <li><p><span class="math inline">R</span>: interaction radius</p></li>
 <li><p><span class="math inline">\xi_i</span>: noise, uniform in <span class="math inline">[-\eta/2, \eta/2]</span>; the amplitude <span class="math inline">\eta</span> is the control parameter</p></li>
+<li><p>Polar order <span class="math inline">\phi=\big|\frac1N\sum_i e^{i\theta_i}\big|</span>: <span class="math inline">0</span> (disordered) to <span class="math inline">1</span> (flock)</p></li>
+<li><p>The transition is <strong>discontinuous</strong>, with travelling bands</p></li>
 </ul>
 </div><div class="column" style="width:50%;">
-<p><img data-src="./figs/vicsek.png" height="600"></p>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="./figs/vicsek.png" height="540"></p>
+<figcaption>Vicsek et al.&nbsp;PRL (1995); phase diagram from Grégoire &amp; Chaté PRL (2004)</figcaption>
+</figure>
+</div>
 </div></div>
 </section>
 <section id="flocking-as-a-minimal-model-2" class="slide level2">
@@ -326,119 +334,119 @@ Francesco Turci
 <div class="cell">
 <details class="code-fold hidden">
 <summary>Code</summary>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code hidden" id="cb1" data-startfrom="119" data-source-offset="0"><pre class="sourceCode numberSource js number-lines code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 118;"><span id="cb1-119"><a></a>viewof simulation <span class="op">=</span> {</span>
-<span id="cb1-120"><a></a>    <span class="kw">const</span> n <span class="op">=</span> <span class="dv">300</span><span class="op">,</span> W <span class="op">=</span> <span class="dv">1000</span><span class="op">,</span> H <span class="op">=</span> <span class="dv">500</span><span class="op">,</span> dt <span class="op">=</span> <span class="fl">0.5</span><span class="op">,</span> v0 <span class="op">=</span> <span class="fl">1.5</span><span class="op">;</span></span>
-<span id="cb1-121"><a></a></span>
-<span id="cb1-122"><a></a>    <span class="kw">const</span> tumbleSlider <span class="op">=</span> Inputs<span class="op">.</span><span class="fu">range</span>([<span class="fl">0.01</span><span class="op">,</span> <span class="fl">1.0</span></span>
-<span id="cb1-123"><a></a>    ]<span class="op">,</span> {<span class="dt">step</span><span class="op">:</span><span class="fl">0.01</span><span class="op">,</span> <span class="dt">value</span><span class="op">:</span><span class="fl">0.1</span><span class="op">,</span> <span class="dt">label</span><span class="op">:</span><span class="st">"Tumble rate λ"</span>})<span class="op">;</span></span>
-<span id="cb1-124"><a></a>    <span class="kw">const</span> button <span class="op">=</span> <span class="fu">html</span><span class="vs">`&lt;button&gt;Pause&lt;/button&gt;`</span><span class="op">;</span></span>
-<span id="cb1-125"><a></a>    <span class="kw">let</span> running <span class="op">=</span> <span class="kw">true</span><span class="op">;</span></span>
-<span id="cb1-126"><a></a>    button<span class="op">.</span><span class="at">onclick</span> <span class="op">=</span> () <span class="kw">=&gt;</span> {</span>
-<span id="cb1-127"><a></a>        running <span class="op">=</span> <span class="op">!</span>running<span class="op">;</span></span>
-<span id="cb1-128"><a></a>        button<span class="op">.</span><span class="at">textContent</span> <span class="op">=</span> running <span class="op">?</span> <span class="st">"Pause"</span> <span class="op">:</span> <span class="st">"Resume"</span><span class="op">;</span></span>
-<span id="cb1-129"><a></a>    }<span class="op">;</span></span>
-<span id="cb1-130"><a></a></span>
-<span id="cb1-131"><a></a>    <span class="kw">let</span> state <span class="op">=</span> <span class="bu">Array</span><span class="op">.</span><span class="fu">from</span>({<span class="dt">length</span><span class="op">:</span> n}<span class="op">,</span> () <span class="kw">=&gt;</span> ({</span>
-<span id="cb1-132"><a></a>        <span class="dt">x</span><span class="op">:</span> <span class="bu">Math</span><span class="op">.</span><span class="fu">random</span>() <span class="op">*</span> W<span class="op">,</span></span>
-<span id="cb1-133"><a></a>        <span class="dt">y</span><span class="op">:</span> <span class="bu">Math</span><span class="op">.</span><span class="fu">random</span>() <span class="op">*</span> H<span class="op">,</span></span>
-<span id="cb1-134"><a></a>        <span class="dt">theta</span><span class="op">:</span> <span class="bu">Math</span><span class="op">.</span><span class="fu">random</span>() <span class="op">*</span> <span class="dv">2</span> <span class="op">*</span> <span class="bu">Math</span><span class="op">.</span><span class="cn">PI</span></span>
-<span id="cb1-135"><a></a>    }))<span class="op">;</span></span>
-<span id="cb1-136"><a></a></span>
-<span id="cb1-137"><a></a>    <span class="co">// Each particle gets a trace array</span></span>
-<span id="cb1-138"><a></a>    <span class="kw">let</span> traces <span class="op">=</span> <span class="bu">Array</span><span class="op">.</span><span class="fu">from</span>({<span class="dt">length</span><span class="op">:</span> n}<span class="op">,</span> () <span class="kw">=&gt;</span> [])<span class="op">;</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code hidden" id="cb1" data-startfrom="122" data-source-offset="0"><pre class="sourceCode numberSource js number-lines code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 121;"><span id="cb1-122"><a></a>viewof simulation <span class="op">=</span> {</span>
+<span id="cb1-123"><a></a>    <span class="kw">const</span> n <span class="op">=</span> <span class="dv">300</span><span class="op">,</span> W <span class="op">=</span> <span class="dv">1000</span><span class="op">,</span> H <span class="op">=</span> <span class="dv">500</span><span class="op">,</span> dt <span class="op">=</span> <span class="fl">0.5</span><span class="op">,</span> v0 <span class="op">=</span> <span class="fl">1.5</span><span class="op">;</span></span>
+<span id="cb1-124"><a></a></span>
+<span id="cb1-125"><a></a>    <span class="kw">const</span> tumbleSlider <span class="op">=</span> Inputs<span class="op">.</span><span class="fu">range</span>([<span class="fl">0.01</span><span class="op">,</span> <span class="fl">1.0</span></span>
+<span id="cb1-126"><a></a>    ]<span class="op">,</span> {<span class="dt">step</span><span class="op">:</span><span class="fl">0.01</span><span class="op">,</span> <span class="dt">value</span><span class="op">:</span><span class="fl">0.1</span><span class="op">,</span> <span class="dt">label</span><span class="op">:</span><span class="st">"Tumble rate λ"</span>})<span class="op">;</span></span>
+<span id="cb1-127"><a></a>    <span class="kw">const</span> button <span class="op">=</span> <span class="fu">html</span><span class="vs">`&lt;button&gt;Pause&lt;/button&gt;`</span><span class="op">;</span></span>
+<span id="cb1-128"><a></a>    <span class="kw">let</span> running <span class="op">=</span> <span class="kw">true</span><span class="op">;</span></span>
+<span id="cb1-129"><a></a>    button<span class="op">.</span><span class="at">onclick</span> <span class="op">=</span> () <span class="kw">=&gt;</span> {</span>
+<span id="cb1-130"><a></a>        running <span class="op">=</span> <span class="op">!</span>running<span class="op">;</span></span>
+<span id="cb1-131"><a></a>        button<span class="op">.</span><span class="at">textContent</span> <span class="op">=</span> running <span class="op">?</span> <span class="st">"Pause"</span> <span class="op">:</span> <span class="st">"Resume"</span><span class="op">;</span></span>
+<span id="cb1-132"><a></a>    }<span class="op">;</span></span>
+<span id="cb1-133"><a></a></span>
+<span id="cb1-134"><a></a>    <span class="kw">let</span> state <span class="op">=</span> <span class="bu">Array</span><span class="op">.</span><span class="fu">from</span>({<span class="dt">length</span><span class="op">:</span> n}<span class="op">,</span> () <span class="kw">=&gt;</span> ({</span>
+<span id="cb1-135"><a></a>        <span class="dt">x</span><span class="op">:</span> <span class="bu">Math</span><span class="op">.</span><span class="fu">random</span>() <span class="op">*</span> W<span class="op">,</span></span>
+<span id="cb1-136"><a></a>        <span class="dt">y</span><span class="op">:</span> <span class="bu">Math</span><span class="op">.</span><span class="fu">random</span>() <span class="op">*</span> H<span class="op">,</span></span>
+<span id="cb1-137"><a></a>        <span class="dt">theta</span><span class="op">:</span> <span class="bu">Math</span><span class="op">.</span><span class="fu">random</span>() <span class="op">*</span> <span class="dv">2</span> <span class="op">*</span> <span class="bu">Math</span><span class="op">.</span><span class="cn">PI</span></span>
+<span id="cb1-138"><a></a>    }))<span class="op">;</span></span>
 <span id="cb1-139"><a></a></span>
-<span id="cb1-140"><a></a>    <span class="co">// Reset traces when tumble rate changes</span></span>
-<span id="cb1-141"><a></a>    <span class="kw">let</span> lastLambda <span class="op">=</span> tumbleSlider<span class="op">.</span><span class="at">value</span><span class="op">;</span></span>
-<span id="cb1-142"><a></a>    tumbleSlider<span class="op">.</span><span class="fu">addEventListener</span>(<span class="st">"input"</span><span class="op">,</span> () <span class="kw">=&gt;</span> {</span>
-<span id="cb1-143"><a></a>        traces <span class="op">=</span> <span class="bu">Array</span><span class="op">.</span><span class="fu">from</span>({<span class="dt">length</span><span class="op">:</span> n}<span class="op">,</span> () <span class="kw">=&gt;</span> [])<span class="op">;</span></span>
-<span id="cb1-144"><a></a>        lastLambda <span class="op">=</span> tumbleSlider<span class="op">.</span><span class="at">value</span><span class="op">;</span></span>
-<span id="cb1-145"><a></a>    })<span class="op">;</span></span>
-<span id="cb1-146"><a></a></span>
-<span id="cb1-147"><a></a>    <span class="kw">function</span> <span class="fu">step</span>(state<span class="op">,</span> λ) {</span>
-<span id="cb1-148"><a></a>        <span class="cf">return</span> state<span class="op">.</span><span class="fu">map</span>((p<span class="op">,</span> i) <span class="kw">=&gt;</span> {</span>
-<span id="cb1-149"><a></a>            <span class="cf">if</span> (<span class="bu">Math</span><span class="op">.</span><span class="fu">random</span>() <span class="op">&lt;</span> λ <span class="op">*</span> dt) p<span class="op">.</span><span class="at">theta</span> <span class="op">=</span> <span class="bu">Math</span><span class="op">.</span><span class="fu">random</span>() <span class="op">*</span> <span class="dv">2</span> <span class="op">*</span> <span class="bu">Math</span><span class="op">.</span><span class="cn">PI</span><span class="op">;</span></span>
-<span id="cb1-150"><a></a></span>
-<span id="cb1-151"><a></a>            <span class="co">// Predict next position</span></span>
-<span id="cb1-152"><a></a>            <span class="kw">let</span> nx <span class="op">=</span> p<span class="op">.</span><span class="at">x</span> <span class="op">+</span> v0 <span class="op">*</span> <span class="bu">Math</span><span class="op">.</span><span class="fu">cos</span>(p<span class="op">.</span><span class="at">theta</span>) <span class="op">*</span> dt<span class="op">;</span></span>
-<span id="cb1-153"><a></a>            <span class="kw">let</span> ny <span class="op">=</span> p<span class="op">.</span><span class="at">y</span> <span class="op">+</span> v0 <span class="op">*</span> <span class="bu">Math</span><span class="op">.</span><span class="fu">sin</span>(p<span class="op">.</span><span class="at">theta</span>) <span class="op">*</span> dt<span class="op">;</span></span>
-<span id="cb1-154"><a></a></span>
-<span id="cb1-155"><a></a>            <span class="co">// Bounce at left/right walls</span></span>
-<span id="cb1-156"><a></a>            <span class="cf">if</span> (nx <span class="op">&lt;</span> <span class="dv">0</span>) {</span>
-<span id="cb1-157"><a></a>                p<span class="op">.</span><span class="at">x</span> <span class="op">=</span> <span class="dv">0</span><span class="op">;</span></span>
-<span id="cb1-158"><a></a>                p<span class="op">.</span><span class="at">theta</span> <span class="op">=</span> <span class="bu">Math</span><span class="op">.</span><span class="cn">PI</span> <span class="op">-</span> <span class="bu">Math</span><span class="op">.</span><span class="fu">random</span>() <span class="op">*</span> <span class="bu">Math</span><span class="op">.</span><span class="cn">PI</span><span class="op">;</span> <span class="co">// random angle pointing right</span></span>
-<span id="cb1-159"><a></a>            } <span class="cf">else</span> <span class="cf">if</span> (nx <span class="op">&gt;</span> W) {</span>
-<span id="cb1-160"><a></a>                p<span class="op">.</span><span class="at">x</span> <span class="op">=</span> W<span class="op">;</span></span>
-<span id="cb1-161"><a></a>                p<span class="op">.</span><span class="at">theta</span> <span class="op">=</span> <span class="bu">Math</span><span class="op">.</span><span class="cn">PI</span> <span class="op">+</span> <span class="bu">Math</span><span class="op">.</span><span class="fu">random</span>() <span class="op">*</span> <span class="bu">Math</span><span class="op">.</span><span class="cn">PI</span><span class="op">;</span> <span class="co">// random angle pointing left</span></span>
-<span id="cb1-162"><a></a>            } <span class="cf">else</span> {</span>
-<span id="cb1-163"><a></a>                p<span class="op">.</span><span class="at">x</span> <span class="op">=</span> nx<span class="op">;</span></span>
-<span id="cb1-164"><a></a>            }</span>
-<span id="cb1-165"><a></a></span>
-<span id="cb1-166"><a></a>            <span class="co">// Bounce at top/bottom walls</span></span>
-<span id="cb1-167"><a></a>            <span class="cf">if</span> (ny <span class="op">&lt;</span> <span class="dv">0</span>) {</span>
-<span id="cb1-168"><a></a>                p<span class="op">.</span><span class="at">y</span> <span class="op">=</span> <span class="dv">0</span><span class="op">;</span></span>
-<span id="cb1-169"><a></a>                p<span class="op">.</span><span class="at">theta</span> <span class="op">=</span> (<span class="bu">Math</span><span class="op">.</span><span class="fu">random</span>() <span class="op">*</span> <span class="bu">Math</span><span class="op">.</span><span class="cn">PI</span>)<span class="op">;</span> <span class="co">// random angle pointing down</span></span>
-<span id="cb1-170"><a></a>            } <span class="cf">else</span> <span class="cf">if</span> (ny <span class="op">&gt;</span> H) {</span>
-<span id="cb1-171"><a></a>                p<span class="op">.</span><span class="at">y</span> <span class="op">=</span> H<span class="op">;</span></span>
-<span id="cb1-172"><a></a>                p<span class="op">.</span><span class="at">theta</span> <span class="op">=</span> <span class="bu">Math</span><span class="op">.</span><span class="cn">PI</span> <span class="op">+</span> (<span class="bu">Math</span><span class="op">.</span><span class="fu">random</span>() <span class="op">*</span> <span class="bu">Math</span><span class="op">.</span><span class="cn">PI</span>)<span class="op">;</span> <span class="co">// random angle pointing up</span></span>
-<span id="cb1-173"><a></a>            } <span class="cf">else</span> {</span>
-<span id="cb1-174"><a></a>                p<span class="op">.</span><span class="at">y</span> <span class="op">=</span> ny<span class="op">;</span></span>
-<span id="cb1-175"><a></a>            }</span>
-<span id="cb1-176"><a></a></span>
-<span id="cb1-177"><a></a>            <span class="co">// Add current position to trace</span></span>
-<span id="cb1-178"><a></a>            traces[i]<span class="op">.</span><span class="fu">push</span>([p<span class="op">.</span><span class="at">x</span><span class="op">,</span> p<span class="op">.</span><span class="at">y</span>])<span class="op">;</span></span>
-<span id="cb1-179"><a></a>            <span class="co">// Limit trace length for performance</span></span>
-<span id="cb1-180"><a></a>            <span class="cf">if</span> (traces[i]<span class="op">.</span><span class="at">length</span> <span class="op">&gt;</span> <span class="dv">200</span>) traces[i]<span class="op">.</span><span class="fu">shift</span>()<span class="op">;</span></span>
-<span id="cb1-181"><a></a>            <span class="cf">return</span> p<span class="op">;</span></span>
-<span id="cb1-182"><a></a>        })<span class="op">;</span></span>
-<span id="cb1-183"><a></a>    }</span>
-<span id="cb1-184"><a></a></span>
-<span id="cb1-185"><a></a>    <span class="kw">const</span> container <span class="op">=</span> <span class="fu">html</span><span class="vs">`&lt;div&gt;&lt;/div&gt;`</span><span class="op">;</span></span>
-<span id="cb1-186"><a></a>    container<span class="op">.</span><span class="fu">append</span>(tumbleSlider<span class="op">,</span> button)<span class="op">;</span></span>
-<span id="cb1-187"><a></a>    <span class="kw">const</span> svg <span class="op">=</span> d3<span class="op">.</span><span class="fu">select</span>(container)<span class="op">.</span><span class="fu">append</span>(<span class="st">"svg"</span>)</span>
-<span id="cb1-188"><a></a>        <span class="op">.</span><span class="fu">attr</span>(<span class="st">"width"</span><span class="op">,</span> W)</span>
-<span id="cb1-189"><a></a>        <span class="op">.</span><span class="fu">attr</span>(<span class="st">"height"</span><span class="op">,</span> H)</span>
-<span id="cb1-190"><a></a>        <span class="op">.</span><span class="fu">style</span>(<span class="st">"background"</span><span class="op">,</span> <span class="st">"#f8f8f8"</span>)<span class="op">;</span></span>
-<span id="cb1-191"><a></a></span>
-<span id="cb1-192"><a></a>    <span class="cf">while</span> (<span class="kw">true</span>) {</span>
-<span id="cb1-193"><a></a>        <span class="kw">const</span> λ <span class="op">=</span> tumbleSlider<span class="op">.</span><span class="at">value</span><span class="op">;</span></span>
-<span id="cb1-194"><a></a>        <span class="cf">if</span> (running) state <span class="op">=</span> <span class="fu">step</span>(state<span class="op">,</span> λ)<span class="op">;</span></span>
-<span id="cb1-195"><a></a></span>
-<span id="cb1-196"><a></a>        svg<span class="op">.</span><span class="fu">selectAll</span>(<span class="st">"*"</span>)<span class="op">.</span><span class="fu">remove</span>()<span class="op">;</span></span>
-<span id="cb1-197"><a></a></span>
-<span id="cb1-198"><a></a>        <span class="co">// Draw traces</span></span>
-<span id="cb1-199"><a></a>        traces<span class="op">.</span><span class="fu">forEach</span>(trace <span class="kw">=&gt;</span> {</span>
-<span id="cb1-200"><a></a>            <span class="cf">if</span> (trace<span class="op">.</span><span class="at">length</span> <span class="op">&gt;</span> <span class="dv">1</span>) {</span>
-<span id="cb1-201"><a></a>                svg<span class="op">.</span><span class="fu">append</span>(<span class="st">"path"</span>)</span>
-<span id="cb1-202"><a></a>                    <span class="op">.</span><span class="fu">attr</span>(<span class="st">"d"</span><span class="op">,</span> d3<span class="op">.</span><span class="fu">line</span>()(trace))</span>
-<span id="cb1-203"><a></a>                    <span class="op">.</span><span class="fu">attr</span>(<span class="st">"stroke"</span><span class="op">,</span> <span class="st">"#90caf9"</span>)</span>
-<span id="cb1-204"><a></a>                    <span class="op">.</span><span class="fu">attr</span>(<span class="st">"stroke-width"</span><span class="op">,</span> <span class="dv">1</span>)</span>
-<span id="cb1-205"><a></a>                    <span class="op">.</span><span class="fu">attr</span>(<span class="st">"fill"</span><span class="op">,</span> <span class="st">"none"</span>)<span class="op">;</span></span>
-<span id="cb1-206"><a></a>            }</span>
-<span id="cb1-207"><a></a>        })<span class="op">;</span></span>
-<span id="cb1-208"><a></a></span>
-<span id="cb1-209"><a></a>        <span class="co">// Draw particles</span></span>
-<span id="cb1-210"><a></a>        svg<span class="op">.</span><span class="fu">selectAll</span>(<span class="st">"circle"</span>)</span>
-<span id="cb1-211"><a></a>            <span class="op">.</span><span class="fu">data</span>(state)</span>
-<span id="cb1-212"><a></a>            <span class="op">.</span><span class="fu">enter</span>()<span class="op">.</span><span class="fu">append</span>(<span class="st">"circle"</span>)</span>
-<span id="cb1-213"><a></a>            <span class="op">.</span><span class="fu">attr</span>(<span class="st">"cx"</span><span class="op">,</span> d <span class="kw">=&gt;</span> d<span class="op">.</span><span class="at">x</span>)</span>
-<span id="cb1-214"><a></a>            <span class="op">.</span><span class="fu">attr</span>(<span class="st">"cy"</span><span class="op">,</span> d <span class="kw">=&gt;</span> d<span class="op">.</span><span class="at">y</span>)</span>
-<span id="cb1-215"><a></a>            <span class="op">.</span><span class="fu">attr</span>(<span class="st">"r"</span><span class="op">,</span> <span class="dv">3</span>)</span>
-<span id="cb1-216"><a></a>            <span class="op">.</span><span class="fu">attr</span>(<span class="st">"fill"</span><span class="op">,</span> <span class="st">"#1976d2"</span>)<span class="op">;</span></span>
-<span id="cb1-217"><a></a></span>
-<span id="cb1-218"><a></a>        svg<span class="op">.</span><span class="fu">selectAll</span>(<span class="st">"line"</span>)</span>
-<span id="cb1-219"><a></a>            <span class="op">.</span><span class="fu">data</span>(state)</span>
-<span id="cb1-220"><a></a>            <span class="op">.</span><span class="fu">enter</span>()<span class="op">.</span><span class="fu">append</span>(<span class="st">"line"</span>)</span>
-<span id="cb1-221"><a></a>            <span class="op">.</span><span class="fu">attr</span>(<span class="st">"x1"</span><span class="op">,</span> d <span class="kw">=&gt;</span> d<span class="op">.</span><span class="at">x</span>)</span>
-<span id="cb1-222"><a></a>            <span class="op">.</span><span class="fu">attr</span>(<span class="st">"y1"</span><span class="op">,</span> d <span class="kw">=&gt;</span> d<span class="op">.</span><span class="at">y</span>)</span>
-<span id="cb1-223"><a></a>            <span class="op">.</span><span class="fu">attr</span>(<span class="st">"x2"</span><span class="op">,</span> d <span class="kw">=&gt;</span> d<span class="op">.</span><span class="at">x</span> <span class="op">+</span> <span class="dv">10</span> <span class="op">*</span> <span class="bu">Math</span><span class="op">.</span><span class="fu">cos</span>(d<span class="op">.</span><span class="at">theta</span>))</span>
-<span id="cb1-224"><a></a>            <span class="op">.</span><span class="fu">attr</span>(<span class="st">"y2"</span><span class="op">,</span> d <span class="kw">=&gt;</span> d<span class="op">.</span><span class="at">y</span> <span class="op">+</span> <span class="dv">10</span> <span class="op">*</span> <span class="bu">Math</span><span class="op">.</span><span class="fu">sin</span>(d<span class="op">.</span><span class="at">theta</span>))</span>
-<span id="cb1-225"><a></a>            <span class="op">.</span><span class="fu">attr</span>(<span class="st">"stroke"</span><span class="op">,</span> <span class="st">"#1976d2"</span>)</span>
-<span id="cb1-226"><a></a>            <span class="op">.</span><span class="fu">attr</span>(<span class="st">"stroke-width"</span><span class="op">,</span> <span class="fl">1.2</span>)<span class="op">;</span></span>
-<span id="cb1-227"><a></a></span>
-<span id="cb1-228"><a></a>        <span class="kw">yield</span> container<span class="op">;</span></span>
-<span id="cb1-229"><a></a>        <span class="cf">await</span> Promises<span class="op">.</span><span class="fu">delay</span>(<span class="dv">16</span>)<span class="op">;</span></span>
-<span id="cb1-230"><a></a>    }</span>
-<span id="cb1-231"><a></a>}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb1-140"><a></a>    <span class="co">// Each particle gets a trace array</span></span>
+<span id="cb1-141"><a></a>    <span class="kw">let</span> traces <span class="op">=</span> <span class="bu">Array</span><span class="op">.</span><span class="fu">from</span>({<span class="dt">length</span><span class="op">:</span> n}<span class="op">,</span> () <span class="kw">=&gt;</span> [])<span class="op">;</span></span>
+<span id="cb1-142"><a></a></span>
+<span id="cb1-143"><a></a>    <span class="co">// Reset traces when tumble rate changes</span></span>
+<span id="cb1-144"><a></a>    <span class="kw">let</span> lastLambda <span class="op">=</span> tumbleSlider<span class="op">.</span><span class="at">value</span><span class="op">;</span></span>
+<span id="cb1-145"><a></a>    tumbleSlider<span class="op">.</span><span class="fu">addEventListener</span>(<span class="st">"input"</span><span class="op">,</span> () <span class="kw">=&gt;</span> {</span>
+<span id="cb1-146"><a></a>        traces <span class="op">=</span> <span class="bu">Array</span><span class="op">.</span><span class="fu">from</span>({<span class="dt">length</span><span class="op">:</span> n}<span class="op">,</span> () <span class="kw">=&gt;</span> [])<span class="op">;</span></span>
+<span id="cb1-147"><a></a>        lastLambda <span class="op">=</span> tumbleSlider<span class="op">.</span><span class="at">value</span><span class="op">;</span></span>
+<span id="cb1-148"><a></a>    })<span class="op">;</span></span>
+<span id="cb1-149"><a></a></span>
+<span id="cb1-150"><a></a>    <span class="kw">function</span> <span class="fu">step</span>(state<span class="op">,</span> λ) {</span>
+<span id="cb1-151"><a></a>        <span class="cf">return</span> state<span class="op">.</span><span class="fu">map</span>((p<span class="op">,</span> i) <span class="kw">=&gt;</span> {</span>
+<span id="cb1-152"><a></a>            <span class="cf">if</span> (<span class="bu">Math</span><span class="op">.</span><span class="fu">random</span>() <span class="op">&lt;</span> λ <span class="op">*</span> dt) p<span class="op">.</span><span class="at">theta</span> <span class="op">=</span> <span class="bu">Math</span><span class="op">.</span><span class="fu">random</span>() <span class="op">*</span> <span class="dv">2</span> <span class="op">*</span> <span class="bu">Math</span><span class="op">.</span><span class="cn">PI</span><span class="op">;</span></span>
+<span id="cb1-153"><a></a></span>
+<span id="cb1-154"><a></a>            <span class="co">// Predict next position</span></span>
+<span id="cb1-155"><a></a>            <span class="kw">let</span> nx <span class="op">=</span> p<span class="op">.</span><span class="at">x</span> <span class="op">+</span> v0 <span class="op">*</span> <span class="bu">Math</span><span class="op">.</span><span class="fu">cos</span>(p<span class="op">.</span><span class="at">theta</span>) <span class="op">*</span> dt<span class="op">;</span></span>
+<span id="cb1-156"><a></a>            <span class="kw">let</span> ny <span class="op">=</span> p<span class="op">.</span><span class="at">y</span> <span class="op">+</span> v0 <span class="op">*</span> <span class="bu">Math</span><span class="op">.</span><span class="fu">sin</span>(p<span class="op">.</span><span class="at">theta</span>) <span class="op">*</span> dt<span class="op">;</span></span>
+<span id="cb1-157"><a></a></span>
+<span id="cb1-158"><a></a>            <span class="co">// Bounce at left/right walls</span></span>
+<span id="cb1-159"><a></a>            <span class="cf">if</span> (nx <span class="op">&lt;</span> <span class="dv">0</span>) {</span>
+<span id="cb1-160"><a></a>                p<span class="op">.</span><span class="at">x</span> <span class="op">=</span> <span class="dv">0</span><span class="op">;</span></span>
+<span id="cb1-161"><a></a>                p<span class="op">.</span><span class="at">theta</span> <span class="op">=</span> <span class="bu">Math</span><span class="op">.</span><span class="cn">PI</span> <span class="op">-</span> <span class="bu">Math</span><span class="op">.</span><span class="fu">random</span>() <span class="op">*</span> <span class="bu">Math</span><span class="op">.</span><span class="cn">PI</span><span class="op">;</span> <span class="co">// random angle pointing right</span></span>
+<span id="cb1-162"><a></a>            } <span class="cf">else</span> <span class="cf">if</span> (nx <span class="op">&gt;</span> W) {</span>
+<span id="cb1-163"><a></a>                p<span class="op">.</span><span class="at">x</span> <span class="op">=</span> W<span class="op">;</span></span>
+<span id="cb1-164"><a></a>                p<span class="op">.</span><span class="at">theta</span> <span class="op">=</span> <span class="bu">Math</span><span class="op">.</span><span class="cn">PI</span> <span class="op">+</span> <span class="bu">Math</span><span class="op">.</span><span class="fu">random</span>() <span class="op">*</span> <span class="bu">Math</span><span class="op">.</span><span class="cn">PI</span><span class="op">;</span> <span class="co">// random angle pointing left</span></span>
+<span id="cb1-165"><a></a>            } <span class="cf">else</span> {</span>
+<span id="cb1-166"><a></a>                p<span class="op">.</span><span class="at">x</span> <span class="op">=</span> nx<span class="op">;</span></span>
+<span id="cb1-167"><a></a>            }</span>
+<span id="cb1-168"><a></a></span>
+<span id="cb1-169"><a></a>            <span class="co">// Bounce at top/bottom walls</span></span>
+<span id="cb1-170"><a></a>            <span class="cf">if</span> (ny <span class="op">&lt;</span> <span class="dv">0</span>) {</span>
+<span id="cb1-171"><a></a>                p<span class="op">.</span><span class="at">y</span> <span class="op">=</span> <span class="dv">0</span><span class="op">;</span></span>
+<span id="cb1-172"><a></a>                p<span class="op">.</span><span class="at">theta</span> <span class="op">=</span> (<span class="bu">Math</span><span class="op">.</span><span class="fu">random</span>() <span class="op">*</span> <span class="bu">Math</span><span class="op">.</span><span class="cn">PI</span>)<span class="op">;</span> <span class="co">// random angle pointing down</span></span>
+<span id="cb1-173"><a></a>            } <span class="cf">else</span> <span class="cf">if</span> (ny <span class="op">&gt;</span> H) {</span>
+<span id="cb1-174"><a></a>                p<span class="op">.</span><span class="at">y</span> <span class="op">=</span> H<span class="op">;</span></span>
+<span id="cb1-175"><a></a>                p<span class="op">.</span><span class="at">theta</span> <span class="op">=</span> <span class="bu">Math</span><span class="op">.</span><span class="cn">PI</span> <span class="op">+</span> (<span class="bu">Math</span><span class="op">.</span><span class="fu">random</span>() <span class="op">*</span> <span class="bu">Math</span><span class="op">.</span><span class="cn">PI</span>)<span class="op">;</span> <span class="co">// random angle pointing up</span></span>
+<span id="cb1-176"><a></a>            } <span class="cf">else</span> {</span>
+<span id="cb1-177"><a></a>                p<span class="op">.</span><span class="at">y</span> <span class="op">=</span> ny<span class="op">;</span></span>
+<span id="cb1-178"><a></a>            }</span>
+<span id="cb1-179"><a></a></span>
+<span id="cb1-180"><a></a>            <span class="co">// Add current position to trace</span></span>
+<span id="cb1-181"><a></a>            traces[i]<span class="op">.</span><span class="fu">push</span>([p<span class="op">.</span><span class="at">x</span><span class="op">,</span> p<span class="op">.</span><span class="at">y</span>])<span class="op">;</span></span>
+<span id="cb1-182"><a></a>            <span class="co">// Limit trace length for performance</span></span>
+<span id="cb1-183"><a></a>            <span class="cf">if</span> (traces[i]<span class="op">.</span><span class="at">length</span> <span class="op">&gt;</span> <span class="dv">200</span>) traces[i]<span class="op">.</span><span class="fu">shift</span>()<span class="op">;</span></span>
+<span id="cb1-184"><a></a>            <span class="cf">return</span> p<span class="op">;</span></span>
+<span id="cb1-185"><a></a>        })<span class="op">;</span></span>
+<span id="cb1-186"><a></a>    }</span>
+<span id="cb1-187"><a></a></span>
+<span id="cb1-188"><a></a>    <span class="kw">const</span> container <span class="op">=</span> <span class="fu">html</span><span class="vs">`&lt;div&gt;&lt;/div&gt;`</span><span class="op">;</span></span>
+<span id="cb1-189"><a></a>    container<span class="op">.</span><span class="fu">append</span>(tumbleSlider<span class="op">,</span> button)<span class="op">;</span></span>
+<span id="cb1-190"><a></a>    <span class="kw">const</span> svg <span class="op">=</span> d3<span class="op">.</span><span class="fu">select</span>(container)<span class="op">.</span><span class="fu">append</span>(<span class="st">"svg"</span>)</span>
+<span id="cb1-191"><a></a>        <span class="op">.</span><span class="fu">attr</span>(<span class="st">"width"</span><span class="op">,</span> W)</span>
+<span id="cb1-192"><a></a>        <span class="op">.</span><span class="fu">attr</span>(<span class="st">"height"</span><span class="op">,</span> H)</span>
+<span id="cb1-193"><a></a>        <span class="op">.</span><span class="fu">style</span>(<span class="st">"background"</span><span class="op">,</span> <span class="st">"#f8f8f8"</span>)<span class="op">;</span></span>
+<span id="cb1-194"><a></a></span>
+<span id="cb1-195"><a></a>    <span class="cf">while</span> (<span class="kw">true</span>) {</span>
+<span id="cb1-196"><a></a>        <span class="kw">const</span> λ <span class="op">=</span> tumbleSlider<span class="op">.</span><span class="at">value</span><span class="op">;</span></span>
+<span id="cb1-197"><a></a>        <span class="cf">if</span> (running) state <span class="op">=</span> <span class="fu">step</span>(state<span class="op">,</span> λ)<span class="op">;</span></span>
+<span id="cb1-198"><a></a></span>
+<span id="cb1-199"><a></a>        svg<span class="op">.</span><span class="fu">selectAll</span>(<span class="st">"*"</span>)<span class="op">.</span><span class="fu">remove</span>()<span class="op">;</span></span>
+<span id="cb1-200"><a></a></span>
+<span id="cb1-201"><a></a>        <span class="co">// Draw traces</span></span>
+<span id="cb1-202"><a></a>        traces<span class="op">.</span><span class="fu">forEach</span>(trace <span class="kw">=&gt;</span> {</span>
+<span id="cb1-203"><a></a>            <span class="cf">if</span> (trace<span class="op">.</span><span class="at">length</span> <span class="op">&gt;</span> <span class="dv">1</span>) {</span>
+<span id="cb1-204"><a></a>                svg<span class="op">.</span><span class="fu">append</span>(<span class="st">"path"</span>)</span>
+<span id="cb1-205"><a></a>                    <span class="op">.</span><span class="fu">attr</span>(<span class="st">"d"</span><span class="op">,</span> d3<span class="op">.</span><span class="fu">line</span>()(trace))</span>
+<span id="cb1-206"><a></a>                    <span class="op">.</span><span class="fu">attr</span>(<span class="st">"stroke"</span><span class="op">,</span> <span class="st">"#90caf9"</span>)</span>
+<span id="cb1-207"><a></a>                    <span class="op">.</span><span class="fu">attr</span>(<span class="st">"stroke-width"</span><span class="op">,</span> <span class="dv">1</span>)</span>
+<span id="cb1-208"><a></a>                    <span class="op">.</span><span class="fu">attr</span>(<span class="st">"fill"</span><span class="op">,</span> <span class="st">"none"</span>)<span class="op">;</span></span>
+<span id="cb1-209"><a></a>            }</span>
+<span id="cb1-210"><a></a>        })<span class="op">;</span></span>
+<span id="cb1-211"><a></a></span>
+<span id="cb1-212"><a></a>        <span class="co">// Draw particles</span></span>
+<span id="cb1-213"><a></a>        svg<span class="op">.</span><span class="fu">selectAll</span>(<span class="st">"circle"</span>)</span>
+<span id="cb1-214"><a></a>            <span class="op">.</span><span class="fu">data</span>(state)</span>
+<span id="cb1-215"><a></a>            <span class="op">.</span><span class="fu">enter</span>()<span class="op">.</span><span class="fu">append</span>(<span class="st">"circle"</span>)</span>
+<span id="cb1-216"><a></a>            <span class="op">.</span><span class="fu">attr</span>(<span class="st">"cx"</span><span class="op">,</span> d <span class="kw">=&gt;</span> d<span class="op">.</span><span class="at">x</span>)</span>
+<span id="cb1-217"><a></a>            <span class="op">.</span><span class="fu">attr</span>(<span class="st">"cy"</span><span class="op">,</span> d <span class="kw">=&gt;</span> d<span class="op">.</span><span class="at">y</span>)</span>
+<span id="cb1-218"><a></a>            <span class="op">.</span><span class="fu">attr</span>(<span class="st">"r"</span><span class="op">,</span> <span class="dv">3</span>)</span>
+<span id="cb1-219"><a></a>            <span class="op">.</span><span class="fu">attr</span>(<span class="st">"fill"</span><span class="op">,</span> <span class="st">"#1976d2"</span>)<span class="op">;</span></span>
+<span id="cb1-220"><a></a></span>
+<span id="cb1-221"><a></a>        svg<span class="op">.</span><span class="fu">selectAll</span>(<span class="st">"line"</span>)</span>
+<span id="cb1-222"><a></a>            <span class="op">.</span><span class="fu">data</span>(state)</span>
+<span id="cb1-223"><a></a>            <span class="op">.</span><span class="fu">enter</span>()<span class="op">.</span><span class="fu">append</span>(<span class="st">"line"</span>)</span>
+<span id="cb1-224"><a></a>            <span class="op">.</span><span class="fu">attr</span>(<span class="st">"x1"</span><span class="op">,</span> d <span class="kw">=&gt;</span> d<span class="op">.</span><span class="at">x</span>)</span>
+<span id="cb1-225"><a></a>            <span class="op">.</span><span class="fu">attr</span>(<span class="st">"y1"</span><span class="op">,</span> d <span class="kw">=&gt;</span> d<span class="op">.</span><span class="at">y</span>)</span>
+<span id="cb1-226"><a></a>            <span class="op">.</span><span class="fu">attr</span>(<span class="st">"x2"</span><span class="op">,</span> d <span class="kw">=&gt;</span> d<span class="op">.</span><span class="at">x</span> <span class="op">+</span> <span class="dv">10</span> <span class="op">*</span> <span class="bu">Math</span><span class="op">.</span><span class="fu">cos</span>(d<span class="op">.</span><span class="at">theta</span>))</span>
+<span id="cb1-227"><a></a>            <span class="op">.</span><span class="fu">attr</span>(<span class="st">"y2"</span><span class="op">,</span> d <span class="kw">=&gt;</span> d<span class="op">.</span><span class="at">y</span> <span class="op">+</span> <span class="dv">10</span> <span class="op">*</span> <span class="bu">Math</span><span class="op">.</span><span class="fu">sin</span>(d<span class="op">.</span><span class="at">theta</span>))</span>
+<span id="cb1-228"><a></a>            <span class="op">.</span><span class="fu">attr</span>(<span class="st">"stroke"</span><span class="op">,</span> <span class="st">"#1976d2"</span>)</span>
+<span id="cb1-229"><a></a>            <span class="op">.</span><span class="fu">attr</span>(<span class="st">"stroke-width"</span><span class="op">,</span> <span class="fl">1.2</span>)<span class="op">;</span></span>
+<span id="cb1-230"><a></a></span>
+<span id="cb1-231"><a></a>        <span class="kw">yield</span> container<span class="op">;</span></span>
+<span id="cb1-232"><a></a>        <span class="cf">await</span> Promises<span class="op">.</span><span class="fu">delay</span>(<span class="dv">16</span>)<span class="op">;</span></span>
+<span id="cb1-233"><a></a>    }</span>
+<span id="cb1-234"><a></a>}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 <div id="fig-ojs-cell-1" class="cell-output cell-output-display quarto-float quarto-figure quarto-figure-center">
 <figure class="quarto-float quarto-float-fig">
@@ -473,12 +481,12 @@ Figure&nbsp;1: Non-interacting run and tumble particles.
 <li>Effective diffusion: <span class="math inline">D_{\text{eff}} = \frac{v_0^2}{2\lambda}</span> (2D)</li>
 </ul></li>
 </ol>
-<p>Crossover time: <span class="math inline">t_c \sim 1/\lambda</span></p>
-<div id="925707d3" class="cell" data-autorun="true" data-execution_count="1">
+<p>Crossover time <span class="math inline">t_c \sim 1/\lambda</span>; exact (2D): <span class="math inline">\langle \Delta r^2\rangle=\frac{2v_0^2}{\lambda^2}\left(\lambda t-1+e^{-\lambda t}\right)</span></p>
+<div id="3f59a477" class="cell" data-execution_count="1">
 <div class="cell-output cell-output-display">
 <div>
 <figure>
-<p><img data-src="soft-matter_active_files/figure-revealjs/cell-2-output-1.png" width="875" height="392"></p>
+<p><img data-src="soft-matter_active_files/figure-revealjs/cell-2-output-1.png" width="852" height="372"></p>
 </figure>
 </div>
 </div>
@@ -513,22 +521,23 @@ Figure&nbsp;1: Non-interacting run and tumble particles.
 <section id="abp-mean-squared-displacement" class="slide level2">
 <h2>ABP: Mean Squared Displacement</h2>
 <p><strong>Three regimes:</strong></p>
-<p><span class="math display">\langle \Delta r^2(\tau) \rangle = \left[4 D_T + 2 v^2 \tau_R \right] \tau + 2 v^2 \tau_R^2 \left( e^{-\tau / \tau_R} - 1 \right)</span></p>
+<p><span class="math display">\langle \Delta r^2(\tau) \rangle = \left[4 D_t + 2 v_0^2 \tau_R \right] \tau + 2 v_0^2 \tau_R^2 \left( e^{-\tau / \tau_R} - 1 \right)</span></p>
 <div class="columns">
 <div class="column" style="width:30%;">
 <ol type="1">
-<li><strong>Short times</strong>: Diffusive <span class="math inline">\sim 4D_T\tau</span></li>
+<li><strong>Short times</strong>: Diffusive <span class="math inline">\sim 4D_t\tau</span></li>
 <li><strong>Intermediate</strong>: Ballistic <span class="math inline">\sim v_0^2\tau^2</span></li>
 <li><strong>Long times</strong>: Enhanced diffusion</li>
 </ol>
 <ul>
-<li><span class="math inline">\tau_R = 1/D_r</span>: persistence time</li>
-<li><span class="math inline">D_{\mathrm{eff}} = D_T + \frac{v_0^2}{2D_r}</span>: effective diffusion</li>
+<li><span class="math inline">\tau_R = 1/D_r</span>: persistence time (2D)</li>
+<li><span class="math inline">D_{\mathrm{eff}} = D_t + \frac{v_0^2}{2D_r}</span>: effective diffusion</li>
+<li>Same as run-and-tumble with <span class="math inline">\lambda=1/\tau_R</span> (in <span class="math inline">d</span> dimensions: <span class="math inline">\lambda=(d-1)D_r</span>)</li>
 </ul>
 </div><div class="column" style="width:70%;">
 <div class="quarto-figure quarto-figure-center">
 <figure>
-<p><img data-src="./figs/msd-abp.png.png" height="500"></p>
+<p><img data-src="./figs/msd-abp.png" height="500"></p>
 <figcaption>Mean squared displacement for ABPs at different self-propulsion speeds.</figcaption>
 </figure>
 </div>
@@ -585,6 +594,16 @@ Figure&nbsp;1: Non-interacting run and tumble particles.
 <li><strong>Spontaneous phase separation</strong></li>
 </ul>
 </div></div>
+</section>
+<section id="mips-a-positive-feedback" class="slide level2">
+<h2>MIPS: a positive feedback</h2>
+<ul>
+<li>Active particles <strong>accumulate where they move slowly</strong>: for non-interacting particles with a slowly varying speed <span class="math inline">v(\mathbf r)</span>, <span class="math display">\rho(\mathbf r)\propto\frac{1}{v(\mathbf r)}</span> no potential, yet a non-uniform density: <strong>not Boltzmann</strong></li>
+<li>Collisions make the speed <strong>decrease with density</strong>: <span class="math inline">v(\rho)</span></li>
+<li>Feedback: dense <span class="math inline">\to</span> slow <span class="math inline">\to</span> denser</li>
+<li>The homogeneous state is unstable (spinodal) when <span class="math display">\frac{d\ln v}{d\ln\rho}&lt;-1</span></li>
+</ul>
+<p>Cates &amp; Tailleur, <em>Annu. Rev.&nbsp;Condens. Matter Phys.</em> <strong>6</strong>, 219 (2015)</p>
 </section>
 <section id="mips-critical-like-behavior" class="slide level2">
 <h2>MIPS: Critical-like Behavior</h2>
@@ -651,11 +670,11 @@ Figure&nbsp;1: Non-interacting run and tumble particles.
 </tr>
 <tr class="odd">
 <td>MSD</td>
-<td><span class="math inline">4D_T\tau</span> → <span class="math inline">v_0^2\tau^2</span> → <span class="math inline">4D_{\rm eff}\tau</span>, <span class="math inline">D_{\rm eff}=D_T+v_0^2/2D_r</span></td>
+<td><span class="math inline">4D_t\tau</span> → <span class="math inline">v_0^2\tau^2</span> → <span class="math inline">4D_{\rm eff}\tau</span>, <span class="math inline">D_{\rm eff}=D_t+v_0^2/2D_r</span>; same as run-and-tumble for <span class="math inline">\lambda=(d-1)D_r</span></td>
 </tr>
 <tr class="even">
 <td>MIPS</td>
-<td>purely repulsive ABPs phase separate at low <span class="math inline">D_r</span>, with a critical point</td>
+<td>purely repulsive ABPs phase separate at low <span class="math inline">D_r</span>: dense <span class="math inline">\to</span> slow <span class="math inline">\to</span> denser, unstable if <span class="math inline">d\ln v/d\ln\rho&lt;-1</span>; critical point</td>
 </tr>
 </tbody>
 </table>
