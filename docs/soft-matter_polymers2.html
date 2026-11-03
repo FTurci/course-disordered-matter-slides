@@ -228,16 +228,27 @@ Francesco Turci
 <p>We obtain that the <strong>energy of mixing</strong> <span class="math inline">\Delta U_{\mathrm{mix}}=N_{s p}\left[\varepsilon_{s p}-\dfrac{1}{2}\left(\varepsilon_{s s}+\varepsilon_{p p}\right)\right]</span></p>
 <p>which can <strong>change sign</strong> depending on our choices for the effective interaction energies.</p>
 </section>
+<section id="excluded-volume-vs-mixing-energy" class="slide level2">
+<h2>Excluded volume vs mixing energy</h2>
+<ul>
+<li>The energy is not the whole story: each lattice site holds <strong>one</strong> molecule. This is the <strong>excluded volume</strong>, an <strong>entropic</strong> cost <span class="math inline">\sim k_BT</span> per monomer-monomer contact.</li>
+<li>The mixing energy works against it: for <span class="math inline">\Delta\varepsilon=\varepsilon_{sp}-\frac12(\varepsilon_{ss}+\varepsilon_{pp})&gt;0</span>, monomer-monomer contacts are favoured.</li>
+<li>The <span class="math inline">\varepsilon</span> of the Flory argument is an <strong>effective contact free energy</strong></li>
+</ul>
+<p><span class="math display">
+\varepsilon_{\rm eff}\sim k_BT-z\,\Delta\varepsilon=k_B(T-\Theta),\qquad \Theta\sim\frac{z\,\Delta\varepsilon}{k_B}
+</span></p>
+</section>
 <section id="good-solvents-poor-solvents-and-theta-solvents" class="slide level2">
 <h2>Good solvents, poor solvents and theta solvents</h2>
 <ul>
-<li><strong>Good solvent</strong>: <span class="math inline">\varepsilon_{s p}&lt;\frac{1}{2}\left(\varepsilon_{s s}+\varepsilon_{p p}\right) \quad \therefore \Delta \mathrm{U}_{\text {mix }}&lt;0</span></li>
+<li><strong>Good solvent</strong>: <span class="math inline">\varepsilon_{\rm eff}&gt;0</span> (<span class="math inline">T&gt;\Theta</span>)</li>
 </ul>
-<p>This is the case of a ‘good solvent’, because the monomers prefer to be near the solvent molecules. Excluded volume effects then expand the chain.</p>
+<p>Excluded volume wins and expands the chain. This includes <span class="math inline">\Delta U_{\rm mix}&lt;0</span>, but also weakly positive <span class="math inline">\Delta U_{\rm mix}</span>.</p>
 <ul>
-<li><strong>Poor solvent</strong>: <span class="math inline">\varepsilon_{s p}&gt;\frac{1}{2}\left(\varepsilon_{s s}+\varepsilon_{p p}\right) \quad \therefore \Delta \mathrm{U}_{\text {mix }}&gt;0</span></li>
+<li><strong>Poor solvent</strong>: <span class="math inline">\varepsilon_{\rm eff}&lt;0</span> (<span class="math inline">T&lt;\Theta</span>)</li>
 </ul>
-<p>The attraction between the different monomers offset the excluded volume effect making the polymer collapse.</p>
+<p>Requires <span class="math inline">\Delta U_{\rm mix}&gt;0</span>, with an attraction strong enough to overcome the excluded volume: the polymer collapses.</p>
 <div class="columns">
 <div class="column" style="width:70%;">
 <p>Collapsed chains: hydrophobic polypeptides, polystyrene in water, chromatin in the cell nucleus.</p>
@@ -259,7 +270,7 @@ Francesco Turci
 <ul>
 <li><p>At high <span class="math inline">T</span>, the coil expand and the solvent is <em>good</em></p></li>
 <li><p>At low <span class="math inline">T</span> the coil collapses and phase separation is observed (polymer-rich from polymer-poor phase)</p></li>
-<li><p>There is an intermediate temperature where the excluded volume and attractive interaction compensate each other and allow for the polymer to behave like an ideal chain (freely jointed chain).</p>
+<li><p>There is an intermediate temperature where the excluded volume and attractive interaction compensate each other (<span class="math inline">\varepsilon_{\rm eff}=0</span>); in <span class="math inline">d=3</span> the polymer then behaves like an ideal chain (freely jointed chain).</p>
 <ul>
 <li>The temperature is conventionally named <span class="math inline">\Theta</span> temperature (or <em>Flory</em> temperature, after physicist Paul Flory)</li>
 <li>The <span class="math inline">\Theta</span> temperature increases with the effective monomer-monomer attractions (we need higher temperature to reach ideal behaviour)</li>
@@ -481,7 +492,7 @@ c^{*}=\frac{3}{4 \pi N_{A} B^{3}} M^{1-3 v}
 </tr>
 <tr class="even">
 <td>Solvent quality</td>
-<td>good <span class="math inline">\nu\approx3/5</span>; <span class="math inline">\Theta</span> <span class="math inline">\nu=1/2</span>; poor: collapsed globule <span class="math inline">\nu=1/3</span></td>
+<td><span class="math inline">\varepsilon_{\rm eff}\sim k_B(T-\Theta)</span>: excluded volume vs mixing energy; in <span class="math inline">d=3</span>, good <span class="math inline">\nu\approx3/5</span>; <span class="math inline">\Theta</span> <span class="math inline">\nu=1/2</span>; poor: collapsed globule <span class="math inline">\nu=1/3</span></td>
 </tr>
 <tr class="odd">
 <td>Overlap concentration</td>

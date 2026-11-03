@@ -91,15 +91,25 @@ We obtain that the **energy of mixing** $\Delta U_{\mathrm{mix}}=N_{s p}\left[\v
 
 which can **change sign** depending on our choices for the effective interaction energies.
 
+## Excluded volume vs mixing energy
+
+- The energy is not the whole story: each lattice site holds **one** molecule. This is the **excluded volume**, an **entropic** cost $\sim k_BT$ per monomer-monomer contact.
+- The mixing energy works against it: for $\Delta\varepsilon=\varepsilon_{sp}-\frac12(\varepsilon_{ss}+\varepsilon_{pp})>0$, monomer-monomer contacts are favoured.
+- The $\varepsilon$ of the Flory argument is an **effective contact free energy**
+
+$$
+\varepsilon_{\rm eff}\sim k_BT-z\,\Delta\varepsilon=k_B(T-\Theta),\qquad \Theta\sim\frac{z\,\Delta\varepsilon}{k_B}
+$$
+
 ## Good solvents, poor solvents and theta solvents
 
-- **Good solvent**: $\varepsilon_{s p}<\frac{1}{2}\left(\varepsilon_{s s}+\varepsilon_{p p}\right) \quad \therefore \Delta \mathrm{U}_{\text {mix }}<0$
+- **Good solvent**: $\varepsilon_{\rm eff}>0$ ($T>\Theta$)
 
-This is the case of a 'good solvent', because the monomers prefer to be near the solvent molecules. Excluded volume effects then expand the chain.
+Excluded volume wins and expands the chain. This includes $\Delta U_{\rm mix}<0$, but also weakly positive $\Delta U_{\rm mix}$.
 
-- **Poor solvent**: $\varepsilon_{s p}>\frac{1}{2}\left(\varepsilon_{s s}+\varepsilon_{p p}\right) \quad \therefore \Delta \mathrm{U}_{\text {mix }}>0$
+- **Poor solvent**: $\varepsilon_{\rm eff}<0$ ($T<\Theta$)
 
-The attraction between the different monomers offset the excluded volume effect making the polymer collapse.
+Requires $\Delta U_{\rm mix}>0$, with an attraction strong enough to overcome the excluded volume: the polymer collapses.
 
 :::{.columns}
 :::{.column width="70%"}
@@ -119,7 +129,7 @@ The various affinities have temperature dependencies. Typically:
 
 - At high $T$, the coil expand and the solvent is *good*
 - At low $T$ the coil collapses and phase separation is observed (polymer-rich from polymer-poor phase)
-- There is an intermediate temperature where the excluded volume and attractive interaction compensate each other and  allow for the polymer to behave like an ideal chain (freely jointed chain). 
+- There is an intermediate temperature where the excluded volume and attractive interaction compensate each other ($\varepsilon_{\rm eff}=0$); in $d=3$ the polymer then behaves like an ideal chain (freely jointed chain).
 
     - The temperature is conventionally named $\Theta$ temperature (or *Flory* temperature, after physicist Paul Flory)
     - The $\Theta$ temperature increases with the effective monomer-monomer attractions (we need higher temperature to reach ideal behaviour)
@@ -313,7 +323,7 @@ Start of the formation of a **polymer network** with transient **crowded regions
 | Freely-rotating chain | $\langle R^2\rangle=CNb_0^2$, $C=\frac{1+\cos\theta}{1-\cos\theta}$: stiffness only changes the prefactor |
 | Kuhn length | $b=Cb_0$, $N'=N/C$: chemistry is hidden in $b$ |
 | Excluded volume | $R\sim N^{3/5}$ (self-avoiding walk) |
-| Solvent quality | good $\nu\approx3/5$; $\Theta$ $\nu=1/2$; poor: collapsed globule $\nu=1/3$ |
+| Solvent quality | $\varepsilon_{\rm eff}\sim k_B(T-\Theta)$: excluded volume vs mixing energy; in $d=3$, good $\nu\approx3/5$; $\Theta$ $\nu=1/2$; poor: collapsed globule $\nu=1/3$ |
 | Overlap concentration | $c^*=\frac{3M}{4\pi N_AR_g^3}\propto M^{1-3\nu}$, very small for long chains |
 | Semi-dilute | $c>c^*$: interpenetration, entanglement, slow flow |
 | Bulk polymers | elastomers, thermosets, thermoplastics; on cooling crystal (slow) or glass (fast) |
