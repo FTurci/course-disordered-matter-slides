@@ -396,14 +396,14 @@
     "href": "soft-matter_polymers2.html#good-solvents-poor-solvents-and-theta-solvents",
     "title": "Complex Disordered Systems",
     "section": "Good solvents, poor solvents and theta solvents",
-    "text": "Good solvents, poor solvents and theta solvents\n\nGood solvent: \\varepsilon_{s p}&lt;\\frac{1}{2}\\left(\\varepsilon_{s s}+\\varepsilon_{p p}\\right) \\quad \\therefore \\Delta \\mathrm{U}_{\\text {mix }}&lt;0\n\nThis is the case of a ‘good solvent’, because the monomers prefer to be near the solvent molecules. Excluded volume effects then expand the chain.\n\nPoor solvent: \\varepsilon_{s p}&gt;\\frac{1}{2}\\left(\\varepsilon_{s s}+\\varepsilon_{p p}\\right) \\quad \\therefore \\Delta \\mathrm{U}_{\\text {mix }}&gt;0\n\nThe attraction between the different monomers offset the excluded volume effect making the polymer collapse.\n\n\nCollapsed chains: hydrophobic polypeptides, polystyrene in water, chromatin in the cell nucleus.\n\n\n\n\nChromatin globule model\n\n\n\n\nTuning solvent properties (e.g. the temperature) leads to conformational changes"
+    "text": "Good solvents, poor solvents and theta solvents\n\nGood solvent: \\varepsilon_{\\rm eff}&gt;0 (T&gt;\\Theta)\n\nExcluded volume wins and expands the chain. This includes \\Delta U_{\\rm mix}&lt;0, but also weakly positive \\Delta U_{\\rm mix}.\n\nPoor solvent: \\varepsilon_{\\rm eff}&lt;0 (T&lt;\\Theta)\n\nRequires \\Delta U_{\\rm mix}&gt;0, with an attraction strong enough to overcome the excluded volume: the polymer collapses.\n\n\nCollapsed chains: hydrophobic polypeptides, polystyrene in water, chromatin in the cell nucleus.\n\n\n\n\nChromatin globule model\n\n\n\n\nTuning solvent properties (e.g. the temperature) leads to conformational changes"
   },
   {
     "objectID": "soft-matter_polymers2.html#temperature-dependence-and-theta-theta-solvents",
     "href": "soft-matter_polymers2.html#temperature-dependence-and-theta-theta-solvents",
     "title": "Complex Disordered Systems",
     "section": "Temperature dependence and theta (\\Theta) solvents",
-    "text": "Temperature dependence and theta (\\Theta) solvents\nThe various affinities have temperature dependencies. Typically:\n\nAt high T, the coil expand and the solvent is good\nAt low T the coil collapses and phase separation is observed (polymer-rich from polymer-poor phase)\nThere is an intermediate temperature where the excluded volume and attractive interaction compensate each other and allow for the polymer to behave like an ideal chain (freely jointed chain).\n\nThe temperature is conventionally named \\Theta temperature (or Flory temperature, after physicist Paul Flory)\nThe \\Theta temperature increases with the effective monomer-monomer attractions (we need higher temperature to reach ideal behaviour)\n\n\n\nSwelling behaviour of polymers in solvent."
+    "text": "Temperature dependence and theta (\\Theta) solvents\nThe various affinities have temperature dependencies. Typically:\n\nAt high T, the coil expand and the solvent is good\nAt low T the coil collapses and phase separation is observed (polymer-rich from polymer-poor phase)\nThere is an intermediate temperature where the excluded volume and attractive interaction compensate each other (\\varepsilon_{\\rm eff}=0); in d=3 the polymer then behaves like an ideal chain (freely jointed chain).\n\nThe temperature is conventionally named \\Theta temperature (or Flory temperature, after physicist Paul Flory)\nThe \\Theta temperature increases with the effective monomer-monomer attractions (we need higher temperature to reach ideal behaviour)\n\n\n\nSwelling behaviour of polymers in solvent."
   },
   {
     "objectID": "soft-matter_polymers2.html#examples",
@@ -494,7 +494,7 @@
     "href": "soft-matter_polymers2.html#summary-polymers",
     "title": "Complex Disordered Systems",
     "section": "Summary: polymers",
-    "text": "Summary: polymers\n\n\n\n\n\n\n\nTopic\nKey result\n\n\n\n\nFreely-jointed chain\n\\langle R^2\\rangle=Nb_0^2, Gaussian P(\\mathbf R): a chain is a random walk\n\n\nRadius of gyration\n\\langle R_g^2\\rangle=\\langle R^2\\rangle/6\n\n\nFreely-rotating chain\n\\langle R^2\\rangle=CNb_0^2, C=\\frac{1+\\cos\\theta}{1-\\cos\\theta}: stiffness only changes the prefactor\n\n\nKuhn length\nb=Cb_0, N'=N/C: chemistry is hidden in b\n\n\nExcluded volume\nR\\sim N^{3/5} (self-avoiding walk)\n\n\nSolvent quality\ngood \\nu\\approx3/5; \\Theta \\nu=1/2; poor: collapsed globule \\nu=1/3\n\n\nOverlap concentration\nc^*=\\frac{3M}{4\\pi N_AR_g^3}\\propto M^{1-3\\nu}, very small for long chains\n\n\nSemi-dilute\nc&gt;c^*: interpenetration, entanglement, slow flow\n\n\nBulk polymers\nelastomers, thermosets, thermoplastics; on cooling crystal (slow) or glass (fast)\n\n\n\nFull summary with links in the notes"
+    "text": "Summary: polymers\n\n\n\n\n\n\n\nTopic\nKey result\n\n\n\n\nFreely-jointed chain\n\\langle R^2\\rangle=Nb_0^2, Gaussian P(\\mathbf R): a chain is a random walk\n\n\nRadius of gyration\n\\langle R_g^2\\rangle=\\langle R^2\\rangle/6\n\n\nFreely-rotating chain\n\\langle R^2\\rangle=CNb_0^2, C=\\frac{1+\\cos\\theta}{1-\\cos\\theta}: stiffness only changes the prefactor\n\n\nKuhn length\nb=Cb_0, N'=N/C: chemistry is hidden in b\n\n\nExcluded volume\nR\\sim N^{3/5} (self-avoiding walk)\n\n\nSolvent quality\n\\varepsilon_{\\rm eff}\\sim k_B(T-\\Theta): excluded volume vs mixing energy; in d=3, good \\nu\\approx3/5; \\Theta \\nu=1/2; poor: collapsed globule \\nu=1/3\n\n\nOverlap concentration\nc^*=\\frac{3M}{4\\pi N_AR_g^3}\\propto M^{1-3\\nu}, very small for long chains\n\n\nSemi-dilute\nc&gt;c^*: interpenetration, entanglement, slow flow\n\n\nBulk polymers\nelastomers, thermosets, thermoplastics; on cooling crystal (slow) or glass (fast)\n\n\n\nFull summary with links in the notes"
   },
   {
     "objectID": "soft-matter_surfactants1.html#hydrophobicity-and-amhiphiles",
@@ -2056,5 +2056,12 @@
     "title": "Complex Disordered Systems",
     "section": "Aside (optional): complex disclination patterns",
     "text": "Aside (optional): complex disclination patterns\nExample from Kim et al Science Advances (2018)\n\nLiquid-crystals defects created and controlled by external forces (air pillars through a substrate)."
+  },
+  {
+    "objectID": "soft-matter_polymers2.html#excluded-volume-vs-mixing-energy",
+    "href": "soft-matter_polymers2.html#excluded-volume-vs-mixing-energy",
+    "title": "Complex Disordered Systems",
+    "section": "Excluded volume vs mixing energy",
+    "text": "Excluded volume vs mixing energy\n\nThe energy is not the whole story: each lattice site holds one molecule. This is the excluded volume, an entropic cost \\sim k_BT per monomer-monomer contact.\nThe mixing energy works against it: for \\Delta\\varepsilon=\\varepsilon_{sp}-\\frac12(\\varepsilon_{ss}+\\varepsilon_{pp})&gt;0, monomer-monomer contacts are favoured.\nThe \\varepsilon of the Flory argument is an effective contact free energy\n\n\n\\varepsilon_{\\rm eff}\\sim k_BT-z\\,\\Delta\\varepsilon=k_B(T-\\Theta),\\qquad \\Theta\\sim\\frac{z\\,\\Delta\\varepsilon}{k_B}"
   }
 ]
