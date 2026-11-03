@@ -683,28 +683,28 @@
     "href": "soft-matter_liquidx1.html#orientation-and-director",
     "title": "Complex Disordered Systems",
     "section": "Orientation and director",
-    "text": "Orientation and director\n\n\n\nOrientation of a rigid rod is described by a unit vector \\mathbf{u} along its long axis\nThe particles are head-tail symmetric, so they have a centre of symmetry\nBecause \\mathbf{u} and -\\mathbf{u} are equiprobable, on average \\langle \\mathbf{u}\\rangle=0\nVectorial order parameter is zero. The next non-trivial invariant is a second rank tensor\n\n\n\n\n\n\n\n\n\n\nTensor\nRank\nExample order parameter\n\n\n\n\nScalar\n0\nScalar nematic S (degree of alignment), e.g., S = ⟨P2(cos θ)⟩\n\n\nVector\n1\nPolarization or magnetization vector P / M (polar order)\n\n\nSecond‑rank tensor\n2\nMatrices, Alignment tensor Q_{ij} (nematic order)\n\n\nThird‑rank tensor\n3\nOctupolar / tetrahedral order T_{ijk}\n\n\n\n\n\n\n\n\nThe local orientation vector of a molecule \\mathbf{u} and the director \\mathbf{n}"
+    "text": "Orientation and director\n\n\n\nOrientation of a rigid rod is described by a unit vector \\mathbf{u} along its long axis\nThe nematic phase is head-tail symmetric (even when the molecules are not): \\mathbf{u} and -\\mathbf{u} are equivalent\nBecause \\mathbf{u} and -\\mathbf{u} are equiprobable, on average \\langle \\mathbf{u}\\rangle=0\nVectorial order parameter is zero. The next non-trivial invariant is a second rank tensor\n\n\n\n\n\n\n\n\n\n\nTensor\nRank\nExample order parameter\n\n\n\n\nScalar\n0\nDensity, temperature (no orientation)\n\n\nVector\n1\nPolarization or magnetization vector P / M (polar order)\n\n\nSecond‑rank tensor\n2\nAlignment tensor Q_{ij} (nematic order); its largest eigenvalue is \\mathcal S\n\n\nThird‑rank tensor\n3\nOctupolar / tetrahedral order T_{ijk}\n\n\n\n\n\n\n\n\nThe local orientation vector of a molecule \\mathbf{u} and the director \\mathbf{n}"
   },
   {
     "objectID": "soft-matter_liquidx1.html#the-nematic-order-parameter",
     "href": "soft-matter_liquidx1.html#the-nematic-order-parameter",
     "title": "Complex Disordered Systems",
     "section": "The Nematic Order Parameter",
-    "text": "The Nematic Order Parameter\nFor head-tail symmetric rods, we cannot simply average orientations.\nInstead, construct the alignment tensor\n\n\\mathbf{Q}=\\dfrac{d}{d-1}\\left\\langle\\mathbf{u}_i \\otimes \\mathbf{u}_i-\\dfrac{1}{d}\\mathbf{I}\\right\\rangle\n\n\nwe make it traceless by removing the identity\nwe make it include quadratic combinations (it is as second moment, essentially the covariances)\n\\otimes is the outer product, giving a d\\times d matrix: \n\\mathbf{u} \\otimes \\mathbf{u} =\n\\begin{pmatrix}\nu_1 u_1 & u_1 u_2 & \\cdots & u_1 u_d \\\\\nu_2 u_1 & u_2 u_2 & \\cdots & u_2 u_d \\\\\n\\vdots  & \\vdots  & \\ddots & \\vdots  \\\\\nu_d u_1 & u_d u_2 & \\cdots & u_d u_d\n\\end{pmatrix}\n\n\nwhere d is dimensionality, \\mathbf{u}_i is the unit orientation vector. For us, d=2,3"
+    "text": "The Nematic Order Parameter\nFor head-tail symmetric rods, we cannot simply average orientations.\nInstead, construct the alignment tensor\n\n\\mathbf{Q}=\\dfrac{d}{d-1}\\left\\langle\\mathbf{u}_i \\otimes \\mathbf{u}_i-\\dfrac{1}{d}\\mathbf{I}\\right\\rangle\n\n\nwe make it traceless by removing the identity\nwe make it include quadratic combinations (it is a second moment, essentially the covariances)\n\\otimes is the outer product, giving a d\\times d matrix: \n\\mathbf{u} \\otimes \\mathbf{u} =\n\\begin{pmatrix}\nu_1 u_1 & u_1 u_2 & \\cdots & u_1 u_d \\\\\nu_2 u_1 & u_2 u_2 & \\cdots & u_2 u_d \\\\\n\\vdots  & \\vdots  & \\ddots & \\vdots  \\\\\nu_d u_1 & u_d u_2 & \\cdots & u_d u_d\n\\end{pmatrix}\n\n\nwhere d is dimensionality, \\mathbf{u}_i is the unit orientation vector. For us, d=2,3"
   },
   {
     "objectID": "soft-matter_liquidx1.html#extracting-order",
     "href": "soft-matter_liquidx1.html#extracting-order",
     "title": "Complex Disordered Systems",
     "section": "Extracting Order",
-    "text": "Extracting Order\n\nDiagonalisation: it extracts the invariants (the properties that do not change wrt a coordinate change or rotations)\nLargest eigenvalue \\rightarrow scalar order parameter \\mathcal{S}\nCorresponding eigenvector \\rightarrow director \\mathbf{n}\n\n\n\\mathcal{S} \\in [0, 1]\n\n\n\\mathcal{S} = 0: isotropic (random orientations)\n\\mathcal{S} = 1: perfect nematic order (all aligned)\n\n\n\n\n\n\n\nCaution\n\n\nThe nematic order parameter \\mathcal{S} should not be confused with the entropy S."
+    "text": "Extracting Order\n\nDiagonalisation: the eigenvalues do not depend on the choice of axes, the eigenvectors give the principal directions\nLargest eigenvalue \\rightarrow scalar order parameter \\mathcal{S}\nCorresponding eigenvector \\rightarrow director \\mathbf{n}\n\n\n\\mathcal{S} \\in [0, 1]\n\n\n\\mathcal{S} = 0: isotropic (random orientations)\n\\mathcal{S} = 1: perfect nematic order (all aligned)\n\n\n\n\n\n\n\nCaution\n\n\nThe nematic order parameter \\mathcal{S} should not be confused with the entropy S."
   },
   {
     "objectID": "soft-matter_liquidx1.html#d-nematic-order-parameter",
     "href": "soft-matter_liquidx1.html#d-nematic-order-parameter",
     "title": "Complex Disordered Systems",
     "section": "2D Nematic Order Parameter",
-    "text": "2D Nematic Order Parameter\nIn two dimensions, the director is simply characterised by the angle \\psi expressed as \n\\psi = \\frac{1}{2} \\operatorname{atan2}(\\sin{2\\theta_i}, \\cos{2\\theta_i}).\n and the nematic order parameter is simply\n\n\\mathcal{S}=\\sqrt{\\left\\langle\\cos 2 \\theta_i\\right\\rangle^2+\\left\\langle\\sin 2 \\theta_i\\right\\rangle^2}"
+    "text": "2D Nematic Order Parameter\nIn two dimensions, the director is simply characterised by the angle \\psi expressed as \n\\psi = \\frac{1}{2} \\operatorname{atan2}(\\langle\\sin{2\\theta_i}\\rangle, \\langle\\cos{2\\theta_i}\\rangle).\n and the nematic order parameter is simply\n\n\\mathcal{S}=\\sqrt{\\left\\langle\\cos 2 \\theta_i\\right\\rangle^2+\\left\\langle\\sin 2 \\theta_i\\right\\rangle^2}"
   },
   {
     "objectID": "soft-matter_liquidx1.html#d-nematic-order-parameter-1",
@@ -746,7 +746,7 @@
     "href": "soft-matter_liquidx1.html#landau-de-gennes-theory-result",
     "title": "Complex Disordered Systems",
     "section": "Landau-de Gennes theory result",
-    "text": "Landau-de Gennes theory result\n\nWe can use the Landau phase transition approach.\nWe can expand A,B,C around a reference temperature T^\\ast :\n\nA(T)=a\\left(T-T_*\\right)+\\cdots\nB(T)= b+\\dots\nC(T)=c+\\dots, with a,b,c&gt;0 to preserve the most relevant terms.\n\n\nand obtain\n\nf-f_0=\\frac{a}{3}\\left(T-T^{\\ast}\\right) S^2-\\frac{2 b}{27} S^3+\\frac{c}{9} S^4 .\n\nThe cubic term implies that there is a temperature range where two minima coexist:\n\nS_1=0: isotropic\nS_2&gt;0: nematic\n\nFirst order phase transition. The cubic terms prevents the free energy from having an inflection at S=0 (the free energy never gets truly flat)"
+    "text": "Landau-de Gennes theory result\n\nWe can use the Landau phase transition approach.\nWe can expand A,B,C around a reference temperature T^\\ast :\n\nA(T)=a\\left(T-T_*\\right)+\\cdots\nB(T)= b+\\dots\nC(T)=c+\\dots, with a,b,c&gt;0: c&gt;0 keeps f bounded, b&gt;0 favours S&gt;0 (rods along \\mathbf n).\n\n\nand obtain\n\nf-f_0=\\frac{a}{3}\\left(T-T^{\\ast}\\right) S^2-\\frac{2 b}{27} S^3+\\frac{c}{9} S^4 .\n\nThe cubic term implies that there is a temperature range where two minima coexist:\n\nS_1=0: isotropic\nS_2&gt;0: nematic\n\nFirst order transition:\n\nS and -S differ (rods along vs perpendicular to \\mathbf n; unlike \\pm m in a magnet): the cubic term is allowed\nS jumps at T_{NI}&gt;T^*\nat T^*, f\\sim S^3 rather than S^4: less flat"
   },
   {
     "objectID": "soft-matter_liquidx1.html#landau-de-gennes-theory-result-1",
@@ -1068,7 +1068,7 @@
     "href": "soft-matter_liquidx2.html#maier-saupe-theory-of-nematic-liquid-crystals-1",
     "title": "Complex Disordered Systems",
     "section": "Maier-Saupe Theory of Nematic Liquid Crystals",
-    "text": "Maier-Saupe Theory of Nematic Liquid Crystals\nEnergetic Contribution\n\nWe assume molecules interact with an angular potential that depends on their orientations via a the second Legendre polynomial P_2(x)=\\frac{1}{2}\\left(3 x^2-1\\right):\n\n\nV\\left(\\Omega_i, \\Omega_j\\right)=-u P_2\\left(\\mathbf{u}_i \\cdot \\mathbf{u}_j\\right)\n\nWe can average over all possible orientations of molecule j to get the mean-field potential felt by molecule i: \nU_i^{\\mathrm{mf}}(\\Omega)=\\rho \\int V\\left(\\Omega, \\Omega^{\\prime}\\right) p\\left(\\Omega^{\\prime}\\right) d \\Omega^{\\prime}=-u S P_2(\\mathbf{u}_i \\cdot \\mathbf{n})\n\nwhere we have defined the scalar order parameter \nS=\\int P_2\\left(\\mathbf{u} \\cdot \\mathbf{n}\\right) p(\\Omega) d \\Omega\n and identified the director \\mathbf{n} and the energetic coupling u.\nAverage over all orientations of molecule i to get the average interaction energy per molecule (and divide by 2 to avoid double counting):\nU^{mf} =  -\\dfrac{u}{2} S^2\nA potential that aligns molecules with the director, quadratic to reflect head-tail symmetry."
+    "text": "Maier-Saupe Theory of Nematic Liquid Crystals\nEnergetic Contribution\n\nWe assume molecules interact with an angular potential that depends on their orientations via a the second Legendre polynomial P_2(x)=\\frac{1}{2}\\left(3 x^2-1\\right):\n\n\nV\\left(\\Omega_i, \\Omega_j\\right)=-u P_2\\left(\\mathbf{u}_i \\cdot \\mathbf{u}_j\\right)\n\nWe can average over all possible orientations of molecule j to get the mean-field potential felt by molecule i: \nU_i^{\\mathrm{mf}}(\\Omega)=\\rho \\int V\\left(\\Omega, \\Omega^{\\prime}\\right) p\\left(\\Omega^{\\prime}\\right) d \\Omega^{\\prime}=-u S P_2(\\mathbf{u}_i \\cdot \\mathbf{n})\n\nwhere we have defined the scalar order parameter \nS=\\int P_2\\left(\\mathbf{u} \\cdot \\mathbf{n}\\right) p(\\Omega) d \\Omega\n and identified the director \\mathbf{n} and the energetic coupling u (which absorbs the density \\rho).\nAverage over all orientations of molecule i to get the average interaction energy per molecule (and divide by 2 to avoid double counting):\nU^{mf} =  -\\dfrac{u}{2} S^2\nA potential that aligns molecules with the director, quadratic to reflect head-tail symmetry."
   },
   {
     "objectID": "soft-matter_liquidx2.html#maier-saupe-theory-of-nematic-liquid-crystals-2",
@@ -1082,7 +1082,7 @@
     "href": "soft-matter_liquidx2.html#maier-saupe-theory-of-nematic-liquid-crystals-3",
     "title": "Complex Disordered Systems",
     "section": "Maier-Saupe Theory of Nematic Liquid Crystals",
-    "text": "Maier-Saupe Theory of Nematic Liquid Crystals\nTogether we, have the Maier-Saupe free energy functional per molecule\n\nf=f_0-u \\frac{S^2}{2}+k_B T \\int_0^\\pi p(\\theta) \\ln (2 p(\\theta)) \\sin \\theta d \\theta\n\nThe only constraint is normalization of p(\\theta): \\int_0^\\pi p(\\theta) \\sin \\theta d \\theta=1 where the \\sin \\theta comes from the solid angle element.\nIntroduce the Lagrange multiplier \\lambda to enforce the constraint and minimize the functional and set the variation to zero: \n\\delta\\left[f+\\lambda\\left(\\int_0^\\pi p(\\theta) \\sin \\theta d \\theta-1\\right)\\right]=0\n The functional derivative yields (check!):\n\n\\frac{\\delta f}{\\delta p(\\theta)}+\\lambda \\sin \\theta=0"
+    "text": "Maier-Saupe Theory of Nematic Liquid Crystals\nTogether we, have the Maier-Saupe free energy functional per molecule\n\nf=f_0-u \\frac{S^2}{2}+k_B T \\int_0^\\pi p(\\theta) \\ln (2 p(\\theta)) \\sin \\theta d \\theta\n\nThe only constraint is normalization of p(\\theta): \\int_0^\\pi p(\\theta) \\sin \\theta d \\theta=1 where the \\sin \\theta comes from the solid angle element.\nIntroduce the Lagrange multiplier \\lambda to enforce the constraint (see the aside on Lagrange multipliers) and minimize the functional and set the variation to zero: \n\\delta\\left[f+\\lambda\\left(\\int_0^\\pi p(\\theta) \\sin \\theta d \\theta-1\\right)\\right]=0\n The functional derivative yields (check!):\n\n\\frac{\\delta f}{\\delta p(\\theta)}+\\lambda \\sin \\theta=0"
   },
   {
     "objectID": "soft-matter_liquidx2.html#maier-saupe-theory-of-nematic-liquid-crystals-4",
@@ -1964,7 +1964,7 @@
     "href": "soft-matter_liquidx2.html#aside-optional-example",
     "title": "Complex Disordered Systems",
     "section": "Aside (optional): example",
-    "text": "Aside (optional): example"
+    "text": "Aside (optional): example\n\n\n\nAt the constrained extremum the contours of f are tangent to the constraint g=c. Nexcis, Wikimedia Commons (public domain)."
   },
   {
     "objectID": "soft-matter_liquidx2.html#aside-optional-many-variables-example-of-probabilities",
@@ -2020,14 +2020,14 @@
     "href": "soft-matter_liquidx2.html#aside-optional-simple-lattice-model-lebwohl-lasher-1",
     "title": "Complex Disordered Systems",
     "section": "Aside (optional): simple lattice model, Lebwohl-Lasher",
-    "text": "Aside (optional): simple lattice model, Lebwohl-Lasher\n\n\n\n\n\n\n\n\nin 2d the transition is rounded, not true first order (Kosterlitz-Thouless only quasi long range order) due to a key theorem due to Mermin and Wagner  which states that\n\n(Mermin-Wagner theorem) Continuous symmetries cannot be spontaneously broken at finite temperature in systems with sufficiently short-range interactions in dimensions d \\leq 2.\n\nLong-range fluctuations are favoured in d \\leq 2.\nHere the continuous symmetry is the rotational invariance of the director field in the plane."
+    "text": "Aside (optional): simple lattice model, Lebwohl-Lasher\n\n\n\n\n\n\n\n\nIn 2D, \\frac32\\cos^2\\Delta\\theta-\\frac12=\\frac34\\cos2\\Delta\\theta+\\frac14: the model is the XY model (planar spins) for the angle 2\\theta.\n\nno true long-range order at T&gt;0 (Mermin–Wagner, below)\nat low T, orientational correlations decay as a power law (quasi-long-range order) rather than exponentially\nthe transition happens when bound \\pm\\tfrac12 defect pairs unbind (Kosterlitz–Thouless; defects later today)\n\n\n(Mermin-Wagner theorem) Continuous symmetries cannot be spontaneously broken at finite temperature in systems with sufficiently short-range interactions in dimensions d \\leq 2.\n\nHere the continuous symmetry is the rotational invariance of the director field in the plane."
   },
   {
     "objectID": "soft-matter_liquidx2.html#aside-optional-conservation-of-topological-charge",
     "href": "soft-matter_liquidx2.html#aside-optional-conservation-of-topological-charge",
     "title": "Complex Disordered Systems",
     "section": "Aside (optional): conservation of topological charge",
-    "text": "Aside (optional): conservation of topological charge\n\nTopological charge is conserved: the total charge in a closed system remains constant over time.\nDefects can be created or annihilated only in pairs of opposite charge (e.g., +1/2 and -1/2).\nThe topology of the space imposes such constraints of conservation via the Poincaré-Hopf theorem, which states\n\n\nThe total topological charge of the defects in a field confined to a compact space is equal to the Euler characteristic of that space\n\nIn practice:\n\nOn a plane (Euler characteristic = 1), the total topological charge must sum to 1.\nOn a sphere (Euler characteristic = 2), the total topological charge must sum to 2.\nOn a torus (Euler characteristic = 0), the total topological charge must sum to 0. \\to in periodic systems the total charge must be zero.\nThis imposes constraints on the dynamics and interactions of defects.\n\n\nDirector fields on a sphere, on a torus and a double torus. The number of handles (the genus g) determines the Euler characteristic \\chi=2-2g. From Nelson (2002)"
+    "text": "Aside (optional): conservation of topological charge\n\nTopological charge is conserved: the total charge in a closed system remains constant over time.\nDefects can be created or annihilated only in pairs of opposite charge (e.g., +1/2 and -1/2).\nThe topology of the space imposes such constraints of conservation via the Poincaré-Hopf theorem, which states\n\n\nThe total topological charge of the defects in a field confined to a compact space is equal to the Euler characteristic of that space\n\nIn practice:\n\nsphere (\\chi=2): total charge +2 (e.g. four +\\tfrac12)\ntorus (\\chi=0): total charge 0, as in periodic boxes\ndisc (\\chi=1), director tangent to the edge: total charge +1\nThis imposes constraints on the dynamics and interactions of defects.\n\n\nDirector fields on a sphere, on a torus and a double torus. The number of handles (the genus g) determines the Euler characteristic \\chi=2-2g. From Nelson (2002)"
   },
   {
     "objectID": "soft-matter_liquidx2.html#aside-optional-topological-defects",
@@ -2041,14 +2041,14 @@
     "href": "soft-matter_liquidx2.html#aside-optional-defects-in-3-dimensions",
     "title": "Complex Disordered Systems",
     "section": "Aside (optional): defects in 3 dimensions",
-    "text": "Aside (optional): defects in 3 dimensions\n\nIn 3D the disclinations become lines\nThe director field wraps around the line defect in a similar way as in 2D.\nThe classification of disclination in 3D involves the rotation group SO(3) (that generalises the construction we have seen in two dimensions) and are more complex in general. They include\n\nlines\nclosed loops\npoint-like features (hedgehogs and monopoles)\ncomplex textures."
+    "text": "Aside (optional): defects in 3 dimensions\n\nIn 3D the disclinations become lines\nThe director field wraps around the line defect in a similar way as in 2D.\nonly one type of stable line: integer lines “escape into the third dimension”\nnew point defects (hedgehogs), closed loops and complex textures"
   },
   {
     "objectID": "soft-matter_liquidx2.html#aside-optional-defects-and-phase-transitions",
     "href": "soft-matter_liquidx2.html#aside-optional-defects-and-phase-transitions",
     "title": "Complex Disordered Systems",
     "section": "Aside (optional): defects and phase transitions",
-    "text": "Aside (optional): defects and phase transitions\nDefects control the stability and dynamics of nematic liquid crystals and drive the phase transitions between phases.\n\nDefect formation and nematic to smectic phase transition via defect branching, Gim et al Nature Communications (2017)"
+    "text": "Aside (optional): defects and phase transitions\nDefects control the stability and dynamics of nematic liquid crystals and can drive transitions between phases.\n\nDefect formation and nematic to smectic phase transition via defect branching, Gim et al Nature Communications (2017)"
   },
   {
     "objectID": "soft-matter_liquidx2.html#aside-optional-complex-disclination-patterns",
@@ -2063,5 +2063,19 @@
     "title": "Complex Disordered Systems",
     "section": "Excluded volume vs mixing energy",
     "text": "Excluded volume vs mixing energy\n\nThe energy is not the whole story: each lattice site holds one molecule. This is the excluded volume, an entropic cost \\sim k_BT per monomer-monomer contact.\nThe mixing energy works against it: for \\Delta\\varepsilon&gt;0 (\\Delta U_{\\rm mix}=N_{sp}\\Delta\\varepsilon&gt;0), monomer-monomer contacts are favoured.\nThe \\varepsilon of the Flory argument is an effective contact free energy\n\n\n\\varepsilon_{\\rm eff}\\sim k_BT-z\\,\\Delta\\varepsilon=k_B(T-\\Theta),\\qquad \\Theta\\sim\\frac{z\\,\\Delta\\varepsilon}{k_B}"
+  },
+  {
+    "objectID": "soft-matter_liquidx1.html#today",
+    "href": "soft-matter_liquidx1.html#today",
+    "title": "Complex Disordered Systems",
+    "section": "Today",
+    "text": "Today\n\nLiquid crystals: orientational order without positional order\nMeasuring order: the alignment tensor \\mathbf Q and the order parameter \\mathcal S\nThe isotropic–nematic transition: Landau–de Gennes theory"
+  },
+  {
+    "objectID": "soft-matter_liquidx2.html#today",
+    "href": "soft-matter_liquidx2.html#today",
+    "title": "Complex Disordered Systems",
+    "section": "Today",
+    "text": "Today\n\nRecap: Landau–de Gennes predicts a first-order isotropic–nematic transition\nMaier–Saupe: a microscopic mean-field theory\nHard rods: order from entropy alone\nLattice model, Frank elasticity, topological defects"
   }
 ]
