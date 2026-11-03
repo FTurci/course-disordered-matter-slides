@@ -410,7 +410,7 @@
     "href": "soft-matter_polymers2.html#examples",
     "title": "Complex Disordered Systems",
     "section": "Examples",
-    "text": "Examples\n\n\n\nExample: Food polymer — gelatine (from collagen) in water\n\nGood solvent (hot water): gelatin chains hydrate and swell; the protein dissolves and the solution is fluid.\nΘ / marginal: intermediate temperature where hydration and chain self‑attraction roughly balance; solution is viscous but not set.\nPoor solvent (cold): effective attractions dominate; chains associate into a network, causing gelation (collapsed/aggregated network).\n\n\n\n\n\nWe will see gelation in a few sessions."
+    "text": "Examples\n\nExample: cold cataract. The eye lens is a concentrated solution of proteins (crystallins) in water.\n\nAt body temperature water is a good solvent: the lens is transparent.\nOn cooling, water becomes a poorer solvent: the mixture separates into protein-rich and protein-poor regions, which scatter light, and the lens turns opaque.\nWarming back to 37\\,^\\circC clears the lens within minutes: the change is reversible.\n\n\n\nMouse lenses at 4\\,^\\circC, 25\\,^\\circC and 37\\,^\\circC (left to right). Images from Li et al., Front. Chem. 9, 767696 (2021), CC BY. Phase separation in cold cataract: Tanaka, Ishimoto & Chylack, Science 197, 1010 (1977)."
   },
   {
     "objectID": "soft-matter_polymers2.html#concentrated-polymer-solutions",
