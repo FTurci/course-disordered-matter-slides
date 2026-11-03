@@ -44,7 +44,7 @@ mermaid-format: svg # png also works
 :::
 ::::
 
-Cross-links form via dense local regions (microcrystalline/glassy)
+Cross-links form via dense local regions (microcrystalline/glassy) or specific junctions (helices in gelatin)
 
 ## Physical vs Chemical Gels
 
@@ -69,7 +69,7 @@ Cross-links form via dense local regions (microcrystalline/glassy)
 
 **Key transition**: 
 
-- Fluid → Gel occurs when a **system-spanning cluster** forms (**percolation**)
+- Fluid → Gel occurs when a **system-spanning cluster** forms (**percolation**) and its bonds live long enough to make it **permanent**
 - Dramatic viscosity increase + elastic response
 
 Gels are a second example of disordered solids (after glasses)
@@ -147,9 +147,9 @@ def plot_transition(npoints=50):
     largest_sizes = []
     repeats = 3
     for p in ps:
-        grid, mask = sample_percolation(L, p)
         sizes = []
         for r in range(repeats):
+            grid, mask = sample_percolation(L, p)
             sizes.append(mask.sum() / (L * L))  # Fraction of sites in largest cluster
         largest_sizes.append(np.mean(sizes))
 
@@ -343,7 +343,7 @@ $$S(q) \sim q^{-D_f}$$
 
 - $D_f$: fractal dimension
 - No characteristic length scale
-- Typical 3D: $D_f \approx 2.5$
+- 3D percolation clusters: $D_f \approx 2.5$; colloidal aggregates: $D_f \approx 1.8$–$2.1$
 :::
 
 ::: {.column width="50%"}
@@ -360,19 +360,21 @@ $$S(q) \sim q^{-D_f}$$
 ::: {.column width="50%"}
 **Scenario:**
 
-1. Rapid quench into unstable region
+1. Deep quench into unstable region
 2. Phase separation begins (spinodal)
 3. Dense regions arrest (glass/jamming)
 4. Bicontinuous frozen structure
 
 
-The picture suggest the progressive **freezing of coarsening upon spinodal decomposition**.
+The picture suggests the progressive **freezing of coarsening upon spinodal decomposition**: the gel keeps the spinodal length scale (a low-$q$ peak in $S(q)$).
 :::
 
 ::: {.column width="50%"}
 
 
 {{< video https://www.youtube.com/watch?v=QOa2qhDdywc >}}
+
+Colloid-polymer gel forming by arrested spinodal decomposition (video: Peter Lu; Lu *et al.*, *Nature* **453**, 499 (2008))
 :::
 ::::
 
@@ -388,7 +390,7 @@ The picture suggest the progressive **freezing of coarsening upon spinodal decom
 - Glass transition (blue): Dense phase becomes dynamically arrested (non-ergodic) 
 
 
-**Gel path**: Rapid cooling → arrested dense phase + vapor
+**Gel path**: deep quench → arrested dense phase + vapor
 
 
 ## Summary: gels {.smaller .scrollable}

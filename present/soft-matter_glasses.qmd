@@ -25,7 +25,7 @@ Equilibrium means:
 
 :::{.incremental}
 
-- no change in entropy with time (zero entropy production)
+- zero entropy production
 - no net flows of matter or energy
 - detailed balance $$\pi_i P_{i \rightarrow j} = \pi_j P_{j \rightarrow i}$$
 
@@ -92,9 +92,9 @@ Some configurations are forbidden (constraints on the rules of motion) and non-e
 ## Energy landscapes
 
 - A system of many particles has many degrees of freedom.
-- The free energy is a **scalar function** of all these degrees of freedom: $F(x_1, x_2, \ldots, x_N)$.
-- We can think of it is the altitude of a **landscape** in a high-dimensional space.
-- The landscape represents the (negative log) of the probability distribution of configurations: low energy = high probability.
+- The potential energy $U(x_1, x_2, \ldots, x_N)$ is a **scalar function** of all these degrees of freedom.
+- We can think of it as the altitude of a **landscape** in a high-dimensional space.
+- Grouping similar configurations into states gives a **free energy landscape** $F=-k_BT\ln P$: low free energy = high probability.
     - it depends on the **intensive parameters** (temperature, pressure, etc..)
 
 ![Free energy landscape of a complex system at some temperature T and pressure P](./figs/landscape.png)
@@ -123,7 +123,7 @@ When the temperature allows it, connected minima can be grouped into single **ba
 
 
 - The number of distinct metabasins can be very large.
-- We can define a **configurational entropy** $S_{conf}$ that counts the number of distinct states $\Omega$:
+- We can define a **configurational entropy** $S_{conf}$ that counts the number of distinct minima:
 $$S_{conf} = k_{B} \ln N_{\mathrm minima}$$
 
 **Different** from the total entropy $S$ 
@@ -141,26 +141,6 @@ where $C_V$ is the heat capacity at constant volume and $T_0$ is a reference tem
 
 For gas, fluids, and liquids at high T only the **total entropy** is well defined.
 
-## Configurational entropy
-:::{.columns}
-::: {.column width="50%"}
-As we take liquids to low temperatures, we can separate the total entropy into a vibrational and configurational part and define
-$$ S_{conf}(T) = S(T) -S_{vib}(T)$$
-
-For several fluids, this *decreases* with temperature in an intriguing way.
-
-> […] Perhaps in some instances a thermodynamic **“freezing-in”** of degrees of freedom does take place as a desperate result of the liquid’s excessive generosity with its limited supply of entropy and energy as its temperature is lowered below the melting point. This would imply the existence of **some kind of state of high order** for the liquid at low temperature which **differs** from the normal crystalline state. A plausible structure for such a state seems, however, difficult to conceive, and we believe that the paradox is better resolved in another way […] (W. Kauzmann, Chem. Rev. 43, 219 (1948)).
-
-:::
-::: {.column width="50%"}
-
-![Kauzmann paradox: the entropy difference between the liquid and the crystal is extrapolated to low temperatures: glasses plateau, but what if we could equilibrate at very low T?](./figs/kauzmann.png)
-:::
-:::
-
-
-
-
 ## Glasses
 
 Glassy systems are a broad class of systems, not necessarily atomic or molecular, that exhibit **arrested dynamics**
@@ -171,8 +151,8 @@ Glassy systems are a broad class of systems, not necessarily atomic or molecular
 
 | Glassformer         | Scale of Constituents      | Properties                                      |
 |---------------------|---------------------------|-------------------------------------------------|
-| Silicate glass      | Atomic (Si, O atoms)      | Strong, transparent, high melting point         |
-| Metallic glass      | Atomic (metal atoms)      | High strength, corrosion resistant, ductile     |
+| Silicate glass      | Atomic (Si, O atoms)      | Hard, transparent, high melting point           |
+| Metallic glass      | Atomic (metal atoms)      | High strength, elastic, corrosion resistant     |
 | Polymer glass       | Macromolecular (polymers) | Flexible, low density, tunable glass transition |
 | Colloidal glass     | Mesoscopic (colloids, ~nm–μm) | Opaque, tunable rheology, soft solid-like   |
 | Molecular glass     | Molecular (organic molecules) | Low melting point, fragile, optical uses   |
@@ -211,7 +191,7 @@ To form a glass we:
 - Glasses exhibit **ageing**: their properties slowly evolve with time as they explore deeper minima in the energy landscape
 
 
-![Example of brittle response in a simulated glassy model form Ozawa et al PNAS (2018): (a) stress-strain curves for different preparation temperatures; (b) initial deformation field, (b) final deformation field demonstrating fracture](./figs/brittle.png)
+![Example of brittle response in a simulated glassy model from Ozawa et al PNAS (2018): (a) stress-strain curves for different preparation temperatures; (b) initial deformation field, (c) final deformation field demonstrating fracture](./figs/brittle.png)
 
 
 ## Slowing down
@@ -221,7 +201,7 @@ To form a glass we:
 Their solid-like behavior arises from the dramatic slowing down of their dynamics as they approach the glass transition.
 
 We quantify this with density autocorrelation functions such as the self-intermediate scattering function:
-$$F(k, t) = \frac{1}{N} \left\langle \sum_{j=1}^{N} e^{i \mathbf{k} \cdot [\mathbf{r}_j(t) - \mathbf{r}_j(0)]} \right\rangle$$
+$$F_s(q, t) = \frac{1}{N} \left\langle \sum_{j=1}^{N} e^{i \mathbf{q} \cdot [\mathbf{r}_j(t) - \mathbf{r}_j(0)]} \right\rangle$$
 
 It decays in two steps:
 
@@ -261,6 +241,26 @@ We have however various theories, mainly in two broad classes:
 - **Dynamic theories**: attribute the slowing down to kinetic effects without invoking an underlying thermodynamic transition. 
 
 
+## Configurational entropy and the Kauzmann paradox
+:::{.columns}
+::: {.column width="50%"}
+As we take liquids to low temperatures, we can separate the total entropy into a vibrational and configurational part and define
+$$ S_{conf}(T) = S(T) -S_{vib}(T)$$
+
+For several fluids, this *decreases* as the temperature is lowered, in an intriguing way. It is estimated from the entropy difference between liquid and crystal (similar vibrational entropies).
+
+> […] Perhaps in some instances a thermodynamic **“freezing-in”** of degrees of freedom does take place as a desperate result of the liquid’s excessive generosity with its limited supply of entropy and energy as its temperature is lowered below the melting point. This would imply the existence of **some kind of state of high order** for the liquid at low temperature which **differs** from the normal crystalline state. A plausible structure for such a state seems, however, difficult to conceive, and we believe that the paradox is better resolved in another way […] (W. Kauzmann, Chem. Rev. 43, 219 (1948)).
+
+:::
+::: {.column width="50%"}
+
+![Kauzmann paradox: the entropy difference between the liquid and the crystal is extrapolated to low temperatures: glasses plateau, but what if we could equilibrate at very low T?](./figs/kauzmann.png)
+:::
+:::
+
+
+
+
 ## A thermodynamic theory: the Adam-Gibbs scenario
 
 :::{.columns}
@@ -271,7 +271,7 @@ The **Adam-Gibbs model** links the dramatic slowdown of dynamics to the underlyi
 
 *Mosaic* of $M_{CRR}$ independent cooperatively rearranging regions of size $n_{CRR}$ particles each. The total number of particles is $N = M_{CRR} n_{CRR}$.
 
-We **assume** that the total configurational entropy is additive and that each CRR contributes a constant amount $s_{conf}$, irrespective of its size
+We **assume** that the total configurational entropy is additive and that each CRR contributes a constant amount $s^*$, irrespective of its size
 
 $S_{conf} = M_{CRR} s^* = \dfrac{N}{n_{CRR}} s^*$
 
@@ -294,16 +294,16 @@ $$
 From Arrhenius activation, the relaxation time is then
 
 $$
-\tau_\alpha(T) = \tau_0 \exp\left(\frac{A}{T S_{\rm conf}(T)}\right)
+\tau_\alpha(T) = \tau_0 \exp\left(\frac{A}{T s_{\rm conf}(T)}\right), \qquad s_{\rm conf}=S_{\rm conf}/N
 $$
 
-As temperature decreases, $S_{\rm conf}$ drops, causing $\tau_\alpha$ to increase rapidly. If $S_{\rm conf}$ vanishes at the Kauzmann temperature $T_K$, relaxation time diverges, reproducing the VFT form:
+As temperature decreases, $s_{\rm conf}$ drops, causing $\tau_\alpha$ to increase rapidly. If $s_{\rm conf}$ vanishes at the Kauzmann temperature $T_K$, relaxation time diverges, reproducing the VFT form:
 $$
 \tau_\alpha(T) \sim \exp\left(\frac{B}{T - T_0}\right)
 $$
 with $T_0 \approx T_K$. This connects the kinetic slowdown to loss of configurational entropy making the theory thermodynamic.
 
-It also points to a **critical divergence**: the size of the CRR needs to diverge as we approach $T_K$ to have $S_{conf} \to 0$.
+It also points to a **critical divergence**: as $s_{\rm conf}\to0$ at $T_K$, the CRR size $n_{CRR}\propto 1/s_{\rm conf}$ diverges.
 
 
 - Evidence for decreasing configurational entropy, but debated existence of a true thermodynamic transition.
@@ -327,7 +327,9 @@ This **dynamical coexistence** is called **dynamical heterogeneity** and can be 
 - **Low T**: Few mobile regions → cooperative motion required → slow relaxation
 
 The relaxation time follows a parabolic law
-$$\log \tau_\alpha(T) \sim J^2 \left( \frac{1}{T} - \frac{1}{T_0} \right)^2$$
+$$\log \tau_\alpha(T) \sim J^2 \left( \frac{1}{T} - \frac{1}{T_o} \right)^2$$
+
+with $T_o$ the onset temperature of glassy dynamics (above $T_g$).
 
 Unlike VFT, no finite-temperature divergence, no criticality, but still captures super-Arrhenius behavior.
 :::
@@ -388,6 +390,6 @@ Ongoing work to unify the various scenarios.
 | Glass formation | avoid crystallisation; $T_g$ where $\tau_\alpha>t_{\rm obs}$: ergodicity lost, protocol dependent |
 | Relaxation | two-step $F_s(q,t)$: $\beta$ (cage), $\alpha$ (structural); $\tau_\alpha\propto\eta$ |
 | Strong vs fragile | Arrhenius vs VFT $\eta\propto e^{B/(T-T_0)}$ |
-| Theories | Adam-Gibbs $\tau_\alpha=\tau_0\,e^{A/TS_{\rm conf}}$ (thermodynamic) vs dynamical facilitation (no finite-$T$ divergence) |
+| Theories | Adam-Gibbs $\tau_\alpha=\tau_0\,e^{A/Ts_{\rm conf}}$ (thermodynamic) vs dynamical facilitation (no finite-$T$ divergence) |
 
 [Full summary with links in the notes](https://fturci.github.io/course-disordered-matter/soft-matter/soft-matter_glasses.html#summary){target="_blank"}

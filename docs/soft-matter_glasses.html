@@ -177,7 +177,7 @@ Francesco Turci
 <h2>Equilibrium</h2>
 <p>Equilibrium means:</p>
 <ul>
-<li class="fragment"><p>no change in entropy with time (zero entropy production)</p></li>
+<li class="fragment"><p>zero entropy production</p></li>
 <li class="fragment"><p>no net flows of matter or energy</p></li>
 <li class="fragment"><p>detailed balance <span class="math display">\pi_i P_{i \rightarrow j} = \pi_j P_{j \rightarrow i}</span></p></li>
 <li class="fragment"><p>time reversibility</p></li>
@@ -246,9 +246,9 @@ Some configurations are forbidden (constraints on the rules of motion) and non-e
 <h2>Energy landscapes</h2>
 <ul>
 <li>A system of many particles has many degrees of freedom.</li>
-<li>The free energy is a <strong>scalar function</strong> of all these degrees of freedom: <span class="math inline">F(x_1, x_2, \ldots, x_N)</span>.</li>
-<li>We can think of it is the altitude of a <strong>landscape</strong> in a high-dimensional space.</li>
-<li>The landscape represents the (negative log) of the probability distribution of configurations: low energy = high probability.
+<li>The potential energy <span class="math inline">U(x_1, x_2, \ldots, x_N)</span> is a <strong>scalar function</strong> of all these degrees of freedom.</li>
+<li>We can think of it as the altitude of a <strong>landscape</strong> in a high-dimensional space.</li>
+<li>Grouping similar configurations into states gives a <strong>free energy landscape</strong> <span class="math inline">F=-k_BT\ln P</span>: low free energy = high probability.
 <ul>
 <li>it depends on the <strong>intensive parameters</strong> (temperature, pressure, etc..)</li>
 </ul></li>
@@ -278,7 +278,7 @@ Some configurations are forbidden (constraints on the rules of motion) and non-e
 <h2>Configurational entropy</h2>
 <ul>
 <li>The number of distinct metabasins can be very large.</li>
-<li>We can define a <strong>configurational entropy</strong> <span class="math inline">S_{conf}</span> that counts the number of distinct states <span class="math inline">\Omega</span>: <span class="math display">S_{conf} = k_{B} \ln N_{\mathrm minima}</span></li>
+<li>We can define a <strong>configurational entropy</strong> <span class="math inline">S_{conf}</span> that counts the number of distinct minima: <span class="math display">S_{conf} = k_{B} \ln N_{\mathrm minima}</span></li>
 </ul>
 <p><strong>Different</strong> from the total entropy <span class="math inline">S</span> <span class="math display">
 S(V) = S(V_0) + \int_{V_0}^{V} \left( \frac{\partial P}{\partial T} \right)_{V'} dV' \quad (\text{at fixed } T)
@@ -288,24 +288,6 @@ S(V) = S(V_0) + \int_{V_0}^{V} \left( \frac{\partial P}{\partial T} \right)_{V'}
 S(T) = S(T_0) + \int_{T_0}^{T} \frac{C_V(T')}{T'} dT'
 </span> where <span class="math inline">C_V</span> is the heat capacity at constant volume and <span class="math inline">T_0</span> is a reference temperature.</p>
 <p>For gas, fluids, and liquids at high T only the <strong>total entropy</strong> is well defined.</p>
-</section>
-<section id="configurational-entropy-1" class="slide level2">
-<h2>Configurational entropy</h2>
-<div class="columns">
-<div class="column" style="width:50%;">
-<p>As we take liquids to low temperatures, we can separate the total entropy into a vibrational and configurational part and define <span class="math display"> S_{conf}(T) = S(T) -S_{vib}(T)</span></p>
-<p>For several fluids, this <em>decreases</em> with temperature in an intriguing way.</p>
-<blockquote>
-<p>[…] Perhaps in some instances a thermodynamic <strong>“freezing-in”</strong> of degrees of freedom does take place as a desperate result of the liquid’s excessive generosity with its limited supply of entropy and energy as its temperature is lowered below the melting point. This would imply the existence of <strong>some kind of state of high order</strong> for the liquid at low temperature which <strong>differs</strong> from the normal crystalline state. A plausible structure for such a state seems, however, difficult to conceive, and we believe that the paradox is better resolved in another way […] (W. Kauzmann, Chem. Rev.&nbsp;43, 219 (1948)).</p>
-</blockquote>
-</div><div class="column" style="width:50%;">
-<div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="./figs/kauzmann.png"></p>
-<figcaption>Kauzmann paradox: the entropy difference between the liquid and the crystal is extrapolated to low temperatures: glasses plateau, but what if we could equilibrate at very low T?</figcaption>
-</figure>
-</div>
-</div></div>
 </section>
 <section id="glasses" class="slide level2">
 <h2>Glasses</h2>
@@ -332,12 +314,12 @@ S(T) = S(T_0) + \int_{T_0}^{T} \frac{C_V(T')}{T'} dT'
 <tr class="odd">
 <td>Silicate glass</td>
 <td>Atomic (Si, O atoms)</td>
-<td>Strong, transparent, high melting point</td>
+<td>Hard, transparent, high melting point</td>
 </tr>
 <tr class="even">
 <td>Metallic glass</td>
 <td>Atomic (metal atoms)</td>
-<td>High strength, corrosion resistant, ductile</td>
+<td>High strength, elastic, corrosion resistant</td>
 </tr>
 <tr class="odd">
 <td>Polymer glass</td>
@@ -402,13 +384,13 @@ S(T) = S(T_0) + \int_{T_0}^{T} \frac{C_V(T')}{T'} dT'
 <li>Glasses exhibit <strong>ageing</strong>: their properties slowly evolve with time as they explore deeper minima in the energy landscape</li>
 </ul>
 
-<img data-src="./figs/brittle.png" class="r-stretch quarto-figure-center"><p class="caption">Example of brittle response in a simulated glassy model form Ozawa et al PNAS (2018): (a) stress-strain curves for different preparation temperatures; (b) initial deformation field, (b) final deformation field demonstrating fracture</p></section>
+<img data-src="./figs/brittle.png" class="r-stretch quarto-figure-center"><p class="caption">Example of brittle response in a simulated glassy model from Ozawa et al PNAS (2018): (a) stress-strain curves for different preparation temperatures; (b) initial deformation field, (c) final deformation field demonstrating fracture</p></section>
 <section id="slowing-down" class="slide level2">
 <h2>Slowing down</h2>
 <div class="columns">
 <div class="column" style="width:50%;">
 <p>Their solid-like behavior arises from the dramatic slowing down of their dynamics as they approach the glass transition.</p>
-<p>We quantify this with density autocorrelation functions such as the self-intermediate scattering function: <span class="math display">F(k, t) = \frac{1}{N} \left\langle \sum_{j=1}^{N} e^{i \mathbf{k} \cdot [\mathbf{r}_j(t) - \mathbf{r}_j(0)]} \right\rangle</span></p>
+<p>We quantify this with density autocorrelation functions such as the self-intermediate scattering function: <span class="math display">F_s(q, t) = \frac{1}{N} \left\langle \sum_{j=1}^{N} e^{i \mathbf{q} \cdot [\mathbf{r}_j(t) - \mathbf{r}_j(0)]} \right\rangle</span></p>
 <p>It decays in two steps:</p>
 <ul>
 <li>a fast decay corresponding to <strong>vibrations</strong> within the cage formed by neighbouring particles, occurring on a timescale called the <strong>beta relaxation time</strong> <span class="math inline">\tau_{\beta}</span></li>
@@ -454,6 +436,24 @@ S(T) = S(T_0) + \int_{T_0}^{T} \frac{C_V(T')}{T'} dT'
 <li><strong>Dynamic theories</strong>: attribute the slowing down to kinetic effects without invoking an underlying thermodynamic transition.</li>
 </ul>
 </section>
+<section id="configurational-entropy-and-the-kauzmann-paradox" class="slide level2">
+<h2>Configurational entropy and the Kauzmann paradox</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p>As we take liquids to low temperatures, we can separate the total entropy into a vibrational and configurational part and define <span class="math display"> S_{conf}(T) = S(T) -S_{vib}(T)</span></p>
+<p>For several fluids, this <em>decreases</em> as the temperature is lowered, in an intriguing way. It is estimated from the entropy difference between liquid and crystal (similar vibrational entropies).</p>
+<blockquote>
+<p>[…] Perhaps in some instances a thermodynamic <strong>“freezing-in”</strong> of degrees of freedom does take place as a desperate result of the liquid’s excessive generosity with its limited supply of entropy and energy as its temperature is lowered below the melting point. This would imply the existence of <strong>some kind of state of high order</strong> for the liquid at low temperature which <strong>differs</strong> from the normal crystalline state. A plausible structure for such a state seems, however, difficult to conceive, and we believe that the paradox is better resolved in another way […] (W. Kauzmann, Chem. Rev.&nbsp;43, 219 (1948)).</p>
+</blockquote>
+</div><div class="column" style="width:50%;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="./figs/kauzmann.png"></p>
+<figcaption>Kauzmann paradox: the entropy difference between the liquid and the crystal is extrapolated to low temperatures: glasses plateau, but what if we could equilibrate at very low T?</figcaption>
+</figure>
+</div>
+</div></div>
+</section>
 <section id="a-thermodynamic-theory-the-adam-gibbs-scenario" class="slide level2">
 <h2>A thermodynamic theory: the Adam-Gibbs scenario</h2>
 <div class="columns">
@@ -463,7 +463,7 @@ S(T) = S(T_0) + \int_{T_0}^{T} \frac{C_V(T')}{T'} dT'
 <li>The key idea is the existence of <strong>cooperatively rearranging regions</strong> (CRRs): to relax, particles need to move together and explore a new metabasin in the energy landscape.</li>
 </ul>
 <p><em>Mosaic</em> of <span class="math inline">M_{CRR}</span> independent cooperatively rearranging regions of size <span class="math inline">n_{CRR}</span> particles each. The total number of particles is <span class="math inline">N = M_{CRR} n_{CRR}</span>.</p>
-<p>We <strong>assume</strong> that the total configurational entropy is additive and that each CRR contributes a constant amount <span class="math inline">s_{conf}</span>, irrespective of its size</p>
+<p>We <strong>assume</strong> that the total configurational entropy is additive and that each CRR contributes a constant amount <span class="math inline">s^*</span>, irrespective of its size</p>
 <p><span class="math inline">S_{conf} = M_{CRR} s^* = \dfrac{N}{n_{CRR}} s^*</span></p>
 <p>Rearranging gives the size of a CRR as a function of the configurational entropy per particle <span class="math inline">S_{conf}/N</span>: <span class="math display">n_{CRR}(T) \propto \dfrac{1}{S_{conf}(T)/N}</span></p>
 </div><div class="column" style="width:50%;">
@@ -482,12 +482,12 @@ S(T) = S(T_0) + \int_{T_0}^{T} \frac{C_V(T')}{T'} dT'
 </span></p>
 <p>From Arrhenius activation, the relaxation time is then</p>
 <p><span class="math display">
-\tau_\alpha(T) = \tau_0 \exp\left(\frac{A}{T S_{\rm conf}(T)}\right)
+\tau_\alpha(T) = \tau_0 \exp\left(\frac{A}{T s_{\rm conf}(T)}\right), \qquad s_{\rm conf}=S_{\rm conf}/N
 </span></p>
-<p>As temperature decreases, <span class="math inline">S_{\rm conf}</span> drops, causing <span class="math inline">\tau_\alpha</span> to increase rapidly. If <span class="math inline">S_{\rm conf}</span> vanishes at the Kauzmann temperature <span class="math inline">T_K</span>, relaxation time diverges, reproducing the VFT form: <span class="math display">
+<p>As temperature decreases, <span class="math inline">s_{\rm conf}</span> drops, causing <span class="math inline">\tau_\alpha</span> to increase rapidly. If <span class="math inline">s_{\rm conf}</span> vanishes at the Kauzmann temperature <span class="math inline">T_K</span>, relaxation time diverges, reproducing the VFT form: <span class="math display">
 \tau_\alpha(T) \sim \exp\left(\frac{B}{T - T_0}\right)
 </span> with <span class="math inline">T_0 \approx T_K</span>. This connects the kinetic slowdown to loss of configurational entropy making the theory thermodynamic.</p>
-<p>It also points to a <strong>critical divergence</strong>: the size of the CRR needs to diverge as we approach <span class="math inline">T_K</span> to have <span class="math inline">S_{conf} \to 0</span>.</p>
+<p>It also points to a <strong>critical divergence</strong>: as <span class="math inline">s_{\rm conf}\to0</span> at <span class="math inline">T_K</span>, the CRR size <span class="math inline">n_{CRR}\propto 1/s_{\rm conf}</span> diverges.</p>
 <ul>
 <li>Evidence for decreasing configurational entropy, but debated existence of a true thermodynamic transition.</li>
 </ul>
@@ -508,7 +508,8 @@ S(T) = S(T_0) + \int_{T_0}^{T} \frac{C_V(T')}{T'} dT'
 <li><strong>High T</strong>: Many mobile regions → fast relaxation</li>
 <li><strong>Low T</strong>: Few mobile regions → cooperative motion required → slow relaxation</li>
 </ul>
-<p>The relaxation time follows a parabolic law <span class="math display">\log \tau_\alpha(T) \sim J^2 \left( \frac{1}{T} - \frac{1}{T_0} \right)^2</span></p>
+<p>The relaxation time follows a parabolic law <span class="math display">\log \tau_\alpha(T) \sim J^2 \left( \frac{1}{T} - \frac{1}{T_o} \right)^2</span></p>
+<p>with <span class="math inline">T_o</span> the onset temperature of glassy dynamics (above <span class="math inline">T_g</span>).</p>
 <p>Unlike VFT, no finite-temperature divergence, no criticality, but still captures super-Arrhenius behavior.</p>
 </div><div class="column" style="width:30%;">
 <p><img data-src="./figs/facilitation.png"> - Recent evidence suggests facilitation as a dominating mechanism for relaxation at low temperatures.</p>
@@ -590,7 +591,7 @@ S(T) = S(T_0) + \int_{T_0}^{T} \frac{C_V(T')}{T'} dT'
 </tr>
 <tr class="even">
 <td>Theories</td>
-<td>Adam-Gibbs <span class="math inline">\tau_\alpha=\tau_0\,e^{A/TS_{\rm conf}}</span> (thermodynamic) vs dynamical facilitation (no finite-<span class="math inline">T</span> divergence)</td>
+<td>Adam-Gibbs <span class="math inline">\tau_\alpha=\tau_0\,e^{A/Ts_{\rm conf}}</span> (thermodynamic) vs dynamical facilitation (no finite-<span class="math inline">T</span> divergence)</td>
 </tr>
 </tbody>
 </table>
