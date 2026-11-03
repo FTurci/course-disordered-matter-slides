@@ -389,7 +389,7 @@
     "href": "soft-matter_polymers2.html#energy-of-mixing-1",
     "title": "Complex Disordered Systems",
     "section": "Energy of mixing",
-    "text": "Energy of mixing\n\n\n\nEnergy of pure solvent U_{s}=\\frac{z N_{s} \\varepsilon_{s s}}{2}\nEnergy of pure polymer U_{p}=\\frac{z N_{p} \\varepsilon_{p p}}{2}\n\n\n\n\nEnergy of solution U=N_{s p} \\varepsilon_{s p}+\\dfrac{\\left(z N_{s}-N_{s p}\\right) \\varepsilon_{s s}}{2}+\\dfrac{\\left(z N_{p}-N_{s p}\\right) \\varepsilon_{p p}}{2}\nWe obtain that the energy of mixing \\Delta U_{\\mathrm{mix}}=N_{s p}\\left[\\varepsilon_{s p}-\\dfrac{1}{2}\\left(\\varepsilon_{s s}+\\varepsilon_{p p}\\right)\\right]\nwhich can change sign depending on our choices for the effective interaction energies."
+    "text": "Energy of mixing\n\n\n\nEnergy of pure solvent U_{s}=\\frac{z N_{s} \\varepsilon_{s s}}{2}\nEnergy of pure polymer U_{p}=\\frac{z N_{p} \\varepsilon_{p p}}{2}\n\n\n\n\nEnergy of solution U=N_{s p} \\varepsilon_{s p}+\\dfrac{\\left(z N_{s}-N_{s p}\\right) \\varepsilon_{s s}}{2}+\\dfrac{\\left(z N_{p}-N_{s p}\\right) \\varepsilon_{p p}}{2}\nWe obtain that the energy of mixing \\Delta U_{\\mathrm{mix}}=N_{s p}\\left[\\varepsilon_{s p}-\\dfrac{1}{2}\\left(\\varepsilon_{s s}+\\varepsilon_{p p}\\right)\\right]\\equiv N_{sp}\\,\\Delta\\varepsilon\nwhich can change sign depending on our choices for the effective interaction energies."
   },
   {
     "objectID": "soft-matter_polymers2.html#good-solvents-poor-solvents-and-theta-solvents",
@@ -2062,6 +2062,6 @@
     "href": "soft-matter_polymers2.html#excluded-volume-vs-mixing-energy",
     "title": "Complex Disordered Systems",
     "section": "Excluded volume vs mixing energy",
-    "text": "Excluded volume vs mixing energy\n\nThe energy is not the whole story: each lattice site holds one molecule. This is the excluded volume, an entropic cost \\sim k_BT per monomer-monomer contact.\nThe mixing energy works against it: for \\Delta\\varepsilon=\\varepsilon_{sp}-\\frac12(\\varepsilon_{ss}+\\varepsilon_{pp})&gt;0, monomer-monomer contacts are favoured.\nThe \\varepsilon of the Flory argument is an effective contact free energy\n\n\n\\varepsilon_{\\rm eff}\\sim k_BT-z\\,\\Delta\\varepsilon=k_B(T-\\Theta),\\qquad \\Theta\\sim\\frac{z\\,\\Delta\\varepsilon}{k_B}"
+    "text": "Excluded volume vs mixing energy\n\nThe energy is not the whole story: each lattice site holds one molecule. This is the excluded volume, an entropic cost \\sim k_BT per monomer-monomer contact.\nThe mixing energy works against it: for \\Delta\\varepsilon&gt;0 (\\Delta U_{\\rm mix}=N_{sp}\\Delta\\varepsilon&gt;0), monomer-monomer contacts are favoured.\nThe \\varepsilon of the Flory argument is an effective contact free energy\n\n\n\\varepsilon_{\\rm eff}\\sim k_BT-z\\,\\Delta\\varepsilon=k_B(T-\\Theta),\\qquad \\Theta\\sim\\frac{z\\,\\Delta\\varepsilon}{k_B}"
   }
 ]

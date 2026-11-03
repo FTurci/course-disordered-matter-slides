@@ -87,14 +87,14 @@ $$
 **Energy of solution**
 $U=N_{s p} \varepsilon_{s p}+\dfrac{\left(z N_{s}-N_{s p}\right) \varepsilon_{s s}}{2}+\dfrac{\left(z N_{p}-N_{s p}\right) \varepsilon_{p p}}{2}$
 
-We obtain that the **energy of mixing** $\Delta U_{\mathrm{mix}}=N_{s p}\left[\varepsilon_{s p}-\dfrac{1}{2}\left(\varepsilon_{s s}+\varepsilon_{p p}\right)\right]$
+We obtain that the **energy of mixing** $\Delta U_{\mathrm{mix}}=N_{s p}\left[\varepsilon_{s p}-\dfrac{1}{2}\left(\varepsilon_{s s}+\varepsilon_{p p}\right)\right]\equiv N_{sp}\,\Delta\varepsilon$
 
 which can **change sign** depending on our choices for the effective interaction energies.
 
 ## Excluded volume vs mixing energy
 
 - The energy is not the whole story: each lattice site holds **one** molecule. This is the **excluded volume**, an **entropic** cost $\sim k_BT$ per monomer-monomer contact.
-- The mixing energy works against it: for $\Delta\varepsilon=\varepsilon_{sp}-\frac12(\varepsilon_{ss}+\varepsilon_{pp})>0$, monomer-monomer contacts are favoured.
+- The mixing energy works against it: for $\Delta\varepsilon>0$ ($\Delta U_{\rm mix}=N_{sp}\Delta\varepsilon>0$), monomer-monomer contacts are favoured.
 - The $\varepsilon$ of the Flory argument is an **effective contact free energy**
 
 $$
@@ -131,7 +131,7 @@ The various affinities have temperature dependencies. Typically:
 - At low $T$ the coil collapses and phase separation is observed (polymer-rich from polymer-poor phase)
 - There is an intermediate temperature where the excluded volume and attractive interaction compensate each other ($\varepsilon_{\rm eff}=0$); in $d=3$ the polymer then behaves like an ideal chain (freely jointed chain).
 
-    - The temperature is conventionally named $\Theta$ temperature (or *Flory* temperature, after physicist Paul Flory)
+    - The temperature is conventionally named **$\Theta$ temperature** (or *Flory* temperature, after physicist Paul Flory)
     - The $\Theta$ temperature increases with the effective monomer-monomer attractions (we need higher temperature to reach ideal behaviour)
 
 
