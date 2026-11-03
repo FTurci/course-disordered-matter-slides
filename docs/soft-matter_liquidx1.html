@@ -163,6 +163,14 @@ Francesco Turci
 </div>
 
 </section>
+<section id="today" class="slide level2">
+<h2>Today</h2>
+<ul>
+<li>Liquid crystals: orientational order without positional order</li>
+<li>Measuring order: the alignment tensor <span class="math inline">\mathbf Q</span> and the order parameter <span class="math inline">\mathcal S</span></li>
+<li>The isotropic–nematic transition: Landau–de Gennes theory</li>
+</ul>
+</section>
 <section id="what-are-liquid-crystals" class="slide level2">
 <h2>What are Liquid Crystals?</h2>
 <ul>
@@ -294,7 +302,7 @@ Francesco Turci
 <div class="column" style="width:60%;">
 <ul>
 <li><p>Orientation of a rigid rod is described by a <strong>unit vector</strong> <span class="math inline">\mathbf{u}</span> along its long axis</p></li>
-<li><p>The particles are head-tail symmetric, so they have a centre of symmetry</p></li>
+<li><p>The nematic <strong>phase</strong> is head-tail symmetric (even when the molecules are not): <span class="math inline">\mathbf{u}</span> and <span class="math inline">-\mathbf{u}</span> are equivalent</p></li>
 <li><p>Because <span class="math inline">\mathbf{u}</span> and <span class="math inline">-\mathbf{u}</span> are equiprobable, on average <span class="math display">\langle \mathbf{u}\rangle=0</span></p></li>
 <li><p>Vectorial order parameter is zero. The next non-trivial invariant is a <strong>second rank tensor</strong></p></li>
 </ul>
@@ -316,7 +324,7 @@ Francesco Turci
 <tr class="odd">
 <td>Scalar</td>
 <td>0</td>
-<td>Scalar nematic S (degree of alignment), e.g., S = ⟨P2(cos θ)⟩</td>
+<td>Density, temperature (no orientation)</td>
 </tr>
 <tr class="even">
 <td>Vector</td>
@@ -326,7 +334,7 @@ Francesco Turci
 <tr class="odd">
 <td>Second‑rank tensor</td>
 <td>2</td>
-<td>Matrices, Alignment tensor <span class="math inline">Q_{ij}</span> (nematic order)</td>
+<td>Alignment tensor <span class="math inline">Q_{ij}</span> (nematic order); its largest eigenvalue is <span class="math inline">\mathcal S</span></td>
 </tr>
 <tr class="even">
 <td>Third‑rank tensor</td>
@@ -354,7 +362,7 @@ Francesco Turci
 </span></p>
 <ul>
 <li>we make it <strong>traceless</strong> by removing the identity</li>
-<li>we make it include quadratic combinations (it is as <strong>second moment</strong>, essentially the covariances)</li>
+<li>we make it include quadratic combinations (it is a <strong>second moment</strong>, essentially the covariances)</li>
 <li><span class="math inline">\otimes</span> is the outer product, giving a <span class="math inline">d\times d</span> matrix: <span class="math display">
 \mathbf{u} \otimes \mathbf{u} =
 \begin{pmatrix}
@@ -370,7 +378,7 @@ u_d u_1 &amp; u_d u_2 &amp; \cdots &amp; u_d u_d
 <section id="extracting-order" class="slide level2">
 <h2>Extracting Order</h2>
 <ul>
-<li><p>Diagonalisation: it extracts the invariants (the properties that do not change wrt a coordinate change or rotations)</p></li>
+<li><p>Diagonalisation: the eigenvalues do not depend on the choice of axes, the eigenvectors give the principal directions</p></li>
 <li><p><strong>Largest eigenvalue</strong> <span class="math inline">\rightarrow</span> scalar order parameter <span class="math inline">\mathcal{S}</span></p></li>
 <li><p><strong>Corresponding eigenvector</strong> <span class="math inline">\rightarrow</span> director <span class="math inline">\mathbf{n}</span></p></li>
 </ul>
@@ -398,7 +406,7 @@ u_d u_1 &amp; u_d u_2 &amp; \cdots &amp; u_d u_d
 <section id="d-nematic-order-parameter" class="slide level2">
 <h2>2D Nematic Order Parameter</h2>
 <p>In two dimensions, the director is simply characterised by the angle <span class="math inline">\psi</span> expressed as <span class="math display">
-\psi = \frac{1}{2} \operatorname{atan2}(\sin{2\theta_i}, \cos{2\theta_i}).
+\psi = \frac{1}{2} \operatorname{atan2}(\langle\sin{2\theta_i}\rangle, \langle\cos{2\theta_i}\rangle).
 </span> and the nematic order parameter is simply</p>
 <p><span class="math display">
 \mathcal{S}=\sqrt{\left\langle\cos 2 \theta_i\right\rangle^2+\left\langle\sin 2 \theta_i\right\rangle^2}
@@ -457,6 +465,19 @@ u_d u_1 &amp; u_d u_2 &amp; \cdots &amp; u_d u_d
 </tbody>
 </table>
 </section>
+<section id="orientational-distribution-and-order-parameter" class="slide level2">
+<h2>Orientational distribution and order parameter</h2>
+<p>We want to characterise the deviations from the director’s orientation.</p>
+<p>We can think of compiling a <strong>probability distribution</strong> <span class="math inline">p(\Omega)</span> of finding a rod with pair of polar angles <span class="math inline">\Omega=(\theta,\phi)</span> in a coordinates system with polar axis along <span class="math inline">\mathbf{n}</span>.</p>
+<ul>
+<li>Note: the nematic phase has <strong>cylindrical symmetry</strong> around <span class="math inline">\mathbf{n}</span></li>
+<li>Hence, we have no dependency in the azimuthal angle <span class="math inline">\phi</span> but only on <span class="math inline">\theta</span>.</li>
+</ul>
+<p>So, by definition of an average, the orientational order parameter reads</p>
+<p><span class="math display">\begin{align}\mathcal{S}&amp;=\dfrac{3}{2}\left\langle(\mathbf{u} \cdot \mathbf{n})^2-\frac{1}{3}\right\rangle = \dfrac{1}{2}\langle 3 \cos^2\theta-1\rangle=\langle P_2(\cos\theta)\rangle\\
+&amp;=\int_0^{\pi}P_2(\cos\theta)p(\theta)\sin\theta d\theta
+\end{align}</span> where we used the Jacobian in spherical coordinates and normalised <span class="math inline">p(\theta)</span> as <span class="math inline">\int_0^\pi p(\theta)\sin\theta d\theta=1</span>.</p>
+</section>
 <section id="landau-de-gennes-mean-field-theory" class="slide level2">
 <h2>Landau-de Gennes mean field theory</h2>
 <p>Using the tensorial order parameter one can express a Landau theory of the isotropic-to-nematic transition (the simplest form of orientational order appearing in liquid crystals).</p>
@@ -472,19 +493,6 @@ u_d u_1 &amp; u_d u_2 &amp; \cdots &amp; u_d u_d
 0 &amp; 0 &amp; \frac{2}{3}
 \end{array}\right)
 </span></p>
-</section>
-<section id="orientational-distribution-and-order-parameter" class="slide level2">
-<h2>Orientational distribution and order parameter</h2>
-<p>We want to characterise the deviations from the director’s orientation.</p>
-<p>We can think of compiling a <strong>probability distribution</strong> <span class="math inline">p(\Omega)</span> of finding a rod with pair of polar angles <span class="math inline">\Omega=(\theta,\phi)</span> in a coordinates system with polar axis along <span class="math inline">\mathbf{n}</span>.</p>
-<ul>
-<li>Note: the nematic phase has <strong>cylindrical symmetry</strong> around <span class="math inline">\mathbf{n}</span></li>
-<li>Hence, we have no dependency in the azimuthal angle <span class="math inline">\phi</span> but only on <span class="math inline">\theta</span>.</li>
-</ul>
-<p>So, by definition of an average, the orientational order parameter reads</p>
-<p><span class="math display">\begin{align}\mathcal{S}&amp;=\dfrac{3}{2}\left\langle(\mathbf{u} \cdot \mathbf{n})^2-\frac{1}{3}\right\rangle = \dfrac{1}{2}\langle 3 \cos^2\theta-1\rangle=\langle P_2(\cos\theta)\rangle\\
-&amp;=\int_0^{\pi}P_2(\cos\theta)p(\theta)\sin\theta d\theta
-\end{align}</span> where we used the Jacobian in spherical coordinates and normalised <span class="math inline">p(\theta)</span> as <span class="math inline">\int_0^\pi p(\theta)\sin\theta d\theta=1</span>.</p>
 </section>
 <section id="landau-de-gennes-mean-field-theory-1" class="slide level2">
 <h2>Landau-de Gennes mean field theory</h2>
@@ -521,7 +529,7 @@ f=f_0+\frac{A}{3}S^2-\frac{2B}{27}S^3+\frac{C}{9}S^4
 <ul>
 <li><span class="math inline">A(T)=a\left(T-T_*\right)+\cdots</span></li>
 <li><span class="math inline">B(T)= b+\dots</span></li>
-<li><span class="math inline">C(T)=c+\dots</span>, with <span class="math inline">a,b,c&gt;0</span> to preserve the most relevant terms.</li>
+<li><span class="math inline">C(T)=c+\dots</span>, with <span class="math inline">a,b,c&gt;0</span>: <span class="math inline">c&gt;0</span> keeps <span class="math inline">f</span> bounded, <span class="math inline">b&gt;0</span> favours <span class="math inline">S&gt;0</span> (rods along <span class="math inline">\mathbf n</span>).</li>
 </ul></li>
 </ul>
 <p>and obtain</p>
@@ -533,7 +541,12 @@ f-f_0=\frac{a}{3}\left(T-T^{\ast}\right) S^2-\frac{2 b}{27} S^3+\frac{c}{9} S^4 
 <li><span class="math inline">S_1=0</span>: isotropic</li>
 <li><span class="math inline">S_2&gt;0</span>: nematic</li>
 </ul>
-<p>First order phase transition. The cubic terms prevents the free energy from having an inflection at <span class="math inline">S=0</span> (the free energy never gets truly flat)</p>
+<p><strong>First order</strong> transition:</p>
+<ul>
+<li><span class="math inline">S</span> and <span class="math inline">-S</span> differ (rods along vs perpendicular to <span class="math inline">\mathbf n</span>; unlike <span class="math inline">\pm m</span> in a magnet): the cubic term is allowed</li>
+<li><span class="math inline">S</span> jumps at <span class="math inline">T_{NI}&gt;T^*</span></li>
+<li>at <span class="math inline">T^*</span>, <span class="math inline">f\sim S^3</span> rather than <span class="math inline">S^4</span>: less flat</li>
+</ul>
 </section>
 <section id="landau-de-gennes-theory-result-1" class="slide level2">
 <h2>Landau-de Gennes theory result</h2>
@@ -544,7 +557,7 @@ f-f_0=\frac{a}{3}\left(T-T^{\ast}\right) S^2-\frac{2 b}{27} S^3+\frac{c}{9} S^4 
 
 </div>
 <script type="pyodide-1-contents">
-eyJhdHRyIjp7ImF1dG9ydW4iOnRydWUsImVjaG8iOmZhbHNlLCJlZGl0IjpmYWxzZSwiZXZhbCI6dHJ1ZX0sImNvZGUiOiJpbXBvcnQgbnVtcHkgYXMgbnBcbmltcG9ydCBtYXRwbG90bGliLnB5cGxvdCBhcyBwbHRcbmRlZiBwbG90KFMsRik6XG4gICAgIyBQbG90XG4gICAgcGx0LmZpZ3VyZShmaWdzaXplPSg2LCAzKSlcbiAgICBwbHQucGxvdChTLCBmLCAnYi0nLCBsaW5ld2lkdGg9MilcbiAgICBwbHQuYXhobGluZSh5PTAsIGNvbG9yPSdrJywgbGluZXN0eWxlPSctLScsIGFscGhhPTAuMylcbiAgICBwbHQueGxhYmVsKCdPcmRlciBwYXJhbWV0ZXIgUycsIGZvbnRzaXplPTEyKVxuICAgIHBsdC55bGFiZWwoJ0ZyZWUgZW5lcmd5IGRlbnNpdHkgJGYgLSBmXzAkJywgZm9udHNpemU9MTIpXG4gICAgcGx0LmdyaWQoVHJ1ZSwgYWxwaGE9MC4zKVxuICAgIHBsdC50aWdodF9sYXlvdXQoKVxuICAgIHBsdC5zaG93KCkifQ==
+eyJhdHRyIjp7ImF1dG9ydW4iOnRydWUsImVjaG8iOmZhbHNlLCJlZGl0IjpmYWxzZSwiZXZhbCI6dHJ1ZX0sImNvZGUiOiJpbXBvcnQgbnVtcHkgYXMgbnBcbmltcG9ydCBtYXRwbG90bGliLnB5cGxvdCBhcyBwbHRcbmRlZiBwbG90KFMsRik6XG4gICAgIyBQbG90XG4gICAgcGx0LmZpZ3VyZShmaWdzaXplPSg2LCAzKSlcbiAgICBwbHQucGxvdChTLCBGLCAnYi0nLCBsaW5ld2lkdGg9MilcbiAgICBwbHQuYXhobGluZSh5PTAsIGNvbG9yPSdrJywgbGluZXN0eWxlPSctLScsIGFscGhhPTAuMylcbiAgICBwbHQueGxhYmVsKCdPcmRlciBwYXJhbWV0ZXIgUycsIGZvbnRzaXplPTEyKVxuICAgIHBsdC55bGFiZWwoJ0ZyZWUgZW5lcmd5IGRlbnNpdHkgJGYgLSBmXzAkJywgZm9udHNpemU9MTIpXG4gICAgcGx0LmdyaWQoVHJ1ZSwgYWxwaGE9MC4zKVxuICAgIHBsdC50aWdodF9sYXlvdXQoKVxuICAgIHBsdC5zaG93KCkifQ==
 </script>
 </div>
 <div>

@@ -8,6 +8,12 @@ format:
 mermaid-format: svg # png also works
 ---
 
+## Today
+
+- Liquid crystals: orientational order without positional order
+- Measuring order: the alignment tensor $\mathbf Q$ and the order parameter $\mathcal S$
+- The isotropic–nematic transition: Landau–de Gennes theory
+
 ## What are Liquid Crystals?
 
 
@@ -91,7 +97,7 @@ Many natural and artificial systems have anisotropy
 :::{.column width=60%}
 - Orientation of a rigid rod is described by a **unit vector** $\mathbf{u}$ along its long axis
 
-- The particles are head-tail symmetric, so they have a centre of symmetry
+- The nematic **phase** is head-tail symmetric (even when the molecules are not): $\mathbf{u}$ and $-\mathbf{u}$ are equivalent
 
 - Because $\mathbf{u}$ and  $-\mathbf{u}$ are equiprobable, on average $$\langle \mathbf{u}\rangle=0$$
 
@@ -100,9 +106,9 @@ Many natural and artificial systems have anisotropy
 <div style="font-size:0.75em">
 | Tensor | Rank | Example order parameter |
 |--------|------|-------------------------|
-| Scalar | 0 | Scalar nematic S (degree of alignment), e.g., S = ⟨P2(cos θ)⟩ |
+| Scalar | 0 | Density, temperature (no orientation) |
 | Vector | 1 | Polarization or magnetization vector P / M (polar order) |
-| Second‑rank tensor | 2 | Matrices, Alignment tensor $Q_{ij}$ (nematic order) |
+| Second‑rank tensor | 2 | Alignment tensor $Q_{ij}$ (nematic order); its largest eigenvalue is $\mathcal S$ |
 | Third‑rank tensor | 3 | Octupolar / tetrahedral order $T_{ijk}$ |
 </div>
 
@@ -123,7 +129,7 @@ $$
 $$
 
 - we make it **traceless** by removing the identity
-- we make it include quadratic combinations (it is as **second moment**, essentially the covariances)
+- we make it include quadratic combinations (it is a **second moment**, essentially the covariances)
 - $\otimes$ is the outer product, giving a $d\times d$ matrix:
 $$
 \mathbf{u} \otimes \mathbf{u} =
@@ -141,7 +147,7 @@ where $d$ is dimensionality, $\mathbf{u}_i$ is the unit orientation vector. For 
 
 ## Extracting Order
 
-- Diagonalisation: it extracts the invariants (the properties that do not change wrt a coordinate change or rotations)
+- Diagonalisation: the eigenvalues do not depend on the choice of axes, the eigenvectors give the principal directions
 
 
 - **Largest eigenvalue** $\rightarrow$ scalar order parameter $\mathcal{S}$
@@ -163,7 +169,7 @@ The nematic order parameter $\mathcal{S}$ should not be confused with the entrop
 
 In two dimensions, the director is simply characterised by the angle $\psi$  expressed as 
 $$
-\psi = \frac{1}{2} \operatorname{atan2}(\sin{2\theta_i}, \cos{2\theta_i}).
+\psi = \frac{1}{2} \operatorname{atan2}(\langle\sin{2\theta_i}\rangle, \langle\cos{2\theta_i}\rangle).
 $$
 and the nematic order parameter is simply
 
@@ -197,6 +203,23 @@ This uses the **Legendre polynomial** $P_2(\cos\theta)$ to enforce head-tail sym
 | 4 | $P_4(x)=\dfrac{1}{8}(35x^4-30x^2+3)$ | Yes (even: $P_4(-x)=P_4(x)$) |
 
 
+## Orientational distribution and order parameter
+
+We want to characterise the deviations from the director's orientation.
+
+We can think of compiling a **probability distribution** $p(\Omega)$ of finding a rod with pair of polar angles $\Omega=(\theta,\phi)$ in a coordinates system with polar axis along $\mathbf{n}$.
+
+- Note: the nematic phase has **cylindrical symmetry** around $\mathbf{n}$
+- Hence, we have no dependency in the azimuthal angle $\phi$ but only on $\theta$.
+
+So, by definition of an average, the orientational order parameter reads
+
+$$\begin{align}\mathcal{S}&=\dfrac{3}{2}\left\langle(\mathbf{u} \cdot \mathbf{n})^2-\frac{1}{3}\right\rangle = \dfrac{1}{2}\langle 3 \cos^2\theta-1\rangle=\langle P_2(\cos\theta)\rangle\\
+&=\int_0^{\pi}P_2(\cos\theta)p(\theta)\sin\theta d\theta
+\end{align}$$
+where we used the Jacobian in spherical coordinates and normalised $p(\theta)$ as $\int_0^\pi p(\theta)\sin\theta d\theta=1$.
+
+
 ## Landau-de Gennes mean field theory
 
 Using the tensorial order parameter one can express a Landau theory of the isotropic-to-nematic transition (the simplest form of orientational order appearing in liquid crystals).
@@ -218,23 +241,6 @@ $$
 0 & 0 & \frac{2}{3}
 \end{array}\right)
 $$
-
-
-## Orientational distribution and order parameter
-
-We want to characterise the deviations from the director's orientation.
-
-We can think of compiling a **probability distribution** $p(\Omega)$ of finding a rod with pair of polar angles $\Omega=(\theta,\phi)$ in a coordinates system with polar axis along $\mathbf{n}$.
-
-- Note: the nematic phase has **cylindrical symmetry** around $\mathbf{n}$
-- Hence, we have no dependency in the azimuthal angle $\phi$ but only on $\theta$.
-
-So, by definition of an average, the orientational order parameter reads
-
-$$\begin{align}\mathcal{S}&=\dfrac{3}{2}\left\langle(\mathbf{u} \cdot \mathbf{n})^2-\frac{1}{3}\right\rangle = \dfrac{1}{2}\langle 3 \cos^2\theta-1\rangle=\langle P_2(\cos\theta)\rangle\\
-&=\int_0^{\pi}P_2(\cos\theta)p(\theta)\sin\theta d\theta
-\end{align}$$
-where we used the Jacobian in spherical coordinates and normalised $p(\theta)$ as $\int_0^\pi p(\theta)\sin\theta d\theta=1$.
 
 
 ## Landau-de Gennes mean field theory
@@ -278,7 +284,7 @@ $$
 
     - $A(T)=a\left(T-T_*\right)+\cdots$
     - $B(T)= b+\dots$
-    - $C(T)=c+\dots$, with $a,b,c>0$ to preserve the most relevant terms.
+    - $C(T)=c+\dots$, with $a,b,c>0$: $c>0$ keeps $f$ bounded, $b>0$ favours $S>0$ (rods along $\mathbf n$).
 
 and obtain
 
@@ -291,7 +297,11 @@ The cubic term implies that there is a **temperature range** where **two minima 
 - $S_1=0$: isotropic
 - $S_2>0$: nematic
 
-First order phase transition. The cubic terms prevents the free energy from having an inflection at $S=0$ (the free energy never gets truly flat)
+**First order** transition:
+
+- $S$ and $-S$ differ (rods along vs perpendicular to $\mathbf n$; unlike $\pm m$ in a magnet): the cubic term is allowed
+- $S$ jumps at $T_{NI}>T^*$
+- at $T^*$, $f\sim S^3$ rather than $S^4$: less flat
 
 
 
@@ -308,7 +318,7 @@ import matplotlib.pyplot as plt
 def plot(S,F):
     # Plot
     plt.figure(figsize=(6, 3))
-    plt.plot(S, f, 'b-', linewidth=2)
+    plt.plot(S, F, 'b-', linewidth=2)
     plt.axhline(y=0, color='k', linestyle='--', alpha=0.3)
     plt.xlabel('Order parameter S', fontsize=12)
     plt.ylabel('Free energy density $f - f_0$', fontsize=12)
