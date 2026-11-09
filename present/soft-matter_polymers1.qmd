@@ -496,8 +496,8 @@ Yet they affect the **scaling properties**.
 
 **Balance of competing effects:**
 
-1. **Entropy**: Favors compact configurations
-2. **Excluded volume**: Favors chain expansion
+1. **Entropy**: favours coiled configurations (stretching is rare)
+2. **Excluded volume**: favours chain expansion
 
 
 Entropy :
@@ -520,43 +520,28 @@ $$
 
 ## Self-Avoiding Walk 
 
-The configurational part of the internal energy can be estimated by focusing on monomer-monomer contacts for monomers of volume $V_1$. 
-
-We approximate this with a *segment gas* confined in a volume $R^3$. The number of contacts is 
-
-$$N_c \sim N^2 V_1 / R^3 \sim N^{1 / 2}
-$$
-
-by using $R^2\sim N$.
-
-Each contact costs some energy scale $\varepsilon$, so $U\sim\varepsilon N_c$, i.e.  $$
-U \sim \varepsilon N^2 V_1 / R^3
-$$ and the total free energy is approximately 
+**Interaction term.** Treat the $N$ monomers as a gas filling the coil volume $R^3$, with density $\rho\simeq N/R^3$, and expand in powers of $\rho$ (virial expansion):
 
 $$
-F=\frac{\varepsilon N^2 V_1}{R^3}+\frac{3 k_B T R^2}{2 N b^2}
+\frac{F_{\rm int}}{k_BT}\simeq R^3\left(v\rho^2+w\rho^3\right)=v\,\frac{N^2}{R^3}+w\,\frac{N^3}{R^6}
 $$
 
-(we are interested in scaling behaviour)
+- $v=B_2$: **excluded-volume parameter** (second virial coefficient), $v\simeq b^3$ for hard monomers
+- $w=B_3\simeq b^6>0$: three-body repulsion
+
+Adding the elastic (entropic) term:
+
+$$
+\boxed{\frac{F}{k_BT}\simeq\frac{3R^2}{2Nb^2}+v\,\frac{N^2}{R^3}+w\,\frac{N^3}{R^6}}
+$$
 
 
 ## Self-avoiding walk
-From
+
+For repulsive monomers, $v>0$, and the three-body term is negligible for a long chain (ratio $wN/vR^3\to0$). Minimising the first two terms, $dF/dR=0$:
 
 $$
-F=\frac{\varepsilon N^2 V_1}{R^3}+\frac{3 k_B T R^2}{2 N b^2}
-$$
-we can find the minimum that satisfies $d F / d R=0
-$
-
-and get 
-
-$$
-R^5=\frac{\varepsilon V_1 b^2}{k_B T} N^3 \sim \frac{\varepsilon}{k_B T} N^3 b^5
-$$
-
-which ultimately is $$
-\boxed{R \sim N^{3 / 5} b}
+R^5\simeq v\,b^2 N^3 \qquad\Rightarrow\qquad \boxed{R \sim N^{3 / 5} b}
 $$
 
 So ultimately we get a scaling exponent **different** from freely jointed chain:

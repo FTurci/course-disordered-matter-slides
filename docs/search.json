@@ -396,14 +396,14 @@
     "href": "soft-matter_polymers2.html#good-solvents-poor-solvents-and-theta-solvents",
     "title": "Complex Disordered Systems",
     "section": "Good solvents, poor solvents and theta solvents",
-    "text": "Good solvents, poor solvents and theta solvents\n\nGood solvent: \\varepsilon_{\\rm eff}&gt;0 (T&gt;\\Theta)\n\nExcluded volume wins and expands the chain. This includes \\Delta U_{\\rm mix}&lt;0, but also weakly positive \\Delta U_{\\rm mix}.\n\nPoor solvent: \\varepsilon_{\\rm eff}&lt;0 (T&lt;\\Theta)\n\nRequires \\Delta U_{\\rm mix}&gt;0, with an attraction strong enough to overcome the excluded volume: the polymer collapses.\n\n\nCollapsed chains: hydrophobic polypeptides, polystyrene in water, chromatin in the cell nucleus.\n\n\n\n\nChromatin globule model\n\n\n\n\nTuning solvent properties (e.g. the temperature) leads to conformational changes"
+    "text": "Good solvents, poor solvents and theta solvents\n\\dfrac{F}{k_BT}\\simeq\\dfrac{3R^2}{2Nb^2}+v\\,\\dfrac{N^2}{R^3}+w\\,\\dfrac{N^3}{R^6}: keep the terms that matter.\n\n\n\n\n\n\n\n\n\nSolvent\nv\nBalance\nSize\n\n\n\n\nGood, T&gt;\\Theta\nv&gt;0\nelastic vs two-body\nR\\sim N^{3/5}\n\n\nTheta, T=\\Theta\nv=0\nelastic vs three-body\nR\\sim N^{1/2}\n\n\nPoor, T&lt;\\Theta\nv&lt;0\ntwo-body vs three-body\nR\\sim N^{1/3}\n\n\n\n\n\nCollapsed chains: hydrophobic polypeptides, polystyrene in water, chromatin in the cell nucleus.\n\n\n\n\nChromatin globule model\n\n\n\n\nTuning solvent properties (e.g. the temperature) leads to conformational changes"
   },
   {
     "objectID": "soft-matter_polymers2.html#temperature-dependence-and-theta-theta-solvents",
     "href": "soft-matter_polymers2.html#temperature-dependence-and-theta-theta-solvents",
     "title": "Complex Disordered Systems",
     "section": "Temperature dependence and theta (\\Theta) solvents",
-    "text": "Temperature dependence and theta (\\Theta) solvents\nThe various affinities have temperature dependencies. Typically:\n\nAt high T, the coil expand and the solvent is good\nAt low T the coil collapses and phase separation is observed (polymer-rich from polymer-poor phase)\nThere is an intermediate temperature where the excluded volume and attractive interaction compensate each other (\\varepsilon_{\\rm eff}=0); in d=3 the polymer then behaves like an ideal chain (freely jointed chain).\n\nThe temperature is conventionally named \\Theta temperature (or Flory temperature, after physicist Paul Flory)\nThe \\Theta temperature increases with the effective monomer-monomer attractions (we need higher temperature to reach ideal behaviour)\n\n\n\nSwelling behaviour of polymers in solvent."
+    "text": "Temperature dependence and theta (\\Theta) solvents\nThe various affinities have temperature dependencies. Typically:\n\nAt high T, the coil expand and the solvent is good\nAt low T the coil collapses and phase separation is observed (polymer-rich from polymer-poor phase)\nThere is an intermediate temperature where the excluded volume and attractive interaction compensate each other (v=0). The three-body term then gives R^8\\sim N^4: in d=3 the polymer behaves like an ideal chain (freely jointed chain), R\\sim N^{1/2}.\n\nThe temperature is conventionally named \\Theta temperature (or Flory temperature, after physicist Paul Flory)\nThe \\Theta temperature increases with the effective monomer-monomer attractions (we need higher temperature to reach ideal behaviour)\n\n\n\nSwelling behaviour of polymers in solvent."
   },
   {
     "objectID": "soft-matter_polymers2.html#examples",
@@ -494,7 +494,7 @@
     "href": "soft-matter_polymers2.html#summary-polymers",
     "title": "Complex Disordered Systems",
     "section": "Summary: polymers",
-    "text": "Summary: polymers\n\n\n\n\n\n\n\nTopic\nKey result\n\n\n\n\nFreely-jointed chain\n\\langle R^2\\rangle=Nb_0^2, Gaussian P(\\mathbf R): a chain is a random walk\n\n\nRadius of gyration\n\\langle R_g^2\\rangle=\\langle R^2\\rangle/6\n\n\nFreely-rotating chain\n\\langle R^2\\rangle=CNb_0^2, C=\\frac{1+\\cos\\theta}{1-\\cos\\theta}: stiffness only changes the prefactor\n\n\nKuhn length\nb=Cb_0, N'=N/C: chemistry is hidden in b\n\n\nExcluded volume\nR\\sim N^{3/5} (self-avoiding walk)\n\n\nSolvent quality\n\\varepsilon_{\\rm eff}\\sim k_B(T-\\Theta): excluded volume vs mixing energy; in d=3, good \\nu\\approx3/5; \\Theta \\nu=1/2; poor: collapsed globule \\nu=1/3\n\n\nOverlap concentration\nc^*=\\frac{3M}{4\\pi N_AR_g^3}\\propto M^{1-3\\nu}, very small for long chains\n\n\nSemi-dilute\nc&gt;c^*: interpenetration, entanglement, slow flow\n\n\nBulk polymers\nelastomers, thermosets, thermoplastics; on cooling crystal (slow) or glass (fast)\n\n\n\nFull summary with links in the notes"
+    "text": "Summary: polymers\n\n\n\n\n\n\n\nTopic\nKey result\n\n\n\n\nFreely-jointed chain\n\\langle R^2\\rangle=Nb_0^2, Gaussian P(\\mathbf R): a chain is a random walk\n\n\nRadius of gyration\n\\langle R_g^2\\rangle=\\langle R^2\\rangle/6\n\n\nFreely-rotating chain\n\\langle R^2\\rangle=CNb_0^2, C=\\frac{1+\\cos\\theta}{1-\\cos\\theta}: stiffness only changes the prefactor\n\n\nKuhn length\nb=Cb_0, N'=N/C: chemistry is hidden in b\n\n\nExcluded volume\nR\\sim N^{3/5} (self-avoiding walk)\n\n\nSolvent quality\nv\\simeq b^3(1-\\Theta/T): excluded volume vs mixing energy; in d=3, good \\nu\\approx3/5; \\Theta \\nu=1/2; poor: collapsed globule \\nu=1/3\n\n\nOverlap concentration\nc^*=\\frac{3M}{4\\pi N_AR_g^3}\\propto M^{1-3\\nu}, very small for long chains\n\n\nSemi-dilute\nc&gt;c^*: interpenetration, entanglement, slow flow\n\n\nBulk polymers\nelastomers, thermosets, thermoplastics; on cooling crystal (slow) or glass (fast)\n\n\n\nFull summary with links in the notes"
   },
   {
     "objectID": "soft-matter_surfactants1.html#hydrophobicity-and-amhiphiles",
@@ -1656,21 +1656,21 @@
     "href": "soft-matter_polymers1.html#self-avoiding-walk",
     "title": "Complex Disordered Systems",
     "section": "Self-Avoiding Walk",
-    "text": "Self-Avoiding Walk\nBalance of competing effects:\n\nEntropy: Favors compact configurations\nExcluded volume: Favors chain expansion\n\nEntropy :\n\nS=k_B \\ln (\\text { number of configurations })\n\nFor a given end-to-end vector the number of configurations scales as\n\nP(\\mathbf{R})=\\left(\\frac{3}{2 \\pi\\langle R^{2}\\rangle}\\right)^{3 / 2} e^{-\\frac{3 R^{2}}{2\\langle R^{2}\\rangle}}\n\nand so\n\nS \\sim \\frac{-3 k_{B} R^{2}}{2 N b^{2}}+\\text { terms indep. of } \\mathrm{R}"
+    "text": "Self-Avoiding Walk\nBalance of competing effects:\n\nEntropy: favours coiled configurations (stretching is rare)\nExcluded volume: favours chain expansion\n\nEntropy :\n\nS=k_B \\ln (\\text { number of configurations })\n\nFor a given end-to-end vector the number of configurations scales as\n\nP(\\mathbf{R})=\\left(\\frac{3}{2 \\pi\\langle R^{2}\\rangle}\\right)^{3 / 2} e^{-\\frac{3 R^{2}}{2\\langle R^{2}\\rangle}}\n\nand so\n\nS \\sim \\frac{-3 k_{B} R^{2}}{2 N b^{2}}+\\text { terms indep. of } \\mathrm{R}"
   },
   {
     "objectID": "soft-matter_polymers1.html#self-avoiding-walk-1",
     "href": "soft-matter_polymers1.html#self-avoiding-walk-1",
     "title": "Complex Disordered Systems",
     "section": "Self-Avoiding Walk",
-    "text": "Self-Avoiding Walk\nThe configurational part of the internal energy can be estimated by focusing on monomer-monomer contacts for monomers of volume V_1.\nWe approximate this with a segment gas confined in a volume R^3. The number of contacts is\nN_c \\sim N^2 V_1 / R^3 \\sim N^{1 / 2}\n\nby using R^2\\sim N.\nEach contact costs some energy scale \\varepsilon, so U\\sim\\varepsilon N_c, i.e. \nU \\sim \\varepsilon N^2 V_1 / R^3\n and the total free energy is approximately\n\nF=\\frac{\\varepsilon N^2 V_1}{R^3}+\\frac{3 k_B T R^2}{2 N b^2}\n\n(we are interested in scaling behaviour)"
+    "text": "Self-Avoiding Walk\nInteraction term. Treat the N monomers as a gas filling the coil volume R^3, with density \\rho\\simeq N/R^3, and expand in powers of \\rho (virial expansion):\n\n\\frac{F_{\\rm int}}{k_BT}\\simeq R^3\\left(v\\rho^2+w\\rho^3\\right)=v\\,\\frac{N^2}{R^3}+w\\,\\frac{N^3}{R^6}\n\n\nv=B_2: excluded-volume parameter (second virial coefficient), v\\simeq b^3 for hard monomers\nw=B_3\\simeq b^6&gt;0: three-body repulsion\n\nAdding the elastic (entropic) term:\n\n\\boxed{\\frac{F}{k_BT}\\simeq\\frac{3R^2}{2Nb^2}+v\\,\\frac{N^2}{R^3}+w\\,\\frac{N^3}{R^6}}"
   },
   {
     "objectID": "soft-matter_polymers1.html#self-avoiding-walk-2",
     "href": "soft-matter_polymers1.html#self-avoiding-walk-2",
     "title": "Complex Disordered Systems",
     "section": "Self-avoiding walk",
-    "text": "Self-avoiding walk\nFrom\n\nF=\\frac{\\varepsilon N^2 V_1}{R^3}+\\frac{3 k_B T R^2}{2 N b^2}\n we can find the minimum that satisfies d F / d R=0\nand get\n\nR^5=\\frac{\\varepsilon V_1 b^2}{k_B T} N^3 \\sim \\frac{\\varepsilon}{k_B T} N^3 b^5\n\nwhich ultimately is \n\\boxed{R \\sim N^{3 / 5} b}\n\nSo ultimately we get a scaling exponent different from freely jointed chain:\n\nfreely jointed chain: R \\sim N^{1 / 2}\nself-avoiding walks: R \\sim N^{3 / 5}\n\n0.6\\neq 0.5 (if you are precise!)"
+    "text": "Self-avoiding walk\nFor repulsive monomers, v&gt;0, and the three-body term is negligible for a long chain (ratio wN/vR^3\\to0). Minimising the first two terms, dF/dR=0:\n\nR^5\\simeq v\\,b^2 N^3 \\qquad\\Rightarrow\\qquad \\boxed{R \\sim N^{3 / 5} b}\n\nSo ultimately we get a scaling exponent different from freely jointed chain:\n\nfreely jointed chain: R \\sim N^{1 / 2}\nself-avoiding walks: R \\sim N^{3 / 5}\n\n0.6\\neq 0.5 (if you are precise!)"
   },
   {
     "objectID": "soft-matter_polymers1.html#self-avoiding-walk-3",
@@ -2062,7 +2062,7 @@
     "href": "soft-matter_polymers2.html#excluded-volume-vs-mixing-energy",
     "title": "Complex Disordered Systems",
     "section": "Excluded volume vs mixing energy",
-    "text": "Excluded volume vs mixing energy\n\nThe energy is not the whole story: each lattice site holds one molecule. This is the excluded volume, an entropic cost \\sim k_BT per monomer-monomer contact.\nThe mixing energy works against it: for \\Delta\\varepsilon&gt;0 (\\Delta U_{\\rm mix}=N_{sp}\\Delta\\varepsilon&gt;0), monomer-monomer contacts are favoured.\nThe \\varepsilon of the Flory argument is an effective contact free energy\n\n\n\\varepsilon_{\\rm eff}\\sim k_BT-z\\,\\Delta\\varepsilon=k_B(T-\\Theta),\\qquad \\Theta\\sim\\frac{z\\,\\Delta\\varepsilon}{k_B}"
+    "text": "Excluded volume vs mixing energy\n\nEach lattice site holds one molecule: the excluded volume, an entropic cost \\sim k_BT per monomer-monomer contact.\nFor \\Delta\\varepsilon&gt;0 the same contact is energetically favoured, by \\sim z\\,\\Delta\\varepsilon.\nThe net cost per contact sets the excluded-volume parameter v of the Flory free energy:\n\n\nv\\simeq b^3\\left(1-\\frac{\\Theta}{T}\\right),\\qquad \\Theta\\simeq\\frac{z\\,\\Delta\\varepsilon}{k_B}\n\nSolvent quality is the sign of v."
   },
   {
     "objectID": "soft-matter_liquidx1.html#today",
