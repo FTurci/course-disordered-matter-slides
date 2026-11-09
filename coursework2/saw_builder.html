@@ -849,7 +849,7 @@ function ensureWorkspace(ex) {
   const ws = Blockly.inject($("ws-" + ex), {
     toolbox: { kind: "flyoutToolbox", contents: shuffled(EX[ex].palette).map(t => ({ kind: "block", type: t })) },
     renderer: "zelos", theme: blocklyTheme(), trashcan: true, sounds: false,
-    zoom: { controls: true, wheel: true, startScale: 0.7 },
+    zoom: { controls: true, wheel: false, startScale: 0.7, minScale: 0.3, maxScale: 1.5, scaleSpeed: 1.2 },
     move: { scrollbars: true, drag: true, wheel: false },
   });
   loadInto(ws, ex, pending[ex] || loadSaved()[ex]);
