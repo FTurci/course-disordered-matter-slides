@@ -1656,7 +1656,7 @@
     "href": "soft-matter_polymers1.html#self-avoiding-walk",
     "title": "Complex Disordered Systems",
     "section": "Self-Avoiding Walk",
-    "text": "Self-Avoiding Walk\nBalance of competing effects:\n\nEntropy: favours coiled configurations (stretching is rare)\nExcluded volume: favours chain expansion\n\nEntropy :\n\nS=k_B \\ln (\\text { number of configurations })\n\nFor a given end-to-end vector the number of configurations scales as\n\nP(\\mathbf{R})=\\left(\\frac{3}{2 \\pi\\langle R^{2}\\rangle}\\right)^{3 / 2} e^{-\\frac{3 R^{2}}{2\\langle R^{2}\\rangle}}\n\nand so\n\nS \\sim \\frac{-3 k_{B} R^{2}}{2 N b^{2}}+\\text { terms indep. of } \\mathrm{R}"
+    "text": "Self-Avoiding Walk\nBalance of competing effects:\n\nEntropic elasticity: favours a coiled chain (stretching is rare)\nMonomer interactions: excluded volume swells the chain, attractions (if present) shrink it; their net effect is the excluded-volume parameter v\n\nEntropy :\n\nS=k_B \\ln (\\text { number of configurations })\n\nFor a given end-to-end vector the number of configurations scales as\n\nP(\\mathbf{R})=\\left(\\frac{3}{2 \\pi\\langle R^{2}\\rangle}\\right)^{3 / 2} e^{-\\frac{3 R^{2}}{2\\langle R^{2}\\rangle}}\n\nand so\n\nS \\sim \\frac{-3 k_{B} R^{2}}{2 N b^{2}}+\\text { terms indep. of } \\mathrm{R}"
   },
   {
     "objectID": "soft-matter_polymers1.html#self-avoiding-walk-1",

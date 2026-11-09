@@ -496,8 +496,8 @@ Yet they affect the **scaling properties**.
 
 **Balance of competing effects:**
 
-1. **Entropy**: favours coiled configurations (stretching is rare)
-2. **Excluded volume**: favours chain expansion
+1. **Entropic elasticity**: favours a coiled chain (stretching is rare)
+2. **Monomer interactions**: excluded volume swells the chain, attractions (if present) shrink it; their net effect is the excluded-volume parameter $v$
 
 
 Entropy :
