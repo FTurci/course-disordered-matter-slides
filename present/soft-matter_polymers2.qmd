@@ -93,15 +93,16 @@ which can **change sign** depending on our choices for the effective interaction
 
 ## Excluded volume vs mixing energy
 
-- Each lattice site holds **one** molecule: the **excluded volume**, an **entropic** cost $\sim k_BT$ per monomer-monomer contact.
-- For $\Delta\varepsilon>0$ the same contact is **energetically favoured**, by $\sim z\,\Delta\varepsilon$.
-- The net cost per contact sets the **excluded-volume parameter** $v$ of the Flory free energy:
+$v$ is the second virial coefficient of two monomers: $v\propto\int(1-e^{-\beta u})\,d^3r$
+
+- **Same site**: forbidden → $+b^3$, the excluded volume (**entropy**)
+- **One of $z$ neighbours**: two s–p contacts become one p–p and one s–s, $u=-2\Delta\varepsilon$: each adds $\simeq -b^3\,2\Delta\varepsilon/k_BT$ (**energy**)
 
 $$
-v\simeq b^3\left(1-\frac{\Theta}{T}\right),\qquad \Theta\simeq\frac{z\,\Delta\varepsilon}{k_B}
+v\simeq b^3\Big(1-\frac{\Theta}{T}\Big),\qquad \Theta=\frac{2z\,\Delta\varepsilon}{k_B}
 $$
 
-where $b$ is the monomer size (length). Solvent quality is the **sign of $v$**.
+$b$: monomer size. Solvent quality is the **sign of $v$**.
 
 ## Good solvents, poor solvents and theta solvents
 
