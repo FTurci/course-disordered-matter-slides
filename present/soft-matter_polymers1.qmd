@@ -526,10 +526,10 @@ $$
 \frac{F_{\rm int}}{k_BT}\simeq R^3\left(v\rho^2+w\rho^3\right)=v\,\frac{N^2}{R^3}+w\,\frac{N^3}{R^6}
 $$
 
-- $v=B_2$: **excluded-volume parameter** (second virial coefficient), $v\simeq b^3$ for hard monomers
+- $v=B_2$: **excluded-volume parameter** (second virial coefficient), $v\simeq b^3$ for hard monomers: also **entropic** (forbidden overlaps), favours **large** $R$
 - $w=B_3\simeq b^6>0$: three-body repulsion
 
-Adding the elastic (entropic) term:
+Adding the elastic (entropic) term, which favours **small** $R$:
 
 $$
 \boxed{\frac{F}{k_BT}\simeq\frac{3R^2}{2Nb^2}+v\,\frac{N^2}{R^3}+w\,\frac{N^3}{R^6}}

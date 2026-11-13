@@ -1663,7 +1663,7 @@
     "href": "soft-matter_polymers1.html#self-avoiding-walk-1",
     "title": "Complex Disordered Systems",
     "section": "Self-Avoiding Walk",
-    "text": "Self-Avoiding Walk\nInteraction term. Treat the N monomers as a gas filling the coil volume R^3, with density \\rho\\simeq N/R^3. Expand the free energy per unit volume in powers of \\rho (virial expansion) and multiply by the volume R^3:\n\n\\frac{F_{\\rm int}}{k_BT}\\simeq R^3\\left(v\\rho^2+w\\rho^3\\right)=v\\,\\frac{N^2}{R^3}+w\\,\\frac{N^3}{R^6}\n\n\nv=B_2: excluded-volume parameter (second virial coefficient), v\\simeq b^3 for hard monomers\nw=B_3\\simeq b^6&gt;0: three-body repulsion\n\nAdding the elastic (entropic) term:\n\n\\boxed{\\frac{F}{k_BT}\\simeq\\frac{3R^2}{2Nb^2}+v\\,\\frac{N^2}{R^3}+w\\,\\frac{N^3}{R^6}}"
+    "text": "Self-Avoiding Walk\nInteraction term. Treat the N monomers as a gas filling the coil volume R^3, with density \\rho\\simeq N/R^3. Expand the free energy per unit volume in powers of \\rho (virial expansion) and multiply by the volume R^3:\n\n\\frac{F_{\\rm int}}{k_BT}\\simeq R^3\\left(v\\rho^2+w\\rho^3\\right)=v\\,\\frac{N^2}{R^3}+w\\,\\frac{N^3}{R^6}\n\n\nv=B_2: excluded-volume parameter (second virial coefficient), v\\simeq b^3 for hard monomers: also entropic (forbidden overlaps), favours large R\nw=B_3\\simeq b^6&gt;0: three-body repulsion\n\nAdding the elastic (entropic) term, which favours small R:\n\n\\boxed{\\frac{F}{k_BT}\\simeq\\frac{3R^2}{2Nb^2}+v\\,\\frac{N^2}{R^3}+w\\,\\frac{N^3}{R^6}}"
   },
   {
     "objectID": "soft-matter_polymers1.html#self-avoiding-walk-2",
