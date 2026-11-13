@@ -101,7 +101,7 @@ $$
 v\simeq b^3\left(1-\frac{\Theta}{T}\right),\qquad \Theta\simeq\frac{z\,\Delta\varepsilon}{k_B}
 $$
 
-Solvent quality is the **sign of $v$**.
+where $b$ is the monomer size (length). Solvent quality is the **sign of $v$**.
 
 ## Good solvents, poor solvents and theta solvents
 
