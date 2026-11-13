@@ -2062,7 +2062,7 @@
     "href": "soft-matter_polymers2.html#excluded-volume-vs-mixing-energy",
     "title": "Complex Disordered Systems",
     "section": "Excluded volume vs mixing energy",
-    "text": "Excluded volume vs mixing energy\n\nEach lattice site holds one molecule: the excluded volume, an entropic cost \\sim k_BT per monomer-monomer contact.\nFor \\Delta\\varepsilon&gt;0 the same contact is energetically favoured, by \\sim z\\,\\Delta\\varepsilon.\nThe net cost per contact sets the excluded-volume parameter v of the Flory free energy:\n\n\nv\\simeq b^3\\left(1-\\frac{\\Theta}{T}\\right),\\qquad \\Theta\\simeq\\frac{z\\,\\Delta\\varepsilon}{k_B}\n\nwhere b is the monomer size (length). Solvent quality is the sign of v."
+    "text": "Excluded volume vs mixing energy\nv is the second virial coefficient of two monomers: v\\propto\\int(1-e^{-\\beta u})\\,d^3r\n\nSame site: forbidden → +b^3, the excluded volume (entropy)\nOne of z neighbours: two s–p contacts become one p–p and one s–s, u=-2\\Delta\\varepsilon: each adds \\simeq -b^3\\,2\\Delta\\varepsilon/k_BT (energy)\n\n\nv\\simeq b^3\\Big(1-\\frac{\\Theta}{T}\\Big),\\qquad \\Theta=\\frac{2z\\,\\Delta\\varepsilon}{k_B}\n\nb: monomer size. Solvent quality is the sign of v."
   },
   {
     "objectID": "soft-matter_liquidx1.html#today",
