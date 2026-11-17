@@ -180,7 +180,7 @@
       <button class="btn" id="b-save">Save my work</button>
       <button class="btn secondary" id="b-load">Load saved work</button>
       <input type="file" id="load-file" accept=".json,application/json" hidden>
-      <span class="stats" id="save-status">Your work is also kept in this browser, but save a file to move it to another computer or keep a backup.</span>
+      <span class="stats" id="save-status">Algorithms and tables are kept in this browser between visits; use <b>Save my work</b> for a backup and for submission.</span>
     </div>
     <pre id="check-out" hidden></pre>
     <details><summary>Show my algorithm as Python</summary><pre id="py-preview"></pre></details>
@@ -1230,6 +1230,15 @@ function* directBatch(prog, N, attempts, rng, out) {
 
 // ------------------------------------------------------------------ measurement panel
 const TABLE = { direct: [], pivot: [] };
+const TABLE_STORE = "saw-tables-v1";
+try {
+  const kept = JSON.parse(localStorage.getItem(TABLE_STORE) || "{}");
+  for (const ex of Object.keys(TABLE))
+    if (Array.isArray(kept[ex])) TABLE[ex] = kept[ex].map(r => r.map(v => (v === null ? NaN : v)));
+} catch (e) {}
+function storeTables() {
+  try { localStorage.setItem(TABLE_STORE, JSON.stringify(TABLE)); } catch (e) {}
+}
 const COLS = {
   direct: [["N", 0], ["attempts", 0], ["kept", 0], ["fraction kept", 5], ["⟨R²⟩", 3], ["SE", 3]],
   pivot: [["N", 0], ["βε", 3], ["equil", 0], ["steps", 0], ["samples", 0], ["acceptance", 4], ["⟨R²⟩", 3],
@@ -1243,6 +1252,7 @@ function renderTable() {
   $("mtable").innerHTML = "<thead><tr>" + cols.map(c => `<th>${c[0]}</th>`).join("") + "</tr></thead><tbody>" +
     TABLE[current].map(r => "<tr>" + r.map((v, i) => `<td>${fmt(v, cols[i][1])}</td>`).join("") + "</tr>").join("") +
     "</tbody>";
+  storeTables();
   drawMeasurePlot();
 }
 
@@ -1674,7 +1684,11 @@ $("b-play").onclick = () => {
 $("b-reset").onclick = resetRun;
 $("b-measure").onclick = measure;
 $("b-csv").onclick = csv;
-$("b-clear").onclick = () => { TABLE[current] = []; renderTable(); };
+$("b-clear").onclick = () => {
+  const n = TABLE[current].length;
+  if (!n || !confirm(`Clear the ${n} row${n > 1 ? "s" : ""} in the ${current === "pivot" ? "pivot" : "direct-sampling"} table? This cannot be undone unless you have saved your work.`)) return;
+  TABLE[current] = []; renderTable();
+};
 $("b-check").onclick = check;
 $("pview").onchange = e => { plotOpts.view = e.target.value; syncPlotControls(); drawMeasurePlot(); };
 $("perr").onchange = e => { plotOpts.err = e.target.checked; drawMeasurePlot(); };
