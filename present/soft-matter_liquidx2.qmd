@@ -22,7 +22,7 @@ mermaid-format: svg # png also works
 ## Maier-Saupe Theory of Nematic Liquid Crystals
 
 - We saw the Landau-de Gennes free energy for nematic liquid crystals.$$
-f-f_0=\frac{a}{3}\left(T-T^{\ast}\right) S^2-\frac{2 b}{27} S^3+\frac{c}{9} S^4 .
+f-f_0=\frac{a}{3}\left(T-T^{\ast}\right) \mathcal{S}^2-\frac{2 b}{27} \mathcal{S}^3+\frac{c}{9} \mathcal{S}^4 .
 $$
 
 
@@ -38,10 +38,23 @@ $$
     - an entropic contribution
     - an energetic contribution
 
-As for the Landau-de Gennes theory, we will focus on :
+We need a microscopic description of the orientations:
 
 - angular deviations $\theta$ from the director and their probability distribution $p(\theta)$
 - a scalar orientational order parameter $\mathcal{S}$ 
+
+## Orientational distribution and order parameter
+
+Recall $\mathcal{S}=\langle P_2(\cos\theta)\rangle$, an average over particles. A microscopic theory needs instead the **probability distribution** $p(\Omega)$ of finding a rod with polar and azimuthal angles $\Omega=(\theta,\phi)$, with the polar axis along $\mathbf{n}$.
+
+- The nematic phase has **cylindrical symmetry** around $\mathbf{n}$, so $p$ depends only on $\theta$.
+
+So, by definition of an average, the orientational order parameter reads
+
+$$\begin{aligned}\mathcal{S}&=\dfrac{3}{2}\left\langle(\mathbf{u} \cdot \mathbf{n})^2-\frac{1}{3}\right\rangle = \dfrac{1}{2}\langle 3 \cos^2\theta-1\rangle=\langle P_2(\cos\theta)\rangle\\
+&=\int_0^{\pi}P_2(\cos\theta)p(\theta)\sin\theta d\theta
+\end{aligned}$$
+where we used the Jacobian in spherical coordinates and normalised $p(\theta)$ as $\int_0^\pi p(\theta)\sin\theta d\theta=1$.
 
 ## Maier-Saupe Theory of Nematic Liquid Crystals
 
@@ -56,17 +69,14 @@ $$
 
 We can average over all possible orientations of molecule $j$ to get the mean-field potential felt by molecule $i$:
 $$
-U_i^{\mathrm{mf}}(\Omega)=\rho \int V\left(\Omega, \Omega^{\prime}\right) p\left(\Omega^{\prime}\right) d \Omega^{\prime}=-u S P_2(\mathbf{u}_i \cdot \mathbf{n})
+U_i^{\mathrm{mf}}(\Omega)=\rho \int V\left(\Omega, \Omega^{\prime}\right) p\left(\Omega^{\prime}\right) d \Omega^{\prime}=-u \mathcal{S} P_2(\mathbf{u}_i \cdot \mathbf{n})
 $$
 
-where we have defined the scalar order parameter
-$$
-S=\int P_2\left(\mathbf{u} \cdot \mathbf{n}\right) p(\Omega) d \Omega
-$$ and identified the director $\mathbf{n}$ and the energetic **coupling** $u$ (which absorbs the density $\rho$). 
+where $\mathcal{S}$ is the order parameter defined above and $u$ is the energetic **coupling** (a scalar, which absorbs the density $\rho$; not to be confused with the unit vectors $\mathbf{u}_i$). 
 
 Average  over all orientations of molecule $i$ to get the average interaction energy per molecule (and divide by 2 to avoid double counting):
 
-$$U^{mf} =  -\dfrac{u}{2} S^2$$
+$$U^{mf} =  -\dfrac{u}{2} \mathcal{S}^2$$
 
 A potential that aligns molecules with the director, quadratic to reflect head-tail symmetry.
 
@@ -77,7 +87,7 @@ A potential that aligns molecules with the director, quadratic to reflect head-t
 
 The second contribution is **entropic** in nature.
 
-Use orientational distribution function $p(\Omega)$ and (as in Landau-de Gennes) and assume uniaxial symmetry around the director $\mathbf{n}$, i.e.  $p(\Omega)\sim p(\theta)$.
+Use the orientational distribution $p(\theta)$ introduced above (uniaxial symmetry around the director $\mathbf{n}$).
 
 The usual Gibbs (or Shannon) entropy functional $-k_B \int p(\Omega)\ln p(\Omega) d\Omega$ contributes to the free energy as
 
@@ -95,7 +105,7 @@ where $\sin \theta d \theta$ comes from the solid angle and the factor $2$ comes
 Together we, have the Maier-Saupe free energy functional per molecule
 
 $$
-f=f_0-u \frac{S^2}{2}+k_B T \int_0^\pi p(\theta) \ln (2 p(\theta)) \sin \theta d \theta
+f=f_0-u \frac{\mathcal{S}^2}{2}+k_B T \int_0^\pi p(\theta) \ln (2 p(\theta)) \sin \theta d \theta
 $$
 
 The only constraint is normalization of $p(\theta)$:
@@ -115,10 +125,10 @@ $$
 
 Remember that - by **definition** - 
 
-$$S=\left\langle P_2(\cos \theta)\right\rangle=\int_0^\pi P_2(\cos \theta) p(\theta) \sin \theta d \theta$$
+$$\mathcal{S}=\left\langle P_2(\cos \theta)\right\rangle=\int_0^\pi P_2(\cos \theta) p(\theta) \sin \theta d \theta$$
 
 So 
-$$\dfrac{\delta S^2}{\delta p} =2 S P_2(\cos\theta)\sin\theta $$ 
+$$\dfrac{\delta \mathcal{S}^2}{\delta p} =2 \mathcal{S} P_2(\cos\theta)\sin\theta $$ 
 
 So when calculating the partial derivative we have
 
@@ -126,11 +136,11 @@ $$\dfrac{\delta f}{\delta p} =-uS P_2(\cos\theta)\sin\theta +k_BT\left(\ln(2 p(\
 
 and hence, after simplifying $\sin \theta$, our Lagrange equation reads
 
-$$-u S P_2(\cos \theta)+k_B T(\ln (2 p(\theta))+1)+\lambda=0$$
+$$-u \mathcal{S} P_2(\cos \theta)+k_B T(\ln (2 p(\theta))+1)+\lambda=0$$
 
 Its solution yields 
 
-$$p(\theta)=\frac{1}{Z} \exp \left(\frac{u S}{k_B T} P_2(\cos \theta)\right)
+$$p(\theta)=\frac{1}{Z} \exp \left(\frac{u \mathcal{S}}{k_B T} P_2(\cos \theta)\right)
 $$
 
 where the partition function $Z$ ensures normalization.
@@ -138,21 +148,21 @@ where the partition function $Z$ ensures normalization.
 
 ## Self-consistency in the Maier-Saupe Result
 
-The solution is said to be **self-consistent** because $p(\theta)$ depends on $S$, which in turn depends on $p(\theta)$.
+The solution is said to be **self-consistent** because $p(\theta)$ depends on $\mathcal{S}$, which in turn depends on $p(\theta)$.
 
 The self-consistency condition is
 
 $$
-S = \int_0^\pi P_2(\cos \theta) p(\theta) \sin \theta d\theta
+\mathcal{S} = \int_0^\pi P_2(\cos \theta) p(\theta) \sin \theta d\theta
 $$
 
-where $p(\theta)$ itself depends on $S$:
+where $p(\theta)$ itself depends on $\mathcal{S}$:
 
 $$
-p(\theta) = \frac{1}{Z} \exp\left(\frac{u S}{k_B T} P_2(\cos \theta)\right)
+p(\theta) = \frac{1}{Z} \exp\left(\frac{u \mathcal{S}}{k_B T} P_2(\cos \theta)\right)
 $$
 
-This equation must be solved for $S$ at each temperature $T$. 
+This equation must be solved for $\mathcal{S}$ at each temperature $T$. 
 
 In general, this requires a **numerical** solution (see problem classes for a special case where we can make progress analytically).
 
@@ -186,7 +196,7 @@ for u in np.linspace(1, 10, 10):
     F_array = np.array(F_list)
     plt.plot(S_array, F_array - F_array[0], label=f"u={u:.1f}")
 
-plt.xlabel("Order parameter S")
+plt.xlabel(r"Order parameter $\mathcal{S}$")
 plt.ylabel("Free energy density / k_BT")
 plt.legend(frameon=False, title="u", ncol=2)
 plt.show()
@@ -236,17 +246,17 @@ for u in u_values:
 
 plt.plot(u_values, S_vs_u, 'o-', ms=5, mfc="None")
 plt.xlabel(r"$u / k_B T$")
-plt.ylabel("Order parameter S")
+plt.ylabel(r"Order parameter $\mathcal{S}$")
 plt.show()
 
 
 ```
-The resulting phase transition is weakly first order with a discontinuous jump in $S$ at the transition temperature. $u/k_BT \approx 4.55$.
+The resulting phase transition is weakly first order with a discontinuous jump in $\mathcal{S}$ at the transition temperature. $u/k_BT \approx 4.55$.
 
 
 ## Quick comparison Maier-Saupe vs Landau-de Gennes
 
-- Both theories predict a first-order isotropic-nematic phase transition with a discontinuous jump in the order parameter $S$.
+- Both theories predict a first-order isotropic-nematic phase transition with a discontinuous jump in the order parameter $\mathcal{S}$.
 - Landau-de Gennes is phenomenological, Maier-Saupe is microscopic.
 - Maier-Saupe provides a molecular basis for the coefficients in Landau-de Gennes
 - Both theories can be extended to include spatial variations in the order parameter and director field, leading to descriptions of defects and elasticity in nematic liquid crystals.
