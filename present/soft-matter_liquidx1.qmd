@@ -235,9 +235,12 @@ viewof landau = Inputs.form({
 //| echo: false
 landauCurve = {
   const {T, a3, a1} = landau, a2 = T - 1, a4 = 1;
-  const pts = d3.range(-1.3, 1.3001, 0.005).map(phi => ({phi, f: a1*phi + a2*phi**2 + a3*phi**3 + a4*phi**4}));
-  const min = d3.least(pts, d => d.f);
-  return {pts, min, Tc: 1 + a3*a3/(4*a4)};
+  // integer grid, symmetric about 0, so degenerate minima at ±φ* tie exactly
+  const pts = d3.range(-260, 261).map(i => {const phi = i*0.005; return {phi, f: a1*phi + a2*phi**2 + a3*phi**3 + a4*phi**4};});
+  const fmin = d3.min(pts, d => d.f);
+  const minima = pts.filter((d, i) => i > 0 && i < pts.length - 1 && d.f <= pts[i-1].f && d.f < pts[i+1].f)
+    .map(d => ({...d, stable: d.f - fmin < 1e-4}));
+  return {pts, minima, Tc: 1 + a3*a3/(4*a4)};
 }
 Plot.plot({
   width: 1400, height: 470, marginLeft: 70, marginBottom: 50, marginTop: 40,
@@ -247,15 +250,15 @@ Plot.plot({
   marks: [
     Plot.ruleY([0], {stroke: "#bbb"}), Plot.ruleX([0], {stroke: "#bbb"}),
     Plot.line(landauCurve.pts, {x: "phi", y: "f", stroke: "steelblue", strokeWidth: 3, clip: true}),
-    Plot.dot([landauCurve.min], {x: "phi", y: "f", r: 7, fill: "crimson"}),
-    Plot.text([landauCurve.min], {x: "phi", y: "f", text: d => `φ* = ${d.phi.toFixed(2)}`, dy: -22, fontSize: 24})
+    Plot.dot(landauCurve.minima, {x: "phi", y: "f", r: 9, stroke: "crimson", strokeWidth: 3, fill: d => d.stable ? "crimson" : "white"}),
+    Plot.text(landauCurve.minima, {x: "phi", y: "f", text: d => `${d.stable ? "stable" : "metastable"}, φ = ${d.phi.toFixed(2)}`, dy: -26, fontSize: 22})
   ]
 })
 ```
 
 ```{ojs}
 //| echo: false
-md`Red dot: global minimum. ${landau.a3 === 0 ? "With a₃ = 0 the minimum leaves φ = 0 continuously at T = T\\*." : `With a₃ ≠ 0 the minimum jumps at T_c = ${landauCurve.Tc.toFixed(2)} T\\* > T\\*.`} In Landau–de Gennes, φ = 𝒮 with a₂ = A/3, a₃ = −2B/27, a₄ = C/9.`
+md`Filled dot: stable (global minimum); hollow dot: metastable (local minimum). ${landau.a3 === 0 ? "With a₃ = 0 the minimum leaves φ = 0 continuously at T = T\\*." : `With a₃ ≠ 0 the minimum jumps at T_c = ${landauCurve.Tc.toFixed(2)} T\\* > T\\*.`} In Landau–de Gennes, φ = 𝒮 with a₂ = A/3, a₃ = −2B/27, a₄ = C/9.`
 ```
 
 ## Landau-de Gennes mean field theory
