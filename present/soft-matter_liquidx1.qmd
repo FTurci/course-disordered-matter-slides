@@ -163,7 +163,6 @@ $$
 :::{.callout-caution}
 The nematic order parameter $\mathcal{S}$ should not be confused with the entropy $S$.
 :::
----
 
 ## 2D Nematic Order Parameter
 
@@ -202,6 +201,62 @@ This uses the **Legendre polynomial** $P_2(\cos\theta)$ to enforce head-tail sym
 | 3 | $P_3(x)=\dfrac{1}{2}(5x^3-3x)$ | No (odd: $P_3(-x)=-P_3(x)$) |
 | 4 | $P_4(x)=\dfrac{1}{8}(35x^4-30x^2+3)$ | Yes (even: $P_4(-x)=P_4(x)$) |
 
+
+## Recall: Landau theory
+
+Expand the free energy in powers of the order parameter $\phi$, small near the transition:
+
+$$
+f(\phi)=f_0+a_1\phi+a_2\phi^2+a_3\phi^3+a_4\phi^4
+$$
+
+| Term | Physical meaning |
+|---|---|
+| $f_0$ | free energy of the disordered phase: a constant, plays no role |
+| $a_1\phi$ | coupling to an external field (tilts $f$); absent without a field |
+| $a_2=\tilde a\,(T-T^*)$ | curvature at $\phi=0$: the disordered phase is **unstable** below $T^*$ |
+| $a_3\phi^3$ | allowed only if $\phi$ and $-\phi$ are **physically different**: makes the transition **first order** |
+| $a_4>0$ | keeps $f$ bounded and sets the size of $\phi$ in the ordered phase |
+
+**Symmetry decides which terms appear**: a magnet ($m\to-m$) has $a_1=a_3=0$ and a continuous transition. Stop at the lowest even power that keeps $f$ bounded.
+
+## Recall: Landau theory, interactive
+
+```{ojs}
+//| echo: false
+viewof landau = Inputs.form({
+  T: Inputs.range([0, 2], {label: "T / T*", value: 1.5, step: 0.01, width: 520}),
+  a3: Inputs.range([-1, 1], {label: "cubic a₃", value: 0, step: 0.05, width: 520}),
+  a1: Inputs.range([-0.3, 0.3], {label: "field a₁", value: 0, step: 0.01, width: 520})
+})
+```
+
+```{ojs}
+//| echo: false
+landauCurve = {
+  const {T, a3, a1} = landau, a2 = T - 1, a4 = 1;
+  const pts = d3.range(-1.3, 1.3001, 0.005).map(phi => ({phi, f: a1*phi + a2*phi**2 + a3*phi**3 + a4*phi**4}));
+  const min = d3.least(pts, d => d.f);
+  return {pts, min, Tc: 1 + a3*a3/(4*a4)};
+}
+Plot.plot({
+  width: 1400, height: 470, marginLeft: 70, marginBottom: 50, marginTop: 40,
+  style: {fontSize: "22px"},
+  x: {label: "order parameter φ", domain: [-1.3, 1.3]},
+  y: {label: "f − f₀", domain: [-0.6, 0.8]},
+  marks: [
+    Plot.ruleY([0], {stroke: "#bbb"}), Plot.ruleX([0], {stroke: "#bbb"}),
+    Plot.line(landauCurve.pts, {x: "phi", y: "f", stroke: "steelblue", strokeWidth: 3, clip: true}),
+    Plot.dot([landauCurve.min], {x: "phi", y: "f", r: 7, fill: "crimson"}),
+    Plot.text([landauCurve.min], {x: "phi", y: "f", text: d => `φ* = ${d.phi.toFixed(2)}`, dy: -22, fontSize: 24})
+  ]
+})
+```
+
+```{ojs}
+//| echo: false
+md`Red dot: global minimum. ${landau.a3 === 0 ? "With a₃ = 0 the minimum leaves φ = 0 continuously at T = T\\*." : `With a₃ ≠ 0 the minimum jumps at T_c = ${landauCurve.Tc.toFixed(2)} T\\* > T\\*.`} In Landau–de Gennes, φ = 𝒮 with a₂ = A/3, a₃ = −2B/27, a₄ = C/9.`
+```
 
 ## Landau-de Gennes mean field theory
 
