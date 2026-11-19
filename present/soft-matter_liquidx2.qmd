@@ -47,27 +47,34 @@ We need a microscopic description of the orientations:
 
 Recall $\mathcal{S}=\langle P_2(\cos\theta)\rangle$, an average over particles. A microscopic theory needs instead the **probability distribution** $p(\Omega)$ of finding a rod with polar and azimuthal angles $\Omega=(\theta,\phi)$, with the polar axis along $\mathbf{n}$.
 
-- The nematic phase has **cylindrical symmetry** around $\mathbf{n}$, so $p$ depends only on $\theta$.
+- The nematic phase has **cylindrical symmetry** around $\mathbf{n}$, so $p$ depends only on $\theta$: integrating over $\phi$, we use $p(\theta)=2\pi\,p(\Omega)$.
 
 So, by definition of an average, the orientational order parameter reads
 
 $$\begin{aligned}\mathcal{S}&=\dfrac{3}{2}\left\langle(\mathbf{u} \cdot \mathbf{n})^2-\frac{1}{3}\right\rangle = \dfrac{1}{2}\langle 3 \cos^2\theta-1\rangle=\langle P_2(\cos\theta)\rangle\\
 &=\int_0^{\pi}P_2(\cos\theta)p(\theta)\sin\theta d\theta
 \end{aligned}$$
-where we used the Jacobian in spherical coordinates and normalised $p(\theta)$ as $\int_0^\pi p(\theta)\sin\theta d\theta=1$.
+where we used the Jacobian in spherical coordinates and normalised $p(\theta)$ as $\int_0^\pi p(\theta)\sin\theta d\theta=1$ (isotropic: $p=\frac12$).
+
+**Two rods.** For a rod $\mathbf{u}$ and a rod $\mathbf{u}'$ drawn from $p$:
+$$\big\langle P_2(\mathbf{u}\cdot\mathbf{u}')\big\rangle_{\mathbf{u}'}=\mathcal{S}\,P_2(\mathbf{u}\cdot\mathbf{n})$$
+
+::: {.smaller}
+Sketch: $\mathbf{u}\cdot\mathbf{u}'=\cos\theta\cos\theta'+\sin\theta\sin\theta'\cos(\phi-\phi')$. Averaging over $\phi'$ removes the cross term and turns $\cos^2(\phi-\phi')$ into $\frac12$, leaving $P_2(\cos\theta)\,P_2(\cos\theta')$; averaging over $\theta'$ gives $\mathcal{S}$.
+:::
 
 ## Maier-Saupe Theory of Nematic Liquid Crystals
 
 ### Energetic Contribution
 
-- We assume molecules interact with an angular potential that depends on their orientations via a the second Legendre polynomial $P_2(x)=\frac{1}{2}\left(3 x^2-1\right)$:
+- We assume molecules interact with an angular potential that depends on their orientations via the second Legendre polynomial $P_2(x)=\frac{1}{2}\left(3 x^2-1\right)$:
 
 $$
 V\left(\Omega_i, \Omega_j\right)=-u P_2\left(\mathbf{u}_i \cdot \mathbf{u}_j\right)
 $$
 
 
-We can average over all possible orientations of molecule $j$ to get the mean-field potential felt by molecule $i$:
+We can average over all possible orientations of molecule $j$ (two-rod average above) to get the mean-field potential felt by molecule $i$:
 $$
 U_i^{\mathrm{mf}}(\Omega)=\rho \int V\left(\Omega, \Omega^{\prime}\right) p\left(\Omega^{\prime}\right) d \Omega^{\prime}=-u \mathcal{S} P_2(\mathbf{u}_i \cdot \mathbf{n})
 $$
@@ -76,7 +83,7 @@ where $\mathcal{S}$ is the order parameter defined above and $u$ is the energeti
 
 Average  over all orientations of molecule $i$ to get the average interaction energy per molecule (and divide by 2 to avoid double counting):
 
-$$U^{mf} =  -\dfrac{u}{2} \mathcal{S}^2$$
+$$U^{mf} = \frac{1}{2}\big\langle U_i^{\mathrm{mf}}\big\rangle_i = -\frac{u}{2}\,\mathcal{S}\,\big\langle P_2(\mathbf{u}_i\cdot\mathbf{n})\big\rangle_i = -\frac{u}{2} \mathcal{S}^2$$
 
 A potential that aligns molecules with the director, quadratic to reflect head-tail symmetry.
 
@@ -95,7 +102,7 @@ $$
 f_{\rm entropy }=k_B T \int_0^\pi p(\theta) \ln (2 p(\theta)) \sin \theta d \theta
 $$
 
-where $\sin \theta d \theta$ comes from the solid angle and the factor $2$ comes from the normalisation $\int_0^\pi p(\theta)\sin\theta d\theta=1$. [^1]
+where $\sin \theta d \theta$ comes from the solid angle and, with $p(\theta)=2\pi p(\Omega)$, we dropped the constant $-k_BT\ln 4\pi$: the factor $2$ sets the entropy of the isotropic state to zero. [^1]
 
 
 [^1]: Check that for the isotropic distribution $p(\theta)=1/2$ the entropy term is zero.
