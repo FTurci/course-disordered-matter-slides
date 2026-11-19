@@ -349,6 +349,8 @@ Two entropic contributions compete:
 
 At high density the translational gain wins: the nematic phase has the **higher** total entropy.
 
+Link to Maier-Saupe: excluded volume $\propto|\sin\gamma|\simeq\frac{\pi}{4}-\frac{5\pi}{32}P_2(\cos\gamma)$ $\Rightarrow$ Maier-Saupe with $u/k_BT\to\frac{5\pi}{16}\rho L^2D$ (rods of length $L$, diameter $D$).
+
 :::{.callout-note}
 Same story as the freezing of hard spheres: the spheres lose the disorder of their positions, but each gains free volume to vibrate around its lattice site.
 :::
