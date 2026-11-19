@@ -1082,14 +1082,14 @@
     "href": "soft-matter_liquidx2.html#maier-saupe-theory-of-nematic-liquid-crystals-3",
     "title": "Complex Disordered Systems",
     "section": "Maier-Saupe Theory of Nematic Liquid Crystals",
-    "text": "Maier-Saupe Theory of Nematic Liquid Crystals\nTogether we, have the Maier-Saupe free energy functional per molecule\n\nf=f_0-u \\frac{\\mathcal{S}^2}{2}+k_B T \\int_0^\\pi p(\\theta) \\ln (2 p(\\theta)) \\sin \\theta d \\theta\n\nThe only constraint is normalization of p(\\theta): \\int_0^\\pi p(\\theta) \\sin \\theta d \\theta=1 where the \\sin \\theta comes from the solid angle element.\nIntroduce the Lagrange multiplier \\lambda to enforce the constraint (see the aside on Lagrange multipliers) and minimize the functional and set the variation to zero: \n\\delta\\left[f+\\lambda\\left(\\int_0^\\pi p(\\theta) \\sin \\theta d \\theta-1\\right)\\right]=0\n The functional derivative yields (check!):\n\n\\frac{\\delta f}{\\delta p(\\theta)}+\\lambda \\sin \\theta=0"
+    "text": "Maier-Saupe Theory of Nematic Liquid Crystals\nTogether, we have the Maier-Saupe free energy functional per molecule\n\nf=f_0-u \\frac{\\mathcal{S}^2}{2}+k_B T \\int_0^\\pi p(\\theta) \\ln (2 p(\\theta)) \\sin \\theta d \\theta\n\nThe only constraint is normalization of p(\\theta): \\int_0^\\pi p(\\theta) \\sin \\theta d \\theta=1 where the \\sin \\theta comes from the solid angle element.\nIntroduce the Lagrange multiplier \\lambda to enforce the constraint (see the aside on Lagrange multipliers) and minimize the functional and set the variation to zero: \n\\delta\\left[f+\\lambda\\left(\\int_0^\\pi p(\\theta) \\sin \\theta d \\theta-1\\right)\\right]=0\n Using the rules above for the constraint term:\n\n\\frac{\\delta f}{\\delta p(\\theta)}+\\lambda \\sin \\theta=0"
   },
   {
     "objectID": "soft-matter_liquidx2.html#maier-saupe-theory-of-nematic-liquid-crystals-4",
     "href": "soft-matter_liquidx2.html#maier-saupe-theory-of-nematic-liquid-crystals-4",
     "title": "Complex Disordered Systems",
     "section": "Maier-Saupe Theory of Nematic Liquid Crystals",
-    "text": "Maier-Saupe Theory of Nematic Liquid Crystals\nRemember that - by definition -\n\\mathcal{S}=\\left\\langle P_2(\\cos \\theta)\\right\\rangle=\\int_0^\\pi P_2(\\cos \\theta) p(\\theta) \\sin \\theta d \\theta\nSo \\dfrac{\\delta \\mathcal{S}^2}{\\delta p} =2 \\mathcal{S} P_2(\\cos\\theta)\\sin\\theta \nSo when calculating the partial derivative we have\n\\dfrac{\\delta f}{\\delta p} =-uS P_2(\\cos\\theta)\\sin\\theta +k_BT\\left(\\ln(2 p(\\theta)) + 1\\right) \\sin \\theta \nand hence, after simplifying \\sin \\theta, our Lagrange equation reads\n-u \\mathcal{S} P_2(\\cos \\theta)+k_B T(\\ln (2 p(\\theta))+1)+\\lambda=0\nIts solution yields\np(\\theta)=\\frac{1}{Z} \\exp \\left(\\frac{u \\mathcal{S}}{k_B T} P_2(\\cos \\theta)\\right)\n\nwhere the partition function Z ensures normalization."
+    "text": "Maier-Saupe Theory of Nematic Liquid Crystals\nRemember that - by definition -\n\\mathcal{S}=\\left\\langle P_2(\\cos \\theta)\\right\\rangle=\\int_0^\\pi P_2(\\cos \\theta) p(\\theta) \\sin \\theta d \\theta\nso, by the chain rule for the energy and the local rule for the entropy, the functional derivative is\n\\dfrac{\\delta f}{\\delta p} =-u\\mathcal{S} P_2(\\cos\\theta)\\sin\\theta +k_BT\\left(\\ln(2 p(\\theta)) + 1\\right) \\sin \\theta \nand hence, after simplifying \\sin \\theta, our Lagrange equation reads\n-u \\mathcal{S} P_2(\\cos \\theta)+k_B T(\\ln (2 p(\\theta))+1)+\\lambda=0\nIts solution yields\np(\\theta)=\\frac{1}{Z} \\exp \\left(\\frac{u \\mathcal{S}}{k_B T} P_2(\\cos \\theta)\\right)\n\nwhere the partition function Z ensures normalization."
   },
   {
     "objectID": "soft-matter_liquidx2.html#self-consistency-in-the-maier-saupe-result",
@@ -2259,5 +2259,33 @@
     "title": "Complex Disordered Systems",
     "section": "Landau-de Gennes theory result",
     "text": "Landau-de Gennes theory result\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nThe transition temperature is\n\nT_{N I}=T^{\\ast}+\\frac{b^2}{27 a c}\n\nwhile T^{\\ast} is a material dependent temperature, identifying instability (spinodal)."
+  },
+  {
+    "objectID": "soft-matter_liquidx2.html#functional-derivatives",
+    "href": "soft-matter_liquidx2.html#functional-derivatives",
+    "title": "Complex Disordered Systems",
+    "section": "Functional derivatives",
+    "text": "Functional derivatives\n\nBoth \\mathcal{S}[p] and f[p] are functionals: they take a whole function p(\\theta) and return a number.\nFor a discrete distribution p_i we would write dF=\\sum_i \\dfrac{\\partial F}{\\partial p_i}\\,dp_i. In the continuum p_i\\to p(\\theta) and the sum becomes an integral, which defines the functional derivative: \n\\delta F=\\int \\frac{\\delta F}{\\delta p(\\theta)}\\,\\delta p(\\theta)\\,d\\theta\n\nThe basic rule is the continuum version of \\partial p_j/\\partial p_i=\\delta_{ij}: \n\\frac{\\delta p(\\theta')}{\\delta p(\\theta)}=\\delta(\\theta-\\theta')\n\nMinimising F means \\delta F=0 for every small change \\delta p, i.e. \\dfrac{\\delta F}{\\delta p(\\theta)}=0 at every \\theta (plus constraints)."
+  },
+  {
+    "objectID": "soft-matter_liquidx2.html#functional-derivatives-three-rules",
+    "href": "soft-matter_liquidx2.html#functional-derivatives-three-rules",
+    "title": "Complex Disordered Systems",
+    "section": "Functional derivatives: three rules",
+    "text": "Functional derivatives: three rules\nEach follows from \\delta p(\\theta')/\\delta p(\\theta)=\\delta(\\theta-\\theta'):\n\nLinear \n\\frac{\\delta}{\\delta p(\\theta)}\\int a(\\theta')\\,p(\\theta')\\,d\\theta'=a(\\theta)\n\\qquad\\Rightarrow\\qquad\n\\frac{\\delta\\mathcal{S}}{\\delta p}=P_2(\\cos\\theta)\\sin\\theta\n\nLocal \n\\frac{\\delta}{\\delta p(\\theta)}\\int g\\big(p(\\theta')\\big)\\,w(\\theta')\\,d\\theta'=g'\\big(p(\\theta)\\big)\\,w(\\theta)\n\\qquad\\Rightarrow\\qquad\n\\frac{\\delta f_{\\rm entropy}}{\\delta p}=k_BT\\left(\\ln(2p)+1\\right)\\sin\\theta\n\nChain \n\\frac{\\delta\\, h(\\mathcal{S}[p])}{\\delta p}=h'(\\mathcal{S})\\,\\frac{\\delta\\mathcal{S}}{\\delta p}\n\\qquad\\Rightarrow\\qquad\n\\frac{\\delta\\mathcal{S}^2}{\\delta p}=2\\mathcal{S}P_2(\\cos\\theta)\\sin\\theta\n\n\nThe normalisation constraint is linear too: \\dfrac{\\delta}{\\delta p}\\displaystyle\\int p\\sin\\theta\\, d\\theta=\\sin\\theta.\nGradient terms such as p'(\\theta) need an integration by parts (see the aside); Maier–Saupe has none."
+  },
+  {
+    "objectID": "soft-matter_liquidx2.html#aside-optional-functional-derivatives-with-gradient-terms",
+    "href": "soft-matter_liquidx2.html#aside-optional-functional-derivatives-with-gradient-terms",
+    "title": "Complex Disordered Systems",
+    "section": "Aside (optional): functional derivatives with gradient terms",
+    "text": "Aside (optional): functional derivatives with gradient terms\n\nWhen the functional depends also on the gradient \\phi', as for an action functional S[\\phi] (that you may have already seen), the rules of the main slides need an integration by parts:\n\nS[\\phi] = \\int \\ell(\\phi(x), \\phi'(x), x) dx\n\\ell is the Lagrangian density: e.g. x is space, \\phi(x) a field defined over space (e.g. density)\n\nPerturb S[\\phi] by an amount \\epsilon with an arbitrary function \\eta(x) vanishing at the boundaries\n\nS[\\phi+\\epsilon\\eta]=\\int \\ell(\\phi+\\epsilon\\eta, \\phi'+\\epsilon\\eta', x) dx\nExpanding to first order in \\epsilon:\nS[\\phi+\\epsilon\\eta]\\approx S[\\phi]+\\epsilon\\int\\left[\\frac{\\partial \\ell}{\\partial \\phi}\\eta+\\frac{\\partial \\ell}{\\partial \\phi'}\\eta'\\right] dx"
+  },
+  {
+    "objectID": "soft-matter_liquidx2.html#aside-optional-functional-derivatives-with-gradient-terms-1",
+    "href": "soft-matter_liquidx2.html#aside-optional-functional-derivatives-with-gradient-terms-1",
+    "title": "Complex Disordered Systems",
+    "section": "Aside (optional): functional derivatives with gradient terms",
+    "text": "Aside (optional): functional derivatives with gradient terms\nIntegrating by parts the second term:\n\\int\\frac{\\partial \\ell}{\\partial \\phi'}\\eta' dx = \\left[\\frac{\\partial \\ell}{\\partial \\phi'}\\eta\\right]_{\\text{boundary}}^{\\phantom{x}}-\\int\\frac{d}{dx}\\left(\\frac{\\partial \\ell}{\\partial \\phi'}\\right)\\eta dx\nSince \\eta(x) vanishes at the boundaries, the first term drops out, giving:\n\n\\delta S=\\int\\left[\\frac{\\partial \\ell}{\\partial \\phi}-\\frac{d}{d x}\\left(\\frac{\\partial \\ell}{\\partial \\phi^{\\prime}}\\right)\\right] \\eta(x) d x\n\nIf we want S[\\phi] to be stationary with respect to arbitrary perturbations \\eta(x), then \\delta S=0 for all \\eta(x).\nThis leads to the Euler-Lagrange equation:\n\\frac{\\partial \\ell}{\\partial \\phi}-\\frac{d}{d x}\\left(\\frac{\\partial \\ell}{\\partial \\phi^{\\prime}}\\right)=0\nwhich defines the functional derivative as \\frac{\\delta S}{\\delta \\phi(x)}=\\frac{\\partial \\ell}{\\partial \\phi}-\\frac{d}{d x}\\left(\\frac{\\partial \\ell}{\\partial \\phi^{\\prime}}\\right)"
   }
 ]
