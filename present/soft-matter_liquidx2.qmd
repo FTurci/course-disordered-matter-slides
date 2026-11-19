@@ -118,30 +118,27 @@ $$
 
 ## Functional derivatives: three rules
 
-Each follows from $\delta p(\theta')/\delta p(\theta)=\delta(\theta-\theta')$:
+All three follow from $\delta p(\theta')/\delta p(\theta)=\delta(\theta-\theta')$.
 
-- **Linear**
+- **Linear:** $\frac{\delta}{\delta p(\theta)}\int a(\theta')\,p(\theta')\,d\theta'=a(\theta)$. For the order parameter, $a=P_2\sin\theta$:
 $$
-\frac{\delta}{\delta p(\theta)}\int a(\theta')\,p(\theta')\,d\theta'=a(\theta)
-\qquad\Rightarrow\qquad
-\frac{\delta\mathcal{S}}{\delta p}=P_2(\cos\theta)\sin\theta
+\mathcal{S}=\int_0^\pi P_2(\cos\theta')\,p(\theta')\sin\theta'\,d\theta'
+\;\Rightarrow\;
+\frac{\delta\mathcal{S}}{\delta p(\theta)}=P_2(\cos\theta)\sin\theta
 $$
+(and for the normalisation $\int p\sin\theta'\,d\theta'$, $a=\sin\theta$).
 
-- **Local**
+- **Local:** $\frac{\delta}{\delta p(\theta)}\int g\big(p(\theta')\big)\,w(\theta')\,d\theta'=g'\big(p(\theta)\big)\,w(\theta)$. For the entropy, $g=p\ln(2p)$, $w=k_BT\sin\theta$:
 $$
-\frac{\delta}{\delta p(\theta)}\int g\big(p(\theta')\big)\,w(\theta')\,d\theta'=g'\big(p(\theta)\big)\,w(\theta)
-\qquad\Rightarrow\qquad
-\frac{\delta f_{\rm entropy}}{\delta p}=k_BT\left(\ln(2p)+1\right)\sin\theta
-$$
-
-- **Chain**
-$$
-\frac{\delta\, h(\mathcal{S}[p])}{\delta p}=h'(\mathcal{S})\,\frac{\delta\mathcal{S}}{\delta p}
-\qquad\Rightarrow\qquad
-\frac{\delta\mathcal{S}^2}{\delta p}=2\mathcal{S}P_2(\cos\theta)\sin\theta
+f_{\rm entropy}=k_BT\int_0^\pi p(\theta')\ln\big(2p(\theta')\big)\sin\theta'\,d\theta'
+\;\Rightarrow\;
+\frac{\delta f_{\rm entropy}}{\delta p(\theta)}=k_BT\left(\ln(2p)+1\right)\sin\theta
 $$
 
-The normalisation constraint is linear too: $\dfrac{\delta}{\delta p}\displaystyle\int p\sin\theta\, d\theta=\sin\theta$.
+- **Chain:** $\frac{\delta\, h(\mathcal{S}[p])}{\delta p(\theta)}=h'(\mathcal{S})\,\frac{\delta\mathcal{S}}{\delta p(\theta)}$. For the energy, $h=\mathcal{S}^2$:
+$$
+\frac{\delta\mathcal{S}^2}{\delta p(\theta)}=2\mathcal{S}\,\frac{\delta\mathcal{S}}{\delta p(\theta)}=2\mathcal{S}P_2(\cos\theta)\sin\theta
+$$
 
 Gradient terms such as $p'(\theta)$ need an integration by parts ([see the aside](#aside-optional-functional-derivatives-with-gradient-terms)); Maier–Saupe has none.
 
