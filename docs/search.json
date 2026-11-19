@@ -1089,7 +1089,7 @@
     "href": "soft-matter_liquidx2.html#maier-saupe-theory-of-nematic-liquid-crystals-4",
     "title": "Complex Disordered Systems",
     "section": "Maier-Saupe Theory of Nematic Liquid Crystals",
-    "text": "Maier-Saupe Theory of Nematic Liquid Crystals\nRemember that - by definition -\n\\mathcal{S}=\\left\\langle P_2(\\cos \\theta)\\right\\rangle=\\int_0^\\pi P_2(\\cos \\theta) p(\\theta) \\sin \\theta d \\theta\nso, by the chain rule for the energy and the local rule for the entropy, the functional derivative is\n\\dfrac{\\delta f}{\\delta p} =-u\\mathcal{S} P_2(\\cos\\theta)\\sin\\theta +k_BT\\left(\\ln(2 p(\\theta)) + 1\\right) \\sin \\theta \nand hence, after simplifying \\sin \\theta, our Lagrange equation reads\n-u \\mathcal{S} P_2(\\cos \\theta)+k_B T(\\ln (2 p(\\theta))+1)+\\lambda=0\nIts solution yields\np(\\theta)=\\frac{1}{Z} \\exp \\left(\\frac{u \\mathcal{S}}{k_B T} P_2(\\cos \\theta)\\right)\n\nwhere the partition function Z ensures normalization."
+    "text": "Maier-Saupe Theory of Nematic Liquid Crystals\nRemember that - by definition -\n\\mathcal{S}=\\left\\langle P_2(\\cos \\theta)\\right\\rangle=\\int_0^\\pi P_2(\\cos \\theta) p(\\theta) \\sin \\theta d \\theta\nso, by the chain rule for the energy and the local rule for the entropy,\n\\dfrac{\\delta f}{\\delta p} =-u\\mathcal{S} P_2(\\cos\\theta)\\sin\\theta +k_BT\\left(\\ln(2 p(\\theta)) + 1\\right) \\sin \\theta \nand hence, after simplifying \\sin \\theta, our Lagrange equation reads\n-u \\mathcal{S} P_2(\\cos \\theta)+k_B T(\\ln (2 p(\\theta))+1)+\\lambda=0\nIts solution yields\np(\\theta)=\\frac{1}{Z} \\exp \\left(\\frac{u \\mathcal{S}}{k_B T} P_2(\\cos \\theta)\\right)\n\nwhere the partition function Z ensures normalization."
   },
   {
     "objectID": "soft-matter_liquidx2.html#self-consistency-in-the-maier-saupe-result",
@@ -2287,5 +2287,12 @@
     "title": "Complex Disordered Systems",
     "section": "Aside (optional): functional derivatives with gradient terms",
     "text": "Aside (optional): functional derivatives with gradient terms\nIntegrating by parts the second term:\n\\int\\frac{\\partial \\ell}{\\partial \\phi'}\\eta' dx = \\left[\\frac{\\partial \\ell}{\\partial \\phi'}\\eta\\right]_{\\text{boundary}}^{\\phantom{x}}-\\int\\frac{d}{dx}\\left(\\frac{\\partial \\ell}{\\partial \\phi'}\\right)\\eta dx\nSince \\eta(x) vanishes at the boundaries, the first term drops out, giving:\n\n\\delta S=\\int\\left[\\frac{\\partial \\ell}{\\partial \\phi}-\\frac{d}{d x}\\left(\\frac{\\partial \\ell}{\\partial \\phi^{\\prime}}\\right)\\right] \\eta(x) d x\n\nIf we want S[\\phi] to be stationary with respect to arbitrary perturbations \\eta(x), then \\delta S=0 for all \\eta(x).\nThis leads to the Euler-Lagrange equation:\n\\frac{\\partial \\ell}{\\partial \\phi}-\\frac{d}{d x}\\left(\\frac{\\partial \\ell}{\\partial \\phi^{\\prime}}\\right)=0\nwhich defines the functional derivative as \\frac{\\delta S}{\\delta \\phi(x)}=\\frac{\\partial \\ell}{\\partial \\phi}-\\frac{d}{d x}\\left(\\frac{\\partial \\ell}{\\partial \\phi^{\\prime}}\\right)"
+  },
+  {
+    "objectID": "soft-matter_liquidx2.html#functional-derivatives-two-rules",
+    "href": "soft-matter_liquidx2.html#functional-derivatives-two-rules",
+    "title": "Complex Disordered Systems",
+    "section": "Functional derivatives: two rules",
+    "text": "Functional derivatives: two rules\nLocal rule: for F=\\int_0^\\pi G\\big(p(\\theta')\\big)\\,d\\theta', differentiate the integrand: \\delta F/\\delta p(\\theta)=\\partial G/\\partial p, evaluated at \\theta.\n\n\n\n\n\n\n\n\nF\nintegrand G\n\\delta F/\\delta p(\\theta)\n\n\n\n\n\\mathcal{S}\nP_2(\\cos\\theta')\\,p\\,\\sin\\theta'\nP_2(\\cos\\theta)\\sin\\theta\n\n\nnormalisation\np\\,\\sin\\theta'\n\\sin\\theta\n\n\nf_{\\rm entropy}\nk_BT\\,p\\ln(2p)\\,\\sin\\theta'\nk_BT\\left(\\ln(2p)+1\\right)\\sin\\theta\n\n\n\nChain rule: \\delta h(\\mathcal{S})/\\delta p=h'(\\mathcal{S})\\,\\delta\\mathcal{S}/\\delta p, so \\delta\\mathcal{S}^2/\\delta p=2\\mathcal{S}\\,P_2(\\cos\\theta)\\sin\\theta.\nGradient terms p'(\\theta) need an integration by parts (aside)."
   }
 ]
