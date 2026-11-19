@@ -100,9 +100,54 @@ where $\sin \theta d \theta$ comes from the solid angle and the factor $2$ comes
 
 [^1]: Check that for the isotropic distribution $p(\theta)=1/2$ the entropy term is zero.
 
+## Functional derivatives
+
+- Both $\mathcal{S}[p]$ and $f[p]$ are **functionals**: they take a whole function $p(\theta)$ and return a number.
+
+- For a discrete distribution $p_i$ we would write $dF=\sum_i \dfrac{\partial F}{\partial p_i}\,dp_i$. In the continuum $p_i\to p(\theta)$ and the sum becomes an integral, which **defines** the functional derivative:
+$$
+\delta F=\int \frac{\delta F}{\delta p(\theta)}\,\delta p(\theta)\,d\theta
+$$
+
+- The basic rule is the continuum version of $\partial p_j/\partial p_i=\delta_{ij}$:
+$$
+\frac{\delta p(\theta')}{\delta p(\theta)}=\delta(\theta-\theta')
+$$
+
+- Minimising $F$ means $\delta F=0$ for every small change $\delta p$, i.e. $\dfrac{\delta F}{\delta p(\theta)}=0$ at every $\theta$ (plus constraints).
+
+## Functional derivatives: three rules
+
+Each follows from $\delta p(\theta')/\delta p(\theta)=\delta(\theta-\theta')$:
+
+- **Linear**
+$$
+\frac{\delta}{\delta p(\theta)}\int a(\theta')\,p(\theta')\,d\theta'=a(\theta)
+\qquad\Rightarrow\qquad
+\frac{\delta\mathcal{S}}{\delta p}=P_2(\cos\theta)\sin\theta
+$$
+
+- **Local**
+$$
+\frac{\delta}{\delta p(\theta)}\int g\big(p(\theta')\big)\,w(\theta')\,d\theta'=g'\big(p(\theta)\big)\,w(\theta)
+\qquad\Rightarrow\qquad
+\frac{\delta f_{\rm entropy}}{\delta p}=k_BT\left(\ln(2p)+1\right)\sin\theta
+$$
+
+- **Chain**
+$$
+\frac{\delta\, h(\mathcal{S}[p])}{\delta p}=h'(\mathcal{S})\,\frac{\delta\mathcal{S}}{\delta p}
+\qquad\Rightarrow\qquad
+\frac{\delta\mathcal{S}^2}{\delta p}=2\mathcal{S}P_2(\cos\theta)\sin\theta
+$$
+
+The normalisation constraint is linear too: $\dfrac{\delta}{\delta p}\displaystyle\int p\sin\theta\, d\theta=\sin\theta$.
+
+Gradient terms such as $p'(\theta)$ need an integration by parts ([see the aside](#aside-optional-functional-derivatives-with-gradient-terms)); Maier–Saupe has none.
+
 ## Maier-Saupe Theory of Nematic Liquid Crystals
 
-Together we, have the Maier-Saupe free energy functional per molecule
+Together, we have the Maier-Saupe free energy functional per molecule
 
 $$
 f=f_0-u \frac{\mathcal{S}^2}{2}+k_B T \int_0^\pi p(\theta) \ln (2 p(\theta)) \sin \theta d \theta
@@ -115,7 +160,7 @@ Introduce the Lagrange multiplier $\lambda$ to enforce the constraint ([see the 
 $$
 \delta\left[f+\lambda\left(\int_0^\pi p(\theta) \sin \theta d \theta-1\right)\right]=0
 $$
-The functional derivative yields (check!):
+Using the rules above for the constraint term:
 
 $$
 \frac{\delta f}{\delta p(\theta)}+\lambda \sin \theta=0
@@ -123,16 +168,13 @@ $$
 
 ## Maier-Saupe Theory of Nematic Liquid Crystals
 
-Remember that - by **definition** - 
+Remember that - by **definition** -
 
 $$\mathcal{S}=\left\langle P_2(\cos \theta)\right\rangle=\int_0^\pi P_2(\cos \theta) p(\theta) \sin \theta d \theta$$
 
-So 
-$$\dfrac{\delta \mathcal{S}^2}{\delta p} =2 \mathcal{S} P_2(\cos\theta)\sin\theta $$ 
+so, by the chain rule for the energy and the local rule for the entropy, the functional derivative is
 
-So when calculating the partial derivative we have
-
-$$\dfrac{\delta f}{\delta p} =-uS P_2(\cos\theta)\sin\theta +k_BT\left(\ln(2 p(\theta)) + 1\right) \sin \theta $$
+$$\dfrac{\delta f}{\delta p} =-u\mathcal{S} P_2(\cos\theta)\sin\theta +k_BT\left(\ln(2 p(\theta)) + 1\right) \sin \theta $$
 
 and hence, after simplifying $\sin \theta$, our Lagrange equation reads
 
@@ -701,34 +743,32 @@ $$
 
 This is the **Boltzmann distribution**: $p_i \propto \exp(-\beta E_i)$ with $\beta = \lambda_2$.
 
-## Aside (optional): Functional Derivatives
+## Aside (optional): functional derivatives with gradient terms
 
-- Functional derivative is the extension of ordinary derivative to functionals (functions of functions)
+- When the functional depends also on the gradient $\phi'$, as for an **action functional** $S[\phi]$ (that you may have already seen), the rules of the main slides need an integration by parts:
 
-- A general formulation (that you may have already seen) starts from an **action functional** $S[\phi]$:
+$$S[\phi] = \int \ell(\phi(x), \phi'(x), x) dx$$
 
-$$S[\phi] = \int \mathcal{L}(\phi(x), \phi'(x), x) dx$$
-
-$\mathcal{L}$ is the **Lagrangian function**: e.g.  $x$ is space,  $\phi(x)$ a field defined over space (e.g. density)
+$\ell$ is the **Lagrangian density**: e.g.  $x$ is space,  $\phi(x)$ a field defined over space (e.g. density)
 
 - Perturb $S[\phi]$ by an amount $\epsilon$ with an arbitrary function $\eta(x)$ vanishing at the boundaries
 
-$$S[\phi+\epsilon\eta]=\int \mathcal{L}(\phi+\epsilon\eta, \phi'+\epsilon\eta', x) dx$$
+$$S[\phi+\epsilon\eta]=\int \ell(\phi+\epsilon\eta, \phi'+\epsilon\eta', x) dx$$
 
 Expanding to first order in $\epsilon$:
 
-$$S[\phi+\epsilon\eta]\approx S[\phi]+\epsilon\int\left[\frac{\partial \mathcal{L}}{\partial \phi}\eta+\frac{\partial \mathcal{L}}{\partial \phi'}\eta'\right] dx$$
+$$S[\phi+\epsilon\eta]\approx S[\phi]+\epsilon\int\left[\frac{\partial \ell}{\partial \phi}\eta+\frac{\partial \ell}{\partial \phi'}\eta'\right] dx$$
 
-## Aside (optional): Functional Derivatives
+## Aside (optional): functional derivatives with gradient terms
 Integrating by parts the second term:
 
-$$\int\frac{\partial \mathcal{L}}{\partial \phi'}\eta' dx = \left[\frac{\partial \mathcal{L}}{\partial \phi'}\eta\right]_{\text{boundary}}^{\phantom{x}}-\int\frac{d}{dx}\left(\frac{\partial \mathcal{L}}{\partial \phi'}\right)\eta dx$$
+$$\int\frac{\partial \ell}{\partial \phi'}\eta' dx = \left[\frac{\partial \ell}{\partial \phi'}\eta\right]_{\text{boundary}}^{\phantom{x}}-\int\frac{d}{dx}\left(\frac{\partial \ell}{\partial \phi'}\right)\eta dx$$
 
 
 Since $\eta(x)$ vanishes at the boundaries, the first term drops out, giving:
 
 $$
-\delta S=\int\left[\frac{\partial \mathcal{L}}{\partial \phi}-\frac{d}{d x}\left(\frac{\partial \mathcal{L}}{\partial \phi^{\prime}}\right)\right] \eta(x) d x
+\delta S=\int\left[\frac{\partial \ell}{\partial \phi}-\frac{d}{d x}\left(\frac{\partial \ell}{\partial \phi^{\prime}}\right)\right] \eta(x) d x
 $$
 
 If we want $S[\phi]$ to be stationary with respect to arbitrary perturbations $\eta(x)$, then $\delta S=0$  for all $\eta(x)$. 
@@ -736,10 +776,10 @@ If we want $S[\phi]$ to be stationary with respect to arbitrary perturbations $\
 
 This leads to the **Euler-Lagrange equation**:
 
-$$\frac{\partial \mathcal{L}}{\partial \phi}-\frac{d}{d x}\left(\frac{\partial \mathcal{L}}{\partial \phi^{\prime}}\right)=0$$
+$$\frac{\partial \ell}{\partial \phi}-\frac{d}{d x}\left(\frac{\partial \ell}{\partial \phi^{\prime}}\right)=0$$
 
 which defines the functional derivative as 
-$$\frac{\delta S}{\delta \phi(x)}=\frac{\partial \mathcal{L}}{\partial \phi}-\frac{d}{d x}\left(\frac{\partial \mathcal{L}}{\partial \phi^{\prime}}\right)$$
+$$\frac{\delta S}{\delta \phi(x)}=\frac{\partial \ell}{\partial \phi}-\frac{d}{d x}\left(\frac{\partial \ell}{\partial \phi^{\prime}}\right)$$
 
 ## Aside (optional): continuous limit
 
