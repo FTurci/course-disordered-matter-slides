@@ -153,12 +153,9 @@ where $d$ is dimensionality, $\mathbf{u}_i$ is the unit orientation vector. For 
 - **Largest eigenvalue** $\rightarrow$ scalar order parameter $\mathcal{S}$
 - **Corresponding eigenvector** $\rightarrow$ director $\mathbf{n}$
 
-$$
-\mathcal{S} \in [0, 1]
-$$
-
 - $\mathcal{S} = 0$: isotropic (random orientations)
 - $\mathcal{S} = 1$: perfect nematic order (all aligned)
+- 2D: $\mathcal{S}\in[0,1]$; 3D: $\mathcal{S}\in[-\frac12,1]$ (see below)
 
 :::{.callout-caution}
 The nematic order parameter $\mathcal{S}$ should not be confused with the entropy $S$.
@@ -188,6 +185,8 @@ $$
 where $\theta_i$ is angle between particle $i$ and director.
 
 This uses the **Legendre polynomial** $P_2(\cos\theta)$ to enforce head-tail symmetry.
+
+$P_2\in[-\frac12,1]$, so in 3D $\mathcal{S}\in[-\frac12,1]$: $\mathcal{S}=-\frac12$ when all rods lie perpendicular to $\mathbf{n}$ ("oblate" order; for rod-like order $\mathcal{S}>0$ is the largest eigenvalue of $\mathbf{Q}$).
 
 - Lowest nontrivial rotationally‑invariant scalar that is even under $\mathbf{n}\to -\mathbf{n}$
 
