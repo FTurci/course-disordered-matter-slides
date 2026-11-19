@@ -85,7 +85,7 @@ Average  over all orientations of molecule $i$ to get the average interaction en
 
 $$U^{mf} = \frac{1}{2}\big\langle U_i^{\mathrm{mf}}\big\rangle_i = -\frac{u}{2}\,\mathcal{S}\,\big\langle P_2(\mathbf{u}_i\cdot\mathbf{n})\big\rangle_i = -\frac{u}{2} \mathcal{S}^2$$
 
-A potential that aligns molecules with the director, quadratic to reflect head-tail symmetry.
+Order lowers the energy; the square comes from the pair interaction (one $\mathcal{S}$ per molecule).
 
 
 ## Maier-Saupe Theory of Nematic Liquid Crystals
