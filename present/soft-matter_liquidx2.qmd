@@ -118,17 +118,27 @@ $$
 
 ## Functional derivatives: two rules
 
-**Local rule:** for $F=\int_0^\pi G\big(p(\theta')\big)\,d\theta'$, differentiate the integrand: $\delta F/\delta p(\theta)=\partial G/\partial p$, evaluated at $\theta$.
+**1. Local rule.** If $F=\int_0^\pi G\big(p(\theta')\big)\,d\theta'$, differentiate the integrand with respect to $p$:
+$$
+\frac{\delta F}{\delta p(\theta)}=\frac{\partial G}{\partial p}\Big|_{\theta'=\theta}
+$$
 
-| $F$ | integrand $G$ | $\delta F/\delta p(\theta)$ |
-|---|---|---|
-| $\mathcal{S}$ | $P_2(\cos\theta')\,p\,\sin\theta'$ | $P_2(\cos\theta)\sin\theta$ |
-| normalisation | $p\,\sin\theta'$ | $\sin\theta$ |
-| $f_{\rm entropy}$ | $k_BT\,p\ln(2p)\,\sin\theta'$ | $k_BT\left(\ln(2p)+1\right)\sin\theta$ |
+- Entropy: $\;f_{\rm entropy}=k_BT\displaystyle\int_0^\pi p(\theta')\ln\big(2p(\theta')\big)\sin\theta'\,d\theta'\;\Rightarrow\;\frac{\delta f_{\rm entropy}}{\delta p(\theta)}=k_BT\left(\ln\big(2p(\theta)\big)+1\right)\sin\theta$
+- Order parameter: $\;\mathcal{S}=\displaystyle\int_0^\pi P_2(\cos\theta')\,p(\theta')\sin\theta'\,d\theta'\;\Rightarrow\;\frac{\delta \mathcal{S}}{\delta p(\theta)}=P_2(\cos\theta)\sin\theta$
+- Normalisation: $\;\displaystyle\int_0^\pi p(\theta')\sin\theta'\,d\theta'\;\Rightarrow\;\sin\theta$
 
-**Chain rule:** $\delta h(\mathcal{S})/\delta p=h'(\mathcal{S})\,\delta\mathcal{S}/\delta p$, so $\delta\mathcal{S}^2/\delta p=2\mathcal{S}\,P_2(\cos\theta)\sin\theta$.
+<br>
 
+**2. Chain rule.** For a function of a functional, such as $\mathcal{S}^2$:
+$$
+\frac{\delta\, h(\mathcal{S})}{\delta p(\theta)}=h'(\mathcal{S})\,\frac{\delta \mathcal{S}}{\delta p(\theta)}
+\qquad\Rightarrow\qquad
+\frac{\delta \mathcal{S}^2}{\delta p(\theta)}=2\mathcal{S}\,P_2(\cos\theta)\sin\theta
+$$
+
+::: {.smaller}
 Gradient terms $p'(\theta)$ need an integration by parts ([aside](#aside-optional-functional-derivatives-with-gradient-terms)).
+:::
 
 ## Maier-Saupe Theory of Nematic Liquid Crystals
 
