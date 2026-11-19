@@ -697,7 +697,7 @@
     "href": "soft-matter_liquidx1.html#extracting-order",
     "title": "Complex Disordered Systems",
     "section": "Extracting Order",
-    "text": "Extracting Order\n\nDiagonalisation: the eigenvalues do not depend on the choice of axes, the eigenvectors give the principal directions\nLargest eigenvalue \\rightarrow scalar order parameter \\mathcal{S}\nCorresponding eigenvector \\rightarrow director \\mathbf{n}\n\n\n\\mathcal{S} \\in [0, 1]\n\n\n\\mathcal{S} = 0: isotropic (random orientations)\n\\mathcal{S} = 1: perfect nematic order (all aligned)\n\n\n\n\n\n\n\nCaution\n\n\nThe nematic order parameter \\mathcal{S} should not be confused with the entropy S."
+    "text": "Extracting Order\n\nDiagonalisation: the eigenvalues do not depend on the choice of axes, the eigenvectors give the principal directions\nLargest eigenvalue \\rightarrow scalar order parameter \\mathcal{S}\nCorresponding eigenvector \\rightarrow director \\mathbf{n}\n\\mathcal{S} = 0: isotropic (random orientations)\n\\mathcal{S} = 1: perfect nematic order (all aligned)\n2D: \\mathcal{S}\\in[0,1]; 3D: \\mathcal{S}\\in[-\\frac12,1] (see below)\n\n\n\n\n\n\n\nCaution\n\n\nThe nematic order parameter \\mathcal{S} should not be confused with the entropy S."
   },
   {
     "objectID": "soft-matter_liquidx1.html#d-nematic-order-parameter",
@@ -711,7 +711,7 @@
     "href": "soft-matter_liquidx1.html#d-nematic-order-parameter-1",
     "title": "Complex Disordered Systems",
     "section": "3D Nematic Order Parameter",
-    "text": "3D Nematic Order Parameter\nIn 3D, choosing coordinates along director \\mathbf{n}:\n\n\\mathcal{S}=\\dfrac{1}{2} \\left\\langle 3\\cos ^2 \\theta_i-1\\right\\rangle\n\nwhere \\theta_i is angle between particle i and director.\nThis uses the Legendre polynomial P_2(\\cos\\theta) to enforce head-tail symmetry.\n\nLowest nontrivial rotationally‑invariant scalar that is even under \\mathbf{n}\\to -\\mathbf{n}\n\n\n\n\n\n\n\n\n\nn\nLegendre polynomial P_n(x)\nHead-tail symmetric?\n\n\n\n\n0\nP_0(x)=1\nYes (even: P_0(-x)=P_0(x))\n\n\n1\nP_1(x)=x\nNo (odd: P_1(-x)=-P_1(x))\n\n\n2\nP_2(x)=\\dfrac{1}{2}(3x^2-1)\nYes (even: P_2(-x)=P_2(x))\n\n\n3\nP_3(x)=\\dfrac{1}{2}(5x^3-3x)\nNo (odd: P_3(-x)=-P_3(x))\n\n\n4\nP_4(x)=\\dfrac{1}{8}(35x^4-30x^2+3)\nYes (even: P_4(-x)=P_4(x))"
+    "text": "3D Nematic Order Parameter\nIn 3D, choosing coordinates along director \\mathbf{n}:\n\n\\mathcal{S}=\\dfrac{1}{2} \\left\\langle 3\\cos ^2 \\theta_i-1\\right\\rangle\n\nwhere \\theta_i is angle between particle i and director.\nThis uses the Legendre polynomial P_2(\\cos\\theta) to enforce head-tail symmetry.\nP_2\\in[-\\frac12,1], so in 3D \\mathcal{S}\\in[-\\frac12,1]: \\mathcal{S}=-\\frac12 when all rods lie perpendicular to \\mathbf{n} (“oblate” order; for rod-like order \\mathcal{S}&gt;0 is the largest eigenvalue of \\mathbf{Q}).\n\nLowest nontrivial rotationally‑invariant scalar that is even under \\mathbf{n}\\to -\\mathbf{n}\n\n\n\n\n\n\n\n\n\nn\nLegendre polynomial P_n(x)\nHead-tail symmetric?\n\n\n\n\n0\nP_0(x)=1\nYes (even: P_0(-x)=P_0(x))\n\n\n1\nP_1(x)=x\nNo (odd: P_1(-x)=-P_1(x))\n\n\n2\nP_2(x)=\\dfrac{1}{2}(3x^2-1)\nYes (even: P_2(-x)=P_2(x))\n\n\n3\nP_3(x)=\\dfrac{1}{2}(5x^3-3x)\nNo (odd: P_3(-x)=-P_3(x))\n\n\n4\nP_4(x)=\\dfrac{1}{8}(35x^4-30x^2+3)\nYes (even: P_4(-x)=P_4(x))"
   },
   {
     "objectID": "soft-matter_liquidx1.html#landau-de-gennes-mean-field-theory",
