@@ -849,6 +849,7 @@ function ensureWorkspace(ex) {
   const ws = Blockly.inject($("ws-" + ex), {
     toolbox: { kind: "flyoutToolbox", contents: shuffled(EX[ex].palette).map(t => ({ kind: "block", type: t })) },
     renderer: "zelos", theme: blocklyTheme(), trashcan: true, sounds: false,
+    media: "https://cdn.jsdelivr.net/npm/blockly@11.1.1/media/",
     zoom: { controls: true, wheel: false, startScale: 0.7, minScale: 0.3, maxScale: 1.5, scaleSpeed: 1.2 },
     move: { scrollbars: true, drag: true, wheel: false },
   });
