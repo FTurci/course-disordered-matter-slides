@@ -296,22 +296,17 @@ As temperature decreases, $s_{\rm conf}$ drops and $\tau_\alpha$ grows rapidly.
 
 ## From Adam-Gibbs to VFT
 
-How does $s_{\rm conf}$ vanish? Heating by $dT$ costs the excess heat $\delta q=\Delta c_p\,dT$ (per particle, liquid minus crystal), so
+How does $s_{\rm conf}$ vanish? Kauzmann's extrapolation: it decreases **smoothly** and reaches zero at $T_K$. Close to its zero, a smooth function is **linear**:
 $$
-ds_{\rm conf}=\frac{\delta q}{T}=\frac{\Delta c_p}{T}\,dT,\quad s_{\rm conf}(T_K)=0\;\Rightarrow\; s_{\rm conf}(T)=\int_{T_K}^{T}\frac{\Delta c_p}{T'}\,dT'
-$$
-
-Near $T_K$, expand to first order (Taylor):
-$$
-s_{\rm conf}(T)\simeq \underbrace{s_{\rm conf}(T_K)}_{0}+\frac{ds_{\rm conf}}{dT}\Big|_{T_K}(T-T_K)=\frac{\Delta c_p}{T_K}\,(T-T_K)
+s_{\rm conf}(T)\simeq K\,\frac{T-T_K}{T_K}\qquad (K>0)
 $$
 
-A **linear** zero, so $T s_{\rm conf}\simeq\Delta c_p\,(T-T_K)$ and
+Near $T_K$ we also have $T\simeq T_K$, so $T s_{\rm conf}\simeq K\,(T-T_K)$ and
 $$
-\tau_\alpha(T) \simeq \tau_0\exp\left(\frac{B}{T - T_K}\right),\qquad B=\frac{A}{\Delta c_p}
+\tau_\alpha(T) \simeq \tau_0\exp\left(\frac{B}{T - T_K}\right),\qquad B=\frac{A}{K}
 $$
 
-This is the **VFT** form with $T_0=T_K$: a testable link between kinetics ($T_0$) and calorimetry ($T_K$). They agree closely in many fragile liquids (Richert & Angell, J. Chem. Phys. 108, 9016 (1998)).
+This is the **VFT** form with $T_0=T_K$ (corrections to linearity only rescale $\tau_0$): a testable link between kinetics ($T_0$) and calorimetry ($T_K$). They agree closely in many fragile liquids (Richert & Angell, J. Chem. Phys. 108, 9016 (1998)).
 
 It also points to a **critical divergence**: as $s_{\rm conf}\to0$ at $T_K$, the CRR size $n_{CRR}\propto 1/s_{\rm conf}$ diverges.
 
