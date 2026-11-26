@@ -286,22 +286,27 @@ $$n_{CRR}(T) \propto \dfrac{1}{S_{conf}(T)/N}$$
 
 ## A thermodynamic theory: the Adam-Gibbs scenario
 
-We can then assume that the dynamics is activated with an energy barrier proportional to the size of a CRR:
-
-$$\Delta E(T) \propto n_{CRR}(T)
-$$
-
-From Arrhenius activation, the relaxation time is then
+Assume **activated dynamics** with a barrier $\Delta\mu$ per particle: a CRR must cross $\Delta E = n_{CRR}\,\Delta\mu$. With $n_{CRR}=s^*/s_{\rm conf}$ (where $s_{\rm conf}=S_{\rm conf}/N$), Arrhenius gives
 
 $$
-\tau_\alpha(T) = \tau_0 \exp\left(\frac{A}{T s_{\rm conf}(T)}\right), \qquad s_{\rm conf}=S_{\rm conf}/N
+\tau_\alpha(T) = \tau_0 \exp\left(\frac{A}{T s_{\rm conf}(T)}\right), \qquad A=\frac{s^*\Delta\mu}{k_B}
 $$
 
-As temperature decreases, $s_{\rm conf}$ drops, causing $\tau_\alpha$ to increase rapidly. If $s_{\rm conf}$ vanishes at the Kauzmann temperature $T_K$, relaxation time diverges, reproducing the VFT form:
+As temperature decreases, $s_{\rm conf}$ drops and $\tau_\alpha$ grows rapidly.
+
+## From Adam-Gibbs to VFT
+
+How does $s_{\rm conf}$ vanish? It is built up by the excess heat capacity $\Delta c_p$ (per particle) of the liquid over the crystal:
 $$
-\tau_\alpha(T) \sim \exp\left(\frac{B}{T - T_0}\right)
+s_{\rm conf}(T)=\int_{T_K}^{T}\frac{\Delta c_p}{T'}\,dT' \;\simeq\; \frac{\Delta c_p}{T_K}\,(T-T_K)\quad\text{near } T_K
 $$
-with $T_0 \approx T_K$. This connects the kinetic slowdown to loss of configurational entropy making the theory thermodynamic.
+
+A **linear** zero, so $T s_{\rm conf}\simeq\Delta c_p\,(T-T_K)$ and
+$$
+\tau_\alpha(T) \simeq \tau_0\exp\left(\frac{B}{T - T_K}\right),\qquad B=\frac{A}{\Delta c_p}
+$$
+
+This is the **VFT** form with $T_0=T_K$: a testable link between kinetics ($T_0$) and calorimetry ($T_K$). They agree closely in many fragile liquids (Richert & Angell, J. Chem. Phys. 108, 9016 (1998)).
 
 It also points to a **critical divergence**: as $s_{\rm conf}\to0$ at $T_K$, the CRR size $n_{CRR}\propto 1/s_{\rm conf}$ diverges.
 
