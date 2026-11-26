@@ -296,9 +296,14 @@ As temperature decreases, $s_{\rm conf}$ drops and $\tau_\alpha$ grows rapidly.
 
 ## From Adam-Gibbs to VFT
 
-How does $s_{\rm conf}$ vanish? It is built up by the excess heat capacity $\Delta c_p$ (per particle) of the liquid over the crystal:
+How does $s_{\rm conf}$ vanish? Heating by $dT$ costs the excess heat $\delta q=\Delta c_p\,dT$ (per particle, liquid minus crystal), so
 $$
-s_{\rm conf}(T)=\int_{T_K}^{T}\frac{\Delta c_p}{T'}\,dT' \;\simeq\; \frac{\Delta c_p}{T_K}\,(T-T_K)\quad\text{near } T_K
+ds_{\rm conf}=\frac{\delta q}{T}=\frac{\Delta c_p}{T}\,dT,\quad s_{\rm conf}(T_K)=0\;\Rightarrow\; s_{\rm conf}(T)=\int_{T_K}^{T}\frac{\Delta c_p}{T'}\,dT'
+$$
+
+Near $T_K$, expand to first order (Taylor):
+$$
+s_{\rm conf}(T)\simeq \underbrace{s_{\rm conf}(T_K)}_{0}+\frac{ds_{\rm conf}}{dT}\Big|_{T_K}(T-T_K)=\frac{\Delta c_p}{T_K}\,(T-T_K)
 $$
 
 A **linear** zero, so $T s_{\rm conf}\simeq\Delta c_p\,(T-T_K)$ and
