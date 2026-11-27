@@ -167,6 +167,19 @@ def plot_transition(npoints=50):
 plot_transition(npoints=50)
 ```
 
+## Why is percolation critical?
+
+Percolation on a tree ($z$ neighbours, no loops): each new site has $z-1$ neighbours, each occupied with probability $p$.
+
+- On average a site generates $p(z-1)$ new ones: branches die out if $p(z-1)<1$, grow forever if $>1$
+$$p_c=\frac{1}{z-1}$$
+- Mean cluster size, from $T=p\,[1+(z-1)T]$:
+$$S=1+zT\sim(p_c-p)^{-1}$$
+diverges at $p_c$, like the Ising susceptibility
+- Above $p_c$ ($z=3$): $P_\infty\simeq6\,(p-p_c)$ grows continuously from zero, so the transition is **second order** ($\beta=1$, mean field)
+
+This is the Flory-Stockmayer theory of gelation.
+
 ## Percolation Threshold: $p_c$ Values
 
 **Non-universal**: $p_c$ depends on lattice type and dimension
@@ -178,6 +191,7 @@ plot_transition(npoints=50)
 | Cubic       | 3   | 6   | 0.312        | 0.249        |
 | Hypercubic  | 4   | 8   | 0.197        | 0.160        |
 | Hypercubic  | 6   | 12  | 0.109        | 0.094        |
+| Bethe       | $\infty$ | $z$ | $1/(z-1)$ | $1/(z-1)$  |
 
 Higher dimensions → lower $p_c$ (easier to percolate)
 
@@ -185,15 +199,15 @@ Higher dimensions → lower $p_c$ (easier to percolate)
 
 **Universal**: Critical exponents independent of lattice details
 
-$$P_{\infty}(p)\propto (p-p_c)^{\beta}$$
+$$P_{\infty}\propto (p-p_c)^{\beta},\quad S\propto|p-p_c|^{-\gamma},\quad \xi\propto|p-p_c|^{-\nu}$$
 
-| Dimension $d$ | $\beta$           |
-|---------------|-------------------|
-| 2             | 5/36 ≈ 0.14       |
-| 3             | ≈ 0.41            |
-| ≥6            | **1** (mean-field)|
+| Dimension $d$ | $\beta$ | $\gamma$ | $\nu$ |
+|---------------|---------|----------|-------|
+| 2             | 5/36    | 43/18    | 4/3   |
+| 3             | ≈ 0.41  | ≈ 1.80   | ≈ 0.88 |
+| ≥6 (mean field) | 1     | 1        | 1/2   |
 
-**Gels require percolation** for mechanical stability!
+**Gels require percolation** for mechanical stability: the shear modulus vanishes as $G\sim(p-p_c)^t$, $t\approx2$ in 3D (de Gennes 1976)
 
 ## Colloidal Gel Formation
 
@@ -347,7 +361,7 @@ $$S(q) \sim q^{-D_f}$$
 
 - $D_f$: fractal dimension
 - No characteristic length scale
-- 3D percolation clusters: $D_f \approx 2.5$; colloidal aggregates: $D_f \approx 1.8$–$2.1$
+- Percolation: $P_\infty\sim\xi^{D_f-d}$ gives $D_f=d-\beta/\nu$, i.e. $\approx1.90$ (2D), $\approx2.5$ (3D); colloidal aggregates: $D_f \approx 1.8$–$2.1$
 :::
 
 ::: {.column width="50%"}
