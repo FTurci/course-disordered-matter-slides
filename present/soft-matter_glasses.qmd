@@ -230,6 +230,16 @@ Phenomenologically one distinguishes between:
 :::
 
 
+## Cages and cooperativity
+
+The two-step decay of $F_s(q,t)$ has a simple microscopic picture.
+
+- At low $T$ each particle is trapped in a **cage** formed by its neighbours: it rattles inside it ($\tau_\beta$, picoseconds, almost independent of $T$) and only rarely escapes ($\tau_\alpha$, growing by many orders of magnitude).
+- This **separation of timescales**, $\tau_\alpha\gg\tau_\beta$, means that at any instant almost all particles are caged and only a few are moving.
+- To escape, a particle needs its neighbours to make room, but they are caged too: relaxation must be **cooperative**.
+
+Every theory of the glass transition has to say how large the cooperative regions are, and what sets the time to rearrange them.
+
 ## Explaining the glass transition
 
 - The glass transition is still not fully understood. 
@@ -267,7 +277,8 @@ The **Adam-Gibbs model** links the dramatic slowdown of dynamics to the underlyi
 
 - The key idea is the existence of **cooperatively rearranging regions** (CRRs): to relax, particles need to move together and explore a new metabasin in the energy landscape.
 - At low $T$ a particle cannot move alone: a CRR is the smallest region that can rearrange without changes outside it. Larger regions have higher barriers, so the smallest ones dominate.
-- To rearrange, a CRR needs at least two configurations, $W^*\ge2$, so it carries a threshold entropy $s^*=k_B\ln W^*$, independent of its size.
+- To rearrange, a region needs at least two configurations, $W^*=2$: $s^*=k_B\ln 2$ is the **bare minimum** entropy for relaxation, the same at every $T$ and for every size.
+- Cooling reduces the configurations available to any given region, so the minimal region that still reaches $s^*$ must grow: the threshold is fixed, the size is not.
 
 ## Adam-Gibbs: size of the CRRs
 
@@ -338,26 +349,12 @@ It also points to a **critical divergence**: as $s_{\rm conf}\to0$ at $T_K$, the
 
 :::{.columns}
 ::: {.column width="70%"}
-Alternative model: glassy systems are **universally** heterogeneous in space and time: their mobility is very broadly distributed, with regions of high mobility **coexisting** with regions of low mobility. 
+Start again from the **cages**. Thanks to the separation of timescales we can coarse-grain space and time into regions that are **mobile** (a cage has just broken) or **immobile** (still caged).
 
-This **dynamical coexistence** is called **dynamical heterogeneity** and can be formalised as a dynamical phase transition.
+- At low $T$ mobile regions are rare, localised **excitations**, with concentration $c\simeq e^{-J/k_BT}$ ($J$: energy to create one). Their thermodynamics is trivial: no transition.
+- **Postulate** (kinetic constraint): an immobile region can relax only if a neighbouring region is mobile. Mobility **facilitates** mobility.
 
-**Key idea**: Mobility facilitates more mobility
-
-- Relaxation occurs only near already-mobile regions
-- No underlying thermodynamic transition required
-
-**Temperature dependence**:
-
-- **High T**: Many mobile regions → fast relaxation
-- **Low T**: Few mobile regions → cooperative motion required → slow relaxation
-
-The relaxation time follows a parabolic law
-$$\log \tau_\alpha(T) \sim J^2 \left( \frac{1}{T} - \frac{1}{T_o} \right)^2$$
-
-with $T_o$ the onset temperature of glassy dynamics (above $T_g$).
-
-Unlike VFT, no finite-temperature divergence, no criticality, but still captures super-Arrhenius behavior.
+Mobile and immobile regions coexist: glassy dynamics is **heterogeneous** in space and time. This **dynamical coexistence** can be formalised as a dynamical phase transition.
 :::
 ::: {.column width="30%"}
 ![](./figs/facilitation.png)
@@ -366,6 +363,23 @@ Unlike VFT, no finite-temperature divergence, no criticality, but still captures
 :::
 :::
 
+## Dynamical facilitation: hierarchical relaxation
+
+- Excitations are typically a distance $\ell\sim c^{-1/d_f}=e^{J/(d_f k_BT)}$ apart ($d_f$: their fractal dimension).
+- To relax a region, mobility has to be brought over a distance $\ell$ through a chain of facilitated moves. Because of the constraint, the chain is **hierarchical**, and its energy barrier grows only logarithmically with distance (e.g. the East model):
+$$
+\Delta E(\ell)\simeq\gamma\,J\ln\ell
+$$
+- With Arrhenius,
+$$
+\ln\tau_\alpha\simeq\frac{\Delta E(\ell)}{k_BT}\simeq\frac{\gamma}{d_f}\left(\frac{J}{k_BT}\right)^2
+$$
+- Facilitated dynamics sets in below an **onset** temperature $T_o$; measuring from there gives the **parabolic law**
+$$
+\ln\frac{\tau_\alpha}{\tau_o}\simeq \frac{\gamma}{d_f}\,\frac{J^2}{k_B^2}\left(\frac{1}{T}-\frac{1}{T_o}\right)^2
+$$
+
+Super-Arrhenius, because excitations get sparser on cooling and the barrier grows, but finite at every $T>0$: **no divergence**, no criticality.
 
 
 ## Demonstration of facilitated dynamics and dynamical heterogeneities
@@ -384,6 +398,23 @@ Time evolution of the magnitude of the displacement field in a model of glass go
 :::
 Excitations emerge and trigger further mobility in their vicinity, leading to a cascade of relaxation events.
 
+
+## Can the data decide?
+
+:::{.columns}
+::: {.column width="60%"}
+![Glycerol, dielectric data from Nielsen et al. J. Chem. Phys. (2009), Glass and Time data repository.](./figs/vft_vs_parabola.svg)
+:::
+::: {.column width="40%"}
+Fitting the same relaxation times of glycerol with both laws:
+
+- both fit within $0.02$ decades over the measured range
+- VFT diverges at $T_0=128$ K, the parabolic law has an onset at $T_o=313$ K and never diverges
+- they only part ways below $T_g$, where we cannot equilibrate
+
+Relaxation times alone cannot decide (Hecksher et al. Nat. Phys. 2008). Tests must come from other predictions, such as $T_0$ vs $T_K$, growing static lengths, excitations and dynamical heterogeneity, or from reaching lower temperatures (ultrastable glasses, swap Monte Carlo).
+:::
+:::
 
 ## Unification
 

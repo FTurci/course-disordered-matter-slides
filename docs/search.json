@@ -1334,7 +1334,7 @@
     "href": "soft-matter_glasses.html#a-thermodynamic-theory-the-adam-gibbs-scenario",
     "title": "Complex Disordered Systems",
     "section": "A thermodynamic theory: the Adam-Gibbs scenario",
-    "text": "A thermodynamic theory: the Adam-Gibbs scenario\nThe Adam-Gibbs model links the dramatic slowdown of dynamics to the underlying thermodynamics through configurational entropy S_{\\rm conf}.\n\nThe key idea is the existence of cooperatively rearranging regions (CRRs): to relax, particles need to move together and explore a new metabasin in the energy landscape.\nAt low T a particle cannot move alone: a CRR is the smallest region that can rearrange without changes outside it. Larger regions have higher barriers, so the smallest ones dominate.\nTo rearrange, a CRR needs at least two configurations, W^*\\ge2, so it carries a threshold entropy s^*=k_B\\ln W^*, independent of its size."
+    "text": "A thermodynamic theory: the Adam-Gibbs scenario\nThe Adam-Gibbs model links the dramatic slowdown of dynamics to the underlying thermodynamics through configurational entropy S_{\\rm conf}.\n\nThe key idea is the existence of cooperatively rearranging regions (CRRs): to relax, particles need to move together and explore a new metabasin in the energy landscape.\nAt low T a particle cannot move alone: a CRR is the smallest region that can rearrange without changes outside it. Larger regions have higher barriers, so the smallest ones dominate.\nTo rearrange, a region needs at least two configurations, W^*=2: s^*=k_B\\ln 2 is the bare minimum entropy for relaxation, the same at every T and for every size.\nCooling reduces the configurations available to any given region, so the minimal region that still reaches s^* must grow: the threshold is fixed, the size is not."
   },
   {
     "objectID": "soft-matter_glasses.html#a-thermodynamic-theory-the-adam-gibbs-scenario-1",
@@ -1348,7 +1348,7 @@
     "href": "soft-matter_glasses.html#a-dynamic-theory-dynamical-facilitation",
     "title": "Complex Disordered Systems",
     "section": "A dynamic theory: dynamical facilitation",
-    "text": "A dynamic theory: dynamical facilitation\n\n\nAlternative model: glassy systems are universally heterogeneous in space and time: their mobility is very broadly distributed, with regions of high mobility coexisting with regions of low mobility.\nThis dynamical coexistence is called dynamical heterogeneity and can be formalised as a dynamical phase transition.\nKey idea: Mobility facilitates more mobility\n\nRelaxation occurs only near already-mobile regions\nNo underlying thermodynamic transition required\n\nTemperature dependence:\n\nHigh T: Many mobile regions → fast relaxation\nLow T: Few mobile regions → cooperative motion required → slow relaxation\n\nThe relaxation time follows a parabolic law \\log \\tau_\\alpha(T) \\sim J^2 \\left( \\frac{1}{T} - \\frac{1}{T_o} \\right)^2\nwith T_o the onset temperature of glassy dynamics (above T_g).\nUnlike VFT, no finite-temperature divergence, no criticality, but still captures super-Arrhenius behavior.\n\n - Recent evidence suggests facilitation as a dominating mechanism for relaxation at low temperatures."
+    "text": "A dynamic theory: dynamical facilitation\n\n\nStart again from the cages. Thanks to the separation of timescales we can coarse-grain space and time into regions that are mobile (a cage has just broken) or immobile (still caged).\n\nAt low T mobile regions are rare, localised excitations, with concentration c\\simeq e^{-J/k_BT} (J: energy to create one). Their thermodynamics is trivial: no transition.\nPostulate (kinetic constraint): an immobile region can relax only if a neighbouring region is mobile. Mobility facilitates mobility.\n\nMobile and immobile regions coexist: glassy dynamics is heterogeneous in space and time. This dynamical coexistence can be formalised as a dynamical phase transition.\n\n - Recent evidence suggests facilitation as a dominating mechanism for relaxation at low temperatures."
   },
   {
     "objectID": "soft-matter_glasses.html#demonstration-of-facilitated-dynamics-and-dynamical-heterogeneities",
@@ -2308,5 +2308,26 @@
     "title": "Complex Disordered Systems",
     "section": "Adam-Gibbs: size of the CRRs",
     "text": "Adam-Gibbs: size of the CRRs\n\n\n\nWe assume that the configurational entropy is extensive: a region of n particles has n\\,s_{\\rm conf}, with s_{\\rm conf}=S_{\\rm conf}/N the bulk value per particle.\nIt can rearrange once n\\,s_{\\rm conf}\\ge s^*, so the smallest CRR has n_{CRR}=\\frac{s^*}{s_{\\rm conf}} particles: as s_{\\rm conf} drops, CRRs grow.\nThe system is a mosaic of M_{CRR}=N/n_{CRR} independent CRRs and, by the same extensivity, S_{\\rm conf}=M_{CRR}\\,s^*.\nA metabasin of the whole system is one choice of configuration for every CRR; rearranging one CRR moves the system to a neighbouring metabasin.\n\n\n\n\n\nMosaic of cooperatively rearranging regions"
+  },
+  {
+    "objectID": "soft-matter_glasses.html#cages-and-cooperativity",
+    "href": "soft-matter_glasses.html#cages-and-cooperativity",
+    "title": "Complex Disordered Systems",
+    "section": "Cages and cooperativity",
+    "text": "Cages and cooperativity\nThe two-step decay of F_s(q,t) has a simple microscopic picture.\n\nAt low T each particle is trapped in a cage formed by its neighbours: it rattles inside it (\\tau_\\beta, picoseconds, almost independent of T) and only rarely escapes (\\tau_\\alpha, growing by many orders of magnitude).\nThis separation of timescales, \\tau_\\alpha\\gg\\tau_\\beta, means that at any instant almost all particles are caged and only a few are moving.\nTo escape, a particle needs its neighbours to make room, but they are caged too: relaxation must be cooperative.\n\nEvery theory of the glass transition has to say how large the cooperative regions are, and what sets the time to rearrange them."
+  },
+  {
+    "objectID": "soft-matter_glasses.html#dynamical-facilitation-hierarchical-relaxation",
+    "href": "soft-matter_glasses.html#dynamical-facilitation-hierarchical-relaxation",
+    "title": "Complex Disordered Systems",
+    "section": "Dynamical facilitation: hierarchical relaxation",
+    "text": "Dynamical facilitation: hierarchical relaxation\n\nExcitations are typically a distance \\ell\\sim c^{-1/d_f}=e^{J/(d_f k_BT)} apart (d_f: their fractal dimension).\nTo relax a region, mobility has to be brought over a distance \\ell through a chain of facilitated moves. Because of the constraint, the chain is hierarchical, and its energy barrier grows only logarithmically with distance (e.g. the East model): \n\\Delta E(\\ell)\\simeq\\gamma\\,J\\ln\\ell\n\nWith Arrhenius, \n\\ln\\tau_\\alpha\\simeq\\frac{\\Delta E(\\ell)}{k_BT}\\simeq\\frac{\\gamma}{d_f}\\left(\\frac{J}{k_BT}\\right)^2\n\nFacilitated dynamics sets in below an onset temperature T_o; measuring from there gives the parabolic law \n\\ln\\frac{\\tau_\\alpha}{\\tau_o}\\simeq \\frac{\\gamma}{d_f}\\,\\frac{J^2}{k_B^2}\\left(\\frac{1}{T}-\\frac{1}{T_o}\\right)^2\n\n\nSuper-Arrhenius, because excitations get sparser on cooling and the barrier grows, but finite at every T&gt;0: no divergence, no criticality."
+  },
+  {
+    "objectID": "soft-matter_glasses.html#can-the-data-decide",
+    "href": "soft-matter_glasses.html#can-the-data-decide",
+    "title": "Complex Disordered Systems",
+    "section": "Can the data decide?",
+    "text": "Can the data decide?\n\n\n\n\n\nGlycerol, dielectric data from Nielsen et al. J. Chem. Phys. (2009), Glass and Time data repository.\n\n\n\nFitting the same relaxation times of glycerol with both laws:\n\nboth fit within 0.02 decades over the measured range\nVFT diverges at T_0=128 K, the parabolic law has an onset at T_o=313 K and never diverges\nthey only part ways below T_g, where we cannot equilibrate\n\nRelaxation times alone cannot decide (Hecksher et al. Nat. Phys. 2008). Tests must come from other predictions, such as T_0 vs T_K, growing static lengths, excitations and dynamical heterogeneity, or from reaching lower temperatures (ultrastable glasses, swap Monte Carlo)."
   }
 ]

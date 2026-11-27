@@ -424,6 +424,16 @@ S(T) = S(T_0) + \int_{T_0}^{T} \frac{C_V(T')}{T'} dT'
 </div>
 </div></div>
 </section>
+<section id="cages-and-cooperativity" class="slide level2">
+<h2>Cages and cooperativity</h2>
+<p>The two-step decay of <span class="math inline">F_s(q,t)</span> has a simple microscopic picture.</p>
+<ul>
+<li>At low <span class="math inline">T</span> each particle is trapped in a <strong>cage</strong> formed by its neighbours: it rattles inside it (<span class="math inline">\tau_\beta</span>, picoseconds, almost independent of <span class="math inline">T</span>) and only rarely escapes (<span class="math inline">\tau_\alpha</span>, growing by many orders of magnitude).</li>
+<li>This <strong>separation of timescales</strong>, <span class="math inline">\tau_\alpha\gg\tau_\beta</span>, means that at any instant almost all particles are caged and only a few are moving.</li>
+<li>To escape, a particle needs its neighbours to make room, but they are caged too: relaxation must be <strong>cooperative</strong>.</li>
+</ul>
+<p>Every theory of the glass transition has to say how large the cooperative regions are, and what sets the time to rearrange them.</p>
+</section>
 <section id="explaining-the-glass-transition" class="slide level2">
 <h2>Explaining the glass transition</h2>
 <ul>
@@ -460,7 +470,8 @@ S(T) = S(T_0) + \int_{T_0}^{T} \frac{C_V(T')}{T'} dT'
 <ul>
 <li>The key idea is the existence of <strong>cooperatively rearranging regions</strong> (CRRs): to relax, particles need to move together and explore a new metabasin in the energy landscape.</li>
 <li>At low <span class="math inline">T</span> a particle cannot move alone: a CRR is the smallest region that can rearrange without changes outside it. Larger regions have higher barriers, so the smallest ones dominate.</li>
-<li>To rearrange, a CRR needs at least two configurations, <span class="math inline">W^*\ge2</span>, so it carries a threshold entropy <span class="math inline">s^*=k_B\ln W^*</span>, independent of its size.</li>
+<li>To rearrange, a region needs at least two configurations, <span class="math inline">W^*=2</span>: <span class="math inline">s^*=k_B\ln 2</span> is the <strong>bare minimum</strong> entropy for relaxation, the same at every <span class="math inline">T</span> and for every size.</li>
+<li>Cooling reduces the configurations available to any given region, so the minimal region that still reaches <span class="math inline">s^*</span> must grow: the threshold is fixed, the size is not.</li>
 </ul>
 </section>
 <section id="adam-gibbs-size-of-the-crrs" class="slide level2">
@@ -520,24 +531,31 @@ s_{\rm conf}(T)\simeq K\,\frac{T-T_K}{T_K}\qquad (K&gt;0)
 <h2>A dynamic theory: dynamical facilitation</h2>
 <div class="columns">
 <div class="column" style="width:70%;">
-<p>Alternative model: glassy systems are <strong>universally</strong> heterogeneous in space and time: their mobility is very broadly distributed, with regions of high mobility <strong>coexisting</strong> with regions of low mobility.</p>
-<p>This <strong>dynamical coexistence</strong> is called <strong>dynamical heterogeneity</strong> and can be formalised as a dynamical phase transition.</p>
-<p><strong>Key idea</strong>: Mobility facilitates more mobility</p>
+<p>Start again from the <strong>cages</strong>. Thanks to the separation of timescales we can coarse-grain space and time into regions that are <strong>mobile</strong> (a cage has just broken) or <strong>immobile</strong> (still caged).</p>
 <ul>
-<li>Relaxation occurs only near already-mobile regions</li>
-<li>No underlying thermodynamic transition required</li>
+<li>At low <span class="math inline">T</span> mobile regions are rare, localised <strong>excitations</strong>, with concentration <span class="math inline">c\simeq e^{-J/k_BT}</span> (<span class="math inline">J</span>: energy to create one). Their thermodynamics is trivial: no transition.</li>
+<li><strong>Postulate</strong> (kinetic constraint): an immobile region can relax only if a neighbouring region is mobile. Mobility <strong>facilitates</strong> mobility.</li>
 </ul>
-<p><strong>Temperature dependence</strong>:</p>
-<ul>
-<li><strong>High T</strong>: Many mobile regions → fast relaxation</li>
-<li><strong>Low T</strong>: Few mobile regions → cooperative motion required → slow relaxation</li>
-</ul>
-<p>The relaxation time follows a parabolic law <span class="math display">\log \tau_\alpha(T) \sim J^2 \left( \frac{1}{T} - \frac{1}{T_o} \right)^2</span></p>
-<p>with <span class="math inline">T_o</span> the onset temperature of glassy dynamics (above <span class="math inline">T_g</span>).</p>
-<p>Unlike VFT, no finite-temperature divergence, no criticality, but still captures super-Arrhenius behavior.</p>
+<p>Mobile and immobile regions coexist: glassy dynamics is <strong>heterogeneous</strong> in space and time. This <strong>dynamical coexistence</strong> can be formalised as a dynamical phase transition.</p>
 </div><div class="column" style="width:30%;">
 <p><img data-src="./figs/facilitation.png"> - Recent evidence suggests facilitation as a dominating mechanism for relaxation at low temperatures.</p>
 </div></div>
+</section>
+<section id="dynamical-facilitation-hierarchical-relaxation" class="slide level2">
+<h2>Dynamical facilitation: hierarchical relaxation</h2>
+<ul>
+<li>Excitations are typically a distance <span class="math inline">\ell\sim c^{-1/d_f}=e^{J/(d_f k_BT)}</span> apart (<span class="math inline">d_f</span>: their fractal dimension).</li>
+<li>To relax a region, mobility has to be brought over a distance <span class="math inline">\ell</span> through a chain of facilitated moves. Because of the constraint, the chain is <strong>hierarchical</strong>, and its energy barrier grows only logarithmically with distance (e.g.&nbsp;the East model): <span class="math display">
+\Delta E(\ell)\simeq\gamma\,J\ln\ell
+</span></li>
+<li>With Arrhenius, <span class="math display">
+\ln\tau_\alpha\simeq\frac{\Delta E(\ell)}{k_BT}\simeq\frac{\gamma}{d_f}\left(\frac{J}{k_BT}\right)^2
+</span></li>
+<li>Facilitated dynamics sets in below an <strong>onset</strong> temperature <span class="math inline">T_o</span>; measuring from there gives the <strong>parabolic law</strong> <span class="math display">
+\ln\frac{\tau_\alpha}{\tau_o}\simeq \frac{\gamma}{d_f}\,\frac{J^2}{k_B^2}\left(\frac{1}{T}-\frac{1}{T_o}\right)^2
+</span></li>
+</ul>
+<p>Super-Arrhenius, because excitations get sparser on cooling and the barrier grows, but finite at every <span class="math inline">T&gt;0</span>: <strong>no divergence</strong>, no criticality.</p>
 </section>
 <section id="demonstration-of-facilitated-dynamics-and-dynamical-heterogeneities" class="slide level2">
 <h2>Demonstration of facilitated dynamics and dynamical heterogeneities</h2>
@@ -551,6 +569,26 @@ s_{\rm conf}(T)\simeq K\,\frac{T-T_K}{T_K}\qquad (K&gt;0)
 
 </div></div>
 <p>Excitations emerge and trigger further mobility in their vicinity, leading to a cascade of relaxation events.</p>
+</section>
+<section id="can-the-data-decide" class="slide level2">
+<h2>Can the data decide?</h2>
+<div class="columns">
+<div class="column" style="width:60%;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="./figs/vft_vs_parabola.svg"></p>
+<figcaption>Glycerol, dielectric data from Nielsen et al.&nbsp;J. Chem. Phys. (2009), Glass and Time data repository.</figcaption>
+</figure>
+</div>
+</div><div class="column" style="width:40%;">
+<p>Fitting the same relaxation times of glycerol with both laws:</p>
+<ul>
+<li>both fit within <span class="math inline">0.02</span> decades over the measured range</li>
+<li>VFT diverges at <span class="math inline">T_0=128</span> K, the parabolic law has an onset at <span class="math inline">T_o=313</span> K and never diverges</li>
+<li>they only part ways below <span class="math inline">T_g</span>, where we cannot equilibrate</li>
+</ul>
+<p>Relaxation times alone cannot decide (Hecksher et al.&nbsp;Nat. Phys. 2008). Tests must come from other predictions, such as <span class="math inline">T_0</span> vs <span class="math inline">T_K</span>, growing static lengths, excitations and dynamical heterogeneity, or from reaching lower temperatures (ultrastable glasses, swap Monte Carlo).</p>
+</div></div>
 </section>
 <section id="unification" class="slide level2">
 <h2>Unification</h2>
