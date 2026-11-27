@@ -275,6 +275,16 @@ eyJhdHRyIjp7ImF1dG9ydW4iOnRydWUsImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoicGxv
 </script>
 </div>
 </section>
+<section id="why-is-percolation-critical" class="slide level2">
+<h2>Why is percolation critical?</h2>
+<p>Percolation on a tree (<span class="math inline">z</span> neighbours, no loops): each new site has <span class="math inline">z-1</span> neighbours, each occupied with probability <span class="math inline">p</span>.</p>
+<ul>
+<li>On average a site generates <span class="math inline">p(z-1)</span> new ones: branches die out if <span class="math inline">p(z-1)&lt;1</span>, grow forever if <span class="math inline">&gt;1</span> <span class="math display">p_c=\frac{1}{z-1}</span></li>
+<li>Mean cluster size, from <span class="math inline">T=p\,[1+(z-1)T]</span>: <span class="math display">S=1+zT\sim(p_c-p)^{-1}</span> diverges at <span class="math inline">p_c</span>, like the Ising susceptibility</li>
+<li>Above <span class="math inline">p_c</span> (<span class="math inline">z=3</span>): <span class="math inline">P_\infty\simeq6\,(p-p_c)</span> grows continuously from zero, so the transition is <strong>second order</strong> (<span class="math inline">\beta=1</span>, mean field)</li>
+</ul>
+<p>This is the Flory-Stockmayer theory of gelation.</p>
+</section>
 <section id="percolation-threshold-p_c-values" class="slide level2">
 <h2>Percolation Threshold: <span class="math inline">p_c</span> Values</h2>
 <p><strong>Non-universal</strong>: <span class="math inline">p_c</span> depends on lattice type and dimension</p>
@@ -324,6 +334,13 @@ eyJhdHRyIjp7ImF1dG9ydW4iOnRydWUsImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoicGxv
 <td>0.109</td>
 <td>0.094</td>
 </tr>
+<tr class="even">
+<td>Bethe</td>
+<td><span class="math inline">\infty</span></td>
+<td><span class="math inline">z</span></td>
+<td><span class="math inline">1/(z-1)</span></td>
+<td><span class="math inline">1/(z-1)</span></td>
+</tr>
 </tbody>
 </table>
 <p>Higher dimensions → lower <span class="math inline">p_c</span> (easier to percolate)</p>
@@ -331,30 +348,38 @@ eyJhdHRyIjp7ImF1dG9ydW4iOnRydWUsImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoicGxv
 <section id="critical-exponents-universal" class="slide level2">
 <h2>Critical Exponents: Universal</h2>
 <p><strong>Universal</strong>: Critical exponents independent of lattice details</p>
-<p><span class="math display">P_{\infty}(p)\propto (p-p_c)^{\beta}</span></p>
+<p><span class="math display">P_{\infty}\propto (p-p_c)^{\beta},\quad S\propto|p-p_c|^{-\gamma},\quad \xi\propto|p-p_c|^{-\nu}</span></p>
 <table class="caption-top">
 <thead>
 <tr class="header">
 <th>Dimension <span class="math inline">d</span></th>
 <th><span class="math inline">\beta</span></th>
+<th><span class="math inline">\gamma</span></th>
+<th><span class="math inline">\nu</span></th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td>2</td>
-<td>5/36 ≈ 0.14</td>
+<td>5/36</td>
+<td>43/18</td>
+<td>4/3</td>
 </tr>
 <tr class="even">
 <td>3</td>
 <td>≈ 0.41</td>
+<td>≈ 1.80</td>
+<td>≈ 0.88</td>
 </tr>
 <tr class="odd">
-<td>≥6</td>
-<td><strong>1</strong> (mean-field)</td>
+<td>≥6 (mean field)</td>
+<td>1</td>
+<td>1</td>
+<td>1/2</td>
 </tr>
 </tbody>
 </table>
-<p><strong>Gels require percolation</strong> for mechanical stability!</p>
+<p><strong>Gels require percolation</strong> for mechanical stability: the shear modulus vanishes as <span class="math inline">G\sim(p-p_c)^t</span>, <span class="math inline">t\approx2</span> in 3D (de Gennes 1976)</p>
 </section>
 <section id="colloidal-gel-formation" class="slide level2">
 <h2>Colloidal Gel Formation</h2>
@@ -395,7 +420,7 @@ U(r) =
 <li><span class="math inline">\epsilon</span>: well depth</li>
 <li><span class="math inline">\lambda</span>: range parameter</li>
 </ul>
-<div id="c4248d50" class="cell" data-execution_count="1">
+<div id="a49f9539" class="cell" data-execution_count="1">
 <div class="cell-output cell-output-display">
 <div>
 <figure>
@@ -416,7 +441,7 @@ U_{\mathrm{Morse}}(r) = D \left[ e^{-2\alpha (r - r_0)} - 2 e^{-\alpha (r - r_0)
 <li><span class="math inline">\alpha</span>: steepness (controls range)</li>
 <li><span class="math inline">r_0</span>: equilibrium distance</li>
 </ul>
-<div id="ec119493" class="cell" data-execution_count="2">
+<div id="5eceaf6a" class="cell" data-execution_count="2">
 <div class="cell-output cell-output-display">
 <div>
 <figure>
@@ -460,7 +485,7 @@ U_{\mathrm{Morse}}(r) = D \left[ e^{-2\alpha (r - r_0)} - 2 e^{-\alpha (r - r_0)
 <ul>
 <li><span class="math inline">D_f</span>: fractal dimension</li>
 <li>No characteristic length scale</li>
-<li>3D percolation clusters: <span class="math inline">D_f \approx 2.5</span>; colloidal aggregates: <span class="math inline">D_f \approx 1.8</span>–<span class="math inline">2.1</span></li>
+<li>Percolation: <span class="math inline">P_\infty\sim\xi^{D_f-d}</span> gives <span class="math inline">D_f=d-\beta/\nu</span>, i.e.&nbsp;<span class="math inline">\approx1.90</span> (2D), <span class="math inline">\approx2.5</span> (3D); colloidal aggregates: <span class="math inline">D_f \approx 1.8</span>–<span class="math inline">2.1</span></li>
 </ul>
 </div><div class="column" style="width:50%;">
 <div class="quarto-figure quarto-figure-center">
