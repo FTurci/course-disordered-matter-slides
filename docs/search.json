@@ -1334,7 +1334,7 @@
     "href": "soft-matter_glasses.html#a-thermodynamic-theory-the-adam-gibbs-scenario",
     "title": "Complex Disordered Systems",
     "section": "A thermodynamic theory: the Adam-Gibbs scenario",
-    "text": "A thermodynamic theory: the Adam-Gibbs scenario\nThe Adam-Gibbs model links the dramatic slowdown of dynamics to the underlying thermodynamics through configurational entropy S_{\\rm conf}.\n\nThe key idea is the existence of cooperatively rearranging regions (CRRs): to relax, particles need to move together and explore a new metabasin in the energy landscape.\nAt low T a particle cannot move alone: a CRR is the smallest region that can rearrange without changes outside it. Larger regions have higher barriers, so the smallest ones dominate.\nTo rearrange, a region needs at least two configurations, W^*=2: s^*=k_B\\ln 2 is the bare minimum entropy for relaxation, the same at every T and for every size.\nCooling reduces the configurations available to any given region, so the minimal region that still reaches s^* must grow: the threshold is fixed, the size is not."
+    "text": "A thermodynamic theory: the Adam-Gibbs scenario\nThe Adam-Gibbs model links the dramatic slowdown of dynamics to the underlying thermodynamics through configurational entropy S_{\\rm conf}.\n\nThe key idea is the existence of cooperatively rearranging regions (CRRs): to relax, particles need to move together and explore a new metabasin in the energy landscape.\nAt low T a particle cannot move alone: a CRR is the smallest region that can rearrange without changes outside it. Larger regions have higher barriers, so the smallest ones dominate.\nTo rearrange, a region needs at least two configurations, W^*=2. We assume that each CRR has just this bare minimum, s^*=k_B\\ln 2, the same at every T."
   },
   {
     "objectID": "soft-matter_glasses.html#a-thermodynamic-theory-the-adam-gibbs-scenario-1",
@@ -2307,7 +2307,7 @@
     "href": "soft-matter_glasses.html#adam-gibbs-size-of-the-crrs",
     "title": "Complex Disordered Systems",
     "section": "Adam-Gibbs: size of the CRRs",
-    "text": "Adam-Gibbs: size of the CRRs\n\n\n\nWe assume that the configurational entropy is extensive: a region of n particles has n\\,s_{\\rm conf}, with s_{\\rm conf}=S_{\\rm conf}/N the bulk value per particle.\nIt can rearrange once n\\,s_{\\rm conf}\\ge s^*, so the smallest CRR has n_{CRR}=\\frac{s^*}{s_{\\rm conf}} particles: as s_{\\rm conf} drops, CRRs grow.\nThe system is a mosaic of M_{CRR}=N/n_{CRR} independent CRRs and, by the same extensivity, S_{\\rm conf}=M_{CRR}\\,s^*.\nA metabasin of the whole system is one choice of configuration for every CRR; rearranging one CRR moves the system to a neighbouring metabasin.\n\n\n\n\n\nMosaic of cooperatively rearranging regions"
+    "text": "Adam-Gibbs: size of the CRRs\n\n\n\nThe system is a mosaic of M_{CRR} CRRs of n_{CRR} particles each: N=M_{CRR}\\,n_{CRR}\nThe CRRs are independent, so their entropies add, each contributing s^*: S_{\\rm conf}=M_{CRR}\\,s^*\nDividing, with s_{\\rm conf}=S_{\\rm conf}/N: n_{CRR}=\\frac{s^*}{s_{\\rm conf}}\ns_{\\rm conf} drops on cooling (Kauzmann) while s^* is fixed: the CRRs grow.\nA metabasin of the whole system is one choice of configuration for every CRR; rearranging one CRR moves the system to a neighbouring metabasin.\n\n\n\n\n\nMosaic of cooperatively rearranging regions"
   },
   {
     "objectID": "soft-matter_glasses.html#cages-and-cooperativity",

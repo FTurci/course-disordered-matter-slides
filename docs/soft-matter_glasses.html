@@ -470,8 +470,7 @@ S(T) = S(T_0) + \int_{T_0}^{T} \frac{C_V(T')}{T'} dT'
 <ul>
 <li>The key idea is the existence of <strong>cooperatively rearranging regions</strong> (CRRs): to relax, particles need to move together and explore a new metabasin in the energy landscape.</li>
 <li>At low <span class="math inline">T</span> a particle cannot move alone: a CRR is the smallest region that can rearrange without changes outside it. Larger regions have higher barriers, so the smallest ones dominate.</li>
-<li>To rearrange, a region needs at least two configurations, <span class="math inline">W^*=2</span>: <span class="math inline">s^*=k_B\ln 2</span> is the <strong>bare minimum</strong> entropy for relaxation, the same at every <span class="math inline">T</span> and for every size.</li>
-<li>Cooling reduces the configurations available to any given region, so the minimal region that still reaches <span class="math inline">s^*</span> must grow: the threshold is fixed, the size is not.</li>
+<li>To rearrange, a region needs at least two configurations, <span class="math inline">W^*=2</span>. We <strong>assume</strong> that each CRR has just this bare minimum, <span class="math inline">s^*=k_B\ln 2</span>, the same at every <span class="math inline">T</span>.</li>
 </ul>
 </section>
 <section id="adam-gibbs-size-of-the-crrs" class="slide level2">
@@ -479,9 +478,10 @@ S(T) = S(T_0) + \int_{T_0}^{T} \frac{C_V(T')}{T'} dT'
 <div class="columns">
 <div class="column" style="width:60%;">
 <ul>
-<li>We <strong>assume</strong> that the configurational entropy is extensive: a region of <span class="math inline">n</span> particles has <span class="math inline">n\,s_{\rm conf}</span>, with <span class="math inline">s_{\rm conf}=S_{\rm conf}/N</span> the bulk value per particle.</li>
-<li>It can rearrange once <span class="math inline">n\,s_{\rm conf}\ge s^*</span>, so the smallest CRR has <span class="math display">n_{CRR}=\frac{s^*}{s_{\rm conf}}</span> particles: as <span class="math inline">s_{\rm conf}</span> drops, CRRs grow.</li>
-<li>The system is a mosaic of <span class="math inline">M_{CRR}=N/n_{CRR}</span> independent CRRs and, by the same extensivity, <span class="math inline">S_{\rm conf}=M_{CRR}\,s^*</span>.</li>
+<li>The system is a mosaic of <span class="math inline">M_{CRR}</span> CRRs of <span class="math inline">n_{CRR}</span> particles each: <span class="math display">N=M_{CRR}\,n_{CRR}</span></li>
+<li>The CRRs are independent, so their entropies add, each contributing <span class="math inline">s^*</span>: <span class="math display">S_{\rm conf}=M_{CRR}\,s^*</span></li>
+<li>Dividing, with <span class="math inline">s_{\rm conf}=S_{\rm conf}/N</span>: <span class="math display">n_{CRR}=\frac{s^*}{s_{\rm conf}}</span></li>
+<li><span class="math inline">s_{\rm conf}</span> drops on cooling (Kauzmann) while <span class="math inline">s^*</span> is fixed: the CRRs grow.</li>
 <li>A metabasin of the whole system is one choice of configuration for every CRR; rearranging one CRR moves the system to a neighbouring metabasin.</li>
 </ul>
 </div><div class="column" style="width:40%;">
