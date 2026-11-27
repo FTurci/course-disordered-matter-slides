@@ -4,6 +4,8 @@ subtitle: "Gelation"
 format: 
     live-revealjs:
         incremental: false
+resources:
+    - ./figs/gel_formation.mp4
 
 pyodide:
     packages:
@@ -195,7 +197,9 @@ $$P_{\infty}(p)\propto (p-p_c)^{\beta}$$
 
 ## Colloidal Gel Formation
 
-![MD simulation of dilute colloidal gel formation (largest cluster in red)](./figs/m.gif){width=60%}
+<div style="text-align:center;">
+<video data-autoplay loop muted playsinline src="./figs/gel_formation.mp4" style="height:700px"></video>
+<p style="font-size:0.6em;">MD simulation of dilute colloidal gel formation (largest cluster in red)</p></div>
 
 Percolating cluster → mechanical rigidity
 
