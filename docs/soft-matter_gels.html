@@ -277,13 +277,18 @@ eyJhdHRyIjp7ImF1dG9ydW4iOnRydWUsImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoicGxv
 </section>
 <section id="why-is-percolation-critical" class="slide level2">
 <h2>Why is percolation critical?</h2>
+<div class="columns">
+<div class="column" style="width:62%;">
 <p>Percolation on a tree (<span class="math inline">z</span> neighbours, no loops): each new site has <span class="math inline">z-1</span> neighbours, each occupied with probability <span class="math inline">p</span>.</p>
 <ul>
 <li>On average a site generates <span class="math inline">p(z-1)</span> new ones: branches die out if <span class="math inline">p(z-1)&lt;1</span>, grow forever if <span class="math inline">&gt;1</span> <span class="math display">p_c=\frac{1}{z-1}</span></li>
-<li>Mean cluster size, from <span class="math inline">T=p\,[1+(z-1)T]</span>: <span class="math display">S=1+zT\sim(p_c-p)^{-1}</span> diverges at <span class="math inline">p_c</span>, like the Ising susceptibility</li>
+<li>A branch starts with a site occupied with probability <span class="math inline">p</span>, carrying <span class="math inline">z-1</span> identical sub-branches, so its mean size <span class="math inline">T</span> obeys <span class="math display">T=p\,[1+(z-1)T]\;\Rightarrow\;S=1+zT\sim(p_c-p)^{-1}</span> diverges at <span class="math inline">p_c</span>, like the Ising susceptibility</li>
 <li>Above <span class="math inline">p_c</span> (<span class="math inline">z=3</span>): <span class="math inline">P_\infty\simeq6\,(p-p_c)</span> grows continuously from zero, so the transition is <strong>second order</strong> (<span class="math inline">\beta=1</span>, mean field)</li>
 </ul>
 <p>This is the Flory-Stockmayer theory of gelation.</p>
+</div><div class="column" style="width:38%;">
+<p><img data-src="./figs/bethe_lattice.svg" style="width:100.0%"></p>
+</div></div>
 </section>
 <section id="percolation-threshold-p_c-values" class="slide level2">
 <h2>Percolation Threshold: <span class="math inline">p_c</span> Values</h2>
@@ -420,7 +425,7 @@ U(r) =
 <li><span class="math inline">\epsilon</span>: well depth</li>
 <li><span class="math inline">\lambda</span>: range parameter</li>
 </ul>
-<div id="a49f9539" class="cell" data-execution_count="1">
+<div id="f324ebe5" class="cell" data-execution_count="1">
 <div class="cell-output cell-output-display">
 <div>
 <figure>
@@ -441,7 +446,7 @@ U_{\mathrm{Morse}}(r) = D \left[ e^{-2\alpha (r - r_0)} - 2 e^{-\alpha (r - r_0)
 <li><span class="math inline">\alpha</span>: steepness (controls range)</li>
 <li><span class="math inline">r_0</span>: equilibrium distance</li>
 </ul>
-<div id="5eceaf6a" class="cell" data-execution_count="2">
+<div id="f729c2fa" class="cell" data-execution_count="2">
 <div class="cell-output cell-output-display">
 <div>
 <figure>

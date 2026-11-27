@@ -2335,6 +2335,6 @@
     "href": "soft-matter_gels.html#why-is-percolation-critical",
     "title": "Complex Disordered Systems",
     "section": "Why is percolation critical?",
-    "text": "Why is percolation critical?\nPercolation on a tree (z neighbours, no loops): each new site has z-1 neighbours, each occupied with probability p.\n\nOn average a site generates p(z-1) new ones: branches die out if p(z-1)&lt;1, grow forever if &gt;1 p_c=\\frac{1}{z-1}\nMean cluster size, from T=p\\,[1+(z-1)T]: S=1+zT\\sim(p_c-p)^{-1} diverges at p_c, like the Ising susceptibility\nAbove p_c (z=3): P_\\infty\\simeq6\\,(p-p_c) grows continuously from zero, so the transition is second order (\\beta=1, mean field)\n\nThis is the Flory-Stockmayer theory of gelation."
+    "text": "Why is percolation critical?\n\n\nPercolation on a tree (z neighbours, no loops): each new site has z-1 neighbours, each occupied with probability p.\n\nOn average a site generates p(z-1) new ones: branches die out if p(z-1)&lt;1, grow forever if &gt;1 p_c=\\frac{1}{z-1}\nA branch starts with a site occupied with probability p, carrying z-1 identical sub-branches, so its mean size T obeys T=p\\,[1+(z-1)T]\\;\\Rightarrow\\;S=1+zT\\sim(p_c-p)^{-1} diverges at p_c, like the Ising susceptibility\nAbove p_c (z=3): P_\\infty\\simeq6\\,(p-p_c) grows continuously from zero, so the transition is second order (\\beta=1, mean field)\n\nThis is the Flory-Stockmayer theory of gelation."
   }
 ]

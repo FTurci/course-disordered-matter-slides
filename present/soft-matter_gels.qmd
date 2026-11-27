@@ -169,16 +169,23 @@ plot_transition(npoints=50)
 
 ## Why is percolation critical?
 
+:::: {.columns}
+::: {.column width="62%"}
 Percolation on a tree ($z$ neighbours, no loops): each new site has $z-1$ neighbours, each occupied with probability $p$.
 
 - On average a site generates $p(z-1)$ new ones: branches die out if $p(z-1)<1$, grow forever if $>1$
 $$p_c=\frac{1}{z-1}$$
-- Mean cluster size, from $T=p\,[1+(z-1)T]$:
-$$S=1+zT\sim(p_c-p)^{-1}$$
+- A branch starts with a site occupied with probability $p$, carrying $z-1$ identical sub-branches, so its mean size $T$ obeys
+$$T=p\,[1+(z-1)T]\;\Rightarrow\;S=1+zT\sim(p_c-p)^{-1}$$
 diverges at $p_c$, like the Ising susceptibility
 - Above $p_c$ ($z=3$): $P_\infty\simeq6\,(p-p_c)$ grows continuously from zero, so the transition is **second order** ($\beta=1$, mean field)
 
 This is the Flory-Stockmayer theory of gelation.
+:::
+::: {.column width="38%"}
+![](./figs/bethe_lattice.svg){width=100%}
+:::
+::::
 
 ## Percolation Threshold: $p_c$ Values
 
