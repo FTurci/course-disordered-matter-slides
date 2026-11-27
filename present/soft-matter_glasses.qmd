@@ -263,17 +263,22 @@ For several fluids, this *decreases* as the temperature is lowered, in an intrig
 
 ## A thermodynamic theory: the Adam-Gibbs scenario
 
-:::{.columns}
-::: {.column width="60%"}
 The **Adam-Gibbs model** links the dramatic slowdown of dynamics to the underlying thermodynamics through **configurational entropy** $S_{\rm conf}$.
 
 - The key idea is the existence of **cooperatively rearranging regions** (CRRs): to relax, particles need to move together and explore a new metabasin in the energy landscape.
 - At low $T$ a particle cannot move alone: a **CRR** is the **smallest** region that can rearrange without changes outside it (larger regions have higher barriers, so the smallest ones dominate).
 - "Can rearrange" means at least two configurations, $W^*\ge2$: each CRR carries a **threshold** entropy $s^*=k_B\ln W^*$, independent of size.
-- With $s_{\rm conf}=S_{\rm conf}/N$ per particle, a CRR needs
+
+## Adam-Gibbs: size of the CRRs
+
+:::{.columns}
+::: {.column width="60%"}
+- **Assume extensivity**: a region of $n$ particles has configurational entropy $n\,s_{\rm conf}$, with the bulk value per particle $s_{\rm conf}=S_{\rm conf}/N$.
+- It can rearrange once $n\,s_{\rm conf}\ge s^*$, so the smallest CRR has
 $$n_{CRR}=\frac{s^*}{s_{\rm conf}}$$
 particles: as $s_{\rm conf}$ drops, CRRs grow.
-- The system is a **mosaic** of $M_{CRR}=N/n_{CRR}$ independent CRRs, so $S_{\rm conf}=M_{CRR}\,s^*$.
+- The system is a **mosaic** of $M_{CRR}=N/n_{CRR}$ independent CRRs and, by the same extensivity, $S_{\rm conf}=M_{CRR}\,s^*$.
+- A metabasin of the whole system is one choice of configuration for every CRR; rearranging one CRR moves the system to a neighbouring metabasin.
 :::
 ::: {.column width="40%"}
 ![Mosaic of cooperatively rearranging regions](./figs/mosaic.png)

@@ -1334,7 +1334,7 @@
     "href": "soft-matter_glasses.html#a-thermodynamic-theory-the-adam-gibbs-scenario",
     "title": "Complex Disordered Systems",
     "section": "A thermodynamic theory: the Adam-Gibbs scenario",
-    "text": "A thermodynamic theory: the Adam-Gibbs scenario\n\n\nThe Adam-Gibbs model links the dramatic slowdown of dynamics to the underlying thermodynamics through configurational entropy S_{\\rm conf}.\n\nThe key idea is the existence of cooperatively rearranging regions (CRRs): to relax, particles need to move together and explore a new metabasin in the energy landscape.\nAt low T a particle cannot move alone: a CRR is the smallest region that can rearrange without changes outside it (larger regions have higher barriers, so the smallest ones dominate).\n“Can rearrange” means at least two configurations, W^*\\ge2: each CRR carries a threshold entropy s^*=k_B\\ln W^*, independent of size.\nWith s_{\\rm conf}=S_{\\rm conf}/N per particle, a CRR needs n_{CRR}=\\frac{s^*}{s_{\\rm conf}} particles: as s_{\\rm conf} drops, CRRs grow.\nThe system is a mosaic of M_{CRR}=N/n_{CRR} independent CRRs, so S_{\\rm conf}=M_{CRR}\\,s^*.\n\n\n\n\n\nMosaic of cooperatively rearranging regions"
+    "text": "A thermodynamic theory: the Adam-Gibbs scenario\nThe Adam-Gibbs model links the dramatic slowdown of dynamics to the underlying thermodynamics through configurational entropy S_{\\rm conf}.\n\nThe key idea is the existence of cooperatively rearranging regions (CRRs): to relax, particles need to move together and explore a new metabasin in the energy landscape.\nAt low T a particle cannot move alone: a CRR is the smallest region that can rearrange without changes outside it (larger regions have higher barriers, so the smallest ones dominate).\n“Can rearrange” means at least two configurations, W^*\\ge2: each CRR carries a threshold entropy s^*=k_B\\ln W^*, independent of size."
   },
   {
     "objectID": "soft-matter_glasses.html#a-thermodynamic-theory-the-adam-gibbs-scenario-1",
@@ -2301,5 +2301,12 @@
     "title": "Complex Disordered Systems",
     "section": "From Adam-Gibbs to VFT",
     "text": "From Adam-Gibbs to VFT\nHow does s_{\\rm conf} vanish? Kauzmann’s extrapolation: it decreases smoothly and reaches zero at T_K. Close to its zero, a smooth function is linear: \ns_{\\rm conf}(T)\\simeq K\\,\\frac{T-T_K}{T_K}\\qquad (K&gt;0)\n\nNear T_K we also have T\\simeq T_K, so T s_{\\rm conf}\\simeq K\\,(T-T_K) and \n\\tau_\\alpha(T) \\simeq \\tau_0\\exp\\left(\\frac{B}{T - T_K}\\right),\\qquad B=\\frac{A}{K}\n\nThis is the VFT form with T_0=T_K (corrections to linearity only rescale \\tau_0): a testable link between kinetics (T_0) and calorimetry (T_K). They agree closely in many fragile liquids (Richert & Angell, J. Chem. Phys. 108, 9016 (1998)).\nIt also points to a critical divergence: as s_{\\rm conf}\\to0 at T_K, the CRR size n_{CRR}\\propto 1/s_{\\rm conf} diverges.\n\nEvidence for decreasing configurational entropy, but debated existence of a true thermodynamic transition."
+  },
+  {
+    "objectID": "soft-matter_glasses.html#adam-gibbs-size-of-the-crrs",
+    "href": "soft-matter_glasses.html#adam-gibbs-size-of-the-crrs",
+    "title": "Complex Disordered Systems",
+    "section": "Adam-Gibbs: size of the CRRs",
+    "text": "Adam-Gibbs: size of the CRRs\n\n\n\nAssume extensivity: a region of n particles has configurational entropy n\\,s_{\\rm conf}, with the bulk value per particle s_{\\rm conf}=S_{\\rm conf}/N.\nIt can rearrange once n\\,s_{\\rm conf}\\ge s^*, so the smallest CRR has n_{CRR}=\\frac{s^*}{s_{\\rm conf}} particles: as s_{\\rm conf} drops, CRRs grow.\nThe system is a mosaic of M_{CRR}=N/n_{CRR} independent CRRs and, by the same extensivity, S_{\\rm conf}=M_{CRR}\\,s^*.\nA metabasin of the whole system is one choice of configuration for every CRR; rearranging one CRR moves the system to a neighbouring metabasin.\n\n\n\n\n\nMosaic of cooperatively rearranging regions"
   }
 ]
