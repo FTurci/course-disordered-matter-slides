@@ -484,7 +484,16 @@ S(T) = S(T_0) + \int_{T_0}^{T} \frac{C_V(T')}{T'} dT'
 </section>
 <section id="a-thermodynamic-theory-the-adam-gibbs-scenario-1" class="slide level2">
 <h2>A thermodynamic theory: the Adam-Gibbs scenario</h2>
-<p>Assume <strong>activated dynamics</strong> with a barrier <span class="math inline">\Delta\mu</span> per particle: a CRR must cross <span class="math inline">\Delta E = n_{CRR}\,\Delta\mu</span>. With <span class="math inline">n_{CRR}=s^*/s_{\rm conf}</span> (where <span class="math inline">s_{\rm conf}=S_{\rm conf}/N</span>), Arrhenius gives</p>
+<p>Assume <strong>activated dynamics</strong>, with a barrier <span class="math inline">\Delta\mu</span> per particle. A CRR must then cross</p>
+<p><span class="math display">
+\Delta E = n_{CRR}\,\Delta\mu=\frac{s^*\Delta\mu}{s_{\rm conf}}
+</span></p>
+<p>using <span class="math inline">n_{CRR}=s^*/s_{\rm conf}</span> from the previous slide.</p>
+<p>With the Arrhenius law</p>
+<p><span class="math display">
+\tau_\alpha=\tau_0\,e^{\Delta E/k_BT}
+</span></p>
+<p>this gives the <strong>Adam-Gibbs relation</strong></p>
 <p><span class="math display">
 \tau_\alpha(T) = \tau_0 \exp\left(\frac{A}{T s_{\rm conf}(T)}\right), \qquad A=\frac{s^*\Delta\mu}{k_B}
 </span></p>
@@ -495,8 +504,11 @@ S(T) = S(T_0) + \int_{T_0}^{T} \frac{C_V(T')}{T'} dT'
 <p>How does <span class="math inline">s_{\rm conf}</span> vanish? Kauzmann’s extrapolation: it decreases <strong>smoothly</strong> and reaches zero at <span class="math inline">T_K</span>. Close to its zero, a smooth function is <strong>linear</strong>: <span class="math display">
 s_{\rm conf}(T)\simeq K\,\frac{T-T_K}{T_K}\qquad (K&gt;0)
 </span></p>
-<p>Near <span class="math inline">T_K</span> we also have <span class="math inline">T\simeq T_K</span>, so <span class="math inline">T s_{\rm conf}\simeq K\,(T-T_K)</span> and <span class="math display">
-\tau_\alpha(T) \simeq \tau_0\exp\left(\frac{B}{T - T_K}\right),\qquad B=\frac{A}{K}
+<p>Then <span class="math inline">T s_{\rm conf}=K\dfrac{T}{T_K}(T-T_K)</span> and, exactly, <span class="math display">
+\frac{A}{T s_{\rm conf}}=\frac{B}{T-T_K}-\frac{B}{T},\qquad B=\frac{A}{K}
+</span></p>
+<p>The second term stays finite at <span class="math inline">T_K</span>: it changes much more slowly than the divergent one, so we absorb it in <span class="math inline">\tau_0</span>: <span class="math display">
+\tau_\alpha(T) \simeq \tau_0'\exp\left(\frac{B}{T - T_K}\right)
 </span></p>
 <p>This is the <strong>VFT</strong> form with <span class="math inline">T_0=T_K</span> (corrections to linearity only rescale <span class="math inline">\tau_0</span>): a testable link between kinetics (<span class="math inline">T_0</span>) and calorimetry (<span class="math inline">T_K</span>). They agree closely in many fragile liquids (Richert &amp; Angell, J. Chem. Phys. 108, 9016 (1998)).</p>
 <p>It also points to a <strong>critical divergence</strong>: as <span class="math inline">s_{\rm conf}\to0</span> at <span class="math inline">T_K</span>, the CRR size <span class="math inline">n_{CRR}\propto 1/s_{\rm conf}</span> diverges.</p>
