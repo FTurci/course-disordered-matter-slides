@@ -457,16 +457,16 @@ S(T) = S(T_0) + \int_{T_0}^{T} \frac{C_V(T')}{T'} dT'
 <section id="a-thermodynamic-theory-the-adam-gibbs-scenario" class="slide level2">
 <h2>A thermodynamic theory: the Adam-Gibbs scenario</h2>
 <div class="columns">
-<div class="column" style="width:50%;">
+<div class="column" style="width:60%;">
 <p>The <strong>Adam-Gibbs model</strong> links the dramatic slowdown of dynamics to the underlying thermodynamics through <strong>configurational entropy</strong> <span class="math inline">S_{\rm conf}</span>.</p>
 <ul>
 <li>The key idea is the existence of <strong>cooperatively rearranging regions</strong> (CRRs): to relax, particles need to move together and explore a new metabasin in the energy landscape.</li>
+<li>At low <span class="math inline">T</span> a particle cannot move alone: a <strong>CRR</strong> is the <strong>smallest</strong> region that can rearrange without changes outside it (larger regions have higher barriers, so the smallest ones dominate).</li>
+<li>“Can rearrange” means at least two configurations, <span class="math inline">W^*\ge2</span>: each CRR carries a <strong>threshold</strong> entropy <span class="math inline">s^*=k_B\ln W^*</span>, independent of size.</li>
+<li>With <span class="math inline">s_{\rm conf}=S_{\rm conf}/N</span> per particle, a CRR needs <span class="math display">n_{CRR}=\frac{s^*}{s_{\rm conf}}</span> particles: as <span class="math inline">s_{\rm conf}</span> drops, CRRs grow.</li>
+<li>The system is a <strong>mosaic</strong> of <span class="math inline">M_{CRR}=N/n_{CRR}</span> independent CRRs, so <span class="math inline">S_{\rm conf}=M_{CRR}\,s^*</span>.</li>
 </ul>
-<p><em>Mosaic</em> of <span class="math inline">M_{CRR}</span> independent cooperatively rearranging regions of size <span class="math inline">n_{CRR}</span> particles each. The total number of particles is <span class="math inline">N = M_{CRR} n_{CRR}</span>.</p>
-<p>We <strong>assume</strong> that the total configurational entropy is additive and that each CRR contributes a constant amount <span class="math inline">s^*</span>, irrespective of its size</p>
-<p><span class="math inline">S_{conf} = M_{CRR} s^* = \dfrac{N}{n_{CRR}} s^*</span></p>
-<p>Rearranging gives the size of a CRR as a function of the configurational entropy per particle <span class="math inline">S_{conf}/N</span>: <span class="math display">n_{CRR}(T) \propto \dfrac{1}{S_{conf}(T)/N}</span></p>
-</div><div class="column" style="width:50%;">
+</div><div class="column" style="width:40%;">
 <div class="quarto-figure quarto-figure-center">
 <figure>
 <p><img data-src="./figs/mosaic.png"></p>

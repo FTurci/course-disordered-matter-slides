@@ -264,21 +264,18 @@ For several fluids, this *decreases* as the temperature is lowered, in an intrig
 ## A thermodynamic theory: the Adam-Gibbs scenario
 
 :::{.columns}
-::: {.column width="50%"}
+::: {.column width="60%"}
 The **Adam-Gibbs model** links the dramatic slowdown of dynamics to the underlying thermodynamics through **configurational entropy** $S_{\rm conf}$.
 
 - The key idea is the existence of **cooperatively rearranging regions** (CRRs): to relax, particles need to move together and explore a new metabasin in the energy landscape.
-
-*Mosaic* of $M_{CRR}$ independent cooperatively rearranging regions of size $n_{CRR}$ particles each. The total number of particles is $N = M_{CRR} n_{CRR}$.
-
-We **assume** that the total configurational entropy is additive and that each CRR contributes a constant amount $s^*$, irrespective of its size
-
-$S_{conf} = M_{CRR} s^* = \dfrac{N}{n_{CRR}} s^*$
-
-Rearranging gives the size of a CRR as a function of the configurational entropy per particle $S_{conf}/N$:
-$$n_{CRR}(T) \propto \dfrac{1}{S_{conf}(T)/N}$$
+- At low $T$ a particle cannot move alone: a **CRR** is the **smallest** region that can rearrange without changes outside it (larger regions have higher barriers, so the smallest ones dominate).
+- "Can rearrange" means at least two configurations, $W^*\ge2$: each CRR carries a **threshold** entropy $s^*=k_B\ln W^*$, independent of size.
+- With $s_{\rm conf}=S_{\rm conf}/N$ per particle, a CRR needs
+$$n_{CRR}=\frac{s^*}{s_{\rm conf}}$$
+particles: as $s_{\rm conf}$ drops, CRRs grow.
+- The system is a **mosaic** of $M_{CRR}=N/n_{CRR}$ independent CRRs, so $S_{\rm conf}=M_{CRR}\,s^*$.
 :::
-::: {.column width="50%"}
+::: {.column width="40%"}
 ![Mosaic of cooperatively rearranging regions](./figs/mosaic.png)
 :::
 :::
