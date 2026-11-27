@@ -288,7 +288,21 @@ particles: as $s_{\rm conf}$ drops, CRRs grow.
 
 ## A thermodynamic theory: the Adam-Gibbs scenario
 
-Assume **activated dynamics** with a barrier $\Delta\mu$ per particle: a CRR must cross $\Delta E = n_{CRR}\,\Delta\mu$. With $n_{CRR}=s^*/s_{\rm conf}$ (where $s_{\rm conf}=S_{\rm conf}/N$), Arrhenius gives
+Assume **activated dynamics**, with a barrier $\Delta\mu$ per particle. A CRR must then cross
+
+$$
+\Delta E = n_{CRR}\,\Delta\mu=\frac{s^*\Delta\mu}{s_{\rm conf}}
+$$
+
+using $n_{CRR}=s^*/s_{\rm conf}$ from the previous slide.
+
+With the Arrhenius law
+
+$$
+\tau_\alpha=\tau_0\,e^{\Delta E/k_BT}
+$$
+
+this gives the **Adam-Gibbs relation**
 
 $$
 \tau_\alpha(T) = \tau_0 \exp\left(\frac{A}{T s_{\rm conf}(T)}\right), \qquad A=\frac{s^*\Delta\mu}{k_B}
@@ -303,9 +317,14 @@ $$
 s_{\rm conf}(T)\simeq K\,\frac{T-T_K}{T_K}\qquad (K>0)
 $$
 
-Near $T_K$ we also have $T\simeq T_K$, so $T s_{\rm conf}\simeq K\,(T-T_K)$ and
+Then $T s_{\rm conf}=K\dfrac{T}{T_K}(T-T_K)$ and, exactly,
 $$
-\tau_\alpha(T) \simeq \tau_0\exp\left(\frac{B}{T - T_K}\right),\qquad B=\frac{A}{K}
+\frac{A}{T s_{\rm conf}}=\frac{B}{T-T_K}-\frac{B}{T},\qquad B=\frac{A}{K}
+$$
+
+The second term stays finite at $T_K$: it changes much more slowly than the divergent one, so we absorb it in $\tau_0$:
+$$
+\tau_\alpha(T) \simeq \tau_0'\exp\left(\frac{B}{T - T_K}\right)
 $$
 
 This is the **VFT** form with $T_0=T_K$ (corrections to linearity only rescale $\tau_0$): a testable link between kinetics ($T_0$) and calorimetry ($T_K$). They agree closely in many fragile liquids (Richert & Angell, J. Chem. Phys. 108, 9016 (1998)).
